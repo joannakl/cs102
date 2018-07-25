@@ -1,0 +1,49 @@
+<div class="lecture1">
+
+<div class="column_date">
+<p markdown="block">
+
+ <br>
+Class #18<br>
+Monday, April 2
+</p>
+</div>
+<div class="column_materials">
+<p markdown="block">
+
+Tree data structure.
+</p>
+</div>
+
+<div class="column_assign">
+<p markdown="block">
+
+
+__Project 4__:  due April 11 at 11:55pm<br>
+Familiarize yourself with the following code.
+Once you decide that you understand the
+code (how it works, what it does, how the particular abstract data types are
+  implemented,   what the performance is, ...), you will take a quiz on NYU
+  Classes that is based on the code. You should use the
+  Javadoc documentation as well as the source code files for Java API that you
+  downloaded at the beginning of the term. (For the purpose of the quiz, you
+  will use the line numbering in the PDF documents of the code.)
+
+Classes that implement stack and queue ADTs in Java API:
+- [ArrayDeque](hwk/ArrayDeque.pdf)
+- [LinkedList](hwk/LinkedList.pdf)
+- [Queue](hwk/Queue.pdf)
+- [Stack](hwk/Stack.pdf)
+- [Vector](hwk/Vector.pdf)
+
+Code provided as application examples for stack and queues in the textbook:
+- The source code for solving matching parentheses and HTML tags in section
+6.1.5 in the textbook.
+- The source code for `Josephus` class in section 6.2.4 in the textbook.
+
+
+
+</p>
+</div>
+
+</div>

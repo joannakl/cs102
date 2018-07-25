@@ -1,0 +1,39 @@
+<div class="lecture1">
+
+<div class="column_date">
+<p markdown="block">
+
+Class #5 <br> 
+Monday, Feb. 5
+</p>
+</div>
+<div class="column_materials">
+<p markdown="block">
+
+Review of advanced Java topics: inheritance, polymorphism continued.  <br>
+Finish with the code examples.<br>
+
+List ADT. 
+[list lecture notes](notes/lecture02_Lists.pdf) 
+
+</p>
+</div>
+
+<div class="column_assign">
+<p markdown="block">
+
+Read chapter 7 (lightly) <br><br>
+
+
+Project 1, part 2: <br>
+
+- [project specification](hwk/proj1_2.pdf)
+- [complete data file](hwk/Baby_Names__Beginning_2007.csv) - this is a large file, make sure that you are testing your 
+code using much smaller files  
+- [split_method.java](hwk/split_method.java) - source code for the method that parses lines from the csv file into individual fields   
+
+
+</p>
+</div>
+
+</div>

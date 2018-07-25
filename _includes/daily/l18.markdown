@@ -1,0 +1,31 @@
+<div class="lecture2">
+
+<div class="column_date">
+<p markdown="block">
+
+ <br>
+Class #17<br>
+Wednesday, March 28
+</p>
+</div>
+<div class="column_materials">
+<p markdown="block">
+
+
+Queue ADT, array-based and reference-based implementation of queues.   
+
+
+
+</p>
+</div>
+
+<div class="column_assign">
+<p markdown="block">
+
+Reading: chapter 8 (followed by chapter 11).
+
+
+</p>
+</div>
+
+</div>

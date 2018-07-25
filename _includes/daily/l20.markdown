@@ -1,0 +1,32 @@
+<div class="lecture2">
+
+<div class="column_date">
+<p markdown="block">
+
+ <br>
+Class #19<br>
+Wednesday, April 4
+</p>
+</div>
+<div class="column_materials">
+<p markdown="block">
+
+Binary trees, tree traversals, intro to BST.
+
+[Introduction to trees - lecture notes](notes/lecture05_TreesIntro.pdf)
+
+[Binary search trees (BST) - lecture notes](notes/lecture07_BST.pdf)
+
+</p>
+</div>
+
+<div class="column_assign">
+<p markdown="block">
+
+Reading: chapters 8, 11
+
+
+</p>
+</div>
+
+</div>

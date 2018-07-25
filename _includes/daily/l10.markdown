@@ -1,0 +1,36 @@
+<div class="lecture2">
+
+<div class="column_date">
+<p markdown="block">
+
+Class #9<br> 
+Tuesday, Feb. 20
+</p>
+</div>
+<div class="column_materials">
+<p markdown="block">
+
+__Lecture during the regular recitation time__
+
+Reference-based implementation of a list ADT: removing from the list, searching through
+the list. Other _flavors_ of linked lists.  
+
+</p>
+</div>
+
+<div class="column_assign">
+<p markdown="block">
+
+
+Project 2 (due March 3): <br>
+
+- [project specification](hwk/proj2.pdf)
+- [Tester.java](hwk/Tester.java) - simple tester class 
+
+
+
+
+</p>
+</div>
+
+</div>

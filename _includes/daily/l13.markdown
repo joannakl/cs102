@@ -1,0 +1,26 @@
+<div class="lecture1">
+
+<div class="column_date">
+<p markdown="block">
+
+ <br> 
+Class #12<br> 
+Monday, March 5
+</p>
+</div>
+<div class="column_materials">
+<p markdown="block">
+
+Q&amp;A for the exam. 
+
+</p>
+</div>
+
+<div class="column_assign">
+<p markdown="block">
+
+
+</p>
+</div>
+
+</div>

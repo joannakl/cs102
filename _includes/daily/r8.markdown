@@ -1,0 +1,23 @@
+
+<div class="recitation">
+<div class="column_date">
+<p markdown="block">
+        
+Rec # 8 <br> 
+Tue, March 20
+        
+</p>          
+</div>
+    
+<div class="column_recitation">
+<p markdown="block">
+
+Exam 1 and project 3 discussion. 
+
+
+
+
+</p>        
+</div>
+    
+</div>

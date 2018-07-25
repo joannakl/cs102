@@ -1,0 +1,38 @@
+<div class="lecture1">
+
+<div class="column_date">
+<p markdown="block">
+
+ <br> 
+Class #14<br> 
+Monday, March 19
+</p>
+</div>
+<div class="column_materials">
+<p markdown="block">
+
+Finish recursion: generating sequences.
+
+[Recursion lecture notes](notes/lecture03_Recursion.pdf)
+
+
+Algorithmic performance analysis: how efficient is an algorithm.  
+
+</p>
+</div>
+
+<div class="column_assign">
+<p markdown="block">
+
+
+
+Project 3 (due March 29): <br>
+
+- [project specification](hwk/proj3.pdf)
+
+
+
+</p>
+</div>
+
+</div>

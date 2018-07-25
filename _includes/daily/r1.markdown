@@ -1,0 +1,53 @@
+
+<div class="recitation">
+<div class="column_date">
+<p markdown="block">
+        
+Rec # 1 <br> 
+Tue, Jan. 23
+        
+</p>          
+</div>
+    
+<div class="column_recitation">
+<p markdown="block">
+
+<!--
+__Warm-up activity.__ - distributed on paper during the recitation. 
+--> 
+ 
+        
+[__Warm-up activity.__](https://goo.gl/S7FYbq) 
+
+
+
+Once you complete the activity, download it in PDF format: 
+_File -> Download As ... -> PDF Document (pdf)_
+
+The completed PDF file should be submitted to Gradescope for grading (only one person from your group needs to submit the activity; you will have a chance to enter the names of all group members once you upload the file). 
+
+Here are quick steps for uploading to Gradescope:
+
+* Go to [gradescope.com](http://gradescope.com) and log in with you NYU email address (the version that contains your NetID).
+* On your Courses page, select the course for which you’re submitting work.
+* On your Courses page, you will see all of your current assignments. Click on the assignment you are turning in.
+* _Click Submit PDF > Click Select PDF > locate the correct file on your computer > Click Upload PDF_
+* (When activity has multiple parts) Tell us which pages correspond to each part/question on the assignment. You will see a list of all the assigned parts/questions, and images of all your document pages. For each question click the page(s) that contains your answer.
+* Finally, __add the group members to the submission__: on the right hand side under the name of the person who submitted the assignment, you should see "Add Group Members" link. Use it to add up to 3 more student names to the submission. (__If you skip this step the other group members won't get credit for their work.__)
+
+(If you did not receive email from Gradescope with an invitation to join
+the class, or if you happened to delete that email, you can join the class 
+by creating an account and using __9WY62K__ as a class code.)
+
+
+[Submitting work on Gradescope](https://youtu.be/KMPoby5g_nE) 
+
+__Make sure that you add all of your group members to the submission on Gradescope__ - it is not enough to have their names in the pdf.
+
+
+        
+
+</p>        
+</div>
+    
+</div>

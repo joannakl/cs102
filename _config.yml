@@ -1,0 +1,107 @@
+
+title: CSCI-UA 102 (Data Structures)
+short_title: CS 102
+description: "Course website for CSCI-UA 102 (Data Structures) course."
+
+baseurl: "/cs102_f18" # the subpath of your site, e.g. /blog
+url: "https://joannakl.github.io/cs102_f18" # the base hostname & protocol for your site, e.g. http://example.com
+
+markdown: kramdown
+kramdown:
+  entity_output: numeric
+  smart_quotes: apos,apos,quot,quot
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+
+
+
+course_number: "CSCI-UA 102"
+course_name: "Data Structures"
+course_section: "005"
+course_semester: "Fall 2018"
+course_time: "<br>Mondays and Wednesdays 2:00AM - 3:15PM, CIWW 109<br>"
+
+recitation_section1: "005"
+recitation_time1:  "<br>Tuesdays 11:00PM - 12:15PM, CIWW 201<br>"
+recitation_instructor1_full: "Rakshit Sareen"
+recitation_instructor1_name: "Rakshit"
+recitation_section2: "009"
+recitation_time2:  "<br>Tuesdays 9:30PM - 10:45PM, CIWW 102<br>"
+recitation_instructor2_full: "Rakshit Sareen"
+recitation_instructor2_name: "Rakshit"
+recitation_section2: "010"
+recitation_time2:  "<br>Thursdays 9:30PM - 10:45PM, CIWW 102<br>"
+recitation_instructor2_full: "Sachin Shastri"
+recitation_instructor2_name: "Sachin"
+
+
+instructor_office_hours: "TBD,
+(or email me for an appointment if these hours do not work)"
+instructor_office_hours_location: "423 CIWW"
+recitation1_office_hours: "TBD"
+recitation1_office_hours_location: "TBD"
+recitation2_office_hours: ""
+recitation2_office_hours_location: ""
+recitation3_office_hours: ""
+recitation3_office_hours_location: ""
+
+current_course1_title: "CSCI 102 sec. 1"
+current_course1_link: "https://joannakl.github.io/cs102_s18/"
+current_course2_title: "CSCI 201 sec. 3"
+current_course2_link: "https://joannakl.github.io/cs201_s18/"
+current_course3_title: "CSCI 480 sec. 10"
+current_course3_link: "https://joannakl.github.io/cs480_s18/"
+
+
+tutor_location: "406 WWH"
+tutor_schedule_link: "http://cims.nyu.edu/~joannakl/CSCI102_common/#tutoring"
+
+midterm_exam_date: "TBD"
+final_exam_date: "TBD"
+final_exams_link: "http://cs.nyu.edu/dynamic/courses/exams/"
+
+piazza_site: ""
+gradescope_site: "https://gradescope.com/"
+
+book_required: "Data Structures and Algorithms in Java, "
+book_required_author: "Michael T. Goodrich, Roberto Tamassia, Michael H. Goldwasser, "
+book_required_edition: "6th edition, "
+book_required_link: http://www.wiley.com/WileyCDA/WileyTitle/productCd-EHEP002900.html
+book_required_note: "**Required**, earlier editions of the book should be fine. "
+book_required_image: "http://media.wiley.com/product_data/coverImage300/00/EHEP0029/EHEP002900.jpg"
+
+book_opt_1: "Open DSA"
+book_opt_1_author: ""
+book_opt_1_edition: ""
+book_opt_1_link: "https://opendsa-server.cs.vt.edu/ODSA/Books/Everything/html/#"
+book_opt_1_note: "**Highly recommented** - available online <br>OpenDSA is an open source project whose goal is to provide online course materials for a wide range of Data Structures and Algorithms courses. It is currently funded by two National Science Foundation grants: TUES program grant DUE-1139861 and EAGER program grant IIS-1258571 ."
+book_opt_1_image: "https://opendsa-server.cs.vt.edu/ODSA/Books/Everything/html/_static/OpenDSALogoT64.png"
+
+
+book_opt_2: "Introduction to Java Programming, "
+book_opt_2_author: "Daniel Liang, "
+book_opt_2_edition: "any edition"
+book_opt_2_link: "https://www.pearsonhighered.com/product/Liang-Intro-to-Java-Programming-Comprehensive-Version-10th-Edition/9780133761313.html"
+book_opt_2_note: "This is your cs101 textbook. It is a good resource for
+refreshing the Java material. "
+book_opt_2_image: "https://www.pearsonhighered.com/assets/bigcovers/0/1/3/3/0133761312.jpg"
+
+
+book_opt_3: "Think Java: How To Think Like a Computer Scientist, "
+book_opt_3_author: "Chris Mayfield, Allen Downey, "
+book_opt_3_edition: ""
+book_opt_3_link: "https://open.umn.edu/opentextbooks/BookDetail.aspx?bookId=285"
+book_opt_3_note: "Optional Java resource<br> Open book - available online"
+book_opt_3_image: "https://open.umn.edu/opentextbooks/Images/9781491929568.png"
+
+
+
+
+book_opt_4: "Java, Java, Java: Object Oriented Problem Solving, "
+book_opt_4_author: "Ralph Morelli, Ralph Walde, "
+book_opt_4_edition: ""
+book_opt_4_link: "https://open.umn.edu/opentextbooks/BookDetail.aspx?bookId=218"
+book_opt_4_note: "Optional Java resource<br> Open book - available online"
+book_opt_4_image: "https://open.umn.edu/opentextbooks/Images/0000JavaJavaJ.png"

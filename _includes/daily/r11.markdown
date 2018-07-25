@@ -1,0 +1,22 @@
+
+<div class="recitation">
+<div class="column_date">
+<p markdown="block">
+
+Rec # 11 <br>
+Tue, April 10
+
+</p>          
+</div>
+
+<div class="column_recitation">
+<p markdown="block">
+
+[Binary trees practice](https://docs.google.com/document/d/1MOmtZsGAITWNIwnT32SoRWbtFmRcgQPMrM70KeDuBuE/edit?usp=sharing)
+
+
+
+</p>        
+</div>
+
+</div>
