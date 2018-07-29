@@ -6,7 +6,7 @@ title: Course Essentials
 # Course Essentials
 --- 
 
-
+  
 <p class="hang" markdown="1"><span class="emph">Class meetings:</span> {{ site.course_time }} 
 (attendance is mandatory).</p>
 
