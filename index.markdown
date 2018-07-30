@@ -7,12 +7,12 @@ title: Course Essentials
 ---
 
 
-<p class="hang" markdown="1"><span class="emph">Class meetings:</span> {{ site.course_time }}
+<p class="hang" markdown="1"><span class="emph">Class meetings:</span> <br>{{ site.course_time }}
 (attendance is mandatory).</p>
 
-<p class="hang" markdown="1"><span class="emph">Recitations (attendance is mandatory):</span> <br>
+<p class="hang" markdown="1"><span class="emph">Recitations</span>  (attendance is mandatory): <br>
 {{ site.recitation_section1 }}: {{ site.recitation_time1 }},{{ recitation_instructor1_full }} <br>
-{{ site.recitation_section2 }}: {{ site.recitation_time2 }},{{ recitation_instructor2_full }} <br>
+{{ site.recitation_section2 }}: {{ site.recitation_time2 }},{{ recitation_instructor2_name }} <br>
 {{ site.recitation_section3 }}: {{ site.recitation_time3 }},{{ recitation_instructor3_full }}
 </p>
 
