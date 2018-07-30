@@ -2,7 +2,7 @@
 layout: default
 title: Course Essentials
 ---
-
+  
 # Course Essentials
 ---
 
