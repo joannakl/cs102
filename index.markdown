@@ -11,9 +11,9 @@ title: Course Essentials
 (attendance is mandatory).</p>
 
 <p class="hang" markdown="1"><span class="emph">Recitations</span>  (attendance is mandatory): <br>
-{{ site.recitation_section1 }}: {{ site.recitation_time1 }},{{ recitation_instructor1_full }} <br>
-{{ site.recitation_section2 }}: {{ site.recitation_time2 }},{{ recitation_instructor2_name }} <br>
-{{ site.recitation_section3 }}: {{ site.recitation_time3 }},{{ recitation_instructor3_full }}
+{{ site.recitation_section1 }}: {{ site.recitation_time1 }}, {{ site.recitation_instructor1_full }} <br>
+{{ site.recitation_section2 }}: {{ site.recitation_time2 }}, {{ site.recitation_instructor2_full }} <br>
+{{ site.recitation_section3 }}: {{ site.recitation_time3 }}, {{ site.recitation_instructor3_full }}
 </p>
 
 <p class="hang" markdown="1"><span class="emph">Office hours:</span> <br>
@@ -22,8 +22,10 @@ title: Course Essentials
 <br>
 <span class="name">{{site.recitation_instructor1_name}}:</span> {{site.recitation1_office_hours}} ({{site.recitation1_office_hours_location }})
 <br>
+<!--
 <span class="name">{{site.recitation_instructor2_name}}:</span> {{site.recitation2_office_hours}} ({{site.recitation2_office_hours_location }})
 <br>
+-->
 <span class="name">{{site.recitation_instructor3_name}}:</span> {{site.recitation3_office_hours}} ({{site.recitation3_office_hours_location }})
 </p>
 
@@ -33,7 +35,7 @@ Post all course related questions to the discussion board. If you have questions
 related to your grading, contact your instructor directly (office hours or email).
 </p>
 
-<p class="hang" markdown="1"><span class="emph">Tutors:</span>  the tutors are going to be availble starting
+<p class="hang" markdown="1"><span class="emph">Tutors:</span>  the tutors are going to be available starting
 the second week of classes in room {{site.tutor_location}}; here is their [schedule]( {{ site.tutor_schedule_link }}) (updated with any last minute changes)
 </p>
 
