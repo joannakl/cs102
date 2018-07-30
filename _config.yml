@@ -47,12 +47,12 @@ recitation2_office_hours_location: "TBD"
 recitation3_office_hours: "TBD"
 recitation3_office_hours_location: "TBD"
 
-current_course1_title: "CSCI 102 sec. 1"
-current_course1_link: "https://joannakl.github.io/cs102_s18/"
-current_course2_title: "CSCI 201 sec. 3"
-current_course2_link: "https://joannakl.github.io/cs201_s18/"
-current_course3_title: "CSCI 480 sec. 10"
-current_course3_link: "https://joannakl.github.io/cs480_s18/"
+current_course1_title: "CSCI 102 sec. 5"
+current_course1_link: "https://cs.nyu.edu/~joannakl/cs102_f18/"
+current_course2_title: "CORE 109 sec. 1"
+current_course2_link: "https://cs.nyu.edu/~joannakl/core109_f18/"
+current_course3_title: ""
+current_course3_link: ""
 
 
 tutor_location: "406 WWH"
