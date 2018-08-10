@@ -3,8 +3,7 @@
 <div class="column_date">
 <p markdown="block">
 Recitation  <br>
-Tue,11/20 (sec. 6 and 9)<br>
-Thu,11/22 (sec. 10)
+Tue,11/20 (sec. 6 and 9)
 </p>
 </div>
 
@@ -13,8 +12,11 @@ Thu,11/22 (sec. 10)
 
 
 
+__Recitation for Tuesday section ONLY__
+
+sec. 10: no recitation this week
+
 </p>
 </div>
 
 </div>
-
