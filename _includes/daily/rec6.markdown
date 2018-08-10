@@ -2,8 +2,9 @@
 <div class="recitation">
 <div class="column_date">
 <p markdown="block">
-Recitation #6 <br>
-Thu,10/11
+Recitation  <br>
+Tue,10/09 (sec. 6 and 9)<br>
+Thu,10/11 (sec. 10)
 </p>
 </div>
 
