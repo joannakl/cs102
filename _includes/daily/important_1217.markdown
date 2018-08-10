@@ -10,7 +10,7 @@ Mon, 12/17
 <div class="column_recitation">
 <p markdown="block">
 
-__Final exam__, Dec. 17, 8:00am - 9:50am.
+__Final exam__, Dec. 17, 2:00pm - 3:50pm.
 
 </p>
 </div>
