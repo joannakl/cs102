@@ -2,7 +2,7 @@
 layout: default
 title: Course Essentials
 ---
-  
+
 # Course Essentials
 ---
 
@@ -30,9 +30,11 @@ title: Course Essentials
 </p>
 
 
-<p class="hang" markdown="1"><span class="emph">Class discussion board:</span> Piazza <br>
+<p class="hang" markdown="1"><span class="emph">Class discussion board:</span> [Piazza]( {{piazza_site}}) <br>
 Post all course related questions to the discussion board. If you have questions
-related to your grading, contact your instructor directly (office hours or email).
+related to your grading, you can post on Piazza privately or visit the office hours. <br>
+For those registering late: you can [self sign up on Piazza]( {{piazza_signup}}) for this class (make sure you use
+your netID email address, or you may end up being removed from the site once we update the roster).
 </p>
 
 <p class="hang" markdown="1"><span class="emph">Tutors:</span>  the tutors are going to be available starting
@@ -40,10 +42,12 @@ the second week of classes in room {{site.tutor_location}}; here is their [sched
 </p>
 
 
-<p class="hang" markdown="1"><span class="emph">How to get help?</span>
-Ask questions on discussion forums (Piazza)! Ask questions in recitations and during lectures!
-Talk to us (we cannot help, unless we know there is an issue).
-See the tutors and/or instructors during posted office hours!
+<p class="hang" markdown="1"><span class="emph">How to get help?</span> <br>
+- ask questions on the class discussion forum (Piazza) and read the questions posed by other students
+- ask questions in recitations and during lectures
+- get help from the tutors
+- talk to us (we cannot help, unless we know there is an issue).
+- go to office hours
 Make sure you let us know as soon as you feel lost in the course. Do not wait till you
 start getting failing grades because it might be too late by then.
 </p>
@@ -55,7 +59,7 @@ start getting failing grades because it might be too late by then.
 **Data Structures**
 
 CSCI-UA 102 Prerequisite: Introduction to Computer Science (CSCI-UA 101). <br>
-NOTE: The prerequisite means that you DO NEED TO KNOW AND REMEMBER the material from CSCI-UA 101.<br>
+__NOTE: The prerequisite means that you DO NEED TO KNOW AND REMEMBER the material from CSCI-UA 101.__<br>
 Offered in the fall and spring. 4 points.<br>
 Use and design of data structures, which organize information in
 computer memory. Stacks, queues, linked lists, binary trees:
@@ -63,9 +67,9 @@ how to implement them in a high-level language, how to analyze their
 effect on algorithm efficiency, and how to modify them.
 Programming assignments.<br>
 
-This course assumes that students had at least one semester course in Java programming language.
+__This course assumes that students had at least one semester course in Java programming language.
 All programming assignments are given in Java and students need to be able to write fairly involved
-programs from the very first project.
+programs from the very first project.__
 
 # Important Dates
 ---

@@ -58,11 +58,12 @@ current_course3_link: ""
 tutor_location: "406 WWH"
 tutor_schedule_link: "http://cims.nyu.edu/~joannakl/CSCI102_common/#tutoring"
 
-midterm_exam_date: "TBD"
+midterm_exam_date: "week of Oct. 15"
 final_exam_date: "Mon., Dec., 17, 2018, 2:00pm-3:50pm "
 final_exams_link: "http://cs.nyu.edu/dynamic/courses/exams/"
 
-piazza_site: ""
+piazza_site: "https://piazza.com/nyu/fall2018/csci102/home"
+piazza_signup: "https://piazza.com/nyu/fall2018/csci102"
 gradescope_site: "https://gradescope.com/"
 
 book_required: "Data Structures and Algorithms in Java, "
