@@ -30,10 +30,10 @@ title: Course Essentials
 </p>
 
 
-<p class="hang" markdown="1"><span class="emph">Class discussion board:</span> [Piazza]( {{piazza_site}}) <br>
+<p class="hang" markdown="1"><span class="emph">Class discussion board:</span> [Piazza]( {{site.piazza_site}}) <br>
 Post all course related questions to the discussion board. If you have questions
 related to your grading, you can post on Piazza privately or visit the office hours. <br>
-For those registering late: you can [self sign up on Piazza]( {{piazza_signup}}) for this class (make sure you use
+For those registering late: you can [self sign up on Piazza]( {{site.piazza_signup}}) for this class (make sure you use
 your netID email address, or you may end up being removed from the site once we update the roster).
 </p>
 
@@ -42,12 +42,15 @@ the second week of classes in room {{site.tutor_location}}; here is their [sched
 </p>
 
 
-<p class="hang" markdown="1"><span class="emph">How to get help?</span> <br>
+<p class="hang" markdown="1"><span class="emph">How to get help?</span> </p>
+
 - ask questions on the class discussion forum (Piazza) and read the questions posed by other students
 - ask questions in recitations and during lectures
 - get help from the tutors
 - talk to us (we cannot help, unless we know there is an issue).
 - go to office hours
+
+<p>
 Make sure you let us know as soon as you feel lost in the course. Do not wait till you
 start getting failing grades because it might be too late by then.
 </p>
