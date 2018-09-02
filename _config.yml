@@ -37,7 +37,7 @@ recitation_instructor3_full: "Sachin Shastri"
 recitation_instructor3_name: "Sachin"
 
 
-instructor_office_hours: "TBD,
+instructor_office_hours: "Mondays 11:30-12:30, Thursdays 11:00-12:30
 (or email me for an appointment if these hours do not work)"
 instructor_office_hours_location: "423 CIWW"
 recitation1_office_hours: "TBD"
@@ -65,6 +65,7 @@ final_exams_link: "http://cs.nyu.edu/dynamic/courses/exams/"
 piazza_site: "https://piazza.com/nyu/fall2018/csci102/home"
 piazza_signup: "https://piazza.com/nyu/fall2018/csci102"
 gradescope_site: "https://gradescope.com/"
+polleverywhere_guide: "https://blog.polleverywhere.com/students-poll-everywhere-101/" 
 
 book_required: "Data Structures and Algorithms in Java, "
 book_required_author: "Michael T. Goodrich, Roberto Tamassia, Michael H. Goldwasser, "
