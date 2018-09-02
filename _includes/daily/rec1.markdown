@@ -13,7 +13,7 @@ Thu, 9/06 (sec. 10)
 
 You should have been invited to complete registration for:
 
-- __Poll Everywhere__, follow [student's guide instructions]{{site.polleverywhere_guide}} to register, if you did not get the invitation; use joannakl@cs.nyu.edu email address for your instructor
+- __Poll Everywhere__, follow [student's guide instructions]({{site.polleverywhere_guide}}) to register, if you did not get the invitation; use joannakl@cs.nyu.edu email address for your instructor
 - __Gradescope__, you can [self register]({{site.gradescope_site}}) using code ME7J6D, if you did not get the invitation
 - __Piazza__, you can [self register]({{site.piazza_signup}}), if you did not get the invitation
 
