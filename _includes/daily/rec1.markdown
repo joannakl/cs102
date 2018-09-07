@@ -20,12 +20,13 @@ You should have been invited to complete registration for:
 
 ---
 
+<!--
 __Warm-up activity.__ - distributed during the recitation.
-
-<!--         
+-->
+         
 __Warm-up activity:__ [instructions](https://goo.gl/Yxvb4p ) ,
 [worksheet](https://goo.gl/ZqZrTY)
--->
+
 
 
 ---
