@@ -11,7 +11,6 @@ Thu, 9/13 (sec. 10)
 <div class="column_recitation">
 <p markdown="block">
 
--
 
 
 __Writing bullet-proof code activity.__ - distributed during the recitation.
@@ -20,8 +19,11 @@ __Writing bullet-proof code activity.__ - distributed during the recitation.
 __Writing bullet-proof code:__ [instructions](https://goo.gl/RCKoS1) ,
 [worksheet](https://goo.gl/BzgFso)
 -->
+<br>
 
-__Extra credit__ (due ):
+<br>
+
+__Extra credit__ (due Sept. 19 ):
 
 (This should be done individually, not as a group activity.)
 
@@ -44,10 +46,10 @@ in the string, ignoring all other characters. A number is a series of 1 or more 
 chars in a row. (Note: `Character.isDigit(char)` tests if a char is one of the chars
 '0', '1', .. '9'. `Integer.parseInt(string)` converts a string to an int.)
 
-`sumOfNumbers("abc123xyz")` should return `123`<br>
-`sumNumbers("aa11b33")` should return `44` <br>
-`sumNumbers("7 11")` should return `18`<br>
-`sumNumbers("hello")` should return `0`<br>
+- `sumOfNumbers("abc123xyz")` should return `123`<br>
+- `sumNumbers("aa11b33")` should return `44` <br>
+- `sumNumbers("7 11")` should return `18`<br>
+- `sumNumbers("hello")` should return `0`<br>
 
 You should implement your code in the following template:
 
