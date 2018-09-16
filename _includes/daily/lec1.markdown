@@ -11,7 +11,8 @@ Wed, 9/05
 <div class="column_materials">
 <p markdown="block">
 
-
+Introduction to the class. [Syllabus](syllabus.html).
+What do software engineers do.  
 
 </p>
 </div>
@@ -25,4 +26,3 @@ Wed, 9/05
 </div>
 
 </div>
-

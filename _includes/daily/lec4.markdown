@@ -11,7 +11,9 @@ Mon, 9/17
 <div class="column_materials">
 <p markdown="block">
 
+Continue with [code examples](code/lecture1.zip).
 
+Polymorphism, dynamic binding, abstract classes.
 
 </p>
 </div>
@@ -25,4 +27,3 @@ Mon, 9/17
 </div>
 
 </div>
-

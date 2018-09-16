@@ -35,7 +35,7 @@ Work on chapter problems for chapters 1 and 2 (see above for the listing). <br><
 
 
 
-Project 1: Reading and understanding code.  <br>
+Project 1: Reading and understanding code. Due __Sept. 22, 11:55pm__. <br>
 Familiarize yourself with the following code. The three files provide a simple implementation
 of a color converter (CSS named colors, RGB values, hex-representation). Once you decide that you understand the
 code (how it works, what it does, how the three classes interact, how the user interaction happens,

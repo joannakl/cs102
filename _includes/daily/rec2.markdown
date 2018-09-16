@@ -13,12 +13,13 @@ Thu, 9/13 (sec. 10)
 
 
 
-__Writing bullet-proof code activity.__ - distributed during the recitation.
-
 <!--
+__Writing bullet-proof code activity.__ - distributed during the recitation.
+-->
+
 __Writing bullet-proof code:__ [instructions](https://goo.gl/RCKoS1) ,
 [worksheet](https://goo.gl/BzgFso)
--->
+
 <br>
 
 <br>
@@ -31,7 +32,7 @@ Last week you worked on solving several problems and using the CodeBat
 autograder/autotester to verify if your solution was correct.
 In more realistic situations, there is no such tester. The programmer needs to
 be able to convince themselves that their work is correct. <br>
-This semester we will be using an autograder on Gradescope to give your hints about
+This semester we will be using an autograder on Gradescope to give you hints about
 your program's correctness. At first, you will see all of the tests and see if they
 passed or not. As the semester progresses, you will not be given the individual tests
 anymore. <br>
@@ -41,7 +42,7 @@ can give you a hint as to how many tests passed and how many failed.
 
 The problem for which you need to write a solution is as follows:
 
-Write a function, that f]given a string, returns the sum of the numbers appearing
+Write a function, that given a string, returns the sum of the numbers appearing
 in the string, ignoring all other characters. A number is a series of 1 or more digit
 chars in a row. (Note: `Character.isDigit(char)` tests if a char is one of the chars
 '0', '1', .. '9'. `Integer.parseInt(string)` converts a string to an int.)

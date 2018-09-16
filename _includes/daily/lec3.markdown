@@ -11,6 +11,12 @@ Wed, 9/12
 <div class="column_materials">
 <p markdown="block">
 
+Quiz 1. 
+
+Continue with advanced Java topics: inheritance, constructor chaining, overloading
+vs. overriding.
+
+Review of [code examples](code/lecture1.zip).
 
 
 </p>
@@ -25,4 +31,3 @@ Wed, 9/12
 </div>
 
 </div>
-
