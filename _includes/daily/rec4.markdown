@@ -11,10 +11,6 @@ Thu, 9/27 (sec. 10)
 <div class="column_recitation">
 <p markdown="block">
 
-https://goo.gl/6sxdde
-
-
-
 __ArrayList<E> - case study__ - distributed during the recitation.
 
 <!--
