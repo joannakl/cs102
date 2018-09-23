@@ -11,7 +11,8 @@ Mon, 9/24
 <div class="column_materials">
 <p markdown="block">
 
-
+Continue with an array-based implementation for the List ADT.
+Case study of `ArrayList<E>` class.
 
 </p>
 </div>
@@ -19,10 +20,13 @@ Mon, 9/24
 <div class="column_assign">
 <p markdown="block">
 
+Project 2 is posted. Due: Oct. 3 at 11:55pm.
+- [project specification](hwk/proj2.pdf)
+- [Film Locations in San Francisco dataset (CSV)](hwk/Film_Locations_in_San_Francisco.csv)
+- [Coding Conventions for CS102](notes/CodeConventions.pdf)
 
 
 </p>
 </div>
 
 </div>
-

@@ -11,6 +11,12 @@ Wed, 9/19
 <div class="column_materials">
 <p markdown="block">
 
+Input stream buffering.
+How do `nextLine()`, `next()`, `nextInt()`, ... functions of the `Scanner` class differ.
+How to handle not _well behaved_ users.
+
+List ADT.
+How is `ArrayList<E>` implemented.
 
 
 </p>
@@ -19,10 +25,10 @@ Wed, 9/19
 <div class="column_assign">
 <p markdown="block">
 
-
+- finish up with project 1
+- Reading: chapter 3
 
 </p>
 </div>
 
 </div>
-
