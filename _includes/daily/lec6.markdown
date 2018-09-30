@@ -26,6 +26,8 @@ Project 2 is posted. Due: Oct. 3 at 11:55pm.
 - [Coding Conventions for CS102](notes/CodeConventions.pdf)
 
 
+Reading chapters 3 and 7.
+
 </p>
 </div>
 

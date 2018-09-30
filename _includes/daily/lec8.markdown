@@ -11,6 +11,8 @@ Mon,10/01
 <div class="column_materials">
 <p markdown="block">
 
+Linked list: adding / removing elements, retrieving
+elements stored at a particular "index", efficiency concerns. 
 
 
 </p>
@@ -25,4 +27,3 @@ Mon,10/01
 </div>
 
 </div>
-

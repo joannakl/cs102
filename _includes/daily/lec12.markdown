@@ -1,4 +1,4 @@
-<div class="lecture1">
+<div class="important">
 
 <div class="column_date">
 <p markdown="block">
@@ -11,7 +11,7 @@ Mon,10/15
 <div class="column_materials">
 <p markdown="block">
 
-
+Midterm exam. 
 
 </p>
 </div>
@@ -25,4 +25,3 @@ Mon,10/15
 </div>
 
 </div>
-
