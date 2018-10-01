@@ -11,7 +11,8 @@ Wed,10/03
 <div class="column_materials">
 <p markdown="block">
 
-
+Iterators. <br>
+`Collection` and `List` interfaces in Java.
 
 </p>
 </div>
@@ -19,10 +20,9 @@ Wed,10/03
 <div class="column_assign">
 <p markdown="block">
 
-
+Read section 7.4 and 7.5. 
 
 </p>
 </div>
 
 </div>
-

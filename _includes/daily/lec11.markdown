@@ -11,7 +11,9 @@ Wed,10/10
 <div class="column_materials">
 <p markdown="block">
 
+Q&amp;A for midterm exam.
 
+Come with questions.
 
 </p>
 </div>
@@ -25,4 +27,3 @@ Wed,10/10
 </div>
 
 </div>
-

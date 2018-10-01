@@ -21,7 +21,7 @@ of a linked list; special case of an empty list.
 <div class="column_assign">
 <p markdown="block">
 
-Reading chapters 3 and 7.
+Reading chapters 3 and 7 (lightly about `PositionalList`).
 
 </p>
 </div>

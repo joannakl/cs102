@@ -13,13 +13,15 @@ Tue,10/09
 
 __Legislatie day: classes follow Monday schedule__
 
-
+Equivalence testing and cloning data structures.
 
 </p>
 </div>
 
 <div class="column_assign">
 <p markdown="block">
+
+Read 3.5, 3.6.
 
 
 

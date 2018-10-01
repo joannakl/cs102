@@ -11,10 +11,20 @@ Thu,10/04 (sec. 10)
 <div class="column_recitation">
 <p markdown="block">
 
+Iterating over things.
+
+
+
+__Iterating over things__ - distributed during the recitation.
+
+<!--
+__Iterating over things__ [instructions]( ) ,
+[worksheet]( )
+-->
+
 
 
 </p>
 </div>
 
 </div>
-
