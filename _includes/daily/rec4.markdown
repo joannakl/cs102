@@ -14,7 +14,7 @@ Thu, 9/27 (sec. 10)
 __ArrayList - case study__ - distributed during the recitation.
 -->
 
-__ArrayList<E> - case study:__ [instructions](https://goo.gl/CjS9nR) ,
+__ArrayList - case study:__ [instructions](https://goo.gl/CjS9nR) ,
 [worksheet](https://goo.gl/6sxdde)
 
 
