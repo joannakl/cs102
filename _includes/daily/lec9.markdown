@@ -20,7 +20,9 @@ Iterators. <br>
 <div class="column_assign">
 <p markdown="block">
 
-Read section 7.4 and 7.5. 
+Read section 7.4 and 7.5.
+
+[Project 3](hwk/proj3.pdf) posted, due Oct. 13 at 11:55pm.  
 
 </p>
 </div>

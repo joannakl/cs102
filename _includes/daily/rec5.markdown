@@ -14,13 +14,13 @@ Thu,10/04 (sec. 10)
 Iterating over things.
 
 
-
-__Iterating over things__ - distributed during the recitation.
-
 <!--
+__Iterating over things__ - distributed during the recitation.
+-->
+
 __Iterating over things__ [instructions](https://goo.gl/VcqGP5 ) ,
 [worksheet](https://goo.gl/sX4ZD7  )
--->
+
 
 
 
