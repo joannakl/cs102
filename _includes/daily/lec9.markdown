@@ -14,6 +14,8 @@ Wed,10/03
 Iterators. <br>
 `Collection` and `List` interfaces in Java.
 
+[list notes](notes/lecture02_List.pdf)s
+
 </p>
 </div>
 
