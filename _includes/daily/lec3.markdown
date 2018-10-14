@@ -16,7 +16,7 @@ Quiz 1.
 Continue with advanced Java topics: inheritance, constructor chaining, overloading
 vs. overriding.
 
-Review of [code examples](code/lecture1.zip).
+Review of [code examples](code/lecture01.zip).
 
 
 </p>

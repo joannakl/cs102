@@ -11,7 +11,7 @@ Mon, 9/17
 <div class="column_materials">
 <p markdown="block">
 
-Continue with [code examples](code/lecture1.zip).
+Continue with [code examples](code/lecture01.zip).
 
 Polymorphism, dynamic binding, abstract classes.
 
