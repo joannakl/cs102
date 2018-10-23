@@ -11,6 +11,8 @@ Wed,10/17
 <div class="column_materials">
 <p markdown="block">
 
+Algorithmic analysis: big-O notation.
+Array based list and linked-list performance analysis.
 
 
 </p>
@@ -19,10 +21,11 @@ Wed,10/17
 <div class="column_assign">
 <p markdown="block">
 
+Reading: chapter 4 (concentrate on big-O, no proofs required
+- although they will come in handy for the next course). 
 
 
 </p>
 </div>
 
 </div>
-
