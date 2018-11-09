@@ -29,6 +29,9 @@ algorithms).
 __Project 5__ posted:
 - [project specification](hwk/proj5.pdf)
 - [Converter class specification](hwk/Converter/project5/Converter.html)
+
+Readings: chapter 8 (can skip 8.3, or read it lightly), start reading chapter 9
+(concentrate on how it works, not how it is implemented). 
 </p>
 </div>
 

@@ -20,7 +20,7 @@ Fibonacci sequence calculation (and why it is very inefficient to do it
 using recursion), determining if a string is a palindrome.
 
 
-[recursion notes](notes/lecture04_Recursion.pdf) 
+[recursion notes](notes/lecture04_Recursion.pdf)
 
 </p>
 </div>
@@ -28,7 +28,7 @@ using recursion), determining if a string is a palindrome.
 <div class="column_assign">
 <p markdown="block">
 
-
+Reading chapter 5. 
 
 </p>
 </div>
