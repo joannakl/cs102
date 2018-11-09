@@ -11,6 +11,10 @@ Mon,11/05
 <div class="column_materials">
 <p markdown="block">
 
+Finish with recursion. Calculating size of a linked list recursively.
+Designing a recursive method to add a node to a linked list.
+
+
 
 
 </p>
@@ -25,4 +29,3 @@ Mon,11/05
 </div>
 
 </div>
-
