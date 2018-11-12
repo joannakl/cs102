@@ -11,8 +11,6 @@ Wed,11/14
 <div class="column_materials">
 <p markdown="block">
 
-Finish with priority queues, start on binary search trees.
-
 
 
 </p>
@@ -21,9 +19,10 @@ Finish with priority queues, start on binary search trees.
 <div class="column_assign">
 <p markdown="block">
 
-Reading: chapter 11 (section 1)
+
 
 </p>
 </div>
 
 </div>
+
