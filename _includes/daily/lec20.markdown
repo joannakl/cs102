@@ -15,6 +15,7 @@ Priority queues, heaps, heap properties (invariants), adding
 values to a binary heap, removing values from a
 binary heap.
 
+[priority queues notes](notes/lecture06_PriorityQueues.pdf)
 </p>
 </div>
 

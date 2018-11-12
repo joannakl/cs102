@@ -1,0 +1,22 @@
+
+<div class="recitation">
+<div class="column_date">
+<p markdown="block">
+
+Rec # 10 <br>
+Tue, April 3
+
+</p>          
+</div>
+
+<div class="column_recitation">
+<p markdown="block">
+
+[Interview Questions](https://docs.google.com/document/d/1ZwV4KXs0afCs6mUehfG47yDF_sFJgFF_M7JLIbq3_Oc/edit?usp=sharing)
+
+
+
+</p>        
+</div>
+
+</div>

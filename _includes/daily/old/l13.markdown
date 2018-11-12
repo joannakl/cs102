@@ -1,19 +1,17 @@
-<div class="lecture2">
+<div class="lecture1">
 
 <div class="column_date">
 <p markdown="block">
 
-Class #21 <br>
-Wed,11/14
-
+ <br> 
+Class #12<br> 
+Monday, March 5
 </p>
 </div>
 <div class="column_materials">
 <p markdown="block">
 
-Finish with priority queues, start on binary search trees.
-
-
+Q&amp;A for the exam. 
 
 </p>
 </div>
@@ -21,7 +19,6 @@ Finish with priority queues, start on binary search trees.
 <div class="column_assign">
 <p markdown="block">
 
-Reading: chapter 11 (section 1)
 
 </p>
 </div>

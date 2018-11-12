@@ -1,0 +1,42 @@
+<div class="lecture1">
+
+<div class="column_date">
+<p markdown="block">
+
+ <br>
+Class #22<br>
+Monday, April 16
+</p>
+</div>
+<div class="column_materials">
+<p markdown="block">
+
+Binary search trees: code for removing a node, using traversals to
+print the tree in a "tree format".
+
+Balanced binary trees: AVL.
+
+
+</p>
+</div>
+
+<div class="column_assign">
+<p markdown="block">
+
+
+Project 5 (due April 28): <br>
+
+- [project specification](hwk/proj5.pdf)
+- [BST_Recursive class](code/BST_Recursive.java)
+- [split_method.java](hwk/split_method.java) - source code for the method that
+ parses lines from the csv file into individual fields   
+- [complete data file](hwk/Baby_Names__Beginning_2007.csv) - this is a large
+file, make sure that you are testing your code using much smaller files  
+
+
+
+
+</p>
+</div>
+
+</div>

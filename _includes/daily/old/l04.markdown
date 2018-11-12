@@ -3,17 +3,15 @@
 <div class="column_date">
 <p markdown="block">
 
-Class #21 <br>
-Wed,11/14
-
+Class #4 <br> 
+Monday, Jan. 31
 </p>
 </div>
 <div class="column_materials">
 <p markdown="block">
 
-Finish with priority queues, start on binary search trees.
-
-
+Review of advanced Java topics: inheritance, polymorphism continued.  <br><br>
+Goving over the code examples. 
 
 </p>
 </div>
@@ -21,7 +19,7 @@ Finish with priority queues, start on binary search trees.
 <div class="column_assign">
 <p markdown="block">
 
-Reading: chapter 11 (section 1)
+
 
 </p>
 </div>

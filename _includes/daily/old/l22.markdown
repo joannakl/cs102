@@ -3,16 +3,18 @@
 <div class="column_date">
 <p markdown="block">
 
-Class #21 <br>
-Wed,11/14
-
+ <br>
+Class #21<br>
+Wednesday, April 11
 </p>
 </div>
 <div class="column_materials">
 <p markdown="block">
 
-Finish with priority queues, start on binary search trees.
+Quiz: BST traversal
 
+Binary search trees: adding a new node to the tree (recursive implementation),
+removing a node from the tree - three cases.
 
 
 </p>
@@ -21,7 +23,7 @@ Finish with priority queues, start on binary search trees.
 <div class="column_assign">
 <p markdown="block">
 
-Reading: chapter 11 (section 1)
+
 
 </p>
 </div>

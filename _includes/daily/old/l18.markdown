@@ -3,15 +3,16 @@
 <div class="column_date">
 <p markdown="block">
 
-Class #21 <br>
-Wed,11/14
-
+ <br>
+Class #17<br>
+Wednesday, March 28
 </p>
 </div>
 <div class="column_materials">
 <p markdown="block">
 
-Finish with priority queues, start on binary search trees.
+
+Queue ADT, array-based and reference-based implementation of queues.   
 
 
 
@@ -21,7 +22,8 @@ Finish with priority queues, start on binary search trees.
 <div class="column_assign">
 <p markdown="block">
 
-Reading: chapter 11 (section 1)
+Reading: chapter 8 (followed by chapter 11).
+
 
 </p>
 </div>

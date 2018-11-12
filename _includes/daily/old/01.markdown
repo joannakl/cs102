@@ -1,0 +1,49 @@
+<div class="lecture1">
+
+<div class="column_date">
+<p markdown="block">
+
+Class # 1 <br> 
+Tue, Sep. 5 (sec. 3)<br> 
+Wed, Sep. 6 (sec. 5)
+
+</p>
+</div>
+
+<div class="column_materials">
+<p markdown="block">
+
+Introduction to the class: syllabus. <br>
+Review of advanced Java topics. <br><br>
+
+[Code conventions for cs102](notes/CodeConventions.pdf) <br><br>
+
+[Lecture 1 notes](notes/lecture01_Intro.pdf) <br><br>
+
+[PythonTutor visualization of the code examples we did in class](https://goo.gl/acmPb1) <br>
+
+
+</p>
+</div>
+
+<div class="column_assign">
+<p markdown="block">
+
+Read chapters 1 and 2 in GTG. <br><br>
+
+Chapter 1 problems to work on (not submitted): 
+3, 4, 7, 8, 9, 15, 19, 21, 23, 25, 27, 29 (and more if you can). <br>
+Chapter 2 problems to work on (not submitted): 
+1, 2, 7, 9, 10, 11, 12, 13, 17, 20, 21, 23, 25, 29, 30, 31, 32, 34, 35 <br><br>
+
+
+If you do not have them already, install Java JDK 8 and Eclipse (the latest version is Neon). You must have Java JDK version 7 or 8. The prior version may lead to problems with your submissions and potential zero grade on projects. To see which version of JDK is installed on your machine:
+* in Eclipse: _Window → Preferences → Java → Installed JRE's_
+* in a terminal: _javac -version_ should show "javac 1.8...." or "javac 1.7..."
+
+Read the Code conventions document.
+
+</p>
+</div>
+
+</div>
