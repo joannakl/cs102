@@ -11,6 +11,8 @@ Wed,11/14
 <div class="column_materials">
 <p markdown="block">
 
+Introduction to binary search trees. Searching for a value in a binary search tree
+(algorithm, recursive vs iterative implementations, performance analysis).
 
 
 </p>
@@ -19,10 +21,9 @@ Wed,11/14
 <div class="column_assign">
 <p markdown="block">
 
-
+Reading: chapter 11 (section 1)
 
 </p>
 </div>
 
 </div>
-
