@@ -13,14 +13,14 @@ Tue,11/13 (sec. 6 and 9)
 
 
 
+<!--
 __Binary trees__ - distributed during the recitation.
 
-<!--
+-->
+
 
 __Binary trees__ [instructions](https://goo.gl/kUsncg) ,
 [worksheet](https://goo.gl/CcqXoa)
-
--->
 
 
 

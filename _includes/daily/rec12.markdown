@@ -3,18 +3,26 @@
 <div class="column_date">
 <p markdown="block">
 Recitation  <br>
-Tue,11/20 (sec. 6 and 9)
+Tue,11/27 (sec. 6 and 9)<br>
+Thu,11/29 (sec. 10)
 </p>
 </div>
 
 <div class="column_recitation">
 <p markdown="block">
 
+__Binary Search Trees__ - distributed during the recitation.
 
 
-__Recitation for Tuesday section ONLY__
+<!--
+__Binary Search Trees__ [instructions](https://goo.gl/vV2Lfe) ,
+[worksheet](https://goo.gl/F9R5oX)
 
-sec. 10: no recitation this week
+
+-->
+
+
+
 
 </p>
 </div>
