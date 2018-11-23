@@ -11,7 +11,7 @@ Mon,12/10
 <div class="column_materials">
 <p markdown="block">
 
-
+Hash tables. 
 
 </p>
 </div>
@@ -25,4 +25,3 @@ Mon,12/10
 </div>
 
 </div>
-

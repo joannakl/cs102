@@ -11,7 +11,9 @@ Mon,11/26
 <div class="column_materials">
 <p markdown="block">
 
+Project 6 - discussion.
 
+Implementation of the remove operation for the binary search tree.
 
 </p>
 </div>
@@ -20,9 +22,11 @@ Mon,11/26
 <p markdown="block">
 
 
+[__Project 6__](hwk/proj6.pdf) posted, due Dec. 5 at 11:55pm.  
+
+
 
 </p>
 </div>
 
 </div>
-

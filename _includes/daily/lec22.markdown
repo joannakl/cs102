@@ -11,6 +11,11 @@ Mon,11/19
 <div class="column_materials">
 <p markdown="block">
 
+Adding elements to the binary search tree: recursive and iterative implementations.
+
+Removing elements from the binary search tree: how does it work for leaves,
+nodes with one child, nodes with two children.
+
 
 
 </p>
@@ -25,4 +30,3 @@ Mon,11/19
 </div>
 
 </div>
-

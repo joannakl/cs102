@@ -12,6 +12,10 @@ Wed,12/12
 <p markdown="block">
 
 
+Q&amp;A for the final exam.
+
+Come with questions.
+
 
 </p>
 </div>
@@ -25,4 +29,3 @@ Wed,12/12
 </div>
 
 </div>
-

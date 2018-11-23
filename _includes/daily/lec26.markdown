@@ -11,7 +11,7 @@ Wed,12/05
 <div class="column_materials">
 <p markdown="block">
 
-
+Sorting: quicksort (algorithm, implementation, performance).
 
 </p>
 </div>
@@ -19,10 +19,9 @@ Wed,12/05
 <div class="column_assign">
 <p markdown="block">
 
-
+Reading: sections 10.1 and 10.2
 
 </p>
 </div>
 
 </div>
-

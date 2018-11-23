@@ -11,6 +11,7 @@ Wed,11/28
 <div class="column_materials">
 <p markdown="block">
 
+Finish with binary search trees.
 
 
 </p>
@@ -19,10 +20,9 @@ Wed,11/28
 <div class="column_assign">
 <p markdown="block">
 
-
+Reading: sections 12.1, 12.2 and 12.4 
 
 </p>
 </div>
 
 </div>
-
