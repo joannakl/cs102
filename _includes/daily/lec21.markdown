@@ -15,6 +15,9 @@ Introduction to binary search trees. Searching for a value in a binary search tr
 (algorithm, recursive vs iterative implementations, performance analysis).
 
 
+[BST notes](notes/lecture07_BST.pdf)
+
+
 </p>
 </div>
 

@@ -11,7 +11,11 @@ Mon,12/10
 <div class="column_materials">
 <p markdown="block">
 
-Hash tables. 
+Hash tables.
+
+
+[hash tables notes](notes/lecture09_HashTables.pdf)
+
 
 </p>
 </div>

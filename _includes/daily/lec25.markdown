@@ -11,7 +11,10 @@ Mon,12/03
 <div class="column_materials">
 <p markdown="block">
 
-Sorting: review of quadratic sorts, merge sort (algorithm, implementation, performance). 
+Sorting: review of quadratic sorts, merge sort (algorithm, implementation, performance).
+
+
+[sort notes](notes/lecture08_SearchingAndSorting.pdf)
 
 
 </p>
