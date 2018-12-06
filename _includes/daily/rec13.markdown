@@ -11,13 +11,15 @@ Thu,12/06 (sec. 10)
 <div class="column_recitation">
 <p markdown="block">
 
-
 <!--
-__Binary Search Trees__ [instructions](https://goo.gl/vV2Lfe) ,
-[worksheet](https://goo.gl/F9R5oX)
-
+__Sorting__
 
 -->
+__Sorting__ [instructions](https://goo.gl/YZRxmk) ,
+[worksheet](https://goo.gl/aJ7qJv)
+
+
+
 
 
 </p>

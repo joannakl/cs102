@@ -11,15 +11,16 @@ Thu,11/29 (sec. 10)
 <div class="column_recitation">
 <p markdown="block">
 
-__Binary Search Trees__ - distributed during the recitation.
-
 
 <!--
+__Binary Search Trees__ - distributed during the recitation.
+
+-->
+
 __Binary Search Trees__ [instructions](https://goo.gl/vV2Lfe) ,
 [worksheet](https://goo.gl/F9R5oX)
 
 
--->
 
 
 
