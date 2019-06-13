@@ -3,8 +3,8 @@ title: CSCI-UA 102 (Data Structures)
 short_title: CS 102
 description: "Course website for CSCI-UA 102 (Data Structures) course."
 
-baseurl: "/cs102_f18/" # the subpath of your site, e.g. /blog
-url: "https://joannakl.github.io/cs102_f18" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/cs102_f19/" # the subpath of your site, e.g. /blog
+url: "https://joannakl.github.io/cs102_f19" # the base hostname & protocol for your site, e.g. http://example.com
 
 markdown: kramdown
 kramdown:
@@ -25,32 +25,32 @@ course_time: "Mondays and Wednesdays 2:00AM - 3:15PM, CIWW 109"
 
 recitation_section1: "section 006"
 recitation_time1:  "Tuesdays 11:00PM - 12:15PM, CIWW 201"
-recitation_instructor1_full: "Rakshit Sareen"
-recitation_instructor1_name: "Rakshit"
-recitation_section2: "section 009"
-recitation_time2:  "Tuesdays 9:30PM - 10:45PM, CIWW 102"
-recitation_instructor2_full: "Rakshit Sareen"
-recitation_instructor2_name: "Rakshit"
-recitation_section3: "section 010"
-recitation_time3:  "Thursdays 9:30PM - 10:45PM, CIWW 102"
-recitation_instructor3_full: "Sachin Shastri"
-recitation_instructor3_name: "Sachin"
+recitation_instructor1_full: "Justin Mae"
+recitation_instructor1_name: "Justin"
+recitation_section2: "section 011"
+recitation_time2:  "Tuesdays 9:30PM - 10:45PM, CIWW 202"
+recitation_instructor2_full: "Justin Mae"
+recitation_instructor2_name: "Justin"
+recitation_section3: "section 012"
+recitation_time3:  "Thursdays 9:30PM - 10:45PM, CIWW 202"
+recitation_instructor3_full: "Tulsi Jain"
+recitation_instructor3_name: "Tulsi"
 
 
-instructor_office_hours: "Mondays 12:30-1:30pm, Thursdays 11:00-12:30
+instructor_office_hours: "TBD
 (or email me for an appointment if these hours do not work)"
 instructor_office_hours_location: "423 CIWW"
-recitation1_office_hours: "Mondays 3:15-5:15PM"
-recitation1_office_hours_location: "412 CIWW"
+recitation1_office_hours: "TBD"
+recitation1_office_hours_location: ""
 recitation2_office_hours: "TBD"
-recitation2_office_hours_location: "TBD"
-recitation3_office_hours: "Thursdays 3:30-4:30PM"
-recitation3_office_hours_location: "412 CIWW"
+recitation2_office_hours_location: ""
+recitation3_office_hours: "TBD"
+recitation3_office_hours_location: ""
 
 current_course1_title: "CSCI 102 sec. 5"
-current_course1_link: "https://cs.nyu.edu/~joannakl/cs102_f18/"
+current_course1_link: "https://cs.nyu.edu/~joannakl/cs102_f19/"
 current_course2_title: "CORE 109 sec. 1"
-current_course2_link: "https://cs.nyu.edu/~joannakl/core109_f18/"
+current_course2_link: "https://cs.nyu.edu/~joannakl/core109_f19/"
 current_course3_title: ""
 current_course3_link: ""
 
@@ -58,12 +58,12 @@ current_course3_link: ""
 tutor_location: "406 WWH"
 tutor_schedule_link: "http://cims.nyu.edu/~joannakl/CSCI102_common/#tutoring"
 
-midterm_exam_date: "week of Oct. 15"
-final_exam_date: "Mon., Dec., 17, 2018, 2:00pm-3:50pm "
+midterm_exam_date: "TBD"
+final_exam_date: "TBD"
 final_exams_link: "http://cs.nyu.edu/dynamic/courses/exams/"
 
 piazza_site: "https://piazza.com/nyu/fall2018/csci102/home"
-piazza_signup: "https://piazza.com/nyu/fall2018/csci102"
+piazza_signup: "https://piazza.com/nyu/fall2019/csci102"
 gradescope_site: "https://gradescope.com/"
 polleverywhere_guide: "https://blog.polleverywhere.com/students-poll-everywhere-101/"
 
