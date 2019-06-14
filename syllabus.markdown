@@ -40,8 +40,8 @@ to write fairly large programs right at the beginning of the semester.__
 Your grade will be based on:
 
 * exams (65%): one midterm exam (25%) and the final (40%),  
-* programming projects (30% total)
-* recitation activities, quizzes  (5% total)
+* programming projects (25% total)
+* recitation activities (5%), quizzes  (5%)
     * activities will be completed during recitations
     (usually in small groups) - you cannot get credit for these unless you are in the recitation
     * pop-quizzes will be given during lectures and recitations, **not announced** - no make-up quizzes will be given  
@@ -66,7 +66,7 @@ The grade of *Incomplete* is reserved for students who, for legitimate and docum
 
 I generally do not take attendance.
 
-__The missed quizzes and recitation activities cannot be made up__. Four lowest scores on quizzes and recitation will be dropped at the end of the
+__The missed quizzes and recitation activities cannot be made up__. Two lowest scores on quizzes and two lowest scores on recitation activities will be dropped at the end of the
 semester. This is to account for any excused (illness, holidays, job interviews, ...) or unexcused absences.
 
 The exams can be made up only in case of an excused absence with appropriate documentation.
@@ -78,20 +78,15 @@ If you will miss an exam due to a religious observance, please familiarize yours
 
 Recitations for the course are used to answer your questions regarding the material and posted projects.
 
-During recitations you will also get some hands on practice by participating in (usually group) activities.
+During recitations you will also get some hands on practice by participating in group activities.
 It may be a good idea to bring a laptop to recitations
 (although it is not a requirement since you will only need one laptop per group).
 
 
 # Assignments
----
 
-There will be two different types of assignments in this course:
-1. programming projects, and
-3. do not hand-in homeworks (DNHI).
-
-**Programming projects (30% of your final grade)** will be given on
-a regular basis. In general, they will be due one-two weeks after
+**Programming projects (25% of your final grade)** will be given on
+a regular basis. In general, they will be due 7-10 days after
 they are assigned. They will require you to write and, often,
 read and understand significant amount of code.
 
@@ -115,12 +110,12 @@ lines of code. It makes more sense to comment out broken pieces of the code and
 submit incomplete implementation of the project, instead of submitting a program
 that does not compile or run.
 
-**Do not hand-in homeworks (DNHI)** will be given to encourage you to
-practice the material that we discuss in class. The problem sets  include problems
-from the textbook as well as a few stand-alone problem sets. They will
-serve also as review questions for exams. <br>
-Recitations are the good place to have them discussed if you have questions about
-the solutions or would like to discuss correctness of your own solution!
+**Do not hand-in homeworks (DNHI)** are given to encourage you to
+practice the material that we discuss in class. The problem sets  and list of problems
+from the book that you should be looking at are listed under the _Resources_ tab
+of this page.  This of these problems also as a review and practice for the exam. <br>
+
+Recitations and Piazza posts are good places to have those problems discussed!
 
 
 # Academic Integrity Policy
