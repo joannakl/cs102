@@ -12,8 +12,9 @@ Wed, 9/05
 <p markdown="block">
 
 Introduction to the class. [Syllabus](syllabus.html).
-What do software engineers do.  
 
+<!-- What do software engineers do.  
+-->
 </p>
 </div>
 

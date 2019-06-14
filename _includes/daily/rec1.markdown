@@ -23,14 +23,14 @@ You should have been invited to complete registration for:
 <!--
 __Warm-up activity.__ - distributed during the recitation.
 -->
-         
+
 __Warm-up activity:__ [instructions](https://goo.gl/Yxvb4p ) ,
 [worksheet](https://goo.gl/ZqZrTY)
 
 
 
 ---
-
+<!--
 Once you complete the activity, download it in PDF format:
 _File -> Download As ... -> PDF Document (pdf)_
 
@@ -50,7 +50,7 @@ Here are quick steps for uploading to Gradescope:
 
 __Make sure that you add all of your group members to the submission on Gradescope__ - it is not enough to have their names in the pdf.
 
-
+-->
 
 </p>
 </div>
