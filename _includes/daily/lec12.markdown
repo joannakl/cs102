@@ -1,16 +1,17 @@
-<div class="lecture2">
+<div class="lecture1">
 
 <div class="column_date">
 <p markdown="block">
 
-Class #1 <br>
-Wed, 9/04
+Class #12 <br>
+Tue,10/15
 
 </p>
 </div>
 <div class="column_materials">
 <p markdown="block">
 
+<b>legislative day!!!, classes follow Monday schedule</b><br/><br/>
 
 
 </p>

@@ -2,7 +2,7 @@
 <div class="recitation">
 <div class="column_date">
 <p markdown="block">
-Recitation 2 <br>
+Recitation 3 <br>
 </p>
 </div>
 

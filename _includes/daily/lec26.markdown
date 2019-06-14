@@ -3,8 +3,8 @@
 <div class="column_date">
 <p markdown="block">
 
-Class #1 <br>
-Wed, 9/04
+Class #26 <br>
+Wed,12/04
 
 </p>
 </div>

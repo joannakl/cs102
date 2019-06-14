@@ -1,10 +1,10 @@
-<div class="lecture2">
+<div class="lecture1">
 
 <div class="column_date">
 <p markdown="block">
 
-Class #1 <br>
-Wed, 9/04
+Class #10 <br>
+Mon,10/07
 
 </p>
 </div>
