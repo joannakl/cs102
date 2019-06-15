@@ -5,7 +5,7 @@
 to another email account that you use regularly.
 
 * Use your __school's email account__ to send emails to professors, instructors, TA's, graders,
-administrators, etc. It is a violation of federal law, (FERPA - the Family Educational Rights and Privacy Act )[http://www.nyu.edu/students/student-information-and-resources/registration-records-and-graduation/forms-policies-procedures/FERPA.html]
+administrators, etc. It is a violation of federal law, [FERPA - the Family Educational Rights and Privacy Act](http://www.nyu.edu/students/student-information-and-resources/registration-records-and-graduation/forms-policies-procedures/FERPA.html)
 to have an email conversation about school-related matters using a non-
 school account because there is no proof that it is not spoofed and
 might be insecure. (Email sent from your school's account requires an authenticated login,
