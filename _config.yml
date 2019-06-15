@@ -6,6 +6,8 @@ description: "Course website for CSCI-UA 102 (Data Structures) course."
 baseurl: "/cs102_f19" # the subpath of your site, e.g. /blog
 url: "https://joannakl.github.io/cs102_f19" # the base hostname & protocol for your site, e.g. http://example.com
 
+email_etiquette: "email_etiquette.md"
+
 markdown: kramdown
 kramdown:
   entity_output: numeric
