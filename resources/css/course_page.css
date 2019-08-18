@@ -113,7 +113,7 @@ aside {
 aside h1 {
   margin: 0.25em 0.25em 0em 0em;
 }
-iframe {
+iframe.calendar {
   border-width: 0;
   width: 30%;
   padding: 0 2em 2em 2em;
@@ -123,9 +123,11 @@ iframe {
   aside {
     display: none;
   }
-  iframe {
+  iframe.calendar {
     margin: 0;
     padding: 0 2em 2em 2em;
+    float: none;
+    width: 90%;
   }
 }
 /******************************************/
