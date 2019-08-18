@@ -1,12 +1,12 @@
-/* Run 
+/* Run
  *    lessc styles.less styles.css
  * to generate the css file.
  */
 /* Color schemes website:
- *     http://colorschemedesigner.com  
+ *     http://colorschemedesigner.com
  */
 /*
-Color scheme: 
+Color scheme:
 */
 html {
   margin: 0;
@@ -116,6 +116,20 @@ aside h1 {
 @media (max-width: 700px), (max-device-width: 720px) {
   aside {
     display: none;
+  }
+}
+/******************************************/
+iframe.calendar {
+  border-width: 0;
+  width: 30%;
+  padding: 0 2em 2em 2em;
+  float: right;
+}
+@media (max-width: 700px), (max-device-width: 720px) {
+  iframe.calendar {
+    border-width: 0;
+    width: 30%;
+    padding: 0 2em 2em 2em;
   }
 }
 /******************************************/
