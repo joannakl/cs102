@@ -124,10 +124,8 @@ iframe {
     display: none;
   }
   iframe {
-    background: #b3a3c2;
-    margin: 100;
-    width: 100%;
-    padding: 0 200em 2em 2em;
+    margin: 0;
+    padding: 0 2em 2em 2em;
   }
 }
 /******************************************/
