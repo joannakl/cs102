@@ -113,22 +113,18 @@ aside {
 aside h1 {
   margin: 0.25em 0.25em 0em 0em;
 }
-@media (max-width: 700px), (max-device-width: 720px) {
-  aside {
-    display: none;
-  }
-}
-/******************************************/
-iframe.calendar {
+.calendar {
   border-width: 0;
   width: 30%;
   padding: 0 2em 2em 2em;
   float: right;
 }
 @media (max-width: 700px), (max-device-width: 720px) {
-  iframe.calendar {
+  aside {
+    display: none;
+  }
+  .calendar {
     border-width: 0;
-    width: 30%;
     padding: 0 2em 2em 2em;
   }
 }
