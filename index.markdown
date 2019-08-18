@@ -6,7 +6,7 @@ title: Course Essentials
 # Course Essentials
 ---
 
-<iframe src="https://calendar.google.com/calendar/embed?height=300&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FNew_York&amp;src=bnl1LmVkdV9qYnM2MjBraXZmMWE3cDA4aGFqMGhmN2VmY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%238E24AA&amp;showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showCalendars=0&amp;mode=AGENDA" style="border-width:0" width="30% padding: 0 2em 2em 2em; " height="300"  align="right"  frameborder="0" scrolling="no"></iframe>
+<iframe class="calendar" src="https://calendar.google.com/calendar/embed?height=300&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FNew_York&amp;src=bnl1LmVkdV9qYnM2MjBraXZmMWE3cDA4aGFqMGhmN2VmY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%238E24AA&amp;showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showCalendars=0&amp;mode=AGENDA"  height="300"  frameborder="0" scrolling="no"></iframe>
 
 <p class="hang" markdown="1"><span class="emph">Class meetings:</span> <br>{{ site.course_time }}
 (attendance is mandatory).</p>
