@@ -44,9 +44,9 @@ instructor_office_hours: "Mondays 11:30-12:30pm, Wednesdays 12:30-1:30pm, Thursd
 instructor_office_hours_location: "CIWW 423"
 recitation1_office_hours: "Tuesdays 3:00-5:00pm (CIWW 412), Fridays 10:00am-12:00pm (CIWW 412)"
 recitation1_office_hours_location: ""
-recitation2_office_hours: "Thursdays 2:00-4:00pm (CIWW 412)"
+recitation2_office_hours: "TBD"
 recitation2_office_hours_location: ""
-recitation3_office_hours: "TBD"
+recitation3_office_hours: "Thursdays 2:00-4:00pm (CIWW 412)"
 recitation3_office_hours_location: ""
 
 current_course1_title: "CSCI 102 sec. 5"
@@ -74,7 +74,7 @@ book_required_author: "Michael T. Goodrich, Roberto Tamassia, Michael H. Goldwas
 book_required_edition: "6th edition, "
 book_required_link: http://www.wiley.com/WileyCDA/WileyTitle/productCd-EHEP002900.html
 book_required_note: "**Required** Earlier edition should be fine. <br><br>
-Out Data Structures course is participating in the Follett Access
+Our Data Structures course is participating in the Follett Access
 program. This is an NYU Bookstore initiative that delivers required course materials
 digitally at the lowest possible price.  
 The book, <em>Data Structures & Algorithms</em> will be delivered to you digitally.
@@ -83,7 +83,7 @@ material. The cost of the book is $32.50, which will be added as a “book charg
 to your bursar bill, this is a savings of $123.75 over the new hardcopy price. <br>
 <b>If you decide not to use this digital edition you can opt-out of the program.
 The deadline for opting out is September 16th. <br>The link to opt out of the program is:
-https://includedcp.follett.com/2015 <br> "
+[https://includedcp.follett.com/2015](https://includedcp.follett.com/2015) <br> "
 book_required_image: "http://media.wiley.com/product_data/coverImage300/00/EHEP0029/EHEP002900.jpg"
 
 book_opt_1: "Open DSA"

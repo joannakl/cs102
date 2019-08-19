@@ -21,13 +21,13 @@ title: Course Essentials
 <span class="name">Joanna:</span>
 {{ site.instructor_office_hours }} ({{ site.instructor_office_hours_location }})
 <br>
-<span class="name">{{site.recitation_instructor1_name}}:</span> {{site.recitation1_office_hours}} ({{site.recitation1_office_hours_location }})
+<span class="name">{{site.recitation_instructor1_name}}:</span> {{site.recitation1_office_hours}} <!--({{site.recitation1_office_hours_location }})-->
 <br>
 <!--
 <span class="name">{{site.recitation_instructor2_name}}:</span> {{site.recitation2_office_hours}} ({{site.recitation2_office_hours_location }})
 <br>
 -->
-<span class="name">{{site.recitation_instructor3_name}}:</span> {{site.recitation3_office_hours}} ({{site.recitation3_office_hours_location }})
+<span class="name">{{site.recitation_instructor3_name}}:</span> {{site.recitation3_office_hours}} <!--({{site.recitation3_office_hours_location }})-->
 </p>
 
 
