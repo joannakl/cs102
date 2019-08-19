@@ -39,12 +39,12 @@ recitation_instructor3_full: "Tulsi Jain"
 recitation_instructor3_name: "Tulsi"
 
 
-instructor_office_hours: "TBD
+instructor_office_hours: "Mondays 11:30-12:30pm, Wednesdays 12:30-1:30pm, Thursdays 2:00-3:00pm
 (or email me for an appointment if these hours do not work)"
-instructor_office_hours_location: "423 CIWW"
-recitation1_office_hours: "TBD"
+instructor_office_hours_location: "CIWW 423"
+recitation1_office_hours: "Tuesdays 3:00-5:00pm (CIWW 412), Fridays 10:00am-12:00pm (CIWW 412)"
 recitation1_office_hours_location: ""
-recitation2_office_hours: "TBD"
+recitation2_office_hours: "Thursdays 2:00-4:00pm (CIWW 412)"
 recitation2_office_hours_location: ""
 recitation3_office_hours: "TBD"
 recitation3_office_hours_location: ""
@@ -73,7 +73,17 @@ book_required: "Data Structures and Algorithms in Java, "
 book_required_author: "Michael T. Goodrich, Roberto Tamassia, Michael H. Goldwasser, "
 book_required_edition: "6th edition, "
 book_required_link: http://www.wiley.com/WileyCDA/WileyTitle/productCd-EHEP002900.html
-book_required_note: "**Required**, earlier editions of the book should be fine. "
+book_required_note: "**Required** Earlier edition should be fine. <br><br>
+Out Data Structures course is participating in the Follett Access
+program. This is an NYU Bookstore initiative that delivers required course materials
+digitally at the lowest possible price.  
+The book, <em>Data Structures & Algorithms</em> will be delivered to you digitally.
+You will receive an email the week before classes giving you the link to access the
+material. The cost of the book is $32.50, which will be added as a “book charge”
+to your bursar bill, this is a savings of $123.75 over the new hardcopy price. <br>
+<b>If you decide not to use this digital edition you can opt-out of the program.
+The deadline for opting out is September 16th. <br>The link to opt out of the program is:
+https://includedcp.follett.com/2015 <br> "
 book_required_image: "http://media.wiley.com/product_data/coverImage300/00/EHEP0029/EHEP002900.jpg"
 
 book_opt_1: "Open DSA"
@@ -98,7 +108,7 @@ book_opt_3_author: "Chris Mayfield, Allen Downey, "
 book_opt_3_edition: ""
 book_opt_3_link: "https://open.umn.edu/opentextbooks/BookDetail.aspx?bookId=285"
 book_opt_3_note: "Optional Java resource<br> Open book - available online"
-book_opt_3_image: "https://open.umn.edu/opentextbooks/Images/9781491929568.png"
+book_opt_3_image: "resources/img/ThinkJava.png"
 
 
 
@@ -108,4 +118,4 @@ book_opt_4_author: "Ralph Morelli, Ralph Walde, "
 book_opt_4_edition: ""
 book_opt_4_link: "https://open.umn.edu/opentextbooks/BookDetail.aspx?bookId=218"
 book_opt_4_note: "Optional Java resource<br> Open book - available online"
-book_opt_4_image: "https://open.umn.edu/opentextbooks/Images/0000JavaJavaJ.png"
+book_opt_4_image: "resources/img/JavaJavaJava.jpg"
