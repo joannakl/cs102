@@ -3,7 +3,7 @@ layout: default
 ---
 
 Problems from the course textbook (<em>{{ site.book_required }}</em> {{ site.book_required_author }})
-that you should be working one once we cover the material in the corresponding chapter.
+that you should be working on once we cover the material in the corresponding chapter.
 
 ch 1: 3, 4, 7, 8, 9, 15, 19, 21, 23, 25, 27, 29 (and more if you can).
 
@@ -18,7 +18,7 @@ ch 5: 5.1-5, 5.7-10, 5.13, 5.16 (optional), 5.17, 5.18, 5.24-26
 ch 6: 6.1, 6.3-5, 6.7, 6.9, 6.12, 6.17-20, 6.26-29, 6.35-36, 6.38-39
 
 ch 7:
-(after list discussion): 7.1, 7.5, 7.9, 7.18, 7.19, 7.20, 7.27-29, 7.44, 7.51, 7.52 
+(after list discussion): 7.1, 7.5, 7.9, 7.18, 7.19, 7.20, 7.27-29, 7.44, 7.51, 7.52
 (after stack/queue discussion): 7.2, 7.3, 7.10, 7.25, 7.26, 7.34, 7.35,
 
 ch 8: 8.1, 8.2, 8.5, 8.7, 8.8, 8.10, 8.11, 8.18, 8.19, 8.22, 8.36, 8.37, 8.41, 8.42, 8.45, 8.52, 8.59, 8.62, 8.65
