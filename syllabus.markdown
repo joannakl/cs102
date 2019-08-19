@@ -84,6 +84,7 @@ It may be a good idea to bring a laptop to recitations
 
 
 # Assignments
+---
 
 **Programming projects (25% of your final grade)** will be given on
 a regular basis. In general, they will be due 7-10 days after
@@ -97,10 +98,10 @@ read and understand significant amount of code.
 For each project you will have a 5 hour buffer window after the due date.
 You can submit or resubmit the project during this time without any point
 penalty.
-The late project submissions lose 20% of their value for each day they are
+The late project submissions lose 20% of their original value for each day they are
 late. If you submit the project 5-24 hours late, the maximum score is 80
 (instead of 100). If you submit the project 24-48 hours late, the maximum
-score is 60 (instead of 100).
+score is 60 (instead of 100), etc.
 
 *Broken programming projects:*<br> If you hand in a program that does not
 compile or crashes when it is run, you will get a grade of zero on it.
@@ -112,10 +113,25 @@ that does not compile or run.
 
 **Do not hand-in homeworks (DNHI)** are given to encourage you to
 practice the material that we discuss in class. The problem sets  and list of problems
-from the book that you should be looking at are listed under the _Resources_ tab
-of this page.  This of these problems also as a review and practice for the exam. <br>
+from the book that you should be looking at are listed under the _Daily_ tab
+of this page.  You should use these problems also as a review and practice for the exams as well. <br>
 
 Recitations and Piazza posts are good places to have those problems discussed!
+
+
+
+# Exams
+---
+
+There will be a midterm and a final exam. All exams are cumulative.
+
+**Missing an exam:** There will be no make-up exams. Failure to take an exam
+counts as a zero grade on that exam. The only exception to this rule is for
+students who have a legitimate serious medical or personal emergency (documented).
+These students need to talk to me as soon as possible (trying to excuse an exam
+absence a week after it happened will not work).
+
+
 
 
 # Academic Integrity Policy
@@ -160,18 +176,6 @@ course website. These code fragments should be attributed to their original auth
 
 * Explaining how to use systems or tools
 * Helping others with high-level design issue
-
-# Exams
----
-
-There will be a midterm and a final exam. All exams are cumulative.
-
-**Missing an exam:** There will be no make-up exams. Failure to take an exam
-counts as a zero grade on that exam. The only exception to this rule is for
-students who have a legitimate serious medical or personal emergency (documented).
-These students need to talk to me as soon as possible (trying to excuse an exam
-absence a week after it happened will not work).
-
 
 
 # Topics Covered
