@@ -5,7 +5,7 @@
 
 * [Opportunities Mailing List](https://cs.nyu.edu/home/undergrad/opportunities.html)
 * [CS Department Tutoring](https://cs.nyu.edu/home/undergrad/tutoring.html)
-
+* [Student Groups and Organizations](https://cs.nyu.edu/home/undergrad/student_groups.html)
 
 ## NYU
 
