@@ -7,6 +7,7 @@ baseurl: "/cs102_f19" # the subpath of your site, e.g. /blog
 url: "https://joannakl.github.io/cs102_f19" # the base hostname & protocol for your site, e.g. http://example.com
 
 email_etiquette: "email_etiquette.md"
+info: "info.md"
 
 markdown: kramdown
 kramdown:

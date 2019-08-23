@@ -87,5 +87,7 @@ programs from the very first project.__
 {{ site.final_exam_date }}
 
 
+{% include   {{ site.info }} %}
+
 <br>
 <br>
