@@ -24,23 +24,23 @@ course_number: "CSCI-UA 102"
 course_name: "Data Structures"
 course_section: "005"
 course_semester: "Fall 2018"
-course_time: "Mondays and Wednesdays 2:00AM - 3:15PM, CIWW 109"
+course_time: "Mondays and Wednesdays 2:00PM - 3:15PM, CIWW 109"
 
 recitation_section1: "section 006"
-recitation_time1:  "Tuesdays 11:00PM - 12:15PM, CIWW 201"
+recitation_time1:  "Tuesdays 11:00AM - 12:15PM, CIWW 201"
 recitation_instructor1_full: "Justin Mae"
 recitation_instructor1_name: "Justin"
 recitation_section2: "section 011"
-recitation_time2:  "Thursday 9:30PM - 10:45PM, CIWW 202"
+recitation_time2:  "Thursday 9:30AM - 10:45AM, CIWW 202"
 recitation_instructor2_full: "Justin Mae"
 recitation_instructor2_name: "Justin"
 recitation_section3: "section 012"
-recitation_time3:  "Tuesdays 9:30PM - 10:45PM, CIWW 202"
+recitation_time3:  "Tuesdays 9:30AM - 10:45AM, CIWW 202"
 recitation_instructor3_full: "Tulsi Jain"
 recitation_instructor3_name: "Tulsi"
 
 
-instructor_office_hours: "Mondays 11:30-12:30pm, Wednesdays 12:30-1:30pm, Thursdays 2:00-3:00pm
+instructor_office_hours: "Mondays 11:30am-12:30pm, Wednesdays 12:30-1:30pm, Thursdays 2:00-3:00pm
 (or email me for an appointment if these hours do not work)"
 instructor_office_hours_location: "CIWW 423"
 recitation1_office_hours: "Tuesdays 1:00-3:00pm (???), Wednesdays 10:00am-12:00pm (CIWW 412)"
