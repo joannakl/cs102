@@ -85,7 +85,7 @@ programs from the very first project.__
 (date and time subject to change by CAS, check the dates posted by the department
 [here]( {{site.final_exams_link}} ) ) <br>
 {{ site.final_exam_date }}
-
+</p>
 
 {% include   {{ site.info }} %}
 
