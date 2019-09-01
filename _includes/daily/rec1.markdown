@@ -17,7 +17,7 @@ You should have been invited to complete registration for:
 	have to register with you NYU email address - the version that contains your NetID)
 -->
 - __Gradescope__, you will be automatically added when the rosters on NYU Classes and Gradescope are synchronized (you/we
-	have to register with your NYU email address - the version that contains your NetID, not any of its aliases - otherwise your
+	have to register with your NYU email address that is listed in NYU Classes - otherwise your
 	grades will not properly appear on NYU Classes)
 - __Piazza__, you can [self register]({{site.piazza_signup}}), if you did not get the invitation
 
