@@ -16,22 +16,23 @@ You should have been invited to complete registration for:
 - __Gradescope__, you can [self register]({{site.gradescope_site}}) using code MD3DW7, if you did not get the invitation (you
 	have to register with you NYU email address - the version that contains your NetID)
 -->
+
 - __Gradescope__, you will be automatically added when the rosters on NYU Classes and Gradescope are synchronized (you/we
-	have to register with your NYU email address that is listed in NYU Classes - otherwise your
-	grades will not properly appear on NYU Classes)
+	have to register with your NYU email address that is listed in NYU Classes - otherwise your grades will not properly appear on NYU Classes)
+
+- __Poll Everywhere__, follow the [registration link](https://PollEv.com/joannakl/register), if you did not get the invitation
 - __Piazza__, you can [self register]({{site.piazza_signup}}), if you did not get the invitation
 
 
 ---
 
-
+<!--
 __Warm-up activity.__ - distributed during the recitation.
+-->
 
-<!--         
 __Warm-up activity:__ [instructions](http://bit.ly/recitation1_instructions) ,
 [worksheet](http://bit.ly/recitation1
 )
--->
 
 
 ---
