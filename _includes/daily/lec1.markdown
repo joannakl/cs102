@@ -14,7 +14,11 @@ Wed, 9/04
 
 Introduction to the class.
 <br>
-[Syllabus](syllabus.html).
+[Syllabus](syllabus.html)
+<br>
+
+[PythonTutor visualization of the code examples](https://goo.gl/jLgCo5) <br>
+
 
 </p>
 </div>
@@ -26,7 +30,7 @@ Introduction to the class.
 - read chapters 1 and 2 in GTG
 - work on chapter problems for chapters 1 and 2 (see above for the listing)
 
-<!--
+
 - project 1: Reading and understanding code. Due __Sept. 20, 11:55pm__. <br>
   Familiarize yourself with the following code. The three files provide a simple implementation
   of a color converter (CSS named colors, RGB values, hex-representation). Once you decide that you understand the
@@ -43,7 +47,6 @@ Introduction to the class.
 
   (The quiz will be available on NYU Classes at the end of this week.)
 
--->
 
 </p>
 </div>
