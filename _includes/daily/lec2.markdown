@@ -11,6 +11,11 @@ Mon, 9/09
 <div class="column_materials">
 <p markdown="block">
 
+Advance Java concepts: reference variables vs. objects,
+inheritance,  constructor chaining, ...
+
+
+[Lecture 1 notes](notes/lecture01_Intro.pdf) <br><br>
 
 
 </p>
@@ -25,4 +30,3 @@ Mon, 9/09
 </div>
 
 </div>
-

@@ -10,6 +10,14 @@ Wed, 9/11
 </div>
 <div class="column_materials">
 <p markdown="block">
+<!--
+Quiz 1.
+-->
+
+Continue with advanced Java topics: inheritance, constructor chaining, overloading vs. overriding, passing objects to functions.
+
+Review of [code examples](code/lecture01.zip).
+
 
 
 
@@ -25,4 +33,3 @@ Wed, 9/11
 </div>
 
 </div>
-
