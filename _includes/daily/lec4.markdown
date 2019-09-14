@@ -11,6 +11,8 @@ Mon, 9/16
 <div class="column_materials">
 <p markdown="block">
 
+Continue with review of inheritance, polymorphism, abstract classes, interfaces.
+
 
 
 </p>
@@ -25,4 +27,3 @@ Mon, 9/16
 </div>
 
 </div>
-
