@@ -9,14 +9,14 @@ Recitation 2 <br>
 <div class="column_recitation">
 <p markdown="block">
 
-
+<!--
 
 __Writing bullet-proof code activity.__ - distributed during the recitation.
 
-<!--
+-->
+
 __Writing bullet-proof code:__ [instructions](http://bit.ly/recitation2)
 
--->
 <br>
 
 Resources for exception handling:
