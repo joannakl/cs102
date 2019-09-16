@@ -21,7 +21,7 @@ Continue with review of inheritance, polymorphism, abstract classes, interfaces.
 <div class="column_assign">
 <p markdown="block">
 
-
+Start reading chapters 3 and 7.1-2. 
 
 </p>
 </div>
