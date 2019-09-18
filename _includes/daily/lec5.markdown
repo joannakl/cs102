@@ -30,7 +30,7 @@ How is `ArrayList<E>` implemented.
 
 Project 2 is posted. Due: Sept. 28 at 11:55pm.
 - [project specification](hwk/proj2.pdf)
-- [San Francisco Restaurant Inspection dataset (CSV)](hwk/SF_restaurant_Scores_full.csv)
+- [San Francisco Restaurant Inspection dataset (CSV)](hwk/SF_restaurant_scores_full.csv)
 - [Coding Conventions for CS102](notes/CodeConventions.pdf)
 
 
