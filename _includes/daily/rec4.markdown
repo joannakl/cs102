@@ -10,9 +10,14 @@ Recitation 4 <br>
 <p markdown="block">
 
 
+__ArrayList - case study__
+
+<!--
+__ArrayList - case study:__ [instructions](http://bit.ly/recrec4)
+
+-->
 
 </p>
 </div>
 
 </div>
-
