@@ -17,7 +17,7 @@ inheritance,  constructor chaining, ...
 
 [Lecture 1 notes](notes/lecture01_Intro.pdf) <br><br>
 
-[short code examples](https://github.com/joannakl/cs102_resources/tree/master/scraps)
+[short code examples](https://github.com/joannakl/cs102_resources/tree/master/code_examples/inheritance)
 
 </p>
 </div>
