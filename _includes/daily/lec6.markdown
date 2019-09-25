@@ -19,10 +19,11 @@ Exception handling:
 - catching and handling exceptions using `try{...}catch(){...}` blocks
 
 Continue with an array-based implementation for the List ADT:
-- how to resize the array (bitwise righ shift operator `>>`, why adding two positive `int` variables can result in a negative number), - searching for an element in a list.
+- how to resize the array (bitwise right shift operator `>>`, why adding two positive `int` variables can result in a negative number),
+- searching for an element in a list
 
 
-[short code examples](https://github.com/joannakl/cs102_resources/tree/master/code_examples/lists)
+[short code examples](https://github.com/joannakl/cs102_resources/tree/master/code_examples/list)
 
 
 </p>
