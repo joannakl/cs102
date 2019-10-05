@@ -11,7 +11,7 @@ Wed,10/23
 <div class="column_materials">
 <p markdown="block">
 
-
+__Midterm Exam__
 
 </p>
 </div>
@@ -25,4 +25,3 @@ Wed,10/23
 </div>
 
 </div>
-

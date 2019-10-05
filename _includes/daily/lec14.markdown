@@ -11,7 +11,7 @@ Mon,10/21
 <div class="column_materials">
 <p markdown="block">
 
-
+Q&A for the midterm exam 
 
 </p>
 </div>
@@ -25,4 +25,3 @@ Mon,10/21
 </div>
 
 </div>
-

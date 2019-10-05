@@ -15,7 +15,7 @@ Linked list.
 
 Adding nodes in an arbitrary position. Removing elements, retrieving elements stored at a particular "index".
 
-Efficiency of operations in a lined list vs. an array. 
+Efficiency of operations in a linked list vs. an array. 
 
 
 </p>
