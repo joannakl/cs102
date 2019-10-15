@@ -11,6 +11,10 @@ Wed,10/09
 <div class="column_materials">
 <p markdown="block">
 
+Cloning objects and list: shallow copy vs. deep copy of an array/list. Implementing
+`Cloneable` interface.
+
+Stacks ADT. Array-based and reference-based implementation. Efficiency concerns - achieving O(1) performance on all operations. 
 
 
 </p>
@@ -25,4 +29,3 @@ Wed,10/09
 </div>
 
 </div>
-

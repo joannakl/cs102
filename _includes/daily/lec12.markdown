@@ -13,6 +13,7 @@ Tue,10/15
 
 <b>legislative day!!!, classes follow Monday schedule</b><br/><br/>
 
+Queue ADT. Array-based and reference-based implementation. Efficiency concerns. 
 
 </p>
 </div>
@@ -26,4 +27,3 @@ Tue,10/15
 </div>
 
 </div>
-
