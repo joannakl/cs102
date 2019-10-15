@@ -14,7 +14,7 @@ Wed,10/09
 Cloning objects and list: shallow copy vs. deep copy of an array/list. Implementing
 `Cloneable` interface.
 
-Stacks ADT. Array-based and reference-based implementation. Efficiency concerns - achieving O(1) performance on all operations. 
+Stacks ADT. Array-based and reference-based implementation. Efficiency concerns - achieving O(1) performance on all operations.
 
 
 </p>
@@ -23,6 +23,7 @@ Stacks ADT. Array-based and reference-based implementation. Efficiency concerns 
 <div class="column_assign">
 <p markdown="block">
 
+Reading: chapter 6 (concentrate on stacks, 6.1, and queues, 6.2) 
 
 
 </p>

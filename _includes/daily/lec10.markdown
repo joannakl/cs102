@@ -24,7 +24,7 @@ Comparing lists for equality.
 <div class="column_assign">
 <p markdown="block">
 
-Project 3 is posted. Due: Oct. 15 at 11:55pm.
+Project 3 is posted. Due: ~~Oct. 15~~ Oct. 16 at 11:55pm.
 - [project specification](hwk/proj3.pdf)
 - [Coding Conventions for CS102](notes/CodeConventions.pdf)
 
