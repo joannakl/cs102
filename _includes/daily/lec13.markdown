@@ -24,10 +24,10 @@ Review of performance analysis of different data structures that we discussed: l
 
 
 Reading: chapter 4 (concentrate on big-O, no proofs required
-- although they will come in handy for the _Basic Algorithms_ course). 
+- although they will come in handy for the _Basic Algorithms_ course).
 
 
-<!--
+
 __Project 4__ (due date Oct. 30 at 11:55pm - __no grade period for this project__):
 
 Familiarize yourself with the following code.
@@ -52,7 +52,7 @@ Classes that implement stack and queue ADTs in Java API:
 
 
 (The quiz will be available on NYU Classes in a few days.)
--->
+
 
 </p>
 </div>
