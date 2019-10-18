@@ -23,8 +23,8 @@ Review of performance analysis of different data structures that we discussed: l
 <p markdown="block">
 
 
-Reading: chapter 4 (concentrate on big-O, no proofs required
-- although they will come in handy for the _Basic Algorithms_ course).
+Reading: chapter 4 (concentrate on big-O, no proofs required - although
+they will come in handy for the _Basic Algorithms_ course).
 
 
 
