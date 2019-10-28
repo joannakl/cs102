@@ -11,8 +11,15 @@ Wed,10/30
 <div class="column_materials">
 <p markdown="block">
 
+<!--
+Basics or recursive backtracking: generating all binary sequences with
+a given length, generating binary sequences with a given length that meet a
+particular restriction (ex., no zero bit in the second position).
 
+Think about: how to generate decimal sequences?, how to generate alphabetic
+sequences?
 
+--> 
 </p>
 </div>
 
@@ -25,4 +32,3 @@ Wed,10/30
 </div>
 
 </div>
-
