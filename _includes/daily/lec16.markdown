@@ -18,12 +18,11 @@ What makes a function recursive? Base case. Recursive case. Error handling / par
 validation in recursive functions.
 
 Examples of recursive functions:
-- calculating sum of digits in a positive number, 
+- calculating sum of digits in a positive number,
 - calculating `a^n` using `O(n)` and `O(long n)` algorithms,
 - factorial calculation,
 - Fibonacci sequence calculation (and why it is very inefficient to do it
-using recursion),
-- determining if a string is a palindrome.
+using recursion).
 
 
 [recursion notes](notes/lecture04_Recursion.pdf)

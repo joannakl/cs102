@@ -11,17 +11,21 @@ Mon,11/04
 <div class="column_materials">
 <p markdown="block">
 
-<!--
 
-Finish with recursion.
 
-A singly linked list is a recursive structure.
+Basics or recursive backtracking: generating all binary sequences with
+a given length, generating binary sequences with a given length that meet a
+particular restriction (ex., no zero bit in the second position), testing
+if a list of numbers contains a subset that satisfies certain constraints.
 
-Calculating size of a linked list recursively.
+[code examples](https://github.com/joannakl/cs102_resources/tree/master/code_examples/recursion/sequences)
 
-Designing a recursive method to add a node to a linked list.
+Think about: how to generate decimal sequences?, how to generate alphabetic
+sequences?
 
--->
+Quick overview of the eight queens problem.
+
+[code example](https://github.com/joannakl/cs102_resources/tree/master/code_examples/recursion/eightQueenProblem)
 
 </p>
 </div>

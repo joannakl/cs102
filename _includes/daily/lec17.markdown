@@ -11,15 +11,15 @@ Wed,10/30
 <div class="column_materials">
 <p markdown="block">
 
-<!--
-Basics or recursive backtracking: generating all binary sequences with
-a given length, generating binary sequences with a given length that meet a
-particular restriction (ex., no zero bit in the second position).
 
-Think about: how to generate decimal sequences?, how to generate alphabetic
-sequences?
+Design a recursive algorithm for palindrome detection.
+([code example](https://github.com/joannakl/cs102_resources/tree/master/code_examples/recursion/intro) )
 
---> 
+A singly linked list is a recursive structure.
+Calculating size of a linked list recursively.
+
+Think about: designing a recursive method to add a node to a linked list.
+
 </p>
 </div>
 

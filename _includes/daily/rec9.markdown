@@ -10,9 +10,21 @@ Recitation 9 <br>
 <p markdown="block">
 
 
+__Interview Questions__ - distributed during the recitation.
+
+(Thursday section only. Tuesday sections will complete it later in the
+semester. )
+
+<!--
+
+
+__Interview Questions__ [instructions](
+http://bit.ly/rec9_interview)
+
+-->
+
 
 </p>
 </div>
 
 </div>
-

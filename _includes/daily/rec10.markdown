@@ -11,8 +11,16 @@ Recitation 10 <br>
 
 
 
+__Magic of Recursion, Part 2__ - distributed during the recitation.
+
+<!--
+
+
+__Magic of Recursion, Part 2__ [instructions](
+http://bit.ly/rec10_recursion)
+
+-->
 </p>
 </div>
 
 </div>
-
