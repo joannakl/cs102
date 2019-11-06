@@ -34,11 +34,6 @@ Quick overview of the eight queens problem.
 <p markdown="block">
 
 
-Project 5 is posted. Due: Nov. 18 at 11:55pm.
-- [project specification](hwk/proj5.pdf)
-- [Coding Conventions for CS102](notes/CodeConventions.pdf)
-
-
 
 
 </p>
