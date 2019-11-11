@@ -11,8 +11,14 @@ Recitation 11 <br>
 
 
 
+__Sorting__
+
+<!--
+__Sorting__ [instructions](http://bit.ly/rec11_sorting)
+
+-->
+
 </p>
 </div>
 
 </div>
-
