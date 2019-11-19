@@ -11,6 +11,9 @@ Wed,11/20
 <div class="column_materials">
 <p markdown="block">
 
+Binary search trees continued:
+- source code for adding values to a BST
+- source code for removing values from a BST
 
 
 </p>
@@ -25,4 +28,3 @@ Wed,11/20
 </div>
 
 </div>
-

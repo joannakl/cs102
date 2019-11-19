@@ -11,8 +11,16 @@ Recitation 12 <br>
 
 
 
+__Binary trees and binary search trees__ - distributed during the recitation.
+
+
+<!--
+
+__Binary trees and binary search trees__ [instructions](http://bit.ly/rec12_trees)
+-->
+
+
 </p>
 </div>
 
 </div>
-

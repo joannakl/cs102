@@ -10,13 +10,13 @@ Recitation 11 <br>
 <p markdown="block">
 
 
+<!--
 
 __Sorting__
 
-<!--
-__Sorting__ [instructions](http://bit.ly/rec11_sorting)
-
 -->
+
+__Sorting__ [instructions](http://bit.ly/rec11_sorting)
 
 </p>
 </div>
