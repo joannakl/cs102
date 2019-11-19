@@ -31,7 +31,7 @@ Inorder/preorder/postorder traversals for a binary tree.
 <div class="column_assign">
 <p markdown="block">
 
-
+Reading: chapter 11.1
 
 </p>
 </div>

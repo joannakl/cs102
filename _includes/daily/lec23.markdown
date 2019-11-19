@@ -22,7 +22,7 @@ Binary search trees continued:
 <div class="column_assign">
 <p markdown="block">
 
-
+Reading: chapter 11.2-3 
 
 </p>
 </div>

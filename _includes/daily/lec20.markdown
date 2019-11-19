@@ -25,7 +25,7 @@ Quicksort, its implementation and performance.
 <div class="column_assign">
 <p markdown="block">
 
-
+Reading: chapter 8 
 
 </p>
 </div>
