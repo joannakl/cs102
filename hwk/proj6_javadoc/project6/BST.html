@@ -67,7 +67,7 @@ implements Iterable&lt;E&gt;, Cloneable</pre>
  which could be as low as logN for balanced trees, but could be as large as N
  for unbalanced trees) time cost for the basic operations (<code>add</code>,
  <code>remove</code> and <code>contains</code>).
- 
+
  <p>
  This class implements many of the methods provided by the Java framework's
  <code>TreeSet</code> class. .</div>
@@ -802,15 +802,15 @@ implements Iterable&lt;E&gt;, Cloneable</pre>
 <h4>toStringTreeFormat</h4>
 <pre class="methodSignature">public&nbsp;String&nbsp;toStringTreeFormat()</pre>
 <div class="block">Produces tree like string representation of this tree.
- 
+
  Returns a string representation of this tree in a tree-like format. The
  string representation consists of a tree-like representation of this tree.
  Each node is shown in its own line with the indentation showing the depth of
  the node in this tree. The root is printed on the first line, followed by its
  left subtree, followed by its right subtree. For example
- 
+
  <pre>
- K 
+ K
  |--D
     |--B
        |--A
@@ -827,27 +827,29 @@ implements Iterable&lt;E&gt;, Cloneable</pre>
           |--null
        |--O
           |--N
+             |--null
+             |--null
           |--null
     |--null
  </pre>
- 
+
  is a string representation of this tree:
- 
+
  <pre>
-  
- 
-            K 
+
+
+            K
          /     \
        D        P
-     /   \     /   
+     /   \     /
     B     J   M
    /        /   \
   A        L     O
                /
               N
- 
+
  </pre>
- 
+
  <br>
  This operation should be O(N).</div>
 <dl>
