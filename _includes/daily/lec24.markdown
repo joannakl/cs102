@@ -11,6 +11,10 @@ Mon,11/25
 <div class="column_materials">
 <p markdown="block">
 
+AVL trees: definition, calculating height of nodes in a tree, balance factor calculation, re-balancing the tree using RR, LL, RL and LR rotations,
+incorporating rotations into add/remove functions. <br><br>
+
+[AVL tree visualization](http://www.cs.usfca.edu/~galles/visualization/AVLtree.html)
 
 
 </p>
@@ -19,10 +23,9 @@ Mon,11/25
 <div class="column_assign">
 <p markdown="block">
 
-
+Reading chapter 11.3
 
 </p>
 </div>
 
 </div>
-

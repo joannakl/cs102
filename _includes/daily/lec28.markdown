@@ -16,7 +16,7 @@ Q&amp;A for the final exam.
 
 Come with questions.
 
-
+<!--
 __Topics to review for the final__:
 
 - advanced Java topics
@@ -34,9 +34,9 @@ __Topics to review for the final__:
 - priority queue, heap (how it works, no implementation)
 - search trees
    - binary search tree
-   <!-- - AVL trees -->
+   - AVL trees
 - iterators for lists and trees
-- sort algorithms: mergesort, quicksort <!--, (heapsort)-->
+- sort algorithms: mergesort, quicksort,  heapsort)
 - basics of hash tables (how it works, no implementation)
 - performance results for all the discussed data structures and algorithms,
 big-O notation
@@ -61,7 +61,7 @@ be able to read the code that implements it)
 - chapter 12: sections 1, 2
 - chapter 10: sections 1, 2 (very lightly)
 
-
+-->
 
 
 </p>
