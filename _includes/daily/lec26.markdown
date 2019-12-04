@@ -15,7 +15,7 @@ Finish with priority queue data structure.
 
 Heap sort: how it works and what is its performance.
 
-[Heap sort visualization](https://www.cs.usfca.edu/~galles/visualization/HeapSort.html) 
+[Heap sort visualization](https://www.cs.usfca.edu/~galles/visualization/HeapSort.html)
 
 </p>
 </div>
@@ -34,7 +34,8 @@ to make sure that you understand it. The code is in the textbook and you can dow
 the sourcecode from the publisher's website. The specific classes that you should
 start with are:
 - [`HeapPriorityQueue.java`](hwk/HeapPriorityQueue.java)
-- [`AbstractPriorityQueue.java.java`](hwk/AbstractPriorityQueue.java.java)
+- [`AbstractPriorityQueue.java.java`](hwk/AbstractPriorityQueue.java)
+  
 There may be other classes that are defined in other parts of the book that you will need
 to look up.
 
