@@ -19,7 +19,7 @@ binary heap.
 
 
 [Lecture 6 notes](notes/lecture06_PriorityQueues.pdf) <br>
-???
+
 
 </p>
 </div>
@@ -27,7 +27,7 @@ binary heap.
 <div class="column_assign">
 <p markdown="block">
 
-Reading chapter 9 
+Reading chapter 9
 
 </p>
 </div>

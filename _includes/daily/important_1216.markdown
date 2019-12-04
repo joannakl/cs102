@@ -1,4 +1,3 @@
-cx=]ad
 <div class="change">
 <div class="column_date">
 <p markdown="block">
