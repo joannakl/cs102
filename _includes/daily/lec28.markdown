@@ -16,7 +16,7 @@ Q&amp;A for the final exam.
 
 Come with questions.
 
-<!--
+
 __Topics to review for the final__:
 
 - advanced Java topics
@@ -61,7 +61,7 @@ be able to read the code that implements it)
 - chapter 12: sections 1, 2
 - chapter 10: sections 1, 2 (very lightly)
 
--->
+
 
 
 </p>
