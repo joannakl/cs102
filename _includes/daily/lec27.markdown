@@ -12,6 +12,12 @@ Mon,12/09
 <p markdown="block">
 
 
+Intro to hash tables.
+
+
+[hash tables notes](notes/lecture09_HashTables.pdf)
+
+[hash tables visualization](https://visualgo.net/en/hashtable)
 
 </p>
 </div>
@@ -25,4 +31,3 @@ Mon,12/09
 </div>
 
 </div>
-
