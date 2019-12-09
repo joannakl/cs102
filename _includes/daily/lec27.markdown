@@ -15,7 +15,7 @@ Mon,12/09
 Intro to hash tables.
 
 
-[hash tables notes](notes/lecture09_HashTables.pdf)
+[hash tables notes](notes/lecture9_HashTables.pdf)
 
 [hash tables visualization](https://visualgo.net/en/hashtable)
 
