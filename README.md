@@ -9,7 +9,7 @@ that I teach.
 
 
 ## Contributions
-- If you find a problem, feel free to report an issue.
+- If you find a problem, feel free to report an issue   .
 - If you want to fix a problem, create a pull request.
 - If there are other resources that you think this psage should link to,
 make a pull request (but no promises that I will merge it).
