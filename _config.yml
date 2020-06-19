@@ -18,8 +18,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
 
-
-
 course_number: "CSCI-UA 102"
 course_name: "Data Structures"
 course_section: "005"
@@ -38,7 +36,6 @@ recitation_section3: "section 012"
 recitation_time3:  "Tuesdays 9:30AM - 10:45AM, CIWW 202"
 recitation_instructor3_full: "Tulsi Jain"
 recitation_instructor3_name: "Tulsi"
-
 
 instructor_office_hours: "Mondays 11:30am-12:30pm, Wednesdays 12:30-1:30pm, Thursdays 2:00-3:00pm
 (or email me for an appointment if these hours do not work)"
