@@ -14,13 +14,13 @@ TBD
 <!--
 |<img src="{{site.book_required_image}}" name="Book" border="0px" width="120px">| **[{{ site.book_required }}]( {{ site.book_required_link }})** {{ site.book_required_edition }}<br> {{ site.book_required_author }} <br> {{ site.book_required_note }}  |
 |<img src="{{site.book_opt_1_image}}" name="Book" border="0px" width="120px">| **[{{ site.book_opt_1 }}]( {{ site.book_opt_1_link }})** {{ site.book_opt_1_edition }}<br> {{ site.book_opt_1_author }} <br> {{ site.book_opt_1_note }}  |
-
+-->
 ## Java reference books
 
 |<img src="{{site.book_opt_2_image}}" name="Book" border="0px" width="100px">| **[{{ site.book_opt_2 }}]( {{ site.book_opt_2_link }})** {{ site.book_opt_2_edition }}<br> {{ site.book_opt_2_author }} <br> {{ site.book_opt_2_note }}  |
 |<img src="{{site.book_opt_3_image}}" name="Book" border="0px" width="100px">| **[{{ site.book_opt_3 }}]( {{ site.book_opt_3_link }})** {{ site.book_opt_3_edition }}<br> {{ site.book_opt_3_author }} <br> {{ site.book_opt_3_note }}  |
 |<img src="{{site.book_opt_4_image}}" name="Book" border="0px" width="100px">| **[{{ site.book_opt_4 }}]( {{ site.book_opt_4_link }})** {{ site.book_opt_4_edition }}<br> {{ site.book_opt_4_author }} <br> {{ site.book_opt_4_note }}  |
--->
+
 
 # Prerequisites
 ---
