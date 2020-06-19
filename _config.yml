@@ -20,9 +20,9 @@ exclude:
 
 course_number: "CSCI-UA 102"
 course_name: "Data Structures"
-course_section: "005"
-course_semester: "Fall 2019"
-course_time: "Mondays and Wednesdays 2:00PM - 3:15PM, CIWW 109"
+course_section: "TBD"
+course_semester: "Fall 2020"
+course_time: "TBD"
 
 recitation_section1: "section 006"
 recitation_time1:  "Tuesdays 11:00AM - 12:15PM, CIWW 201"
@@ -58,12 +58,12 @@ current_course3_link: ""
 tutor_location: "406 WWH"
 tutor_schedule_link: "http://cims.nyu.edu/~joannakl/CSCI102_common/#tutoring"
 
-midterm_exam_date: "October 23 (TENTATIVE)"
-final_exam_date: "December 16, 2:00-3:50pm"
+midterm_exam_date: "TBD"
+final_exam_date: "TBD"
 final_exams_link: "http://cs.nyu.edu/dynamic/courses/exams/"
 
-piazza_site: "https://piazza.com/nyu/fall2019/csci102/home"
-piazza_signup: "https://piazza.com/nyu/fall2019/csci102"
+piazza_site: "https://piazza.com/nyu/fall2020/csci102/home"
+piazza_signup: "https://piazza.com/nyu/fall2020/csci102"
 gradescope_site: "https://gradescope.com/"
 polleverywhere_guide: "https://blog.polleverywhere.com/students-poll-everywhere-101/"
 
@@ -71,17 +71,7 @@ book_required: "Data Structures and Algorithms in Java, "
 book_required_author: "Michael T. Goodrich, Roberto Tamassia, Michael H. Goldwasser, "
 book_required_edition: "6th edition, "
 book_required_link: http://www.wiley.com/WileyCDA/WileyTitle/productCd-EHEP002900.html
-book_required_note: "**Required** Earlier edition should be fine. <br><br>
-Our Data Structures course is participating in the Follett Access
-program. This is an NYU Bookstore initiative that delivers required course materials
-digitally at the lowest possible price.  
-The book, <em>Data Structures & Algorithms</em> will be delivered to you digitally.
-You will receive an email the week before classes giving you the link to access the
-material. The cost of the book is $32.50, which will be added as a “book charge”
-to your bursar bill, this is a savings of $123.75 over the new hardcopy price. <br>
-<b>If you decide not to use this digital edition you can opt-out of the program.
-The deadline for opting out is September 16th. <br>The link to opt out of the program is:
-[https://includedcp.follett.com/2015](https://includedcp.follett.com/2015) <br> "
+book_required_note: " "
 book_required_image: "http://media.wiley.com/product_data/coverImage300/00/EHEP0029/EHEP002900.jpg"
 
 book_opt_1: "Open DSA"

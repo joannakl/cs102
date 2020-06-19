@@ -10,6 +10,8 @@ title: Syllabus
 
 ## Data structures books
 
+TBD
+<!--
 |<img src="{{site.book_required_image}}" name="Book" border="0px" width="120px">| **[{{ site.book_required }}]( {{ site.book_required_link }})** {{ site.book_required_edition }}<br> {{ site.book_required_author }} <br> {{ site.book_required_note }}  |
 |<img src="{{site.book_opt_1_image}}" name="Book" border="0px" width="120px">| **[{{ site.book_opt_1 }}]( {{ site.book_opt_1_link }})** {{ site.book_opt_1_edition }}<br> {{ site.book_opt_1_author }} <br> {{ site.book_opt_1_note }}  |
 
@@ -18,7 +20,7 @@ title: Syllabus
 |<img src="{{site.book_opt_2_image}}" name="Book" border="0px" width="100px">| **[{{ site.book_opt_2 }}]( {{ site.book_opt_2_link }})** {{ site.book_opt_2_edition }}<br> {{ site.book_opt_2_author }} <br> {{ site.book_opt_2_note }}  |
 |<img src="{{site.book_opt_3_image}}" name="Book" border="0px" width="100px">| **[{{ site.book_opt_3 }}]( {{ site.book_opt_3_link }})** {{ site.book_opt_3_edition }}<br> {{ site.book_opt_3_author }} <br> {{ site.book_opt_3_note }}  |
 |<img src="{{site.book_opt_4_image}}" name="Book" border="0px" width="100px">| **[{{ site.book_opt_4 }}]( {{ site.book_opt_4_link }})** {{ site.book_opt_4_edition }}<br> {{ site.book_opt_4_author }} <br> {{ site.book_opt_4_note }}  |
-
+-->
 
 # Prerequisites
 ---
@@ -37,6 +39,9 @@ to write fairly large programs right at the beginning of the semester.__
 # Grading
 ---
 
+TBD
+
+<!--
 Your grade will be based on:
 
 * exams (65%): one midterm exam (25%) and the final (40%),  
@@ -60,9 +65,13 @@ Grades will be determined using the following scale:
 
 
 The grade of *Incomplete* is reserved for students who, for legitimate and documented reason, miss the final exam. The grade of *Incomplete* **will not be given** to student who started falling behind in class. Those students should withdraw from the class or switch to *Pass/Fail* option.
-
+-->
 # Absences (excused and unexcused)
 ---
+
+TBD
+
+<!--
 
 I generally do not take attendance.
 
@@ -72,19 +81,28 @@ semester. This is to account for any excused (illness, holidays, job interviews,
 The exams can be made up only in case of an excused absence with appropriate documentation.
 
 If you will miss an exam due to a religious observance, please familiarize yourself with [University Calendar Policy on Religious Holidays](https://goo.gl/e6NHDe) and talk to me well in advance to come up with alternative arrangements.
+-->
 
 # Recitations
 ---
+
+TBD
+
+<!--
 
 Recitations for the course are used to answer your questions regarding the material and posted projects.
 
 During recitations you will also get some hands on practice by participating in group activities.
 It may be a good idea to bring a laptop to recitations
 (although it is not a requirement since you will only need one laptop per group).
-
+-->
 
 # Assignments
 ---
+
+TBD
+
+<!--
 
 **Programming projects (25% of your final grade)** will be given on
 a regular basis. In general, they will be due 7-10 days after
@@ -117,11 +135,15 @@ from the book that you should be looking at are listed under the _Daily_ tab
 of this page.  You should use these problems also as a review and practice for the exams as well. <br>
 
 Recitations and Piazza posts are good places to have those problems discussed!
-
+-->
 
 
 # Exams
 ---
+
+TBD
+
+<!--
 
 There will be a midterm and a final exam. All exams are cumulative.
 
@@ -131,7 +153,7 @@ students who have a legitimate serious medical or personal emergency (documented
 These students need to talk to me as soon as possible (trying to excuse an exam
 absence a week after it happened will not work).
 
-
+-->
 
 
 # Academic Integrity Policy

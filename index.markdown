@@ -11,23 +11,29 @@ title: Course Essentials
 <p class="hang" markdown="1"><span class="emph">Class meetings:</span> <br>{{ site.course_time }}
 (attendance is mandatory).</p>
 
-<p class="hang" markdown="1"><span class="emph">Recitations</span>  (attendance is mandatory): <br>
+<p class="hang" markdown="1"><span class="emph">Recitations</span>  (attendance is mandatory): <br> TBD
+<!--
 {{ site.recitation_section1 }}: {{ site.recitation_time1 }}, {{ site.recitation_instructor1_full }} <br>
 {{ site.recitation_section2 }}: {{ site.recitation_time2 }}, {{ site.recitation_instructor2_full }} <br>
 {{ site.recitation_section3 }}: {{ site.recitation_time3 }}, {{ site.recitation_instructor3_full }}
+-->
 </p>
 
 <p class="hang" markdown="1"><span class="emph">Office hours:</span> <br>
+TBD
+<!--
 <span class="name">Joanna:</span>
 {{ site.instructor_office_hours }} ({{ site.instructor_office_hours_location }})
 <br>
-<span class="name">{{site.recitation_instructor1_name}}:</span> {{site.recitation1_office_hours}} <!--({{site.recitation1_office_hours_location }})-->
+<span class="name">{{site.recitation_instructor1_name}}:</span> {{site.recitation1_office_hours}}
 <br>
-<!--
+
 <span class="name">{{site.recitation_instructor2_name}}:</span> {{site.recitation2_office_hours}} ({{site.recitation2_office_hours_location }})
 <br>
+
+<span class="name">{{site.recitation_instructor3_name}}:</span> {{site.recitation3_office_hours}}
+
 -->
-<span class="name">{{site.recitation_instructor3_name}}:</span> {{site.recitation3_office_hours}} <!--({{site.recitation3_office_hours_location }})-->
 </p>
 
 
