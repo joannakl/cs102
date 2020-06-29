@@ -77,8 +77,8 @@ book_required_image: "http://media.wiley.com/product_data/coverImage300/00/EHEP0
 book_opt_1: "Open DSA"
 book_opt_1_author: ""
 book_opt_1_edition: ""
-book_opt_1_link: "https://opendsa-server.cs.vt.edu/ODSA/Books/Everything/html/#"
-book_opt_1_note: "**Highly recommented** - available online <br>OpenDSA is an open source project whose goal is to provide online course materials for a wide range of Data Structures and Algorithms courses. It is currently funded by two National Science Foundation grants: TUES program grant DUE-1139861 and EAGER program grant IIS-1258571 ."
+book_opt_1_link: "https://canvas.instructure.com/courses/2119541"
+book_opt_1_note: "OpenDSA is an open source project whose goal is to provide online course materials for a wide range of Data Structures and Algorithms courses. It has been funded by two National Science Foundation grants: TUES program grant DUE-1139861 and EAGER program grant IIS-1258571.<br> __You can [self-enroll](https://canvas.instructure.com/enroll/GRGKT7) for the course/book access at Canvas, or sing-up for [Canvas account](https://canvas.instructure.com/register) and use the following join code: GRGKT7."
 book_opt_1_image: "https://opendsa-server.cs.vt.edu/ODSA/Books/Everything/html/_static/OpenDSALogoT64.png"
 
 
@@ -107,3 +107,20 @@ book_opt_4_edition: ""
 book_opt_4_link: "https://open.umn.edu/opentextbooks/BookDetail.aspx?bookId=218"
 book_opt_4_note: "Optional Java resource<br> Open book - available online"
 book_opt_4_image: "resources/img/JavaJavaJava.jpg"
+
+
+book_opt_5: "Think Data Structures, "
+book_opt_5_author: "Allen B. Downey, "
+book_opt_5_edition: ""
+book_opt_5_link: "https://open.umn.edu/opentextbooks/BookDetail.aspx?bookId=218"
+book_opt_5_note: "Open book. <br>[O'Reilly online access ](https://learning.oreilly.com/library/view/think-data-structures/9781491972373/) (sign in using Single-Sign-On option with your NYU credentials)<br>or start from [NYU Libraries page for the book](https://bobcat.library.nyu.edu/permalink/f/ci13eu/nyu_aleph005581270)<br>or download a PDF from [Greenteapress website](https://greenteapress.com/wp/think-data-structures/). "
+book_opt_5_image: "https://greenteapress.com/wp/wp-content/uploads/2016/11/think_data_structures_cover-229x300.png"
+
+
+
+book_opt_6: "Algorithms in Java, "
+book_opt_6_author: "Robert Sedgewick, "
+book_opt_6_edition: ""
+book_opt_6_link: "https://open.umn.edu/opentextbooks/BookDetail.aspx?bookId=218"
+book_opt_6_note: "Open book. <br>[O'Reilly online access ](https://learning.oreilly.com/library/view/algorithms-in-java/0201361205/) (sign in using Single-Sign-On option with your NYU credentials)<br> or start from  [NYU Libraries page for the book](https://bobcat.library.nyu.edu/permalink/f/ci13eu/nyu_aleph000798035)"
+book_opt_6_image: "https://learning.oreilly.com/library/cover/0201361205/"
