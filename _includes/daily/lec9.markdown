@@ -4,18 +4,13 @@
 <p markdown="block">
 
 Class #9 <br>
-Wed,10/02
+Thu,10/01
 
 </p>
 </div>
 <div class="column_materials">
 <p markdown="block">
 
-Linked list.
-
-Adding nodes in an arbitrary position. Removing elements, retrieving elements stored at a particular "index".
-
-Efficiency of operations in a linked list vs. an array. 
 
 
 </p>
@@ -30,3 +25,4 @@ Efficiency of operations in a linked list vs. an array.
 </div>
 
 </div>
+

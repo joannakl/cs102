@@ -4,14 +4,14 @@
 <p markdown="block">
 
 Class #15 <br>
-Wed,10/23
+Thu,10/22
 
 </p>
 </div>
 <div class="column_materials">
 <p markdown="block">
 
-__Midterm Exam__
+
 
 </p>
 </div>
@@ -25,3 +25,4 @@ __Midterm Exam__
 </div>
 
 </div>
+

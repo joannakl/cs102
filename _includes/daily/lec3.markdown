@@ -4,19 +4,12 @@
 <p markdown="block">
 
 Class #3 <br>
-Wed, 9/11
+Thu, 9/10
 
 </p>
 </div>
 <div class="column_materials">
 <p markdown="block">
-
-Quiz 1.
-
-Continue with advanced Java topics: inheritance, constructor chaining, overloading vs. overriding, passing objects to functions.
-
-Review of [code examples](code/lecture01.zip).
-
 
 
 
@@ -32,3 +25,4 @@ Review of [code examples](code/lecture01.zip).
 </div>
 
 </div>
+

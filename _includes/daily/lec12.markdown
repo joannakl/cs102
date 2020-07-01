@@ -4,16 +4,14 @@
 <p markdown="block">
 
 Class #12 <br>
-Tue,10/15
+Tue,10/13
 
 </p>
 </div>
 <div class="column_materials">
 <p markdown="block">
 
-<b>legislative day!!!, classes follow Monday schedule</b><br/><br/>
 
-Queue ADT. Array-based and reference-based implementation. Efficiency concerns. 
 
 </p>
 </div>
@@ -27,3 +25,4 @@ Queue ADT. Array-based and reference-based implementation. Efficiency concerns.
 </div>
 
 </div>
+

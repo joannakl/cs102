@@ -4,17 +4,13 @@
 <p markdown="block">
 
 Class #7 <br>
-Wed, 9/25
+Thu, 9/24
 
 </p>
 </div>
 <div class="column_materials">
 <p markdown="block">
 
-Finish with an array based implementation of a list: removing from the list.
-
-Introduction to the linked list implementation.
-Node structure and node manipulation.
 
 
 </p>
@@ -29,3 +25,4 @@ Node structure and node manipulation.
 </div>
 
 </div>
+

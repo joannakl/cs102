@@ -4,7 +4,7 @@
 <p markdown="block">
 
 Class #27 <br>
-Mon,12/09
+Tue,12/08
 
 </p>
 </div>
@@ -12,12 +12,6 @@ Mon,12/09
 <p markdown="block">
 
 
-Intro to hash tables.
-
-
-[hash tables notes](notes/lecture9_HashTables.pdf)
-
-[hash tables visualization](https://visualgo.net/en/hashtable)
 
 </p>
 </div>
@@ -31,3 +25,4 @@ Intro to hash tables.
 </div>
 
 </div>
+

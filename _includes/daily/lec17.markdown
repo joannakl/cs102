@@ -4,7 +4,7 @@
 <p markdown="block">
 
 Class #17 <br>
-Wed,10/30
+Thu,10/29
 
 </p>
 </div>
@@ -12,13 +12,6 @@ Wed,10/30
 <p markdown="block">
 
 
-Design a recursive algorithm for palindrome detection.
-([code example](https://github.com/joannakl/cs102_resources/tree/master/code_examples/recursion/intro) )
-
-A singly linked list is a recursive structure.
-Calculating size of a linked list recursively.
-
-Think about: designing a recursive method to add a node to a linked list.
 
 </p>
 </div>
@@ -32,3 +25,4 @@ Think about: designing a recursive method to add a node to a linked list.
 </div>
 
 </div>
+
