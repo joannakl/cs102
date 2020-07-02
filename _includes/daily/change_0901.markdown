@@ -1,14 +1,13 @@
 
 <div class="change">
-<div class="column_date">
-<p markdown="block">
 
-Before first day of classes
-</p>
+
+<div class="week_heading" markdown="1">
+## Week 0, Before first day of classes (or as soon as you register)
 </div>
 
-<div class="column_recitation">
-<p markdown="block">
+<div class="column_one"  markdown="1">
+
 
 We will be using many different tools to facilitate course discussions, assessments, reviews, practice sessions, etc.
 At the start of the semester you will need to sign up for several of these tools and resources:
@@ -42,7 +41,6 @@ At the start of the semester you will need to sign up for several of these tools
   How to use this tool: [A guide for students](https://peerwise.cs.auckland.ac.nz/docs/students/)
 
 
-</p>
 </div>
 
 </div>

@@ -3,7 +3,7 @@
 
 
 <div class="other_heading" markdown="1">
-## __December ???__, final exam
+## __November 3__ last day to withdraw from the class with a grade of W
 </div>
 
 
