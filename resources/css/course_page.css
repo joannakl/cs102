@@ -45,6 +45,9 @@ h2 {
   font-weight: bold;
   color: #40334d;
 }
+.important h2 {
+  color: white;
+}
 h3 {
   margin: 0.5em 1em 0.25em 0em;
   padding: 2px;
@@ -167,68 +170,50 @@ td {
   vertical-align: top;
 }
 /**************/
-.lecture1 {
+.week {
   clear: left;
-  padding-bottom: 15px;
-  padding-top: 9px;
-  background-color: #eddeed;
-  border-top: 3px solid white;
-  overflow: hidden;
-}
-.lecture2 {
-  clear: left;
-  padding-bottom: 15px;
-  padding-top: 9px;
-  background-color: #ccc2d6;
-  border-top: 3px solid white;
-  overflow: hidden;
-}
-.recitation {
-  clear: left;
-  padding-bottom: 15px;
-  padding-top: 9px;
-  background-color: #b3b8cc;
-  border-top: 3px solid white;
-  overflow: hidden;
-}
-.titles {
-  clear: left;
-  padding-bottom: 15px;
-  padding-top: 9px;
-  background-color: #67507c;
-  color: #e6e0eb;
-  font-weight: bold;
-  border-top: 3px solid white;
+  padding-bottom: 10px;
+  border: 1px solid black;
   overflow: hidden;
 }
 .important {
   clear: left;
-  padding-bottom: 15px;
-  padding-top: 9px;
-  background-color: #ffffb3;
-  font-weight: bold;
-  border-top: 3px solid white;
+  border: 1px solid black;
   overflow: hidden;
+  background-color: #8b629d;
+  font-weight: bold;
+  color: white;
 }
 .change {
   clear: left;
-  padding-bottom: 15px;
-  padding-top: 9px;
-  background-color: #f2f2f2;
-  border-top: 3px solid white;
+  border: 1px solid black;
   overflow: hidden;
+  background-color: #f3eff5;
 }
-.column_date {
+.column_one {
   vertical-align: top;
+  padding: 0 0 0 1em;
 }
 .column_materials {
   vertical-align: top;
-}
-.column_recitation {
-  vertical-align: top;
+  padding: 0 0 0 1em;
 }
 .column_assign {
   vertical-align: top;
+  padding: 0 0 0 1em;
+}
+.week_heading {
+  clear: left;
+  padding: 5px 10px 5px 10px;
+  border: 1px solid black;
+  overflow: hidden;
+  background-color: #f2f2f2;
+}
+.other_heading {
+  clear: left;
+  padding: 5px 10px 5px 10px;
+  border: 1px solid black;
+  overflow: hidden;
 }
 @media (max-width: 700px) {
   .column_date {
@@ -248,16 +233,7 @@ td {
   }
 }
 @media (min-width: 700px) {
-  .lecture1 {
-    width: 79%;
-  }
-  .lecture2 {
-    width: 79%;
-  }
-  .recitation {
-    width: 79%;
-  }
-  .titles {
+  .week {
     width: 79%;
   }
   .important {
@@ -266,24 +242,17 @@ td {
   .change {
     width: 79%;
   }
-  .column_date {
-    width: 15%;
+  .column_one {
     margin-right: 2%;
-    padding-left: 2px;
     display: inline-block;
   }
   .column_materials {
-    width: 38%;
-    margin-right: 2%;
-    display: inline-block;
-  }
-  .column_recitation {
-    width: 76%;
+    width: 45%;
     margin-right: 2%;
     display: inline-block;
   }
   .column_assign {
-    width: 38%;
+    width: 32%;
     margin-right: 2%;
     display: inline-block;
   }
