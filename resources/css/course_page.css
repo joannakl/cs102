@@ -156,7 +156,7 @@ main p.hang {
   padding: 2px 2px 2px 40px;
   text-indent: -32px;
 }
-main li {
+main ul {
   margin: 0px;
   padding: 2px 2px 2px 10px;
   color: #000000;
