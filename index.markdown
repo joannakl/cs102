@@ -9,18 +9,19 @@ title: Course Essentials
 <iframe class="calendar" src="https://calendar.google.com/calendar/embed?height=300&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FNew_York&amp;src=bnl1LmVkdV9qYnM2MjBraXZmMWE3cDA4aGFqMGhmN2VmY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%238E24AA&amp;showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showCalendars=0&amp;mode=AGENDA"  height="300"  frameborder="0" scrolling="no"></iframe>
 
 <p class="hang" markdown="1"><span class="emph">Class meetings:</span> <br>{{ site.course_time }}
-(attendance is mandatory).</p>
-
-<p class="hang" markdown="1"><span class="emph">Recitations</span>  (attendance is mandatory either in person or online):
-	- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
-	- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
-	- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
-	- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
-	- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
-	- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
-	- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
-	- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
 </p>
+
+<p class="hang" markdown="1"><span class="emph">Recitations</span>:
+</p>
+	- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
+	- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
+	- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
+	- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
+	- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
+	- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
+	- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
+	- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
+
 
 
 <p class="hang" markdown="1"><span class="emph">Recitation leaders</span>: TBD
