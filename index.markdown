@@ -11,12 +11,19 @@ title: Course Essentials
 <p class="hang" markdown="1"><span class="emph">Class meetings:</span> <br>{{ site.course_time }}
 (attendance is mandatory).</p>
 
-<p class="hang" markdown="1"><span class="emph">Recitations</span>  (attendance is mandatory): <br> TBD
-<!--
-{{ site.recitation_section1 }}: {{ site.recitation_time1 }}, {{ site.recitation_instructor1_full }} <br>
-{{ site.recitation_section2 }}: {{ site.recitation_time2 }}, {{ site.recitation_instructor2_full }} <br>
-{{ site.recitation_section3 }}: {{ site.recitation_time3 }}, {{ site.recitation_instructor3_full }}
--->
+<p class="hang" markdown="1"><span class="emph">Recitations</span>  (attendance is mandatory either in person or online):
+	- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
+	- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
+	- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
+	- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
+	- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
+	- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
+	- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
+	- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
+</p>
+
+
+<p class="hang" markdown="1"><span class="emph">Recitation leaders</span>: TBD
 </p>
 
 <p class="hang" markdown="1"><span class="emph">Office hours:</span> <br>
