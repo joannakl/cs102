@@ -14,13 +14,12 @@ title: Course Essentials
 <p class="hang" markdown="1"><span class="emph">Recitations</span>:
 </p>
 - {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
-- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
-- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
-- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
-- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
-- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
-- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
-- {{ site.recitation_section1 }}: {{ site.recitation_time1 }}
+- {{ site.recitation_section2 }}: {{ site.recitation_time2 }}
+- {{ site.recitation_section3 }}: {{ site.recitation_time3 }}
+- {{ site.recitation_section4 }}: {{ site.recitation_time4 }}
+- {{ site.recitation_section5 }}: {{ site.recitation_time5 }}
+- {{ site.recitation_section6 }}: {{ site.recitation_time6 }}
+- {{ site.recitation_section7 }}: {{ site.recitation_time7 }}
 
 
 
