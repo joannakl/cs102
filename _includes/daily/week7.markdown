@@ -8,6 +8,8 @@
 
 ### Lecture 1
 
+Midterm exam (tentative)
+
 ### Lecture 2
 
 ### Recitation / Lab
