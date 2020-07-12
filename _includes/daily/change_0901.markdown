@@ -40,6 +40,15 @@ At the start of the semester you will need to sign up for several of these tools
 
   How to use this tool: [A guide for students](https://peerwise.cs.auckland.ac.nz/docs/students/)
 
+- __FlipGrid__
+
+  We will use FlipGrid throughout the semester to collect short (1-2 minutes) video responses fromall students. In some cases these videos will
+  be public to the entire class, in other cases they will be visible to the instructional stuff only.
+
+  To sign up for out class go to [FlipGrid](https://flipgrid.com/f20cs102) and sign in with your NYU email account (which falls under the Google account).
+
+  Record your first video: an introduction telling us who you are, why you are taking the class and a fun fact about yourself (just for fun).
+
 
 </div>
 
