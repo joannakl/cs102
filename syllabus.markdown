@@ -76,15 +76,16 @@ The grade of *Incomplete* is reserved for students who, for legitimate and docum
 # Absences (excused and unexcused)
 ---
 
-I generally do not take attendance, although, if you miss too many sessions, we will notice.
+We generally do not take attendance, although, if you miss too many sessions, we will notice.
 
 If you __miss an in-class quiz__ (for any reason), you will get a chance to make it up by writing a summary of the lecture
-that you missed and submitting it for evaluation. You will need to watch the lecture recording and write a few paragraph long summary.
+that you missed and submitting it for evaluation. You will need to watch the lecture recording and write a few paragraph long summary. (This needs to be a summary
+written in your own words, not a transcript of parts of the lecture.)
 
 The exams can be made up only in case of an excused absence with appropriate documentation.
 
 If you will miss an exam due to a religious observance, please familiarize yourself with [University Calendar Policy on Religious Holidays](https://goo.gl/e6NHDe) and talk to me well in advance to come up with alternative arrangements.
--->
+
 
 # Recitations
 ---
@@ -128,10 +129,11 @@ __The programming projects should be completed individually and they should be y
 
 *Late and missed programming projects:*
 
-* For each project you will have a 5 hour buffer window after the due date.
+For each project you will have a 5 hour buffer window after the due date.
 You can submit or resubmit the project during this time without any point
 penalty.
-* The late project submissions lose 20% of their original score for each day they are
+<br>
+The late project submissions lose 20% of their original score for each day they are
 late. If the project has multiple parts, the late penalties apply to the entire project
 not only the parts that are submitted late. If you submit the project 5-24 hours late,
 the maximum score is 80 (instead of 100). If you submit the project 24-48 hours late, the maximum
@@ -192,7 +194,9 @@ __All your work that is submitted for grading in this class has to be your own, 
 otherwise specified. If you receive any help from a human or use any non-human resources, you need
 to acknowledge that in your submissions.__
 
-__Regret clause__: If you violate the rules of academic integrity when submitting work
+__Regret clause__
+
+ If you violate the rules of academic integrity when submitting work
 for this class, but bring it to the attention of the instructor within __48 hours of your submission__, we will impose only _local_ sanctions (i.e., failing or reduced grade on a given assignment), but we
 will not refer your case for further disciplinary actions (except in the case
 of repeated violations).
@@ -214,7 +218,7 @@ in your submission.
 acknowledging such discussions in your submission.
 - Incorporating a short fragment of code (a few lines) that you find in the course
 suggested resources or other online resources and acknowledging it in your submission.
-- Sharing code with other students (possibly your classmates) that illustrates concepts
+- Sharing code with others (possibly your classmates) that illustrates concepts
 and techniques discussed in this course as long as this code is not a solution (or a partial solution)
 to one of the assigned problems.
 
