@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Java Programs</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="css/slides.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+
+class: center, middle, title-slide
+
+# CSCI-UA 102
+## Data Strutures
+
+<br>
+
+## Java Programs
+
+.author[
+Instructor: Joanna Klukowska <br><br><br>
+]
+
+.license[
+Copyright 2020 Joanna Klukowska. Unless noted otherwise all content is released under  a <br>
+[Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).<br>
+Background image by Stewart Weiss<br>]
+
+---
+layout:true
+template: default
+name: section
+class: inverse, middle, center
+
+---
+layout:true
+template: default
+name: breakout
+class: breakout, middle
+
+---
+
+layout:true
+template:default
+name:slide
+class: slide
+
+.bottom-left[&#169; Joanna Klukowska. CC-BY-SA.]
+
+---
+
+template: section
+
+# From Source Code (Text) to a Running Program
+
+---
+
+## Program's Code
+
+
+
+---
+
+## Byte Code and Java Virtual Machine
+
+
+
+---
+template: section
+
+# Program's Memory: <br>Stack and Heap
+
+---
+template: slide
+
+## Why Do Programs Need Memory
+
+- Every time a program needs to store a piece of data, it uses memory to do so.
+
+- When we create a variable to store information in the program, ex:
+    ```
+    int x;
+    ```
+  that variable has three things associated with it:
+    - __name__; that's `x` in the above case
+    - __value__; that is not really defined above, but could be easily set with `x=5`
+    - __location__ or memory address; the exact memory address is not really relevant (and, depending on the
+    programming language may not be easily determined); whenever the program needs to
+    retrieve the value of the variable, it needs to find the memory address and
+    obtain the value from the bytes at that address
+
+---
+name: primitive-variables
+
+## Primitive Types Storage in Memory
+
+- For the primitive type variables (`int`, `long`, `float`, `double`, `char`, `boolean`) the value
+stored at the memory address allocated to that variable is the actual value of the variable (in binary format).
+
+--
+
+.center[
+<img alt="variable declaration" src="img/variables-3.jpg" width=400px />
+]
+
+---
+
+template: primitive-variables
+
+.center[
+<img alt="variable declaration with labels" src="img/variables-4.jpg" width=400px />
+]
+
+
+.center[
+when a variable is declared, it does not have any value (its value is undefined)
+]
+
+---
+
+template: primitive-variables
+
+.center[
+<img alt="variable declaration with initialization" src="img/variables-5.jpg" width=400px />
+]
+
+
+.center[
+ after it is initialized, its value is set
+]
+
+---
+name: reference-variables
+
+## Reference Types Storage in Memory
+
+- All reference type variables store as their value the memory address of an object
+or an array that they refer to.
+
+--
+
+.center[
+<img alt="reference declaration" src="img/references-6.jpg" width=400px />
+]
+
+
+.center[
+when we create a reference, its value is undefined
+]
+---
+
+template: reference-variables
+
+
+.center[
+<img alt="object created" src="img/references-7.jpg" width=400px />
+]
+
+.center[
+executing `new Circle(15)` creates an object in memory; <br>
+that object has NO name
+]
+
+---
+
+template: reference-variables
+
+
+.center[
+<img alt="reference variable stores the address" src="img/references-8.jpg" width=400px />
+]
+
+.center[
+_assigning that object to `c`_ means that the value of `c` variable is set to <br>the memory address
+of the newly created `Circle` object
+]
+---
+
+template: reference-variables
+
+
+.center[
+<img alt="reference variable points to the object" src="img/references-9.jpg" width=400px />
+]
+
+.center[
+since we do not really care about the numerical value of that memory address, <br>we often use
+an arrow to indicate that <br>_`c` points to the object_, or <br>_`c` refers to the object_
+]
+---
+## Memory
+
+- When a program is executing on a computer, it is given a pool of memory to work with.
+
+--
+
+- The program does not need to _worry_ about any other program accessing that memory.
+(Stay tuned for the operating systems class to learn why/how.)
+
+--
+
+- The program organizes its _things_ in two different memory areas:
+  - stack
+  - heap
+
+---
+name:stack
+
+## Stack
+
+__Stack__ is where all the local variables and temporary information for functions/methods is stored.
+
+- It is organized in a collection of memory blocks, called __stack frames__. Each block belongs to a function/method. The block of
+a function that is currently executing is on top. Right below it is a block of a function that called the currently
+executing function, etc. The block for `main` is always at the bottom of the stack.
+
+--
+name:stack-example
+count:false
+
+__Example__
+
+.smaller[
+.left-column2[
+
+```Java
+
+public class StackExample {
+
+  public static void main (String [] args ) {
+      foo () ;
+  }
+
+  public static void foo (){
+      bar( 15 );
+      bar( 8 );
+  }
+
+  public static void bar ( int x ) {
+      bat(x);
+  }
+
+  public static void bat ( int x ) {
+      ...
+  }
+}
+```
+]
+.right-column2[
+.center[
+
+{{content}}
+
+]]]
+
+
+---
+template:stack-example
+<img alt="empty stack" src="img/call-stack-25.jpg" width=180px />
+
+before the first method starts the stack is empty
+
+---
+template:stack-example
+<img alt="stack with main" src="img/call-stack-26.jpg" width=180px />
+
+program starts: `main` is called
+
+---
+
+template:stack-example
+<img alt="stack with main and foo" src="img/call-stack-27.jpg" width=180px />
+
+`main` calls function `foo`
+
+---
+
+
+template:stack-example
+<img alt="stack with main, foo and bar(5)" src="img/call-stack-28.jpg" width=180px />
+
+`foo` calls function `bar` passing value of 5 to it
+---
+
+template:stack-example
+<img alt="stack with main, foot, bar(5) and bat(5)" src="img/call-stack-29.jpg" width=180px />
+
+`bar` calls function `bat` passing its parameter to `bat`
+---
+
+template:stack-example
+<img alt="stack with main, foo and bar(5)" src="img/call-stack-28.jpg" width=180px />
+
+`bat` finishes and its stack frame is removed from the stack
+---
+
+template:stack-example
+<img alt="stack with main and foo" src="img/call-stack-27.jpg" width=180px />
+
+`bar` finishes and its stack frame is removed from the stack
+---
+
+template:stack-example
+<img alt="stack with main, foo and bar(8)" src="img/call-stack-30.jpg" width=180px />
+
+`foo` calls function `bar` again with 8 as the parameter
+---
+
+template:stack-example
+<img alt="stack with main, foot, bar(8) and bat(8)" src="img/call-stack-31.jpg" width=180px />
+
+`bar` calls function `bat` passing its parameter to `bat`
+---
+
+template:stack-example
+<img alt="stack with main, foo and bar(8)" src="img/call-stack-30.jpg" width=180px />
+
+`bat` finishes and its stack frame is removed from the stack
+---
+
+template:stack-example
+<img alt="stack with main and foo" src="img/call-stack-27.jpg" width=180px />
+
+`bar` finishes and its stack frame is removed from the stack
+---
+
+template:stack-example
+<img alt="stack with main only" src="img/call-stack-26.jpg" width=180px />
+
+`foo` finishes and its stack frame is removed from the stack
+---
+
+template:stack-example
+<img alt="empty stack" src="img/call-stack-25.jpg" width=180px />
+
+`main` finishes and its stack frame is removed from the stack; the program ends
+---
+name: stack_frame
+
+## Stack Frame Content
+### Very Simplified View
+
+Each stack frame contains information about local variables that the function creates:
+
+--
+.left-column2[
+- the function arguments
+- all locally created variables
+- the return value (if applicable)
+
+
+.smaller[
+
+{{content}}
+
+]]
+
+--
+
+Consider this function:
+
+
+```Java
+double charStats ( String str, char c ) {
+    double ratio;
+    int count = 0;
+    for (int i = 0; i < str.length(); i++ ) {
+        if (str.charAt(i) == c ) {
+            count++;
+        }
+    }
+    ratio = count / str.length();
+    return ratio;
+}
+```
+
+How many local variables are there?
+
+
+--
+
+.right-column2[
+
+<img alt="charStat stack frame" src="img/charStat-15.jpg" width=350px />
+
+.small[
+The stack frame for `charStats` function should contain memory for five
+different local variables:
+- two parameters: `str` and `c`
+- the `ratio` variable
+- the `count` variable
+- the loop counter variable `i`
+]
+]
+
+
+---
+name: heap
+
+## Heap
+
+- Whenever the program uses the keyword `new` the memory for that object is allocated
+on the heap.
+
+- Heap is not as organized as the stack. The chunks of memory that are allocated to different
+arrays and objects can be _all over the place_. (Well, there is some logic in it, but we will not
+get into it and it is not relevant for our discussions.)
+
+--
+
+.center[
+<img alt="Circle reference on the stack, object on the heap" src="img/heap-16.jpg" width=400px />
+]
+
+---
+
+template:heap
+
+.center[
+<img alt="arrow in place of memory address" src="img/heap-17.jpg" width=400px />
+.smaller[
+Again, we do not really care what exactly is the memory address stored in `c`.
+
+]]
+
+---
+
+template:heap
+
+.center[
+<img alt="memory addresses do not matter either" src="img/heap-18.jpg" width=400px />
+.smaller[
+And the memory addresses at which `c` and the actual `Circle` objects are locted, do not matter for us either.
+
+]]
+
+---
+name: array-heap
+## Arrays and the Heap
+
+Arrays in Java are always stored on the heap in consecutive memory locations.
+
+Example: If our program tries to allocate an array of 10 integers, we will need 40 consecutive bytes of
+memory on the heap (becase each `int` needs 4 bytes of memory on current computers).
+
+```Java
+int [] array = new int[10];
+```
+
+--
+
+.center[
+<img alt="an array in memory" src="img/arrays-19.jpg" width=400px />
+]
+
+---
+template:array-heap
+
+.center[
+<img alt="address of the array is 100" src="img/arrays-20.jpg" width=400px />
+]
+.centered_80[
+- We'll assume that the memory address of the array is `100` (we'll use decimal numbers
+instead of hexadecimal numbers for addresses in this example to make things a bit easier ).
+
+- This means that the address of the first element is also `100`.
+]
+
+---
+template:array-heap
+
+.center[
+<img alt="address of the element at index 1 is 104" src="img/arrays-21.jpg" width=400px />
+]
+.centered_80[
+- The address of an element at index 1 is exactly 4 bytes after the element at index 0 (because arrays
+are always allocated in consecutive memory locations).
+- Therefore the address of the element at index 1 is `104` (this is `100` + 1 * 4bytes ).
+]
+
+---
+template:array-heap
+
+.center[
+<img alt="address of the element at index 5 is 120" src="img/arrays-22.jpg" width=400px />
+]
+.centered_80[
+- With a bit of artithmetic we can figure out the address of the element at index 5: <br>
+.center[
+    initial_address + index * size_of_int <br>
+]
+or
+.center[
+    `100` + 5 * 4 = `120`<br>
+]
+]
+
+---
+template:array-heap
+
+.center[
+<img alt="address of the element at index 9 is 136" src="img/arrays-24.jpg" width=400px />
+]
+.centered_80[
+- What do you think is the address of the last element? 
+]
+---
+template:array-heap
+
+.center[
+<img alt="address of the element at index 9 is 136" src="img/arrays-23.jpg" width=400px />
+]
+
+
+
+
+
+---
+
+template:section
+
+# Examples and Things to Think About
+
+---
+
+## Example 1: What Happens in Memory
+
+Assume that there is a class called `Circle`. It has a public data field called
+`radius`. It has a one parameter constructor that takes a radius of a circle
+as its argument and creates a `Circle` object with that radius.
+
+```Java
+Circle c1 = new Circle (10);
+Circle c2 = new Circle (20);
+Circle c3 = c1;
+
+System.out.println(c1.radius + " " + c2.radius + " " + c3.radius);
+
+c1.radius = 30;
+System.out.println(c1.radius + " " + c2.radius + " " + c3.radius);
+
+c1 = c2;
+System.out.println(c1.radius + " " + c2.radius + " " + c3.radius);
+
+c2.radius = 5;
+c2 = c3;
+System.out.println(c1.radius + " " + c2.radius + " " + c3.radius);
+
+c1 = c2;
+c1.radius = 15;
+System.out.println(c1.radius + " " + c2.radius + " " + c3.radius);
+
+```
+
+What is the output of the above code?
+
+---
+
+## Example 2: What Happens in Memory
+
+```Java
+Circle [] circles = new Circle[10];
+
+for (int i = 1; i <= 10; i++ ) {
+    circles[i] = new Circle(i * 5);
+}
+```
+
+- How is the above array layed out in memory?
+- Assuming the code fragment is part of a `main` function, what is stored on the stack
+and what is stored on the heap?
+- Consider the following code fragment:
+    ```Java
+        circles[2] = circles[8];
+        circles[8].radius = 1;
+    ```
+    - how does the memory image change?
+    - what happens to the `Circle` object that used to be stored in `circles[2]`?
+    - how many different `Circle` objects are accessible through the array?
+
+---
+
+name:stack_frame_swap
+
+## Think About: `swap` function
+
+Given the `swap` function
+
+
+.left-column2[
+.smaller[
+```Java
+void swap ( double d1, double d2 ) {
+    double tmp;
+    tmp = d1;
+    d1 = d2;
+    d2 = tmp;
+}
+```
+
+consider the following code fragment:
+
+```Java
+double num1 = 3.1415;
+double num2 = 2.1718;
+
+swap ( num1, num2 );
+```
+
+]]
+
+--
+
+.right-column2[
+
+the values of `d1` and `d2` and initialized to the arguments that are passed to the function:
+
+<img alt="swap stack fram" src="img/swap-11.jpg" width=350px />
+]
+
+---
+template:stack_frame_swap
+
+.right-column2[
+
+the value stored in `d1` is copied to `tmp`: <br> <br>
+
+<img alt="swap stack fram" src="img/swap-12.jpg" width=350px />
+]
+
+
+---
+template:stack_frame_swap
+
+.right-column2[
+
+the value stored in `d2` is copied to `d1`:<br> <br>
+
+<img alt="swap stack fram" src="img/swap-13.jpg" width=350px />
+]
+
+---
+template:stack_frame_swap
+name:stack_frame_swap_final
+
+.right-column2[
+
+the value stored in `tmp` is copied to `d2`: <br> <br>
+
+<img alt="swap stack fram" src="img/swap-14.jpg" width=350px />
+
+]
+
+---
+template:stack_frame_swap_final
+
+__and the swap is completed!__
+
+--
+
+__or is it?__
+
+.smaller[
+If we execute
+
+```Java
+System.out.println(num1 + " " + num2 );
+```
+after the call to `swap` function
+what will the output be?
+]
+
+</optgroup>
+
+
+
+    </textarea>
+     <script src="js/remark.js" type="text/javascript">
+    </script>
+    <script src="js/remark_conf.js" type="text/javascript">
+    </script>
+
+  </body>
+</html>
