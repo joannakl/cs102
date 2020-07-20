@@ -32,9 +32,10 @@ var slideshow = remark.create({
 
   // Enable or disable counting of incremental slides in the slide counting
   countIncrementalSlides: true,
-  
+
   //syntax highlighting options:
   //highlightLanguage: 'python',
   highlightLines: true,
+  highlightSpans: true,
   highlightStyle: 'github'
-}); 
+});

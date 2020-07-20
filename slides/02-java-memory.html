@@ -9,15 +9,14 @@
   <body>
     <textarea id="source">
 
-
 class: center, middle, title-slide
 
 # CSCI-UA 102
-## Data Strutures
+## Data Structures
 
 <br>
 
-## Java Programs
+## Java Programs (Under the Hood)
 
 .author[
 Instructor: Joanna Klukowska <br><br><br>
@@ -57,15 +56,70 @@ template: section
 
 ---
 
-## Program's Code
+## Program's Source Code
+
+- The program's __source code__ is plain text.
+
+- We can use any text editor or an IDE to write it.
 
 
+<figure style="margin:0px; padding-right:100px; display:inline-block; vertical-align:middle;">
+<img alt="atom editor " src="img/02/atom.png" width=160px />
+<figcaption>.small[Atom editor]</figcaption>
+</figure>
+<figure style="margin:0px;  padding-right:70px;  display:inline-block; vertical-align:middle;">
+<img alt="eclipse IDE" src="img/02/eclipse.png" width=300px />
+<figcaption>.small[Eclipse IDE] </figcaption>
+</figure>
 
+
+.right[
+<figure style="margin:0px; padding-left:100px; display:inline-block; vertical-align:middle;">
+<img alt="VS Code window" src="img/02/vscode.png" width=180px />
+<figcaption>.small[.left[VSCode IDE]]</figcaption>
+</figure>
+<figure style="margin:0px; padding-left:100px; display:inline-block; vertical-align:middle;">
+<img alt="vi editor" src="img/02/vi.png" width=200px />
+<figcaption>.small[.left[vi editor]]</figcaption>
+</figure>
+]
 ---
 
 ## Byte Code and Java Virtual Machine
 
 
+.right-column2[
+<img alt="compilation and running process" src="img/02/compilation-33.jpg" width=380px />
+]
+
+.smaller[
+
+- A __Java _Virtual_ Machine__ (JVM) is not a real machine. It is a program that can be installed
+on a computer. Java programs are interpreted by a JVM.
+]
+--
+.smaller[
+- A compiler translates our source code into Java bytecode. The __bytecode__ consists of instructions
+that can be executed by our JVM. This is done using
+```
+javac SOURCE_CODE_FILE
+```
+]
+--
+.smaller[
+- When we run a Java program, a JVM interprets the bytecode instructions by translating them one by one into
+the actual machine instructions (specific to the computer on which the program is executed). The CPU then executes the
+actual machine instruction. This is done using
+```
+java CLASS_FILE
+```
+]
+
+--
+
+__The consequence of this is that Java code that we write is independent of
+the actual computer on which we run it. As long as there is a JVM installed,
+the Java bytecode can be interpreted and executed on the actual hardware.__
 
 ---
 template: section
@@ -83,13 +137,24 @@ template: slide
     ```
     int x;
     ```
-  that variable has three things associated with it:
+  that variable has four things associated with it:
     - __name__; that's `x` in the above case
     - __value__; that is not really defined above, but could be easily set with `x=5`
     - __location__ or memory address; the exact memory address is not really relevant (and, depending on the
     programming language may not be easily determined); whenever the program needs to
     retrieve the value of the variable, it needs to find the memory address and
     obtain the value from the bytes at that address
+    - __type__; that's `int` in the above case; the type determines how many bytes in memory
+    should be allocated; the most commonly used type sizes these days are shown below
+.center50[.small[
+| type | number of bytes |
+|:---|:---:|
+|`byte`| 1 byte |
+|`char`, `short`| 2 bytes |
+|`int`, `float`| 4 bytes |
+|`long`, `double`| 8 bytes |
+|`boolean` | may vary |
+]]
 
 ---
 name: primitive-variables
@@ -102,15 +167,16 @@ stored at the memory address allocated to that variable is the actual value of t
 --
 
 .center[
-<img alt="variable declaration" src="img/variables-3.jpg" width=400px />
+<img alt="variable declaration" src="img/02/variables-3.jpg" width=400px />
 ]
 
 ---
 
 template: primitive-variables
 
+
 .center[
-<img alt="variable declaration with labels" src="img/variables-4.jpg" width=400px />
+<img alt="variable declaration with labels" src="img/02/variables-4.jpg" width=400px />
 ]
 
 
@@ -123,7 +189,7 @@ when a variable is declared, it does not have any value (its value is undefined)
 template: primitive-variables
 
 .center[
-<img alt="variable declaration with initialization" src="img/variables-5.jpg" width=400px />
+<img alt="variable declaration with initialization" src="img/02/variables-5.jpg" width=400px />
 ]
 
 
@@ -142,7 +208,7 @@ or an array that they refer to.
 --
 
 .center[
-<img alt="reference declaration" src="img/references-6.jpg" width=400px />
+<img alt="reference declaration" src="img/02/references-6.jpg" width=400px />
 ]
 
 
@@ -155,7 +221,7 @@ template: reference-variables
 
 
 .center[
-<img alt="object created" src="img/references-7.jpg" width=400px />
+<img alt="object created" src="img/02/references-7.jpg" width=400px />
 ]
 
 .center[
@@ -169,7 +235,7 @@ template: reference-variables
 
 
 .center[
-<img alt="reference variable stores the address" src="img/references-8.jpg" width=400px />
+<img alt="reference variable stores the address" src="img/02/references-8.jpg" width=400px />
 ]
 
 .center[
@@ -182,7 +248,7 @@ template: reference-variables
 
 
 .center[
-<img alt="reference variable points to the object" src="img/references-9.jpg" width=400px />
+<img alt="reference variable points to the object" src="img/02/references-9.jpg" width=400px />
 ]
 
 .center[
@@ -206,8 +272,6 @@ an arrow to indicate that <br>_`c` points to the object_, or <br>_`c` refers to 
   - heap
 
 ---
-name:stack
-
 ## Stack
 
 __Stack__ is where all the local variables and temporary information for functions/methods is stored.
@@ -217,16 +281,17 @@ a function that is currently executing is on top. Right below it is a block of a
 executing function, etc. The block for `main` is always at the bottom of the stack.
 
 --
-name:stack-example
-count:false
+name:stack
+
 
 __Example__
+---
+template:stack
 
 .smaller[
 .left-column2[
 
 ```Java
-
 public class StackExample {
 
   public static void main (String [] args ) {
@@ -251,91 +316,437 @@ public class StackExample {
 .right-column2[
 .center[
 
-{{content}}
+
+<img alt="empty stack" src="img/02/call-stack-25.jpg" width=180px />
+
+before the first method starts the stack is empty
 
 ]]]
 
 
 ---
-template:stack-example
-<img alt="empty stack" src="img/call-stack-25.jpg" width=180px />
+template:stack
 
-before the first method starts the stack is empty
+.smaller[
+.left-column2[
 
----
-template:stack-example
-<img alt="stack with main" src="img/call-stack-26.jpg" width=180px />
+```Java
+public class StackExample {
+
+* public static void main (String [] args ) {
+      foo () ;
+  }
+
+  public static void foo (){
+      bar( 15 );
+      bar( 8 );
+  }
+
+  public static void bar ( int x ) {
+      bat(x);
+  }
+
+  public static void bat ( int x ) {
+      ...
+  }
+}
+```
+]
+.right-column2[
+.center[
+<img alt="stack with main" src="img/02/call-stack-26.jpg" width=180px />
 
 program starts: `main` is called
-
+]]]
 ---
 
-template:stack-example
-<img alt="stack with main and foo" src="img/call-stack-27.jpg" width=180px />
+template:stack
+
+.smaller[
+.left-column2[
+
+```Java
+public class StackExample {
+
+* public static void main (String [] args ) {
+*     foo () ;
+  }
+
+* public static void foo (){
+      bar( 15 );
+      bar( 8 );
+  }
+
+  public static void bar ( int x ) {
+      bat(x);
+  }
+
+  public static void bat ( int x ) {
+      ...
+  }
+}
+```
+]
+.right-column2[
+.center[
+<img alt="stack with main and foo" src="img/02/call-stack-27.jpg" width=180px />
 
 `main` calls function `foo`
-
+]]]
 ---
 
 
-template:stack-example
-<img alt="stack with main, foo and bar(5)" src="img/call-stack-28.jpg" width=180px />
+template:stack
 
-`foo` calls function `bar` passing value of 5 to it
+.smaller[
+.left-column2[
+
+```Java
+public class StackExample {
+
+* public static void main (String [] args ) {
+*     foo () ;
+  }
+
+* public static void foo (){
+*     bar( 15 );
+      bar( 8 );
+  }
+
+* public static void bar ( int x ) {
+      bat(x);
+  }
+
+  public static void bat ( int x ) {
+      ...
+  }
+}
+```
+]
+.right-column2[
+.center[
+<img alt="stack with main, foo and bar(15)" src="img/02/call-stack-28.jpg" width=180px />
+
+`foo` calls function `bar` passing value of 15 to it
+
+]]]
 ---
 
-template:stack-example
-<img alt="stack with main, foot, bar(5) and bat(5)" src="img/call-stack-29.jpg" width=180px />
+template:stack
+
+.smaller[
+.left-column2[
+
+```Java
+public class StackExample {
+
+* public static void main (String [] args ) {
+*     foo () ;
+  }
+
+* public static void foo (){
+*     bar( 15 );
+      bar( 8 );
+  }
+
+* public static void bar ( int x ) {
+*     bat(x);
+  }
+
+* public static void bat ( int x ) {
+      ...
+  }
+}
+```
+]
+.right-column2[
+.center[
+<img alt="stack with main, foot, bar(15) and bat(15)" src="img/02/call-stack-29.jpg" width=180px />
 
 `bar` calls function `bat` passing its parameter to `bat`
+
+]]]
 ---
 
-template:stack-example
-<img alt="stack with main, foo and bar(5)" src="img/call-stack-28.jpg" width=180px />
+template:stack
+
+.smaller[
+.left-column2[
+
+```Java
+public class StackExample {
+
+* public static void main (String [] args ) {
+*     foo () ;
+  }
+
+* public static void foo (){
+*     bar( 15 );
+      bar( 8 );
+  }
+
+* public static void bar ( int x ) {
+      bat(x);
+  }
+
+  public static void bat ( int x ) {
+      ...
+  }
+}
+```
+]
+.right-column2[
+.center[
+<img alt="stack with main, foo and bar(15)" src="img/02/call-stack-28.jpg" width=180px />
 
 `bat` finishes and its stack frame is removed from the stack
+]]]
 ---
 
-template:stack-example
-<img alt="stack with main and foo" src="img/call-stack-27.jpg" width=180px />
+template:stack
+
+.smaller[
+.left-column2[
+
+```Java
+public class StackExample {
+
+* public static void main (String [] args ) {
+*     foo () ;
+  }
+
+* public static void foo (){
+      bar( 15 );
+      bar( 8 );
+  }
+
+  public static void bar ( int x ) {
+      bat(x);
+  }
+
+  public static void bat ( int x ) {
+      ...
+  }
+}
+```
+]
+.right-column2[
+.center[
+<img alt="stack with main and foo" src="img/02/call-stack-27.jpg" width=180px />
 
 `bar` finishes and its stack frame is removed from the stack
----
 
+]]]
+---
+template:stack
+
+.smaller[
+.left-column2[
+
+```Java
+public class StackExample {
+
+* public static void main (String [] args ) {
+*     foo () ;
+  }
+
+* public static void foo (){
+      bar( 15 );
+*     bar( 8 );
+  }
+
+* public static void bar ( int x ) {
+      bat(x);
+  }
+
+  public static void bat ( int x ) {
+      ...
+  }
+}
+```
+]
+.right-column2[
+.center[
 template:stack-example
-<img alt="stack with main, foo and bar(8)" src="img/call-stack-30.jpg" width=180px />
+<img alt="stack with main, foo and bar(8)" src="img/02/call-stack-30.jpg" width=180px />
 
 `foo` calls function `bar` again with 8 as the parameter
----
 
-template:stack-example
-<img alt="stack with main, foot, bar(8) and bat(8)" src="img/call-stack-31.jpg" width=180px />
+]]]
+---
+template:stack
+
+.smaller[
+.left-column2[
+
+```Java
+public class StackExample {
+
+* public static void main (String [] args ) {
+*     foo () ;
+  }
+
+* public static void foo (){
+      bar( 15 );
+*     bar( 8 );
+  }
+
+* public static void bar ( int x ) {
+*     bat(x);
+  }
+
+* public static void bat ( int x ) {
+      ...
+  }
+}
+```
+]
+.right-column2[
+.center[
+<img alt="stack with main, foot, bar(8) and bat(8)" src="img/02/call-stack-31.jpg" width=180px />
 
 `bar` calls function `bat` passing its parameter to `bat`
+]]]
 ---
 
-template:stack-example
-<img alt="stack with main, foo and bar(8)" src="img/call-stack-30.jpg" width=180px />
+template:stack
+
+.smaller[
+.left-column2[
+
+```Java
+public class StackExample {
+
+* public static void main (String [] args ) {
+*     foo () ;
+  }
+
+* public static void foo (){
+      bar( 15 );
+*     bar( 8 );
+  }
+
+* public static void bar ( int x ) {
+      bat(x);
+  }
+
+  public static void bat ( int x ) {
+      ...
+  }
+}
+```
+]
+.right-column2[
+.center[
+<img alt="stack with main, foo and bar(8)" src="img/02/call-stack-30.jpg" width=180px />
 
 `bat` finishes and its stack frame is removed from the stack
+]]]
 ---
 
-template:stack-example
-<img alt="stack with main and foo" src="img/call-stack-27.jpg" width=180px />
+template:stack
+
+.smaller[
+.left-column2[
+
+```Java
+public class StackExample {
+
+* public static void main (String [] args ) {
+*     foo () ;
+  }
+
+* public static void foo (){
+      bar( 15 );
+      bar( 8 );
+  }
+
+  public static void bar ( int x ) {
+      bat(x);
+  }
+
+  public static void bat ( int x ) {
+      ...
+  }
+}
+```
+]
+.right-column2[
+.center[
+<img alt="stack with main and foo" src="img/02/call-stack-27.jpg" width=180px />
 
 `bar` finishes and its stack frame is removed from the stack
+]]]
 ---
 
-template:stack-example
-<img alt="stack with main only" src="img/call-stack-26.jpg" width=180px />
+template:stack
+
+.smaller[
+.left-column2[
+
+```Java
+public class StackExample {
+
+* public static void main (String [] args ) {
+      foo () ;
+  }
+
+  public static void foo (){
+      bar( 15 );
+      bar( 8 );
+  }
+
+  public static void bar ( int x ) {
+      bat(x);
+  }
+
+  public static void bat ( int x ) {
+      ...
+  }
+}
+```
+]
+.right-column2[
+.center[
+<img alt="stack with main only" src="img/02/call-stack-26.jpg" width=180px />
 
 `foo` finishes and its stack frame is removed from the stack
+]]]
 ---
 
-template:stack-example
-<img alt="empty stack" src="img/call-stack-25.jpg" width=180px />
+template:stack
+
+.smaller[
+.left-column2[
+
+```Java
+public class StackExample {
+
+  public static void main (String [] args ) {
+      foo () ;
+  }
+
+  public static void foo (){
+      bar( 15 );
+      bar( 8 );
+  }
+
+  public static void bar ( int x ) {
+      bat(x);
+  }
+
+  public static void bat ( int x ) {
+      ...
+  }
+}
+```
+]
+.right-column2[
+.center[
+<img alt="empty stack" src="img/02/call-stack-25.jpg" width=180px />
 
 `main` finishes and its stack frame is removed from the stack; the program ends
+]]]
 ---
 name: stack_frame
 
@@ -383,7 +794,7 @@ How many local variables are there?
 
 .right-column2[
 
-<img alt="charStat stack frame" src="img/charStat-15.jpg" width=350px />
+<img alt="charStat stack frame" src="img/02/charStat-15.jpg" width=350px />
 
 .small[
 The stack frame for `charStats` function should contain memory for five
@@ -411,7 +822,7 @@ get into it and it is not relevant for our discussions.)
 --
 
 .center[
-<img alt="Circle reference on the stack, object on the heap" src="img/heap-16.jpg" width=400px />
+<img alt="Circle reference on the stack, object on the heap" src="img/02/heap-16.jpg" width=400px />
 ]
 
 ---
@@ -419,7 +830,7 @@ get into it and it is not relevant for our discussions.)
 template:heap
 
 .center[
-<img alt="arrow in place of memory address" src="img/heap-17.jpg" width=400px />
+<img alt="arrow in place of memory address" src="img/02/heap-17.jpg" width=400px />
 .smaller[
 Again, we do not really care what exactly is the memory address stored in `c`.
 
@@ -430,7 +841,7 @@ Again, we do not really care what exactly is the memory address stored in `c`.
 template:heap
 
 .center[
-<img alt="memory addresses do not matter either" src="img/heap-18.jpg" width=400px />
+<img alt="memory addresses do not matter either" src="img/02/heap-18.jpg" width=400px />
 .smaller[
 And the memory addresses at which `c` and the actual `Circle` objects are locted, do not matter for us either.
 
@@ -443,7 +854,7 @@ name: array-heap
 Arrays in Java are always stored on the heap in consecutive memory locations.
 
 Example: If our program tries to allocate an array of 10 integers, we will need 40 consecutive bytes of
-memory on the heap (becase each `int` needs 4 bytes of memory on current computers).
+memory on the heap (because each `int` needs 4 bytes of memory on current computers).
 
 ```Java
 int [] array = new int[10];
@@ -452,16 +863,16 @@ int [] array = new int[10];
 --
 
 .center[
-<img alt="an array in memory" src="img/arrays-19.jpg" width=400px />
+<img alt="an array in memory" src="img/02/arrays-19.jpg" width=400px />
 ]
 
 ---
 template:array-heap
 
 .center[
-<img alt="address of the array is 100" src="img/arrays-20.jpg" width=400px />
+<img alt="address of the array is 100" src="img/02/arrays-20.jpg" width=400px />
 ]
-.centered_80[
+.center70[
 - We'll assume that the memory address of the array is `100` (we'll use decimal numbers
 instead of hexadecimal numbers for addresses in this example to make things a bit easier ).
 
@@ -472,9 +883,9 @@ instead of hexadecimal numbers for addresses in this example to make things a bi
 template:array-heap
 
 .center[
-<img alt="address of the element at index 1 is 104" src="img/arrays-21.jpg" width=400px />
+<img alt="address of the element at index 1 is 104" src="img/02/arrays-21.jpg" width=400px />
 ]
-.centered_80[
+.center70[
 - The address of an element at index 1 is exactly 4 bytes after the element at index 0 (because arrays
 are always allocated in consecutive memory locations).
 - Therefore the address of the element at index 1 is `104` (this is `100` + 1 * 4bytes ).
@@ -484,10 +895,10 @@ are always allocated in consecutive memory locations).
 template:array-heap
 
 .center[
-<img alt="address of the element at index 5 is 120" src="img/arrays-22.jpg" width=400px />
+<img alt="address of the element at index 5 is 120" src="img/02/arrays-22.jpg" width=400px />
 ]
-.centered_80[
-- With a bit of artithmetic we can figure out the address of the element at index 5: <br>
+.center70[
+- With a bit of arithmetic we can figure out the address of the element at index 5: <br>
 .center[
     initial_address + index * size_of_int <br>
 ]
@@ -501,16 +912,16 @@ or
 template:array-heap
 
 .center[
-<img alt="address of the element at index 9 is 136" src="img/arrays-24.jpg" width=400px />
+<img alt="address of the element at index 9 is 136" src="img/02/arrays-24.jpg" width=400px />
 ]
-.centered_80[
-- What do you think is the address of the last element? 
+.center[
+- What do you think is the address of the last element?
 ]
 ---
 template:array-heap
 
 .center[
-<img alt="address of the element at index 9 is 136" src="img/arrays-23.jpg" width=400px />
+<img alt="address of the element at index 9 is 136" src="img/02/arrays-23.jpg" width=400px />
 ]
 
 
@@ -568,7 +979,7 @@ for (int i = 1; i <= 10; i++ ) {
 }
 ```
 
-- How is the above array layed out in memory?
+- How is the above array laid out in memory?
 - Assuming the code fragment is part of a `main` function, what is stored on the stack
 and what is stored on the heap?
 - Consider the following code fragment:
@@ -617,7 +1028,7 @@ swap ( num1, num2 );
 
 the values of `d1` and `d2` and initialized to the arguments that are passed to the function:
 
-<img alt="swap stack fram" src="img/swap-11.jpg" width=350px />
+<img alt="swap stack fram" src="img/02/swap-11.jpg" width=350px />
 ]
 
 ---
@@ -627,7 +1038,7 @@ template:stack_frame_swap
 
 the value stored in `d1` is copied to `tmp`: <br> <br>
 
-<img alt="swap stack fram" src="img/swap-12.jpg" width=350px />
+<img alt="swap stack fram" src="img/02/swap-12.jpg" width=350px />
 ]
 
 
@@ -638,7 +1049,7 @@ template:stack_frame_swap
 
 the value stored in `d2` is copied to `d1`:<br> <br>
 
-<img alt="swap stack fram" src="img/swap-13.jpg" width=350px />
+<img alt="swap stack fram" src="img/02/swap-13.jpg" width=350px />
 ]
 
 ---
@@ -649,7 +1060,7 @@ name:stack_frame_swap_final
 
 the value stored in `tmp` is copied to `d2`: <br> <br>
 
-<img alt="swap stack fram" src="img/swap-14.jpg" width=350px />
+<img alt="swap stack fram" src="img/02/swap-14.jpg" width=350px />
 
 ]
 
