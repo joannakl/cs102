@@ -61,7 +61,7 @@ template: section
 
 --
 
-- __Raise your hand if you have every used a phone-book.__
+- __Raise your hand if you have ever used a phone-book.__
 
 
 --
@@ -148,7 +148,7 @@ but let's think about it for a while.
 
 template:Jane-take1-final
 
-.yellowbox[
+.important[
 When the number of page turns is directly proportional to the total number of pages, we
 are using a __linear__ algorithm to search for Jane.
 ]
@@ -157,7 +157,7 @@ are using a __linear__ algorithm to search for Jane.
 
 More generally,
 
-.yellowbox[
+.important[
 When the number of operations is directly proportional to the input size (generally denoted as `N`),
 we are using a __linear__ algorithm. This is often described as an `O(N)` algorithm.
 ]
@@ -325,7 +325,7 @@ template:halving
 
 <div style="margin:-200px 0 0 0">
 .left-column2[
-.yellowbox[
+.important[
 When the search space decreases by half after each comparison, the algorithm is said to be __logarithmic__.
 It is growing proportionately to the logarithm of the input size `N`. Such an algorithm is said to be
 `O(log N)`.
@@ -401,6 +401,473 @@ template: slide
 ## An Array as The First Data Structure
 
 An __array__ is probably the first data structure that everybody learns.
+
+
+---
+name: array-contiguous
+## Constant Access Time to Elements
+
+Recall the array image from last class (with memory addresses indicated below):
+.center80[.center[
+<img alt="integer array with marked memory addresses" src="img/02/arrays-23.jpg" width=400px />
+]]
+
+Because an array occupies contiguous memory locations, __the access to individual elements
+is instantaneous.__
+
+--
+
+For example, when we execute
+```
+    System.out.println(array[3]);
+```
+we get the element at index `3` right away.
+
+--
+
+It does not matter how big the array is. It also
+does not matter if we are trying to access an element at index `3` or at index `3000`, the access time
+is going to be the same.
+
+---
+template: array-contiguous
+
+.important[
+When an operation is independent of the number of elements in the data structure,
+it is said to be __constant__, which is denoted as `O(1)`.
+]
+
+---
+
+## Searching in an Array
+
+For searching in an array, we can apply similar algorithms as for searching in a phone book:
+
+- If the data in our array is __not sorted__, then we will use a __linear search__, `O(N)`.
+
+- If the data in our array is __sorted__, then we can use a __binary search__, `O(log N)`.
+
+---
+name: array-add
+## Adding an Element to an Array
+
+Now, let's see how elements are added to an array.
+
+.center[
+
+{{content}}
+
+]
+---
+template: array-add
+<img alt="add elements to an array" src="img/03/array_add-18.jpg" width=550px />
+
+Start with an empty 5-element array.
+
+---
+template: array-add
+<img alt="add elements to an array" src="img/03/array_add-19.jpg" width=550px />
+
+Add 7 to it.
+
+
+---
+template: array-add
+<img alt="add elements to an array" src="img/03/array_add-20.jpg" width=550px />
+
+Add 7 to it.
+
+---
+template: array-add
+<img alt="add elements to an array" src="img/03/array_add-21.jpg" width=550px />
+
+Add 5 to it.
+
+---
+template: array-add
+<img alt="add elements to an array" src="img/03/array_add-22.jpg" width=550px />
+
+Add 5 to it.
+
+---
+template: array-add
+<img alt="add elements to an array" src="img/03/array_add-23.jpg" width=550px />
+
+Add 6, 2, and 9 to the array.
+
+---
+template: array-add
+<img alt="add elements to an array" src="img/03/array_add-24.jpg" width=550px />
+
+Add 6, 2, and 9 to the array.
+
+---
+template: array-add
+<img alt="add elements to an array" src="img/03/array_add-25.jpg" width=550px />
+
+Now, let's try to add 1.
+
+---
+template: array-add
+<img alt="add elements to an array" src="img/03/array_add-26.jpg" width=550px />
+
+Now, let's try to add 1.
+
+Where should it go?
+
+---
+template: array-add
+<img alt="add elements to an array" src="img/03/array_add-27.jpg" width=550px />
+
+__We need a bigger array!__
+
+--
+.center[
+__That means that we need to copy the 5 existing elements to the bigger array, first, <br>and then add 1 to it. __
+]
+---
+template: array-add
+<img alt="add elements to an array" src="img/03/array_add-28.jpg" width=550px />
+
+Copy 7
+---
+template: array-add
+<img alt="add elements to an array" src="img/03/array_add-29.jpg" width=550px />
+
+Copy 5
+---
+template: array-add
+<img alt="add elements to an array" src="img/03/array_add-30.jpg" width=550px />
+
+Copy 6
+---
+template: array-add
+<img alt="add elements to an array" src="img/03/array_add-31.jpg" width=550px />
+
+Copy 2
+---
+template: array-add
+<img alt="add elements to an array" src="img/03/array_add-32.jpg" width=550px />
+
+Copy 9
+---
+name: array-add-final
+template: array-add
+<img alt="add elements to an array" src="img/03/array_add-33.jpg" width=550px />
+
+__Finally, add the 1!__
+
+
+---
+template: array-add-final
+
+<div style="margin:0 0 0 0">
+.center[
+.huge[Tedious, isn't it?!]
+]
+</div>
+
+---
+## Adding an Element to an Array
+
+- The initial add operations were fast. In fact, they were performed in __constant time__.
+
+--
+
+- But once the array is _full_ we need to do a lot of work in order to add another element:
+  .pseudocode[
+1. create a new, larger array
+1. for each element in the original array
+  - copy it to the new array
+1. add the new element to the new array
+  ]
+
+--
+  This is a __linear time__ algorithm, and it may take a lot of time if the
+original array had many elements.
+
+--
+
+<div style="margin:3em 0 0 0">
+.center[.large[Can we do better? ]]
+</div>
+
+
+---
+name: alternative
+## Alternative Memory Layout
+
+What if we could put elements anywhere in memory, instead of being restricted to contiguous locations?
+
+.center[
+
+{{content}}
+
+]
+
+---
+template: alternative
+<img alt="add elements to an array" src="img/03/alternative-34.jpg" width=550px />
+
+But then, how do we know which element is at which _index_? <br>
+How do we know what comes before what?
+---
+template: alternative
+<img alt="add elements to an array" src="img/03/alternative-35.jpg" width=550px />
+
+We need to have a way of somehow _connecting_ the elements?
+
+--
+
+.center[
+But how can we exactly accomplish these _arrows_ that tell us where the next element is?
+]
+
+---
+template:alternative
+<img alt="add elements to an array" src="img/03/alternative-36.jpg" width=550px />
+
+Remember that each value has a unique memory address (its location).
+
+---
+template:alternative
+<img alt="add elements to an array" src="img/03/alternative-37.jpg" width=550px />
+
+We can use additional memory (a block right next two the actual element) <br>to keep track of the
+location of the next element.
+---
+template:alternative
+<img alt="add elements to an array" src="img/03/alternative-38.jpg" width=550px />
+
+7 is the first element (just like it was in the array). <br>
+5 is the second element, so we store the address of 5, right next to the element 7.
+---
+template:alternative
+<img alt="add elements to an array" src="img/03/alternative-39.jpg" width=550px />
+
+Using our _arrow abstraction_ we show that the new element right <br>
+next to 7 points to the memory location that stores 5.
+
+---
+template:alternative
+<img alt="add elements to an array" src="img/03/alternative-40.jpg" width=550px />
+
+Then the memory location next to 5 needs to store the memory address of 6 (our next element).
+
+---
+template:alternative
+<img alt="add elements to an array" src="img/03/alternative-41.jpg" width=550px />
+
+And we use an arrow to indicate that it points to the memory location that stores 6.
+
+---
+template:alternative
+<img alt="add elements to an array" src="img/03/alternative-43.jpg" width=550px />
+
+We do the same for keeping track of where 2 and 9 are located.
+---
+template:alternative
+<img alt="add elements to an array" src="img/03/alternative-44.jpg" width=550px />
+
+Finally, to indicate that 9 is the last element, the memory location <br>next to it is set to
+`0x0` (or `null`) to indicate that it does not point to anything.
+
+---
+template:alternative
+<img alt="add elements to an array" src="img/03/alternative-45.jpg" width=550px />
+
+---
+template:alternative
+<img alt="add elements to an array" src="img/03/alternative-46.jpg" width=550px />
+
+When we want to add 1 to our list of numbers, we simply place it in <br>an available
+memory location and ...
+
+---
+template:alternative
+<img alt="add elements to an array" src="img/03/alternative-47.jpg" width=550px />
+
+When we want to add 1 to our list of numbers, we simply place it in <br>an available
+memory location and ... <br>connect it to the rest of the list by adjusting stored memory addresses.
+---
+
+## Alternative Memory Layout
+
+What if we could put elements anywhere in memory, instead of being restricted to contiguous locations?
+.center[
+<img alt="add elements to an array" src="img/03/alternative-47.jpg" width=550px />
+
+.big[This means that we __do not__ need to copy all the elements <br>to a new list
+when we try to add 1. ]
+]
+
+---
+template: section
+
+# Linked List
+
+---
+template: slides
+
+## Linked List
+
+The _construct_ that we created on a previous slide is a linked list.
+
+.center[
+<img alt="add elements to an array" src="img/03/linked_list-48.jpg" width=450px />
+]
+
+--
+
+or more often presented as
+
+
+.center[
+<img alt="add elements to an array" src="img/03/linked_list-49_1.jpg" width=750px />
+]
+
+---
+## Linked List
+
+A __linked list__ is a linear collection of data elements in which each element
+points to the next one.
+
+--
+name: linked-list
+.left-column2-large[
+The list is usually composed of __nodes__ that contain the actual data part and
+the memory address of the next element.
+]
+
+```Java
+class Node {
+  int data;
+  Node next;
+}
+```
+--
+
+
+.center[
+<img alt="add elements to an array" src="img/03/linked_list-49.jpg" width=750px />
+
+This list has six nodes.
+
+]
+
+---
+template: linked-list
+
+.center[
+<img alt="add elements to an array" src="img/03/linked_list-50.jpg" width=750px />
+]
+
+In order to work with a linked list, we need to keep track of where it starts, and,
+sometimes where it ends:
+- __`head`__ is a reference to the first node (or to the _head of the list_)
+- __`tail`__ is a reference to the last node (or the _tail of the list_)
+
+--
+
+Note that `head` and `tail` are references to nodes, they are __not__ nodes themselves.
+
+---
+template: linked-list
+
+.center[
+<img alt="add elements to an array" src="img/03/linked_list-50.jpg" width=750px />
+]
+
+References that do not point to anything are set to `0x0` (or zero) which is often
+described as __`null`__.
+
+--
+
+.aside[
+You probably have seen references to `null` value when your program crashed with a `NullPointerException`.
+This simply means that the program tried to access some data that does not really exist.
+]
+
+
+---
+template: linked-list
+
+.center[
+<img alt="add elements to an array" src="img/03/linked_list-51.jpg" width=750px />
+]
+
+As mentioned before, we will not worry about the actual memory addresses. These
+are stored by references in our programs and we do not need to know their actual values
+to understand how the data structure works.
+
+---
+## Adding to a Linked List
+
+So how do we add to a linked list?
+
+- We saw that this should not require duplicating any elements since the list is never really full.
+
+- But how many steps will it take?
+
+--
+
+.pseudocode[
+1. Create a new node
+  - set its value as desired
+  - set its reference to the `next` node to `null`
+1. if `tail` points to a node
+  - set `tail.next` to the newly created node
+  - advance tail to the newly created node
+
+  otherwise (list is empty)
+  - set `tail` and `head` to the newly created node
+]
+
+--
+
+.important[
+Adding to the end of a linked list does not depend on the number of elements
+that are already in that list (i.e., it is independent of the length
+of that list). This is a __constant time__ algorithm, or `O(1)` algorithm.
+]
+
+---
+
+## Accessing Individual Elements
+
+---
+## Searching in a Linked List
+
+
+
+
+---
+
+## Summary of Important Concepts
+
+Algorithmic running time
+- constant, `O(1)`, running time does not depend on the size of the data structure
+- logarithmic, `O(log N)`, running time grows proportionately to the `log`
+of number of elements in the data structure (usually achieved by halving)
+- linear, `O(N)`, running time grows proportionately to the number of
+elements in the data structure (usually because we need to look at all elements)
+
+--
+
+Arrays
+- constant access time to elements, `O(1)`
+- linear time search, if unsorted, `O(N)`
+- logarithmic time search, if sorted, `O(log N)`
+- possibly linear time to add an element (when the array is full), `O(N)`
+
+--
+
+Linked List
+- constant access time to elements, `O(1)`
+- linear time search, if unsorted, `O(N)`
+- logarithmic time search, if sorted, `O(log N)`
+- possibly linear time to add an element (when the array is full), `O(N)`
+
 
 
 
