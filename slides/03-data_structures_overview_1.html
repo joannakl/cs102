@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Java Programs</title>
+    <title>Data Structures And Algorithms</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
     <link href="css/slides.css" rel="stylesheet" type="text/css" />
@@ -16,7 +16,7 @@ class: center, middle, title-slide
 
 <br>
 
-## Data Structures and Algoriths <br>(Bird's Eye View)
+## Data Structures and Algorithms <br>(Bird's Eye View)
 
 .author[
 Instructor: Joanna Klukowska <br><br><br>
@@ -835,10 +835,79 @@ of that list). This is a __constant time__ algorithm, or `O(1)` algorithm.
 
 ## Accessing Individual Elements
 
+--
+
+How can we access individual elements in a linked list?
+
+Can we just get to an element at position 4 or 40 immediately (as we can with an array)?
+
+--
+
+Not really, because we do not have a reference to that element. We need to find out
+where in memory it is stored. Let's say we want the fourth element ( this would be index 3 in the array):
+
+--
+- the memory address of that element is stored in the third node,
+
+--
+- the memory address of the third node is stored in the second node,
+
+--
+- the memory address of the second node is stored in the first node,
+
+--
+- and the memory address of the first node is stored in the `head` reference
+
+--
+
+__So, we need to start at the `head` reference and follow the information trail.__
+
+.pseudocode[
+Get the value of the fourth node
+
+1. create a temporary reference called current and point it to the first node
+1. initialize a counter to one
+1. while counter is less than 4
+  - set current to current.next
+  - increment counter by one
+1. return current.data
+]
+
+--
+
+_Note that this assumes that we have at least four nodes in our list._
+
+
 ---
 ## Searching in a Linked List
 
+--
 
+The last thing we'll discuss about linked list for now is searching.
+
+For an array, we used:
+- linear search, when data was not sorted
+- binary search, when data was sorted
+
+What can we do for a linked list?
+
+---
+
+template: breakout
+
+
+
+### Group Discussion: How do we search in a linked list?
+
+
+- In breakout rooms of 3-4 people discuss a way of searching in a linked list.
+
+- Consider both unsorted and sorted linked lists.
+
+- Try to come up with an algorithm (like the ones on the previous slides).
+
+- After 5-10 minutes, some groups will get a chance to report on what
+they came up with.
 
 
 ---
@@ -858,15 +927,15 @@ Arrays
 - constant access time to elements, `O(1)`
 - linear time search, if unsorted, `O(N)`
 - logarithmic time search, if sorted, `O(log N)`
-- possibly linear time to add an element (when the array is full), `O(N)`
+- possibly linear time to add an element (when the array is full and we need to resize), `O(N)`
 
 --
 
 Linked List
-- constant access time to elements, `O(1)`
+- linear access time to elements, `O(N)`
 - linear time search, if unsorted, `O(N)`
-- logarithmic time search, if sorted, `O(log N)`
-- possibly linear time to add an element (when the array is full), `O(N)`
+- linear time search, if sorted, `O(N)`
+- constant time to add an element to the end (because there is no need to resize), `O(1)`
 
 
 
