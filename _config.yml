@@ -10,9 +10,12 @@ email_etiquette: "email_etiquette.md"
 info: "info.md"
 
 markdown: kramdown
+highlighter: rouge
+
 kramdown:
   entity_output: numeric
   smart_quotes: apos,apos,quot,quot
+  syntax_highlighter: rouge 
 
 exclude:
   - Gemfile
