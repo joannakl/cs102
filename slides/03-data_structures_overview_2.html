@@ -262,7 +262,7 @@ Linked List
 __BUT__ the linked lists give us:
 - the idea of connecting elements in a different way, and we'll use it in more complicated structures
 - building blocks for more complicated structures
-- very good performance when we operate only on the ends (i.e., no need to element access except for
+- very good performance when we operate only on the ends (i.e., no need to access any elements except for
 first and last)
 - good enough performance when we do not need binary search
 - good enough performance when we are working with small lists
@@ -343,18 +343,10 @@ template:bst
 
 ## A Different Kind of Node
 
+.left-column2-large[
 .left-column2[
-<img alt="bst node" src="img/03/bst_node-80.jpg" width=300px />
+<img alt="bst node" src="img/03/bst_node-80.jpg" width=225px />
 ]
-
-- The __nodes__ that we used for a linked list stored the data and a single
-reference to the `next` node.
-
---
-- For a structure from the previous slide, we need to keep track of two different
-_next_'s: the one on the left and the one on the right:
-
---
 ```java
   class Node {
       int data;
@@ -363,29 +355,63 @@ _next_'s: the one on the left and the one on the right:
   }
 ```
 
+]
+--
+.right-column2-small[
+- The __nodes__ that we used for a linked list stored the data and a single
+reference to the `next` node.
 
-<img alt="from a binary search to a bst" src="img/03/bst_node-82.jpg" width=400px />
 
+- For a structure from the previous slide, we need to keep track of two different
+_next_'s: the one on the left and the one on the right:
+
+
+
+]
+
+--
+.center[
+<img alt="from a binary search to a bst" src="img/03/bst_node-82.jpg" width=450px />
+]
 
 
 ---
+name:bst
 
 ## Binary Search Trees
 
+.left-column2-large[
 .important[
 A __binary search tree__ is a structure that starts with a special element called
 __root__ and in which all the values stored to the left of the root are smaller than it,
 and all the values stored to the right of the root are larger than it.
 ]
+.center[
+<img alt="bst structure" src="img/03/bst-83.jpg" width=350px />
+]
+{{content}}
 
-==> image of a tree
-
+]
+---
+template: bst
 
 We will look at ways of implementing binary search trees so that they
 guarantee O(log N) performance on pretty much all operations (although this will
 require some balancing work!).
 
-==> image of an unbalanced tree
+--
+
+<figure style="transform: translateX(-80px)scale(1.3);">
+<img alt="balanced bst" src="img/03/bst-84.jpg" width=200px />
+<figcaption>.tiny.center[balanced bst]</figcaption>
+</figure>
+
+--
+
+<figure style="transform: translateY(30px)translateX(-30px)scale(1.1);">
+<img alt="unbalanced bst" src="img/03/bst-85.jpg" width=200px />
+<figcaption>.tiny.center[unbalanced bst]</figcaption>
+</figure>
 
 
 ---
@@ -404,9 +430,9 @@ name: hash-motivation
 
 
 <figure>
-  <img width="120" style="transform:translateX(100px)scale(2.3)" alt="Lightsaber blue"
+  <img width="120" style="transform:translateX(100px)scale(2.1)" alt="Lightsaber blue"
   src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Lightsaber_blue.svg/256px-Lightsaber_blue.svg.png">  </img>
-  <img width="120"  style="transform:translateX(-100px)scale(2)" alt="Lightsaber green"
+  <img width="120"  style="transform:translateX(-100px)scale(1.8)" alt="Lightsaber green"
   src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f8/Green_lightsaber_transparent.png/512px-Green_lightsaber_transparent.png">  </img>
 .tiny[<figcaption markdown="1" style="margin-top:50px;">Lightsaber blue, Nécropotame /
 [WikimediaCommons](https://commons.wikimedia.org/wiki/File:Lightsaber_blue.svg) / Public Domain <br>
@@ -414,13 +440,12 @@ Lightsaber green , Mysid / [WikimediaCommons](https://commons.wikimedia.org/wiki
 </figure>
 ]
 
-Darth Vader, Han Solo, Leia, Obi-Wan Kenobi,
+.code.big[
+__Darth Vader, Han Solo, Leia, Obi-Wan Kenobi,
 Chewbacca, Yoda, R2-D2, Luke Skywalker, Lando,
-Padme, Count Dooku, ...
-
-... were picking up their
-graded term papers from the professor's office.
-
+Padme, Count Dooku, ... were picking up their
+graded term papers on inter-galactic conquests from the professor's office.__
+]
 .below-column2[
 &nbsp;
 ]
@@ -446,24 +471,38 @@ __sorted list search__, `O(logN)`
 
 
 ---
+## A long time ago in a galaxy far, far away...
+
 .left-column2[
-Professor Physics attempted to simplify the search even further. He subdivided
+Professor Physics attempted to simplify the search even further. She subdivided
 the alphabet into 8 bins: names starting with A-C, names starting with D-F,
 names starting with G-I, .... The students simply need to go to the bin that contains
 the right letter and find their paper among the smaller subset of all the papers.
+
+{{content}}
 ]
 
 <img alt="attempt at hashing names into 8 bins" src="img/03/hash-66.jpg" width=400px />
 
 --
+<br>
+----
 
-__bin search__, `O(???)`
+__What is the performance of this <br>_bin search_, `O(???)`?__
+
+<br>
+
+{{content}}
+
+--
+
+ - well this depends on how many students end up in the same bin
 
 
 ---
-template:hash-motivation
+## A long time ago in a galaxy far, far away...
 
-Professor CS liked the idea of Professor Physics, but would much rather
+__Professor CS__ liked the idea of Professor Physics, but would much rather
 have unique bins for each student. Unfortunately, she quickly realized this will be difficult
 with many students having the last name that starts on the same letter.
 She came up with a _collision resolution_ scheme that stores the papers of students with the same
@@ -471,7 +510,30 @@ first letter of their last name in a short chain of papers.
 
 --
 
+<br>
+
+.center[
+<img alt="hash table with first letters serving as keys" src="img/03/hash_table-86.jpg" width=660px />
+]
+
+--
+
 __lookup in a hash table__, `O(1)` (assuming this is properly designed)
+
+---
+
+## Hash Table
+
+The last two ways of organizing the students' papers follow the principles
+of a hash table: __we want to have a mapping from the actual data (papers
+in this case) to the location in memory where that data is stored__.
+
+- Professor Physics and Professor CS use a first letter of the student's name
+to determine where their paper should be located.
+
+- Each letter of the alphabet is then stored in a bin or a list of papers
+that students can _quickly_ search through.
+
 
 
 
@@ -498,7 +560,11 @@ Binary Search Tree
 - gaining back the binary search for _sorted_ data
 - goal: `O(logN)` performance for almost all operations
 
+--
 
+Hash Tables
+- allows fast look-ups based on some characteristic of the data (ex., first letter of the last name)
+- goal: `O(1)` performance for almost all operations (challenging to implement to achieve this)
 
 ---
 
@@ -570,6 +636,43 @@ dequeue
 // show the content of the queue
 
 ```
+
+---
+
+## Working with a Binary Search Tree
+
+Consider the binary search tree from one of the earlier slides:
+
+.center[
+<img alt="balanced bst" src="img/03/bst-84.jpg" width=400px />
+]
+
+- If we decide to add a few more values to this tree, where do you think the
+nodes should be connected?  Here are a few values to be added: __65__, __14__, __27__.
+Make sure that the resulting tree is still a binary search tree!
+
+- Try to design an algorithm that determines the smallest/largest value
+that is stored in a binary search tree.
+
+- Try to design an algorithm that determines the largest value that is smaller
+than the root (or rather the value stored in the root node). <br>
+Is this algorithm in any way similar to the algorithm you suggested for the
+previous prompt?
+
+---
+
+## Better Organization for Papers
+
+Our _Star Wars_ characters are not from a very large class, so they can
+quickly find their papers when they are mapped based on the first letters
+of their names.
+
+But imagine a much much much larger group: __what if we had hundreds or thousands
+of students__? Each letter of the alphabet would have a huge number of papers
+associated with it.
+
+__Your mission__: Come up with a more unique way of mapping student names to locations
+where their papers might be stored?
 
 
 </optgroup>
