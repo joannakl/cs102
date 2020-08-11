@@ -143,7 +143,6 @@ public class SumOfNumbers {
 {% endhighlight %}
 
 
-## Footnotes
 
 [^1]:     If you do not remember how to handle exceptions in Jave, take a look at the Oracle [lessons on exception handling](https://docs.oracle.com/javase/tutorial/essential/exceptions/)
 
