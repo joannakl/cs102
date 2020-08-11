@@ -3,6 +3,16 @@ layout: lab
 title: Daily
 ---
 
+<div class="lab-right" markdown="1">
+
+__due date:__ 7 days from the time you start the lab or
+Sep. 16 (whichever comes first)
+
+__submission mode:__ group (encouraged) or individual
+
+</div>
+
+<main markdown="1" class="lab">
 
 ## Lab 2: Bullet-Proof Programs or Input Validation
 
@@ -27,7 +37,7 @@ in recognizing the potential for trouble and on bullet-proofing your own code
 ### Part 1 (nothing to submit)
 Consider the following short program:
 
-{% highlight java %}
+{% highlight java linenos%}
 package lab2;
 import java.util.Scanner;
 
@@ -44,55 +54,100 @@ public class Age {
 }
 {% endhighlight %}
 
-```java
-package lab2;
-import java.util.Scanner;
-
-public class Age {
-    public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        System.out.println("Enter your age (a positive integer): ");
-        int num = in.nextInt();
-        System.out.println("Enter your name: ");
-        String name = in.next();
-        System.out.println(name + " is  " + num + " years old." );
-        in.close();
-    }
-}
-```
-
 There are more possible inputs that cause problems than there are those that will
 produce correct and reasonable results.
 Try to run the program with the following input values provided for the
 two prompts (the first one is supposed to be the age; the second one is supposed to be the name).
 
-- &nbsp;
-```
-  21
-  Jane
-```
-- &nbsp;
-```
-  -35
-  Mark
-```
-
-215
-    Joe
-3
-    R2d2
-18
-    Ann Marie
-111111111111111
-    Ann
-32.5
-    Amber
-Eighteen
-    Steven
-32 43 12
-    Ellen
+- `21 Jane`
+- `-35 Mark`
+- `215 Joe`
+- `3 R2d2`
+- `18 Ann Marie`
+- `111111111111111 Ann`
+- `32.5  Amber`
+- `Eighteen Steven`
+- `32 43 12 Ellen`
 
 
 You can upload this code to the autograder on Gradescope
-(save the code in a file called Age.java in the package called lab2).
+(save the code in a file called `Age.java` in the package called `lab2`).
 You will see that all, but one of the tests fail.
+
+
+
+## Part 2 (submit your file on Gradescope)
+
+Handling problems like the ones you observed in Part 1 requires different types of validation techniques:
+
+*   If the input data is supposed to fall within a certain range (dictated by the specification, instructions or, sometimes, common sense), then the program should make sure that those ranges are met.
+*   If certain values make sense and others do not (this should really be determined by the specification), then the program should attempt to detect and reject the values that do not make sense.
+*   If the program makes calls to functions that throw exceptions[^1], the code should be ready to handle those exceptions (the language like Java forces programmers to handle checked exceptions[^2], but it is a good idea to watch out for the unchecked exceptions as well ). Catching and handling specific types of exceptions allows us to write appropriate types of handlers for the errors that may occur. (This is done using try and catch blocks.)
+*   If the input data comes from the user, the input buffers should be emptied when the input statement is satisfied. In some cases, it might be worthwhile to warn the user (especially in the interactive programs that deal with sensitive information) if part of the input is being ignored. If you are using the [Scanner](https://docs.oracle.com/javase/10/docs/api/java/util/Scanner.html) class in Java, make sure that you understand the difference between the `nextLine()` function and the other next-functions, like `next()`, `nextInt()`, `nextFloat()`, ....
+
+Rewrite the code from Part 1 so that it handles all of the problems that occurred for inputs specified in Part 1. Then resubmit your modified code to the Gradescope autograder to see how many of the tests your code passes.
+
+You should restrict valid age values to be integers in the range of 0 to 120 (inclusive). The valid names should consist of letters, spaces and hyphens ('-') only (sorry R2D2!).
+
+**Warning: it may be challenging to pass all of the tests, but it is possible to do so with the knowledge of Java that you should have acquired in CSCI-UA 101!**
+
+
+
+## Part 3 (nothing to submit)
+
+OpenMRS is an open source medical record management system. Being open source means that anybody can read the source code, contribute to it, and, depending on the license, reuse it in their own projects. A lot of the components of OpenMRS are written in Java. We will look to that package for the _real life_ examples of some concepts that are covered in this course. Today you will start with real life input data validation. Go to OpenMRS main GitHub page at [https://github.com/openmrs](https://github.com/openmrs) , select openmrs-core and then directories: `api > src > main > java/org/openmrs  > validator`. This directory contains many different classes that provide validation of various types of values obtained from the user or from other external sources. Take a look at `PersonNameValidator.java` class. Read through the code - you may not be able to understand every single line of the code, but you should be able to get a rough idea what it is doing. Discuss with your group members what makes a valid name in OpenMRS.
+
+
+## Extra credit (optional - complete Part 2 before you attempt this)
+
+Last week you worked on solving several problems and using the CodeBat autograder/autotester to verify if your solution was correct. In parts 1 and 2, we gave you an autograder that determined the correctness of the implementation. In more realistic situations, there is no such tester. The programmers need to be able to convince themselves that their work is correct.
+
+This semester we will be using an autograder on Gradescope to give you hints about your program's correctness. At first, you will see all of the tests and see if they passed or not (just like for parts 1 and 2). As the semester progresses, we will hide some of the tests so that you are going to need to decide on your own if the code that you submit is correct or not.
+
+As a practice for this, there is an exercise (called **lab2_extra**) on Gradescope with 20 test cases, but you will not see the tests themselves. Each test is worth 0.05 points, so this can give you a hint as to how many tests passed and how many failed.
+
+The problem for which you need to write a solution is as follows:
+
+Write a function that, given a string argument, returns the sum of the numbers appearing in that string, ignoring all other characters. A number is a series of 1 or more digit chars in a row. (Note: [`Character.isDigit(char)`](https://docs.oracle.com/javase/10/docs/api/java/lang/Character.html#isDigit(char)) function tests if a char is one of the characters '0', '1', .. '9'. [`Integer.parseInt(string)`](https://docs.oracle.com/javase/10/docs/api/java/lang/Integer.html#parseInt(java.lang.String)) converts a string to an int.)
+
+*   `sumOfNumbers("abc123xyz")` should return 123
+*   `sumNumbers("aa11b33")` should return 44
+*   `sumNumbers("7 11")` should return 18 (since there is a space between 7 and 11)
+*   `sumNumbers("hello")` should return 0
+
+You should implement your code in the following template:
+
+
+{% highlight java%}
+package lab2;
+//do not change the name of the package
+//the autograder will fail, if the package is not named properly
+
+// add your own name below:
+//
+// author:
+//
+
+
+public class SumOfNumbers {
+
+    /*
+    Implement this function. Do not change
+    anything else in this file.
+    */
+    public static int sumOfNumbers(String str) {
+
+    }
+}
+
+{% endhighlight %}
+
+
+## Footnotes
+
+[^1]:     If you do not remember how to handle exceptions in Jave, take a look at the Oracle [lessons on exception handling](https://docs.oracle.com/javase/tutorial/essential/exceptions/)
+
+[^2]:
+     If you are not sure about the difference between checked and unchecked exceptions, you may want to review them. Here is a possible tutorial:  [Checked vs Unchecked Exceptions in Java](https://www.geeksforgeeks.org/checked-vs-unchecked-exceptions-in-java/)
+
+</main>
