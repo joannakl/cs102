@@ -15,13 +15,14 @@ title: Syllabus
 
 |<img src="{{site.book_opt_1_image}}" name="OpenDSA Online Book" border="0px" width="120px">| **[{{ site.book_opt_1 }}]( {{ site.book_opt_1_link }})** {{ site.book_opt_1_edition }}<br> {{ site.book_opt_1_author }} <br> {{ site.book_opt_1_note }}  |
 |<img src="{{site.book_opt_5_image}}" name="Book" border="0px" width="100px">| **[{{ site.book_opt_5 }}]( {{ site.book_opt_5_link }})** {{ site.book_opt_5_edition }}<br> {{ site.book_opt_5_author }} <br> {{ site.book_opt_5_note }}  |
-|<img src="{{site.book_opt_6_image}}" name="Book" border="0px" width="100px">| **[{{ site.book_opt_6 }}]( {{ site.book_opt_6_link }})** {{ site.book_opt_6_edition }}<br> {{ site.book_opt_6_author }} <br> {{ site.book_opt_6_note }}  |
+|<img src="{{site.book_opt_7_image}}" name="Book" border="0px" width="100px">| **[{{ site.book_opt_7 }}]( {{ site.book_opt_7_link }})** {{ site.book_opt_7_edition }}<br> {{ site.book_opt_7_author }} <br> {{ site.book_opt_7_note }}  |
+|<img src="{{site.book_opt_6_image}}" name="Book" border="0px" width="100px">| **{{ site.book_opt_6 }}** {{ site.book_opt_6_edition }}<br> {{ site.book_opt_6_author }} <br> {{ site.book_opt_6_note }}  |
 
 ## Java reference books
 
-|<img src="{{site.book_opt_2_image}}" name="Book" border="0px" width="100px">| **[{{ site.book_opt_2 }}]( {{ site.book_opt_2_link }})** {{ site.book_opt_2_edition }}<br> {{ site.book_opt_2_author }} <br> {{ site.book_opt_2_note }}  |
 |<img src="{{site.book_opt_3_image}}" name="Book" border="0px" width="100px">| **[{{ site.book_opt_3 }}]( {{ site.book_opt_3_link }})** {{ site.book_opt_3_edition }}<br> {{ site.book_opt_3_author }} <br> {{ site.book_opt_3_note }}  |
 |<img src="{{site.book_opt_4_image}}" name="Book" border="0px" width="100px">| **[{{ site.book_opt_4 }}]( {{ site.book_opt_4_link }})** {{ site.book_opt_4_edition }}<br> {{ site.book_opt_4_author }} <br> {{ site.book_opt_4_note }}  |
+|<img src="{{site.book_opt_2_image}}" name="Book" border="0px" width="100px">| **[{{ site.book_opt_2 }}]( {{ site.book_opt_2_link }})** {{ site.book_opt_2_edition }}<br> {{ site.book_opt_2_author }} <br> {{ site.book_opt_2_note }}  |
 
 
 # Prerequisites
@@ -44,7 +45,7 @@ to write fairly large programs right at the beginning of the semester.__
 Your grade will be based on:
 
 * test/exams: online exams completed individually
-* programming projects: several programming projects completed individually  
+* programming projects: several programming projects completed individually
 * problem sets:
 	- weekly activities completed during recitations
     (individually or, preferably, in small groups)
@@ -110,7 +111,7 @@ with all your names attached to it.
 Once during the semester, you will be selected to be a _solution writer_. This means that in addition to submitting
 your regular solutions for the given problem set, you will be in charge of preparing solutions that all other
 students can access afterwards. You should work very closely with your recitation leader to make sure that your
-published solutions are readable to other students, detailed and correct.  
+published solutions are readable to other students, detailed and correct.
 
 The weekly problem sets can be retrieved any time during the week in which they are assigned but prior to the
 recitation session for which you are registered. They are due 7 days (i.e., 7 time 24 hours) after you retrieved
@@ -125,7 +126,7 @@ a regular basis. In general, they will be due 7-10 days after
 they are assigned. They will require you to write and, often,
 read and understand significant amount of code.
 
-__The programming projects should be completed individually and they should be your own work.__  
+__The programming projects should be completed individually and they should be your own work.__
 
 *Late and missed programming projects:*
 
