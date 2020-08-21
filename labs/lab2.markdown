@@ -1,6 +1,6 @@
 ---
 layout: lab
-title: Daily
+title: Lab2
 ---
 
 <div class="lab-right" markdown="1">
@@ -8,7 +8,7 @@ title: Daily
 __due date:__ 7 days from the time you start the lab or
 Sep. 16 (whichever comes first)
 
-__submission mode:__ group (encouraged) or individual
+__submission mode:__ group
 
 </div>
 
@@ -23,7 +23,9 @@ Popular Murphy's Law states: _whatever can go wrong, will go wrong_.
 In the previous programming courses, you probably often heard the phrase: "assume a well-behaved user".
 If we can assume that the input data that comes from the user or files is correct, then the programs become simpler.
 But the users and input files are generally not well-behaved. At some point we need to be able  to write code that can handle real users and real data (i.e., whatever is thrown at it).
-What do I mean by handle?
+
+__What do I mean by handle?__
+
 The program should not crash and it should not produce results that make absolutely no sense. Instead, the code should validate any input data and produce appropriate error messages indicating invalid data types or values.
 In some situations the program may be able to request the user to re-enter incorrectly provided information (this makes sense in interactive programs).
 In some cases, the program may need to skip invalid data (and optionally log that fact in an error log file).
@@ -34,7 +36,7 @@ Complete the exercises  described below.  Their goal is to give you practice
 in recognizing the potential for trouble and on bullet-proofing your own code
 (or at least attempting to do so).
 
-### Part 1 (nothing to submit)
+### Part 1 (on your own, before the group meeting in the recitation; nothing to submit)
 Consider the following short program:
 
 {% highlight java linenos%}
@@ -70,13 +72,8 @@ two prompts (the first one is supposed to be the age; the second one is supposed
 - `32 43 12 Ellen`
 
 
-You can upload this code to the autograder on Gradescope
-(save the code in a file called `Age.java` in the package called `lab2`).
-You will see that all, but one of the tests fail.
 
-
-
-## Part 2 (submit your file on Gradescope)
+### Part 2 (as a group during recitation; submit your file on Gradescope)
 
 Handling problems like the ones you observed in Part 1 requires different types of validation techniques:
 
@@ -85,20 +82,33 @@ Handling problems like the ones you observed in Part 1 requires different types 
 *   If the program makes calls to functions that throw exceptions[^1], the code should be ready to handle those exceptions (the language like Java forces programmers to handle checked exceptions[^2], but it is a good idea to watch out for the unchecked exceptions as well ). Catching and handling specific types of exceptions allows us to write appropriate types of handlers for the errors that may occur. (This is done using try and catch blocks.)
 *   If the input data comes from the user, the input buffers should be emptied when the input statement is satisfied. In some cases, it might be worthwhile to warn the user (especially in the interactive programs that deal with sensitive information) if part of the input is being ignored. If you are using the [Scanner](https://docs.oracle.com/javase/10/docs/api/java/util/Scanner.html) class in Java, make sure that you understand the difference between the `nextLine()` function and the other next-functions, like `next()`, `nextInt()`, `nextFloat()`, ....
 
-Rewrite the code from Part 1 so that it handles all of the problems that occurred for inputs specified in Part 1. Then resubmit your modified code to the Gradescope autograder to see how many of the tests your code passes.
+#### Activity
 
-You should restrict valid age values to be integers in the range of 0 to 120 (inclusive). The valid names should consist of letters, spaces and hyphens ('-') only (sorry R2D2!).
+1. As a team try to group the problems you identified with the problem from Part 1 into related groups (the problems that might be fixed using a similar approach). (3-5 minutes)
+
+1. Divide the groups that you identified in step 1 between your team members and try to modify the original code to handle those problems. (10 minutes)
+
+  You should restrict valid age values to be integers in the range of 0 to 120 (inclusive). The valid names should consist of letters, spaces and hyphens ('-') only (sorry R2D2!).
+
+1. Discuss your attempted fixes with the rest of your team:
+  - which problems were you able to fix?
+  - which problems still persist?
+  - where the problems your team grouped together in step 1 really belong to the same group or should they be handled differently?
+  (5 minutes per team member)
+
+1. Combine all your code into a single solution that fixes as many problems as possible. You will submit that file to  Gradescope.
+
 
 **Warning: it may be challenging to pass all of the tests, but it is possible to do so with the knowledge of Java that you should have acquired in CSCI-UA 101!**
 
 
 
-## Part 3 (nothing to submit)
+### Part 3 (nothing to submit)
 
 OpenMRS is an open source medical record management system. Being open source means that anybody can read the source code, contribute to it, and, depending on the license, reuse it in their own projects. A lot of the components of OpenMRS are written in Java. We will look to that package for the _real life_ examples of some concepts that are covered in this course. Today you will start with real life input data validation. Go to OpenMRS main GitHub page at [https://github.com/openmrs](https://github.com/openmrs) , select openmrs-core and then directories: `api > src > main > java/org/openmrs  > validator`. This directory contains many different classes that provide validation of various types of values obtained from the user or from other external sources. Take a look at `PersonNameValidator.java` class. Read through the code - you may not be able to understand every single line of the code, but you should be able to get a rough idea what it is doing. Discuss with your group members what makes a valid name in OpenMRS.
 
 
-## Extra credit (optional - complete Part 2 before you attempt this)
+### Extra credit (optional - complete Part 2 before you attempt this; can be done as a group or individually)
 
 Last week you worked on solving several problems and using the CodeBat autograder/autotester to verify if your solution was correct. In parts 1 and 2, we gave you an autograder that determined the correctness of the implementation. In more realistic situations, there is no such tester. The programmers need to be able to convince themselves that their work is correct.
 
@@ -111,7 +121,7 @@ The problem for which you need to write a solution is as follows:
 Write a function that, given a string argument, returns the sum of the numbers appearing in that string, ignoring all other characters. A number is a series of 1 or more digit chars in a row. (Note: [`Character.isDigit(char)`](https://docs.oracle.com/javase/10/docs/api/java/lang/Character.html#isDigit(char)) function tests if a char is one of the characters '0', '1', .. '9'. [`Integer.parseInt(string)`](https://docs.oracle.com/javase/10/docs/api/java/lang/Integer.html#parseInt(java.lang.String)) converts a string to an int.)
 
 *   `sumOfNumbers("abc123xyz")` should return 123
-*   `sumNumbers("aa11b33")` should return 44
+*   `sumNumbers("aa11b-33")` should return 44 (note that '-' does not turn the value into a negative one)
 *   `sumNumbers("7 11")` should return 18 (since there is a space between 7 and 11)
 *   `sumNumbers("hello")` should return 0
 
@@ -144,7 +154,7 @@ public class SumOfNumbers {
 
 
 
-[^1]:     If you do not remember how to handle exceptions in Jave, take a look at the Oracle [lessons on exception handling](https://docs.oracle.com/javase/tutorial/essential/exceptions/)
+[^1]:     If you do not remember how to handle exceptions in Java, take a look at the Oracle [lessons on exception handling](https://docs.oracle.com/javase/tutorial/essential/exceptions/)
 
 [^2]:
      If you are not sure about the difference between checked and unchecked exceptions, you may want to review them. Here is a possible tutorial:  [Checked vs Unchecked Exceptions in Java](https://www.geeksforgeeks.org/checked-vs-unchecked-exceptions-in-java/)
