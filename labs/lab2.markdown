@@ -6,7 +6,7 @@ title: Lab2
 <div class="lab-right" markdown="1">
 
 __due date:__ 7 days from the time you start the lab or
-Sep. 16 (whichever comes first)
+Sep. 23 (whichever comes first)
 
 __submission mode:__ group
 

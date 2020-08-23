@@ -6,7 +6,7 @@ title: Lab
 <div class="lab-right" markdown="1">
 
 __due date:__ 7 days from the time you start the lab or
-Sept. 8
+Sept. 16
 (whichever comes first)
 
 __submission mode:__ group
@@ -53,7 +53,7 @@ Keep in mind that some of the tests may be passing even though you have a blank 
 
 3. As a group, submit your solved problems on Gradescope. It is ok if some of the tests are failing. You need to submit a screenshot of the code and the test results (both in a single screenshot).
 
-  The submitted image should look something like this. (Well, hopefully with some passed tests.) 
+  The submitted image should look something like this. (Well, hopefully with some passed tests.)
 
 <center>
 <img src="img/codingbat_img.png" width="50%"/>
