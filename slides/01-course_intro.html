@@ -35,10 +35,17 @@ name: section
 class: inverse, middle, center
 
 ---
+---
+layout:true
+template: default
+name: poll
+class: inverse, full-height, center, middle
+
+---
 layout:true
 template: default
 name: breakout
-class: breakout, middle
+class: breakout
 
 ---
 
@@ -59,21 +66,62 @@ template: slide
 
 ## The Instructional Stuff
 
-- Joanna Klukowska
-<img style="float:right" alt="Joanna"
-src="https://media-exp1.licdn.com/dms/image/C5603AQELL5z-k8zSdQ/profile-displayphoto-shrink_200_200/0?e=1599696000&v=beta&t=d25_SX2Yg1rQjnezxajXngEwCbsIoOIklmOa95d9mgk" > </img>
+__Instructor:__
 
+- Joanna Klukowska
+<img style="float:right;transform: translateX(-150px)translateY(-4em);" width="130px" alt="Joanna"
+src="https://media-exp1.licdn.com/dms/image/C5603AQELL5z-k8zSdQ/profile-displayphoto-shrink_200_200/0?e=1599696000&v=beta&t=d25_SX2Yg1rQjnezxajXngEwCbsIoOIklmOa95d9mgk" > </img>
+--
+<br>
+
+__Section Leaders:__
+
+- Kate Boxer
+<img style="float:right;transform: translateX(130px);" width="130px" alt="Kate"
+src="img/01/photo_Kate.jpg" > </img>
+--
+
+- Abhinav Gupta
+<img style="float:right;transform: translateX(110px)translateY(-24px);" width="130px" alt="Abhinav"
+src="img/01/photo_Abhinav.jpg" > </img>
 --
 
 - Kunal Khatri
-<img style="float:right" alt="Kunal"
+<img style="float:right;transform: translateX(90px)translateY(-48px);" width="130px" alt="Kunal"
 src="https://media-exp1.licdn.com/dms/image/C4D03AQGjaFmvkNeKgQ/profile-displayphoto-shrink_200_200/0?e=1599696000&v=beta&t=2HGxV0PvjqvyQeMwjAkKMnHqPrl5bxtDFev45mtQx6k" > </img>
-
 --
 
 - Karl Rosenberg
-<img style="float:right" alt="Karl"
+<img style="float:right;transform: translateX(445px)translateY(70px);" width="130px" alt="Karl"
 src="https://media-exp1.licdn.com/dms/image/C4D03AQEF5xYf9seOxQ/profile-displayphoto-shrink_200_200/0?e=1599696000&v=beta&t=wWf52ubMRqWmPdJFsi-cnEUeiCz58JK-Qw19oGTz2Iw" > </img>
+--
+
+- Samarth Tambad
+<img style="float:right;transform: translateX(425px)translateY(22px);" width="130px" alt="Samarth"
+src="https://media-exp1.licdn.com/dms/image/C4D03AQFGMpe93kcl3Q/profile-displayphoto-shrink_200_200/0?e=1603929600&v=beta&t=lqYqD2A7MJus6esp4l3X2FHVNsy1lYfLMFDTp-J2kzc" > </img>
+
+--
+
+__Course Assistants:__
+
+- Shreya Shreya
+<img style="float:right;transform: translateX(-75px);" width="130px" alt="Shreya"
+src="https://media-exp1.licdn.com/dms/image/C4E03AQFP-KolWtJ4rA/profile-displayphoto-shrink_200_200/0?e=1603929600&v=beta&t=TORZc0FlIZ40RkGXOcVoiJPPI_WOWelWhIsZ5LLioMo" > </img>
+--
+
+- Yichun Wu
+<img style="float:right;transform: translateX(-100px)translateY(-36px);" width="120px" alt="Shreya"
+src="img/01/photo_Yichun.jpg" > </img>
+
+
+
+---
+template:poll
+
+<iframe src="https://www.polleverywhere.com/clickable_images/TZqSkjT8yYxRgRFpsDpRV?preview=true&controls=all"
+width="100%"  height="90%" frameBorder="0"></iframe>
+
+
 
 ---
 
@@ -92,7 +140,7 @@ src="https://media-exp1.licdn.com/dms/image/C4D03AQEF5xYf9seOxQ/profile-displayp
 
 - Course tools (and there are many):
   - [Open DSA](https://canvas.instructure.com/courses/2119541) - online textbook
-  - [Piazza](https://piazza.com/nyu/fall2020/csci102/) - our discussion forum
+  - [Ed](https://us.edstem.org/) - our discussion forum
   - [PeerWise](https://peerwise.cs.auckland.ac.nz) - collaborative review guide,
   question database
   - [Gradescope](https://www.gradescope.com/courses/144639) - autograder and submission
@@ -102,6 +150,16 @@ src="https://media-exp1.licdn.com/dms/image/C4D03AQEF5xYf9seOxQ/profile-displayp
 
 
 ---
+template:poll
+
+<iframe src="https://embed.polleverywhere.com/free_text_polls/5obtM8lspCoHIrSQqixyv?preview=true&controls=all"
+width="100%"  height="90%" frameBorder="0"></iframe>
+
+
+
+---
+template:slide
+
 ## Data Structures and Algorithms
 ### What are they?
 
@@ -403,7 +461,7 @@ public static long fibonacci2 (
 --
 
 .smaller[
-- When we try to computer the 40<sup>th</sup> Fibonacci number:
+- When we try to compute the 40<sup>th</sup> Fibonacci number:
     - the code on the left takes __463 milliseconds__
     - the code on the right takes __~0.008 milliseconds__
 
@@ -463,6 +521,15 @@ is important for the programs to run fast.
 - After 5-10 minutes, some groups will get a chance to report on what
 they came up with.
 
+--
+
+.center[.large[
+<button onclick="document.getElementById('volunteer').innerHTML = getRndInteger(1,55)">
+Pick a Group to Report</button>
+
+<p id="volunteer"></p>
+]]
+
 ---
 
 template: section
@@ -497,7 +564,7 @@ wrote in class or the code that is in the book.
 --
 
 - __Treat mistakes and bugs as your friends__. The more problems you encounter, the easier it is to
-regognize them in the future. Your brain actually rewires itself when you make a mistake and fix
+recognize them in the future. Your brain actually rewires itself when you make a mistake and fix
 it - this is how learning happens.
 
 --
@@ -523,6 +590,13 @@ template: section
      <script src="js/remark.js" type="text/javascript">
     </script>
     <script src="js/remark_conf.js" type="text/javascript">
+    </script>
+
+
+    <script>
+    function getRndInteger(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) ) + min;
+    }
     </script>
 
   </body>
