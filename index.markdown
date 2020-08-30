@@ -9,7 +9,7 @@ title: Course Essentials
 <iframe class="calendar" src="https://calendar.google.com/calendar/embed?height=300&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FNew_York&amp;src=bnl1LmVkdV9qYnM2MjBraXZmMWE3cDA4aGFqMGhmN2VmY0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;color=%238E24AA&amp;showTitle=0&amp;showNav=0&amp;showPrint=0&amp;showCalendars=0&amp;mode=AGENDA"  height="300"  frameborder="0" scrolling="no"></iframe>
 
 
-<iframe class="calendar" src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FNew_York&amp;src=Y19yY3RiM2c3bWprYmpyanBxNHA2Nmc3MWM4MEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=bnl1LmVkdV85NGE3MHZsbGc5czI2dXR1MDZra291cHA0MEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=bnl1MzMxQG55dS5lZHU&amp;color=%23F4511E&amp;color=%23F4511E&amp;color=%23039BE5&amp;showTitle=0&amp;showNav=1&amp;showDate=1&amp;showPrint=1&amp;showTabs=1&amp;showCalendars=1&amp;showTz=1;mode=AGENDA"  height="300"  frameborder="0" scrolling="no"></iframe>
+<iframe class="calendar" src="https://calendar.google.com/calendar/embed?height=300&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FNew_York&amp;src=Y19yY3RiM2c3bWprYmpyanBxNHA2Nmc3MWM4MEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=bnl1LmVkdV85NGE3MHZsbGc5czI2dXR1MDZra291cHA0MEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=bnl1MzMxQG55dS5lZHU&amp;color=%23F4511E&amp;color=%23F4511E&amp;color=%23039BE5&amp;showTitle=0&amp;showNav=0&amp;showDate=1&amp;showPrint=1&amp;showTabs=1&amp;showTz=1;mode=AGENDA"  height="300"  frameborder="0" scrolling="no"></iframe>
 
 <p class="hang" markdown="1"><span class="emph">Class meetings:</span> <br>{{ site.course_time }}
 </p>
