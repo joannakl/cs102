@@ -23,6 +23,8 @@ function stack frames, references vs. objects.
 
 ### Recitation / Lab (9/2, 9/4, 9/9)
 
+[Use this algorithm to figure out when and how you should be attending recitations](Data_Structures_Recitations_Algorithm.html).
+
 __9/7, Monday: no classes, Labor Day holiday__
 __9/9, Wednesday: classes follow Monday schedule, attend recitation meetings according to the Monday schedule__
 
@@ -30,7 +32,7 @@ __9/9, Wednesday: classes follow Monday schedule, attend recitation meetings acc
 - Meet a few people from your section
 - Complete the problem set for [Lab 1](labs/lab1.html). <br>
 You have 7 days from the time you start the lab till your final submission. You can revise and update
-your answers during those 7 days as many times as you wish. 
+your answers during those 7 days as many times as you wish.
 
 
 </div>
@@ -41,7 +43,7 @@ your answers during those 7 days as many times as you wish.
 
 Due immediately:
 - Carefully read through the [syllabus](syllabus.html). I expect you to be familiar with it.
-- Sign up for all the tools mentioned in _Week 0_.
+- Sign up for all the tools mentioned in _Week 0_ and in the Welcome message.
 
 Due by the end of Friday:
 - Record your introduction video.
