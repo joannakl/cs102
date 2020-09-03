@@ -44,20 +44,18 @@ to write fairly large programs right at the beginning of the semester.__
 
 Your grade will be based on:
 
-* test/exams: online exams completed individually
-* programming projects: several programming projects completed individually
-* problem sets:
-	- weekly activities completed during recitations
-    (individually or, preferably, in small groups)
-	- creating answer keys for selected problems/activities
-* quizzes: pop-quizzes given during lectures, **not announced**
-* progress: completing assigned readings, tutorials, activities, etc.,  and answering
+* 2 exams (15% midterm exam, 20% final exam): online exams completed individually
+* 3-5 online quizzes (15% total): online 30 minute quizzes completed individually
+* 4-7 programming projects (22% total): several programming projects completed individually
+* weekly labs (10% total):
+	- weekly activities completed mostly during recitations in small groups
+	- creating solutions to one weekly lab to be published for the entire class
+* quizzes (10%): pop-quizzes given during lectures, **not announced**
+* progress (3%): completing assigned readings, tutorials, activities, etc., and answering
 	embedded questions
-* participation: taking active part in class discussions (asking and answering
+* participation (5%) total: taking active part in class discussions (asking and answering
 	questions during lectures and on the course discussion forum), creating, answering
 	and commenting on the review questions on PeerWise
-(The exact distribution of how each of the above contributes to your grade will
-	be determined prior to the start of the semester.)
 
 Grades will be determined using the following scale:
 
@@ -77,35 +75,36 @@ The grade of *Incomplete* is reserved for students who, for legitimate and docum
 # Absences (excused and unexcused)
 ---
 
-We generally do not take attendance, although, if you miss too many sessions, we will notice.
+We generally do not take attendance, although, if you miss too many sessions, we will notice. If you are going to be missing classes due to the time zone differences, you should talk to your instructor right at the start of the semester.
 
 If you __miss an in-class quiz__ (for any reason), you will get a chance to make it up by writing a summary of the lecture
 that you missed and submitting it for evaluation. You will need to watch the lecture recording and write a few paragraph long summary. (This needs to be a summary
 written in your own words, not a transcript of parts of the lecture.)
 
-The exams can be made up only in case of an excused absence with appropriate documentation.
+The online quizzes and exams can be made up only in case of an excused absence with appropriate documentation.
 
-If you will miss an exam due to a religious observance, please familiarize yourself with [University Calendar Policy on Religious Holidays](https://goo.gl/e6NHDe) and talk to me well in advance to come up with alternative arrangements.
+If you will miss an online quiz or exam due to a religious observance, please familiarize yourself with [University Calendar Policy on Religious Holidays](https://goo.gl/e6NHDe) and talk to the instructor well in advance to come up with alternative arrangements.
 
 
 # Recitations
 ---
 
 Recitations are the times to have most of your questions answered. These could be questions about upcoming projects,
-material covered during the prior week or the weekly problem sets.
+material covered during the prior week or the weekly labs. They are also a chance for you to work with a group of students
+from the class to solve some problems together.
 
 We will discuss the details of attendance and the in-person vs. remote mode of recitations for each week at the start of the semester.
 
 
-# Weekly Problem Sets
+# Weekly Labs
 ---
 
-Each week you will be given a problem set. You should review that problem set before
+Each week you will be given a lab to work on. You should review the lab instructions before
 your weekly recitation so that you can discuss any questions and issues during the
 recitation.
 
-You are encouraged to work with other students on the problem sets. You can do that in a breakout room
-during the scheduled recitation times. If you work on a problem set as a team, you should make a single submission
+You will work with other students on the lab during the recitation session. You can do that in a breakout room
+during the scheduled recitation times. The group should make a single submission
 with all your names attached to it.
 
 Once during the semester, you will be selected to be a _solution writer_. This means that in addition to submitting
@@ -113,8 +112,8 @@ your regular solutions for the given problem set, you will be in charge of prepa
 students can access afterwards. You should work very closely with your recitation leader to make sure that your
 published solutions are readable to other students, detailed and correct.
 
-The weekly problem sets can be retrieved any time during the week in which they are assigned but prior to the
-recitation session for which you are registered. They are due 7 days (i.e., 7 time 24 hours) after you retrieved
+The weekly labs can be retrieved any time during the week in which they are assigned but prior to the
+recitation session for which you are registered. They are due 7 days (i.e., 7 time 24 hours) after you retrieve
 them for the first time.
 
 
@@ -150,16 +149,20 @@ lines of code. It makes more sense to comment out broken pieces of the code and
 submit incomplete implementation of the project, instead of submitting a program
 that does not compile or run.
 
-
-
 __No programming projects can be accepted after the last day of classes.__
 
 
-# Exams
+# Exams and Quizzes
 ---
 
-There will be two or more exam-like assessments. The details of the format of those
-will be posted before the start of the semester.
+There will be two timed online exams: midterm and final. They will be given during the
+class time (midterm) or during the university scheduled time (final).
+
+In addition there will be several online quizzes (30 minute each). You will be able
+to complete them as any point during a fixed 24hr period.
+
+All online quizzes and exams must be completed individually by you with no assistance of
+any other human.
 
 <!--
 
@@ -210,7 +213,7 @@ definition.
 
 __Fair Actions__
 
-- Working and completing a weekly problem set with other students and specifying the name
+- Working and completing a weekly lab with other students and specifying the name
 of all those involved as authors.
 - Discussing problem sets and assignments with other students in a natural language
 (i.e., English or any other spoken language, not Java) and acknowledging such discussions
@@ -249,7 +252,7 @@ a programming project or an exam.
 # Topics Covered
 ---
 
-(not necesserily in this order)
+(not necessarily in this order)
 
 * Java features: abstract classes, interfaces, inheritance,
 polymorphism, generics, iterators, exception handling, file I/O
