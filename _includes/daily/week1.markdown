@@ -15,6 +15,8 @@ course organization, quick overview of the syllabus.
 
 ### Lecture 2 (9/9)
 
+How to make this class and the CS/Tech fields more inclusive. 
+
 Java programs under the hood: going from source code to a running program,
 Java Virtual Machine (JVM), how do programs use memory, stack, heap,
 function stack frames, references vs. objects.
@@ -54,6 +56,7 @@ Due by the end of Friday:
 
 - [Primitive Data Types in Java](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html)
 - [Arrays in Java](https://docs.oracle.com/javase/tutorial/java/nutsandbolts/arrays.html)
+- [The Bias Embedded in Algorithms](https://blog.getpocket.com/2020/06/the-bias-embedded-in-algorithms/?utm_source=twitter?utm_medium=social?utm_campaign=shares_from_blog) - pick a few articles that seem interesting
 
 </div>
 </div>
