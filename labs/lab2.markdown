@@ -76,7 +76,7 @@ two prompts (the first one is supposed to be the age; the second one is supposed
 ### Part 2 (as a group during recitation; submit your file on Gradescope)
 
 You should be working in an Ed Workspace with your group members.
-Here is a quick video with instructions on how to create a single group workspace and share it with the members of your group: [how to create and use a single Ed workspace for lab 2](https://stream.nyu.edu/media/t/1_g2xgm5n0) (or [here](lab2_using_workspaces.mp4), if the previous link does not work).
+Here is a quick video with instructions on how to create a single group workspace and share it with the members of your group: [how to create and use a single Ed workspace for lab 2](https://stream.nyu.edu/media/1_dbx055dl) (or [here](https://youtu.be/Bam-JvlIt5I), if the previous link does not work).
 
 Handling problems like the ones you observed in Part 1 requires different types of validation techniques:
 
