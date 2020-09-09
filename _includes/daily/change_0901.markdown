@@ -49,6 +49,11 @@ At the start of the semester you will need to sign up for several of these tools
 
   Record your first video: an introduction telling us who you are, why you are taking the class and a fun fact about yourself (just for fun).
 
+- __Ed__
+
+  We will be using Ed as a discussion forum and for collaborative code editing. You should see an invitation to Ed in your email box soon. Once you have access, feel free to use that platform to ask any course-related questions: you can post them publicly to the entire class or you can post them privately so only the instructional stuff will see them.
+  If you did not get the invitation you can self enroll by using this [join link](https://us.edstem.org/join/W25pP7). S
+
 
 </div>
 
