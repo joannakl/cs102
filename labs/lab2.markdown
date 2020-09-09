@@ -76,7 +76,7 @@ two prompts (the first one is supposed to be the age; the second one is supposed
 ### Part 2 (as a group during recitation; submit your file on Gradescope)
 
 You should be working in an Ed Workspace with your group members.
-Here is a quick video with instructions on how to create a single group workspace and share it with the members of your group: [how to create and use a single Ed workspace for lab 2](https://stream.nyu.edu/media/t/1_g2xgm5n0).
+Here is a quick video with instructions on how to create a single group workspace and share it with the members of your group: [how to create and use a single Ed workspace for lab 2](https://stream.nyu.edu/media/t/1_g2xgm5n0) (or [here](lab2_using_workspaces.mp4), if the previous link does not work).
 
 Handling problems like the ones you observed in Part 1 requires different types of validation techniques:
 
@@ -90,7 +90,7 @@ Handling problems like the ones you observed in Part 1 requires different types 
 1. As a team try to group the problems you identified with the code from Part 1 into related groups (the problems that might be fixed using a similar approach). (3-5 minutes)
 
 1. Divide the groups that you identified in step 1 between your team members and try to modify the original code to handle those problems. (10 minutes) You can create additional files in which each of you is trying
-to fix the problem they are working on so that you are not creating conflicts between each other. 
+to fix the problem they are working on so that you are not creating conflicts between each other.
 
   You should restrict valid age values to be integers in the range of 0 to 120 (inclusive). The valid names should consist of letters, spaces and hyphens ('-') only (sorry R2D2!).
 
