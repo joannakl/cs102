@@ -3,5 +3,6 @@ _site
 .jekyll-metadata
 *.less
 .htaccess
-
+.jekyll*
+Gemfile*
 daily_18
