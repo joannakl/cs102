@@ -8,6 +8,8 @@
 
 ### Lecture 1 (9/10)
 
+Finish with the slide deck from last class (starting at heap discussion).
+
 Overview of data structures and algorithms: binary search, how to evaluate
 performance of an algorithm (constant, logarithmic and linear running times),
 adding elements to a _full_ array, arrays as consecutive memory locations,
@@ -26,14 +28,15 @@ search trees, hash tables (basic introduction to all).
 
 - Q&A about project 1: come with questions to the recitation session
 - Complete the problem set for [Lab 2](labs/lab2). Large part of it is designed for your group work during recitations.
-  You have 7 days from the time you start the lab till your final submission. You can revise and update your answers during those
-  7 days as many times as you wish.
+  You have 7 days from the time you start the lab till your final submission. You can revise and update your answers during those 7 days as many times as you wish.
 
 </div>
 
 <div class="column_assign"  markdown="1">
 
 ### Assignments
+
+
 
 </div>
 </div>
