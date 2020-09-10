@@ -15,14 +15,14 @@ performance of an algorithm (constant, logarithmic and linear running times),
 adding elements to a _full_ array, arrays as consecutive memory locations,
 connecting separate chunks of memory into a data structure (linked list).
 
-[slides](slides/03_data_structures_overview_1.html)
+[slides](slides/03-data_structures_overview_1.html)
 
 ### Lecture 2 (9/15)
 
 Overview of data structures and algorithms, continued: stacks, queues, binary
 search trees, hash tables (basic introduction to all).
 
-[slides](slides/03_data_structures_overview_2.html)
+[slides](slides/03-data_structures_overview_2.html)
 
 ### Recitation / Lab (9/11, 9/14, 9/16)
 
