@@ -177,6 +177,21 @@ main .name {
   font-variant: small-caps;
 }
 
+main ul {
+  margin: 0 0 0 1em;
+  padding: 0 0 0 1em;
+  overflow: hidden;
+}
+main li {
+  padding: 0 0 0 0em;
+}
+
+.strong{
+  color: darkred;
+  font-weight: bold;
+  font-variant: small-caps;
+}
+
 .lab {
   max-width: 80em;
   width:72%;
