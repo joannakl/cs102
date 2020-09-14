@@ -54,7 +54,9 @@ search trees, hash tables (basic introduction to all).
 
   (The quiz will be available on NYU Classes next week.)
 
+### Readings
 
+- _Codeless Data Structures_, chapter 1 sections 1-4, chapter 2 section 6
 
 
 </div>
