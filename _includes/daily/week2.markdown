@@ -36,7 +36,6 @@ search trees, hash tables (basic introduction to all).
 
 ### Assignments
 
-
 - __project 1__: Reading and understanding code. Due __Sept. 24, 11:55pm__. <br>
   Familiarize yourself with the following code. The three files provide a simple implementation
   of a color converter (CSS named colors, RGB values, hex-representation). Once you decide that you understand
@@ -53,6 +52,14 @@ search trees, hash tables (basic introduction to all).
   - input file: [color_list.txt](hwk/color_list.txt) - some of the questions in the quiz refer to this file
 
   (The quiz will be available on NYU Classes next week.)
+
+- Get ready for class on Thursday, Sep. 17: [download source code](code/module2_advanced_java.zip) <br>
+    This collection of Java source code files contains four stand alone programs: `Race01`, ..., `Race04`.
+    - Start by downloading the source code above and reading the [README](code/module2_advanced_java/README.md) file.
+    - Read through the code for `Race01` program: [`Race01.java`](code/module2_advanced_java/Race01.java) and
+        [`RaceContender01.java`](code/module2_advanced_java/RaceContender01.java) <br>
+      Note any questions you might have. Try to find all the things that looks strange or seem unclear.
+    - Do the same for the other three programs. 
 
 ### Readings
 
