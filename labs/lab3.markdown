@@ -60,7 +60,7 @@ When we run it, it produces a single line of output:
 How does it work? How does `println` function know what to do? Where do the commas and the square brackets come from? And what is `System.out` to begin with? (Yes, you probably used `System.out` a thousand times, but have you ever stopped to think about what it actually is. Is it a class, object, something else? Where is it defined? What other things you can do with it?)
 
 It order to complete the three parts below, you will need two things:
-- [Java documentation pages](https://docs.oracle.com/javase/11/docs/api/)
+- [Java documentation pages](https://docs.oracle.com/en/java/javase/11/docs/api/index.html)
 - [Java source code](code/java.base.zip) - make sure that you download the source code and extract it from the zip file prior to the recitation. You should also know where you saved it and how to navigate back to it, so that you can access it easily when you are working with your group.
 
 __This lab uses Java 11. It does not matter if the version of Java installed on your own system is different.__
@@ -69,11 +69,11 @@ __This lab uses Java 11. It does not matter if the version of Java installed on 
 
 <span class="strong">Complete this part based on reading the documentation (NOT the source code).</span>
 
-Java API comes with thorough documentation. You can browse through it starting at the main page at [Java documentation pages](https://docs.oracle.com/javase/11/docs/api/), or you can just use a search engine to look for the name of a particular class that you are interested in. Note that the search often returns documentation pages for older versions of Java (versions 7 and 8 still seem to be dominant). In some cases it does not matter. But when you need documentation for a specific version, just replace the number in the URL by the version number that you want or add 'java 11', for example, to your search query.
+Java API comes with thorough documentation. You can browse through it starting at the main page at [Java documentation pages](https://docs.oracle.com/en/java/javase/11/docs/api/index.html), or you can just use a search engine to look for the name of a particular class that you are interested in. Note that the search often returns documentation pages for older versions of Java (versions 7 and 8 still seem to be dominant). In some cases it does not matter. But when you need documentation for a specific version, just replace the number in the URL by the version number that you want or add 'java 11', for example, to your search query.
 
 
 
-*   Read  the documentation for the **[System](https://docs.oracle.com/javase/11/docs/api/java/lang/System.html)** class.
+*   Read  the documentation for the **[System](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/System.html)** class.
 *   Find the class in which the **println** function is defined and look at the detailed description(s) of this function.  It says there that it uses **valueOf** function defined in another class. Look at the documentation for that function.
 *   Finally, the documentation for the appropriate **valueOf** function claims to use yet another function (don't worry, this is the end of this chain). Look at the documentation for that function (you need it to answer one of the questions below).
 
@@ -88,7 +88,7 @@ WARNING: think of how the compiler decides which overloaded function should be c
 5. **println** calls **valueOf** function while it executes. What class is this function defined in?
 6. There are several **valueOf** functions. Which function is used in the above program?
 7. **valueOf** function calls another function. In which class is that function defined?
-8. Reading all the documentation, were you able to figure out where the square brackets and the commas in the output come from? If so, what is the answer? If not, you probably took a wrong _turn_ answering one of the questions above. Go back to the previous questions and/or ask for help. 
+8. Reading all the documentation, were you able to figure out where the square brackets and the commas in the output come from? If so, what is the answer? If not, you probably took a wrong _turn_ answering one of the questions above. Go back to the previous questions and/or ask for help.
 
 
 ### Part 2 (as a group during recitation; submit your answers on Gradescope)
