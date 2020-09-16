@@ -3,7 +3,7 @@
 
 
 <div class="week_heading" markdown="1">
-## Wenesday, Sept. 16
+## Wednesday, Sept. 16
 </div>
 
 <div class="column_one"  markdown="1">
