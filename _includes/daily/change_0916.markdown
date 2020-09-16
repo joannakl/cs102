@@ -1,18 +1,17 @@
 
 <div class="change">
-<div class="column_date">
-<p markdown="block">
 
+
+<div class="week_heading" markdown="1">
 Mon, 9/16
-</p>
 </div>
 
-<div class="column_recitation">
-<p markdown="block">
+<div class="column_one"  markdown="1">
+
 
 Last day to drop the classes without a W.
 
-</p>
+
 </div>
 
 </div>
