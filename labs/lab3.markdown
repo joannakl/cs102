@@ -61,7 +61,7 @@ How does it work? How does `println` function know what to do? Where do the comm
 
 It order to complete the three parts below, you will need two things:
 - [Java documentation pages](https://docs.oracle.com/en/java/javase/11/docs/api/index.html)
-- [Java source code](code/java.base.zip) - make sure that you download the source code and extract it from the zip file prior to the recitation. You should also know where you saved it and how to navigate back to it, so that you can access it easily when you are working with your group.
+- [Java source code](/code/java.base.zip) - make sure that you download the source code and extract it from the zip file prior to the recitation. You should also know where you saved it and how to navigate back to it, so that you can access it easily when you are working with your group.
 
 __This lab uses Java 11. It does not matter if the version of Java installed on your own system is different.__
 
