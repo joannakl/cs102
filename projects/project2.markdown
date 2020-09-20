@@ -227,7 +227,7 @@ Sample user interaction is shown in Appendix 2.
 </div> </div></div>
 
 <div class="wrap-collabsible">
-<input id="classes" class="toggle" type="checkbox"  checked>
+<input id="classes" class="toggle" type="checkbox" >
 <label for="classes" class="lbl-toggle"> Data Storage and Organization </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
@@ -551,7 +551,7 @@ the case in future assignments.
 
 
 <div class="wrap-collabsible">
-<input id="appendix" class="toggle" type="checkbox"  checked>
+<input id="appendix" class="toggle" type="checkbox" >
 <label for="appendix" class="lbl-toggle"> Appendix </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
