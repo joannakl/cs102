@@ -2,6 +2,8 @@
  *    lessc styles.less styles.css
  * to generate the css file.
  */
+
+
 /* Color schemes website:
  *     http://colorschemedesigner.com
  */
@@ -61,6 +63,10 @@ h4 {
   font-size: 1.0em;
   font-weight: bold;
   color: #40334d;
+}
+
+.lab h1, h2, h3, h4 {
+    font-size: 150%;
 }
 /******************************************/
 header {
@@ -153,6 +159,16 @@ main hr {
   width: 400px;
   text-align: left;
 }
+
+.lab  hr {
+  margin: 0;
+  padding: 0;
+  color: #40334d;
+  background-color: #40334d;
+  height: 3px;
+  width: 100%;
+}
+
 main p {
   margin: 0px;
   padding: 2px;
@@ -171,6 +187,9 @@ main .emph {
   color: #40334d;
   font-weight: bold;
   font-variant: small-caps;
+}
+.red {
+    color: red;
 }
 main .name {
   color: #40334d;
@@ -205,6 +224,12 @@ main li {
   border-color:  #b3a3c2;
   position:fixed;
   right:0;
+}
+
+.lab td {
+    padding: 0.1em 1em 0.1em 1em;
+    vertical-align: top;
+    border: 1px lightgray solid
 }
 td {
   padding: 1em;
@@ -325,4 +350,116 @@ footer {
   padding: 0;
   float: right;
   width: 38%;
+}
+
+
+
+
+
+
+
+/***************************************/
+
+
+
+
+
+.code_title {
+    font-size: 120%;
+}
+
+code {
+    background-color: #63447d21;
+    font-size:110%;
+}
+
+pre code {
+    background-color:#f8f8f8;
+
+}
+
+.highlight td {
+    border:0;
+}
+
+
+
+
+
+/* collapsible style from https://www.digitalocean.com/community/tutorials/css-collapsible */
+
+
+
+.wrap-collabsible {
+  margin-bottom: 1.2rem 0;
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+.lbl-toggle {
+  display: block;
+
+  font-weight: bold;
+  font-family: monospace;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  text-align: left;
+
+  padding: 1rem;
+  margin: 1em 0 0 0 ;
+
+  color: black;
+  background: lightgray;
+
+  cursor: pointer;
+
+  border-radius: 1px;
+  transition: all 0.25s ease-out;
+}
+
+.lbl-toggle:hover {
+  color: purple;
+}
+
+.lbl-toggle::before {
+  content: ' ';
+  display: inline-block;
+
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid currentColor;
+  vertical-align: middle;
+  margin-right: .7rem;
+  transform: translateY(-2px);
+
+  transition: transform .2s ease-out;
+}
+
+.toggle:checked + .lbl-toggle::before {
+  transform: rotate(90deg) translateX(-3px);
+}
+
+.collapsible-content {
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height .25s ease-in-out;
+}
+
+.toggle:checked + .lbl-toggle + .collapsible-content {
+  max-height: 1000vh;
+}
+
+.toggle:checked + .lbl-toggle {
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.collapsible-content .content-inner {
+  background: white;
+  border-bottom: 1px solid white;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding: .5rem 1rem;
 }
