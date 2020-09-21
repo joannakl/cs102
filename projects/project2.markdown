@@ -53,10 +53,10 @@ get practice on) the following tasks:
 - parsing data
 - working with exception handling
 
-Most, if not all, of the skills that you need to complete this project
+Many of the skills that you need to complete this project
 are based on the material covered in cs101. But there might be certain
 topics for which you did not have to write a program or that you forgot.
-Make sure to ask questions during recitations, in class and on Piazza.
+Make sure to ask questions during recitations, in class and on Ed.
 
 **Start early!** This project requires you to write several classes and
 debugging always takes time.
