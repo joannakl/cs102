@@ -92,7 +92,7 @@ Handling problems like the ones you observed in Part 1 requires different types 
 1. Divide the groups that you identified in step 1 between your team members and try to modify the original code to handle those problems. (10 minutes) You can create additional files in which each of you is trying
 to fix the problem they are working on so that you are not creating conflicts between each other.
 
-  You should restrict valid age values to be integers in the range of 0 to 120 (inclusive). The valid names should consist of letters, spaces and hyphens ('-') only (sorry R2D2!).
+    You should restrict valid age values to be integers in the range of 0 to 120 (inclusive). The valid names should consist of letters, spaces and hyphens ('-') only (sorry R2D2!).
 
 1. Discuss your attempted fixes with the rest of your team:
   - which problems were you able to fix?
