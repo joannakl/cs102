@@ -30,5 +30,28 @@ Continue asking and answering questions about the Race01 ... Race04 programs.
 
 ### Assignments
 
+- Continue working on Project 1.
+- Create one review question on Peerwise that would be useful for material review for
+    the take-home quiz 1. The review questions should clearly explain what they are asking
+    for, provide several answers with one correct answer (the incorrect answers should be
+    likely answers, not something obviously wrong), provide explanation of the answers
+    (why are the wrongs ones wrong, and how does one get the correct answer). <br>
+    Due: Saturday, Sept. 26 by midnight
+- Answer some of the review questions on Peerwise and provide feedback for them (either
+    just assessing their difficulty and quality or writing actual comments if appropriate). <br>
+    Due: Monday, Sept. 28 by midnight
+- Get ready for take-home quiz 1. Will be given on Sept. 29.
+
+### Readings
+
+Any Java resources that review
+- object oriented design: inheritance, polymorphism, dynamic binding,
+abstract classes, interfaces, ... (you know what you need to review)
+- file IO
+- command line arguments for a program
+- exception handling 
+
+
+
 </div>
 </div>
