@@ -1,0 +1,99 @@
+---
+layout: lab
+title: Lab
+---
+
+## Race01
+
+- What is the exception “InturruptEception”
+- How is rand.nextInt() implemented?
+- position = position + rand.nextInt(LARGEST_MOVE)+1; Why the plus 1?
+- What is the exception, and what is interrupted in the exception
+- What is the Thread class, and what is the thread.sleep() method
+- Why is there nothing in the Catch block, how would we handle it if exception occured
+- What’s the point of having multiple race contender classes?
+- What’s the point of the try/catch block (Thread.sleep)?
+- Is there a better way to clear the screen other than just printing out spaces?
+- Does catching and ignoring the interrupted exception prevent a user from quitting the program early?
+- What is the role of the following code: catch(InterruptedException e)?
+- What does the protected keyword mean for variables?
+- Difference between private and protected
+- What is InterruptedException?
+- When multiple contenders cross the finish line at the same time, only the one that comes first in the array is counted as the winner
+- In line 38, what is catch(InterruptedException e){} doing?
+- Why clearScreen() and printPosition() have to be static methods?
+- What is a Thread?
+- Why is there a catch statement under the try statement for Thread.sleep?
+- Is there a more efficient way to clear the screen besides spamming spaces?
+- What does the protected declaration(?) do for number and position?
+- What does @Override do?
+- Why is the catch block empty? Is this good practice?
+- Why does Thread.sleep() throw an Interrupted Exception?
+- What is a thread? What is the purpose of thread in this program?
+- What's the thread?
+- What is InterruptedException?
+- Why specify this for the number but not the position in the object RaceContender constructors
+- Why error handle a thread sleep command?
+- What specifically is InterruptedException (line 38 and line 59)
+- What does “thread.sleep” do? (line 58)
+- Why would thread.sleep throw an exception?
+- Why use protected variables for number and position in RaceContender01?
+- Why does the for loop in line 95 begin with a semicolon?
+- Line 95 in Race0- java - for ( ; i < FINISH_LINE; i++)
+- RaceContender0- java has both a toString() and getNumber() method that do the same thing, so why have both?
+- When running the code, why do I get numbers of maps showing each step of the printPosition() method instead of just one map showing the whole process?
+- What is the “Thread” class?
+- Why put it in the “Try-Except” block?
+- What is printf?
+- Line 59: Why is the exception block empty?
+- try{Thread.sleep(500);} (how does this work?)
+- What is InterruptedException? What’s its purpose and how will it help the program?
+- What is the purpose of writing @param and @return?
+- What is printf?
+- What is try/catch in line 36?
+- What is Thread.sleep(500)?
+- What is @param, and what does it do
+- Format of for loop on line 95
+- In the Contender class, why protected vs. private?
+- Why protected vs. public if they’re all in same package?
+- Why is move() overridden in all of RaceContender01’s children, yet still defined in RaceContender01?
+- Why is there so much repeated code?
+- What does thread.sleep do?
+- What does the final keyword do?
+- What is the point of the catch block for the thread.sleep?
+- When would it be executed.
+- How is the screen height universal?
+- What does clearScreen() do?
+- What exactly is InterruptedException when it’s being caught?
+- Why do we need a try and catch loop when we wait 500ms before each movement?
+- What does printf do differently from println?
+- How does the code deal with ties?
+- Purpose of lines 58/59 (why the Try/Catch? What are we catching?)
+- Purpose of using .sleep(int i) ?
+- Why do you have to wait a second after the race finishes?
+- General question about .super() (b/c it should be automatic?)
+- Why do we need to catch exceptions after waiting?
+- What does override mean?
+- Why does the for loop in line 95 not have an initialization?
+- Why do you need to write public static for some of the declared variables?
+- What does the “thread” method do? (Line 37)
+- What does the “this.number” indicate?
+- How does the “clearScreen” method work?
+- Line 37 - what does Thread.sleep mean
+- Line 64 - meaning of %s
+- What could cause the thread to be interrupted?
+- I’ve never seen System.out.printf before. How is that different from System.out.println?
+- What’s the meaning of Screen and how is it used?
+- What is Thread.sleep(500), what does it do, and why is it in a try/catch block?
+- Why do the variables in RaceContender have to be protected?
+- Why is a value not initialized in the last for loop in the printPosition method?
+- Why is the second for statement missing curly brackets at the end of printPosition?
+- What is Thread.sleep and what does it do?
+- Why are the number and position variables in the RaceContender class declared private?
+- What is thread.sleep and why is 500 ms ideal? (Lines 34 - 38)
+- Why use protected for the instance variables in RaceContender01?
+- Why/when does Thread.sleep(500) throw an exception?
+- Is Race0- java an object in itself?
+- Why is variable i not written in for loop (line 95)?
+- What’s the purpose of the Thread.sleep() function & how does it work?
+- Why do we need try-catch blocks? Why can’t we just have the Thread.sleep() function by itself?

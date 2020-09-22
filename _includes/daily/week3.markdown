@@ -18,6 +18,9 @@ This is a chance to review of of the object oriented design topics: inheritance,
 
 Continue asking and answering questions about the Race01 ... Race04 programs.
 
+Questions from the breakout rooms last class:
+[Race01](Race01), 
+
 ### Recitation / Lab (9/18, 9/21, 9/23)
 
 - Q&A about project 1: come with questions to the recitation session
@@ -49,7 +52,7 @@ Any Java resources that review
 abstract classes, interfaces, ... (you know what you need to review)
 - file IO
 - command line arguments for a program
-- exception handling 
+- exception handling
 
 
 
