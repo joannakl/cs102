@@ -19,7 +19,7 @@ This is a chance to review of of the object oriented design topics: inheritance,
 Continue asking and answering questions about the Race01 ... Race04 programs.
 
 Questions from the breakout rooms last class:
-[Race01](Race01), 
+[Race01](Race01), [Race02](Race02), [Race03](Race03), [Race04](Race04)
 
 ### Recitation / Lab (9/18, 9/21, 9/23)
 

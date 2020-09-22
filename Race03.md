@@ -35,4 +35,4 @@ title: Lab
 - What’s the difference b/w Race03 and the other Race programs?
 - Is there an efficiency difference between using arrays to store the racecontenders like in Race03 vs just listing them out like in Race02, aside from less tedious/long code?
 - Could you make the length of the array not a multiple of 3?
-- Why do lines 30-33 use rand.nextInt(89)+10 instead of just rand.nextInt(99)+1?
+- Why do lines 30-33 use `rand.nextInt(89)+10` instead of just `rand.nextInt(99)+1`?
