@@ -41,8 +41,15 @@ in a list, removing elements.
 
 ### Assignments
 
+- Prepare for the take-home quiz. Work on problems in Peerwise.
+
 - [Project 2](projects/project2.html) posted, due Oct. 8 at 11:59PM (New York City time)
 
+
+### Readings
+
+- OpenDSA, chapter 4
+- _Think Data Structures_ chapters 3 and 4 (get a head start chapter 5)
 
 </div>
 </div>
