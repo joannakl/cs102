@@ -159,10 +159,7 @@ In the above, the words in uppercase indicate keywords that will be replaced by
 actual values, for example `mass 200` or `location 50.7 6.08`.
 
 In the first case, `location LATITUDE LONGITUDE`, the program should display the
-list of five meteorites that are known to land nearest to the LATITUDE, LONGITUDE
-coordinates specified by the user. The results should be presented in the order
-from the one closest, to the one furthest (in case of ties, the name field should
-be used to resolve them using the alphanumeric ordering).
+meteorite whose landing site location is closest to the one specified by the user.
 
 In the second case, `year YEAR`,  the program should display the list of all meteorites
 that have landed during that year. The results should be displayed in alphanumeric
@@ -357,16 +354,28 @@ In addition, the class should implement the following two methods:
 
 	If the current list is empty, this method should return `null`.
 
+- `public MeteoriteLinkedList getByYear ( int year)  `
+
+	This method should return a list of all `Meteorite` objects that landed on Earth
+	on the `year` specified.
+	The returned list should be sorted according to the natural ordering of the elements (i.e., dictated
+	by the `comparaTo` method defined in the `Mereorite` class).
+	If the value of `year` is less than zero, the method
+	should throw an instance of `IllegalArgumentException` with an appropriate message.
+
+	If there are no elements in the list that match the given criteria, this method should return `null`.
+
+
 
 #### <code class="code_title">MeteoriteLinkedList</code> class
 
 The `MeteoriteLinkedList` class should provide an implementation of a simple __sorted singly
 linked list__.
 
-The class should use an inner private class to define the code:
+The class should use an inner private class to define the `Node`:
 
 {% highlight java linenos %}
-private class Node {
+private class Node implements Comparable<Node> {
 	Meteorite data;
 	Node next;
 
@@ -374,17 +383,24 @@ private class Node {
 		this.data = data;
 	}
 
-	String toString () {
+	public String toString () {
 		return data.toString();
 	}
 
-	boolean equals( Object o ) {
+	public boolean equals( Object o ) {
 		if (this == o) return true;
+		if (!(o instanceof Node)) {
+			return false;
+		}
+		Node other = (Node) o;
+		if (!this.data.equals(other.data)) {
+			return false;
+		}
+		return true;
+	}
 
-
-TODO: finish this method
-
-
+	public int compareTo (Node n ) {
+		return data.compareTo(n.data);
 	}
 }
 {% endhighlight %}
