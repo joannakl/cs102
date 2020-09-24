@@ -680,6 +680,149 @@ public static ArrayList<String> splitCSVLine(String textLine){
 }
 {% endhighlight %}
 
+
+#### Sample Interactions
+
+Here are a few sample runs of a program with much reduced input file to illustrate  the user interface.
+
+```
+
+
+	Search the database by using one of the following queries.
+	  To search for meteorite nearest to a given goe-location, enter
+	        location LATITUDE LONGITUDE
+	  To search for meteorites that fell in a given year, enter
+	        year YEAR
+	  To search for meteorites with weights MASS +/- 10 grams, enter
+	        mass MASS
+	  To finish the program, enter
+	        quit
+
+
+
+
+	Enter your search query:
+
+	year 1980
+	Cccccccccccccccc        3 1980     75  -10.00000  -10.00000
+	Eeeeeeeeee              5 1980          10.00000  -10.00000
+	Dddddddd                4 1980     85  -15.00000  -10.00000
+	Ff ff 01                6 1980     78
+	Ff ff 02                7 1980     78    0.00000    0.00000
+
+
+
+	Enter your search query:
+
+	year 1990
+	Aaaa                    1 1990     20    0.00000    0.00000
+	Bbbb                    2 1990     25   10.00000   10.00000
+
+
+
+	Enter your search query:
+
+	mass 80
+	Cccccccccccccccc        3 1980     75  -10.00000  -10.00000
+	Dddddddd                4 1980     85  -15.00000  -10.00000
+	Ff ff 01                6 1980     78
+	Ff ff 02                7 1980     78    0.00000    0.00000
+
+
+
+	Enter your search query:
+
+	mass 150
+	No matches found. Try again.
+
+
+	Enter your search query:
+
+	location -12.0 -10.0
+	Cccccccccccccccc        3 1980     75  -10.00000  -10.00000
+
+
+	Enter your search query:
+
+	location -14.0 -10.0
+	Dddddddd                4 1980     85  -15.00000  -10.00000
+
+
+	Enter your search query:
+
+	quit
+```
+---
+
+```
+
+
+	Search the database by using one of the following queries.
+	  To search for meteorite nearest to a given goe-location, enter
+	        location LATITUDE LONGITUDE
+	  To search for meteorites that fell in a given year, enter
+	        year YEAR
+	  To search for meteorites with weights MASS +/- 10 grams, enter
+	        mass MASS
+	  To finish the program, enter
+	        quit
+
+
+
+
+	Enter your search query:
+
+	location 0 0
+	Ff ff 02                7 1980     78    0.00000    0.00000
+
+
+	Enter your search query:
+
+	location 0
+	This is not a valid geolocation. Try again.
+
+
+	Enter your search query:
+
+	location
+	This is not a valid query. Try again.
+
+
+
+
+	Enter your search query:
+
+	mass 25
+	Aaaa                    1 1990     20    0.00000    0.00000
+	Bbbb                    2 1990     25   10.00000   10.00000
+
+
+
+	Enter your search query:
+
+	mass twenty five
+	This is not a valid mass. Try again.
+
+
+	Enter your search query:
+
+	mas
+	This is not a valid query. Try again.
+
+
+
+
+	Enter your search query:
+
+	year -10
+	This is not a valid year. Try again.
+
+
+	Enter your search query:
+
+	quit
+```
+
 </div> </div></div>
 
 
