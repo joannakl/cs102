@@ -218,7 +218,7 @@ If any of the values is missing, it should be left blank in the result.
 
 __Sample interaction:__
 
-Sample user interaction is shown in Appendix 2.
+Sample user interaction is shown in the Appendix.
 
 
 </div> </div></div>
