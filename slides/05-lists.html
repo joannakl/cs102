@@ -208,7 +208,363 @@ template: section
 ## a.k.a. Linked List
 
 ---
-## Adding to the list
+
+## Nodes (or a Linked List Building Blocks)
+
+The list is usually composed of __nodes__ that contain the actual data part and
+the memory address of the next element.
+
+.left-column2-large[
+- The first node definition assumes that
+the data elements are of type `int`.
+
+- The second node definition assumes that the data
+elements are of type `String`.
+
+]
+
+.right-column2-small[
+```Java
+class Node {
+  int data;
+  Node next;
+}
+```
+
+```Java
+class Node {
+  String data;
+  Node next;
+}
+```
+
+]
+
+--
+
+.below-column2[
+But other than the type of data, is there really any difference in what
+nodes need to _do_?
+]
+
+--
+.left-column2-large[
+- The last definition is __generic__. It defines
+a node that can store any reference data type.
+.small[
+    `Node<Integer> n = new Node<Integer>();` - creates a node that stores integers
+]
+.small[
+    `Node<String> n = new Node<String>();` - creates a node that stores strings
+]
+.small[
+    `Node<Penguin> n = new Node<Penguin>();` - creates a node that stores penguins
+]
+.small[
+(note: in recent versions of Java, the type name can be skipped in the second
+location: <br> `Node<Integer> n = new Node<>();`)
+]
+]
+
+.right-column2-small[
+
+```Java
+class Node <E> {
+  E data;
+  Node<E> next;
+}
+```
+
+]
+
+---
+## Iterating Through a List
+
+A common task when working with list is to iterate through an existing list.
+
+We'll go over examples of how to do it the right way and the wrong way.
+
+---
+name: iterate-right
+## Iterating Through a List - the right way
+
+---
+template: iterate-right
+
+.center[
+<img alt="iterate through a list" src="img/05/iterate-32.jpg" width=700px />
+]
+
+.center80[
+- given a list, we need to pick a starting point for the iteration
+]
+
+
+---
+template: iterate-right
+
+.center[
+<img alt="iterate through a list" src="img/05/iterate-33.jpg" width=700px />
+]
+
+.center80[
+- given a list, we need to pick a starting point for the iteration
+- a good starting point is the first elements whose reference is stored in
+the `head` variable
+
+    `Node current = head;`
+]
+
+
+---
+template: iterate-right
+
+.center[
+<img alt="iterate through a list" src="img/05/iterate-34.jpg" width=700px />
+]
+
+.center80[
+- given a list, we need to pick a starting point for the iteration
+- a good starting point is the first elements whose reference is stored in
+the `head` variable
+
+    `Node current = head;`
+- to advance the `current` reference to the next node, we need to change the memory
+address that it stores to the memory address that is stored in the `next` reference of the
+node to which it points
+
+    `current = current.next;`
+
+]
+---
+template: iterate-right
+
+.center[
+<img alt="iterate through a list" src="img/05/iterate-36.jpg" width=700px />
+]
+
+.center80[
+- given a list, we need to pick a starting point for the iteration
+- a good starting point is the first elements whose reference is stored in
+the `head` variable
+
+    `Node current = head;`
+- to advance the `current` reference to the next node, we need to change the memory
+address that it stores to the memory address that is stored in the `next` reference of the
+node to which it points
+
+    `current = current.next;`
+
+- to go through the entire list, we just repeat the last step
+
+    ```
+    while ( ... ) {
+        current = current.next;
+    }
+    ```
+
+]
+
+---
+template: iterate-right
+
+.center[
+<img alt="iterate through a list" src="img/05/iterate-37.jpg" width=700px />
+]
+
+.center80[
+- given a list, we need to pick a starting point for the iteration
+- a good starting point is the first elements whose reference is stored in
+the `head` variable
+
+    `Node current = head;`
+- to advance the `current` reference to the next node, we need to change the memory
+address that it stores to the memory address that is stored in the `next` reference of the
+node to which it points
+
+    `current = current.next;`
+
+- to go through the entire list, we just repeat the last step
+
+    ```
+    while ( ... ) {
+        current = current.next;
+    }
+    ```
+
+]
+
+
+---
+template: iterate-right
+
+.center[
+<img alt="iterate through a list" src="img/05/iterate-38.jpg" width=700px />
+]
+
+.center80[
+- given a list, we need to pick a starting point for the iteration
+- a good starting point is the first elements whose reference is stored in
+the `head` variable
+
+    `Node current = head;`
+- to advance the `current` reference to the next node, we need to change the memory
+address that it stores to the memory address that is stored in the `next` reference of the
+node to which it points
+
+    `current = current.next;`
+
+- to go through the entire list, we just repeat the last step
+
+    ```
+    while ( ... ) {
+        current = current.next;
+    }
+    ```
+
+]
+
+---
+template: iterate-right
+
+.center[
+<img alt="iterate through a list" src="img/05/iterate-39.jpg" width=700px />
+]
+
+.center80[
+- given a list, we need to pick a starting point for the iteration
+- a good starting point is the first elements whose reference is stored in
+the `head` variable
+
+    `Node current = head;`
+- to advance the `current` reference to the next node, we need to change the memory
+address that it stores to the memory address that is stored in the `next` reference of the
+node to which it points
+
+    `current = current.next;`
+
+- to go through the entire list, we just repeat the last step
+
+    ```
+    while ( ... ) {
+        current = current.next;
+    }
+    ```
+
+]
+
+---
+template: iterate-right
+
+.center[
+<img alt="iterate through a list" src="img/05/iterate-40.jpg" width=700px />
+]
+
+.center80[
+- given a list, we need to pick a starting point for the iteration
+- a good starting point is the first elements whose reference is stored in
+the `head` variable
+
+    `Node current = head;`
+- to advance the `current` reference to the next node, we need to change the memory
+address that it stores to the memory address that is stored in the `next` reference of the
+node to which it points
+
+    `current = current.next;`
+
+- to go through the entire list, we just repeat the last step
+
+    ```
+    while ( ... ) {
+        current = current.next;
+    }
+    ```
+]
+
+
+---
+name: iterate-condition
+## Iterating Through a List - the right way
+
+__What should be the condition used in the iteration?__
+
+--
+
+Well, this depends on what we are trying to do:
+
+.left-column2-smaller[
+
+- go through all the nodes and _fall off_ the list at the end
+
+    ```
+    Node current = head;
+    while (current != null ) {
+        current = current.next;
+    }
+    ```
+]
+.right-column2-larger[
+<br>
+<img alt="iterate through a list" src="img/05/iterate_1.gif" width=100% />
+]
+
+
+--
+.below-column2[
+<br>
+]
+.left-column2-smaller[
+- go through all the nodes and stop at the last node
+(the first node has to be _processed_ outside of the loop)
+    ```
+    Node current = head.next;
+    if (current != null ) {
+        while (current.next != null ) {
+            current = current.next;
+        }
+    }
+    ```
+]
+.right-column2-larger[
+<br>
+<img alt="iterate through a list" src="img/05/iterate_2.gif" width=100% />
+]
+
+---
+
+## Iterating through the list - the wrong way
+
+Here is an example of a function that attempts to print the content
+of the entire list. It is a member function of the list itself.
+
+```
+void printList (   ) {
+
+    while ( head != null ) {
+        System.out.print(head.data + ", ");
+    }
+
+}
+```
+
+--
+
+- Will the content of the list be printed?
+--
+&nbsp;&nbsp;__YES__
+
+--
+
+- So what _wrong_ about this iteration?
+
+
+---
+template: section
+
+## Adding to a Linked List
+
+---
+## Adding to a Linked List
 
 In order to add an element to the list we first need to create a new `Node`:
 
@@ -232,18 +588,42 @@ We also need to make sure that our algorithm for adding works in case of an empt
 one-element list and a list with many elements.
 
 ---
+name:empty-lists
+
 ## An Empty List
 
 In an empty list, both `head` and `tail` references point to nothing. In this case,
-we need to make them both point to the newly created node:
+we need to make them both point to the newly created node.
 
-.center80[
+.left-column2-small[
+an empty list
+]
+
+.right-colum2-large[
+<img alt="an empty list" src="img/05/add-empty-41.jpg" width=400px />
+]
+
+.below-column2[<br>]
+
+.left-column2-small[
 ```
 Node n = new Node();
 head = n;
 tail = n;
 ```
 ]
+
+
+.right-colum2-large[
+<img alt="an empty list" src="img/05/add-empty-42.jpg" width=400px />
+]
+
+
+
+
+
+
+
 ---
 name: add-front
 
@@ -648,6 +1028,254 @@ Make sure that your function works when the list is empty, when it has only one 
 and when it has many elements.
 
 ---
+template: section
+
+## Searching in a Linked List
+
+---
+
+## Searching in a Linked List
+
+- To find an element in an unsorted array, we need to iterate through the array.
+
+- The search in a linked list is similar and we will use the ideas of iterating through the list
+with just a slight modification.
+
+--
+
+.left-column2[
+Code for iterating through the list:
+
+```
+Node current = head;
+while (current != null ) {
+    current = current.next;
+}
+```
+{{content}}
+]
+
+--
+
+Let's say we are implementing the `find()` method from our interface:
+
+```
+// determines if 'it' is in the list
+// and if so returns its position,
+// otherwise returns -1
+public int find (E it) ;
+```
+
+--
+name: find-implementation
+
+What would this method look like?
+
+---
+template: find-implementation
+
+```java
+public int find (E it) {
+
+    //what should be initialized
+    //and checked
+
+    Node<E> current = head;
+
+    //does the condition need to change
+    while (current != null ) {
+
+        current = current.next;
+        // anything else here?
+    }
+
+
+    //decide what to return
+
+
+
+}
+```
+
+
+
+---
+template: find-implementation
+
+```java
+public int find (E it) {
+
+    //start the counter
+    int counter = 0;
+
+    Node<E> current = head;
+
+    //does the condition need to change
+    while (current != null ) {
+
+        current = current.next;
+        counter++;  //we just passed a node
+    }
+
+
+    //decide what to return
+
+
+
+}
+```
+
+
+---
+template: find-implementation
+
+```java
+public int find (E it) {
+
+    //start the counter
+    int counter = 0;
+
+    Node<E> current = head;
+
+    //stop if we reach the end or find it
+    while (current != null
+            && !cureent.data.euals(it)) {
+        current = current.next;
+        counter++;  //we just passed a node
+    }
+
+
+    //decide what to return
+
+
+
+}
+```
+
+
+---
+template: find-implementation
+
+```java
+public int find (E it) {
+
+    //start the counter
+    int counter = 0;
+
+    Node<E> current = head;
+
+    //stop if we reach the end or find it
+    while (current != null
+            && !cureent.data.euals(it)) {
+        current = current.next;
+        counter++;  //we just passed a node
+    }
+    //if the list is empty,
+    //or we went to the end
+    if (current == null)
+        return -1;
+    return 0;
+}
+```
+
+
+
+
+
+---
+template: section
+
+## Removing From a Linked List
+
+---
+## Removing From a Linked List
+
+In order to remove an element from a list, we first need to determine if it is
+actually stored in the list.
+
+--
+
+As with adding to the list, we will need to consider a few possible scenarios:
+- removing an element that is stored in the first node
+- removing an element that is stored in the last node
+- removing an element that is store in a node somewhere in between
+
+--
+
+The final algorithm has to work if we call it on an empty list, one-elements list
+or a list with many nodes.
+
+---
+## Removing From a Linked List
+
+TODO
+
+---
+
+template:section
+
+# Examples and Things to Think About
+
+---
+## Implementing `size()` and `clear()`
+
+Provide the implementation for these two methods from our list interface:
+
+```java
+// returns the current number of elements in the list
+public int size();
+
+// removes all elements from the list, so it is once again empty
+public void clear();
+```
+
+-----
+
+Now, let's assume that for some unknown reason the `LinkedList` class implementation
+does not have a variable that keeps track of the size of the list (this is not
+a wise decision, but we can do that for the sake of an exercise).
+
+Rewrite your `size()` method so that it can determine the number of elements
+in the list without using the `size` data field.
+
+---
+
+## Iterating through the list
+
+We talked about iterating through the list till the very end (or past the end)
+and about stopping at the last node.
+
+Write the code that would iterate through the list and stop at the second to last node.
+Make sure that your code works without crashing if the list is empty or if it has only
+one element. In such cases the iteration should never happen and `current` should
+be set to `null`.
+
+What application might this kind of iteration have?
+
+---
+
+## Implementing `get()`
+
+The only remaining unimplemented method from our list interface
+is the `get()` method:
+
+```java
+// retrieves and returns an item from position pos
+// throws NoSuchElementException if pos < 0 or pos >= size
+public E get( int pos) throws NoSuchElementException;
+```
+
+Implement it. In what way is it similar to the `find()` method?
+
+---
+## Alternative `find()`
+
+The `find()` in our interface returns the index of the element. There is
+often similar methods  called `contains` that determines if the element
+is in the list or not and returns `true` or `false` accordingly.
+
+Implement such a method.
+
 
 </optgroup>
 
