@@ -29,7 +29,7 @@ iterating through a list, adding to a list.
 Continue with a generic linked list implementation: searching
 in a list, removing elements.
 
-### Recitation / Lab
+### Recitation / Lab (9/25, 9/28, 9/30)
 
 - Q&A about project 2: come with questions to the recitation session
 - Complete the problem set for [Lab 4](labs/lab4). Large part of it is designed for your group work during recitations.
