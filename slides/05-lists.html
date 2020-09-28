@@ -515,9 +515,9 @@ Well, this depends on what we are trying to do:
 ]
 .left-column2-smaller[
 - go through all the nodes and stop at the last node
-(the first node has to be _processed_ outside of the loop)
+(a list with one element has to be processed separately)
     ```
-    Node current = head.next;
+    Node current = head;
     if (current != null ) {
         while (current.next != null ) {
             current = current.next;
@@ -542,6 +542,7 @@ void printList (   ) {
 
     while ( head != null ) {
         System.out.print(head.data + ", ");
+        head = head.next;
     }
 
 }
@@ -1174,7 +1175,7 @@ public int find (E it) {
     //or we went to the end
     if (current == null)
         return -1;
-    return 0;
+    return counter;
 }
 ```
 
@@ -1205,10 +1206,418 @@ As with adding to the list, we will need to consider a few possible scenarios:
 The final algorithm has to work if we call it on an empty list, one-elements list
 or a list with many nodes.
 
----
-## Removing From a Linked List
 
-TODO
+---
+name: remove-front
+
+## Removing from the Front of a List
+
+In these steps we will assume that there is at least one node, so that we have something
+to remove.
+
+---
+template: remove-front
+
+.center[
+<img alt="add to front of a list" src="img/05/remove-front-43.jpg" width=700px />
+]
+
+---
+template: remove-front
+
+.center[
+<img alt="add to front of a list" src="img/05/remove-front-44.jpg" width=700px />
+]
+
+.center80[
+
+`head = ???`
+]
+
+---
+template: remove-front
+
+.center[
+<img alt="add to front of a list" src="img/05/remove-front-45.jpg" width=700px />
+]
+
+.center80[
+
+`head = head.next`
+]
+
+---
+template: remove-front
+
+.center[
+<img alt="add to front of a list" src="img/05/remove-front-45.jpg" width=700px />
+]
+
+.center80[
+
+`head = head.next`
+
+Do we need to do anything to get rid of the actual node that is no longer part of the list?
+]
+
+---
+template: remove-front
+
+.center[
+<img alt="add to front of a list" src="img/05/remove-front-46.jpg" width=700px />
+]
+
+.center80[
+
+`head = head.next`
+
+Do we need to do anything to get rid of the actual node that is no longer part of the list?
+- this depends on the programming language
+- in Java, as long as there are no more references to a given object, the Java garbage collection will take care of
+releasing the memory (i.e., marking it available for reuse)
+]
+
+---
+template: remove-front
+
+.center[
+<img alt="add to front of a list" src="img/05/remove-front-46.jpg" width=700px />
+]
+
+.center80[
+
+`head = head.next`
+
+Would this work, if we had a list with one element?
+
+]
+--
+.center80[
+- almost,
+- if we removed the very last node, `head` is now set to `null`, but `tail` might still
+be pointing the the removed node
+]
+
+--
+
+.center80[
+
+    ```
+    if (head == null )
+        tail = null;
+    ```
+]
+
+
+
+---
+name: remove-back
+
+## Removing the Last Node
+
+In these steps we will assume that there is at least one node, so that we have something
+to remove.
+
+---
+template: remove-back
+
+.center[
+<img alt="add to front of a list" src="img/05/remove_back-47.jpg" width=700px />
+]
+
+
+---
+template: remove-back
+
+.center[
+<img alt="add to front of a list" src="img/05/remove_back-48.jpg" width=700px />
+]
+
+.center80[
+In order to remove the last node, we need to have a reference to the node right before.
+]
+
+---
+template: remove-back
+
+.center[
+<img alt="add to front of a list" src="img/05/remove_back-49.jpg" width=700px />
+]
+
+.center80[
+In order to remove the last node, we need to have a reference to the node right before.
+
+That's because we need to change where the `next` reference in that _one before_ node points to:
+
+`current.next = ???`
+
+]
+
+
+
+---
+template: remove-back
+
+.center[
+<img alt="add to front of a list" src="img/05/remove_back-50.jpg" width=700px />
+]
+
+.center80[
+In order to remove the last node, we need to have a reference to the node right before.
+
+That's because we need to change where the `next` reference in that _one before_ node points to:
+
+`current.next = ???`
+
+]
+
+
+---
+template: remove-back
+
+.center[
+<img alt="add to front of a list" src="img/05/remove_back-51.jpg" width=700px />
+]
+
+.center80[
+In order to remove the last node, we need to have a reference to the node right before.
+
+That's because we need to change where the `next` reference in that _one before_ node points to:
+
+`current.next = null`
+
+]
+
+--
+
+.center80[
+Is this all we need to do? Or are there more steps needed?
+]
+
+
+---
+template: remove-back
+
+.center[
+<img alt="add to front of a list" src="img/05/remove_back-52.jpg" width=700px />
+]
+
+
+.center80[
+In order to remove the last node, we need to have a reference to the node right before.
+
+That's because we need to change where the `next` reference in that _one before_ node points to:
+
+`current.next = null`
+
+]
+
+
+.center80[
+Is this all we need to do? Or are there more steps needed?
+- the `tail` reference is no longer pointing to the last node, we need to fix this
+]
+
+
+---
+template: remove-back
+
+.center[
+<img alt="add to front of a list" src="img/05/remove_back-53.jpg" width=700px />
+]
+
+
+.center80[
+In order to remove the last node, we need to have a reference to the node right before.
+
+That's because we need to change where the `next` reference in that _one before_ node points to:
+
+`current.next = null`
+
+]
+
+
+.center80[
+Is this all we need to do? Or are there more steps needed?
+- the `tail` reference is no longer pointing to the last node, we need to fix this
+    `tail = current; `
+
+]
+
+
+---
+template: remove-back
+
+.center[
+<img alt="add to front of a list" src="img/05/remove_back-54.jpg" width=700px />
+]
+
+
+
+.center80[
+In order to remove the last node, we need to have a reference to the node right before.
+
+That's because we need to change where the `next` reference in that _one before_ node points to:
+
+`current.next = null`
+
+]
+
+
+.center80[
+Is this all we need to do? Or are there more steps needed?
+- the `tail` reference is no longer pointing to the last node, we need to fix this
+    `tail = current; `
+
+]
+
+
+---
+template: remove-back
+
+.center[
+<img alt="add to front of a list" src="img/05/remove_back-54.jpg" width=700px />
+]
+
+.center80[
+Would this work, if we had a list with one element?
+]
+--
+
+.center80[
+- no, because with one node, there is no node before the one that we are removing
+]
+--
+
+.center80[
+- if the list has only one element, we need to set both `head` and `tail` to `null`
+    ```
+    if (head.next == null ) {
+        head = null;
+        tail = null;
+    }
+    ```
+]
+
+
+---
+name: remove-middle
+
+## Removing a Node from Within a List
+
+In these steps we will assume that there is at least one node, so that we have something
+to remove.
+
+---
+template: remove-middle
+
+.center[
+<img alt="add to front of a list" src="img/05/remove-middle-55.jpg" width=700px />
+]
+
+
+
+---
+template: remove-middle
+
+.center[
+<img alt="add to front of a list" src="img/05/remove-middle-56.jpg" width=700px />
+]
+
+.center80[
+Once again, in order to remove a node, we need to have a reference to
+the node right before.
+]
+
+
+---
+template: remove-middle
+
+.center[
+<img alt="add to front of a list" src="img/05/remove-middle-57.jpg" width=700px />
+]
+
+.center80[
+Once again, in order to remove a node, we need to have a reference to
+the node right before.
+
+That's because we need to change where the `next` reference in that
+_one before_ node points to:
+
+`current.next = ???`
+
+]
+
+--
+
+.center80[
+We want to have `current.next` store a memory address of the node after
+the one that we are trying to delete. Where is that address stored?
+
+]
+
+---
+template: remove-middle
+
+.center[
+<img alt="add to front of a list" src="img/05/remove-middle-58.jpg" width=700px />
+]
+
+
+.center80[
+Once again, in order to remove a node, we need to have a reference to
+the node right before.
+
+That's because we need to change where the `next` reference in that
+_one before_ node points to:
+
+`current.next = ???`
+
+]
+
+
+.center80[
+We want to have `current.next` store a memory address of the node after
+the one that we are trying to delete. Where is that address stored?
+
+
+`current.next = current.next.next;`
+
+]
+
+
+---
+template: remove-middle
+
+.center[
+<img alt="add to front of a list" src="img/05/remove-middle-59.jpg" width=700px />
+]
+
+.center80[
+Is this all we need to do?
+- pretty much
+- we won't worry about the case of a list with one element, since then it is
+really removing the first/last node
+]
+
+---
+template: remove-middle
+
+.center[
+<img alt="add to front of a list" src="img/05/remove-middle-60.jpg" width=700px />
+]
+
+
+.center80[
+Java garbage collector will eventually reclaim the memory allocated for the node
+that was deleted.
+]
+
+
+
+
+
+
 
 ---
 
@@ -1276,7 +1685,27 @@ is in the list or not and returns `true` or `false` accordingly.
 
 Implement such a method.
 
+---
+## Putting it all together for `remove()`
 
+We talked about different scenarios for removing an element from a list.
+Use these code fragments and ideas to actually implement the `remove()`
+method that was defined in our interface:
+
+```Java
+// removes and returns an element at position pos, shifts elements starting
+// at pos+1 by one to the left (lower position values)
+// throws NoSuchElementException if pos < 0 or pos >= size
+public E remove(int pos) throws NoSuchElementException;
+```
+
+Assume that there is a `size` data field that keeps track of the exact number of
+elements in the list. And, of course, the `LinkedList` class has data
+fields that store references to the first node and to the last node:
+`head` and `tail`.
+
+Make sure that your function works when the list is empty, when it has only one element,
+and when it has many elements.
 </optgroup>
 
 
