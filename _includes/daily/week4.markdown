@@ -22,7 +22,7 @@ Introduction to linked lists: defining a generic node,
 iterating through a list, adding to a list.
 
 
-[slides](slides/05-lists.html)
+[slides](slides/05-lists_1.html)
 
 ### Lecture 2
 
