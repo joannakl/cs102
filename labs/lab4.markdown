@@ -15,7 +15,7 @@ __submission mode:__ group
 
 <main markdown="1" class="lab">
 
-## <code class="code_title">ArrayList&lt;E&gt;</code> - case study
+## Lab 4: <code class="code_title">ArrayList&lt;E&gt;</code> - case study
 
 
 
