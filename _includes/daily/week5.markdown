@@ -28,6 +28,8 @@ Array-based implementation of a list ADT. Case study for `ArrayList<E>`.
 
 ### Assignments
 
+- Register to vote or check your registration status. 
+
 - Continue working on project 2.
 
 </div>
