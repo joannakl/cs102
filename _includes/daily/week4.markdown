@@ -26,8 +26,8 @@ iterating through a list, adding to a list.
 
 ### Lecture 2
 
-Continue with a generic linked list implementation: searching
-in a list, removing elements.
+Finish with implementing add. 
+Code review of one of the solutions
 
 ### Recitation / Lab (9/25, 9/28, 9/30)
 

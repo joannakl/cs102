@@ -1156,6 +1156,7 @@ public int find (E it) {
 
 ---
 template: find-implementation
+name: find-final
 
 ```java
 public int find (E it) {
@@ -1179,7 +1180,18 @@ public int find (E it) {
 }
 ```
 
+---
+template: find-final
 
+
+.left-column2[
+<div style="transform:translateY(-5em);">
+.red[
+- __What happens when `it == null`?__
+- __What happens if we allow elements stored in the nodes to be `null`?__
+]
+</div>
+]
 
 
 
@@ -1613,11 +1625,62 @@ Java garbage collector will eventually reclaim the memory allocated for the node
 that was deleted.
 ]
 
+---
 
+template:section
 
+# Performance Analysis
 
+---
+## What is the performance of the operations that we discussed?
 
+Assume we have __N__ elements in the list. <br>
+_Note that asymptotic analysis only makes sense when N is very large
+and as it is growing to infinity._
 
+--
+
+- add at a specified position
+--
+&nbsp;__O(N)__
+
+--
+
+  - adding to the front/back &nbsp;__O(1)__
+
+--
+
+- remove from a specified position
+--
+&nbsp;__O(N)__
+
+--
+
+  - remove from the front &nbsp;__O(1)__
+
+--
+
+  - remove from the back
+--
+&nbsp;__O(N)__
+
+--
+
+- find the position/index of an element
+--
+&nbsp;__O(N)__
+
+--
+
+- get the number of elements in the list
+--
+&nbsp;__O(1)__
+
+--
+
+- empty the list
+--
+&nbsp;__O(1)__
 
 ---
 
