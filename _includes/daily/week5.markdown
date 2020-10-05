@@ -8,14 +8,17 @@
 
 ### Lecture 1
 
-NYU Votes.
+[NYU Votes](ArrayList<E> list, E key) presentation.
 
 Finish with a generic linked list implementation: searching
 in a list, removing elements.
 
 ### Lecture 2
 
-Array-based implementation of a list ADT. Case study for `ArrayList<E>`.
+Array-based implementation of a list ADT. Case study for `ArrayList<E>`: growing the array,
+amortized performance analysis, adding and removing, comparing lists for equality.
+
+[slides](slides/05-lists_2.html)
 
 ### Recitation / Lab (10/2, 10/5, 10/7)
 
@@ -28,9 +31,11 @@ Array-based implementation of a list ADT. Case study for `ArrayList<E>`.
 
 ### Assignments
 
-- Register to vote or check your registration status. 
+- Register to vote or check your registration status.
 
 - Continue working on project 2.
+
+- Update your Zoom desktop application to the latest version.
 
 </div>
 </div>
