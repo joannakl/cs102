@@ -150,3 +150,13 @@ book_opt_7_edition: ""
 book_opt_7_link: ""
 book_opt_7_note: "[O'Reilly online access ](https://learning.oreilly.com/library/view/codeless-data-structures/9781484257258/) (sign in using Single-Sign-On option with your NYU credentials)<br> or start from  [NYU Libraries page for the book](https://bobcat.library.nyu.edu/permalink/f/ci13eu/nyu_aleph007029146)"
 book_opt_7_image: "https://learning.oreilly.com/library/cover/9781484257258/"
+
+
+
+
+book_opt_8: "Java: The Complete Reference, "
+book_opt_8_author: "Herbert Schildt, "
+book_opt_8_edition: "11th"
+book_opt_8_link: ""
+book_opt_8_note: "[O'Reilly online access ](https://learning.oreilly.com/library/view/java-the-complete/9781260440249/) (sign in using Single-Sign-On option with your NYU credentials)<br> or start from  [NYU Libraries page for the book](https://bobcat.library.nyu.edu/permalink/f/ci13eu/nyu_aleph005590304)"
+book_opt_8_image: "https://learning.oreilly.com/library/cover/9781260440249/"
