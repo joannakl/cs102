@@ -38,6 +38,7 @@ amortized performance analysis, adding and removing, comparing lists for equalit
 - Update your Zoom desktop application to the latest version.
 
 ### Readings
+
 - _Think Data Structures_ chapter 5
 - _Java: The Complete Reference_ chapter 14 (Generics), or another comprehensive
 reference on generics in Java
