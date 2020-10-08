@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stacks and Queues</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="css/slides.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, title-slide
+
+# CSCI-UA 102
+## Data Structures
+
+<br>
+
+## Stacks and Queues
+
+.author[
+Instructor: Joanna Klukowska <br><br><br>
+]
+
+.license[
+Copyright 2020 Joanna Klukowska. Unless noted otherwise all content is released under  a <br>
+[Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).<br>
+Background image by Stewart Weiss<br>]
+
+---
+layout:true
+template: default
+name: section
+class: inverse, middle, center
+
+---
+layout:true
+template: default
+name: poll
+class: inverse, full-height, center, middle
+
+---
+layout:true
+template: default
+name: breakout
+class: breakout, middle
+
+---
+
+layout:true
+template:default
+name:slide
+class: slide
+
+.bottom-left[&#169; Joanna Klukowska. CC-BY-SA.]
+
+---
+
+template: section
+
+# Stack ADT
+
+---
+
+## Stacks and Stack ADT
+
+__Stacks__ are structures in which elements are always added and removed
+from the same end (depending on how you visualize the stack,
+you may wish to think of that end as the top of the stack).
+Stacks are __last in first out (or LIFO) structures__.
+
+---
+
+## Stacks and Stack ADT
+
+```java
+public interface Stack<E> {
+  /** Add an element to the top of the stack
+   * @param item character to be added to the stack
+   */
+  public void push ( E item ) ;
+
+  /** Remove and return the element from the top of the stack
+   * @return the element from the top of the stack or null if the stack is empty
+   *   from the stack. If stack is empty, null is returned.
+   */
+  public E pop () ;
+
+  /** Return the element from the top of the stack.
+   * @return  the element from the top of the stack or null if the stack is empty
+   */
+  public E peek () ;
+
+  /** Produces string representation of the stack.
+   * @return Returns a String object that contains all elements stored on the stack.
+   *   The elements are separatedb y spaces. The top of the stack is the rightmost
+   *   element in the returned string.
+   */
+  public String toString () ;
+}
+```
+--
+The Java's build in class implementing a stack is [`Stack<E>`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Stack.html).
+
+---
+template: section
+
+# Queue ADT
+
+---
+
+## Queues and Queue ADT
+
+__Queues__ are structures in which elements are added to one end (rear/back of a queue) and removed from the other end (front of a queue).
+Queues are __first in first out structures (FIFO)__.
+
+---
+
+## Queues and Queue ADT
+
+```java
+public interface Queue<E> {
+  /** Add an element to the queue.
+    * @param item  an element to be added to the queue
+    */
+  public void enqueue ( E item ) ;
+
+  /** Remove and return the element from the front of the queue
+    * @return the element from the front of the queue or null if queue is empty
+    */
+  public E dequeue () ;
+
+  /** Return the element from the front of the queue
+    * @return the element from the front of the queue or null if queue is empty
+    */
+  public E peek () ;
+
+  /** Compute a string representation of the queue.
+    * @return String object representing the queue. The string should contain the
+    * current list elements in the queue one per line.
+    */
+  public String toString () ;
+}
+
+```
+--
+
+Java has a built-in interface for a queue: [`Queue<E>`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Queue.html),
+and there are several classes that implement this interface.
+
+Note that the names for the methods are different in the above interface. 
+
+
+</optgroup>
+
+
+
+    </textarea>
+     <script src="js/remark.js" type="text/javascript">
+    </script>
+    <script src="js/remark_conf.js" type="text/javascript">
+    </script>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=configured" type="text/javascript"></script>
+        <script type="text/javascript">
+          var slideshow = remark.create();
+
+          // Setup MathJax
+          MathJax.Hub.Config({
+              tex2jax: {
+              skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+                inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+                displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+                processEscapes: true
+              }
+          });
+
+          MathJax.Hub.Configured();
+        </script>
+
+
+
+  </body>
+</html>
