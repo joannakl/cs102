@@ -22,11 +22,14 @@ lists are _equal_, iterator for a linked list.
 
 Stack and queues: ADT, reference based implementation and array based implementation.
 
+
+[slides](slides/06-stacks_queues.html)
+
 ### Recitation / Lab
 
 - Complete the assignment for [Lab 6](labs/lab6). Large part of it is designed for your group work during recitations.
   __The group tasks need to be completed by the end of the recitation session.
-The individual task should be completed after the recitation session by Oct. 16__
+The individual task should be completed after the recitation session by Oct. 16.__
 
 </div>
 
