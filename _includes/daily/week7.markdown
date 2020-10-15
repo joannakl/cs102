@@ -1,24 +1,42 @@
 <div class="week">
 
 <div class="week_heading" markdown="1">
-## Week 7, 10/15 - 10/21,  
+## Week 7, 10/15 - 10/21,
 </div>
 
 <div class="column_materials"  markdown="1">
 
-### Lecture 1
+### Lecture 1 (10/15)
 
-Midterm exam (tentative)
+Finish with reference based implementation of queues.
 
-### Lecture 2
+Best practices to prepare for the exam.
 
-### Recitation / Lab
+Midterm Q&amp;A.
+
+
+### Lecture 2 (10/20)
+
+__Midterm exam. Given during regular lecture time.__
+
+### Recitation / Lab (10/16, 10/19, 10/21)
+
+Getting ready for project 3. <br>
+Live-coding demo with testing and debugging.
 
 </div>
 
 <div class="column_assign"  markdown="1">
 
 ### Assignments
+
+- Prepare for the midterm exam.
+- Project 3 to be posted soon.
+
+### Readings
+
+If you still are having trouble with amortized analysis, here is another take on it
+[Dynamic Array Amortized Analysis](https://www.interviewcake.com/concept/java/dynamic-array-amortized-analysis)
 
 </div>
 </div>
