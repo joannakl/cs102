@@ -37,7 +37,7 @@ In this project you __will not__ be writing a complete program. Instead, you wil
 classes that implement given interfaces. In order to check the correctness of your implementation
 you should create your own programs that use your classes and test each of the implemented methods carefully.
 
-<br/><br/>
+<br/>
 
 The goal of this programming project is for you to master (or at least
 get practice on) the following tasks:
@@ -61,41 +61,81 @@ debugging always takes time.
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
-Doubly linked list
+A doubly linked list that implements the following interface.
+ The name of your class should be `MyList<E>`.
+
 
 ```java
 // List  ADT
 public interface List<E> {
 
-	// adds an element 'it' at position pos, shifts elements starting at pos by
-	// one position to the right (higher position values)
-	// throws NoSuchElementException if pos < 0 or pos >= size
+	/**
+	* Adds an element 'item' at position `pos`, shifts elements starting at `pos` by
+	* one position to the right (higher position values)
+	* @param item the element to be added to this list
+	* @param pos postion at which `item` should be added
+	* throws NoSuchElementException if `pos` < 0 or `pos` > size
+	* throws IllegalArgumentException if `item == null`
+	*/
 	public boolean add(E item, int pos) throws NoSuchElementException;
 
-	// removes and returns an element at position pos, shifts elements starting
-	// at pos+1 by one to the left (lower position values)
-	// throws NoSuchElementException if pos < 0 or pos >= size
+	/**
+	* Removes and returns an element at position `pos`, shifts elements starting
+	* at `pos+1` by one to the left (lower position values)
+	* @param pos the position from which the element should be removed
+	* @ return the element removed from the list
+	* throws NoSuchElementException if pos < 0 or pos >= size
+	*/
 	public E remove(int pos) throws NoSuchElementException;
 
-
+	/**
+	* Removes and returns an element equal to `item`, shifts elements starting
+	* at the next position by one to the left (lower position values)
+	* @param item element to remove
+	* @return the removed element, or null if element equal to `item` is not in this list
+	*/
 	public boolean remove (E item);
 
-	// determines if 'it' is in the list and if so returns its position,
-	// otherwise returns -1
+	/**
+	* Determines if 'item' is in the list and if so returns its position
+	* @param item to locate in this list
+	* @return position of `item` in this list or -1 if `item` is not found in this list
+	*/
 	public int find (E item) ;
 
-	// retrieves and returns an item from position pos
-	// throws NoSuchElementException if pos < 0 or pos >= size
+	/**
+	* Retrieves and returns an element from position `pos`
+	* @param pos the position of item to return
+	* @return element stored at position `pos`
+	* throws NoSuchElementException if pos < 0 or pos >= size
+	*/
 	public E get( int pos) throws NoSuchElementException;
 
-	// returns the current number of elements in the list
+	/**
+	* Returns the current number of elements in this list
+	* @return the number of elements in this list
+	*/
 	public int size();
 
-	// removes all elements from the list, so it is once again empty
+	/**
+	* Removes all elements from this list, so it is once again empty.
+	*/
 	public void clear();
 
+	/**
+	* Determines if this list is equal to `obj`.
+	* @obj an Object that is compared to this list for equality
+	* @return true if this list is equal to `obj` (same elements in the same order)
+	*         false, otherwise
+	*/
 	public boolean equals(Object obj);
 
+	/**
+	* Returns a string representation of this list. The string is constructed by
+	* concatenating all elements of this list separated by a comma and a single space.
+	* There should be no comma after the last element.
+	* @return a string representation of this list.
+	*/
 	public String toString ();
 }
 
@@ -111,35 +151,47 @@ public interface List<E> {
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
-Singly linked reference based stack.
+A stack using singly linked reference structure that implements the following interface.
+ The name of your class should be `MyStack<E>`.
 
 ```java
+//Stack ADT
+
 public interface Stack<E> {
-  /** Add an element to the top of this stack
-   * @param item character to be added to the stack
-   */
-  public void push ( E item ) ;
+	/**
+	* Add an element to the top of this stack
+	* @param item to be added to this stack
+	* throws IllegalArgumentException if `item == null`
+	*/
+	public void push ( E item ) ;
 
-  /** Remove and return the element from the top of this stack
-   * @return the element from the top of the stack or null if the stack is empty
-   *   from the stack. If stack is empty, null is returned.
-   */
-  public E pop () ;
+	/**
+	* Remove and return the element from the top of this stack
+	* @return the element from the top of this stack or null if this stack is empty
+	*/
+	public E pop () ;
 
-  /** Return the element from the top of this stack.
-   * @return  the element from the top of the stack or null if the stack is empty
-   */
-  public E peek () ;
+	/** Return the element from the top of this stack.
+	* @return  the element from the top of this stack or null if this stack is empty
+	*/
+	public E top () ;
 
-
+	/**
+	* Determines if this stack is equal to `obj`.
+	* @obj an Object that is compared to this stack for equality
+	* @return true if this stack is equal to `obj` (same elements in the same order)
+	*         false, otherwise
+	*/
 	public boolean equals(Object obj);
 
-  /** Produces string representation of this stack.
-   * @return Returns a String object that contains all elements stored on the stack.
-   *   The elements are separated by spaces. The top of the stack is the rightmost
-   *   element in the returned string.
-   */
-  public String toString () ;
+	/**
+	* Returns a string representation of this stack. The string is constructed by
+	* concatenating all elements of this stack separated by a comma and a single space.
+	* The bottom of the stack should be the leftmost element and the top of the stack
+	* should be the rightmost element. There should be no comma after the last element.
+	* @return a string representation of this stack.
+	*/
+	public String toString () ;
 }
 ```
 
@@ -153,33 +205,44 @@ public interface Stack<E> {
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
-Array-based queue
+A queue using an array-based structure that implements the following interface. The name of your class should be `MyQueue<E>`.
 
 ```java
 public interface Queue<E> {
-  /** Add an element to the queue.
-    * @param item  an element to be added to the queue
-    */
-  public void enqueue ( E item ) ;
+	/**
+	* Add an element to the back of this queue
+	* @param item to be added to this queue
+	* throws IllegalArgumentException if `item == null`
+	*/
+	public void enqueue ( E item ) ;
 
-  /** Remove and return the element from the front of the queue
-    * @return the element from the front of the queue or null if queue is empty
-    */
-  public E dequeue () ;
+	/**
+	* Remove and return the element from the front of this queue.
+	* @return the element from the front of this queue or null if this queue is empty
+	*/
+	public E dequeue () ;
 
-  /** Return the element from the front of the queue
-    * @return the element from the front of the queue or null if queue is empty
-    */
-  public E peek () ;
+	/** Return the element from the front of this queue.
+	* @return  the element from the top of this queue or null if this queue is empty
+	*/
+	public E peek () ;
 
-
+	/**
+	* Determines if this queue is equal to `obj`.
+	* @obj an Object that is compared to this queue for equality
+	* @return true if this queue is equal to `obj` (same elements in the same order)
+	*         false, otherwise
+	*/
 	public boolean equals(Object obj);
 
-  /** Compute a string representation of the queue.
-    * @return String object representing the queue. The string should contain the
-    * current list elements in the queue one per line.
-    */
-  public String toString () ;
+	/**
+	* Returns a string representation of this queue. The string is constructed by
+	* concatenating all elements of this queue separated by a comma and a single space.
+	* The front of the qyeye should be the leftmost element and the bacj of the queue
+	* should be the rightmost element. There should be no comma after the last element.
+	* @return a string representation of this queue.
+	*/
+	public String toString () ;
 }
 
 ```
@@ -201,18 +264,8 @@ public interface Queue<E> {
 [Code conventions](https://cs.nyu.edu/~joannakl/cs102_f20/notes/CodeConventions.pdf)
 posted on the course website.
 
-- The data file should be read only once! Your program needs to store the data in memory resident data structures.
-
-- You may not use any of the collection
-classes that were not covered in cs101 (for this assignment, do not use `LinkedList`, `Stack`, `Queue`, `PriorityQueue`, or any classes implementing the `Map` interface). You can, and should, use the `ArrayList` class.
-
-- You must implement the `MeteoriteLinkedList` class from scratch.
-You cannot use any of the built-in Java classes as its base class.
-
-- You may use any exception-related classes.
-
-- You may use any classes to handle the file I/O, but probably the simplest ones
-are `File` and `Scanner` classes. You are responsible for knowing how to use the classes that you select.
+- You may not use any of the collection classes that are implemented in Java libraries. All three classes
+have to be implemented _from scratch_ by you.
 
 </div> </div></div>
 
@@ -223,22 +276,16 @@ are `File` and `Scanner` classes. You are responsible for knowing how to use the
 <div class="content-inner" markdown=1>
 
 - __You should start right away!__
-- You should modularize your design so that you can test it regularly: for example, implement the part of the code that reads and parses the input file, then implement and test individual classes, then implement the part that provides the interactive part of the program, ... .
-- Make sure that at all times you __have a working program!__
-You should also implement stubs of methods that return `0` or `null`. This way your code compiles, even though it may
+- You should modularize your design so that you can test it regularly. Each class is independent of the other classes. You should
+implement and test individual method one by one.
+- Make sure that at all times you __have a working code!__
+You should start by writing stubs of methods that return `0` or `null`. This way your code compiles, even though it may
 not work completely.  You can implement methods that perform one task at a time.
 This way, if you run out of time, at least parts of your program will be functioning properly.
-- You should make sure that you are __testing the program on much smaller data set__ for which you can determine the correct
-output manually. You can create  a test input file that contains only a few rows.
-- You should make sure that your program's results are consistent with what is described in this specification
-by running the program on carefully designed test inputs and examining
-the outputs produced to make sure they are correct.
-The goal in doing this is to try to find the mistakes you have most likely made in your code. <br>
-__DO NOT__ test your program on the entire large input file. This may take a long time and you will never know
-if the results are correct or not.
+- You should make sure that you are __testing all methods__ that you implement. Even a single method running into an infinite loop
+will prevent the autograder from completing.
 - Each class that you submit __will be tested by itself without the context of other classes that you are implementing for this assignment__. <br>
-This means that you need to make sure that your methods can perform their tasks correctly even if they are executed in situations that would not
-arise in the context of this specific program.
+This means that you need to make sure that your methods can perform their tasks correctly.
 - You should __backup__ your code after each time you spend some time working on it.
 Save it to a flash drive, email it to yourself, upload it to your Google drive, push it to a private git repository,
 do anything that gives you a second (or maybe third copy). Computers tend to break just a few days or even
@@ -253,21 +300,22 @@ a few hours before the due dates - make sure that you have working code if that 
 <div class="content-inner" markdown=1>
 
 
-If your program does not compile or if it crashes (almost) every time it is run,
+If your code does not compile or if it crashes (almost) every time it is run,
 you will get a zero on the assignment. Make sure that you are submitting
 functioning code, even if it is not a complete implementation so that you can get partial credit.
 
-If the program does not adhere to the specification, the grade will be low and
+If the code does not adhere to the specification, the grade will be low and
 will depend on how easy it is to figure out what the program is doing and how to work with it.
 
 The grade will be determined by several factors:
 - 40 points: class correctness: correct behavior of methods of the required classes and correct behavior of the program
-	as a whole (this will be determined by the autograder and some manual evaluation)
-- 30 points: design and the implementation of the required classes and any additional classes
+	as a whole (this will be determined by the autograder)
+- 20 points: design and the implementation of the required classes and any additional classes
    (this will be determined by a code review)
+- 20 points: efficiency of the implemented methods (are the operations implemented optimally or do they use unnecessary
+resources in computing the results)
 - 20 points: proper documentation, program style and format of submission
    (this will be determined by a code review)
-- 10 points: academic honesty questionnaire - taken in the form of an online quiz
 
 
 </div> </div></div>
@@ -279,10 +327,10 @@ The grade will be determined by several factors:
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
-__For the purpose of grading, your project must be be in the package called `project2`.
+__For the purpose of grading, your project must be be in the package called `project3`.
 This means that each of your submitted source code files should start with a line:__
 
-`package project2;`
+`package project3;`
 
 
 Your should submit all your source code files (the ones with `.java` extensions only)
@@ -303,269 +351,6 @@ You can produce a zip file directly from Eclipse (if this is what you are using)
 You may resubmit to Gradescope as many times as you wish before the submission link closes. But if you resubmit
 after the grace period ends, your assignment will be subject to the late point deductions.
 
-For this project, you will see ALL of the results for the autograded unit tests. This will not be
-the case in future assignments.
-
-
-</div> </div></div>
-
-
-<div class="wrap-collabsible">
-<input id="appendix" class="toggle" type="checkbox" >
-<label for="appendix" class="lbl-toggle"> Appendix </label>
-<div class="collapsible-content" markdown=1>
-<div class="content-inner" markdown=1>
-
-#### Haversine formula implementation
-
-Source: [Geeks for Geeks](https://www.geeksforgeeks.org/haversine-formula-to-find-distance-between-two-points-on-a-sphere/)
-
-To use this code, you will need to adapt it to your own implementation of the
-`Location` class.
-
-{% highlight java linenos %}
-static double haversine(double lat1, double lon1,
-			double lat2, double lon2)
-{
-	// distance between latitudes and longitudes
-	double dLat = Math.toRadians(lat2 - lat1);
-	double dLon = Math.toRadians(lon2 - lon1);
-
-	// convert to radians
-	lat1 = Math.toRadians(lat1);
-	lat2 = Math.toRadians(lat2);
-
-	// apply formulae
-	double a = Math.pow(Math.sin(dLat / 2), 2) +
-			   Math.pow(Math.sin(dLon / 2), 2) *
-			   Math.cos(lat1) *
-			   Math.cos(lat2);
-	double rad = 6371;
-	double c = 2 * Math.asin(Math.sqrt(a));
-	return rad * c;
-}
-{% endhighlight %}
-
-#### Parsing CSV files
-
-You may use this code as is in your program.
-
-{% highlight java linenos %}
-/**
- * Splits the given line of a CSV file according to commas and double quotes
- * (double quotes are used to surround multi-word entries so that they may contain commas)
- * @author Joanna Klukowska
- * @param textLine  a line of text from a CSV file to be parsed
- * @return an ArrayList object containing all individual entries found on that line;
- *  any missing entries are indicated as empty strings; null is returned if the textline
- *  passed to this function is null itself.
- */
-public static ArrayList<String> splitCSVLine(String textLine){
-
-	if (textLine == null ) return null;
-
-	ArrayList<String> entries = new ArrayList<String>();
-	int lineLength = textLine.length();
-	StringBuffer nextWord = new StringBuffer();
-	char nextChar;
-	boolean insideQuotes = false;
-	boolean insideEntry= false;
-
-	// iterate over all characters in the textLine
-	for (int i = 0; i < lineLength; i++) {
-		nextChar = textLine.charAt(i);
-
-		// handle smart quotes as well as regular quotes
-		if (nextChar == '"' || nextChar == '\u201C' || nextChar =='\u201D') {
-
-			// change insideQuotes flag when nextChar is a quote
-			if (insideQuotes) {
-				insideQuotes = false;
-				insideEntry = false;
-			}
-			else {
-				insideQuotes = true;
-				insideEntry = true;
-			}
-		}
-		else if (Character.isWhitespace(nextChar)) {
-			if ( insideQuotes || insideEntry ) {
-				// add it to the current entry
-				nextWord.append( nextChar );
-			}
-			else { // skip all spaces between entries
-				continue;
-			}
-		}
-		else if ( nextChar == ',') {
-			if (insideQuotes){ // comma inside an entry
-				nextWord.append(nextChar);
-			}
-			else { // end of entry found
-				insideEntry = false;
-				entries.add(nextWord.toString());
-				nextWord = new StringBuffer();
-			}
-		}
-		else {
-			// add all other characters to the nextWord
-			nextWord.append(nextChar);
-			insideEntry = true;
-		}
-
-	}
-	// add the last word ( assuming not empty )
-	// trim the white space before adding to the list
-	if (!nextWord.toString().equals("")) {
-		entries.add(nextWord.toString().trim());
-	}
-
-	return entries;
-}
-{% endhighlight %}
-
-
-#### Sample Interactions
-
-Here are a few sample runs of a program with much reduced input file to illustrate  the user interface.
-
-```
-
-
-	Search the database by using one of the following queries.
-	  To search for meteorite nearest to a given goe-location, enter
-	        location LATITUDE LONGITUDE
-	  To search for meteorites that fell in a given year, enter
-	        year YEAR
-	  To search for meteorites with weights MASS +/- 10 grams, enter
-	        mass MASS
-	  To finish the program, enter
-	        quit
-
-
-
-
-	Enter your search query:
-
-	year 1980
-	Cccccccccccccccc        3 1980     75  -10.00000  -10.00000
-	Eeeeeeeeee              5 1980          10.00000  -10.00000
-	Dddddddd                4 1980     85  -15.00000  -10.00000
-	Ff ff 01                6 1980     78
-	Ff ff 02                7 1980     78    0.00000    0.00000
-
-
-
-	Enter your search query:
-
-	year 1990
-	Aaaa                    1 1990     20    0.00000    0.00000
-	Bbbb                    2 1990     25   10.00000   10.00000
-
-
-
-	Enter your search query:
-
-	mass 80
-	Cccccccccccccccc        3 1980     75  -10.00000  -10.00000
-	Dddddddd                4 1980     85  -15.00000  -10.00000
-	Ff ff 01                6 1980     78
-	Ff ff 02                7 1980     78    0.00000    0.00000
-
-
-
-	Enter your search query:
-
-	mass 150
-	No matches found. Try again.
-
-
-	Enter your search query:
-
-	location -12.0 -10.0
-	Cccccccccccccccc        3 1980     75  -10.00000  -10.00000
-
-
-	Enter your search query:
-
-	location -14.0 -10.0
-	Dddddddd                4 1980     85  -15.00000  -10.00000
-
-
-	Enter your search query:
-
-	quit
-```
----
-
-```
-
-
-	Search the database by using one of the following queries.
-	  To search for meteorite nearest to a given goe-location, enter
-	        location LATITUDE LONGITUDE
-	  To search for meteorites that fell in a given year, enter
-	        year YEAR
-	  To search for meteorites with weights MASS +/- 10 grams, enter
-	        mass MASS
-	  To finish the program, enter
-	        quit
-
-
-
-
-	Enter your search query:
-
-	location 0 0
-	Ff ff 02                7 1980     78    0.00000    0.00000
-
-
-	Enter your search query:
-
-	location 0
-	This is not a valid geolocation. Try again.
-
-
-	Enter your search query:
-
-	location
-	This is not a valid query. Try again.
-
-
-
-
-	Enter your search query:
-
-	mass 25
-	Aaaa                    1 1990     20    0.00000    0.00000
-	Bbbb                    2 1990     25   10.00000   10.00000
-
-
-
-	Enter your search query:
-
-	mass twenty five
-	This is not a valid mass. Try again.
-
-
-	Enter your search query:
-
-	mas
-	This is not a valid query. Try again.
-
-
-
-
-	Enter your search query:
-
-	year -10
-	This is not a valid year. Try again.
-
-
-	Enter your search query:
-
-	quit
-```
 
 </div> </div></div>
 
