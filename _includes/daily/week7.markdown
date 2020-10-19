@@ -31,7 +31,8 @@ Live-coding demo with testing and debugging.
 ### Assignments
 
 - Prepare for the midterm exam.
-- Project 3 to be posted soon.
+
+- [Project 3](projects/project3.html) is posted. Due Oct. 29 at 11:59pm (Eastern Time, US).
 
 ### Readings
 
