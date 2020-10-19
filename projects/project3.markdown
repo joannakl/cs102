@@ -94,7 +94,7 @@ public interface List<E> {
 	* @param item element to remove
 	* @return the removed element, or null if element equal to `item` is not in this list
 	*/
-	public boolean remove (E item);
+	public E remove (E item);
 
 	/**
 	* Determines if 'item' is in the list and if so returns its position
