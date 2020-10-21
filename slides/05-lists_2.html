@@ -399,7 +399,7 @@ __Performance for other functions__
 |`set(index,element)`|O(1)|
 |`size()` | O(1) |
 |`isEmpty()` | O(1) |
-|`clear()` | O(1) |
+|`clear()` | O(N) .small[resets each value to `null`] |
 ]]
 
 .right-column2[.small[
@@ -452,7 +452,7 @@ The `contains()` and `indexOf` methods provides a linear search for the `ArrayLi
     accordingly.
 
 Note that the above methods are NOT part of the `ArrayList<E> ` class. They should be implemented
-    as stand alone methods. 
+    as stand alone methods.
 </optgroup>
 
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+mod<!DOCTYPE html>
 <html>
   <head>
     <title>Stacks and Queues</title>
@@ -635,29 +635,37 @@ of the array instead of allocating a new one.
 
 
 __size = <br>
-&nbsp;&nbsp;&nbsp;(back - front) % capacity__
+&nbsp;&nbsp;&nbsp;(back - front) mod capacity__
 
 (when size < capacity)
 ---
 ### Aside: modulo arithmetic examples
 
-- 10 % 8 = 2
+- 10 mod 8 = 2
 
 --
 
-- 2 % 8 = 2
+- 2 mod 8 = 2
 
 --
 
-- 29 % 8 = 5
+- 29 mod 8 = 5
 
 --
 
-- -6 % 8 = (-6 + 8 ) % 8 = 2 % 8 = 2
+- -6 mod 8 = (-6 + 8 ) mod 8 = 2 mod 8 = 2
 
 --
 
-- -9 % 8 = -1 % 8 = 7 % 8 = 7
+- -9 mod 8 = -1 mod 8 = 7 mod 8 = 7
+
+--
+
+Note that Java's `%` operator does not compute the true modulus, it computes
+the remainder. The two are the same when both operands are positive.
+
+In java: `-6 % 8` evaluates to -6, to obtain true modulus, we need to add the divisor
+to the result: `(-6 % 8) + 8`.
 
 
 ---
@@ -849,7 +857,7 @@ so we need a larger array
 - create a new larger array
 - copy of the values from the old array to the new one<br>
   for each index `i` in the old array, copy it to index <br>
-  `(i - front)%capacity` <br>in the new array
+  `(i - front) mod capacity` <br>in the new array
 - place the new value at the end
 
 --
@@ -878,7 +886,7 @@ so we need a larger array
 - create a new larger array
 - copy of the values from the old array to the new one<br>
   for each index `i` in the old array, copy it to index <br>
-  `(i - front)%capacity` <br>in the new array
+  `(i - front) mod capacity` <br>in the new array
 - place the new value at the end
 
 
@@ -1000,7 +1008,7 @@ Create similar algorithms for the array-based queue implementation.
 In our discussion of the array-based queue when size reaches the capacity the formula for
 size as a function of front and back no longer works:
 
-__size = (back - front) % capacity__
+__size = (back - front) mod capacity__
 
 because __back - front = 0__.
 
