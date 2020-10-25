@@ -74,6 +74,7 @@ public interface List<E> {
 	* one position to the right (higher position values)
 	* @param item the element to be added to this list
 	* @param pos postion at which `item` should be added
+  * @return true if the element was added successfully, false otherwise
 	* throws NoSuchElementException if `pos` < 0 or `pos` > size
 	* throws IllegalArgumentException if `item == null`
 	*/
