@@ -227,11 +227,22 @@ and set the background color*/
   background-color: rgb(255, 255, 128);
 }
 
+.clearbox  {
+  margin: 0 0em 0 0.0em;
+  padding: 1px 5px  1px  5px;
+  border-style: solid;
+  border-color: #AAA; border-width:2px;
+}
+
 .yellowbox .hljs {
   background-color: rgb(255, 255, 128);
 }
 
+
 .yellowbox pre {
+  margin: 0;
+}
+.clearbox pre {
   margin: 0;
 }
 
