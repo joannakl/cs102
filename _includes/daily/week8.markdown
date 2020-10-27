@@ -17,6 +17,11 @@ Introduction to recursion.
 
 ### Lecture 2
 
+Recursion - solving problems using recursion, structure of a recursive algorithm:
+base case, recursive case, error checking.
+
+[slides](slides/08-recursion.html)
+
 Recursion.
 
 ### Recitation / Lab
@@ -31,7 +36,7 @@ The individual task should be completed after the recitation session by Nov. 4._
 
 ### Assignments
 
-- continue working on project 3 
+- continue working on project 3
 
 ### Readings
 
