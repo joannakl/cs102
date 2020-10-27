@@ -275,9 +275,9 @@ String reverse ( String str) {
   if (str.length() == 1 )
     return str;
   else {
-    int len = str.length();
-    return str.charAt(len) +
-          reverse( str.substring(0,len) ) ;
+    int last = str.length()-1;
+    return str.charAt(last) +
+          reverse( str.substring(0,last) ) ;
   }
 }
 ```
@@ -319,9 +319,9 @@ String reverse ( String str) {
   if (str.length() == 0 )
     return str;
   else {
-    int len = str.length();
-    return str.charAt(len) +
-          reverse( str.substring(0,len) ) ;
+    int last = str.length()-1;
+    return str.charAt(last) +
+          reverse( str.substring(0,last) ) ;
   }
 }
 ```
@@ -352,9 +352,9 @@ String reverse ( String str) {
   if (str.length() == 0 )
     return str;
   else {
-    int len = str.length();
-    return str.charAt(len) +
-          reverse( str.substring(0,len) ) ;
+    int last = str.length()-1;
+    return str.charAt(last) +
+          reverse( str.substring(0,last) ) ;
   }
 }
 ```
@@ -394,9 +394,9 @@ String reverseRec ( String str) {
   if (str.length() == 0 )
     return str;
   else {
-    int len = str.length();
-    return str.charAt(len) +
-          reverse( str.substring(0,len) ) ;
+    int last = str.length()-1;
+    return str.charAt(last) +
+          reverse( str.substring(0,last) ) ;
   }
 }
 ```
@@ -436,9 +436,9 @@ String reverseRec ( String str) {
   if (str.length() == 0 )
     return str;
   else {
-    int len = str.length();
-    return str.charAt(len) +
-          reverse( str.substring(0,len) ) ;
+    int last = str.length()-1;
+    return str.charAt(last) +
+          reverse( str.substring(0,last) ) ;
   }
 }
 ```
@@ -1025,7 +1025,7 @@ Can you anticipate potential problems with this solution?
 Write a function that produces a string representation of a linked list
 in reverse order, call it `toStringReverse`.
 
-Remember, the objective is to do this recursively. 
+Remember, the objective is to do this recursively.
 
 ---
 
