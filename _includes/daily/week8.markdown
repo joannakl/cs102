@@ -17,12 +17,13 @@ Introduction to recursion.
 
 ### Lecture 2
 
+Q&A about project 3.
+
 Recursion - solving problems using recursion, structure of a recursive algorithm:
 base case, recursive case, error checking.
 
 [slides](slides/08-recursion.html)
 
-Recursion.
 
 ### Recitation / Lab
 

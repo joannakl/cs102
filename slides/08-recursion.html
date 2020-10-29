@@ -396,7 +396,7 @@ String reverseRec ( String str) {
   else {
     int last = str.length()-1;
     return str.charAt(last) +
-          reverse( str.substring(0,last) ) ;
+          reverseRec( str.substring(0,last) ) ;
   }
 }
 ```
@@ -438,7 +438,7 @@ String reverseRec ( String str) {
   else {
     int last = str.length()-1;
     return str.charAt(last) +
-          reverse( str.substring(0,last) ) ;
+          reverseRec( str.substring(0,last) ) ;
   }
 }
 ```
