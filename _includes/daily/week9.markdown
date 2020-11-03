@@ -16,7 +16,9 @@ Backtracking and eight queens problem.
 
 ### Lecture 2
 
-Searching and sorting algorithms. 
+Searching and sorting algorithms.
+
+[slides](slides/09-searching-and-sorting.html)
 
 ### Recitation / Lab
 
