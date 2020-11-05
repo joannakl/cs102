@@ -16,7 +16,8 @@ Backtracking and eight queens problem.
 
 ### Lecture 2
 
-Searching and sorting algorithms.
+Searching and sorting algorithms: linear search, binary search, using `equals` and 
+`compareTo` - how they differ and how they are similar.
 
 [slides](slides/09-searching-and-sorting.html)
 
