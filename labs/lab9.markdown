@@ -185,6 +185,8 @@ Here is the function that you should be writing the tests for depending on which
 __You should write a method stub for the `Converter` class. You SHOULD NOT implement
 any methods for the `Converter` class as a group. You should ONLY write the tests.__
 
+Make sure to share your workspace with your section leader for feedback and grading. 
+
 ### Additional JUnit tutorial
 
 [Lars Vogel](http://www.vogella.com/people/larsvogel.html) is one of the Eclipse
