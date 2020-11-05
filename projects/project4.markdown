@@ -206,7 +206,7 @@ representing the whole number.
 <div class="content-inner" markdown=1>
 
 The class that you need to implement is the `Converter` class.
-You can find its documentation at  [Converter](project4/Converter.html).
+You can find its documentation at  [Converter](project4_docs/project4/Converter.html).
 
 Note that this class should not provide a public constructor since there is no reason to create instances of the class.
 
