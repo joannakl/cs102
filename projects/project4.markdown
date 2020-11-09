@@ -140,13 +140,13 @@ two/sixteen corresponding to the position
 of the symbol (positions are counted from right to left and start at zero). The sum of those products, gives us
 the decimal equivalent. The prefixes of `0b` and `0x` are ignored in the conversion.
 
-__Decimal to Binary__
+__Decimal to Binary/Hexadecimal__
 
-To convert a decimal integer to binary sequence:
+To convert a decimal integer to binary/hexadecimal sequence:
 
- -  calculate the new decimal value by dividing the decimal integer by two (integer division); the remainder from
+ -  calculate the new decimal value by dividing the decimal integer by two/sixteen (integer division); the remainder from
  that division is the symbol at position zero in the binary sequence (positions are counted from right to left)
- -  calculate the next decimal value by dividing the decimal value from the previous step by two (integer division);
+ -  calculate the next decimal value by dividing the decimal value from the previous step by two/sixteen (integer division);
  the remainder from that division is the symbol at position one in the binary sequence
  -  ...
  -  continue until the decimal value is equal to zero
