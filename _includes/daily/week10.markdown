@@ -18,8 +18,11 @@ Searching and sorting algorithms: mergesort and quicksort.
 
 ### Lecture 2
 
-Tree data structure. 
+Finish with quicksort.
 
+Tree data structure.
+
+[slides](slides/10-trees.html)
 
 ### Recitation / Lab
 
