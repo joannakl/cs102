@@ -20,7 +20,7 @@ Searching and sorting algorithms: mergesort and quicksort.
 
 Finish with quicksort.
 
-Tree data structure.
+Tree data structure: terminology and definitions, .
 
 [slides](slides/10-trees.html)
 
