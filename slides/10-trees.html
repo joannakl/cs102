@@ -578,6 +578,13 @@ Trees are inherently recursive structures: if we pick any node in a tree and
 disconnect it from its parent, we are still left with a tree (a smaller one, but
 a tree). This makes recursive algorithms very intuitive.
 
+--
+
+__Note__ <br/>
+Any reasonable tree implementation would keep a `size` variable, not compute it
+every time that it is needed. But the methodology used in writing a `size()` method
+is similar to what we will need for other algorithms.
+
 ---
 
 ## Binary Tree Size
@@ -647,57 +654,184 @@ int size ( BTNode<E> root )
 ---
 ## Binary Tree Size - Iterative
 
-The same algorithm implemented iteratively is much longer.
 
 - When we looked at iterative and recursive implementations of the size method
-for the linked list they were not significantly different in complexity and,
+for the linked list they were not significantly different in complexity of the code and,
 at least for some of us, the iterative method was a bit more intuitive.
 
-- This is not true when implementing the size method for trees, because at each
-node we have multiple branches, so we need to keep track of unexplored
-branches as we explore the others.
+.left-column2[
+```
+    int size () {
+        Node current = head;
+        int counter = 0;
+        while (current!=null)
+            counter++;
+        return counter;
+    }
+```
+]
+.right-column2[
+```
+int size () {
+    return size(head);
+}
+int size (Node n) {
+    if (n == null)
+        return 0;
+    return 1 + size(n.next);
+}
+```
+]
 
 --
 
-.left-column2-large[
-Here is the pseudocode for the iterative implementation of a size method.
+.below-column2[
 
+]
+
+- The iterative algorithm for computing a size of a binary tree is much more
+complex (in terms of code) than its recursive equivalent.
+
+---
+
+## Binary Tree Size - Iterative
+
+- An iterative algorithm for size of a binary tree needs to keep track of which branches
+have been explored (i.e., counted) and which ones still need to be processed. Since each node
+can have up to two children nodes, there is a potential branch at every single node.
+
+--
+
+- Here is the pseudocode for the iterative implementation of a size method.
+
+    ```
+    int size ( )
+        counter = 0
+        if tree is not empty (root is not null)
+            create an empty stack
+            stack.push( the root of this tree )
+            while stack is not empty
+                current = stack.pop()
+                counter = counter + 1
+                if current has a left child
+                    stack.push( left child )
+                if current has a right child
+                    stack.push( right child )
+        return counter
+    ```
+
+--
+
+- The stack allows us to put the unexplored nodes on hold while we explore other
+nodes. An empty stack indicates that all the nodes in the tree have been counted
+(or that we have a bug in our code, but lets be optimistic).
+
+--
+
+- Can you think of a way of writing the iterative algorithm using a queue?
+
+---
+
+## Iterative Algorithm in Action
+
+.left-column2[
+.smaller[
 ```
 int size ( )
-    set counter to 0
+    counter = 0
     if tree is not empty (root is not null)
         create an empty stack
-        push the root of this tree onto the stack
+        stack.push( the root of this tree )
         while stack is not empty
-            set current to top of the stack
-            remove the top from the stack
-            increment counter
+            current = stack.pop()
+            counter = counter + 1
             if current has a left child
-                push left child onto the stack
+                stack.push( left child )
             if current has a right child
-                push right child onto the stack
+                stack.push( right child )
     return counter
 ```
 ]
---
-.right-column2-small[
-The stack allows us to put the unexplored nodes on hold while we explore other
-nodes. An empty stack indicates that all the nodes in the tree have been counted
-(or that we have a bug in our code, but lets be optimistic).
+<br/><br/>
+.center[
+<img width="350px" alt="size of a binary tree" src="img/10/binary-tree-24.jpg">
+]
+
+]
+
+.right-column2[
+.smaller[
+
+{{content}}
+
+]
 ]
 --
+`counter: 0     current: -     stack:  [A]`
 
-Can you think of a way of writing the iterative algorithm using a queue?
+{{content}}
+--
+`counter: 1     current: A     stack:  [B, C]`
+
+{{content}}
+--
+`counter: 2     current: B     stack:  [C, D, E]`
+
+{{content}}
+--
+`counter: 3     current: C     stack:  [D, E, F, G]`
+
+{{content}}
+--
+`counter: 4     current: D     stack:  [E, F, G]`
+
+{{content}}
+--
+`counter: 5     current: E     stack:  [F, G, H, I]`
+
+{{content}}
+--
+`counter: 6     current: F     stack:  [G, H, I, J]`
+
+{{content}}
+--
+`counter: 7     current: G     stack:  [H, I, J, K]`
+
+{{content}}
+--
+`counter: 8     current: H     stack:  [I, J, K]`
+
+{{content}}
+--
+`counter: 9     current: I     stack:  [J, K]`
+
+{{content}}
+--
+`counter: 10     current: J     stack:  [K]`
+
+{{content}}
+--
+`counter: 11     current: K     stack:  []`
+
 
 ---
 
 template:breakout
 
-## General Tree Size
+### General Tree Size
 
-Using ideas that we discussed for a binary tree node, write a recursive algorithm
+Using ideas that we discussed for a binary tree size calculation, write a recursive algorithm
 that determines the size of a general tree.
 
+.small[
+Keep in mind the structure of the node for a general tree and the fact that the
+logical representation of the tree is somewhat different than the actual memory level representation
+(i.e., the parent node does not have references to all of its children nodes).
+]
+
+.center[
+<img width="450px" alt="general tree" src="img/10/node-46.jpg">
+]
 
 
 ---
@@ -751,11 +885,11 @@ on the data stored in the nodes, then _process_ means _perform the computation_.
 Here is the pseudocode for a recursive inorder traversal algorithm.
 
 ```
-recInorderTraversal ( BTNode<E> node )
+inorder ( BTNode<E> node )
     if node is not null
-        recInorderTraversal( node.left )
+        inorder( node.left )
         process the node
-        recInorderTraversal( node.right )
+        inorder( node.right )
 ```
 
 --
@@ -766,22 +900,21 @@ recInorderTraversal ( BTNode<E> node )
 Here is the pseudocode for an iterative inorder traversal algorithm.
 
 ```
-inorderTraversal ( )
+inorder ( )
     if tree is not empty (root is not null)
         create an empty stack
-        set current to root of this tree
-        set done to false
+        current = root of this tree
+        done = false
         while not done
             if current is not null
-                push current onto the stack
+                stack.push( current )
                 current = current.left
             else if stack is not empty
-                current = top of the stack
-                remove the item from top of the stack
+                current = stack.pop()
                 process current
                 current = current.right
             else
-                set done to true
+                done = true
 ```
 ]
 
@@ -798,7 +931,183 @@ the function stack _remembers_ the nodes along the way.)
 ]
 
 ---
-# Preorder Traversal
+name: inorder
+## Recursive Inorder Traversal in Action
+
+--
+template: inorder
+<br/><br/>
+.center[
+<img width="800px" alt="inorder traversal" src="img/10/inorder-2.jpg">
+]
+---
+template: inorder
+<br/><br/>
+.center[
+<img width="800px" alt="inorder traversal" src="img/10/inorder-3.jpg">
+]
+---
+template: inorder
+<br/><br/>
+.center[
+<img width="800px" alt="inorder traversal" src="img/10/inorder-4.jpg">
+]
+---
+template: inorder
+<br/><br/>
+.center[
+<img width="800px" alt="inorder traversal" src="img/10/inorder-5.jpg">
+]
+---
+template: inorder
+<br/><br/>
+.center[
+<img width="800px" alt="inorder traversal" src="img/10/inorder-6.jpg">
+]
+---
+template: inorder
+<br/><br/>
+.center[
+<img width="800px" alt="inorder traversal" src="img/10/inorder-7.jpg">
+]
+---
+template: inorder
+<br/><br/>
+.center[
+<img width="800px" alt="inorder traversal" src="img/10/inorder-8.jpg">
+]
+---
+template: inorder
+<br/><br/>
+.center[
+<img width="800px" alt="inorder traversal" src="img/10/inorder-9.jpg">
+]
+---
+template: inorder
+<br/><br/>
+.center[
+<img width="800px" alt="inorder traversal" src="img/10/inorder-10.jpg">
+]
+---
+template: inorder
+<br/><br/>
+.center[
+<img width="800px" alt="inorder traversal" src="img/10/inorder-11.jpg">
+]
+---
+template: inorder
+<br/><br/>
+.center[
+<img width="800px" alt="inorder traversal" src="img/10/inorder-12.jpg">
+]
+---
+template: inorder
+<br/><br/>
+.center[
+<img width="800px" alt="inorder traversal" src="img/10/inorder-13.jpg">
+]
+---
+template: inorder
+<br/><br/>
+.center[
+<img width="800px" alt="inorder traversal" src="img/10/inorder-14.jpg">
+]
+---
+template: inorder
+<br/><br/>
+.center[
+<img width="800px" alt="inorder traversal" src="img/10/inorder-15.jpg">
+]
+---
+template: inorder
+<br/><br/>
+.center[
+<img width="800px" alt="inorder traversal" src="img/10/inorder-16.jpg">
+]
+---
+template: inorder
+<br/><br/>
+.center[
+<img width="800px" alt="inorder traversal" src="img/10/inorder-17.jpg">
+]
+---
+template: inorder
+<br/><br/>
+.center[
+<img width="800px" alt="inorder traversal" src="img/10/inorder-18.jpg">
+]
+---
+template: inorder
+<br/><br/>
+.center[
+<img width="800px" alt="inorder traversal" src="img/10/inorder-19.jpg">
+]
+---
+template: inorder
+<br/><br/>
+.center[
+<img width="800px" alt="inorder traversal" src="img/10/inorder-20.jpg">
+]
+---
+template: inorder
+<br/><br/>
+.center[
+<img width="800px" alt="inorder traversal" src="img/10/inorder-21.jpg">
+]
+---
+template: inorder
+<br/><br/>
+.center[
+<img width="800px" alt="inorder traversal" src="img/10/inorder-22.jpg">
+]
+---
+template: inorder
+<br/><br/>
+.center[
+<img width="800px" alt="inorder traversal" src="img/10/inorder-23.jpg">
+]
+---
+template: inorder
+<br/><br/>
+.center[
+<img width="800px" alt="inorder traversal" src="img/10/inorder-24.jpg">
+]
+---
+template: inorder
+<br/><br/>
+.center[
+<img width="800px" alt="inorder traversal" src="img/10/inorder-25.jpg">
+]
+---
+template: inorder
+<br/><br/>
+.center[
+<img width="800px" alt="inorder traversal" src="img/10/inorder-26.jpg">
+]
+---
+template: inorder
+<br/><br/>
+.center[
+<img width="800px" alt="inorder traversal" src="img/10/inorder-27.jpg">
+]
+
+Complete the remaining steps for the right-subtree of the root.
+---
+template: inorder
+<br/><br/>
+.center[
+<img width="800px" alt="inorder traversal" src="img/10/inorder-28.jpg">
+]
+---
+template: inorder
+<br/><br/>
+.center[
+<img width="800px" alt="inorder traversal" src="img/10/inorder-29.jpg">
+]
+
+
+---
+## Preorder Traversal
 
 In the __preorder traversal__ of the tree, we visit the node before exploring its children (left then right).
 
@@ -808,18 +1117,18 @@ The pseudocode for a recursive preorder traversal algorithm does not differ
 much from the inorder version - the only difference comes in when the node itself is processed:
 
 ```
-preorderTraversal ( BTNode<E> node )
+preorder ( BTNode<E> node )
     if node is not null
         process the node
-        preorderTraversal( node.left )
-        preorderTraversal( node.right )
+        preorder( node.left )
+        preorder( node.right )
 ```
 
 
 
 
 ---
-# Postorder Traversal
+## Postorder Traversal
 
 In the __postorder traversal__ of the tree, we visit the node after exploring its children (left then right).
 
@@ -828,16 +1137,62 @@ In the __postorder traversal__ of the tree, we visit the node after exploring it
 The pseudocode for a recursive postorder traversal algorithm is as follows:
 
 ```
-postorderTraversal ( BTNode<E> node )
+postorder ( BTNode<E> node )
     if node is not null
-        postorderTraversal( node.left )
-        postorderTraversal( node.right )
+        postorder( node.left )
+        postorder( node.right )
         process the node
 ```
 
 
+
 ---
 
+template:section
+
+# Examples and Things to Think About
+
+---
+
+## Iterative `size` with a Queue
+
+Replace the stack in the iterative implementation of the `size()` method with a queue.
+
+- Does it still count all the nodes?
+
+- Trace this modified method on the same tree that we used to trace the method
+that used a stack.
+
+- What changes compared to the implementation that uses the stack?
+
+---
+
+## Trace Iterative Inorder Traversal
+
+For the iterative `size()` implementation, we traced what happens (i.e., value of
+variables and stack content) for each iteration when `size()` was called on a
+particular tree.
+
+Create a trace like that for the iterative inorder traversal implementation.
+
+
+---
+
+## Iterative Pre- and Postorder Traversals
+
+Provide an iterative algorithm for the preorder and postorder traversals.
+
+HINT: this is similar to the inorder traversal.
+
+---
+
+## Iterative `inorder` with a Queue
+
+Replace the stack in the iterative implementation of the `inorder()` method with a queue.
+
+- Does it still produce the _inorder_ traversal of the tree?
+
+- List the nodes in the order that this revised algorithm "processes" them.
 
 
 

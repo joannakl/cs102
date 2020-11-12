@@ -128,6 +128,17 @@ h1{
 }
 
 
+
+.small .remark-code{
+    font-size: 70%;
+}
+
+.smaller .remark-code{
+    font-size: 85%;
+}
+
+
+
 /*remove extra space from top of the slide
 and set the background color*/
 .remark-slide-content {
