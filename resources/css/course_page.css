@@ -191,6 +191,9 @@ main .emph {
 .red {
     color: red;
 }
+.green {
+    color: green;
+}
 main .name {
   color: #40334d;
   font-variant: small-caps;
