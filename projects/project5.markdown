@@ -401,7 +401,7 @@ specified by the `Meteorite` class.
 
 #### <code class="code_title">BST</code> class
 <span class=green markdown=1>
-You should start with the BST class provided at https://us.edstem.org/courses/2361/workspaces/p9zvyygboHTqD9OhbLxWyfnlzVapHdlF
+You should start with the BST class provided in the [Ed workspace](https://us.edstem.org/courses/2361/workspaces/p9zvyygboHTqD9OhbLxWyfnlzVapHdlF). 
 You should remove the `main()` method before submitting it, but you can use it while you are developing
 the class to use for testing.
 You will need to add several methods to that class, but you should use the ones that are there already rather than
