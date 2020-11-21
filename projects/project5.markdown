@@ -354,15 +354,17 @@ In addition, the class should implement the following methods:
 
 	<span class=green markdown=1>This method should return a collection of all `Meteorite` objects with mass within `delta` grams of the
 	specified `mass`. Both values are specified in grams.
-	The returned list should be sorted according to the natural ordering of the elements (i.e., dictated
-	by the `comparaTo` method defined in the `Mereorite` class).
+	The returned collection should be organized based on the mass from smallest to largest, and for meteorite objects with equal
+	mass according to the natural ordering of the elements (i.e., dictated by the `comparaTo` method defined in the `Mereorite` class).
 	If either value is less than zero, the method
 	should throw an instance of `IllegalArgumentException` with an appropriate message.</span>
 
-	<span class=green markdown=1>If there are no elements in the list that match the given criteria, this method should
+	<span class=green markdown=1>If there are no elements in the collection that match the given criteria, this method should
 	return `null`.</span>
 
-  <span class=green markdown=1>This method should perform in O(K) in which K is the number of `Meteorite` objects in the returned collection (not O(N) where N is the total number of all `Meteorite` objects).</span>
+  <span class=green markdown=1>This method should perform in O(K+H) in which K is the number of `Meteorite`
+	objects in the returned collection and H is the height of the tree representing this collection
+ 	(not O(N) where N is the total number of all `Meteorite` objects).</span>
 
 
 - `public Meteorite getByLocation ( Location loc)   `
@@ -371,7 +373,7 @@ In addition, the class should implement the following methods:
 	If `loc` is null, the method
 	should throw an instance of `IllegalArgumentException` with an appropriate message.</span>
 
-	<span class=green markdown=1>If the current list is empty, this method should return `null`.
+	<span class=green markdown=1>If the current collection is empty, this method should return `null`.
 	</span>
 
 
@@ -379,15 +381,17 @@ In addition, the class should implement the following methods:
 
 - `public MeteoriteData getByYear ( int year)  `
 
-	<span class=green markdown=1>This method should return a list of all `Meteorite` objects that landed on Earth
+	<span class=green markdown=1>This method should return a collection of all `Meteorite` objects that landed on Earth
 	on the `year` specified.
-	The returned list should be sorted according to the natural ordering of the elements (i.e., dictated
-	by the `comparaTo` method defined in the `Mereorite` class).
+	The returned collection should be organized based on the year from earliest to most recent, and for meteorite objects with the same
+ 	year according to the natural ordering of the elements (i.e., dictated by the `comparaTo` method defined in the `Mereorite` class).
 	If the value of `year` is less than zero, the method
 	should throw an instance of `IllegalArgumentException` with an appropriate message.</span>
 
 
-  <span class=green markdown=1>This method should perform in O(K) in which K is the number of `Meteorite` objects in the returned collection (not O(N) where N is the total number of all `Meteorite` objects).</span>
+  <span class=green markdown=1>This method should perform in O(K+H) in which K is the number of `Meteorite`
+	objects in the returned collection and H is the height of the tree representing this collection
+	(not O(N) where N is the total number of all `Meteorite` objects).</span>
 
 <span class=green markdown=1>
 HINT 1: This class would benefit from storing data in more than one BST of Meteorite objects each with a different
@@ -401,7 +405,7 @@ specified by the `Meteorite` class.
 
 #### <code class="code_title">BST</code> class
 <span class=green markdown=1>
-You should start with the BST class provided in the [Ed workspace](https://us.edstem.org/courses/2361/workspaces/p9zvyygboHTqD9OhbLxWyfnlzVapHdlF). 
+You should start with the BST class provided in the [Ed workspace](https://us.edstem.org/courses/2361/workspaces/p9zvyygboHTqD9OhbLxWyfnlzVapHdlF).
 You should remove the `main()` method before submitting it, but you can use it while you are developing
 the class to use for testing.
 You will need to add several methods to that class, but you should use the ones that are there already rather than
@@ -558,11 +562,11 @@ posted on the course website.
 
 - The data file should be read only once! Your program needs to store the data in memory resident data structures.
 
-- You may not use any of the collection
-classes that were not covered in cs101 (for this assignment, do not use `LinkedList`, `Stack`, `Queue`, `PriorityQueue`, or any classes implementing the `Map` interface). You can, and should, use the `ArrayList` class.
+- <span class=green markdown=1>You may not use any of the collection
+classes provided by Java libraries. In particular, you should not use `LinkedList`, `Stack`, `Queue`, `TreeSet`, `PriorityQueue`, or any classes implementing the `Map` interface). You can use the `ArrayList` class if you find it useful, but there is not much use for it in this project.</span>
 
-- You must implement the `MeteoriteLinkedList` class from scratch.
-You cannot use any of the built-in Java classes as its base class.
+- <span class=green markdown=1>You must implement your `BST` and `MeteoriteData` class from scratch (using the provided starting code for the `BST` class).
+You cannot use any of the built-in Java classes as its base class.</span>
 
 - You may use any exception-related classes.
 
