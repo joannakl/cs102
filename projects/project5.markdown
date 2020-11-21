@@ -377,7 +377,8 @@ In addition, the class should implement the following methods:
 	</span>
 
 
-  <span class=green markdown=1>This method should perform in O(h) in which h is the height of the tree in which `Meteorite` objects are stored).</span>
+  <span class=green markdown=1>This method should perform in O(N) in which N is the total number
+of `Meteorite` objects stored in this collection.</span>
 
 - `public MeteoriteData getByYear ( int year)  `
 
@@ -394,8 +395,9 @@ In addition, the class should implement the following methods:
 	(not O(N) where N is the total number of all `Meteorite` objects).</span>
 
 <span class=green markdown=1>
-HINT 1: This class would benefit from storing data in more than one BST of Meteorite objects each with a different
-ordering that would make the above methods efficient.</span>
+HINT 1: This class would benefit from storing data in more than one BST of `Meteorite` objects each with a different
+ordering that would make the above methods meet their performance requirements. (Note that this does not imply
+duplicating all the `Meteorite` objects.)</span>
 
 <span class=green markdown=1>
 HINT 2: The program should provide ways of ordering `Mateorite` objects that are different from the natural ordering
@@ -495,8 +497,8 @@ __`public T last()`__
 __`public boolean equals​(Object obj)`__
 
 		Compares the specified object with this tree for equality. Returns true if the given
-		object is also a tree, the two trees have the same size, and every member of the given
-		tree is contained in this tree.
+		object is also a tree, the two trees have the same size, and the inorder traversal of the
+		two trees returns the same nodes in the same order.
 		This operation should be O(N).
 
 		Overrides:
