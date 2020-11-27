@@ -350,6 +350,19 @@ not an _is-a_ relationship).</span>
 In addition, the class should implement the following methods:
 </span>
 
+- `public boolean add ( Meteorite m)  `
+
+	<span class=green markdown=1>This method should add the given `Meteorite` object to this collection and return `true` if an equal `Meteorite` object is not already present. If this collection already contains an object equal to `m`, the method should return `false`. The method should throw an instance of `NullPointerException` if `m` is null. </span>
+
+  <span class=green markdown=1>This method should perform in O(H) in which H is the height of the tree representing this collection.</span>
+
+- `public boolean equals ( Object obj) `
+
+	<span class=green markdown=1>This method should compare this collection to `obj`. The two collections are equal if they are both `MeteoriteData` objects and if they contain exactly the same elements.</span>
+
+	<span class=green markdown=1>This method should perform in O(N) in which N is the number of `Meteorite`
+	objects in this colleciton.</span>
+
 - `public MeteoriteData getByMass ( int mass, int delta)  `
 
 	<span class=green markdown=1>This method should return a collection of all `Meteorite` objects with mass within `delta` grams of the
@@ -393,6 +406,22 @@ of `Meteorite` objects stored in this collection.</span>
   <span class=green markdown=1>This method should perform in O(K+H) in which K is the number of `Meteorite`
 	objects in the returned collection and H is the height of the tree representing this collection
 	(not O(N) where N is the total number of all `Meteorite` objects).</span>
+
+
+- `public Iterator<Meteorite> iterator() `
+
+	<span class=green markdown=1>This method should return an iterator over all `Meteorite` objects in this collection
+	in order specified by natural ordering of `Meteorite` objects. </span>
+
+
+- `public boolean remove ( Meteorite m)  `
+
+	<span class=green markdown=1>This method should remove an object equal to the given `Meteorite` object `m` from this collection and return `true` such an object was present. If `m` is not in this collection, the method should return `false`. The method should throw an instance of `NullPointerException` if `m` is null. </span>
+
+  <span class=green markdown=1>This method should perform in O(H) in which H is the height of the tree representing this collection.</span>
+
+
+
 
 <span class=green markdown=1>
 HINT 1: This class would benefit from storing data in more than one BST of `Meteorite` objects each with a different
@@ -444,7 +473,7 @@ __`public boolean isEmpty()`__
 		    true if this tree contains no elements
 
 
-__`public Iterator<E> iterator()`__
+__`public Iterator<T> iterator()`__
 
 		Returns an iterator over the elements in this tree in ascending order.
 		This operation should be O(N).
@@ -453,7 +482,7 @@ __`public Iterator<E> iterator()`__
 		    an iterator over the elements in this tree in ascending order
 
 
-__`public ArrayList<E> getRange​(T fromElement, T toElement)`__
+__`public ArrayList<T> getRange​(T fromElement, T toElement)`__
 
 		Returns a collection whose elements range from fromElement, inclusive, to toElement, inclusive.
 		The returned collection/list is backed by this tree, so changes in the returned list are
