@@ -664,8 +664,10 @@ at least for some of us, the iterative method was a bit more intuitive.
     int size () {
         Node current = head;
         int counter = 0;
-        while (current!=null)
+        while (current!=null){
             counter++;
+            current = current.next ;
+        }
         return counter;
     }
 ```
