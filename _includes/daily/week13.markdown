@@ -6,10 +6,13 @@
 
 <div class="column_materials"  markdown="1">
 
-### Lecture 1
-- Complete the assignment for [Lab 11](labs/lab11). You should read the introductory material
-before going to the recitation. The exercises are designed for your group work during recitations.
 
+__Take-home quiz4__, 30 minutes to complete, during 24 hrs period from
+Dec. 1, 11am to Dec. 2, 11am (both times in US, Eastern Zone). <br>
+
+
+
+### Lecture 1
 
 Priority queues and binary heaps.
 
