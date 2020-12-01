@@ -16,6 +16,7 @@ Dec. 1, 11am to Dec. 2, 11am (both times in US, Eastern Zone). <br>
 
 Priority queues and binary heaps.
 
+[slides](slides/13-priority_queues.html)
 
 ### Lecture 2
 
