@@ -20,7 +20,10 @@ Priority queues and binary heaps.
 
 ### Lecture 2
 
+Q&amp;A for project 5. Review of iterators and getRange algorithms.
 
+Binary heap operations with examples. Building binary heap when given all
+data at once.
 
 ### Recitation / Lab
 
@@ -31,7 +34,10 @@ Priority queues and binary heaps.
 
 <div class="column_assign"  markdown="1">
 
-### Assignments
+
+### Reading
+
+- OpenDSA, 12.01 - 12.03
 
 </div>
 </div>
