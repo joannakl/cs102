@@ -10,6 +10,9 @@
 
 Hash tables.
 
+
+[slides](slides/14-hashtables.html)
+
 ### Lecture 2
 
 Q&amp;A
