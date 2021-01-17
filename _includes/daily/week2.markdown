@@ -1,12 +1,12 @@
 <div class="week">
 
 <div class="week_heading" markdown="1">
-## Week 2, 9/10 - 9/16,
+## Week 2, 2/4 - 2/10,
 </div>
 
 <div class="column_materials"  markdown="1">
 
-### Lecture 1 (9/10)
+### Lecture 1 (2/8)
 
 Finish with the slide deck from last class (starting at heap discussion).
 
@@ -17,14 +17,14 @@ connecting separate chunks of memory into a data structure (linked list).
 
 [slides](slides/03-data_structures_overview_1.html)
 
-### Lecture 2 (9/15)
+### Lecture 2 (2/10)
 
 Overview of data structures and algorithms, continued: stacks, queues, binary
 search trees, hash tables (basic introduction to all).
 
 [slides](slides/03-data_structures_overview_2.html)
 
-### Recitation / Lab (9/11, 9/14, 9/16)
+### Recitation / Lab (2/4, 2/9)
 
 - Q&A about project 1: come with questions to the recitation session
 - Complete the problem set for [Lab 2](labs/lab2). Large part of it is designed for your group work during recitations.
@@ -41,7 +41,7 @@ search trees, hash tables (basic introduction to all).
   of a color converter (CSS named colors, RGB values, hex-representation). Once you decide that you understand
  the
   code (how it works, what it does, how the three classes interact, how the user interaction happens,
-  how the file I/O works, ...), you will take a quiz on NYU Classes that is based on the code. (For the purpose
+  how the file I/O works, ...), you will take a quiz on Brightspace that is based on the code. (For the purpose
   of the quiz, you will use the line numbering in the PDF documents of the code, but you should use the
   actual code to run it and experiment with it.)
 
@@ -51,7 +51,7 @@ search trees, hash tables (basic introduction to all).
   - [Color class - PDF](hwk/Color_java.pdf)
   - input file: [color_list.txt](hwk/color_list.txt) - some of the questions in the quiz refer to this file
 
-  (The quiz will be available on NYU Classes next week.)
+  (The quiz will be available on Brightspace next week.)
 
 - Get ready for class on Thursday, Sep. 17: [download source code](code/module2_advanced_java.zip) <br>
     This collection of Java source code files contains four stand alone programs: `Race01`, ..., `Race04`.
@@ -59,7 +59,7 @@ search trees, hash tables (basic introduction to all).
     - Read through the code for `Race01` program: [`Race01.java`](code/module2_advanced_java/Race01.java) and
         [`RaceContender01.java`](code/module2_advanced_java/RaceContender01.java) <br>
       Note any questions you might have. Try to find all the things that looks strange or seem unclear.
-    - Do the same for the other three programs. 
+    - Do the same for the other three programs.
 
 ### Readings
 

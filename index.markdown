@@ -6,6 +6,12 @@ title: Course Essentials
 # Course Essentials
 ---
 
+<div class="alert" markdown="1">
+We’ll be using NYU's new learning management system (LMS) called [Brightspace](https://brightspace.nyu.edu/) instead of NYU Classes for this course.
+
+Check out [student training materials](http://www.nyu.edu/it/lms/student-training) for more info on the new LMS.
+</div>
+
 <iframe class="calendar" src="https://calendar.google.com/calendar/embed?height=400&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FNew_York&amp;src=Y19yY3RiM2c3bWprYmpyanBxNHA2Nmc3MWM4MEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=bnl1LmVkdV85NGE3MHZsbGc5czI2dXR1MDZra291cHA0MEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=bnl1MzMxQG55dS5lZHU&amp;color=%23F4511E&amp;color=%23F4511E&amp;color=%23039BE5&amp;showTitle=0&amp;showNav=0&amp;showPrint=1&amp;showCalendars=0&amp;mode=AGENDA"  height="400"  frameborder="0" scrolling="no"></iframe>
 
 
@@ -23,18 +29,17 @@ title: Course Essentials
 
 
 
-<p class="hang" markdown="1"><span class="emph">Recitation leaders</span>: TBD
-<!--
-Abhinav Gupta (sec. 6 and sec. 11),
-Karl Rosenberg (sec. 12),
-Kunal Khatri (sec. 10, sec. 26),
-Samarth Tambad (sec. 8, sec. 12),
-Kate Boxer (sec. 27).
--->
+<p class="hang" markdown="1"><span class="emph">Recitation leaders</span>:
 </p>
+- Abhinav Gupta (sec. 61 and sec. 63),
+- Rutvi Malaviya (sec. 6 and sec. 62)
+- Karl Rosenberg (sec. 64),
+- Rutvik Shah (sec. 65)
+
+
 
 <p class="hang" markdown="1"><span class="emph">Office hours:</span> <br>
-See NYU Classes for the times and Zoom links of our office hours.
+See [Brightspace](https://brightspace.nyu.edu/) for the times and Zoom links of our office hours.
 <!--
 <span class="name">Joanna:</span>
 {{ site.instructor_office_hours }} ({{ site.instructor_office_hours_location }})
@@ -51,17 +56,15 @@ See NYU Classes for the times and Zoom links of our office hours.
 </p>
 
 
-<p class="hang" markdown="1"><span class="emph">Class discussion board:</span> TBD </p>
-<!--
-[Ed]( {{site.ed_site}}) <br>
-Post all course related questions to the discussion board: content of lectures, labs, projects, ....
-If you have private questions related to your grading, your course progress, or anything that should not be discussed by the entie class,  you should post them on Ed as well, but make them visible only to the course staff (any question on Ed can be made private). You should also feel free to visit our office hours with any questions (private or applicable to the whole class). <br>
-To get started with Ed, follow this [Quick Start Guide](https://us.edstem.org/help).
+<p class="hang" markdown="1"><span class="emph">Best way to communicate outside of office hours:</span> [Ed q&a and discussion forum]( {{site.ed_site}}) </p>
+- Post all course related questions to the discussion board: content of lectures, labs, projects, ....
+- If you have private questions related to your grading, your course progress, or anything that should not be discussed by the entire class,  you should post them on Ed as well, but make them visible only to the course staff (any question on Ed can be made private).
+- To get started with Ed, follow this [Quick Start Guide](https://us.edstem.org/help).
 
-For those registering late: you can self sign up on [Ed]( {{site.ed_signup}}) for this class (make sure you use
+- For those registering late: you can self sign up on [Ed]( {{site.ed_signup}}) for this class (make sure you use
 your netID email address, or you may end up being removed from the site once we update the roster).
-</p>
--->
+
+
 <p class="hang" markdown="1"><span class="emph">Tutors:</span>  the tutors are going to be available starting
 the second week of classes on Zoom; here is their [schedule]( {{ site.tutor_schedule_link }}) (updated with any last minute changes).
 </p>
@@ -69,7 +72,7 @@ the second week of classes on Zoom; here is their [schedule]( {{ site.tutor_sche
 
 <p class="hang" markdown="1"><span class="emph">How to get help?</span> </p>
 
-- ask questions on the class discussion forum and read the questions posed by other students
+- ask questions on the class discussion forum and read the questions posted by other students
 - ask questions in recitations and during lectures
 - get help from the tutors
 - talk to us (we cannot help, unless we know there is an issue)
@@ -79,6 +82,8 @@ the second week of classes on Zoom; here is their [schedule]( {{ site.tutor_sche
 Make sure you let us know as soon as you feel lost in the course. Do not wait till you
 start getting failing grades because it might be too late by then.
 </p>
+
+
 
 
 

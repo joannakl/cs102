@@ -48,14 +48,12 @@ Your grade will be based on:
 * 2 exams (15% midterm exam, 20% final exam): online exams completed individually
 * 3-5 take-home quizzes (20% total): online 30 minute quizzes completed individually
 * 4-7 programming projects (22% total): several programming projects completed individually
-* weekly labs (10% total):
+* weekly recitation activities (10% total):
 	- weekly activities completed mostly during recitations in small groups
-	- creating solutions to one weekly lab to be published for the entire class
 * pop-quizzes (8%): quizzes given during lectures, **not announced**
 * participation and progress (5% total): taking active part in class discussions (asking and answering
-	questions during lectures and on the course discussion forum), creating, answering
-	and commenting on the review questions on PeerWise, completing assigned readings, tutorials, activities, etc., and answering
-		embedded questions
+	questions during lectures and on the course discussion forum), completing assigned readings,
+	tutorials, activities, etc., and answering embedded and follow-up questions
 
 Grades will be determined using the following scale:
 
@@ -105,7 +103,7 @@ Each week you will be given a lab to work on. You should review the lab instruct
 
 The weekly labs can be retrieved any time during the week in which they are assigned but you should review them prior to the recitation session for which you are registered.
 
-Each week there will be one part of the lab that you will work on during the recitation session. This will be small-group work and the submission for that part will be made as a group (keep in mind, that a small-group means two to four students, not one). This is the part of the lab that will be graded.
+Each week there will be one part of the lab that you will work on during the recitation session (that part may not be published until the actual recitation meeting). This will be small-group work and the submission for that part, if any, will be made as a group (keep in mind, that a small-group means two to four students, not one). This is the part of the lab that will be graded.
 
 The other parts of the labs will not be collected but they provide good practice of the material that we cover and you should solve those problems on your own.
 
@@ -162,7 +160,7 @@ In addition there will be several online quizzes (30 minute each). You will be a
 to complete them as any point during a fixed 24hr period.
 
 All online quizzes and exams must be completed individually by you with no assistance of
-any other human.
+any other people, except for the instructor and proctors (in case of the synchronous exams).
 
 <!--
 
@@ -264,6 +262,11 @@ polymorphism, generics, iterators, exception handling, file I/O
 * Sorting algorithms (merge sort, quicksort)
 * Priority Queues
 * Hashing and hash tables
+
+Tentative schedule:
+
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQRPJ6qWpXkxBGd2Y16yRF7iQBc9xYjkj7Y6XKbEITUsndBUsvob4upOzoEcOdtqxKWGjVC60zQf85i/pubhtml?gid=1834216998&amp;single=true&amp;widget=true&amp;headers=false" style="width:50em;height:85em;"></iframe>
+
 
 For detailed schedule, see the [Daily](daily.html) tab of this page.
 

@@ -122,6 +122,14 @@ aside {
 aside h1 {
   margin: 0.25em 0.25em 0em 0em;
 }
+
+.alert{
+    background-color: yellow;
+    font-weight:bold;
+    font-size:1.2em;
+    width: 60%;
+    padding:10px 10% 10px 10%;
+}
 .footnotes {
   font-size: 0.8em;
   border-style: dotted;
