@@ -30,6 +30,7 @@ p, pre{
 .title-slide {
     background-image: url("../img/back1.jpg");
     color:hsl(201, 100%, 28%);
+    background-size: cover;
 }
 .slide{
     background-color:hsl(208, 39%, 97%);
