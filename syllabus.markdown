@@ -3,9 +3,7 @@ layout: default
 title: Syllabus
 ---
 
-
 # Textbook(s)
-
 ---
 
 ## Data structures books
@@ -268,7 +266,7 @@ Tentative schedule:
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQRPJ6qWpXkxBGd2Y16yRF7iQBc9xYjkj7Y6XKbEITUsndBUsvob4upOzoEcOdtqxKWGjVC60zQf85i/pubhtml?gid=1834216998&amp;single=true&amp;widget=true&amp;headers=false" style="width:50em;height:85em;"></iframe>
 
 
-For detailed schedule, see the [Daily](daily.html) tab of this page.
+For detailed schedule, see the __Content__ page on <a href="{{site.brightspace}}" target="_blank">NYU Brightspace</a>.
 
 
 {% include   {{ site.email_etiquette }} %}
