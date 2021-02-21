@@ -495,7 +495,7 @@ the case in future assignments.
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
-#### Parsing CSV files
+#### `CSV` class
 
 CSV is a simple file format, but there are many non-standard variations: the field separator,
 the field delimiter, the special characters allowed in the fields, etc.
@@ -503,7 +503,7 @@ the field delimiter, the special characters allowed in the fields, etc.
 You should use the `CSV` class provided below. It was designed to work with the
 file format that you are working with.
 
-- [`CSV`](doc/project2/CSV.html) class documentation
+- [`CSV`](project2/doc/project2/CSV.html) class documentation
 - [`CSV.java`](project2/CSV.java) file
 
 <!--
