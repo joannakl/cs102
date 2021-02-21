@@ -93,6 +93,8 @@ There are six columns in the _Data is Plural_ data set. Some of the columns may 
 __From the point of view of this assignment, a valid row in the data set MUST contain the _headline_, _text_ and _links_ values.
 Any rows that do not contain these two values should be quietly ignored by the program.__
 
+You can (and should) use the `CSV` class listed in the Appendix to help you with parsing the input file.
+
 </div> </div></div>
 
 
@@ -381,13 +383,11 @@ You may implement other methods in this class to modularize the design.
 [Code conventions](https://cs.nyu.edu/~joannakl/cs102_s21/notes/CodeConventions.pdf)
 posted on the course website.
 
-- The data file should be read only once! Your program needs to store the data in memory resident data structures.
+- The data file should be read only once! Your program needs to store the data
+in memory resident data structures.
 
 - You may not use any of the collection
 classes that were not covered in cs101 (for this assignment, do not use `LinkedList`, `Stack`, `Queue`, `PriorityQueue`, or any classes implementing the `Map` interface). You can, and should, use the `ArrayList` class.
-
-- You must implement the `DataSetLinkedList` class from scratch.
-You cannot use any of the built-in Java classes as its base class.
 
 - You may use any exception-related classes.
 
@@ -435,20 +435,18 @@ a few hours before the due dates - make sure that you have working code if that 
 
 If your program does not compile or if it crashes (almost) every time it is run,
 you will get a zero on the assignment. Make sure that you are submitting
-functioning code, even if it is not a complete implementation so that you can get partial credit.
+functioning and documented code, even if it is not a complete implementation so that you can get partial credit.
 
 If the program does not adhere to the specification, the grade will be low and
 will depend on how easy it is to figure out what the program is doing and how to work with it.
 
 The grade will be determined by several factors:
-- 40 points: class correctness: correct behavior of methods of the required classes and correct behavior of the program
+- 50 points: class correctness: correct behavior of methods of the required classes and correct behavior of the program
 	as a whole (this will be determined by the autograder and some manual evaluation)
 - 30 points: design and the implementation of the required classes and any additional classes
    (this will be determined by a code review)
 - 20 points: proper documentation, program style and format of submission
    (this will be determined by a code review)
-- 10 points: academic honesty questionnaire - taken in the form of an online quiz
-
 
 </div> </div></div>
 
@@ -467,7 +465,8 @@ This means that each of your submitted source code files should start with a lin
 
 Your should submit all your source code files (the ones with `.java` extensions only)
 in a single __zip__ file to Gradescope. __DO NOT__ submit `.class` files
-or any project files that your IDE might produce.
+or any project files that your IDE might produce. You can see all the files on Gradescope.
+Verify that there is nothing there that you did not intend to put it.
 
 You can produce a zip file directly from Eclipse (if this is what you are using):
  -  right click on the name of the package (inside the `src` folder) and select Export...
@@ -496,115 +495,18 @@ the case in future assignments.
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
-#### Haversine formula implementation
-
-Source: [Geeks for Geeks](https://www.geeksforgeeks.org/haversine-formula-to-find-distance-between-two-points-on-a-sphere/)
-
-To use this code, you will need to adapt it to your own implementation of the
-`Location` class.
-
-{% highlight java linenos %}
-static double haversine(double lat1, double lon1,
-			double lat2, double lon2)
-{
-	// distance between latitudes and longitudes
-	double dLat = Math.toRadians(lat2 - lat1);
-	double dLon = Math.toRadians(lon2 - lon1);
-
-	// convert to radians
-	lat1 = Math.toRadians(lat1);
-	lat2 = Math.toRadians(lat2);
-
-	// apply formulae
-	double a = Math.pow(Math.sin(dLat / 2), 2) +
-			   Math.pow(Math.sin(dLon / 2), 2) *
-			   Math.cos(lat1) *
-			   Math.cos(lat2);
-	double rad = 6371;
-	double c = 2 * Math.asin(Math.sqrt(a));
-	return rad * c;
-}
-{% endhighlight %}
-
 #### Parsing CSV files
 
-You may use this code as is in your program.
+CSV is a simple file format, but there are many non-standard variations: the field separator,
+the field delimiter, the special characters allowed in the fields, etc.
 
-{% highlight java linenos %}
-/**
- * Splits the given line of a CSV file according to commas and double quotes
- * (double quotes are used to surround multi-word entries so that they may contain commas)
- * @author Joanna Klukowska
- * @param textLine  a line of text from a CSV file to be parsed
- * @return an ArrayList object containing all individual entries found on that line;
- *  any missing entries are indicated as empty strings; null is returned if the textline
- *  passed to this function is null itself.
- */
-public static ArrayList<String> splitCSVLine(String textLine){
+You should use the `CSV` class provided below. It was designed to work with the
+file format that you are working with.
 
-	if (textLine == null ) return null;
+- [`CSV`](doc/project2/CSV.html) class documentation
+- [`CSV.java`](project2/CSV.java) file
 
-	ArrayList<String> entries = new ArrayList<String>();
-	int lineLength = textLine.length();
-	StringBuffer nextWord = new StringBuffer();
-	char nextChar;
-	boolean insideQuotes = false;
-	boolean insideEntry= false;
-
-	// iterate over all characters in the textLine
-	for (int i = 0; i < lineLength; i++) {
-		nextChar = textLine.charAt(i);
-
-		// handle smart quotes as well as regular quotes
-		if (nextChar == '"' || nextChar == '\u201C' || nextChar =='\u201D') {
-
-			// change insideQuotes flag when nextChar is a quote
-			if (insideQuotes) {
-				insideQuotes = false;
-				insideEntry = false;
-			}
-			else {
-				insideQuotes = true;
-				insideEntry = true;
-			}
-		}
-		else if (Character.isWhitespace(nextChar)) {
-			if ( insideQuotes || insideEntry ) {
-				// add it to the current entry
-				nextWord.append( nextChar );
-			}
-			else { // skip all spaces between entries
-				continue;
-			}
-		}
-		else if ( nextChar == ',') {
-			if (insideQuotes){ // comma inside an entry
-				nextWord.append(nextChar);
-			}
-			else { // end of entry found
-				insideEntry = false;
-				entries.add(nextWord.toString());
-				nextWord = new StringBuffer();
-			}
-		}
-		else {
-			// add all other characters to the nextWord
-			nextWord.append(nextChar);
-			insideEntry = true;
-		}
-
-	}
-	// add the last word ( assuming not empty )
-	// trim the white space before adding to the list
-	if (!nextWord.toString().equals("")) {
-		entries.add(nextWord.toString().trim());
-	}
-
-	return entries;
-}
-{% endhighlight %}
-
-
+<!--
 #### Sample Interactions
 
 Here are a few sample runs of a program with much reduced input file to illustrate  the user interface.
@@ -746,7 +648,7 @@ Here are a few sample runs of a program with much reduced input file to illustra
 
 	quit
 ```
-
+-->
 </div> </div></div>
 
 
