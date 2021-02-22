@@ -132,6 +132,18 @@ Answer the following questions:
 
 
 
+### Part 4 - `String` class
+
+Answer these questions about the `String` class.
+You should use both the documentation and the source code for the class.
+
+1. What package is `String` class located in? How does this information help you to find the source code file for this class?
+1. How are the characters in a `String` object actually stored? Can you find a data field that stores all the characters?
+1. Look at the `charAt` method. It makes calls to `charAt` methods in two other classes depending on the type of the string. Look  at the `charAt` method in the `StringLatin1` class. Make sure you understand how that method works. What is the performance of this method? (constant?, logarithmic?, linear?)
+1. Look at the `compareTo` method implementation. It makes calls to `compareTo` methods in two other classes depending on the type of the string. Look  at the `compareTo` method in the `StringLatin1` class. Make sure you understand how that method works. What is the performance of this method? (constant?, logarithmic?, linear?)
+1. Look at the `toString` method in the `String class`? What does it do? What do you think would happen if the method was removed from this class?
+
+
 
 
 
