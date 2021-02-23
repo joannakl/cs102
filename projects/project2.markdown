@@ -292,8 +292,9 @@ list of links, and any other information you may decide may be useful to store).
 	methods should validate the data according to the specification below. If any values are invalid,
 	the method should throw an instance of 	`IllegalArgumentException` with an appropriate message.
 	- `public void setDate(Date date)`, `public Date getDate()` - a valid date should not be `null` and should have a year equal to or after the year 2000.
-	- `public void setHatTips( String hatTips)`, `public int getHatTips()` - a valid
-		`hatTip` should be a non-empty, not `null` string
+	- `public void setHatTips( String hatTips)`, `public String getHatTips()` - a valid
+		`hatTip`  not `null` string (hat-tips are missing for many of the entries in the data set, so they could be
+	and empty string; if the hat-tip was never set or it was set to an empty string, the getHatTips method should return an empty string)
 
 - The class should implement `Comparable<DataSet>` interface. The two `DataSet` objects should be
 	compared based on their dates, and, if the dates are the same, by their titles. The comparison between titles
