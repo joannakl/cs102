@@ -297,8 +297,9 @@ list of links, and any other information you may decide may be useful to store).
 	and empty string; if the hat-tip was never set or it was set to an empty string, the `getHatTips` method should return an empty string)
 
 - The class should implement `Comparable<DataSet>` interface. The two `DataSet` objects should be
-	compared based on their dates, and, if the dates are the same, by their titles. The comparison between titles
-  should be case insensitive.
+	compared based on their dates, and, if the dates are the same or missing
+	(if the date is not set in either of the compared objects), by their titles.
+	The comparison between titles should be case insensitive.
 
 - The class should override the `equals` method from the `Object` class. Two `DataSet` objects
 	are the same if they have identical dates and titles (case of letters does not matter).
@@ -315,7 +316,8 @@ list of links, and any other information you may decide may be useful to store).
 
 	All the words in uppercase letters are place-holders for the actual values from the data set.
 
-	If date is missing from the data set, it should be skipped in the result in the result.
+	If date is missing from the data set, it should be skipped in the result in the result. The description, in most cases, will
+	be a long multi-line text. The links should be displayed one per line.
 
 #### <code class="code_title">DataSetList</code> class
 The `DataSetList` class should be used to store all the `DataSet` objects.
@@ -330,7 +332,7 @@ In addition, the class should implement the following two methods:
 	This method should return a list of all `DataSet` objects for which the titles (headlines) contain the
   `keyword`. The keyword comparison should be done in a case insensitive way.
 	The returned list should be sorted according to the natural ordering of the elements (i.e., dictated
-	by the `comparaTo` method defined in the `DataSet` class).
+	by the `compareTo` method defined in the `DataSet` class).
 	If `keyword` is `null` or an empty string, this method
 	should throw an instance of `IllegalArgumentException` with an appropriate message.
 
@@ -341,7 +343,7 @@ In addition, the class should implement the following two methods:
 	This method should return a list of all `DataSet` objects for which the descriptions (text fields) contain the
   `keyword`.  The keyword comparison should be done in a case insensitive way.
 	The returned list should be sorted according to the natural ordering of the elements (i.e., dictated
-	by the `comparaTo` method defined in the `DataSet` class).
+	by the `compareTo` method defined in the `DataSet` class).
 	If `keyword` is `null` or an empty string, this method
 	should throw an instance of `IllegalArgumentException` with an appropriate message.
 
@@ -352,7 +354,7 @@ In addition, the class should implement the following two methods:
 	This method should return a list of all `DataSet` objects for which the links  contain the
   `keyword`.  The keyword comparison should be done in a case insensitive way.
 	The returned list should be sorted according to the natural ordering of the elements (i.e., dictated
-	by the `comparaTo` method defined in the `DataSet` class).
+	by the `compareTo` method defined in the `DataSet` class).
 	If `keyword` is `null` or an empty string, this method
 	should throw an instance of `IllegalArgumentException` with an appropriate message.
 
