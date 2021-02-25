@@ -51,7 +51,6 @@ get practice on) the following tasks:
 - working with large data sets
 - using the `ArrayList` class
 - writing classes
-- implementing your own linked list
 - working with existing code
 - extending existing classes (inheritance)
 - parsing data
@@ -226,7 +225,7 @@ LINKS
 
 All the words in uppercase letters are place-holders for the actual values from the data set.
 
-If date is missing from the data set, it should be skipped in the result in the result.
+If date is missing from the data set, it should be skipped in the result.
 
 The output should contain a single blank line, followed by a line with five dashes, `-----`,
 after each result. This will visually separate the results for improved readability.
@@ -251,7 +250,7 @@ You may implement additional classes and additional methods in the required clas
 
 #### <code class="code_title">Date</code> class
 
-This class should represent a calendar date. It should store the information about the year, month and day of the week.
+This class should represent a calendar date. It should store the information about the year, month and day.
 
 - This class should provide a three parameter constructor that validates and sets the year, month and day.
 
@@ -259,6 +258,7 @@ This class should represent a calendar date. It should store the information abo
 
 	A valid `year` has to be a positive integer. A valid `month` has to be a positive integer in the range of 1-12.
 	A valid `day` depends on the month of the year and the year. Please see the [Julian and Gregorian calendars](https://en.wikipedia.org/wiki/Month#Julian_and_Gregorian_calendars) for the length of the months and   [Leap Year Algorithm](https://en.wikipedia.org/wiki/Leap_year#Algorithm) to determine how to calculate which year is a leap year.
+	If this constructor is called with invalid arguments,  it should throw an instance of the `IllegalArgumentException`  with an appropriate message.
 
 - The class should implement `Comparable<Date>` interface. The two `Date` objects should be
 	compared based on year, month and day (in that order). This way the earlier dates are _smaller_ than the later dates.
@@ -284,7 +284,7 @@ list of links, and any other information you may decide may be useful to store).
 	is called with a `null` or an empty `title` or `description`, it should throw an instance of `IllegalArgumentException`  with an appropriate message.
 
 	`links` should be a non-empty list of `URL` objects. Note that [`URL`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URL.html) is a class defined in Java (you do not need to define it yourself).
-	If this constructor is called with a `null` or an empty list as `links`,  it should throw an instance of `IllegalArgumentException`  with an appropriate message.
+	If this constructor is called with a `null` or an empty list as `links`,  it should throw an instance of the `IllegalArgumentException`  with an appropriate message.
 
 	There should be no default constructor.
 
@@ -336,7 +336,7 @@ In addition, the class should implement the following two methods:
 
 	If there are no elements in the list that match the given criteria, this method should return `null`.
 
-- `public DataSet getByDescription ( String keyword )   `
+- `public DataSetList getByDescription ( String keyword )   `
 
 	This method should return a list of all `DataSet` objects for which the descriptions (text fields) contain the
   `keyword`.  The keyword comparison should be done in a case insensitive way.
@@ -347,7 +347,7 @@ In addition, the class should implement the following two methods:
 
 	If there are no elements in the list that match the given criteria, this method should return `null`.
 
-- `public DataSet getByURL ( String keyword )   `
+- `public DataSetList getByURL ( String keyword )   `
 
 	This method should return a list of all `DataSet` objects for which the links  contain the
   `keyword`.  The keyword comparison should be done in a case insensitive way.
