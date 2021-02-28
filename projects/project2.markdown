@@ -509,147 +509,100 @@ file format that you are working with.
 - [`CSV`](project2/doc/project2/CSV.html) class documentation
 - [`CSV.java`](project2/CSV.java) file
 
-<!--
+
 #### Sample Interactions
 
 Here are a few sample runs of a program with much reduced input file to illustrate  the user interface.
 
 ```
+Welcome the Data Is Plural data explorer!
+
+You can use the following queries to search through the data:
+   title KEYWORD
+   description KEYWORD
+   url KEYWORD
+You can combine up to two queries to narrow down the results, for example:
+   title KEYWORD1  url KEYWORD2
 
 
-	Search the database by using one of the following queries.
-	  To search for DataSet nearest to a given goe-location, enter
-	        location LATITUDE LONGITUDE
-	  To search for DataSets that fell in a given year, enter
-	        year YEAR
-	  To search for DataSets with weights MASS +/- 10 grams, enter
-	        mass MASS
-	  To finish the program, enter
-	        quit
+Enter query or "quit" to stop:
+title university
+2020-1-1
+California university history.
+The UC ClioMetric History Project is digitizing decades of administrative records from the University of California and other schools in the state (such as USC and Stanford). So far, they’ve uploaded data on more than 750,000 student enrollments, tens of thousands of faculty members, and 800,000 courses.
+https://uccliometric.org
+https://uccliometric.org/students/
+https://uccliometric.org/faculty/
+https://uccliometric.org/courses/
 
+-----
+Enter query or "quit" to stop:
+description immigration url .edu
+2019-9-18
+State immigration laws.
+Political science professor Jamie Monogan has compiled a dataset of more than 2,700 immigration laws passed by US state legislatures from 2005 to 2016. The dataset summarizes the laws and also categorizes them by subject, scope, and whether they appear to be welcoming or hostile to immigrants.[h/t Jason Anastasopoulos]
+https://spia.uga.edu/faculty-member/jamie-monogan/
+https://onlinelibrary.wiley.com/doi/abs/10.1111/psj.12359
+https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/F8YTX2
 
+-----
+2020-12-16
+More on travel/immigration bans.
+The COVID Border Accountability Project is tracking countries’ pandemic-related travel and immigration restrictions, on a weekly basis. The project’s team categorizes various aspects of the restrictions — whether they hinge on citizenship, halt new visa applications, et cetera — and turns them into a longitudinal dataset. Previously: The UN World Food Program’s travel-restrictions dataset (DIP 2020.12.09).
+https://covidborderaccountability.org
+https://covidborderaccountability.org/about.html
+https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/U6DJAC
+https://data.humdata.org/dataset/covid-19-global-travel-restrictions-and-airline-information
+https://tinyletter.com/data-is-plural/letters/data-is-plural-2020-12-09-edition
 
+-----
+Enter query or "quit" to stop:
+quit
 
-	Enter your search query:
-
-	year 1980
-	Cccccccccccccccc        3 1980     75  -10.00000  -10.00000
-	Eeeeeeeeee              5 1980          10.00000  -10.00000
-	Dddddddd                4 1980     85  -15.00000  -10.00000
-	Ff ff 01                6 1980     78
-	Ff ff 02                7 1980     78    0.00000    0.00000
-
-
-
-	Enter your search query:
-
-	year 1990
-	Aaaa                    1 1990     20    0.00000    0.00000
-	Bbbb                    2 1990     25   10.00000   10.00000
-
-
-
-	Enter your search query:
-
-	mass 80
-	Cccccccccccccccc        3 1980     75  -10.00000  -10.00000
-	Dddddddd                4 1980     85  -15.00000  -10.00000
-	Ff ff 01                6 1980     78
-	Ff ff 02                7 1980     78    0.00000    0.00000
-
-
-
-	Enter your search query:
-
-	mass 150
-	No matches found. Try again.
-
-
-	Enter your search query:
-
-	location -12.0 -10.0
-	Cccccccccccccccc        3 1980     75  -10.00000  -10.00000
-
-
-	Enter your search query:
-
-	location -14.0 -10.0
-	Dddddddd                4 1980     85  -15.00000  -10.00000
-
-
-	Enter your search query:
-
-	quit
 ```
 ---
 
 ```
+Welcome the Data Is Plural data explorer!
+
+You can use the following queries to search through the data:
+   title KEYWORD
+   description KEYWORD
+   url KEYWORD
+You can combine up to two queries to narrow down the results, for example:
+   title KEYWORD1  url KEYWORD2
 
 
-	Search the database by using one of the following queries.
-	  To search for DataSet nearest to a given goe-location, enter
-	        location LATITUDE LONGITUDE
-	  To search for DataSets that fell in a given year, enter
-	        year YEAR
-	  To search for DataSets with weights MASS +/- 10 grams, enter
-	        mass MASS
-	  To finish the program, enter
-	        quit
+Enter query or "quit" to stop:
+title ferry site .eu
+No matches found. Try again.
 
+Enter query or "quit" to stop:
+title ferry url .eu
+No matches found. Try again.
 
+Enter query or "quit" to stop:
+title ferry
+No matches found. Try again.
 
+Enter query or "quit" to stop:
+titgle ship url .es
+This is not a valid query. Try again.
 
-	Enter your search query:
+Enter query or "quit" to stop:
+title ship url .es
+2019-1-16
+Old shipping logs.
+In previous centuries, maritime officers kept “detailed log books of the ships’ activities and management,” including observations of the wind and weather. The Climatological Database for the World's Oceans 1750-1850 has digitized a quarter-million entries from such logbooks, originally written in Dutch, English, French, and Spanish, and published them as detailed, structured data. Helpful: Steven Ottens has converted the project’s fixed-width files into tab-delimited data. [h/t Robi Sen + Roger Davies + Topi Tjukanov]
+https://webs.ucm.es/info/cliwoc/object.htm
+https://webs.ucm.es/info/cliwoc/
+http://projects.knmi.nl/cliwoc/
+https://stvno.github.io/page/cliwoc/
 
-	location 0 0
-	Ff ff 02                7 1980     78    0.00000    0.00000
+-----
+Enter query or "quit" to stop:
+quit
 
-
-	Enter your search query:
-
-	location 0
-	This is not a valid geolocation. Try again.
-
-
-	Enter your search query:
-
-	location
-	This is not a valid query. Try again.
-
-
-
-
-	Enter your search query:
-
-	mass 25
-	Aaaa                    1 1990     20    0.00000    0.00000
-	Bbbb                    2 1990     25   10.00000   10.00000
-
-
-
-	Enter your search query:
-
-	mass twenty five
-	This is not a valid mass. Try again.
-
-
-	Enter your search query:
-
-	mas
-	This is not a valid query. Try again.
-
-
-
-
-	Enter your search query:
-
-	year -10
-	This is not a valid year. Try again.
-
-
-	Enter your search query:
-
-	quit
 ```
 -->
 </div> </div></div>
