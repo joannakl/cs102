@@ -604,7 +604,15 @@ Enter query or "quit" to stop:
 quit
 
 ```
--->
+
+Note: the descriptions may wrap or continue on a single line. This depends on the environment in which
+the program is run. Your code is not responsible for dealing with that.
+
+<br>
+<br>
+<br>
+
+
 </div> </div></div>
 
 
