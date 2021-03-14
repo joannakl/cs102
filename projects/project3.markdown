@@ -149,6 +149,7 @@ able to implement the parts of the program that are missing.
 
 The classes given to you are:
 -  [`Labyrinth`](project3/Labyrinth.java) - the class that represents a 2D rectangular maze
+-  [`LabyrinthSearchException`](project3/LabyrinthSearchException.java) - the class defines the exception thrown by the `Labyrinth` class during the search process
 -  [`Simulation`](project3/Simulation.java)- the actual program that simulates an exploration of a maze
 -  [`PossibleLocations`](project3/PossibleLocations.java) - the interface that provides requirements for the two classes that you need to implement
 -  [`Location`](project3/Location.java) - the class the represents a position/location of a single square in the maze
