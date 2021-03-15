@@ -302,7 +302,7 @@ Your class should implement the following methods and interfaces:
 
 
 #### <code class="code_title">StackOfSpaces</code> class
-This class should implement the `SetOfSpaces` interface. It should be a reference based stack that uses your
+This class should implement the `PossibleLocations` interface. It should be a reference based stack that uses your
 own doubly linked list as the internal storage. Note that in order to implement
 the interface the typical `push` method needs to be called `add` and the typical `pop` method
 needs to be called `remove`.
@@ -310,7 +310,7 @@ needs to be called `remove`.
 You my implement additional methods if you wish.
 
 #### <code class="code_title">QueueOfSpaces</code> class
-This class should implement the `SetOfSpaces` interface.  It should be a reference based stack that uses your
+This class should implement the `PossibleLocations` interface.  It should be a reference based stack that uses your
 own doubly linked list as the internal storage. Note that in order to implement
 the interface the typical `enqueue` method needs to be called `add` and the typical `dequeue` method
 needs to be called `remove`.
