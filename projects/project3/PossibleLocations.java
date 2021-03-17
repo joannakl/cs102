@@ -11,16 +11,16 @@ public interface PossibleLocations {
 	/**
 	* Add a Location object to this collection.
 	* @param s object to be added
-  * @throws IllegalArgumentException if the given location is a wall
-  * @throws NullPointerException if the given location is null
+    * @throws IllegalArgumentException if the given location is a wall
+    * @throws NullPointerException if the given location is null
 	*/
 	void add ( Location s );
 
 	/**
 	 * Remove the next object from this collection. The specific
-   * item returned is determined by the underlying structure
-   * by which this collection is represented.
-   * @return the next object, or null if set is empty
+     * item returned is determined by the underlying structure
+     * by which this collection is represented.
+     * @return the next object, or null if set is empty
 	 */
 	Location remove ();
 
