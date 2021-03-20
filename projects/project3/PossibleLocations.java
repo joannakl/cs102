@@ -38,5 +38,5 @@ public interface PossibleLocations {
      * Elements are converted to strings as by `String.valueOf(Object)`.
      * @return string representation of this colleciton
      */
-    Strig toString();
+    String toString();
 }
