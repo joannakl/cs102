@@ -200,7 +200,7 @@ Your class should implement the following methods and interfaces:
 
 	`ClassCastException` - if the class of the specified element prevents it from being added to this list
 
-	`IndexOutOfBoundsException` - if `pos` is out of range `(pos < 0 || pos >= size())`
+	`IndexOutOfBoundsException` - if `pos` is out of range `(pos < 0 || pos > size())`
 
 - `void   clear()   `
 
