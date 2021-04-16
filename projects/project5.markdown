@@ -9,11 +9,13 @@ __due date:__ May 2
 
 __submission mode:__ individual
 
+
+
 </div>
 
 <main markdown="1" class="lab">
 
-## Project 5: BST-mountain
+## Project 5: BST-Mountain Adventure
 
 <hr>
 
@@ -44,6 +46,11 @@ See example below for more details.
 
 **Start early!** This project may not seem like much coding, but debugging and testing always takes time, especially for recursive algorithms.
 
+---
+<br/>
+
+The credit for this project idea goes to Karl R. Rosenberg and Abhinav Gupta.
+<br/>
 
 <div class="wrap-collabsible">
 <input id="interface" class="toggle" type="checkbox" checked=true >
@@ -88,7 +95,7 @@ for any additional information.
 </div> </div></div>
 
 <div class="wrap-collabsible">
-<input id="user" class="toggle" type="checkbox"  >
+<input id="user" class="toggle" type="checkbox"   checked="true">
 <label for="user" class="lbl-toggle"> Results/Output </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
@@ -148,8 +155,8 @@ There are many possible paths down the mountain depicted above, but only two lea
 
 - `J E B A`, `J E B D C`, `J E G F`, `J E G I H` - the hiker reaches rest-stop `E` and cannot continue without an `axe`.
 - `J P L K` - the hiker reaches rest-stop K and falls off the cliff.
-- `J P L N M`, `J P L N O` - the hiker uses the `raft` at rest-stop `L` and with new food supplies continues to the bottom of the mountain at either `M` or `O`
-- `J P R Q` - the hiker reaches rest-stop Q and falls off the cliff
+- `J P L N M`, `J P L N O` - the hiker uses the `raft` at rest-stop `L` and with new food supplies continues to the bottom of the mountain at either `M` or `O`.
+- `J P R Q` - the hiker reaches rest-stop Q and falls off the cliff.
 
 In this case, the program should produce two lines of output:
 
@@ -170,7 +177,14 @@ J P L N 0
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
-The design of classes is up to you, but you do need to implement certain classes to represent certain entities in the program.
+The design of classes is up to you, but you do need to implement certain classes to represent certain entities in the program. You need to make decisions about how to design these classes to produce an efficient and well-put-together program. Make sure that all methods that you include in a particular class belong in that class.
+
+
+#### <code class="code_title">BSTMountainAdventure</code> class
+
+This is the class that is the program. This means it has the 	`main` method. This class is responsible for parsing and validating
+the command line arguments, reading and parsing the input file, producing any error messages,
+handling any exceptions thrown by other classes, and producing output.
 
 #### <code class="code_title">BSTMountain</code> class
 
@@ -194,6 +208,8 @@ has in their possession. This information should be updated as the hiker travels
 to clear the path, or cross the river).
 
 
+You may, but you are not required to, implement other classes.
+
 </div> </div></div>
 
 
@@ -209,7 +225,7 @@ to clear the path, or cross the river).
 [Code conventions](https://cs.nyu.edu/~joannakl/cs102_s21/notes/CodeConventions.pdf)
 posted on the course website.
 
-- You have to use a recursive algorithm to solve the puzzle. You will not get any credit for an iterative algorithm.
+- You have to work with your own implementation of a BST class. It should be based on the one we have been using in class, but it cannot be based on one of the implementations in Java libraries.
 
 - You may use any exception-related classes.
 
@@ -261,10 +277,9 @@ If the program does not adhere to the specification, the grade will be low and
 will depend on how easy it is to figure out what the program is doing and how to work with it.
 
 The grade will be determined by several factors:
-- 60 points: class correctness: correct behavior of methods of the required classes and correct behavior of the program
-	as a whole (this will be determined by the autograder)
-- 10 points: design and the implementation of your code
-- 10 points: efficient implementation of the required classes
+- 50 points: class correctness: correct behavior of the program in many different input files
+- 20 points: design and the implementation of your code
+- 10 points: efficient implementation
    (this will be determined by a code review)
 - 20 points: proper documentation, program style and format of submission
    (this will be determined by a code review)
@@ -285,8 +300,9 @@ This means that each of your submitted source code files should start with a lin
 
 
 Your should submit all your source code files (the ones with `.java` extensions only)
-in a single __zip__ file to Gradescope. __DO NOT__ submit `.class` files
-or any project files that your IDE might produce. You can see all the files on Gradescope.
+either in a single __zip__ file or as individual files to Gradescope. __DO NOT__ submit `.class` files
+or any project files that your IDE might produce, or any other files created by your operating system and file system.
+You can see all the files on Gradescope.
 Verify that there is nothing there that you did not intend to put it.
 
 You can produce a zip file directly from Eclipse (if this is what you are using):
