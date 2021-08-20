@@ -35,7 +35,7 @@ and/or do not remember parts of the material, start reviewing it during the summ
 
 __If you took an equivalent of this course at a different school, you need to make
 sure that you are familiar with Java. We assume you know enough Java
-to write fairly large programs right at the beginning of the semester.__
+to read and write fairly large programs right at the beginning of the semester.__
 
 
 # Grading
@@ -44,14 +44,17 @@ to write fairly large programs right at the beginning of the semester.__
 Your grade will be based on:
 
 * 2 exams (15% midterm exam, 20% final exam): online exams completed individually
-* 3-5 take-home quizzes (20% total): online 30 minute quizzes completed individually
-* 4-7 programming projects (22% total): several programming projects completed individually
+* 3-5 take-home quizzes (24% total): online 30 minute quizzes completed individually
+* 4-7 programming projects (27% total): several programming projects completed individually
+<!--
 * weekly recitation activities (10% total):
 	- weekly activities completed mostly during recitations in small groups
+
 * pop-quizzes (8%): quizzes given during lectures, **not announced**
-* participation and progress (5% total): taking active part in class discussions (asking and answering
-	questions during lectures and on the course discussion forum), completing assigned readings,
-	tutorials, activities, etc., and answering embedded and follow-up questions
+-->
+* participation and progress (14% total): taking active part in class discussions (asking and answering
+	questions on the course discussion forum), completing assigned readings,
+	tutorials, activities, etc., and self-assessment exercises, actively participating in recitations and completing group and individual work
 
 Grades will be determined using the following scale:
 
@@ -71,17 +74,19 @@ The grade of *Incomplete* is reserved for students who, for legitimate and docum
 # Absences (excused and unexcused)
 ---
 
-We generally do not take attendance during the lectures, although, if you miss too many sessions, we will notice. If you are going to be missing classes due to the time zone differences, you should talk to your instructor right at the start of the semester. There are other sections of this course that may be scheduled at more reasonable time for your time zone.
+We generally do not take attendance during the lectures, although, if you miss too many sessions, we will notice. <!--If you are going to be missing classes due to the time zone differences, you should talk to your instructor right at the start of the semester. There are other sections of this course that may be scheduled at more reasonable time for your time zone.-->
 
-If you __miss an in-class po-quiz__ (for any reason), you will get a chance to make it up by writing a summary of the lecture
+<!--
+If you __miss an in-class pop-quiz__ (for any reason), you will get a chance to make it up by writing a summary of the lecture
 that you missed and submitting it for evaluation. You will need to watch the lecture recording and write a few paragraph long summary. (This needs to be a summary
 written in your own words, not a transcript of parts of the lecture.)
+-->
 
 __The take-home quizzes and exams can be made up only in case of an excused absence with appropriate documentation.__
 
 If you will miss a take-home quiz or an exam due to a religious observance, please familiarize yourself with [University Calendar Policy on Religious Holidays](https://goo.gl/e6NHDe) and talk to the instructor well in advance to come up with alternative arrangements.
 
-You will not be able to excuse an absence weeks after it happens. You should contact the instructor as soon as you are able with appropriate documentation.
+You will not be able to excuse an absence weeks after it happens. You should contact the instructor as soon as you are able (you will need to provide  appropriate documentation).
 
 
 # Recitations
@@ -90,9 +95,9 @@ You will not be able to excuse an absence weeks after it happens. You should con
 Recitations are the times to have most of your questions answered. These could be questions about upcoming projects,
 material covered during the prior week or the weekly labs. They are also a chance for you to work with a group of students
 from the class to solve some problems together.
-
+<!--
 You are expected to attend the recitations synchronously. You should make sure that you are registered for a recitation that works for your time zone (there are sessions scheduled as early as 8am and as late as 3:30pm US, Eastern Time).
-
+-->
 
 # Weekly Labs
 ---
@@ -101,10 +106,10 @@ Each week you will be given a lab to work on. You should review the lab instruct
 
 The weekly labs can be retrieved any time during the week in which they are assigned but you should review them prior to the recitation session for which you are registered.
 
-Each week there will be one part of the lab that you will work on during the recitation session (that part may not be published until the actual recitation meeting). This will be small-group work and the submission for that part, if any, will be made as a group (keep in mind, that a small-group means two to four students, not one). This is the part of the lab that will be graded.
-
+During the recitation session you may work on parts of the lab that may not be published until the actual recitation meeting. This will be small-group work and the submission for that part, if any, will be made as a group (keep in mind, that a small-group means two to four students, not one).
+<!--
 The other parts of the labs will not be collected but they provide good practice of the material that we cover and you should solve those problems on your own.
-
+-->
 <!--
 Once during the semester, you will be selected to be a _solution writer_. This means that in addition to submitting
 your regular solutions for the given problem set, you will be in charge of preparing solutions that all other
@@ -197,9 +202,9 @@ to acknowledge that in your submissions.__
 __Regret clause__
 
  If you violate the rules of academic integrity when submitting work
-for this class, but bring it to the attention of the instructor within __48 hours of your submission__, we will impose only _local_ sanctions (i.e., failing or reduced grade on a given assignment), but we
-will not refer your case for further disciplinary actions (except in the case
-of repeated violations).
+for this class, but bring it to the attention of the instructor within __48 hours of your submission__, we will impose
+only _local_ sanctions (i.e., failing or reduced grade on a given assignment), but we will not refer your case for
+further disciplinary actions (except in the case of repeated violations).
 
 
 
@@ -241,7 +246,7 @@ solution.
 - Looking at another student's work during an exam or a quiz.
 - Submitting work that was completed by someone else for a problem set, a programming project
 or an exam.
-- Submitting work that was completed by someone else and then modified by your for a problem set,
+- Submitting work that was completed by someone else and then modified by you for a problem set,
 a programming project or an exam.
 
 
