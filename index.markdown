@@ -5,13 +5,13 @@ title: Course Essentials
 
 # Course Essentials
 ---
-
+<!--
 <div class="alert" markdown="1">
 We’ll be using NYU's new learning management system (LMS) called [Brightspace](https://brightspace.nyu.edu/) instead of NYU Classes for this course.
 
 Check out [student training materials](http://www.nyu.edu/it/lms/student-training) for more info on the new LMS.
 </div>
-
+-->
 <iframe class="calendar" src="https://calendar.google.com/calendar/embed?height=400&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FNew_York&amp;src=Y19yY3RiM2c3bWprYmpyanBxNHA2Nmc3MWM4MEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=bnl1LmVkdV85NGE3MHZsbGc5czI2dXR1MDZra291cHA0MEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&amp;src=bnl1MzMxQG55dS5lZHU&amp;color=%23F4511E&amp;color=%23F4511E&amp;color=%23039BE5&amp;showTitle=0&amp;showNav=0&amp;showPrint=1&amp;showCalendars=0&amp;mode=AGENDA"  height="400"  frameborder="0" scrolling="no"></iframe>
 
 
