@@ -1,5 +1,5 @@
 
-title: CSCI-UA 102.05 (Data Structures), S21
+title: CSCI-UA 102.05 (Data Structures), F21
 short_title: CS 102
 description: "Course website for CSCI-UA 102 (Data Structures) course."
 
@@ -24,23 +24,21 @@ exclude:
 course_number: "CSCI-UA 102"
 course_name: "Data Structures"
 course_section: "5"
-course_semester: "Spring 2021"
-course_time: "Mondays and Wednesdays 12:30PM - 1:45PM (Online)"
+course_semester: "Fall 2021"
+course_time: "Mondays and Wednesdays 3:30PM - 4:45PM (Online)"
 
 recitation_section1: "section 006"
-recitation_time1:  "Thursdays 11:00AM - 12:15PM, (CIWW 109, in-person)"
+recitation_time1:  "Thursdays 11:00AM - 12:15PM, (GCASL 461, in-person - classroom assignment subject to change by CAS; please check your ALBERT schedule for up-to-date information)"
 recitation_section2: "section 061"
 recitation_time2:  "Thursdays 11:00AM - 12:15PM, (Online)"
 recitation_section3: "section 062"
 recitation_time3:  "Tuesdays 8:00AM - 9:15AM, (Online)"
 recitation_section4: "section 063"
-recitation_time4:  "Thursdays 9:30AM - 10:45AM, (Online)"
+recitation_time4:  "Thursdays 8:00AM - 9:15AM, (Online)"
 recitation_section5: "section 064"
-recitation_time5:  "Tuesdays 3:30PM - 4:45PM, (Online)"
+recitation_time5:  "Tuesdays 4:55PM - 6:10PM, (Online)"
 recitation_section6: "section 065"
-recitation_time6:  "Thursdays 3:30PM - 4:45PM, (Online)"
-recitation_section7: "section 066"
-recitation_time7:  "Tuesdays 9:30AM - 10:45AM, (Online)"
+recitation_time6:  "Thursdays 4:55PM - 6:10PM, (Online)"
 
 recitation_instructor1_full: ""
 recitation_instructor1_name: ""
@@ -60,9 +58,9 @@ recitation3_office_hours: "TBD"
 recitation3_office_hours_location: ""
 
 current_course1_title: "CSCI 102 sec. 5"
-current_course1_link: "https://cs.nyu.edu/~joannakl/cs102_s21/"
-current_course2_title: "CSCI 480 sec. 521 (APS)"
-current_course2_link: "https://cs.nyu.edu/~joannakl/aps109_s21/"
+current_course1_link: "https://cs.nyu.edu/~joannakl/cs102_f21/"
+current_course2_title: "CSCI 480 sec. 523 (APS)"
+current_course2_link: "https://cs.nyu.edu/~joannakl/aps109_f21/"
 current_course3_title: ""
 current_course3_link: ""
 
@@ -75,10 +73,10 @@ final_exam_date: "TBD (determined by CAS)"
 final_exams_link: "http://cs.nyu.edu/dynamic/courses/exams/"
 
 brightspace: "https://brightspace.nyu.edu/"
-piazza_site: "https://piazza.com/nyu/fall2020/csci102/home"
-piazza_signup: "https://piazza.com/nyu/fall2020/csci102"
+piazza_site: ""
+piazza_signup: ""
 ed_site: "https://us.edstem.org/"
-ed_signup: "https://edstem.org/us/join/UTJcMF"
+ed_signup: "https://edstem.org/"
 gradescope_site: "https://gradescope.com/"
 polleverywhere_guide: "https://blog.polleverywhere.com/students-poll-everywhere-101/"
 
