@@ -46,11 +46,9 @@ Your grade will be based on:
 * 2 exams (15% midterm exam, 20% final exam): online exams completed individually
 * 3-5 take-home quizzes (24% total): online 30 minute quizzes completed individually
 * 4-7 programming projects (27% total): several programming projects completed individually
-<!--
-* weekly recitation activities (10% total):
-	- weekly activities completed mostly during recitations in small groups
-
-* pop-quizzes (8%): quizzes given during lectures, **not announced**
+<!-- weekly recitation activities (10% total):
+ weekly activities completed mostly during recitations in small groups
+ pop-quizzes (8%): quizzes given during lectures, **not announced**
 -->
 * participation and progress (14% total): taking active part in class discussions (asking and answering
 	questions on the course discussion forum), completing assigned readings,

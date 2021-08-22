@@ -32,15 +32,14 @@ Check out [student training materials](http://www.nyu.edu/it/lms/student-trainin
 
 <p class="hang" markdown="1"><span class="emph">Recitation leaders</span>:
 </p>
-- Abhinav Gupta (sec. 61 and sec. 63),
-- Rutvi Malaviya (sec. 6 and sec. 62)
-- Karl Rosenberg (sec. 64),
-- Rutvik Shah (sec. 65)
+- Joseph Cappadona (sec. 6 and sec. 65),
+- Sumanth Reddy Muni (sec. 61 and sec. 63)
+- Swarna Swapna Ilamathy (sec. 62 and sec. 64)
 
 
 
 <p class="hang" markdown="1"><span class="emph">Office hours:</span> <br>
-See [Brightspace](https://brightspace.nyu.edu/) for the times and Zoom links of our office hours.
+See [Brightspace](https://brightspace.nyu.edu/) for the times and Zoom links for office hours.
 <!--
 <span class="name">Joanna:</span>
 {{ site.instructor_office_hours }} ({{ site.instructor_office_hours_location }})
