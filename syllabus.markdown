@@ -55,7 +55,7 @@ Your grade will be based on:
 	tutorials, activities, etc., and self-assessment exercises, actively participating in recitations and completing group and individual work
 
 Grades will be determined using the following scale:
-
+```
         A 	95-100
         A- 	90-95
         B+ 	87-90
@@ -65,7 +65,7 @@ Grades will be determined using the following scale:
         C 	72-76
         D 	65-72
         F 	less than 65
-
+```
 
 The grade of *Incomplete* is reserved for students who, for legitimate and documented reason, miss the final exam. The grade of *Incomplete* **will not be given** to student who started falling behind in class. Those students should withdraw from the class or switch to *Pass/Fail* option.
 
@@ -86,6 +86,7 @@ If you will miss a take-home quiz or an exam due to a religious observance, plea
 
 You will not be able to excuse an absence weeks after it happens. You should contact the instructor as soon as you are able (you will need to provide  appropriate documentation).
 
+In general, make sure you talk to your instructor about any missed assessments as soon as possible to determine if they can be made-up.
 
 # Recitations
 ---
@@ -266,7 +267,9 @@ polymorphism, generics, iterators, exception handling, file I/O
 
 Tentative schedule:
 
-<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQRPJ6qWpXkxBGd2Y16yRF7iQBc9xYjkj7Y6XKbEITUsndBUsvob4upOzoEcOdtqxKWGjVC60zQf85i/pubhtml?gid=1834216998&amp;single=true&amp;widget=true&amp;headers=false" style="width:50em;height:85em;"></iframe>
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQRPJ6qWpXkxBGd2Y16yRF7iQBc9xYjkj7Y6XKbEITUsndBUsvob4upOzoEcOdtqxKWGjVC60zQf85i/pubhtml?gid=1123815129&amp;single=true&amp;widget=true&amp;headers=false"
+style="width:50em;height:85em;"></iframe>
+
 
 
 For detailed schedule, see the __Content__ page on <a href="{{site.brightspace}}" target="_blank">NYU Brightspace</a>.
