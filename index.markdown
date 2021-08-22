@@ -26,7 +26,6 @@ Check out [student training materials](http://www.nyu.edu/it/lms/student-trainin
 - {{ site.recitation_section4 }}: {{ site.recitation_time4 }}
 - {{ site.recitation_section5 }}: {{ site.recitation_time5 }}
 - {{ site.recitation_section6 }}: {{ site.recitation_time6 }}
-- {{ site.recitation_section7 }}: {{ site.recitation_time7 }}
 
 
 
