@@ -8,13 +8,92 @@ title: Syllabus
 
 ## Data structures books
 
-<!--
-|<img src="{{site.book_required_image}}" name="Book" border="0px" width="120px">| **[{{ site.book_required }}]( {{ site.book_required_link }})** {{ site.book_required_edition }}<br> {{ site.book_required_author }} <br> {{ site.book_required_note }}  | -->
+We do not require you to purchase any particular textbook. **But, you should use a textbook to study more in depth the topics that are discussed in class.** The list below contains some recommended titles. During the semester we will suggest readings from some of them. You do not need to read every chapter from every book.
 
-|<img src="{{site.book_opt_1_image}}" name="OpenDSA Online Book" border="0px" width="120px">| **[{{ site.book_opt_1 }}]( {{ site.book_opt_1_link }})** {{ site.book_opt_1_edition }}<br> {{ site.book_opt_1_author }} <br> {{ site.book_opt_1_note }}  |
-|<img src="{{site.book_opt_5_image}}" name="Book" border="0px" width="100px">| **[{{ site.book_opt_5 }}]( {{ site.book_opt_5_link }})** {{ site.book_opt_5_edition }}<br> {{ site.book_opt_5_author }} <br> {{ site.book_opt_5_note }}  |
-|<img src="{{site.book_opt_7_image}}" name="Book" border="0px" width="100px">| **[{{ site.book_opt_7 }}]( {{ site.book_opt_7_link }})** {{ site.book_opt_7_edition }}<br> {{ site.book_opt_7_author }} <br> {{ site.book_opt_7_note }}  |
-|<img src="{{site.book_opt_6_image}}" name="Book" border="0px" width="100px">| {{ site.book_opt_6 }} {{ site.book_opt_6_edition }}<br> {{ site.book_opt_6_author }} <br> {{ site.book_opt_6_note }}  |
+Most of the books in this list are accessible through NYU libraries for either download or online access. For the books available through [O'Reilly online access](https://www.oreilly.com/), you can either start at the NYU library page or login to the site directly using Single-Sign-On (SSO) option with your NYU credentials.  Some books are provided as **open books** through their publisher's or author's websites.
+
+
+<img src="https://opendsa-server.cs.vt.edu/OpenDSA/Books/Everything/html/_static/OpenDSALogoT64.png" alt="book image" style="float:left;width:100px;padding-right:2em;padding-top:1em;" />
+
+[Open DSA](https://opendsa-server.cs.vt.edu/OpenDSA/Books/Everything/html/) is an open source project whose goal is to provide online course materials for a wide range of Data Structures and Algorithms courses. It has been funded by two National Science Foundation grants: TUES program grant DUE-1139861 and EAGER program grant IIS-1258571.
+
+<p style="clear:left;"/>
+
+<img src="https://greenteapress.com/wp/wp-content/uploads/2016/11/think_data_structures_cover-229x300.png" alt="book image" style="float:left;width:100px;padding-right:2em;padding-top:1em;" />
+
+Think Data Structures,
+Allen B. Downey,
+Open book.   <br>
+(accessible through NYU libraries, or [O'Reilly online access](https://www.oreilly.com/),
+or download a PDF from [Greenteapress website](https://greenteapress.com/wp/think-data-structures/) ).
+
+
+<p style="clear:left;"/>
+
+<img src="https://learning.oreilly.com/library/cover/9781484257258/" alt="book image" style="float:left;width:100px;padding-right:2em;padding-top:1em;" />
+
+[Codeless Data Structures](https://bobcat.library.nyu.edu/permalink/f/ci13eu/nyu_aleph007507574),
+Armstrong Subero,<br>
+
+(accessible through NYU libraries or [O'Reilly online access](https://www.oreilly.com/)).
+
+
+
+<p style="clear:left;"/>
+
+<img src="https://learning.oreilly.com/library/cover/0201361205/" alt="book image" style="float:left;width:100px;padding-right:2em;padding-top:1em;" />
+
+Algorithms in Java,
+Robert Sedgewick,
+<br>
+
+(accessible through NYU libraries or [O'Reilly online access](https://www.oreilly.com/)).
+
+
+
+
+<p style="clear:left;"/>
+
+<img src="https://opendatastructures.org/ods-java/img41.png" alt="book image" style="float:left;width:100px;padding-right:2em;padding-top:1em;" />
+
+[Open Data Structures An Introduction](https://opendatastructures.org/),
+Pat. Morin
+<br>
+
+(accessible through NYU libraries or [book's site](https://opendatastructures.org/)).
+
+
+
+
+<p style="clear:left;"/>
+
+<img src="https://media.springernature.com/w153/springer-static/cover/book/9783319700854.jpg" alt="book image" style="float:left;width:100px;padding-right:2em;padding-top:1em;" />
+
+[Guide to data structures : a concise introduction using Java](https://bobcat.library.nyu.edu/permalink/f/ci13eu/nyu_aleph006481524),
+James T. Streib, Takako Soma
+<br>
+
+(accessible through NYU libraries).
+
+
+
+
+<p style="clear:left;"/>
+
+<img src="https://www.pearsonhighered.com/assets/bigcovers/0/6/7/2/0672324539.jpg" alt="book image" style="float:left;width:100px;padding-right:2em;padding-top:1em;" />
+
+
+[Data structures & algorithms in Java](https://bobcat.library.nyu.edu/permalink/f/1c17uag/nyu_aleph005582162),
+Robert Lafore
+<br>
+
+(accessible through NYU libraries or [O'Reilly online access](https://www.oreilly.com/)).
+
+
+
+
+<p style="clear:left;"/>
+
 
 ## Java reference books
 
@@ -159,7 +238,7 @@ There will be two timed online exams: midterm and final. They will be given duri
 class time (midterm) or during the university scheduled time (final). Those exams are synchronous.
 
 In addition there will be several online quizzes (30 minute each). You will be able
-to complete them as any point during a fixed 24hr period.
+to complete them at any point during a fixed 24hr period.
 
 All online quizzes and exams must be completed individually by you with no assistance of
 any other people, except for the instructor and proctors (in case of the synchronous exams).
@@ -214,7 +293,7 @@ definition.
 __Fair Actions__
 
 - Working and completing a weekly lab with other students and specifying the name
-of all those involved as authors.
+of all those involved as authors (when submissions are expected).
 - Discussing problem sets and assignments with other students in a natural language
 (i.e., English or any other spoken language, not Java) and acknowledging such discussions
 in your submission.
@@ -230,7 +309,7 @@ to one of the assigned problems.
 __Not Fair Actions__
 
 - Working and completing a weekly problem set and adding names of students who did not
-participate in the group work as authors.
+participate in the group work as authors (when submissions are expected).
 - Splitting the problem set problems between multiple students and submitting as a group. (Each
 member of the group has to participate in solving every problem.)
 - Making your solutions available to others (publicly or privately) prior to the end of
