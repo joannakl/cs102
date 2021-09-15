@@ -346,9 +346,9 @@ polymorphism, generics, iterators, exception handling, file I/O
 
 Tentative schedule:
 
+
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQRPJ6qWpXkxBGd2Y16yRF7iQBc9xYjkj7Y6XKbEITUsndBUsvob4upOzoEcOdtqxKWGjVC60zQf85i/pubhtml?gid=1123815129&amp;single=true&amp;widget=true&amp;headers=false"
 style="width:50em;height:85em;"></iframe>
-
 
 
 For detailed schedule, see the __Content__ page on <a href="{{site.brightspace}}" target="_blank">NYU Brightspace</a>.
