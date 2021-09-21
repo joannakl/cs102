@@ -67,6 +67,13 @@ It order to complete the three parts below, you will need two things:
 
 __This lab uses Java 11. It does not matter if the version of Java installed on your own system is different.__
 
+
+### Submissions on Gradescope
+
+You should submit the answers to Part 1 (and hopefully all other parts) on Gradescope. If you end up working with a group, you can make a single submission and add your group members names afterwards.
+
+The actual scores do not matter. We just want to make sure you are making progress through the course material.
+
 ### Part 1
 
 <span class="strong">Complete this part based on reading the documentation (NOT the source code).</span>
