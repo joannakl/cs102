@@ -13,14 +13,14 @@ __submission mode:__ individual
 
 <main markdown="1" class="lab">
 
-## Project 2: Data Is Plural
+## Project 2: Every Place Has a Name
 
 <hr>
 
 <div class="emph" markdown=1>
 You may discuss any of the assignments with your classmates and tutors (or anyone else) but <span class="red"> all work for all assignments must be
 entirely your own</span>. Any sharing or copying of assignments will be considered cheating (this includes posting of partial or complete
-solutions on Ed, GitHub, Discord, Groupme, ... or any other forum). If you get significant help from anyone, you should acknowledge it in
+solutions on Ed, GitHub, Discord, Groupme, ... or any other public or private forum). If you get significant help from anyone, you should acknowledge it in
 your submission (and your grade will be proportional to the part that you completed on your own). You are responsible for
 every line in your program: you need to know what it does and why. You should not use any data structures and features of Java
 that have not been covered in class (or the prerequisite class). If you have doubts whether or not you are allowed to use certain
@@ -28,16 +28,18 @@ structures, just ask your instructor.
 </div>
 
 ---
-<a title="Jonathan Gray, CC0, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Open_Data_stickers.jpg"><img width="400" alt="Open Data stickers" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Open_Data_stickers.jpg/512px-Open_Data_stickers.jpg" style="float:right; margin:10px"></a>
 
 <br/><br/>
 ### Introduction and objectives
 
 
+
+<a title="U.S. Government, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:USGS_logo_green.svg"><img width="400" alt="USGS logo green" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/USGS_logo_green.svg/256px-USGS_logo_green.svg.png" style="float:right; margin:10px"></a>
+
+
 In this project you will be working with open data. Wikipedia has a good description of open data: "Open data is the idea that some data
 should be freely available to everyone to use and republish as they wish, without restrictions from copyright, patents or other mechanisms of control."
-In fact, you will be working with an open data set that is a collection of open data sets.
-[_Data is Plural_](https://tinyletter.com/data-is-plural) is a project run by Jeremy Singer-Vine. You can subscribe to his newsletter and get a fresh collection of interesting data sets each week. Or, you can browse [the archives](https://docs.google.com/spreadsheets/d/1wZhPLMCHKJvwOkP4juclhjFgqIY8fQFMemwKL2c64vk) dating back to 2015.
+You will be working with a specific data set from the United States Geological Survey. It contains names of every place in the United States (towns, villages, parks, lakes, mountains, ...). You can find the complete collection of the data sets organized by state (and in a few other ways) at  https://www.usgs.gov/core-science-systems/ngp/board-on-geographic-names/download-gnis-data.
 
 Your program will explore this data set and allow the user to make queries about it.
 <br/><br/>
@@ -67,32 +69,67 @@ debugging always takes time.
 
 
 <div class="wrap-collabsible">
-<input id="dataset" class="toggle" type="checkbox"  >
-<label for="dataset" class="lbl-toggle"> Dataset </label>
+<input id="Every place name in the United States Data Set" class="toggle" type="checkbox"  >
+<label for="Every place name in the United States Data Set" class="lbl-toggle"> Every place name in the United States Data Set </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
-You can access the latest dataset [here](https://docs.google.com/spreadsheets/d/1wZhPLMCHKJvwOkP4juclhjFgqIY8fQFMemwKL2c64vk) - it is updated fairly regularly.
+You can find the data set [here](https://www.usgs.gov/core-science-systems/ngp/board-on-geographic-names/download-gnis-data) - it is updated fairly regularly (the latest update was at the end of August).
 
-Your program should work with a local CVS copy of this file that you can download from
-[here](data_is_plural.csv).
+Your program should work with a local copy of a file whose format matches that of the files that you can download from
+the website. All files are pipe-delimited text files.
+
+Here are the first few lines of the New York state examples:
+
+```
+FEATURE_ID|FEATURE_NAME|FEATURE_CLASS|STATE_ALPHA|STATE_NUMERIC|COUNTY_NAME|COUNTY_NUMERIC|PRIMARY_LAT_DMS|PRIM_LONG_DMS|PRIM_LAT_DEC|PRIM_LONG_DEC|SOURCE_LAT_DMS|SOURCE_LONG_DMS|SOURCE_LAT_DEC|SOUR
+CE_LONG_DEC|ELEV_IN_M|ELEV_IN_FT|MAP_NAME|DATE_CREATED|DATE_EDITED
+205110|North Country National Scenic Trail|Trail|PA|42|Perry|099|401920N|0770439W|40.3221113|-77.0775473|||||200|656|Wertzville|09/12/1979|08/27/2019
+205609|Bog Hollow Brook|Stream|CT|09|Litchfield|005|414429N|0732945W|41.7414829|-73.4959579|414734N|0733030W|41.7928952|-73.5084172|119|390|Kent|09/12/1979|05/01/2015
+205906|Byram River|Stream|CT|09|Fairfield|001|405901N|0733918W|40.9837089|-73.6551276|410919N|0734132W|41.1553735|-73.6923523|0|0|Mamaroneck|09/12/1979|02/24/2020
+206430|Converse Lake|Lake|CT|09|Fairfield|001|410758N|0733907W|41.1326454|-73.6520811|||||129|423|Mount Kisco|09/12/1979|05/23/2018
+206431|Converse Pond Brook|Stream|CT|09|Fairfield|001|410410N|0734018W|41.0695412|-73.6717953|410834N|0733919W|41.1428737|-73.6554063|48|157|Glenville|09/12/1979|
+206783|East Branch Converse Pond Brook|Stream|CT|09|Fairfield|001|410328N|0734026W|41.0577778|-73.6738889|410751N|0734037W|41.1308333|-73.6769444|45|148|Glenville|09/12/1979|03/14/2007
+206789|East Branch Mianus River|Stream|CT|09|Fairfield|001|410630N|0733519W|41.1084297|-73.5887367|411031N|0733426W|41.1753736|-73.5740145|57|187|Stamford|09/12/1979|
+206794|East Branch Silvermine River|Stream|CT|09|Fairfield|001|411308N|0732925W|41.2189847|-73.4904008|411612N|0732930W|41.2698717|-73.4916883|136|446|Norwalk North|09/12/1979|07/08/2015
+207079|Fishers Island Ferry|Crossing|CT|09|New London|011|411644N|0720324W|41.2789876|-72.0567414|||||0|0|New London|09/12/1979|11/02/2007
+207080|Fishers Island Sound|Bay|CT|09|New London|011|411827N|0715745W|41.3075991|-71.9625725|||||0|0|Mystic|09/12/1979|06/16/2011
+207099|Fivemile River|Stream|CT|09|Fairfield|001|410326N|0732645W|41.0573192|-73.445953|411132N|0733056W|41.1923181|-73.5156792|0|0|Norwalk South|09/12/1979|
+207285|Gerow Brook|Stream|CT|09|Fairfield|001|412950N|0733159W|41.4973161|-73.5331805|412851N|0733031W|41.4808333|-73.5086111|150|492|Brewster|09/12/1979|
+207966|Horseneck Brook|Stream|CT|09|Fairfield|001|410109N|0733740W|41.019264|-73.6279041|410734N|0733754W|41.1262073|-73.6317941|9|30|Glenville|09/12/1979|
+208076|Indian Lake|Lake|CT|09|Litchfield|005|415506N|0732948W|41.9182523|-73.49674|||||191|627|Sharon|09/12/1979|12/14/2018
+208078|Indian Lake Creek|Stream|CT|09|Litchfield|005|415223N|0733009W|41.8731486|-73.502624|415438N|0732942W|41.9106484|-73.4951235|149|489|Amenia|09/12/1979|
+208170|John D Milne Lake|Reservoir|CT|09|Fairfield|001|411218N|0732941W|41.2049417|-73.4946493|||||114|374|Norwalk North|09/12/1979|05/23/2018
+208246|Kelsey Brook|Stream|CT|09|Litchfield|005|415706N|0732958W|41.9517591|-73.4995678|415743N|0732926W|41.9619444|-73.4905556|217|712|Sharon|09/12/1979|
+208857|Mianus Reservoir|Reservoir|CT|09|Fairfield|001|410835N|0733647W|41.1431772|-73.6129529|||||70|230|Pound Ridge|09/12/1979|05/23/2018
+```
 
 
+The first line (which is wrapped) contains the column headings. The columns are separated by pipe symbols (vertical bars).
+Every remaining line contains information for a single place (its unique ID, name, type of the place, state in which the place is located, ...).
+
+The same file can be opened with a program designed to work with spreadsheets (like Excel) as long as the pipe symbol, `|`, is used as the column delimiter.
+
+<img src="img/everyName.png" style="max-width:100%;">
+
+
+<!--
 The file that you download is a CSV (comma separated values) file  - it is a simple text file and is processed
 like a text file (but it can also be opened by most of the spreadsheet programs and displayed column-wise based
 on the locations of commas on each line). Since some of the columns in a CSV file may contain longer text that
 might, optionally, contain commas or newlines as well, those entries are enclosed in a set of double quotes.
 
-There are six columns in the _Data is Plural_ data set. Some of the columns may be empty.
-
-<img src="img/data_proj2.png" style="max-width:100%;">
+-->
 
 <br>
 
-__From the point of view of this assignment, a valid row in the data set MUST contain the _headline_, _text_ and _links_ values.
+There are twenty columns in the data set. Some of the columns may be empty. More detailed description of the file
+format and each of its columns can be found [here](https://geonames.usgs.gov/docs/pubs/Nat_State_Topic_File_formats.pdf).
+
+__From the point of view of this assignment, a valid row in the data set MUST contain the feature ID, feature name, feature class, and state and county associated with its location.
 Any rows that do not contain these two values should be quietly ignored by the program.__
 
-You can (and should) use the `CSV` class listed in the Appendix to help you with parsing the input file.
+You can (and should) use the `Parser` class listed in the Appendix to help you with parsing the input file.
 
 </div> </div></div>
 
@@ -104,8 +141,8 @@ You can (and should) use the `CSV` class listed in the Appendix to help you with
 <div class="content-inner" markdown=1>
 
 Your program has to be a console based program (no graphical interface) - this
-means that the program should not open any windows or dialogs to prompt user
-for the input.
+means that the program should not open any windows or dialog boxes to prompt user
+for the input. (Use the `Scanner` class to read the user input.)
 
 </div> </div></div>
 
@@ -118,11 +155,8 @@ for the input.
 The program is started from the command line (or run within an IDE). It expects one command line argument.
 
 This program should use command line arguments. When the user runs the program, they provide the name of the input
-file as a command line argument. (This way the user can specify a different data set - for example a subset of entries
-from a particular range of dates).
-
-The user may start the program from the command line or run it within an IDE like
-Eclipse - __from the point of view of your program this does not matter__.
+file as a command line argument. (This way the user can specify a different data set - for example data sets from different
+states).
 
 If the name of the input file provided as a command line argument is incorrect or the file cannot be
 opened for any reason, the program should display an error message and terminate. It should not prompt the user for
@@ -132,7 +166,7 @@ If the program is run without any arguments, the program should display an error
 
 The error messages should be specific and informative, for example:
 
-`    Error: the file data_is_plural_2019.csv cannot be opened.`
+`    Error: the file NY_Features_20210825.txt cannot be opened.`
 
 or
 
@@ -153,35 +187,40 @@ The above error messages generated by your code should be written to the `System
 The program should run in a loop that allows the user to issue different queries.
 The three types of queries are:
 
-- `title KEYWORD`
-- `description KEYWORD`
-- `url KEYWORD`
+- `name KEYWORD`
+- `name KEYWORD1 class KEYWORD2`
+- `name KEYWORK1 state KEYWORD2`
+- `name KEYWORD1 class KEYWORD2 state KEYWORD3`
+
 
 In the above, the words in uppercase indicate keywords that will be replaced by
-actual values, for example `title COVID`, `description immigration` or `url .gov`.
+actual values, for example `name Mianus`, `name Mianus class reservoir`, `name Mianus state NY` or `name Mianus class Reservoir state NY`.
 
-In the first case, `title KEYWORD`, the program should display the
-entries from the data set whose titles (headlines) contain the `KEYWORD` specified by the user.
+Correct state name specification should use its two letter abbreviation.
 
-In the second case, `description KEYWORD`, the program should display the
-entries from the data set whose descriptions (text) contain the `KEYWORD` specified by the user.
+In the first case, `name Mianus`, the program should display the
+entries from the data set whose names contain `Mianus` specified by the user.
 
-In the third case, `url KEYWORD`,  the program should display the
-entries from the data set whose links  contain the `KEYWORD` specified by the user. For example,
-`url .gov` would return the data sets that are hosted on government sites.
+In the second case, `name Mianus class reservoir`, the program should display the
+entries from the data set whose names contain `Mianus` and whose class contains the word `reservoir`.
+
+In the third case, `name Mianus state NY`, the program should display the
+entries from the data set whose names contain `Mianus` and that are located in New York state (NY).
+
+
+In the fourth case, `name Mianus  class reservoir state NY`, the program should display the
+entries from the data set whose names contain `Mianus` , whose class contains the work `reservoir` and that are located in New York state (NY).
+
+
 
 <br>
 
-The user should be able to combine two of the above queries (but not three or more)
-to narrow down the returned results.
-For example, if the user enters
-`title COVID url .gov`, the program should display the entries from the data set whose titles
-contain the word `COVID` and for which the links lead to sites with `.gov` in their URLs.
+The `name` query is mandatory. The other two queries may be used to provide additional restrictions (they can be used in any order, i.e., `name Mianus class Reservoir state NY` and `name Mianus state NY class Reservoir` should produce identical results).
 
 <br>
 
-__The keywords should be case insensitive. This means that `title COVID`, `title covid`
-and `title Covid` should all return exactly the same results.__
+__The keywords should be case insensitive. This means that `name Mianus`, `name MIANUS`
+and `name MiAnUs` should all return exactly the same results.__
 
 <br>
 
@@ -212,20 +251,19 @@ All output from the user interaction should be printed to the standard output st
 
 
 __Matching results display:__
-If the query entered by the user matches one or more DataSet, the information  should be displayed in the following format:
+If the query entered by the user matches one or more place, the information  should be displayed in the following format:
 
 ```
-DATE
-NAME
-DESCRIPTION
-LINKS
+NAME, CLASS
+COUNTY, STATE
+LATITUDE, LONGITUDE, ELEVATION
 
 -----
 ```
 
-All the words in uppercase letters are place-holders for the actual values from the data set.
+All the words in uppercase letters are place-holders for the actual values from the data set. The elevation should be specified in feet (not meters).
 
-If date is missing from the data set, it should be skipped in the result.
+If latitude, longitude or elevation are missing, they should be left blank in the above output.
 
 The output should contain a single blank line, followed by a line with five dashes, `-----`,
 after each result. This will visually separate the results for improved readability.
@@ -248,121 +286,136 @@ compute the results when the program is executed.
 In particular, your program must implement and use the following classes.
 You may implement additional classes and additional methods in the required classes, if you wish.
 
-#### <code class="code_title">Date</code> class
+#### <code class="code_title">Location</code> class
 
-This class should represent a calendar date. It should store the information about the year, month and day.
+This class should represent a location of the given named place/feature. It should store the information about state, county, latitude, longitude and elevation (in feet).
 
-- This class should provide a three parameter constructor that validates and sets the year, month and day.
+- This class should provide a two parameter constructor that validates and sets the state and county names.
 
-	`public Date( int year, int month, int day)`
+	`public Location( String state, String, county)`
 
-	A valid `year` has to be a positive integer. A valid `month` has to be a positive integer in the range of 1-12.
-	A valid `day` depends on the month of the year and the year. Please see the [Julian and Gregorian calendars](https://en.wikipedia.org/wiki/Month#Julian_and_Gregorian_calendars) for the length of the months and   [Leap Year Algorithm](https://en.wikipedia.org/wiki/Leap_year#Algorithm) to determine how to calculate which year is a leap year.
+	Valid arguments cannot be `null`.
 	If this constructor is called with invalid arguments,  it should throw an instance of the `IllegalArgumentException`  with an appropriate message.
 
-- The class should implement `Comparable<Date>` interface. The two `Date` objects should be
-	compared based on year, month and day (in that order). This way the earlier dates are _smaller_ than the later dates.
+- The class should provide accessor and mutator methods (i.e., getters and setters) for the longitude, the latitude and the elevation values. They should use the following signatures:
+	- `public double getLatitude()`
+	- `public void setLatitude( double latitude )` - a valid latitude is in the range of from -90 to +90 (inclusive)
+	- `public double getLongitude()`
+	- `public void setLongitude( double longitude )` - a valid longitude is in the range of from -180 to +180 (inclusive)
+	- `public int getElevation()`
+	- `public void setElevation( int elevation )`
 
-- The class should override the `equals` method from the `Object` class. Two `Date` objects
-	are the same if they represent identical dates.
+	If any of the mutators is called with an invalid argument, the method should throw an instance of the  `IllegalArgumentException`  with an appropriate message.
+
+- The class should implement `Comparable<Location>`  interface. Two `Location` objects should be
+	compared based on their state names (case insensitive, alphabetic ordering), county names (case insensitive, alphabetic ordering), latitude, longitude (both following the numerical ordering of floating point numbers), and elevation (following the numerical ordering of integers).
+	If two `Location` objects have the same state names, the comparison should be done by their county names. If
+ 	two `Location` objects have the same state names names and the same county names, the comparison should be done by
+	their latitude coordinates. ...
+
+- The class should override the `equals` method from the `Object` class. Two `Location` objects
+	are the same if they represent identical locations (i.e., the names of the state and the county are the same, the longitude and latitude values are the same (up to six places after the decimal point), and the elevations are the same).
 
 - The class should override the `toString` method from the `Object` class. It should
-	return a  `String` matching the following pattern: `YYYY-MM-DD`.
+	return a  `String` matching the following pattern:
+
+	```
+	COUNTY, STATE
+	LATITUDE, LONGITUDE, ELEVATION
+	```
+	(If latitude, longitude, or elevation are not provided, the values should be skipped.)
 
 
+#### <code class="code_title">Feature</code> class
 
-#### <code class="code_title">DataSet</code> class
+This class should represent a particular place/feature. It should store information about the place's name, class (i.e., what type of a place it is), and its location. It can store additional information if you wish.
 
-This class should represent a data set with all of its characteristics (date, title/headline, description/text,
-list of links, and any other information you may decide may be useful to store).
+- This class should provide a three parameter constructor that validates and sets the name, class and location of the place.
 
-- This class should provide a three parameter constructor that validates and sets the title, description and a list of  links.
+	`public Feature (String name, String class, Location location)`
 
-	`public DataSet (String title, String description, ArrayList<URL> links)`
+	Any non-empty string is a valid `name` or `class`. If this constructor
+	is called with a `null` or an empty `name` or `class`, it should throw an instance of `IllegalArgumentException`  with an appropriate message.
 
-	Any non-empty string is a valid `title` or `description`. If this constructor
-	is called with a `null` or an empty `title` or `description`, it should throw an instance of `IllegalArgumentException`  with an appropriate message.
-
-	`links` should be a non-empty list of `URL` objects. Note that [`URL`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URL.html) is a class defined in Java (you do not need to define it yourself).
-	If this constructor is called with a `null` or an empty list as `links`,  it should throw an instance of the `IllegalArgumentException`  with an appropriate message.
+	`location` should be a valid Location object.
+	If this constructor is called with a `null` argument,  it should throw an instance of the `IllegalArgumentException`  with an appropriate message.
 
 	There should be no default constructor.
 
-- This class should provide the following mutator and accessor methods. The mutator
-	methods should validate the data according to the specification below. If any values are invalid,
-	the method should throw an instance of 	`IllegalArgumentException` with an appropriate message.
-	- `public void setDate(Date date)`, `public Date getDate()` - a valid date should not be `null` and should have a year equal to or after the year 2000.
-	- `public void setHatTips( String hatTips)`, `public String getHatTips()` - a valid
-		`hatTip`  not `null` string (hat-tips are missing for many of the entries in the data set, so they could be
-	and empty string; if the hat-tip was never set or it was set to an empty string, the `getHatTips` method should return an empty string)
+- This class should provide the following accessor methods:
+	- `public String getName()`
+	- `public String getClass()`
+	- `public Location getLocation()`
 
-- The class should implement `Comparable<DataSet>` interface. The two `DataSet` objects should be
-	compared based on their dates, and, if the dates are the same or missing
-	(if the date is not set in either of the compared objects), by their titles.
-	The comparison between titles should be case insensitive.
+- The class should implement `Comparable<Feature>` interface. The two `Feature` objects should be
+	compared based on their names, location, and class (in that order), i.e., if
+	two `Feature` objects have the same names, the comparison should be done by their locations (following the rules outlined in the `Location` class); if the
+ 	two `Feature` objects have the same names and the same locations, the comparison should be done by
+	their  their class; finally, if all three are the same, the two objects should
+	be considered equal. All comparisons should be case insensitive.
 
-- The class should override the `equals` method from the `Object` class. Two `DataSet` objects
-	are the same if they have identical dates and titles (case of letters does not matter).
+- The class should override the `equals` method from the `Object` class. Two `Feature` objects
+	are the same if they have identical names, locations and classes.  All comparisons should be case insensitive.
 
 - The class should override the `toString` method from the `Object` class. It should
 	return a multi-line `String` matching the following pattern
 
+
 	```
-	DATE
-	NAME
-	DESCRIPTION
-	LINKS
+	NAME, CLASS
+	COUNTY, STATE
+	LATITUDE, LONGITUDE, ELEVATION
 	```
 
-	All the words in uppercase letters are place-holders for the actual values from the data set.
+	All the words in uppercase letters are place-holders for the actual values from the data set. The elevation should be specified in feet (not meters).
 
-	If date is missing from the data set, it should be skipped in the result in the result. The description, in most cases, will
-	be a long multi-line text. The links should be displayed one per line.
+	If latitude, longitude or elevation are missing, they should be left blank in the above output.
 
-#### <code class="code_title">DataSetList</code> class
-The `DataSetList` class should be used to store all the `DataSet` objects.
-This class should inherit from the   `ArrayList<DataSet>` class.
+#### <code class="code_title">FeatureList</code> class
+The `FeatureList` class should be used to store all the `Feature` objects.
+This class should inherit from the   `ArrayList<Feature>` class.
 
-- The class needs to provide a default constructor that creates an empty `DataSetList` object.
+- The class needs to provide a default constructor that creates an empty `FeatureList` object.
 
 In addition, the class should implement the following two methods:
 
-- `public DataSetList getByTitle ( String keyword )  `
+- `public FeatureList getByName ( String keyword )  `
 
-	This method should return a list of all `DataSet` objects for which the titles (headlines) contain the
+	This method should return a list of all `Feature` objects for which the names __contain__ the
   `keyword`. The keyword comparison should be done in a case insensitive way.
 	The returned list should be sorted according to the natural ordering of the elements (i.e., dictated
-	by the `compareTo` method defined in the `DataSet` class).
+	by the `compareTo` method defined in the `Feature` class).
 	If `keyword` is `null` or an empty string, this method
 	should throw an instance of `IllegalArgumentException` with an appropriate message.
 
 	If there are no elements in the list that match the given criteria, this method should return `null`.
 
-- `public DataSetList getByDescription ( String keyword )   `
+- `public FeatureList getByClass ( String keyword )   `
 
-	This method should return a list of all `DataSet` objects for which the descriptions (text fields) contain the
+	This method should return a list of all `Feature` objects for which the class name (the type of the feature) contains the
   `keyword`.  The keyword comparison should be done in a case insensitive way.
 	The returned list should be sorted according to the natural ordering of the elements (i.e., dictated
-	by the `compareTo` method defined in the `DataSet` class).
+	by the `compareTo` method defined in the `Feature` class).
 	If `keyword` is `null` or an empty string, this method
 	should throw an instance of `IllegalArgumentException` with an appropriate message.
 
 	If there are no elements in the list that match the given criteria, this method should return `null`.
 
-- `public DataSetList getByURL ( String keyword )   `
+- `public FeatureList getByState ( String state )   `
 
-	This method should return a list of all `DataSet` objects for which the links  contain the
-  `keyword`.  The keyword comparison should be done in a case insensitive way.
+	This method should return a list of all `Feature` objects for which the state name  matches the parameter `state`.
+	The comparison should be done in a case insensitive way, but the comparison is based on equality of the two state names
+	(which are two letter state name abbreviations).
 	The returned list should be sorted according to the natural ordering of the elements (i.e., dictated
-	by the `compareTo` method defined in the `DataSet` class).
+	by the `compareTo` method defined in the `Feature` class).
 	If `keyword` is `null` or an empty string, this method
 	should throw an instance of `IllegalArgumentException` with an appropriate message.
 
 	If there are no elements in the list that match the given criteria, this method should return `null`.
 
 
-#### <code class="code_title">DataIsPlural</code> class
-The `DataIsPlural` class is the actual program. This is the class that should contain the `main` method.
+#### <code class="code_title">EveryPlaceHasAName</code> class
+The `EveryPlaceHasAName` class is the actual program. This is the class that should contain the `main` method.
 It is responsible for opening and reading
 the data file, obtaining user input, performing some data validation and handling
 all errors that may occur (in particular, it should handle any
@@ -383,8 +436,7 @@ You may implement other methods in this class to modularize the design.
 
 
 - You should follow the rules outlined in the document
-[Code conventions](https://cs.nyu.edu/~joannakl/cs102_s21/notes/CodeConventions.pdf)
-posted on the course website.
+[Code conventions](https://cs.nyu.edu/~joannakl/cs102_f21/notes/CodeConventions.pdf).
 
 - The data file should be read only once! Your program needs to store the data
 in memory resident data structures.
@@ -420,8 +472,7 @@ The goal in doing this is to try to find the mistakes you have most likely made 
 __DO NOT__ test your program on the entire large input file. This may take a long time and you will never know
 if the results are correct or not.
 - Each class that you submit __will be tested by itself without the context of other classes that you are implementing for this assignment__. <br>
-This means that you need to make sure that your methods can perform their tasks correctly even if they are executed in situations that would not
-arise in the context of this specific program.
+This means that you need to make sure that your methods can perform their tasks correctly even if they are executed in situations that would not arise in the context of this specific program.
 - You should __backup__ your code after each time you spend some time working on it.
 Save it to a flash drive, email it to yourself, upload it to your Google drive, push it to a private git repository,
 do anything that gives you a second (or maybe third copy). Computers tend to break just a few days or even
@@ -444,9 +495,9 @@ If the program does not adhere to the specification, the grade will be low and
 will depend on how easy it is to figure out what the program is doing and how to work with it.
 
 The grade will be determined by several factors:
-- 50 points: class correctness: correct behavior of methods of the required classes and correct behavior of the program
+- 60 points: class correctness: correct behavior of methods of the required classes and correct behavior of the program
 	as a whole (this will be determined by the autograder and some manual evaluation)
-- 30 points: design and the implementation of the required classes and any additional classes
+- 20 points: design and the implementation of the required classes and any additional classes
    (this will be determined by a code review)
 - 20 points: proper documentation, program style and format of submission
    (this will be determined by a code review)
@@ -466,11 +517,12 @@ This means that each of your submitted source code files should start with a lin
 `package project2;`
 
 
-Your should submit all your source code files (the ones with `.java` extensions only)
-in a single __zip__ file to Gradescope. __DO NOT__ submit `.class` files
-or any project files that your IDE might produce. You can see all the files on Gradescope.
-Verify that there is nothing there that you did not intend to put it.
+Your should submit all your source code files (the ones with `.java` extensions only) to Gradescope.
+ __DO NOT__ submit `.class` files
+or any project files that your IDE or operating system might produce. __You can see all the files on Gradescope.__
+Verify that there is nothing there that you did not intend to put it. __DO NOT submit the data file.__
 
+Gradescope accepts individual files and zip files.
 You can produce a zip file directly from Eclipse (if this is what you are using):
  -  right click on the name of the package (inside the `src` folder) and select Export...
  -  under General pick Archive File and click Next
@@ -497,6 +549,8 @@ the case in future assignments.
 <label for="appendix" class="lbl-toggle"> Appendix </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
+
+<!--
 
 #### `CSV` class
 
@@ -540,19 +594,19 @@ Enter query or "quit" to stop:
 description immigration url .edu
 2019-9-18
 State immigration laws.
-Political science professor Jamie Monogan has compiled a dataset of more than 2,700 immigration laws passed by US state legislatures from 2005 to 2016. The dataset summarizes the laws and also categorizes them by subject, scope, and whether they appear to be welcoming or hostile to immigrants.[h/t Jason Anastasopoulos]
+Political science professor Jamie Monogan has compiled a Feature of more than 2,700 immigration laws passed by US state legislatures from 2005 to 2016. The Feature summarizes the laws and also categorizes them by subject, scope, and whether they appear to be welcoming or hostile to immigrants.[h/t Jason Anastasopoulos]
 https://spia.uga.edu/faculty-member/jamie-monogan/
 https://onlinelibrary.wiley.com/doi/abs/10.1111/psj.12359
-https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/F8YTX2
+https://dataverse.harvard.edu/Feature.xhtml?persistentId=doi:10.7910/DVN/F8YTX2
 
 -----
 2020-12-16
 More on travel/immigration bans.
-The COVID Border Accountability Project is tracking countries’ pandemic-related travel and immigration restrictions, on a weekly basis. The project’s team categorizes various aspects of the restrictions — whether they hinge on citizenship, halt new visa applications, et cetera — and turns them into a longitudinal dataset. Previously: The UN World Food Program’s travel-restrictions dataset (DIP 2020.12.09).
+The COVID Border Accountability Project is tracking countries’ pandemic-related travel and immigration restrictions, on a weekly basis. The project’s team categorizes various aspects of the restrictions — whether they hinge on citizenship, halt new visa applications, et cetera — and turns them into a longitudinal Feature. Previously: The UN World Food Program’s travel-restrictions Feature (DIP 2020.12.09).
 https://covidborderaccountability.org
 https://covidborderaccountability.org/about.html
-https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/U6DJAC
-https://data.humdata.org/dataset/covid-19-global-travel-restrictions-and-airline-information
+https://dataverse.harvard.edu/Feature.xhtml?persistentId=doi:10.7910/DVN/U6DJAC
+https://data.humdata.org/Feature/covid-19-global-travel-restrictions-and-airline-information
 https://tinyletter.com/data-is-plural/letters/data-is-plural-2020-12-09-edition
 
 -----
@@ -611,7 +665,7 @@ the program is run. Your code is not responsible for dealing with that.
 <br>
 <br>
 <br>
-
+--> 
 
 </div> </div></div>
 
