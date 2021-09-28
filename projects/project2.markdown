@@ -5,7 +5,7 @@ title: Project 2
 
 <div class="lab-right" markdown="1">
 __Project 2__ <br>
-__due date:__ March 7
+__due date:__ Oct. 11
 
 __submission mode:__ individual
 
@@ -188,13 +188,15 @@ The program should run in a loop that allows the user to issue different queries
 The three types of queries are:
 
 - `name KEYWORD`
-- `name KEYWORD1 class KEYWORD2`
-- `name KEYWORK1 state KEYWORD2`
-- `name KEYWORD1 class KEYWORD2 state KEYWORD3`
+- `name KEYWORD class CLASS`
+- `name KEYWORD state STATE`
+- `name KEYWORD class CLASS state STATE`
+- `name KEYWORD state STATE class CLASS`
 
 
 In the above, the words in uppercase indicate keywords that will be replaced by
-actual values, for example `name Mianus`, `name Mianus class reservoir`, `name Mianus state NY` or `name Mianus class Reservoir state NY`.
+actual values, for example `name Mianus`, `name Mianus class reservoir`, `name Mianus state NY`, `name Mianus state NY class reservoir NY` or `name Mianus class Reservoir state NY`. You can assume that `KEYWORD`, `CLASS` and `STATE` are always single
+words with no white space characters. (Consider it an extra challenge in parsing if there could be multi-word phrases in each query.)
 
 Correct state name specification should use its two letter abbreviation.
 
@@ -208,7 +210,7 @@ In the third case, `name Mianus state NY`, the program should display the
 entries from the data set whose names contain `Mianus` and that are located in New York state (NY).
 
 
-In the fourth case, `name Mianus  class reservoir state NY`, the program should display the
+In the fourth and fifth cases, `name Mianus state NY class reservoir NY`  or `name Mianus  class reservoir state NY`, the program should display the
 entries from the data set whose names contain `Mianus` , whose class contains the work `reservoir` and that are located in New York state (NY).
 
 
@@ -323,7 +325,8 @@ This class should represent a location of the given named place/feature. It shou
 	COUNTY, STATE
 	LATITUDE, LONGITUDE, ELEVATION
 	```
-	(If latitude, longitude, or elevation are not provided, the values should be skipped.)
+	(If latitude, longitude, or elevation are not provided, the values should be printed as zeros - this is the convention
+	used in the data set.)
 
 
 #### <code class="code_title">Feature</code> class
@@ -343,9 +346,9 @@ This class should represent a particular place/feature. It should store informat
 	There should be no default constructor.
 
 - This class should provide the following accessor methods:
-	- `public String getName()`
-	- `public String getClass()`
-	- `public Location getLocation()`
+	- `public String getFeatureName()`
+	- `public String getFeatureClass()`
+	- `public Location getFeatureLocation()`
 
 - The class should implement `Comparable<Feature>` interface. The two `Feature` objects should be
 	compared based on their names, location, and class (in that order), i.e., if
@@ -550,18 +553,31 @@ the case in future assignments.
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
-<!--
 
-#### `CSV` class
 
-CSV is a simple file format, but there are many non-standard variations: the field separator,
-the field delimiter, the special characters allowed in the fields, etc.
+#### Parsing Lines of the Input File
 
-You should use the `CSV` class provided below. It was designed to work with the
-file format that you are working with.
+The input file is a plain text file. Each line contains entries for several columns. Each column is separated by a pipe symbol, `|`.
+To simplify parsing through the file, you can use the following function:
 
-- [`CSV`](project2/doc/project2/CSV.html) class documentation
-- [`CSV.java`](project2/CSV.java) file
+```
+/**
+ * Splits the given line of a pipe-delimited file according to | characters.
+ * @author Joanna Klukowska
+ * @param textLine	a line of text to be parsed
+ * @return the array containing words (or empty strings) from between | characters
+ */
+public static String [] splitInputLine(String textLine){
+
+	if (textLine == null ) return null;
+
+	String [] entries = null;
+
+	entries = textLine.split("\\|");
+
+	return entries;
+}
+````
 
 
 #### Sample Interactions
@@ -569,103 +585,73 @@ file format that you are working with.
 Here are a few sample runs of a program with much reduced input file to illustrate  the user interface.
 
 ```
-Welcome the Data Is Plural data explorer!
-
-You can use the following queries to search through the data:
-   title KEYWORD
-   description KEYWORD
-   url KEYWORD
-You can combine up to two queries to narrow down the results, for example:
-   title KEYWORD1  url KEYWORD2
-
-
-Enter query or "quit" to stop:
-title university
-2020-1-1
-California university history.
-The UC ClioMetric History Project is digitizing decades of administrative records from the University of California and other schools in the state (such as USC and Stanford). So far, they’ve uploaded data on more than 750,000 student enrollments, tens of thousands of faculty members, and 800,000 courses.
-https://uccliometric.org
-https://uccliometric.org/students/
-https://uccliometric.org/faculty/
-https://uccliometric.org/courses/
-
------
-Enter query or "quit" to stop:
-description immigration url .edu
-2019-9-18
-State immigration laws.
-Political science professor Jamie Monogan has compiled a Feature of more than 2,700 immigration laws passed by US state legislatures from 2005 to 2016. The Feature summarizes the laws and also categorizes them by subject, scope, and whether they appear to be welcoming or hostile to immigrants.[h/t Jason Anastasopoulos]
-https://spia.uga.edu/faculty-member/jamie-monogan/
-https://onlinelibrary.wiley.com/doi/abs/10.1111/psj.12359
-https://dataverse.harvard.edu/Feature.xhtml?persistentId=doi:10.7910/DVN/F8YTX2
-
------
-2020-12-16
-More on travel/immigration bans.
-The COVID Border Accountability Project is tracking countries’ pandemic-related travel and immigration restrictions, on a weekly basis. The project’s team categorizes various aspects of the restrictions — whether they hinge on citizenship, halt new visa applications, et cetera — and turns them into a longitudinal Feature. Previously: The UN World Food Program’s travel-restrictions Feature (DIP 2020.12.09).
-https://covidborderaccountability.org
-https://covidborderaccountability.org/about.html
-https://dataverse.harvard.edu/Feature.xhtml?persistentId=doi:10.7910/DVN/U6DJAC
-https://data.humdata.org/Feature/covid-19-global-travel-restrictions-and-airline-information
-https://tinyletter.com/data-is-plural/letters/data-is-plural-2020-12-09-edition
-
------
-Enter query or "quit" to stop:
-quit
-
-```
----
-
-```
-Welcome the Data Is Plural data explorer!
-
-You can use the following queries to search through the data:
-   title KEYWORD
-   description KEYWORD
-   url KEYWORD
-You can combine up to two queries to narrow down the results, for example:
-   title KEYWORD1  url KEYWORD2
+Search the dataset by using one of the following queries.
+  To search for features by keyword in their name, enter
+	name KEYWORD
+  To limit the search to a particular class of features , enter
+	name KEYWORD class FEATURE_CLASS
+  To limit the search to a particular state, enter
+	name KEYWORD state STATE
+  Or combine both restrictions by entering
+	name KEYWORD class CLASS state STATE
+    or
+	name KEYWORD state STATE class CLASS
+    To terminate the program, enter
+	quit
 
 
-Enter query or "quit" to stop:
-title ferry site .eu
-No matches found. Try again.
 
-Enter query or "quit" to stop:
-title ferry url .eu
-No matches found. Try again.
 
-Enter query or "quit" to stop:
-title ferry
-No matches found. Try again.
+Enter your search query:
 
-Enter query or "quit" to stop:
-titgle ship url .es
-This is not a valid query. Try again.
+name nyu
 
-Enter query or "quit" to stop:
-title ship url .es
-2019-1-16
-Old shipping logs.
-In previous centuries, maritime officers kept “detailed log books of the ships’ activities and management,” including observations of the wind and weather. The Climatological Database for the World's Oceans 1750-1850 has digitized a quarter-million entries from such logbooks, originally written in Dutch, English, French, and Spanish, and published them as detailed, structured data. Helpful: Steven Ottens has converted the project’s fixed-width files into tab-delimited data. [h/t Robi Sen + Roger Davies + Topi Tjukanov]
-https://webs.ucm.es/info/cliwoc/object.htm
-https://webs.ucm.es/info/cliwoc/
-http://projects.knmi.nl/cliwoc/
-https://stvno.github.io/page/cliwoc/
+NYU Lutheran Medical Center, Hospital
+NY, Kings
+40.646368, -74.020396, 11
 
------
-Enter query or "quit" to stop:
+-----------
+WNYU-FM (New York), Tower
+NY, Bronx
+40.857322, -73.912914, 53
+
+-----------
+NYU Hospital for Joint Diseases, Hospital
+NY, New York
+40.734390, -73.982832, 7
+
+-----------
+
+
+
+Enter your search query:
+
+name NYU class hospital
+
+NYU Lutheran Medical Center, Hospital
+NY, Kings
+40.646368, -74.020396, 11
+
+-----------
+NYU Hospital for Joint Diseases, Hospital
+NY, New York
+40.734390, -73.982832, 7
+
+-----------
+
+
+
+Enter your search query:
+
 quit
 
 ```
 
-Note: the descriptions may wrap or continue on a single line. This depends on the environment in which
-the program is run. Your code is not responsible for dealing with that.
 
 <br>
 <br>
 <br>
---> 
+
 
 </div> </div></div>
 
