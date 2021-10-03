@@ -127,7 +127,7 @@ There are twenty columns in the data set. Some of the columns may be empty. More
 format and each of its columns can be found [here](https://geonames.usgs.gov/docs/pubs/Nat_State_Topic_File_formats.pdf).
 
 __From the point of view of this assignment, a valid row in the data set MUST contain the feature ID, feature name, feature class, and state and county associated with its location.
-Any rows that do not contain these two values should be quietly ignored by the program.__
+Any rows that do not contain these five values should be quietly ignored by the program.__
 
 You can (and should) use the `Parser` class listed in the Appendix to help you with parsing the input file.
 
@@ -294,7 +294,7 @@ This class should represent a location of the given named place/feature. It shou
 
 - This class should provide a two parameter constructor that validates and sets the state and county names.
 
-	`public Location( String state, String, county)`
+	`public Location( String state, String county)`
 
 	Valid arguments cannot be `null`.
 	If this constructor is called with invalid arguments,  it should throw an instance of the `IllegalArgumentException`  with an appropriate message.
