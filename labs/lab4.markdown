@@ -66,16 +66,13 @@ Work alone or find a partner to answer the questions in the rest of this lab.
 	Research what the "native" modifier means and explain it in your own words.
 11. Examine the `indexOf()` method. The code has two parts that look very similar: one is used when the parameter is `null`, the other when it is not `null`. Are both parts really needed? Explain why.
 12. The `indexOf` and `contains` methods both accept a parameter of type `Object`. This means that the following code compiles and runs:
-
-  	```
-  	ArrayList<Color> list = new ArrayList<Color>();
-    // code that adds several Color objects
-    if ( list.contains("hello") )
-    	System.out.println("hello is in the list" );
-    ```
-
-    (assume the `Color` class from the first project).
-
+```
+      ArrayList<Color> list = new ArrayList<Color>();
+      // code that adds several Color objects
+      if ( list.contains("hello") )
+          System.out.println("hello is in the list" );
+```
+(assume the `Color` class from the first project).
     What happens when the `contains()` method is passed a value whose type does not match the type of the list itself? Explain where in the code this is handled? (i.e., where in the code, the value of `false` is returned).
 
 

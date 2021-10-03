@@ -694,7 +694,7 @@ template: add-front
 <span style="text-decoration: line-through red;">`head = n; `</span><br>
 ]
 
-If we change where the `head` to point to the newly created node, the rest of the list
+If we change the `head` to point to the newly created node, the rest of the list
 is lost and cannot be recovered.
 
 ---
@@ -1003,6 +1003,29 @@ template: add-index
 
 ---
 
+## Add to list. Putting it all together?
+
+Try to come up with a single Java method that implements
+the `add` method from our interface:
+
+```Java
+// adds an element 'it' at position pos, shifts elements starting at pos by
+// one position to the right (higher position values)
+// throws NoSuchElementException if pos < 0 or pos >= size
+public boolean add(E it, int pos) throws NoSuchElementException;
+```
+
+
+You will need to use all of the code fragments from the previous slides, plus a bit
+more to locate the position.
+
+Assume that there is a `size` data field that keeps track of the exact number of
+elements in the list.
+
+Make sure that your function works when the list is empty, when it has only one element,
+and when it has many elements.
+
+<!--
 template: breakout
 
 
@@ -1027,6 +1050,7 @@ elements in the list.
 Make sure that your function works when the list is empty, when it has only one element,
 and when it has many elements.
 
+-->
 ---
 template: section
 
