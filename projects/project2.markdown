@@ -265,7 +265,7 @@ LATITUDE, LONGITUDE, ELEVATION
 
 All the words in uppercase letters are place-holders for the actual values from the data set. The elevation should be specified in feet (not meters).
 
-If latitude, longitude or elevation are missing, they should be left blank in the above output.
+If latitude, longitude or elevation are missing, they should be printed as zeroes in the above output.
 
 The output should contain a single blank line, followed by a line with five dashes, `-----`,
 after each result. This will visually separate the results for improved readability.
@@ -372,7 +372,7 @@ This class should represent a particular place/feature. It should store informat
 
 	All the words in uppercase letters are place-holders for the actual values from the data set. The elevation should be specified in feet (not meters).
 
-	If latitude, longitude or elevation are missing, they should be left blank in the above output.
+	If latitude, longitude or elevation are missing, they should be shown as zeroes in the above string. 
 
 #### <code class="code_title">FeatureList</code> class
 The `FeatureList` class should be used to store all the `Feature` objects.
