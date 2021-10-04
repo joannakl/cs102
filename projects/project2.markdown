@@ -335,12 +335,12 @@ This class should represent a particular place/feature. It should store informat
 
 - This class should provide a three parameter constructor that validates and sets the name, class and location of the place.
 
-	`public Feature (String name, String class, Location location)`
+	`public Feature (String featureName, String featureClass, Location featureLocation)`
 
-	Any non-empty string is a valid `name` or `class`. If this constructor
-	is called with a `null` or an empty `name` or `class`, it should throw an instance of `IllegalArgumentException`  with an appropriate message.
+	Any non-empty string is a valid `featureName` or `featureClass`. If this constructor
+	is called with a `null` or an empty `featureName` or `featureClass`, it should throw an instance of `IllegalArgumentException`  with an appropriate message.
 
-	`location` should be a valid Location object.
+	`featureLocation` should be a valid Location object.
 	If this constructor is called with a `null` argument,  it should throw an instance of the `IllegalArgumentException`  with an appropriate message.
 
 	There should be no default constructor.
@@ -411,7 +411,7 @@ In addition, the class should implement the following two methods:
 	(which are two letter state name abbreviations).
 	The returned list should be sorted according to the natural ordering of the elements (i.e., dictated
 	by the `compareTo` method defined in the `Feature` class).
-	If `keyword` is `null` or an empty string, this method
+	If `state` is `null` or an empty string, this method
 	should throw an instance of `IllegalArgumentException` with an appropriate message.
 
 	If there are no elements in the list that match the given criteria, this method should return `null`.
