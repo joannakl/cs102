@@ -1,4 +1,4 @@
-mod<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>Stacks and Queues</title>
@@ -437,7 +437,7 @@ public interface Queue<E> {
 
   /** Compute a string representation of the queue.
     * @return String object representing the queue. The string should contain the
-    * current list elements in the queue one per line.
+    * current queue elements one per line.
     */
   public String toString () ;
 }
@@ -1000,20 +1000,6 @@ template:section
 
 On slide #25 we have algorithms for the stack operations when it is implemented using an array.
 Create similar algorithms for the array-based queue implementation.
-
----
-
-## Array-based queue
-
-In our discussion of the array-based queue when size reaches the capacity the formula for
-size as a function of front and back no longer works:
-
-__size = (back - front) mod capacity__
-
-because __back - front = 0__.
-
-Try to come up with an alternative initial values and meanings for __front__ and __back__
-so that this would not happen.
 
 ---
 
