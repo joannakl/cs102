@@ -137,15 +137,118 @@ to the code example in the Introduction. Try to figure out why it does not work.
 ### Part 4   Making a linked list iterable
 
 Go to Ed Workspaces.
-- Fork the `LinkedList` workspace that we worked with during the lecture or in recitations.
+- Fork the `LinkedList Template` workspace.
 (It should have a very basic `LinkedList` class implementation.)
-- If you are working with a group of other students, share the newly forked workspace
-with them, so you can collaborate to complete this part.
+- Implement as many methods as you can, but start with the add/remote/toString.
+- Make the list _iterable_, i.e., it should implement `Itarable<E> ` interface. (This means defining the `Iterator` class).
+
+Note: we did this in class, but it is a good practice to try to reproduce it on your own.
+
+### Part 5  What will these code fragments do?
+
+Assume that a list is defined as follows
 
 
-Task: Add `implements Iterable<E>` to the header of the class. Implement all the methods
-and inner classes that are going to turn the `LinkedList` class into iterable collection.
-You do not need to implement the default methods.
+{% highlight java linenos%}
+
+    List<String> list = new ArrayList<String>();
+
+    list.add("Warsaw");
+    list.add("Venice");
+    list.add("Atlanta");
+    list.add("New York");
+    list.add("Rome");
+    list.add("Boston");
+    list.add("Alberta");
+
+
+{% endhighlight %}
+
+Try to determine the answer to each question without executing the code. Confirm your results by running the code.
+
+
+-  what will be printed, or what problems does this code have
+{% highlight java linenos%}
+
+  Iterator<String> itrA = list.iterator();
+
+  while (itrA.hasNext() ) {
+    System.out.println(itrA.next());
+  }
+
+{% endhighlight %}
+
+- what will be printed, or what problems does this code have
+{% highlight java linenos%}
+
+  Iterator<String> itrA = list.iterator();
+
+  while (itrA.hasNext() ) {
+    System.out.println(itrA.next() );
+    System.out.println(itrA.next() );
+  }
+
+{% endhighlight %}
+
+- what will be printed, or what problems does this code have
+
+
+{% highlight java linenos%}
+
+  Iterator<String> itrA = list.iterator();
+  Iterator<String> itrB = list.iterator();
+
+  if (itrA.hasNext())   System.out.println(itrA.next());
+  if (itrA.hasNext())   System.out.println(itrA.next());
+  if (itrA.hasNext())   System.out.println(itrA.next());
+  if (itrA.hasNext())   System.out.println(itrA.next());
+  if (itrA.hasNext())   System.out.println(itrA.next());
+
+  if (itrB.hasNext())   System.out.println(itrB.next());
+  if (itrB.hasNext())   System.out.println(itrB.next());
+
+
+{% endhighlight %}
+
+-  what will be printed, or what problems does this code have
+
+
+{% highlight java linenos%}
+
+  Iterator<String> itrA = list.iterator();
+
+  list.add(0, "Dublin");
+
+  while (itrA.hasNext() ) {
+    System.out.println(itrA.next());
+  }
+
+
+
+{% endhighlight %}
+
+
+- what will be printed, or what problems does this code have
+
+
+{% highlight java linenos%}
+
+  Iterator<String> itrA = list.iterator();
+
+  Collections.sort(list);
+  Iterator<String> itrB = list.iterator();
+
+  if (itrA.hasNext())   System.out.println(itrA.next());
+  if (itrA.hasNext())   System.out.println(itrA.next());
+
+  if (itrB.hasNext())   System.out.println(itrB.next());
+  if (itrB.hasNext())   System.out.println(itrB.next());
+
+
+{% endhighlight %}
+
+
+
 
 
 
