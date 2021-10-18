@@ -120,7 +120,7 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
-<li>java.lang.Object</li>
+<li>Object</li>
 <li>
 <ul class="inheritance">
 <li>project3.Number</li>
@@ -132,30 +132,30 @@ $('.navPadding').css('padding-top', $('.fixedNav').css("height"));
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><code>java.lang.Comparable&lt;<a href="Number.html" title="class in project3">Number</a>&gt;</code></dd>
+<dd><code>Comparable&lt;<a href="Number.html" title="class in project3">Number</a>&gt;</code></dd>
 </dl>
 <hr>
 <pre>public class <span class="typeNameLabel">Number</span>
-extends java.lang.Object
-implements java.lang.Comparable&lt;<a href="Number.html" title="class in project3">Number</a>&gt;</pre>
-<div class="block"><p>The <code>Number</code> class is used to represent positive integers. 
+extends Object
+implements Comparable&lt;<a href="Number.html" title="class in project3">Number</a>&gt;</pre>
+<div class="block"><p>The <code>Number</code> class is used to represent positive integers.
  It provides several operations to support number manipulation: addition,
- multiplication and comparisons. 
-  
- <p>There is no limit to the number of digits in a <code>Number</code> object. 
- 
- <p>The numbers are represented in the form of a linked list. Each node in the list 
- contains a single digit. For example, 
+ multiplication and comparisons.
+
+ <p>There is no limit to the number of digits in a <code>Number</code> object.
+
+ <p>The numbers are represented in the form of a linked list. Each node in the list
+ contains a single digit. For example,
  <br><br>
- 134 is represented as a three node list: 
+ 134 is represented as a three node list:
  <pre>
- head --> | 4 | --> | 3 | --> | 1 | --> null 
+ head --> | 4 | --> | 3 | --> | 1 | --> null
  </pre>
- and 98765 is represented as a five node list: 
+ and 98765 is represented as a five node list:
  <pre>
- head --> | 5 | --> | 6 | --> | 7 | --> | 8 | --> | 9 | --> null 
+ head --> | 5 | --> | 6 | --> | 7 | --> | 8 | --> | 9 | --> null
  </pre>
- The least significant digit, or the ones digit, is stored in the very first node. The 
+ The least significant digit, or the ones digit, is stored in the very first node. The
  tens digit is stored in the second node. And so on ....</div>
 </li>
 </ul>
@@ -177,9 +177,9 @@ implements java.lang.Comparable&lt;<a href="Number.html" title="class in project
 <th class="colLast" scope="col">Description</th>
 </tr>
 <tr class="altColor">
-<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(java.lang.String)">Number</a></span>&#8203;(java.lang.String&nbsp;number)</code></th>
+<th class="colConstructorName" scope="row"><code><span class="memberNameLink"><a href="#%3Cinit%3E(String)">Number</a></span>&#8203;(String&nbsp;number)</code></th>
 <td class="colLast">
-<div class="block">Creates a <code>Number</code> object with value represented by the 
+<div class="block">Creates a <code>Number</code> object with value represented by the
  string argument <code>number</code>.</div>
 </td>
 </tr>
@@ -217,7 +217,7 @@ implements java.lang.Comparable&lt;<a href="Number.html" title="class in project
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#equals(java.lang.Object)">equals</a></span>&#8203;(java.lang.Object&nbsp;obj)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#equals(Object)">equals</a></span>&#8203;(Object&nbsp;obj)</code></th>
 <td class="colLast">
 <div class="block">Determines if this object is equal to <code>obj</code>.</div>
 </td>
@@ -244,7 +244,7 @@ implements java.lang.Comparable&lt;<a href="Number.html" title="class in project
 </td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colFirst"><code>String</code></td>
 <th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toString()">toString</a></span>()</code></th>
 <td class="colLast">
 <div class="block">Returns the string representation of this object.</div>
@@ -252,10 +252,10 @@ implements java.lang.Comparable&lt;<a href="Number.html" title="class in project
 </tr>
 </table>
 <ul class="blockList">
-<li class="blockList"><a id="methods.inherited.from.class.java.lang.Object">
+<li class="blockList"><a id="methods.inherited.from.class.Object">
 <!--   -->
 </a>
-<h3>Methods inherited from class&nbsp;java.lang.Object</h3>
+<h3>Methods inherited from class&nbsp;Object</h3>
 <code>getClass, hashCode, notify, notifyAll, wait, wait, wait</code></li>
 </ul>
 </li>
@@ -274,24 +274,24 @@ implements java.lang.Comparable&lt;<a href="Number.html" title="class in project
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a id="&lt;init&gt;(java.lang.String)">
+<a id="&lt;init&gt;(String)">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>Number</h4>
-<pre>public&nbsp;Number&#8203;(java.lang.String&nbsp;number)
-       throws java.lang.IllegalArgumentException,
-              java.lang.NullPointerException</pre>
-<div class="block">Creates a <code>Number</code> object with value represented by the 
- string argument <code>number</code>. The <code>number</code> should 
+<pre>public&nbsp;Number&#8203;(String&nbsp;number)
+       throws IllegalArgumentException,
+              NullPointerException</pre>
+<div class="block">Creates a <code>Number</code> object with value represented by the
+ string argument <code>number</code>. The <code>number</code> should
  consist of decimal digits only.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>number</code> - a string representation of the number</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.NullPointerException</code> - if <code>number</code> is <code>null</code></dd>
-<dd><code>java.lang.IllegalArgumentException</code> - if <code>number</code> contains any illegal charachters</dd>
+<dd><code>NullPointerException</code> - if <code>number</code> is <code>null</code></dd>
+<dd><code>IllegalArgumentException</code> - if <code>number</code> contains any illegal charachters</dd>
 </dl>
 </li>
 </ul>
@@ -325,11 +325,11 @@ implements java.lang.Comparable&lt;<a href="Number.html" title="class in project
 <ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
-<pre class="methodSignature">public&nbsp;java.lang.String&nbsp;toString()</pre>
+<pre class="methodSignature">public&nbsp;String&nbsp;toString()</pre>
 <div class="block">Returns the string representation of this object.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code>toString</code>&nbsp;in class&nbsp;<code>java.lang.Object</code></dd>
+<dd><code>toString</code>&nbsp;in class&nbsp;<code>Object</code></dd>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>string representation of this object</dd>
 </dl>
@@ -342,18 +342,18 @@ implements java.lang.Comparable&lt;<a href="Number.html" title="class in project
 <li class="blockList">
 <h4>add</h4>
 <pre class="methodSignature">public&nbsp;<a href="Number.html" title="class in project3">Number</a>&nbsp;add&#8203;(<a href="Number.html" title="class in project3">Number</a>&nbsp;other)
-           throws java.lang.NullPointerException</pre>
-<div class="block">Computes the sum of this object with <code>other</code>. Returns 
- the result in a new object. This object is not modified by call to 
+           throws NullPointerException</pre>
+<div class="block">Computes the sum of this object with <code>other</code>. Returns
+ the result in a new object. This object is not modified by call to
  <code>add</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>other</code> - the value to be added to this object</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>a <code>Number</code> object whose value is equal to the sum of this 
+<dd>a <code>Number</code> object whose value is equal to the sum of this
  object and <code>other</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.NullPointerException</code> - if <code>other</code> is <code>null</code></dd>
+<dd><code>NullPointerException</code> - if <code>other</code> is <code>null</code></dd>
 </dl>
 </li>
 </ul>
@@ -364,18 +364,18 @@ implements java.lang.Comparable&lt;<a href="Number.html" title="class in project
 <li class="blockList">
 <h4>multiplyByDigit</h4>
 <pre class="methodSignature">public&nbsp;<a href="Number.html" title="class in project3">Number</a>&nbsp;multiplyByDigit&#8203;(int&nbsp;digit)
-                       throws java.lang.IllegalArgumentException</pre>
-<div class="block">Computes the product of this object and a single digit <code>digit</code>. 
- Returns the result in a new object. This object is not modified by call to 
+                       throws IllegalArgumentException</pre>
+<div class="block">Computes the product of this object and a single digit <code>digit</code>.
+ Returns the result in a new object. This object is not modified by call to
  <code>multiplyByDigit</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>digit</code> - a single positive digit to be used for multiplication</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>a <code>Number</code> object whose value is equal to the product of this 
+<dd>a <code>Number</code> object whose value is equal to the product of this
  object and <code>digit</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.IllegalArgumentException</code> - when digit is invalid (i.e., not a single digit or negative)</dd>
+<dd><code>IllegalArgumentException</code> - when digit is invalid (i.e., not a single digit or negative)</dd>
 </dl>
 </li>
 </ul>
@@ -386,32 +386,32 @@ implements java.lang.Comparable&lt;<a href="Number.html" title="class in project
 <li class="blockList">
 <h4>multiply</h4>
 <pre class="methodSignature">public&nbsp;<a href="Number.html" title="class in project3">Number</a>&nbsp;multiply&#8203;(<a href="Number.html" title="class in project3">Number</a>&nbsp;other)
-                throws java.lang.NullPointerException</pre>
-<div class="block">Computes the product of this object and <code>other</code>. 
- Returns the result in a new object. This object is not modified by call to 
+                throws NullPointerException</pre>
+<div class="block">Computes the product of this object and <code>other</code>.
+ Returns the result in a new object. This object is not modified by call to
  <code>multiply</code>.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>other</code> - the value to be multiplied by this object</dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.NullPointerException</code> - if <code>other</code> is <code>null</code></dd>
+<dd><code>NullPointerException</code> - if <code>other</code> is <code>null</code></dd>
 </dl>
 </li>
 </ul>
-<a id="equals(java.lang.Object)">
+<a id="equals(Object)">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>equals</h4>
-<pre class="methodSignature">public&nbsp;boolean&nbsp;equals&#8203;(java.lang.Object&nbsp;obj)</pre>
-<div class="block">Determines if this object is equal to <code>obj</code>. 
- Two <code>Number</code> objects are equal if all of their digits are the 
- same and in the same order, and if they have the same number of digits. 
+<pre class="methodSignature">public&nbsp;boolean&nbsp;equals&#8203;(Object&nbsp;obj)</pre>
+<div class="block">Determines if this object is equal to <code>obj</code>.
+ Two <code>Number</code> objects are equal if all of their digits are the
+ same and in the same order, and if they have the same number of digits.
  In other words, if the values represented by the two objects are the same.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code>equals</code>&nbsp;in class&nbsp;<code>java.lang.Object</code></dd>
+<dd><code>equals</code>&nbsp;in class&nbsp;<code>Object</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>obj</code> - the object to be compared to this object</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
@@ -428,22 +428,22 @@ implements java.lang.Comparable&lt;<a href="Number.html" title="class in project
 <li class="blockList">
 <h4>compareTo</h4>
 <pre class="methodSignature">public&nbsp;int&nbsp;compareTo&#8203;(<a href="Number.html" title="class in project3">Number</a>&nbsp;other)
-              throws java.lang.NullPointerException</pre>
+              throws NullPointerException</pre>
 <div class="block">Compares this object with <code>other</code> for order.
  Returns a negative integer if this object's value is strictly smaller
- than the value of <code>other</code>. Returns a positive integer if this 
- object's value is strictly greater than the value of  <code>other</code>. 
+ than the value of <code>other</code>. Returns a positive integer if this
+ object's value is strictly greater than the value of  <code>other</code>.
  Returns zero if two values are the same.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code>compareTo</code>&nbsp;in interface&nbsp;<code>java.lang.Comparable&lt;<a href="Number.html" title="class in project3">Number</a>&gt;</code></dd>
+<dd><code>compareTo</code>&nbsp;in interface&nbsp;<code>Comparable&lt;<a href="Number.html" title="class in project3">Number</a>&gt;</code></dd>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>other</code> - the object to be compared with this object</dd>
 <dt><span class="returnLabel">Returns:</span></dt>
-<dd>a negative integer, zero, or a positive integer as this object is 
+<dd>a negative integer, zero, or a positive integer as this object is
  less than, equal to, or greater than <code>other</code></dd>
 <dt><span class="throwsLabel">Throws:</span></dt>
-<dd><code>java.lang.NullPointerException</code> - if <code>other</code> is null</dd>
+<dd><code>NullPointerException</code> - if <code>other</code> is null</dd>
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><code>Comparable</code></dd>
 </dl>
