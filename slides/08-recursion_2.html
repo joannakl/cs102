@@ -265,93 +265,17 @@ getAllBinarySequences ( n, seq )
 This way we avoid making a lot of unnecessary recursive calls.
 ]
 ]
-
 ---
 template:section
 
-# Eight Queens Problem
-
---
-
-.left-column2[
-<img alt="eight queens board" src="img/08/queens_correct.png" width="300px">
-]
-
---
-
-.right-column2[
-<img alt="eight queens board - invalid" src="img/08/queens.png" width="300px">
-]
-
----
-
-# Eight Queens Problem
-
-The eight queen problem is a chess related problem of how to place eight queens
-on a chess board so that all of them are _safe_ - not under attack by another
-queen on the board.
-
---
-
-This requires you to know something
-about the queen and her powers in chess:
-- queen attacks every position in its own column
-- queen attacks every position in its own row
-- queen attacks every position on its two diagonals
-
----
-## Generating Eight Queens Board
-
-First approach of solving the problem is as follows
-
-- Place the first queen anywhere in the top row.
-- Then find a position in the second row that is not under attack and put your second queen there.
-- Then find a position in the third row that is not under attack and put your third queen there.
-- ...
-- Then find a position in the eighth row that is not under attack and put your eighth queen there.
-
---
-
-.red[.center80[
-PROBLEM <br>There is a major problem with this approach: we may not be able
-to find any space in a given row that is not under attack (and unless we can place
-one queen in each row, we cannot place all the queens since the chess board is eight by eight).
-]]
-
----
-## Generating Eight Queens Board
-
-
-
-So how can the above solution be changed to handle situation in which we get
-to a row where all spaces are under attack?
-
-- Whenever you get to a row in which all squares are under attack, go back
-to a previous row and move the queen in that row to an alternative _safe_ position.
-
---
-
-.red[.center80[
-PROBLEM <br>This may solve some of the problem situations of the original approach,
-but it ignores two things:
-- There might not be another _safe_ square in a previous row.
-- Even if there are alternative squares and we move the queen there, this does
-not guarantee that we can find a _safe_ square in the current row.
-]]
---
-
-Fortunately, the solution mentioned above can be applied multiple times, so
-if we find ourselves in the situation of 1 or 2 above, we go back to the row
-before the previous row and try to move the queen there. If that still does not
-work, we go back again, and so on. Eventually we might be moving the queen on
-the very first row.
+# Backtracking
 
 ---
 
 ## Backtracking
 
-This approach of solving problems is called __backtracking__ - we keep going as
-long as we can, and if we run into problems, we just go back to a previous place
+__Backtracking__ is an approach of solving problems in which we keep going as
+long as we can, and if we run into a dead end, we just go back to a previous place
 where we had a choice to make and pick an alternative way.
 
 --
@@ -359,57 +283,293 @@ where we had a choice to make and pick an alternative way.
 If this seems a bit too abstract, think of going through a maze:
 - each time we come to a fork (with two or more options), we follow just one
 - if that path goes to the exit, we got lucky,
-- if it we get stuck, then we go back to the place when where we made the choice
+- if it we get stuck, then we go back to the place  where we made the choice
 and pick an alternative path
 
 ---
+name:target_search
 
-## Eight Queens with Backtracking
+## Is there a subset that adds up to a target?
 
-__algorithm__
+Given an array of non-negative integers and a target value, determine if there are any values within the array that add up to the target.
 
-_input_: an empty chessboard and eight queens to be placed on it
+--
 
+Example
 
 ```
-placeEightQueens( chessboard )
-  placeQueen ( chessboard,  row = 0 )
-
-placeQueen( chessboard, row )
-  if row is greater than 8,
-    we have the chessboard with eight queens on it (problem is solved)
-    return true
-
-  for each column from 0 to 8
-    add queen to the  (row,column) position
-    if the (row, column) position is _safe_
-      //check if it is possible to place queens in rematining rows
-      possible = placeQueen ( chessboard, row + 1)
-      if possible
-        return true (problem is solved), no need to check remaining columns in this row
-      otherwise
-        remove the queen from (row,column) position
-
-  return false, no position in the current row is valid
+[ 3, 8, 1, 0, 5]  target 4  ---> yes
 ```
-
----
-
-## Eight Queens with Backtracking
-
-If we implement the code according to the specification from the previous slide,
-it will always produce the same solution. That's because we always start checking
-from column 0 and advance one column at a time.
-
-An alternative solution, randomizes which columns are used in the for loop.
-
-
-
-
-
+--
+```
+[ 3, 8, 1, 0, 5]  target 14  ---> yes
+```
+--
+```
+[ 3, 8, 1, 0, 5]  target 7  ---> no
+```
+--
+```
+[ 3, 8, 1, 0, 5]  target 10  ---> no
+```
+--
+```
+[ 3, 8, 1, 0, 5]  target 20  ---> no
+```
 
 
 ---
+name: target_search_approach1
+template: target_search
+
+
+### __Approach 1__
+
+- start with sum = 0
+- gradually increase it until sum is equal to target (or not)
+
+--
+
+
+__base case__
+
+- when sum = target, we have yes
+
+--
+
+- when sum > target, then the current path is a no (but there may be another path that gives us a yes)
+
+--
+
+__recursive steps__ (or how do we get to the base case)
+
+- for each value in the array we have two options:
+    - use it to count towards our target (add it to the current sum)
+    - do not use it (do not change the current sum)
+  (keep trying both option in recursive calls)
+
+
+
+---
+
+template: target_search_approach1
+
+```
+
+  find_target( array, target, index, sum )
+
+    if sum == target   //found it!
+      return true
+
+    if sum > target   //too much, no point in continuing
+      return false
+
+    // recursive case
+        // use the element at index
+        // do not use the element at index
+
+```
+
+
+---
+
+template: target_search_approach1
+
+```
+
+  find_target( array, target, index, sum )
+
+    if sum == target   //found it!
+      return true
+
+    if sum > target   //too much, no point in continuing
+      return false
+
+    return find_target( array, index + 1, sum + array[index])  // use the element at index
+            ||
+           find_target( array, index + 1, sum )  // do not use the element at index
+
+
+
+```
+
+--
+<br/>
+
+- Is there a reason why above would not work?
+  <br/>What happens if the array is [1, 1, 1, 1] and target = 10?
+
+---
+
+template: target_search_approach1
+
+```
+
+  find_target( array, target, index, sum )
+
+    if sum == target   //found it!
+      return true
+
+    if sum > target   //too much, no point in continuing
+      return false
+
+    if index == array.size  //stop if the end of the array is reached
+      return false
+
+    return find_target( array, index + 1, sum + array[index])  // use the element at index
+            ||
+           find_target( array, index + 1, sum )  // do not use the element at index
+
+
+
+```
+
+
+---
+name: target_search_approach2
+template: target_search
+
+
+### __Approach 2__
+
+- start with sum = target
+- gradually decrease it until sum is equal to zero (or below)
+
+--
+
+
+__base case__
+
+- when sum = 0, we have yes
+
+--
+
+- when sum < 0, then the current path is a no (but there may be another path that gives us a yes)
+
+--
+
+__recursive steps__ (or how do we get to the base case)
+
+- for each value in the array we have two options:
+    - use it to count towards our target (subtract it from the current sum)
+    - do not use it (do not change the current sum)
+  (keep trying both option in recursive calls)
+
+---
+
+template:section
+
+## Avoiding Repeated Calls
+
+---
+
+## Fibonacci Numbers - A Familiar Classic
+
+$$fib(n) = fib(n-1) + fib(n-2)$$
+$$fib(0) = 0$$
+$$fib(1) = 1$$
+
+--
+
+Here is one way to compute Fibonacci Numbers using recursion:
+
+```
+int fib ( int N ) {
+  if N <= 1
+    return N
+  return fib (N-1) + fib(N+2)
+}
+```
+--
+
+So what is wrong with that implementation? <br>
+
+--
+
+It computes the value of each Fibonacci number multiple times!
+
+---
+name:fib_memo
+
+## Fibonacci Numbers without repeated calls
+
+Let's use an array to _remember_ the values that were previously computed
+
+--
+
+```
+  //initialize the array to all -1 (value impossible for Fib numbers)
+  //to indicate that the value has not been calculated yet
+
+  int memo[MAX_N];
+  for i in 0 ... MAX_N:
+    memo [i] = -1;
+
+```
+
+---
+template:fib_memo
+
+
+```
+  //initialize the array to all -1 (value impossible for Fib numbers)
+  //to indicate that the value has not been calculated yet
+
+  int memo[MAX_N];
+  for i in 0 ... MAX_N:
+    memo [i] = -1;
+
+  //use similar function to before, but check if the value was already
+  //calculated before making recursive calls
+
+  int fib ( int N ) {
+    if memo[N] != -1
+        return memo[N]    //retrieve it from memory
+    if N <= 1
+        return N
+    memo[N] = fib (N-1) + fib(N+2)  //save it for future use
+    return memo[N]
+  }
+```
+
+---
+## Fibonacci Numbers - start from the bottom
+
+Calculate all Fibonacci numbers from 0 to N
+
+```
+int fib[MAX_N]
+
+void fib_all ( int N ) {
+  fib[0] = 0
+  fib[1] = 1
+  for i in 2 ... N:
+    fib[i] = fib[i-1] + fib[i-2]
+}
+```
+--
+
+Calculate the N'th Fibonacci number
+
+
+```
+int fib ( int N ) {
+  if N <= 1
+      return N
+  int prev1 = 0
+  int prev2 = 1
+  for i in 2 ... N:
+    int next = prev1 + prev2
+    prev2 = prev1
+    prev1 = next
+  return prev1
+}
+```
+---
+
+
+
+
 
 template:section
 
@@ -447,13 +607,15 @@ Do the same as above, but generate __only__ sequences that are words in a given 
 Try to do this efficiently, so that you do not generate sequences that _do not lead_ to a word.
 
 ---
+## Is there a subset that adds up to a target?
 
-### Eight Queens
+1. Design pseudocode for approach 2. Test it with a few examples by hand to make sure it works.
 
-Write the code implementation for the algorithm presented in the earlier slides.
+2. Implement both approaches.
 
+3. Create some _good_ tests for your program. For each test, write a sentence describing what it is actually testing.
 
-
+4. How would approach 1 and 2 have to change if we would allow negative values in the array?
 
 
     </textarea>
