@@ -5,7 +5,7 @@ title: Project 4
 
 <div class="lab-right" markdown="1">
 __Project 4__ <br>
-__due date:__ April 11
+__due date:__ November 15
 
 __submission mode:__ individual
 
@@ -31,8 +31,8 @@ structures, just ask your instructor.
 <br/><br/>
 ### Introduction and objectives
 
-The goal of this project is to implement a program that finds all solutions to a number puzzle. The solution that you will implement has to use
-a recursive algorithm to find all the ways through the puzzle.
+The goal of this project is to implement a program that finds all solutions to a number puzzle. __The solution that you will implement has to use
+a recursive algorithm to find all the ways through the puzzle.__
 
 The puzzle uses an array of positive integers. The objective is to find a _path_ from index zero to the last index in the array.
 At each step we need to know the distance to be traveled and the direction.
@@ -95,7 +95,7 @@ The command line arguments represent the values for the array. Restrictions:
 
 If the program is executed with non-existent or invalid command line arguments, it should print an error message and terminate.
 
-The program \textbf{should not be interactive}. All input should be provided as the command line arguments. The user should not be prompted
+The program __should not be interactive__. All input should be provided as the command line arguments. The user should not be prompted
 for any additional information.
 </div> </div></div>
 
@@ -133,7 +133,7 @@ Here are a few examples:
 
 `[ 3 ,  4 , 11 ,  2R, 25 ,  0 ]` means that the current location is at index 3 and the next move will be two to the right
 
-`[ 3R,  4 , 11 ,  2 , 25 ,  0 ]` means that the current location is at index 0 and the next move will be three to the left
+`[ 3R,  4 , 11 ,  2 , 25 ,  0 ]` means that the current location is at index 0 and the next move will be three to the right
 
 
 __Hint:__ If you are not familiar with the `String.format()` method, this may be a good idea to learn more about it.
@@ -266,7 +266,7 @@ There are 4 ways through the puzzle.
 
 
 - You should follow the rules outlined in the document
-[Code conventions](https://cs.nyu.edu/~joannakl/cs102_s21/notes/CodeConventions.pdf)
+[Code conventions](https://cs.nyu.edu/~joannakl/cs102_f21/notes/CodeConventions.pdf)
 posted on the course website.
 
 - You have to use a recursive algorithm to solve the puzzle. You will not get any credit for an iterative algorithm.
