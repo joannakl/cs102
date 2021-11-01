@@ -385,9 +385,9 @@ template: target_search_approach1
     if sum > target   //too much, no point in continuing
       return false
 
-    return find_target( array, index + 1, sum + array[index])  // use the element at index
+    return find_target( array, target, index + 1, sum + array[index])  // use the element at index
             ||
-           find_target( array, index + 1, sum )  // do not use the element at index
+           find_target( array, target, index + 1, sum )  // do not use the element at index
 
 
 
@@ -416,9 +416,9 @@ template: target_search_approach1
     if index == array.size  //stop if the end of the array is reached
       return false
 
-    return find_target( array, index + 1, sum + array[index])  // use the element at index
+    return find_target( array, target, index + 1, sum + array[index])  // use the element at index
             ||
-           find_target( array, index + 1, sum )  // do not use the element at index
+           find_target( array, target, index + 1, sum )  // do not use the element at index
 
 
 
