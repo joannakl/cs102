@@ -111,7 +111,7 @@ int linearSearch(Point[] points, Point p) {
         return -1;
     for (int i=0; i < points.length; i++)
         if ( p.equals(points[i]) )          // if we found it return this position
-        return i;
+          return i;
     return -1;                // otherwise, return -1
 }
 ```
@@ -162,11 +162,11 @@ int binSearchIterative( Point[] points, Point p) {
     while ( left <= right ) { //array is not empty
         mid = (left+right) / 2;
         if (0 > points[mid].compareTo(p) )       //mid element is smaller than p
-        left = mid+1;                          //discard left half
+          left = mid+1;                          //discard left half
         else if ( 0 < points[mid].compareTo(p) ) //mid element is larger than p
-        right = mid-1;                         //discard right half
+          right = mid-1;                         //discard right half
         else
-        return mid;                            //found it, return the index
+          return mid;                            //found it, return the index
         }
 
     return -1;          //did not find it, return -1
@@ -669,7 +669,7 @@ mergeSort ( array, firstIndex, lastIndex )
 
 OpenDSA website has a very good visualization of step by step application of the merge sort
 algorithm to a numerical array. You can find it at
-\url{https://opendsa-server.cs.vt.edu/ODSA/Books/Everything/html/Mergesort.html}.
+[https://opendsa-server.cs.vt.edu/OpenDSA/Books/Everything/html/Mergesort.html](https://opendsa-server.cs.vt.edu/OpenDSA/Books/Everything/html/Mergesort.html).
 
 
 ---
@@ -872,7 +872,7 @@ quickSortRec (array, left, right)
 
 OpenDSA website has a very good visualization of step by step application of
 the quick sort algorithm to a numerical array. You can find it at
-\url{https://opendsa-server.cs.vt.edu/ODSA/Books/Everything/html/Quicksort.html}.
+[https://opendsa-server.cs.vt.edu/OpenDSA/Books/Everything/html/Quicksort.html](https://opendsa-server.cs.vt.edu/OpenDSA/Books/Everything/html/Quicksort.html).
 
 
 
