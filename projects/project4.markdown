@@ -57,6 +57,12 @@ The goal of this programming project is for you to master (or at least get pract
 
 **Start early!** This project may not seem like much coding, but debugging and testing always takes time, especially for recursive algorithms.
 
+In this project you need to decide how many classes you wish to create and what methods
+need to be developed. You can take an approach that uses a single class or you can
+take a more object oriented approach that uses more than one class. This is up to you.
+You should name your program (i.e., the class with the `main` method) `WayFinder` - this
+means that the class is implemented in a file called `WayFinder.java`.
+
 
 <div class="wrap-collabsible">
 <input id="interface" class="toggle" type="checkbox"  >
@@ -97,6 +103,8 @@ If the program is executed with non-existent or invalid command line arguments, 
 
 The program __should not be interactive__. All input should be provided as the command line arguments. The user should not be prompted
 for any additional information.
+
+
 </div> </div></div>
 
 <div class="wrap-collabsible">
@@ -251,8 +259,28 @@ Program run using:
 There are 4 ways through the puzzle.
 ```
 
+Note that the following is NOT a valid path since it performs extra unnecessary steps (a short loop marked with arrows) that are not needed in order to reach the end.
+
+```
+[ 6R,  9 ,  3 , 10 ,  2 ,  1 ,  5 ,  8 ,  9 ,  1 ,  2 ,  5 ,  4 ,  8 , 10 ,  7 ,  6 ,  0 ]
+[ 6 ,  9 ,  3 , 10 ,  2 ,  1 ,  5R,  8 ,  9 ,  1 ,  2 ,  5 ,  4 ,  8 , 10 ,  7 ,  6 ,  0 ]  <--
+[ 6 ,  9 ,  3 , 10 ,  2 ,  1 ,  5 ,  8 ,  9 ,  1 ,  2 ,  5L,  4 ,  8 , 10 ,  7 ,  6 ,  0 ]  <--
+[ 6 ,  9 ,  3 , 10 ,  2 ,  1 ,  5L,  8 ,  9 ,  1 ,  2 ,  5 ,  4 ,  8 , 10 ,  7 ,  6 ,  0 ]
+[ 6 ,  9R,  3 , 10 ,  2 ,  1 ,  5 ,  8 ,  9 ,  1 ,  2 ,  5 ,  4 ,  8 , 10 ,  7 ,  6 ,  0 ]
+[ 6 ,  9 ,  3 , 10 ,  2 ,  1 ,  5 ,  8 ,  9 ,  1 ,  2L,  5 ,  4 ,  8 , 10 ,  7 ,  6 ,  0 ]
+[ 6 ,  9 ,  3 , 10 ,  2 ,  1 ,  5 ,  8 ,  9R,  1 ,  2 ,  5 ,  4 ,  8 , 10 ,  7 ,  6 ,  0 ]
+```
 
 
+
+Program run using:
+
+`   java WayFinder 0 `
+
+```
+[ 0 ]
+There is 1 way through the puzzle.
+```
 
 
 
@@ -325,7 +353,8 @@ The grade will be determined by several factors:
 	as a whole (this will be determined by the autograder)
 - 10 points: design and the implementation of your code
 - 10 points: efficient implementation of the required classes
-   (this will be determined by a code review)
+   (this will be determined by a code review). Efficient algorithms should not explore
+		paths that cannot possibly lead to an exit and should attempt to detect such situations as early as possible.
 - 20 points: proper documentation, program style and format of submission
    (this will be determined by a code review)
 
