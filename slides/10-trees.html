@@ -769,6 +769,7 @@ int size ( )
 ]
 ]
 --
+
 `counter: 0     current: -     stack:  [A]`
 
 {{content}}
@@ -777,43 +778,43 @@ int size ( )
 
 {{content}}
 --
-`counter: 2     current: B     stack:  [C, D, E]`
+`counter: 2     current: C     stack:  [B, F, G]`
 
 {{content}}
 --
-`counter: 3     current: C     stack:  [D, E, F, G]`
+`counter: 3     current: G     stack:  [B, F, K]`
 
 {{content}}
 --
-`counter: 4     current: D     stack:  [E, F, G]`
+`counter: 4     current: K     stack:  [B, F]`
 
 {{content}}
 --
-`counter: 5     current: E     stack:  [F, G, H, I]`
+`counter: 5     current: F     stack:  [B, J]`
 
 {{content}}
 --
-`counter: 6     current: F     stack:  [G, H, I, J]`
+`counter: 6     current: J     stack:  [B]`
 
 {{content}}
 --
-`counter: 7     current: G     stack:  [H, I, J, K]`
+`counter: 7     current: B     stack:  [D, E]`
 
 {{content}}
 --
-`counter: 8     current: H     stack:  [I, J, K]`
+`counter: 8     current: E     stack:  [D, H, I]`
 
 {{content}}
 --
-`counter: 9     current: I     stack:  [J, K]`
+`counter: 9     current: I     stack:  [D, H]`
 
 {{content}}
 --
-`counter: 10     current: J     stack:  [K]`
+`counter: 10     current: H     stack:  [D]`
 
 {{content}}
 --
-`counter: 11     current: K     stack:  []`
+`counter: 11     current: D     stack:  []`
 
 
 ---
@@ -1195,8 +1196,29 @@ Replace the stack in the iterative implementation of the `inorder()` method with
 - Does it still produce the _inorder_ traversal of the tree?
 
 - List the nodes in the order that this revised algorithm "processes" them.
+---
+
+### Tree Traversals
+
+Specify the inorder, preorder and postorder traversals of the follow tree:
 
 
+.center[
+<img width="350px" alt="size of a binary tree" src="img/10/binary-tree-24.jpg">
+]
+
+- What is the fifth node visited in the inorder/preorder/postorder traversal?
+- Which node is visited after I in the inorder/preorder/postorder traversal?
+
+
+---
+
+### Tree Reconstruction
+
+Assume that the preorder traversal of a BST is: A, B, D, E, H, I, C, F, J, G, K.
+For the same tree, the inorder traversal is: D, B, H, E, I, A, F, J, C, K, G.
+
+Can you _reconstruct_ the tree? 
 
 </optgroup>
 
