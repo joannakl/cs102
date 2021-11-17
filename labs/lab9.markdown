@@ -16,7 +16,56 @@ __submission mode:__ group
 <main markdown="1" class="lab">
 
 
-## Binary Search Trees
+## Binary (Search) Trees
+
+### Problem 1
+
+Use `lab9 IntBST` workspace on Ed. Complete the four missing functions. Submit your final code to Gradescope to see if your implementation
+passes all the tests.
+
+Remember to remove any debugging print statements before submitting.
+
+---
+
+(There is nothing to submit for the remaining problems in this lab.)
+
+
+### Problem 2
+
+![a tree](img/Binary_search_tree.png)
+
+- Which of the nodes in the above tree are at level 2?
+- How many nodes would have to be added to level 3 so that the number of nodes at that level is maximum?
+- Assuming that the height of leaf nodes is defined to be zero, what is the height of the above tree?
+- Assuming that the height of leaf nodes is defined t0 be zero, what is the height of the node with value 3?
+- Recall the iterative algorithm for calculating the size of a binary tree that we discussed in class.
+What is the largest number of elements in the stack when the algorithm is applied to the above tree?
+
+### Problem 3
+
+![a tree](img/bst.png)
+
+- Specify the __inorder__ traversal of the above tree.
+Provide your answer as a sequence of uppercase letters with nothing in between them so them.
+- Specify the __preorder__ traversal of the above tree.
+Provide your answer as a sequence of uppercase letters with nothing in between them so them.
+- Specify the __postorder__ traversal of the above tree.
+Provide your answer as a sequence of uppercase letters with nothing in between them so them.
+
+
+### Problem 4
+
+
+You are told that the preorder and postorder traversals of a given tree are as follows:
+
+preorder: A B C D E F G H I
+
+postorder: C E D B H G I F A
+
+Construct a tree for which this is the case.
+
+
+### Problem 5
 
 
 
@@ -32,7 +81,8 @@ Starting with the binary search tree shown above, show what the tree will look l
 - remove 39
 
 
----
+### Problem 6
+
 
 Use the following tree to answer questions below
 
