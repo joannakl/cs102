@@ -47,8 +47,8 @@ recitation_instructor2_name: ""
 recitation_instructor3_full: ""
 recitation_instructor3_name: ""
 
-instructor_office_hours: " TBD
-(or email me for an appointment if these hours do not work)"
+instructor_office_hours: "Tuesdays 9:00-10:30am, Thursdays 1:00-2:30pm (Zoom links on Brightspace),
+or you can schedule an appointment if these times do not work for you"
 instructor_office_hours_location: "Zoom (check NYU Classes for links)"
 recitation1_office_hours: "TBD"
 recitation1_office_hours_location: ""
@@ -60,7 +60,7 @@ recitation3_office_hours_location: ""
 current_course1_title: "CSCI 102 sec. 5"
 current_course1_link: "https://cs.nyu.edu/~joannakl/cs102_f21/"
 current_course2_title: "CSCI 480 sec. 523 (APS)"
-current_course2_link: "https://cs.nyu.edu/~joannakl/aps109_f21/"
+current_course2_link: "https://cs.nyu.edu/~joannakl/aps_f21/"
 current_course3_title: ""
 current_course3_link: ""
 
