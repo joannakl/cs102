@@ -5,7 +5,7 @@ title: Project 5
 
 <div class="lab-right" markdown="1">
 __Project 5__ <br>
-__due date:__ May 2
+__due date:__ Dec. 10
 
 __submission mode:__ individual
 
@@ -15,7 +15,7 @@ __submission mode:__ individual
 
 <main markdown="1" class="lab">
 
-## Project 5: BST-Mountain Adventure
+## Project 5: Mountain Hike
 
 <hr>
 
@@ -125,20 +125,20 @@ The above figure depicts visually a tree that results from the following input f
 ```
 J food raft food
 E fallen tree
-G food axe river
-I food fallen tree
-H
-F
-B food
-A
-D axe food
-C
 P
+G food axe river
+B food
 L food food river
+I food fallen tree
 R axe food raft
 Q
-K
 N axe
+F
+A
+H
+D axe food
+C
+K
 M
 O
 ```
@@ -149,7 +149,7 @@ O
 `axe` is needed when the trail is obstructed by a `fallen tree`. The hiker cannot pass a `fallen tree` obstacle unless they have an `axe`.
 Once they use the `axe`, it becomes dull and cannot be used again.
 
-`raft` is needed when the train continues through a river. The hiker cannot pass a `river` obstacle unless they have a `raft`.
+`raft` is needed when the trail continues through a river. The hiker cannot pass a `river` obstacle unless they have a `raft`.
 Each `raft` is designed for single river crossing - once used, it cannot be used again.
 
 There are many possible paths down the mountain depicted above, but only two lead to safety.
@@ -181,7 +181,7 @@ J P L N 0
 The design of classes is up to you, but you do need to implement certain classes to represent certain entities in the program. You need to make decisions about how to design these classes to produce an efficient and well-put-together program. Make sure that all methods that you include in a particular class belong in that class.
 
 
-#### <code class="code_title">BSTMountainAdventure</code> class
+#### <code class="code_title">MountainHike</code> class
 
 This is the class that is the program. This means it has the 	`main` method. This class is responsible for parsing and validating
 the command line arguments, reading and parsing the input file, producing any error messages,
@@ -189,10 +189,17 @@ handling any exceptions thrown by other classes, and producing output.
 
 #### <code class="code_title">BSTMountain</code> class
 
-This should be the class that reuses as much as you can of the `BST<E>` class that we have been using during lectures and recitations.
-Your class should represent the mountain itself (therefore, it should not generic and its nodes should store data items of type `RestStop`).
+For this class you should implement a balanced binary search tree that uses AVL tree algorithms that we discussed in class.
+This should be the class that reuses as much as you can of the `BST` class that we have been using during lectures and recitations
+and the rotation algorithms we covered for the AVL tree.
+
+Your class should represent the mountain itself (therefore, it should not be generic and its nodes should store data items of type `RestStop`).
 It is up to you to decide how to implement this class, which methods to provide etc. The only restriction is that it must implement an actual binary search tree.
 You cannot just use one of the BST implementations that is in Java libraries.
+
+The tests will be designed in such a way that 20 out of the 25 tests can be passed even if your implementation of this class provides an unbalanced BST implementation (with
+no rotations). Five remaining tests can only be passed if your program correctly implements AVL tree. For that reason, it may be a good idea to start with
+a basic BST and test that thoroughly. Only if that program is working, should you add the AVL tree features to it. Each test is worth 2 points.
 
 
 #### <code class="code_title">RestStop</code> class
