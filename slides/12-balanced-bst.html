@@ -859,7 +859,7 @@ template: addLR
 <img width="600px" alt="AVL-add" src="img/12/add_LR-23.jpg">
 
 
-using correct LR rotation 
+using correct LR rotation
 ]
 
 ---
@@ -891,6 +891,61 @@ template: addLR
 .center[
 <img width="600px" alt="AVL-add" src="img/12/add_LR-28.jpg">
 ]
+
+
+
+---
+
+template:section
+
+# Examples and Things to Think About
+
+---
+
+## Is it AVL?
+
+Determine if the following tree is an AVL tree or not.
+
+
+<img width="500px" alt="large BST" src="img/11/bst-large-46.jpg">
+
+--
+
+- If it isn't, how many values could be added to restore the AVL property. Suggest the actual sequence.
+
+- If it is state what the balance factors for 35 and 90 are?
+
+---
+
+## Removing from an AVL tree
+
+Start with the following tree:
+
+<img width="300px" alt="balanced BST" src="img/12/balanced-3.jpg">
+
+1. Which values can be removed without a need to rebalance the tree?
+2. Show the tree after removing 8 and then 10 (in that order). Make sure to apply rotations if needed.
+    - use the successor rule, if applicable
+    - use the predecessor rule, if applicable
+3, Would adding 0 to the original tree require a rotation? If so, show the resulting tree.
+4. Would adding 11 to the original tree require a rotation?  If so, show the resulting tree.
+
+
+---
+
+## Building an AVL tree
+
+
+Assume that values 1...10 are added one by one to an initially empty AVL tree.
+
+1. How many rotations would be required in the following scenarios:
+    - values are added in increasing order from 1 to 10
+    - values are added in a decreasing order from 10 down to 1
+    - all the odd values are added 1, 3, 5, 7, 9, and then all the even values are added 2, 4, 6, 8, 10
+
+2. Suggest an order in which these values should be added so that there is no need to perform any rotations.
+
+
 
 </optgroup>
 
