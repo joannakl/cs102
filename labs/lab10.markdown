@@ -108,7 +108,7 @@ Explain how you can use that information to estimate the actual running time exp
 
 In this question, you are asked to analyze incorrect solutions to the problem and explain what is wrong with them. Be as detailed as possible in explaining why the solution is incorrect. Do not simply propose an alternative solution.
 
-#### Problem Statement__:
+__Problem Statement__:
 Write a recursive method of a binary search tree that tests if a given data item (String in this case) is stored in this instance of a binary search tree or not. Assume that the binary search tree class has a data field called root pointing to the root of the tree. The definition of the node is as follows:
 
 ```
@@ -202,7 +202,7 @@ public boolean find ( String word ) {
 
 In this question, you are asked to analyze incorrect solutions to the problem and explain what is wrong with them. Be as detailed as possible in explaining why the solution is incorrect. Do not simply propose an alternative solution.
 
-#### Problem Statement__:
+__Problem Statement__:
 Write a recursive method of a binary tree that prints to the standard output (the screen) values of nodes in the order defined by the inorder traversal. Assume that the binary tree class has a data field called root pointing to the root of the tree. The definition of the node is as follows:
 
 ```
@@ -266,7 +266,7 @@ public void inorderPrint ( ) {
 
 In this question, you are asked to analyze incorrect solutions to the problem and explain what is wrong with them. Be as detailed as possible in explaining why the solution is incorrect. Do not simply propose an alternative solution.
 
-#### Problem Statement:__
+__Problem Statement:__
 Write a recursive method of a generic binary tree that calculates the number of nodes in the tree. There is no size data field in the tree that keeps track of the number of nodes, so your function has to do all the calculations. The definition of the node is as follows:
 
 ```
