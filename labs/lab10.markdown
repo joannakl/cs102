@@ -16,10 +16,23 @@ __submission mode:__ group
 <main markdown="1" class="lab">
 
 
-## BSTs  and AVL Trees
+## BSTs, AVL Trees, and Binary Heaps
 
+### Part 1 Solving Problems
 
-### Problem 1
+#### Problem 1
+
+Hackerearth is one of the websites on which you can test your skills of solving problems. For this problem, go to https://www.hackerearth.com/practice/data-structures/trees/binary-search-tree/practice-problems/algorithm/monk-and-his-friends/  and try to solve the _Monk and His Friends_ problem. Make sure to read the instructions carefully and understand the sample input and output for the problem before you start coding.
+
+Write your code on your computer or in an Ed workspace shared by your group members, so that you do not lose it in case the website reloads.
+
+HINT: you should use [`TreeSet<E>`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/TreeSet.html) class in this problem. It implements a balanced binary search tree that does not allow duplicates.
+
+Once you finish your code, submit it on the website to be tested. Take a screenshot of the test results and submit it for this problem on Gradescope. It will be challenging to pass all the tests, but you should be able to pass at least the first five or six of them. You should submit a screenshot with the results even if you pass only small portion of the tests.
+
+If you pass all the tests, try to work on other binary search tree related problems on Hackerearth.
+
+#### Problem 2
 
 ![a tree](img/AVL1.png)
 
@@ -33,7 +46,9 @@ Starting with the AVL tree shown below, show what the tree will look like after 
 - remove 39
 
 
-### Problem 2
+### Part 2: Be the Grader
+
+#### Problem 1
 
 In this question, you are asked to analyze incorrect solutions to the problem and explain what is wrong with them. Be as detailed as possible in explaining why the solution is incorrect. Do not simply propose an alternative solution.
 
@@ -127,7 +142,7 @@ public boolean find ( String word ) {
 ```
 
 
-### Problem 3
+#### Problem 2
 
 In this question, you are asked to analyze incorrect solutions to the problem and explain what is wrong with them. Be as detailed as possible in explaining why the solution is incorrect. Do not simply propose an alternative solution.
 
@@ -191,7 +206,7 @@ public void inorderPrint ( ) {
 }
 ```
 
-### Problem 4
+#### Problem 3
 
 In this question, you are asked to analyze incorrect solutions to the problem and explain what is wrong with them. Be as detailed as possible in explaining why the solution is incorrect. Do not simply propose an alternative solution.
 
