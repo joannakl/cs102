@@ -58,9 +58,9 @@ recitation3_office_hours: "TBD"
 recitation3_office_hours_location: ""
 
 current_course1_title: "CSCI 102 sec. 5"
-current_course1_link: "https://cs.nyu.edu/~joannakl/cs102_f21/"
+current_course1_link: 
 current_course2_title: "CSCI 480 sec. 523 (APS)"
-current_course2_link: "https://cs.nyu.edu/~joannakl/aps_f21/"
+current_course2_link:
 current_course3_title: ""
 current_course3_link: ""
 
