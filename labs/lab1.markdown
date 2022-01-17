@@ -39,10 +39,13 @@ The website tests your code using many inputs. Try to write code solutions to th
 
 And you do not need to stop with those. CodingBat has many more interesting problems that can serve as a review of the material you should know coming into this class.
 
-Visit tutors or office hours, or ask questions during your recitation session if you run into problems with any of these exercises. But make sure you try to solve them on your own before asking questions.
+Work on these during your first recitation, get help from fellow students and the section leader, visit tutors or office hours, or ask questions on the class discussion forum if you run into problems with any of these exercises. But make sure you try to solve them on your own before asking for solutions.
 
 __Have fun!__
 
+To get _progress and participation_ credit for this lab, take a screenshot of one or more of your submitted problems showing the test results and submit the screenshot(s) to Gradescope under Lab 1.
+
+If you miss the first week of recitations, you can still submit your lab on your own. 
 
 
 </main>
