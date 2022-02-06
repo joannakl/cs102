@@ -70,9 +70,9 @@ __This lab uses Java 11. It does not matter if the version of Java installed on 
 
 ### Submissions on Gradescope
 
-You should submit the answers to Part 1 (and hopefully all other parts) on Gradescope. If you end up working with a group, you can make a single submission and add your group members names afterwards.
+You should submit the answers to Part 1 (and hopefully to parts 2 and 3) on Gradescope. If you end up working with a group, you can make a single submission and add your group members names afterwards.
 
-The actual scores do not matter. We just want to make sure you are making progress through the course material.
+The actual scores do not matter. We just want to make sure you are making progress through the course material. But you should make best effort to answer these questions correctly.
 
 ### Part 1
 
