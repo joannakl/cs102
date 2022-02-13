@@ -13,7 +13,7 @@ __submission mode:__ individual
 
 <main markdown="1" class="lab">
 
-## Project 2: Every Place Has a Name
+## Project 2: Census 1900 - Immigrant Data
 
 <hr>
 
@@ -22,7 +22,7 @@ You may discuss any of the assignments with your classmates and tutors (or anyon
 entirely your own</span>. Any sharing or copying of assignments will be considered cheating (this includes posting of partial or complete
 solutions on Ed, GitHub, Discord, Groupme, ... or any other public or private forum). If you get significant help from anyone, you should acknowledge it in
 your submission (and your grade will be proportional to the part that you completed on your own). You are responsible for
-every line in your program: you need to know what it does and why. You should not use any data structures and features of Java
+every line in your program: you need to know what it does and why. You should not use any data structures and Regions of Java
 that have not been covered in class (or the prerequisite class). If you have doubts whether or not you are allowed to use certain
 structures, just ask your instructor.
 </div>
@@ -34,12 +34,16 @@ structures, just ask your instructor.
 
 
 
-<a title="U.S. Government, Public domain, via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:USGS_logo_green.svg"><img width="400" alt="USGS logo green" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/USGS_logo_green.svg/256px-USGS_logo_green.svg.png" style="float:right; margin:10px"></a>
+<a title="Census 1900 - Immigrant Data" href="https://www2.census.gov/library/publications/decennial/1900/volume-1/volume-1-p13.pdf"><img width="400" alt="Census 1900 - Immigrant Data, Ttitle Page" src="img/1900Census.png" style="float:right; margin:10px"></a>
+
 
 
 In this project you will be working with open data. Wikipedia has a good description of open data: "Open data is the idea that some data
 should be freely available to everyone to use and republish as they wish, without restrictions from copyright, patents or other mechanisms of control."
-You will be working with a specific data set from the United States Geological Survey. It contains names of every place in the United States (towns, villages, parks, lakes, mountains, ...). You can find the complete collection of the data sets organized by state (and in a few other ways) at  https://www.usgs.gov/core-science-systems/ngp/board-on-geographic-names/download-gnis-data.
+
+You will be working with a specific data set from the <a href="https://www.census.gov/">United States Census Bureau</a>. The data set selected for this project is from Table 33 of the Twelfth Census of the United States, completed in 1900. It provides information about country of birth for non-US born US residents at the time that the census was completed.
+
+The original PDF version of this data can be found here, provided by the U.S. Census Bureau. In this project, you will be working with a transcription of the PDF that is provided in CSV (comma separated values) format. This transcription was made available by <a href="https://data.stacker.com/">Stacker</a> project. The file can be downloaded from their <a href="https://github.com/stacker-media/data/tree/main/1900-census-immigrant-state">GitHub repository</a>. (If you prefer, you also access a copy of the CSV file on Brightspace).
 
 Your program will explore this data set and allow the user to make queries about it.
 <br/><br/>
@@ -64,70 +68,35 @@ topics for which you did not have to write a program or that you forgot.
 Make sure to ask questions during recitations, in class and on Ed.
 
 **Start early!** This project requires you to write several classes and
-debugging always takes time.
+debugging always takes time even if you are the most confident and skilled programmer.
 
 
 
 <div class="wrap-collabsible">
-<input id="Every place name in the United States Data Set" class="toggle" type="checkbox"  >
-<label for="Every place name in the United States Data Set" class="lbl-toggle"> Every place name in the United States Data Set </label>
+<input id="Census 1900 - Immigrant Data" class="toggle" type="checkbox"  checked=true >
+<label for="Census 1900 - Immigrant Data" class="lbl-toggle"> Census 1900 - Immigrant Data</label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
-You can find the data set [here](https://www.usgs.gov/core-science-systems/ngp/board-on-geographic-names/download-gnis-data) - it is updated fairly regularly (the latest update was at the end of August).
-
 Your program should work with a local copy of a file whose format matches that of the files that you can download from
-the website. All files are pipe-delimited text files.
+the website. This file is a comma separated values (CSV) file. CSV files are just text files. Your program can open them and read them as simple text.
+Each line in a CSV file constitutes a data point (well, except for heading lines and all the other description lines). The _columns_ in each entry are separated by
+commas (hence the name of the file format).
 
-Here are the first few lines of the New York state examples:
-
-```
-FEATURE_ID|FEATURE_NAME|FEATURE_CLASS|STATE_ALPHA|STATE_NUMERIC|COUNTY_NAME|COUNTY_NUMERIC|PRIMARY_LAT_DMS|PRIM_LONG_DMS|PRIM_LAT_DEC|PRIM_LONG_DEC|SOURCE_LAT_DMS|SOURCE_LONG_DMS|SOURCE_LAT_DEC|SOUR
-CE_LONG_DEC|ELEV_IN_M|ELEV_IN_FT|MAP_NAME|DATE_CREATED|DATE_EDITED
-205110|North Country National Scenic Trail|Trail|PA|42|Perry|099|401920N|0770439W|40.3221113|-77.0775473|||||200|656|Wertzville|09/12/1979|08/27/2019
-205609|Bog Hollow Brook|Stream|CT|09|Litchfield|005|414429N|0732945W|41.7414829|-73.4959579|414734N|0733030W|41.7928952|-73.5084172|119|390|Kent|09/12/1979|05/01/2015
-205906|Byram River|Stream|CT|09|Fairfield|001|405901N|0733918W|40.9837089|-73.6551276|410919N|0734132W|41.1553735|-73.6923523|0|0|Mamaroneck|09/12/1979|02/24/2020
-206430|Converse Lake|Lake|CT|09|Fairfield|001|410758N|0733907W|41.1326454|-73.6520811|||||129|423|Mount Kisco|09/12/1979|05/23/2018
-206431|Converse Pond Brook|Stream|CT|09|Fairfield|001|410410N|0734018W|41.0695412|-73.6717953|410834N|0733919W|41.1428737|-73.6554063|48|157|Glenville|09/12/1979|
-206783|East Branch Converse Pond Brook|Stream|CT|09|Fairfield|001|410328N|0734026W|41.0577778|-73.6738889|410751N|0734037W|41.1308333|-73.6769444|45|148|Glenville|09/12/1979|03/14/2007
-206789|East Branch Mianus River|Stream|CT|09|Fairfield|001|410630N|0733519W|41.1084297|-73.5887367|411031N|0733426W|41.1753736|-73.5740145|57|187|Stamford|09/12/1979|
-206794|East Branch Silvermine River|Stream|CT|09|Fairfield|001|411308N|0732925W|41.2189847|-73.4904008|411612N|0732930W|41.2698717|-73.4916883|136|446|Norwalk North|09/12/1979|07/08/2015
-207079|Fishers Island Ferry|Crossing|CT|09|New London|011|411644N|0720324W|41.2789876|-72.0567414|||||0|0|New London|09/12/1979|11/02/2007
-207080|Fishers Island Sound|Bay|CT|09|New London|011|411827N|0715745W|41.3075991|-71.9625725|||||0|0|Mystic|09/12/1979|06/16/2011
-207099|Fivemile River|Stream|CT|09|Fairfield|001|410326N|0732645W|41.0573192|-73.445953|411132N|0733056W|41.1923181|-73.5156792|0|0|Norwalk South|09/12/1979|
-207285|Gerow Brook|Stream|CT|09|Fairfield|001|412950N|0733159W|41.4973161|-73.5331805|412851N|0733031W|41.4808333|-73.5086111|150|492|Brewster|09/12/1979|
-207966|Horseneck Brook|Stream|CT|09|Fairfield|001|410109N|0733740W|41.019264|-73.6279041|410734N|0733754W|41.1262073|-73.6317941|9|30|Glenville|09/12/1979|
-208076|Indian Lake|Lake|CT|09|Litchfield|005|415506N|0732948W|41.9182523|-73.49674|||||191|627|Sharon|09/12/1979|12/14/2018
-208078|Indian Lake Creek|Stream|CT|09|Litchfield|005|415223N|0733009W|41.8731486|-73.502624|415438N|0732942W|41.9106484|-73.4951235|149|489|Amenia|09/12/1979|
-208170|John D Milne Lake|Reservoir|CT|09|Fairfield|001|411218N|0732941W|41.2049417|-73.4946493|||||114|374|Norwalk North|09/12/1979|05/23/2018
-208246|Kelsey Brook|Stream|CT|09|Litchfield|005|415706N|0732958W|41.9517591|-73.4995678|415743N|0732926W|41.9619444|-73.4905556|217|712|Sharon|09/12/1979|
-208857|Mianus Reservoir|Reservoir|CT|09|Fairfield|001|410835N|0733647W|41.1431772|-73.6129529|||||70|230|Pound Ridge|09/12/1979|05/23/2018
+Here is an example row for New York State:
 ```
 
+New York,1900425,473,1744,461,706,78491,1787,16347,90336,27199,1016,6880,2195,8746,135685,286,4048,20008,480020,1573,9414,37168,408,425553,182248,302,75,353,12601,118,9696,19701,37317,2018,362,10549,165610,33862,1130,1614,42708,13678,1915,7304,4241,339,1001
 
-The first line (which is wrapped) contains the column headings. The columns are separated by pipe symbols (vertical bars).
-Every remaining line contains information for a single place (its unique ID, name, type of the place, state in which the place is located, ...).
+```
+(Note that due to the length of the line, the last columns may not be visible in the above display.)
 
-The same file can be opened with a program designed to work with spreadsheets (like Excel) as long as the pipe symbol, `|`, is used as the column delimiter.
+<br/>
 
-<img src="img/everyName.png" style="max-width:100%;">
+The README.md file in the <a href="https://github.com/stacker-media/data/tree/main/1900-census-immigrant-state">1900-census-immigrant-state repository</a> contains information about how the file is structured (i.e., what all the rows and columns represent).
 
-
-<!--
-The file that you download is a CSV (comma separated values) file  - it is a simple text file and is processed
-like a text file (but it can also be opened by most of the spreadsheet programs and displayed column-wise based
-on the locations of commas on each line). Since some of the columns in a CSV file may contain longer text that
-might, optionally, contain commas or newlines as well, those entries are enclosed in a set of double quotes.
-
--->
-
-<br>
-
-There are twenty columns in the data set. Some of the columns may be empty. More detailed description of the file
-format and each of its columns can be found [here](https://geonames.usgs.gov/docs/pubs/Nat_State_Topic_File_formats.pdf).
-
-__From the point of view of this assignment, a valid row in the data set MUST contain the feature ID, feature name, feature class, and state and county associated with its location.
-Any rows that do not contain these five values should be quietly ignored by the program.__
+__From the point of view of this assignment, a valid data row MUST contain 48 columns. All other rows can be ignored. Note that the topmost row with 48 columns
+is the header for all the rows that represent the actual data.__ There could be other rows in the input file that contain fewer columns. Such rows should be ignored.
 
 You can (and should) use the `Parser` class listed in the Appendix to help you with parsing the input file.
 
@@ -135,7 +104,7 @@ You can (and should) use the `Parser` class listed in the Appendix to help you w
 
 
 <div class="wrap-collabsible">
-<input id="interface" class="toggle" type="checkbox"  >
+<input id="interface" class="toggle" type="checkbox" checked=true  >
 <label for="interface" class="lbl-toggle"> User Interface </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
@@ -144,10 +113,12 @@ Your program has to be a console based program (no graphical interface) - this
 means that the program should not open any windows or dialog boxes to prompt user
 for the input. (Use the `Scanner` class to read the user input.)
 
+__Warning__ You should have a single `Scanner` object to read in data from the user. If you use more than one, your program is not going to work correctly in all situations (including when executed in the autograder).
+
 </div> </div></div>
 
 <div class="wrap-collabsible">
-<input id="usage" class="toggle" type="checkbox"  >
+<input id="usage" class="toggle" type="checkbox"  checked=true   >
 <label for="usage" class="lbl-toggle"> Program Usage </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
@@ -155,8 +126,7 @@ for the input. (Use the `Scanner` class to read the user input.)
 The program is started from the command line (or run within an IDE). It expects one command line argument.
 
 This program should use command line arguments. When the user runs the program, they provide the name of the input
-file as a command line argument. (This way the user can specify a different data set - for example data sets from different
-states).
+file as a command line argument. (This way the user can specify a different data set - for example data sets from different census years, or a partial data set that may include only a subset of row entries.)
 
 If the name of the input file provided as a command line argument is incorrect or the file cannot be
 opened for any reason, the program should display an error message and terminate. It should not prompt the user for
@@ -166,7 +136,7 @@ If the program is run without any arguments, the program should display an error
 
 The error messages should be specific and informative, for example:
 
-`    Error: the file NY_Features_20210825.txt cannot be opened.`
+`    Error: the file census2000.csv cannot be opened.`
 
 or
 
@@ -178,59 +148,75 @@ The above error messages generated by your code should be written to the `System
 </div> </div></div>
 
 <div class="wrap-collabsible">
-<input id="user" class="toggle" type="checkbox"  >
+<input id="user" class="toggle" type="checkbox"  checked=true   >
 <label for="user" class="lbl-toggle"> User Interaction </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
 
 The program should run in a loop that allows the user to issue different queries.
-The three types of queries are:
+The types of queries are:
 
-- `name KEYWORD`
-- `name KEYWORD class CLASS`
-- `name KEYWORD state STATE`
-- `name KEYWORD class CLASS state STATE`
-- `name KEYWORD state STATE class CLASS`
+- `REGION total`
+- `REGION from ORIGIN`
+- `REGION all`
 
 
 In the above, the words in uppercase indicate keywords that will be replaced by
-actual values, for example `name Mianus`, `name Mianus class reservoir`, `name Mianus state NY`, `name Mianus state NY class reservoir NY` or `name Mianus class Reservoir state NY`. You can assume that `KEYWORD`, `CLASS` and `STATE` are always single
-words with no white space characters. (Consider it an extra challenge in parsing if there could be multi-word phrases in each query.)
+actual values:
+`REGION` is the name of the US State or territory displayed in the first column of data rows, and `ORIGIN` is a country or place of origin of the person counted (listed in the headings for the data rows).
 
-Correct state name specification should use its two letter abbreviation.
+In all cases the match for `REGION` should be exact but not case sensitive. For example, `New york` should match the
+row for `New York`, but `newyork`, `ny` or `New York State` should not.
+The columns matching `ORIGIN` should be all the columns that contain names of
+places of origin whose names contain the keyword `ORIGIN` in them. For example, if the `ORIGIN` is `Poland`, all the columns with headings `Poland (Austrian)`, `Poland (German)`, `Poland (Russian)`, `Poland (unknown)`.
 
-In the first case, `name Mianus`, the program should display the
-entries from the data set whose names contain `Mianus` specified by the user.
+- In the first case, `REGION total`, the program should display the
+total foreign born population in the specified `REGION`. The format of the output
+should be
 
-In the second case, `name Mianus class reservoir`, the program should display the
-entries from the data set whose names contain `Mianus` and whose class contains the word `reservoir`.
+	```
+	REGION: total foreing born population is NUM.
+	```
+	(in which `REGION` and `NUM` are replaced with the actual values).
 
-In the third case, `name Mianus state NY`, the program should display the
-entries from the data set whose names contain `Mianus` and that are located in New York state (NY).
+- In the second case, `REGION from ORIGIN`, the program should display the
+total number of foreign born population in all the places of origin whose name contains the keyword `ORIGIN`. The format of the output should be
+
+	```
+	REGION: foreign born population
+	PLACE1  NUM1
+	PLACE2  NUM2
+	...
+	```
+	(in which the `PLACE1`, `PLACE2`, ... all contain the keyword `ORIGIN` and `NUM1`,`NUM2`, ... are the corresponding counts).
 
 
-In the fourth and fifth cases, `name Mianus state NY class reservoir NY`  or `name Mianus  class reservoir state NY`, the program should display the
-entries from the data set whose names contain `Mianus` , whose class contains the work `reservoir` and that are located in New York state (NY).
+- In the third case, `REGION all`, the program should display the list of all the places of origin and the population counts from them that are associated with the
+specified `REGION` and whose count is greater than zero. The format of the output should be
 
+	```
+	REGION: foreign born population
+	PLACE1  NUM1
+	PLACE2  NUM2
+	...
+	```
+	(in which the `PLACE1`, `PLACE2`, ... are all places of origin with a non-zero count and `NUM1`,`NUM2`, ... are the corresponding counts). The order of the
+	places should be from the one with largest count to the smallest count. Any
+	ties should be resolved based on the place names (in alphabetical order).
 
-
-<br>
-
-The `name` query is mandatory. The other two queries may be used to provide additional restrictions (they can be used in any order, i.e., `name Mianus class Reservoir state NY` and `name Mianus state NY class Reservoir` should produce identical results).
-
-<br>
-
-__The keywords should be case insensitive. This means that `name Mianus`, `name MIANUS`
-and `name MiAnUs` should all return exactly the same results.__
-
-<br>
+<br/>
 
 On each iteration, the user should be prompted to enter a new query (for which
 the program computes the results) or the word 'quit'
 to indicate the termination of the program.
 
+<br/>
+
+
 __The user should not be prompted for any other response.__
+
+<br/>
 
 If the query entered by the user is invalid, the program should display an error message:
 
@@ -247,29 +233,9 @@ and allow the user to provide an alternative query.
 
 <br>
 
-All output from the user interaction should be printed to the standard output stream (`System.out`).
+All output from the user interaction should be printed to the standard output stream (`System.out`), even the above error messages.
 
-<br>
-
-
-__Matching results display:__
-If the query entered by the user matches one or more place, the information  should be displayed in the following format:
-
-```
-NAME, CLASS
-COUNTY, STATE
-LATITUDE, LONGITUDE, ELEVATION
-
------
-```
-
-All the words in uppercase letters are place-holders for the actual values from the data set. The elevation should be specified in feet (not meters).
-
-If latitude, longitude or elevation are missing, they should be printed as zeroes in the above output.
-
-The output should contain a single blank line, followed by a line with five dashes, `-----`,
-after each result. This will visually separate the results for improved readability.
-
+<br/>
 
 __Sample user interaction is shown in the Appendix.__
 
@@ -277,7 +243,7 @@ __Sample user interaction is shown in the Appendix.__
 </div> </div></div>
 
 <div class="wrap-collabsible">
-<input id="classes" class="toggle" type="checkbox" >
+<input id="classes" class="toggle" type="checkbox"  checked=true >
 <label for="classes" class="lbl-toggle"> Data Storage and Organization </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
@@ -288,140 +254,102 @@ compute the results when the program is executed.
 In particular, your program must implement and use the following classes.
 You may implement additional classes and additional methods in the required classes, if you wish.
 
-#### <code class="code_title">Location</code> class
+#### <code class="code_title">Origin</code> class
 
-This class should represent a location of the given named place/feature. It should store the information about state, county, latitude, longitude and elevation (in feet).
+This class should represent a place of origin and the associated count for a particular place region.
 
-- This class should provide a two parameter constructor that validates and sets the state and county names.
+- This class should provide a two parameter constructor that validates and sets the name of the place of origin and the count.
 
-	`public Location( String state, String county)`
+	`public Origin( String originName, int count)`
 
-	Valid arguments cannot be `null`.
+	The `originName` cannot be `null` and the `count` should not be negative.
 	If this constructor is called with invalid arguments,  it should throw an instance of the `IllegalArgumentException`  with an appropriate message.
 
-- The class should provide accessor and mutator methods (i.e., getters and setters) for the longitude, the latitude and the elevation values. They should use the following signatures:
-	- `public double getLatitude()`
-	- `public void setLatitude( double latitude )` - a valid latitude is in the range of from -90 to +90 (inclusive)
-	- `public double getLongitude()`
-	- `public void setLongitude( double longitude )` - a valid longitude is in the range of from -180 to +180 (inclusive)
-	- `public int getElevation()`
-	- `public void setElevation( int elevation )`
+- The class should provide accessor methods (i.e., getters and setters) for the name and the count:
+	- `public String getOriginName()`
+	- `public int getCount()`
 
-	If any of the mutators is called with an invalid argument, the method should throw an instance of the  `IllegalArgumentException`  with an appropriate message.
+- The class should implement `Comparable<Origin>`  interface. Two `Origin` objects should be compared based on their count. If their counts are equal, the comparison should be done based on the name.
 
-- The class should implement `Comparable<Location>`  interface. Two `Location` objects should be
-	compared based on their state names (case insensitive, alphabetic ordering), county names (case insensitive, alphabetic ordering), latitude, longitude (both following the numerical ordering of floating point numbers), and elevation (following the numerical ordering of integers).
-	If two `Location` objects have the same state names, the comparison should be done by their county names. If
- 	two `Location` objects have the same state names names and the same county names, the comparison should be done by
-	their latitude coordinates. ...
-
-- The class should override the `equals` method from the `Object` class. Two `Location` objects
-	are the same if they represent identical locations (i.e., the names of the state and the county are the same, the longitude and latitude values are the same (up to six places after the decimal point), and the elevations are the same).
+- The class should override the `equals` method from the `Object` class. Two `Origin` objects
+	are the same if their names and counts are the same.
 
 - The class should override the `toString` method from the `Object` class. It should
 	return a  `String` matching the following pattern:
 
 	```
-	COUNTY, STATE
-	LATITUDE, LONGITUDE, ELEVATION
+	PLACE NUM
 	```
-	(If latitude, longitude, or elevation are not provided, the values should be printed as zeros - this is the convention
-	used in the data set.)
+	(where `PLACE` is the name and `NUM` is the count associated with the given `Origin` object).
 
 
-#### <code class="code_title">Feature</code> class
+#### <code class="code_title">Region</code> class
 
-This class should represent a particular place/feature. It should store information about the place's name, class (i.e., what type of a place it is), and its location. It can store additional information if you wish.
+This class should represent a particular US state or territory. It should store the information about the name of the region and about the list of all the counts of foreign born residents and their places of origin (i.e., it should keep a list of all the `Origin` objects associated with the given region).
 
-- This class should provide a three parameter constructor that validates and sets the name, class and location of the place.
+- This class should provide a one parameter constructor that validates and sets the name, class and location of the place.
 
-	`public Feature (String featureName, String featureClass, Location featureLocation)`
+	`public Region (String name)`
 
-	Any non-empty string is a valid `featureName` or `featureClass`. If this constructor
-	is called with a `null` or an empty `featureName` or `featureClass`, it should throw an instance of `IllegalArgumentException`  with an appropriate message.
-
-	`featureLocation` should be a valid Location object.
-	If this constructor is called with a `null` argument,  it should throw an instance of the `IllegalArgumentException`  with an appropriate message.
+	Any non-empty string is a valid `name`. If this constructor
+	is called with a `null` or an empty `name`, it should throw an instance of `IllegalArgumentException`  with an appropriate message.
 
 	There should be no default constructor.
 
-- This class should provide the following accessor methods:
-	- `public String getFeatureName()`
-	- `public String getFeatureClass()`
-	- `public Location getFeatureLocation()`
+- This class should provide a method to add an `Origin` object to the list of
+places of origin associated with it.
 
-- The class should implement `Comparable<Feature>` interface. The two `Feature` objects should be
-	compared based on their names, location, and class (in that order), i.e., if
-	two `Feature` objects have the same names, the comparison should be done by their locations (following the rules outlined in the `Location` class); if the
- 	two `Feature` objects have the same names and the same locations, the comparison should be done by
-	their  their class; finally, if all three are the same, the two objects should
-	be considered equal. All comparisons should be case insensitive.
+	`public boolean add(Origin origin)`
 
-- The class should override the `equals` method from the `Object` class. Two `Feature` objects
-	are the same if they have identical names, locations and classes.  All comparisons should be case insensitive.
+	If a method is called with `null` argument, it should throw an instance
+	of `IllegalArgumentException` with an appropriate message.
+	If the name stored in the `origin` object is matches already existing place of origin name, then this object should not be added to the list and the method should return `false`. If `origin` is added to the list, the method should return `true`.
+
+- The class should provide a method that retrieves a list of `Origin` objects based on the provided keyword.
+
+	`public ArrayList<Origin> getByName( String keyword )`
+
+	If a method is called with `null` argument or an empty string, it should throw
+an instance of `IllegalArgumentException`. The method should return a list of all `Origin` objects associated with this `Region` object whose names contain `keyword` as a substring.
+
+
+- The class should override the `equals` method from the `Object` class. Two `Region` objects
+	are the same if they have identical names. The match should be case insensitive.
 
 - The class should override the `toString` method from the `Object` class. It should
 	return a multi-line `String` matching the following pattern
 
-
 	```
-	NAME, CLASS
-	COUNTY, STATE
-	LATITUDE, LONGITUDE, ELEVATION
+	REGION: foreign born population
+	PLACE1  NUM1
+	PLACE2  NUM2
+	...
 	```
+	(in which the `PLACE1`, `PLACE2`, ... are all places of origin with a non-zero count and `NUM1`,`NUM2`, ... are the corresponding counts). The order of the
+	places should be from the one with largest count to the smallest count. Any
+	ties should be resolved based on the place names (in alphabetical order).
 
-	All the words in uppercase letters are place-holders for the actual values from the data set. The elevation should be specified in feet (not meters).
 
-	If latitude, longitude or elevation are missing, they should be shown as zeroes in the above string. 
+#### <code class="code_title">RegionList</code> class
+The `RegionList` class should be used to store all the `Region` objects.
+This class should inherit from the `ArrayList<Region>` class.
 
-#### <code class="code_title">FeatureList</code> class
-The `FeatureList` class should be used to store all the `Feature` objects.
-This class should inherit from the   `ArrayList<Feature>` class.
+- The class needs to provide a default constructor that creates an empty `RegionList` object.
 
-- The class needs to provide a default constructor that creates an empty `FeatureList` object.
+In addition, the class should implement the following method:
 
-In addition, the class should implement the following two methods:
+- `public Region getByName ( String keyword )  `
 
-- `public FeatureList getByName ( String keyword )  `
-
-	This method should return a list of all `Feature` objects for which the names __contain__ the
+	This method should return a  `Region` object whose name matches the
   `keyword`. The keyword comparison should be done in a case insensitive way.
-	The returned list should be sorted according to the natural ordering of the elements (i.e., dictated
-	by the `compareTo` method defined in the `Feature` class).
-	If `keyword` is `null` or an empty string, this method
-	should throw an instance of `IllegalArgumentException` with an appropriate message.
 
-	If there are no elements in the list that match the given criteria, this method should return `null`.
+	If there are no elements in the list that match the given `keyword`, this method should return `null`.
 
-- `public FeatureList getByClass ( String keyword )   `
-
-	This method should return a list of all `Feature` objects for which the class name (the type of the feature) contains the
-  `keyword`.  The keyword comparison should be done in a case insensitive way.
-	The returned list should be sorted according to the natural ordering of the elements (i.e., dictated
-	by the `compareTo` method defined in the `Feature` class).
-	If `keyword` is `null` or an empty string, this method
-	should throw an instance of `IllegalArgumentException` with an appropriate message.
-
-	If there are no elements in the list that match the given criteria, this method should return `null`.
-
-- `public FeatureList getByState ( String state )   `
-
-	This method should return a list of all `Feature` objects for which the state name  matches the parameter `state`.
-	The comparison should be done in a case insensitive way, but the comparison is based on equality of the two state names
-	(which are two letter state name abbreviations).
-	The returned list should be sorted according to the natural ordering of the elements (i.e., dictated
-	by the `compareTo` method defined in the `Feature` class).
-	If `state` is `null` or an empty string, this method
-	should throw an instance of `IllegalArgumentException` with an appropriate message.
-
-	If there are no elements in the list that match the given criteria, this method should return `null`.
-
-
-#### <code class="code_title">EveryPlaceHasAName</code> class
-The `EveryPlaceHasAName` class is the actual program. This is the class that should contain the `main` method.
+#### <code class="code_title">Census1900ImmigrationData</code> class
+The `Census1900ImmigrationData` class is the actual program. This is the class that should contain the `main` method.
 It is responsible for opening and reading
 the data file, obtaining user input, performing some data validation and handling
-all errors that may occur (in particular, it should handle any
+all errors that may occur, and printing all output to the standard output stream. It should handle any
 exceptions thrown by your other classes and terminate gracefully, if need be, with
 a friendly error message presented to the user: The program should never just reprint the
 exception message as a way of handling an exception. These messages are rarely
@@ -432,14 +360,14 @@ You may implement other methods in this class to modularize the design.
 </div> </div></div>
 
 <div class="wrap-collabsible">
-<input id="rules" class="toggle" type="checkbox"  >
+<input id="rules" class="toggle" type="checkbox" checked=true >
 <label for="rules" class="lbl-toggle"> Programming Rules </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
 
 - You should follow the rules outlined in the document
-[Code conventions](https://cs.nyu.edu/~joannakl/cs102_f21/notes/CodeConventions.pdf).
+[Code conventions](https://cs.nyu.edu/~joannakl/cs102_s22/notes/CodeConventions.pdf).
 
 - The data file should be read only once! Your program needs to store the data
 in memory resident data structures.
@@ -455,7 +383,7 @@ are `File` and `Scanner` classes. You are responsible for knowing how to use the
 </div> </div></div>
 
 <div class="wrap-collabsible">
-<input id="working" class="toggle" type="checkbox"  >
+<input id="working" class="toggle" type="checkbox"   checked=true>
 <label for="working" class="lbl-toggle"> Working on This Assignment </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
@@ -484,7 +412,7 @@ a few hours before the due dates - make sure that you have working code if that 
 </div> </div></div>
 
 <div class="wrap-collabsible">
-<input id="grading" class="toggle" type="checkbox"  >
+<input id="grading" class="toggle" type="checkbox" checked=true >
 <label for="grading" class="lbl-toggle"> Grading </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
@@ -509,7 +437,7 @@ The grade will be determined by several factors:
 
 
 <div class="wrap-collabsible">
-<input id="submit" class="toggle" type="checkbox" >
+<input id="submit" class="toggle" type="checkbox" checked=true >
 <label for="submit" class="lbl-toggle"> How and What to Submit </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
@@ -548,7 +476,7 @@ the case in future assignments.
 
 
 <div class="wrap-collabsible">
-<input id="appendix" class="toggle" type="checkbox" >
+<input id="appendix" class="toggle" type="checkbox"  checked=true>
 <label for="appendix" class="lbl-toggle"> Appendix </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
@@ -585,60 +513,6 @@ public static String [] splitInputLine(String textLine){
 Here are a few sample runs of a program with much reduced input file to illustrate  the user interface.
 
 ```
-Search the dataset by using one of the following queries.
-  To search for features by keyword in their name, enter
-	name KEYWORD
-  To limit the search to a particular class of features , enter
-	name KEYWORD class FEATURE_CLASS
-  To limit the search to a particular state, enter
-	name KEYWORD state STATE
-  Or combine both restrictions by entering
-	name KEYWORD class CLASS state STATE
-    or
-	name KEYWORD state STATE class CLASS
-    To terminate the program, enter
-	quit
-
-
-
-
-Enter your search query:
-
-name nyu
-
-NYU Lutheran Medical Center, Hospital
-NY, Kings
-40.646368, -74.020396, 11
-
------------
-WNYU-FM (New York), Tower
-NY, Bronx
-40.857322, -73.912914, 53
-
------------
-NYU Hospital for Joint Diseases, Hospital
-NY, New York
-40.734390, -73.982832, 7
-
------------
-
-
-
-Enter your search query:
-
-name NYU class hospital
-
-NYU Lutheran Medical Center, Hospital
-NY, Kings
-40.646368, -74.020396, 11
-
------------
-NYU Hospital for Joint Diseases, Hospital
-NY, New York
-40.734390, -73.982832, 7
-
------------
-
 
 
 Enter your search query:
