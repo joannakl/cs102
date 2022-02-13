@@ -33,8 +33,8 @@ of classes for lab3, but if, for some reason, you no longer have access to it, y
 
 You will also need the [documentation page for `ArrayList<E>`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/ArrayList.html) as well as several other classes from which `ArrayList<E>` inherits.
 
-Work alone or find a partner to answer the questions in the rest of this lab.
-
+Work with a group and submit your questions as a group.
+Discuss the answers to the questions below with your group and help each other in figuring out how to find the answers. Consult the section leader if you need help. Upload final answers to Gradescope.
 
 ### Part 1
 
@@ -86,6 +86,8 @@ Work alone or find a partner to answer the questions in the rest of this lab.
 
 
 ### Part 3
+
+(There are no Gradescope questions for this part, but the answers are important to understand.)
 
 1. Look at the documentation for some of the public methods in the source code and compare it to the documentation on the website. What do you notice?
 
