@@ -303,14 +303,15 @@ places of origin associated with it.
 
 	If a method is called with `null` argument, it should throw an instance
 	of `IllegalArgumentException` with an appropriate message.
-	If the name stored in the `origin` object is matches already existing place of origin name, then this object should not be added to the list and the method should return `false`. If `origin` is added to the list, the method should return `true`.
+	If the `origin`'s name is equal (case insensitive match) to one of the already existing place of origin name, then this object should not be added to the list and the method should return `false`.
+	If `origin` is added to the list, the method should return `true`.
 
 - The class should provide a method that retrieves a list of `Origin` objects based on the provided keyword.
 
 	`public ArrayList<Origin> getByName( String keyword )`
 
 	If a method is called with `null` argument or an empty string, it should throw
-an instance of `IllegalArgumentException`. The method should return a list of all `Origin` objects associated with this `Region` object whose names contain `keyword` as a substring.
+an instance of `IllegalArgumentException`. The method should return a list of all `Origin` objects associated with this `Region` object whose names contain `keyword` as a substring or `null` if there are no matching `Origin` objects.
 
 
 - The class should override the `equals` method from the `Object` class. Two `Region` objects
@@ -340,10 +341,11 @@ In addition, the class should implement the following method:
 
 - `public Region getByName ( String keyword )  `
 
+	If a method is called with `null` argument or an empty string, it should throw
+	an instance of `IllegalArgumentException`.
 	This method should return a  `Region` object whose name matches the
-  `keyword`. The keyword comparison should be done in a case insensitive way.
+  `keyword`. The keyword comparison should be done in a case insensitive way. If there is no match, the method should return `null`.
 
-	If there are no elements in the list that match the given `keyword`, this method should return `null`.
 
 #### <code class="code_title">Census1900ImmigrationData</code> class
 The `Census1900ImmigrationData` class is the actual program. This is the class that should contain the `main` method.
