@@ -1,9 +1,6 @@
 package project2;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 /**
@@ -152,14 +149,14 @@ public class CSV {
 						insideEntry = true;
 					}
 				} else if (Character.isWhitespace(nextChar)) {
-					if ( insideQuotes || (insideEntry && (nextChar != '\n')) ) {
+					// if new line outside of quotes, this is the end of this row
+					if (nextChar == '\n' && !insideQuotes) {
+						endOfLine = true;
+					}
+					else if ( insideQuotes || insideEntry ) {
 					// add it to the current entry
 						nextWord.append( nextChar );
 					}else {
-						// if new line, this is the end of this row
-						if (nextChar == '\n') {
-							endOfLine = true;
-						}
 						// skip all spaces between entries
 						continue;
 					}

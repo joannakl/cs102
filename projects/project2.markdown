@@ -5,7 +5,7 @@ title: Project 2
 
 <div class="lab-right" markdown="1">
 __Project 2__ <br>
-__due date:__ Oct. 11
+__due date:__ March 4
 
 __submission mode:__ individual
 
@@ -78,10 +78,9 @@ debugging always takes time even if you are the most confident and skilled progr
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
-Your program should work with a local copy of a file whose format matches that of the files that you can download from
+Your program should work with a local copy of a file whose format matches that of the file that you can download from
 the website. This file is a comma separated values (CSV) file. CSV files are just text files. Your program can open them and read them as simple text.
-Each line in a CSV file constitutes a data point (well, except for heading lines and all the other description lines). The _columns_ in each entry are separated by
-commas (hence the name of the file format).
+Each line in a CSV file constitutes a data point (well, except for heading lines and all the other description lines at the top). The _columns_ in each entry are separated by commas (hence the name of the file format).
 
 Here is an example row for New York State:
 ```
@@ -95,10 +94,10 @@ New York,1900425,473,1744,461,706,78491,1787,16347,90336,27199,1016,6880,2195,87
 
 The README.md file in the <a href="https://github.com/stacker-media/data/tree/main/1900-census-immigrant-state">1900-census-immigrant-state repository</a> contains information about how the file is structured (i.e., what all the rows and columns represent).
 
-__From the point of view of this assignment, a valid data row MUST contain 48 columns. All other rows can be ignored. Note that the topmost row with 48 columns
-is the header for all the rows that represent the actual data.__ There could be other rows in the input file that contain fewer columns. Such rows should be ignored.
+__From the point of view of this assignment, a valid data row MUST contain 48 columns. All rows that do not have that many columns should be ignored. Note that the topmost row with 48 columns
+is the header for all the rows that represent the actual data.__ You should not assume that the input file used for testing your program will have columns in exactly the same order. You also should not assume that the input file used for testing your program will contain on the US states and teritories (i.e., there could be fewer or more rows).
 
-You can (and should) use the `Parser` class listed in the Appendix to help you with parsing the input file.
+You can (and should, unless you have a good reason not to) use the `CSV` class listed in the Appendix to help you with parsing the input file.
 
 </div> </div></div>
 
@@ -169,7 +168,8 @@ actual values:
 In all cases the match for `REGION` should be exact but not case sensitive. For example, `New york` should match the
 row for `New York`, but `newyork`, `ny` or `New York State` should not.
 The columns matching `ORIGIN` should be all the columns that contain names of
-places of origin whose names contain the keyword `ORIGIN` in them. For example, if the `ORIGIN` is `Poland`, all the columns with headings `Poland (Austrian)`, `Poland (German)`, `Poland (Russian)`, `Poland (unknown)`.
+places of origin whose names contain the keyword `ORIGIN` in them. This match should not be case sensitive.
+For example, if the `ORIGIN` is `poland`, the data from all the columns with headings `Poland (Austrian)`, `Poland (German)`, `Poland (Russian)`, `Poland (unknown)` should be returned.
 
 - In the first case, `REGION total`, the program should display the
 total foreign born population in the specified `REGION`. The format of the output
@@ -189,7 +189,9 @@ total number of foreign born population in all the places of origin whose name c
 	PLACE2  NUM2
 	...
 	```
-	(in which the `PLACE1`, `PLACE2`, ... all contain the keyword `ORIGIN` and `NUM1`,`NUM2`, ... are the corresponding counts).
+	in which the `PLACE1`, `PLACE2`, ... all contain the keyword `ORIGIN` and `NUM1`,`NUM2`, ... are the corresponding counts. The order of the
+	places should be from the one with largest count to the smallest count. Any
+	ties should be resolved based on the place names (in alphabetical order).
 
 
 - In the third case, `REGION all`, the program should display the list of all the places of origin and the population counts from them that are associated with the
@@ -201,7 +203,7 @@ specified `REGION` and whose count is greater than zero. The format of the outpu
 	PLACE2  NUM2
 	...
 	```
-	(in which the `PLACE1`, `PLACE2`, ... are all places of origin with a non-zero count and `NUM1`,`NUM2`, ... are the corresponding counts). The order of the
+	in which the `PLACE1`, `PLACE2`, ... are all places of origin with a non-zero count and `NUM1`,`NUM2`, ... are the corresponding counts. The order of the
 	places should be from the one with largest count to the smallest count. Any
 	ties should be resolved based on the place names (in alphabetical order).
 
@@ -262,14 +264,14 @@ This class should represent a place of origin and the associated count for a par
 
 	`public Origin( String originName, int count)`
 
-	The `originName` cannot be `null` and the `count` should not be negative.
+	The `originName` cannot be `null` or an empty string, and the `count` should not be negative.
 	If this constructor is called with invalid arguments,  it should throw an instance of the `IllegalArgumentException`  with an appropriate message.
 
-- The class should provide accessor methods (i.e., getters and setters) for the name and the count:
+- The class should provide accessor methods for the name and the count:
 	- `public String getOriginName()`
 	- `public int getCount()`
 
-- The class should implement `Comparable<Origin>`  interface. Two `Origin` objects should be compared based on their count. If their counts are equal, the comparison should be done based on the name.
+- The class should implement `Comparable<Origin>`  interface. Two `Origin` objects should be compared based on their count (with the one having a smaller count being considered _smaller_). If their counts are equal, the comparison should be done based on the alphabetical ordering of the names.
 
 - The class should override the `equals` method from the `Object` class. Two `Origin` objects
 	are the same if their names and counts are the same.
@@ -303,7 +305,7 @@ places of origin associated with it.
 
 	If a method is called with `null` argument, it should throw an instance
 	of `IllegalArgumentException` with an appropriate message.
-	If the `origin`'s name is equal (case insensitive match) to one of the already existing place of origin name, then this object should not be added to the list and the method should return `false`.
+	If the `origin`'s name is equal (case insensitive match) to one of the already existing place of origin names, then this object should not be added to the list and the method should return `false`.
 	If `origin` is added to the list, the method should return `true`.
 
 - The class should provide a method that retrieves a list of `Origin` objects based on the provided keyword.
@@ -402,8 +404,10 @@ output manually. You can create  a test input file that contains only a few rows
 by running the program on carefully designed test inputs and examining
 the outputs produced to make sure they are correct.
 The goal in doing this is to try to find the mistakes you have most likely made in your code. <br>
+<!--
 __DO NOT__ test your program on the entire large input file. This may take a long time and you will never know
 if the results are correct or not.
+-->
 - Each class that you submit __will be tested by itself without the context of other classes that you are implementing for this assignment__. <br>
 This means that you need to make sure that your methods can perform their tasks correctly even if they are executed in situations that would not arise in the context of this specific program.
 - You should __backup__ your code after each time you spend some time working on it.
@@ -419,6 +423,7 @@ a few hours before the due dates - make sure that you have working code if that 
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
+You have to follow Academic Integrity Rules.
 
 If your program does not compile or if it crashes (almost) every time it is run,
 you will get a zero on the assignment. Make sure that you are submitting
@@ -483,42 +488,147 @@ the case in future assignments.
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
+#### `CSV` class - Parsing Lines of the Input File
 
+CSV is a simple file format, but there are many non-standard variations: the field separator, the field delimiter, the special characters allowed in the fields, etc.
 
-#### Parsing Lines of the Input File
+You should use the `CSV` class provided below as is or you can modify it if you wish.
 
-The input file is a plain text file. Each line contains entries for several columns. Each column is separated by a pipe symbol, `|`.
-To simplify parsing through the file, you can use the following function:
+-   [`CSV`](project2/doc/project2/CSV.html) class documentation
+-   [`CSV.java`](project2/CSV.java) file
 
-```
-/**
- * Splits the given line of a pipe-delimited file according to | characters.
- * @author Joanna Klukowska
- * @param textLine	a line of text to be parsed
- * @return the array containing words (or empty strings) from between | characters
- */
-public static String [] splitInputLine(String textLine){
+If you are not sure how it works, ask questions about it.
 
-	if (textLine == null ) return null;
-
-	String [] entries = null;
-
-	entries = textLine.split("\\|");
-
-	return entries;
-}
-````
 
 
 #### Sample Interactions
 
-Here are a few sample runs of a program with much reduced input file to illustrate  the user interface.
+Here are a few sample runs of a program (keep in mind, they are here to illustrate  the user interface, not
+to show you examples of tests that the autograder will run on your program).
+
+The first interaction has a lot of invalid instructions or instructions that produce no results.
 
 ```
+Enter one of the following instructions.
 
+REGION total
+REGION from ORIGIN
+REGION all
+quit
 
-Enter your search query:
+Replace REGION with your desired region, and ORIGIN with your desired place of origin (or its substring).
+------
 
+Enter your instruction:
+Georgia
+
+This is not a valid query. Try again.
+
+Enter your instruction:
+Geoergia from Moon
+
+No matches found. Try again.
+
+Enter your instruction:
+Georgia from Moon
+
+No matches found. Try again.
+
+Enter your instruction:
+Georgia frommm France
+
+This is not a valid query. Try again.
+
+Enter your instruction:
+quit
+```
+
+The following interaction has all valid instructions and all queries produce non-empty results.
+
+```
+Enter one of the following instructions.
+
+REGION total
+REGION from ORIGIN
+REGION all
+quit
+
+Replace REGION with your desired region, and ORIGIN with your desired place of origin (or its substring).
+------
+
+Enter your instruction:
+California total
+
+California: total foreign born population is 367215
+
+Enter your instruction:
+California from Poland
+
+California: foreign born population
+Poland (Austrian)	72
+Poland (German)	187
+Poland (Russian)	832
+Poland (unknown)	229
+
+Enter your instruction:
+New York from Cuba
+
+New York: foreign born population
+Cuba	2195
+West Indies (except Cuba and Puerto Rico)	4241
+
+Enter your instruction:
+New York all
+
+New York: foreign born population
+Germany	480020
+Ireland	425553
+Italy	182248
+Russia	165610
+England	135685
+Canada (English) (includes Newfoundland)	90336
+Austria	78491
+Sweden	42708
+Poland (Russian)	37317
+Hungary	37168
+Scotland	33862
+Canada (French) (includes Newfoundland)	27199
+France	20008
+Poland (German)	19701
+Bohemia	16347
+Switzerland	13678
+Norway	12601
+Roumania	10549
+Poland (Austrian)	9696
+Holland	9414
+Denmark	8746
+Wales	7304
+China	6880
+West Indies (except Cuba and Puerto Rico)	4241
+Finland	4048
+Cuba	2195
+Poland (unknown)	2018
+Turkey	1915
+Belgium	1787
+Asia (except China, Japan, and India)	1744
+Spain	1614
+Greece	1573
+South America	1130
+Central America	1016
+Born at Sea	1001
+Australia	706
+Africa	473
+Atlantic Islands	461
+India	408
+Portugal	362
+Mexico	353
+Other Countries	339
+Japan	302
+Europe (not otherwise specified)	286
+Pacific Islands (except Phillipine Islands)	118
+Luxemburg	75
+
+Enter your instruction:
 quit
 
 ```
