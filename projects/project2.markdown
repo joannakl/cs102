@@ -565,10 +565,10 @@ Enter your instruction:
 California from Poland
 
 California: foreign born population
-Poland (Austrian)	72
-Poland (German)	187
 Poland (Russian)	832
 Poland (unknown)	229
+Poland (German)	187
+Poland (Austrian)	72
 
 Enter your instruction:
 New York from Cuba
