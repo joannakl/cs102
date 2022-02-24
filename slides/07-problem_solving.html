@@ -137,6 +137,245 @@ for  i  in 0 .. n
 .below-column2[
 Test them out with a few values of `n` to try to figure it out.
 ]
+---
+
+## Josephus Problem
+
+A simply counting out game that children play goes as follows:
+
+.smaller[
+
+- a number is picked, call it K
+- a direction is picked: right or left
+- a child that starts is picked
+
+- all children are in a circle and as long as there are more than 1 children in the game
+they keep playing
+  - the first child counts 1
+  - the next child (to the right or left based on the direction) counts 2
+  - the next child counts 3
+  - ...
+  - the next child counts K and is removed from the game
+  - the next child counts 1
+  - ...
+  - the next child counts K and is removed from the game
+  - ...
+
+- the one remaining child wins the game
+]
+
+(The real Josephus problem is much more gruesome.)
+
+--
+
+#### Problem
+Write a program that simulates this game. Given a number of children, the value
+of K and the direction, the program should determine the winner (or rather the
+position of the child that will win, assuming that child at position 1 starts
+the game).
+
+
+---
+
+## Integer list
+
+The programming language _Better And Portable Code_ (BAPC) is a language for
+working with lists of integers. The language has two built-in functions:
+- `R` = reverse the input and return the result
+- `D` = drop the first element and return the rest, or return `error` in case its input is
+an empty list
+
+.left-column2-large[
+To get more advanced behavior, functions can be composed: `AB` is the function
+that first applies `A` to its input and then `B` to the resulting list.
+For example, `RDD` is a function that reverses a list and then drops the first
+two elements.
+
+Your task is to write an interpreter that processes instructions written in BAPC.
+Given a BAPC program and its input, return its output or "error" in case `D` is
+applied to an empty list.
+Lists are represented as the character `[` followed by a comma-separated list of
+integers followed by the character `]`. Notice that the input and output lists
+can be quite long.
+]
+
+--
+
+.right-column2-small[
+__Example 1__
+
+Program: `RDD`<br>
+Input: [1,2,3,4]<br>
+Output: [2,1]
+
+
+__Example 2__
+
+Program: `DD`<br>
+Input: [102] <br>
+Output: error
+
+
+__Example 3__
+
+Program: `RRD`<br>
+Input: [1,1,2,3,5,8]<br>
+Output: [1,2,3,5,8]
+]
+
+---
+
+## Backspace
+
+Shortly before the programming contest started, Bjarki decided to update his computer.
+He didn't notice anything strange until he started coding in his favorite editor, Bim (Bjarki IMproved).
+Usually when he’s writing in an editor and presses the backspace key a single
+character is erased to the left. But after the update pressing that key outputs the character <.
+He’s tested all the editors on his machine, but they all seem to have the same problem.
+
+He doesn't have time to search the web for a solution, and instead decides to
+temporarily circumvent the issue with a simple program.
+
+.left-column2[
+Help Bjarki write a program that takes as input the string that was written in the
+text editor, and outputs the string as Bjarki intended to write it.
+You can assume that Bjarki never intended to write the character <, and that Bjarki
+never pressed the backspace key in an empty line.
+]
+
+--
+
+.right-column2[
+__Example 1__
+
+Input: `a<bc<` <br>
+Output: `b`
+
+__Example 2__
+
+Input: `foss<<rritun` <br>
+Output: `forritun`
+
+__Example 3__:
+
+Input: `a<a<a<aa<<` <br>
+Output:
+]
+
+---
+
+
+## Synchronizing Lists
+
+For this problem, you have two lists of numbers, each list having length `n`.
+Each number in one list has a corresponding number in the other list.
+The correspondence is that if both lists were in sorted order and placed side by side,
+each pair of numbers would correspond.
+
+For example, in the lists (48,10,97) and (7,46,20),
+the corresponding numbers are 10 with 7, 48 with 20, and 97 with 46.
+This is because if you sort the first and the second lists, their orders would be: <br>
+`(10, 48, 97)`<br>
+`( 7, 20, 46)`
+
+You want to keep the lists synchronized (i.e., if the numbers get
+swapped in one list, their corresponding numbers should be swapped as well).
+You know that the second list has gotten out of order and you need to fix this.
+
+For example, given the two lists above, the second list should be reordered as (20,7,46)
+to be in order with the first list.
+
+--
+
+__Example__
+
+Input:
+```
+list 1: (10, 67, 68, 28)
+list 2: ( 6, 55, 73, 10)
+```
+
+Output:
+```
+( 6, 55, 73, 10)
+```
+
+
+
+---
+
+## Room Painting
+
+Joe’s landlord has allowed him to paint his room any colour that he wants, even
+multiple colours. Joe has come up with a very colourful design. Now he needs to
+buy the paint.
+
+Being a struggling student, Joe does not want to waste any money,
+so he has calculated the exact amount that he needs of each colour down to the
+microlitre. To his surprise, however, the local paint shop is unwilling to sell
+him a can of exactly 3.141592 litres of red paint.
+
+The shop has a set of specific paint can sizes. The shop
+has almost unlimited amount of paint of each color, so each can can be filled
+with whatever colour Joe wishes and the shop has unlimited number of cans of each
+size.
+
+Joe has no choice but to buy a little bit more paint than he really needs.
+Still, he would like to minimize the amount of paint wasted. In addition,
+he does not want to buy more than one can of any given colour.
+
+---
+
+## Room Painting
+
+__Input__
+
+The first line of input contains two integers
+- $1<=n<=100,000$ the number of paint can sizes offered by the paint shop, and
+- $1<=m<=100000$, the number of colours that Joe needs.
+
+Each of the next $n$
+lines contains the size of a can offered by the paint shop, in microlitres. Each can contains no more than 1000 litres.
+
+Each of the next $m$
+lines contains the number of microlitres that Joe needs of a given colour.
+It is guaranteed that for each colour, the paint shop sells a can large enough to satisfy Joe’s needs.
+
+__Output__
+
+Output a single line, the total number of microlitres of paint wasted if Joe buys,
+for each colour, the smallest can that satisfies his needs.
+
+--
+
+__Example__
+.left-column2[
+Input:
+```
+3 2
+5
+7
+9
+6
+8
+```
+]
+.right-column2[
+Output:
+```
+2
+```
+]
+---
+
+If you wish to try to solve and submit some of the last problems, take a look at:
+
+- [Integer list](https://open.kattis.com/problems/integerlists)
+- [Backspace](https://open.kattis.com/problems/backspace)
+- [Synchronizing lists](https://open.kattis.com/problems/synchronizinglists)
+- [Room painting](https://open.kattis.com/problems/roompainting)
+
+
 
 ---
 
@@ -152,6 +391,8 @@ The code that can evaluate such expressions has to:
 - find and evaluate all subexpressions that are surrounded by parenthesis;
 - for each operator figure out what its operands are; this involves determining
 precedence of operators (i.e. knowing the order of operations)
+
+--
 
 It turns out that it is much simpler to write code for evaluation of arithmetic
 expressions when they are written in a format that lets us ignore parenthesis
@@ -208,46 +449,6 @@ return top of stack as result
 __Problem__
 
 Write your own program to evaluate prefix expressions.
-
----
-
-## Josephus Problem
-
-A simply counting out game that children play goes as follows:
-
-.small[
-
-- a number is picked, call it K
-- a direction is picked: right or left
-- a child that starts is picked
-
-- all children are in a circle and as long as there are more than 1 children in the game
-they keep playing
-  - the first child counts 1
-  - the next child (to the right or left based on the direction) counts 2
-  - the next child counts 3
-  - ...
-  - the next child counts K and is removed from the game
-  - the next child counts 1
-  - ...
-  - the next child counts K and is removed from the game
-  - ...
-
-- the one remaining child wins the game
-]
-
-(The real Josephus problem is much more gruesome.)
-
---
-
-#### Problem
-Write a program that simulates this game. Given a number of children, the value
-of K and the direction, the program should determine the winner (or rather the
-position of the child that will will, assuming that child at position 0 starts
-the game).
-
-
-
 
 
 
