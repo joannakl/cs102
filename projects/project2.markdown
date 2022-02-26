@@ -189,9 +189,7 @@ total number of foreign born population in all the places of origin whose name c
 	PLACE2  NUM2
 	...
 	```
-	in which the `PLACE1`, `PLACE2`, ... all contain the keyword `ORIGIN` and `NUM1`,`NUM2`, ... are the corresponding counts. The order of the
-	places should be from the one with largest count to the smallest count. Any
-	ties should be resolved based on the place names (in alphabetical order).
+	in which the `PLACE1`, `PLACE2`, ... all contain the keyword `ORIGIN` and `NUM1`,`NUM2`, ... are the corresponding counts (all matching values including zero counts should be displayed). The order of the places does not matter.
 
 
 - In the third case, `REGION all`, the program should display the list of all the places of origin and the population counts from them that are associated with the
