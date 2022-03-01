@@ -68,7 +68,7 @@ and smaller version of itself and then finally solve a trivial problem.
 - The step of reducing the problem is called a __recursive call__.
 
 - When caller receives the result of the recursive call from the callee, it uses
-that result to calculate its own _response_ (usually be performing some simple
+that result to calculate its own _response_ (usually by performing some simple
 operation).
   - __caller__ is the function instance that makes the recursive call
   - __callee__ is the function instance that is called by the caller
@@ -408,6 +408,21 @@ String reverseRec ( String str) {
 .right-column2-small[
 Not any more.
 ]
+
+
+---
+
+
+template:breakout
+
+## Other Algorithms for Reversing a String
+
+Can you think of other recursive algorithms for reversing the string?
+
+What makes an algorithm for the same problem different:
+- different base case
+- different recursive case
+- same result
 
 ---
 
@@ -1107,7 +1122,7 @@ template:breakout
 
 ## Generate All Binary Sequence of Length `n`
 
-In your group come up with a recursive algorithm for generating
+In a small group come up with a recursive algorithm for generating
 all binary sequences of a given length.
 
 For example, if `n=3`, all binary sequences of length `3` are
