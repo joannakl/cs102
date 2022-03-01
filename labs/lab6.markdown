@@ -13,9 +13,11 @@ November 4
 __submission mode:__ group
 
 </div>
+-->
+
 
 <main markdown="1" class="lab">
--->
+
 
 ## Magic Of Recursion
 
@@ -213,7 +215,7 @@ Investigate the two functions listed in the example and answer the questions
 
 
 
-### Part 3 
+### Part 3
 
 These are problems that should be solved recursively, but with slightly more
 sophisticated recursion than in the first set of problems. Many of them require
@@ -242,25 +244,3 @@ them for practice on your own.
 
 
 </main>
-
-<script src="{{ site.baseurl }}/slides/js/image_slides.js"></script>
-
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_HTML&delayStartupUntil=configured" type="text/javascript"></script>
-<script type="text/javascript">
-  // var slideshow = remark.create();
-
-  // Setup MathJax
-  MathJax.Hub.Config({
-      tex2jax: {
-      skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
-        inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-        displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-        processEscapes: true
-      }
-  });
-
-  MathJax.Hub.Configured();
-</script>
