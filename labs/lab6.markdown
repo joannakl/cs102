@@ -177,6 +177,9 @@ There are many more problems in Recursion 1 section
 for extra practice.
 
 
+To get _progress and participation_ credit for this lab, take a screenshot of one or more of your submitted problems showing the test results and submit the screenshot(s) to Gradescope under Lab 6.
+
+
 
 ### Part 2
 
