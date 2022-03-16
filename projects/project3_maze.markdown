@@ -5,7 +5,7 @@ title: Project 3
 
 <div class="lab-right" markdown="1">
 __Project 3__ <br>
-__due date:__ March 30 at 11:59pm
+__due date:__ April 3 at 11:59pm
 
 __submission mode:__ individual
 
