@@ -15,22 +15,10 @@ __submission mode:__ group
 -->
 <main markdown="1" class="lab">
 
-
-## Binary (Search) Trees
-
-### Problem 1
-
-Use `lab9 IntBST` workspace on Ed. Complete the four missing functions. Submit your final code to Gradescope to see if your implementation
-passes all the tests.
-
-Remember to remove any debugging print statements before submitting.
-
----
-
-(There is nothing to submit for the remaining problems in this lab.)
+## Binary Trees and Binary Search Trees
 
 
-### Problem 2
+
 
 ![a tree](img/Binary_search_tree.png)
 
@@ -41,7 +29,7 @@ Remember to remove any debugging print statements before submitting.
 - Recall the iterative algorithm for calculating the size of a binary tree that we discussed in class.
 What is the largest number of elements in the stack when the algorithm is applied to the above tree?
 
-### Problem 3
+---
 
 ![a tree](img/bst.png)
 
@@ -52,9 +40,7 @@ Provide your answer as a sequence of uppercase letters with nothing in between t
 - Specify the __postorder__ traversal of the above tree.
 Provide your answer as a sequence of uppercase letters with nothing in between them so them.
 
-
-### Problem 4
-
+---
 
 You are told that the preorder and postorder traversals of a given tree are as follows:
 
@@ -64,64 +50,38 @@ postorder: C E D B H G I F A
 
 Construct a tree for which this is the case.
 
+---
 
-### Problem 5
+In a binary search tree the values stored in a left subtree of a node have values smaller than it, and the values store in a right subtree of a node have values larger than it.
+This has to be true for every node in the tree.
 
-
-
-![a tree](img/bst2.png)
-
-Starting with the binary search tree shown above, show what the tree will look like after each of the following operations. Assume that the remove method uses the __successor__ when applicable. For each step modify the original tree (not the tree from the step before).
-
-- add 21
-- add 8
-- add 30
-- remove 7
-- remove 55
-- remove 39
+This is an example of a binary search tree:
 
 
-### Problem 6
+![a tree](img/bst1.png)
+
+- Consider trying to search for a value in a binary search tree.
+What algorithm would you follow to avoid having to visit every single node in a tree?
+<br>
+Provide pseudocode as your answer.
 
 
-Use the following tree to answer questions below
-
-![a tree](img/bst3.png)
-
-
-- Which of the following specifies its preorder traversal?
-
-    - Q K T D M R Y B J P W N
-    - Q K D M B J P N T R Y W
-    - Q K D B J M P N T R Y W
-    - B D J K M N P Q R T W Y
-    - N B J P W D M R Y K T Q
-    - B J D N P M K R W Y T Q
-    - Y W T R Q P N M K D J B
-    - Q T Y W R K M P N D J B
+- (There may not be a right answer here, so go with your instinct as an aspiring computer scientist.)
+  - If we were to add a new node with value 35 to the above tree, where would you attach it?
+  - If we were to add a new node with value 70 to the above tree, where would you attach it?
+  - If we were to add a new node with value 8 to the above tree, where would you attach it?
 
 
-- Which of the following specifies its postorder traversal?
 
-    - Q K T D M R Y B J P W N
-    - Q K D M B J P N T R Y W
-    - Q K D B J M P N T R Y W
-    - B D J K M N P Q R T W Y
-    - N B J P W D M R Y K T Q
-    - B J D N P M K R W Y T Q
-    - Y W T R Q P N M K D J B
-    - Q T Y W R K M P N D J B
 
-- Which of the following specifies its inorder traversal?
 
-    - Q K T D M R Y B J P W N
-    - Q K D M B J P N T R Y W
-    - Q K D B J M P N T R Y W
-    - B D J K M N P Q R T W Y
-    - N B J P W D M R Y K T Q
-    - B J D N P M K R W Y T Q
-    - Y W T R Q P N M K D J B
-    - Q T Y W R K M P N D J B
+
+
+
+
+
+
+
 
 
 
