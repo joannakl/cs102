@@ -18,7 +18,7 @@ __submission mode:__ group
 ## Binary Trees and Binary Search Trees
 
 
-
+### Part 1
 
 ![a tree](img/Binary_search_tree.png)
 
@@ -29,7 +29,7 @@ __submission mode:__ group
 - Recall the iterative algorithm for calculating the size of a binary tree that we discussed in class.
 What is the largest number of elements in the stack when the algorithm is applied to the above tree?
 
----
+### Part 2
 
 ![a tree](img/bst.png)
 
@@ -40,7 +40,7 @@ Provide your answer as a sequence of uppercase letters with nothing in between t
 - Specify the __postorder__ traversal of the above tree.
 Provide your answer as a sequence of uppercase letters with nothing in between them so them.
 
----
+### Part 3
 
 You are told that the preorder and postorder traversals of a given tree are as follows:
 
@@ -50,7 +50,7 @@ postorder: C E D B H G I F A
 
 Construct a tree for which this is the case.
 
----
+### Part 4
 
 In a binary search tree the values stored in a left subtree of a node have values smaller than it, and the values store in a right subtree of a node have values larger than it.
 This has to be true for every node in the tree.
@@ -70,6 +70,11 @@ Provide pseudocode as your answer.
   - If we were to add a new node with value 35 to the above tree, where would you attach it?
   - If we were to add a new node with value 70 to the above tree, where would you attach it?
   - If we were to add a new node with value 8 to the above tree, where would you attach it?
+  - If we were to add a new node with value 8 to the above tree, where would you attach it?
+  - Working with the original tree, what would the tree look like if we removed the value 32 from it.
+  - Working with the original tree, what would the tree look like if we removed the value 55 from it.
+  - Working with the original tree, what would the tree look like if we removed the value 25 from it.
+
 
 
 
