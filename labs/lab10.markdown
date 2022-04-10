@@ -124,6 +124,20 @@ Use the following tree to answer questions below
 
 
 
+### Problem 7
+
+
+Use the following tree to answer questions below
+
+![a tree](img/bst3.png)
+
+- Redraw the tree after `remove(M)` is called. Use the predecessor, if applicable.
+- Redraw the tree after `remove(K)` is called. Use the predecessor, if applicable. Start wit the original tree.
+- Redraw the tree after `remove(K)` is called. Use the successor, if applicable. Start wit the original tree.
+- Is the tree an AVL tree? If not, which nodes are not in balance?
+- Assume that we remove the node with value 'N'. Is the resulting tree an AVL tree? If not, which nodes are not in balance?
+- Assume that we remove the node with value 'Q' using the predecessor rule when applicable. Is the resulting tree an AVL tree? If not, which nodes are not in balance?
+
 
 
 </main>
