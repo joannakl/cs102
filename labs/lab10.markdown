@@ -20,8 +20,7 @@ __submission mode:__ group
 
 ### Problem 1
 
-Use `lab9 IntBST` workspace on Ed. Complete the four missing functions. Submit your final code to Gradescope to see if your implementation
-passes all the tests.
+Use `lab10 IntBST` workspace on Ed. Complete the four missing functions. Submit your final code to Gradescope to see if your implementation passes all the tests.
 
 Remember to remove any debugging print statements before submitting.
 
