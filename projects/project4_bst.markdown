@@ -49,7 +49,7 @@ The goal of this programming project is for you to master (or at least get pract
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
-The specification for this class is provided at [its javadoc page](http://127.0.0.1:4000/cs102/projects/project4/project4/BST.html).
+The specification for this class is provided at [its javadoc page](projects/project4/project4/BST.html).
 You can use the source code that we wrote in class, but keep in mind that the class that you are implementing requires additional
 functionality and you may need to rewrite some of the methods that were created in class.
 
