@@ -338,10 +338,10 @@ implements Iterable&lt;E&gt;, Cloneable</pre>
 </tr>
 <tr id="i25" class="rowColor">
 <td class="colFirst"><code>String</code></td>
-<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toStringAllMaxPaths(int)">toStringAllMaxPaths</a></span>&#8203;(int&nbsp;level)</code></th>
+<th class="colSecond" scope="row"><code><span class="memberNameLink"><a href="#toStringAllMaxPaths()">toStringAllMaxPaths</a></span>&#8203;(int&nbsp;level)</code></th>
 <td class="colLast">
 <div class="block">Produces a string representation of this tree that contains, one per line, every path from the root
- of this tree to a leaf node in the tree whose length is maximal (i.e., whose length matches the height of the tree.</div>
+ of this tree to a leaf node in the tree whose length is maximal (i.e., whose length matches the height of the tree).</div>
 </td>
 </tr>
 <tr id="i26" class="altColor">
@@ -996,15 +996,15 @@ implements Iterable&lt;E&gt;, Cloneable</pre>
 </dl>
 </li>
 </ul>
-<a id="toStringAllMaxPaths(int)">
+<a id="toStringAllMaxPaths( )">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>toStringAllMaxPaths</h4>
-<pre class="methodSignature">public&nbsp;String&nbsp;toStringAllMaxPaths&#8203;(int&nbsp;level)</pre>
+<pre class="methodSignature">public&nbsp;String&nbsp;toStringAllMaxPaths&#8203;()</pre>
 <div class="block">Produces a string representation of this tree that contains, one per line, every path from the root
- of this tree to a leaf node in the tree whose length is maximal (i.e., whose length matches the height of the tree.
+ of this tree to a leaf node in the tree whose length is maximal (i.e., whose length matches the height of the tree).
  The order of the paths should be from
  left to right. In each path, the values in the nodes should be separated by a comma and a single space.
 
@@ -1031,8 +1031,10 @@ implements Iterable&lt;E&gt;, Cloneable</pre>
 
  And, the following multi-line string
 
+<pre>
  K, P, M, O, N
  K, P, R, S, T
+</pre>
 
  is a string representation of this tree:
 
