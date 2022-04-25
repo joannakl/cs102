@@ -48,8 +48,15 @@ In a min binary heap with N elements, what is the range of indices in which the 
 
 Which of the arrays represents a binary heap?
 
-<img src="img/binary_heap.png" alt="binary heap (missing image) " width="500px" />
+<pre>
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
+[10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+
+[10, 9, 5, 8, 3, 4, 2, 7, 8, 1, 2, 6 ]
+
+[3, 9, 7, 10, 12, 8, 9, 6, 7, 15, 17]
+</pre>
 
 #### Problem 6
 
