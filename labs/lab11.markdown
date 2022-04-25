@@ -34,37 +34,24 @@ If you pass all the tests, try to work on other binary search tree related probl
 
 #### Problem 2
 
-![a tree](img/AVL1.png)
-
-Starting with the AVL tree shown below, show what the tree will look like after each of the following operations. Assume that the remove method uses the successor when applicable. __For each step modify the tree that results from the previous step (NOT the original tree)__.
-
-- add 31
-- add 8
-- add 30
-- remove 17
-- remove 7
-- remove 39
+Assume that the array representing a min binary heap contains the values 2, 8, 3, 10, 16, 7, 18, 13, 15. Show the contents of the array after inserting the value 4. Show the tree representation of this heap.
 
 #### Problem 3
 
-Assume that the array representing a min binary heap contains the values 2, 8, 3, 10, 16, 7, 18, 13, 15. Show the contents of the array after inserting the value 4. Show the tree representation of this heap.
+Assume that the array representing a min binary heap contains the values 2, 8, 3, 10, 16, 7, 18, 13, 15. Show the contents of the array after deleting the minimum element. Show the tree representation of this heap.
 
 #### Problem 4
 
-Assume that the array representing a min binary heap contains the values 2, 8, 3, 10, 16, 7, 18, 13, 15. Show the contents of the array after deleting the minimum element. Show the tree representation of this heap.
+In a min binary heap with N elements, what is the range of indices in which the largest element should be located?
 
 #### Problem 5
 
-In a min binary heap with N elements, what is the range of indices in which the largest element should be located?
-
-#### Problem 6
-
 Which of the arrays represents a binary heap?
 
-<img src="img/binary_heap.png" alt="binary heap ? " width="500px" />
+<img src="img/binary_heap.png" alt="binary heap (missing image) " width="500px" />
 
 
-#### Problem 7
+#### Problem 6
 
 Consider the `PriorityQueue.java` file from Java API. This class provides an implementation of a priority queue (very much like the one we discussed in class).
 There is a `heapify()` method in that class that is used to establish the heap properties for the data stored in the underlying array.
@@ -81,24 +68,6 @@ Answer the following questions after studying the `heapify()` method and some ot
 
   Show the content of the array after each iteration of the for loop in the  `heapify()`  method.
   Assume that the elements are of type `Integer` and therefore implement `Comparable<Integer>` interface which is used to determine the relationship between elements (this means you can assume that `comparator == null` is always true.
-
-
-
-#### Problem 8: Estimate running time  (extra challenge)
-You need to find 1000 most expensive items from an unsorted price list containing $10^7$ different items. Two schemes of solution are as follows.
-- Scheme A: repeat 1000 times the sequential search (with the linear complexity O(n) ).
-- Scheme B: convert the list into an array (the complexity O(n) ), then sort the array (complexity O(nlogn)) and fetch 1000 top items.
-
-Which scheme is faster?
-
-You run some preliminary experiments  and determined that:
-- searching in an unsorted array of 100 items takes on average 0.1 millisecond (ms)
-- creating an array out of 100 items takes on average 0.1 millisecond (ms)
-- sorting of 100 items takes on average 0.2 millisecond (ms)
-time for fetching data from the consecutive indexes of the array is so small that it can be ignored
-
-Explain how you can use that information to estimate the actual running time expected by each of the two schemes and determine which of the two schemes is faster.
-
 
 
 
