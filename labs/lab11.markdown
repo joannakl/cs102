@@ -28,7 +28,7 @@ Write your code on your computer or in an Ed workspace shared by your group memb
 
 HINT: you should use [`TreeSet<E>`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/TreeSet.html) class in this problem. It implements a balanced binary search tree that does not allow duplicates.
 
-Once you finish your code, submit it on the website to be tested. Take a screenshot of the test results and submit it for this problem on Gradescope. It will be challenging to pass all the tests, but you should be able to pass at least the first five or six of them. You should submit a screenshot with the results even if you pass only small portion of the tests.
+Once you finish your code, submit it on the website to be tested. Take a screenshot of the test results and submit it for this problem on Gradescope. It will be challenging to pass all the tests, but you should be able to pass at least the first few. You should submit a screenshot with the results even if you pass only small portion of the tests.
 
 If you pass all the tests, try to work on other binary search tree related problems on Hackerearth.
 
