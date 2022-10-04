@@ -5,7 +5,7 @@ title: Project 2
 
 <div class="lab-right" markdown="1">
 __Project 2__ <br>
-__due date:__ March 4
+__due date:__ October 20 at 11:59pm.
 
 __submission mode:__ individual
 
@@ -13,16 +13,16 @@ __submission mode:__ individual
 
 <main markdown="1" class="lab">
 
-## Project 2: Census 1900 - Immigrant Data
+## Project 2: Trees on NYC Streets
 
 <hr>
 
 <div class="emph" markdown=1>
 You may discuss any of the assignments with your classmates and tutors (or anyone else) but <span class="red"> all work for all assignments must be
 entirely your own</span>. Any sharing or copying of assignments will be considered cheating (this includes posting of partial or complete
-solutions on Ed, GitHub, Discord, Groupme, ... or any other public or private forum). If you get significant help from anyone, you should acknowledge it in
+solutions on Ed, GitHub, Discord, Groupme, ... or any other public or private forum). If you get significant help from anyone or anything, you should acknowledge it in
 your submission (and your grade will be proportional to the part that you completed on your own). You are responsible for
-every line in your program: you need to know what it does and why. You should not use any data structures and Regions of Java
+every line in your program: you need to know what it does and why. You should not use any data structures and concepts of Java
 that have not been covered in class (or the prerequisite class). If you have doubts whether or not you are allowed to use certain
 structures, just ask your instructor.
 </div>
@@ -34,18 +34,16 @@ structures, just ask your instructor.
 
 
 
-<a title="Census 1900 - Immigrant Data" href="https://www2.census.gov/library/publications/decennial/1900/volume-1/volume-1-p13.pdf"><img width="400" alt="Census 1900 - Immigrant Data, Ttitle Page" src="img/1900Census.png" style="float:right; margin:10px"></a>
+<a title="Silver Linden in front of 38 East 8th Street" href="https://tree-map.nycgovparks.org/tree-map/tree/4612695"><img width="600" alt="Silver Linden in front of 38 East 8th Street" src="img/NYCStreetTrees.png" style="float:right; margin:10px"></a>
 
 
 
 In this project you will be working with open data. Wikipedia has a good description of open data: "Open data is the idea that some data
 should be freely available to everyone to use and republish as they wish, without restrictions from copyright, patents or other mechanisms of control."
 
-You will be working with a specific data set from the <a href="https://www.census.gov/">United States Census Bureau</a>. The data set selected for this project is from Table 33 of the Twelfth Census of the United States, completed in 1900. It provides information about country of birth for non-US born US residents at the time that the census was completed.
+You will be working with a specific data set from the <a href="https://www.nycgovparks.org/trees/treescount">New York City Department of Parks</a>: The 2015 Street Tree Census was conducted by volunteers and staff organized by NYC Parks & Recreation and partner organizations. Tree data collected includes tree species, diameter and perception of health. Your project will provide a way for the user
+to interact with this data set (or its subset, or a dataset similar to it).
 
-The original PDF version of this data can be found here, provided by the U.S. Census Bureau. In this project, you will be working with a transcription of the PDF that is provided in CSV (comma separated values) format. This transcription was made available by <a href="https://data.stacker.com/">Stacker</a> project. The file can be downloaded from their <a href="https://github.com/stacker-media/data/tree/main/1900-census-immigrant-state">GitHub repository</a>. (If you prefer, you also access a copy of the CSV file on Brightspace).
-
-Your program will explore this data set and allow the user to make queries about it.
 <br/><br/>
 
 The goal of this programming project is for you to master (or at least
@@ -55,7 +53,7 @@ get practice on) the following tasks:
 - reading data from input files
 - using and understanding command line arguments
 - working with large data sets
-- using the `ArrayList` class
+- using and implementing different types of list data structure
 - writing classes
 - working with existing code
 - extending existing classes (inheritance)
@@ -73,31 +71,40 @@ debugging always takes time even if you are the most confident and skilled progr
 
 
 <div class="wrap-collabsible">
-<input id="Census 1900 - Immigrant Data" class="toggle" type="checkbox"  checked=true >
-<label for="Census 1900 - Immigrant Data" class="lbl-toggle"> Census 1900 - Immigrant Data</label>
+<input id="2015 Street Tree Census" class="toggle" type="checkbox"  checked=true >
+<label for="2015 Street Tree Census" class="lbl-toggle">2015 Street Tree Census</label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
 Your program should work with a local copy of a file whose format matches that of the file that you can download from
 the website. This file is a comma separated values (CSV) file. CSV files are just text files. Your program can open them and read them as simple text.
-Each line in a CSV file constitutes a data point (well, except for heading lines and all the other description lines at the top). The _columns_ in each entry are separated by commas (hence the name of the file format).
+Each line in a CSV file constitutes a data point (well, except for the heading line). The _columns_ in each entry are separated by commas (hence the name of the file format).
 
-Here is an example row for New York State:
+Here is an example row for the Littleleaf Linden tree at 36 East 8th Street (pictured above):
 ```
 
-New York,1900425,473,1744,461,706,78491,1787,16347,90336,27199,1016,6880,2195,8746,135685,286,4048,20008,480020,1573,9414,37168,408,425553,182248,302,75,353,12601,118,9696,19701,37317,2018,362,10549,165610,33862,1130,1614,42708,13678,1915,7304,4241,339,1001
+30371,101746,06/22/2015,7,0,OnCurb,Alive,Good,Tilia cordata,littleleaf linden,None,None,NoDamage,Volunteer,Stones,Yes,No,No,No,No,No,No,No,No,36 EAST 8 STREET,10003,New York,102,1,Manhattan,1,66,27,MN23,West Village,1005900,New York,40.731287,-73.99424612,985844.6917,205704.1999,1,59,1008834,1005480012
 
 ```
 (Note that due to the length of the line, the last columns may not be visible in the above display.)
 
 <br/>
 
-The README.md file in the <a href="https://github.com/stacker-media/data/tree/main/1900-census-immigrant-state">1900-census-immigrant-state repository</a> contains information about how the file is structured (i.e., what all the rows and columns represent).
+The data set that you need can be found at the <a href="https://data.cityofnewyork.us/Environment/2015-Street-Tree-Census-Tree-Data/uvpi-gqnh" alt="NYC OpenData website" target="_blank">NYC OpenData website</a>. For your convenience, you can also download the `CSV` file provided with this project. There are several different data formats available on NYC OpenData site. Your program has to work with the `CSV` format of the data.
 
-__From the point of view of this assignment, a valid data row MUST contain 48 columns. All rows that do not have that many columns should be ignored. Note that the topmost row with 48 columns
-is the header for all the rows that represent the actual data.__ You should not assume that the input file used for testing your program will have columns in exactly the same order. You also should not assume that the input file used for testing your program will contain on the US states and teritories (i.e., there could be fewer or more rows).
+<br/>
 
-You can (and should, unless you have a good reason not to) use the `CSV` class listed in the Appendix to help you with parsing the input file.
+The real data files are not perfect. You may discover that some rows are missing some values. Other rows ma
+contain invalid values in columns. For the purpose of this project, any row that contains
+the tree id and common species name is a valid row. Any rows that are missing either of these
+two values should be silently ignored by the program. Any other column values could be empty. For example this
+is a valid row:
+
+```
+
+30371,,,,,,,,Tilia cordata,littleleaf linden,,,,,,,,,,,,,,,36 EAST 8 STREET,,New York,,,,,,,,,,,,,,,,,
+
+```
 
 </div> </div></div>
 
@@ -135,7 +142,7 @@ If the program is run without any arguments, the program should display an error
 
 The error messages should be specific and informative, for example:
 
-`    Error: the file census2000.csv cannot be opened.`
+`    Error: the file census2015.csv cannot be opened.`
 
 or
 
@@ -153,91 +160,68 @@ The above error messages generated by your code should be written to the `System
 <div class="content-inner" markdown=1>
 
 
-The program should run in a loop that allows the user to issue different queries.
-The types of queries are:
-
-- `REGION total`
-- `REGION from ORIGIN`
-- `REGION all`
-
-
-In the above, the words in uppercase indicate keywords that will be replaced by
-actual values:
-`REGION` is the name of the US State or territory displayed in the first column of data rows, and `ORIGIN` is a country or place of origin of the person counted (listed in the headings for the data rows).
-
-In all cases the match for `REGION` should be exact but not case sensitive. For example, `New york` should match the
-row for `New York`, but `newyork`, `ny` or `New York State` should not.
-The columns matching `ORIGIN` should be all the columns that contain names of
-places of origin whose names contain the keyword `ORIGIN` in them. This match should not be case sensitive.
-For example, if the `ORIGIN` is `poland`, the data from all the columns with headings `Poland (Austrian)`, `Poland (German)`, `Poland (Russian)`, `Poland (unknown)` should be returned.
-
-- In the first case, `REGION total`, the program should display the
-total foreign born population in the specified `REGION`. The format of the output
-should be
-
-	```
-	REGION: total foreing born population is NUM.
-	```
-	(in which `REGION` and `NUM` are replaced with the actual values).
-
-- In the second case, `REGION from ORIGIN`, the program should display the
-total number of foreign born population in all the places of origin whose name contains the keyword `ORIGIN`. The format of the output should be
-
-	```
-	REGION: foreign born population
-	PLACE1  NUM1
-	PLACE2  NUM2
-	...
-	```
-	in which the `PLACE1`, `PLACE2`, ... all contain the keyword `ORIGIN` and `NUM1`,`NUM2`, ... are the corresponding counts (all matching values including zero counts should be displayed). The order of the places does not matter.
-
-
-- In the third case, `REGION all`, the program should display the list of all the places of origin and the population counts from them that are associated with the
-specified `REGION` and whose count is greater than zero. The format of the output should be
-
-	```
-	REGION: foreign born population
-	PLACE1  NUM1
-	PLACE2  NUM2
-	...
-	```
-	in which the `PLACE1`, `PLACE2`, ... are all places of origin with a non-zero count and `NUM1`,`NUM2`, ... are the corresponding counts. The order of the
-	places should be from the one with largest count to the smallest count. Any
-	ties should be resolved based on the place names (in alphabetical order).
-
-<br/>
+The program should run in a loop that allows the user to check popularity of different trees
+on streets os different New York City boroughs.
 
 On each iteration, the user should be prompted to enter a new query (for which
-the program computes the results) or the word 'quit'
+the program computes the results) or the word 'quit'  (any case of letters should work)
 to indicate the termination of the program.
-
-<br/>
-
 
 __The user should not be prompted for any other response.__
 
-<br/>
+A valid query consists of a string (possibly with spaces) that should be matched by
+the program against the names of trees in the input file. Both Latin names and common names should be included in the search (they are in separate columns in the data set).
+By _match_ we mean that the name entered by the user is a substring of an actual species name
+(Latin or common). This match should be case insensitive.
 
-If the query entered by the user is invalid, the program should display an error message:
+In response to a valid query for which at least one match is found, the program should print the list of all the different species matching the name (without repeats in alphabetical order) and then print the information regarding
+the counts of all trees with those species names for the entire NYC and for each borough individually. For example:
 
-`    This is not a valid query. Try again. `
+```
+Enter the tree species to learn more about it ("quit" to stop):
+linden
+All matching species:
+  american linden
+  littleleaf linden
+  silver linden
 
-and allow the user to provide an alternative query.
+Popularity in the city:
+  NYC:           51,267(683,788)    7.50%
+  Manhattan:       5,457(65,423)    8.34%
+  Bronx:           6,719(85,203)    7.89%
+  Brooklyn:      15,299(177,293)    8.63%
+  Queens:        20,817(250,551)    8.31%
+  Staten Island:  2,975(105,318)    2.82%
 
-If the query entered by the user does not return any results,  the program should print
+Enter the tree species to learn more about it ("quit" to stop):
+quit
+```
+
+For each location:
+- the first value is the total number of the three different types of linden trees in that borough;
+- the number in parenthesis is the total number of trees in that borough;
+- the last column contains the percentage calculated as the
+total number of lindens divided by the total number of trees times 100.
+
+The program has to produce the output formatted in aligned columns, with commas grouping the tree digits in larger numbers and with two digits
+after the decimal point in the last column. This is a perfect place to use `String.format()` or `System.out.printf()` functions. If you never used either of these functions, make sure to
+ask about them to avoid doing extra work.
+
+
+If the name entered by the user cannot be matched to any tree in the list of trees stored in the dataset, the program should print
 a message
 
-`    No matches found. Try again. `
+`   Tere are no records of TREE_NAME on NYC streets `
 
-and allow the user to provide an alternative query.
+(in which `TREE_NAME` is replaced by the name that the user entered) and continue into the next iteration.
 
-<br>
+<br/>
 
 All output from the user interaction should be printed to the standard output stream (`System.out`), even the above error messages.
 
 <br/>
 
-__Sample user interaction is shown in the Appendix.__
+__More sample user interactions are shown in the Appendix.__
 
 
 </div> </div></div>
@@ -248,107 +232,164 @@ __Sample user interaction is shown in the Appendix.__
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
-You need to provide an implementation of several classes that store the data and
+
+
+
+Your need to provide an implementation of several classes that store the data and
 compute the results when the program is executed.
 
 In particular, your program must implement and use the following classes.
 You may implement additional classes and additional methods in the required classes, if you wish.
 
-#### <code class="code_title">Origin</code> class
-
-This class should represent a place of origin and the associated count for a particular place region.
-
-- This class should provide a two parameter constructor that validates and sets the name of the place of origin and the count.
-
-	`public Origin( String originName, int count)`
-
-	The `originName` cannot be `null` or an empty string, and the `count` should not be negative.
-	If this constructor is called with invalid arguments,  it should throw an instance of the `IllegalArgumentException`  with an appropriate message.
-
-- The class should provide accessor methods for the name and the count:
-	- `public String getOriginName()`
-	- `public int getCount()`
-
-- The class should implement `Comparable<Origin>`  interface. Two `Origin` objects should be compared based on their count (with the one having a smaller count being considered _smaller_). If their counts are equal, the comparison should be done based on the alphabetical ordering of the names.
-
-- The class should override the `equals` method from the `Object` class. Two `Origin` objects
-	are the same if their names and counts are the same.
-
-- The class should override the `toString` method from the `Object` class. It should
-	return a  `String` matching the following pattern:
-
-	```
-	PLACE NUM
-	```
-	(where `PLACE` is the name and `NUM` is the count associated with the given `Origin` object).
+__As you are working on your classes, keep in mind that they should be (and will be) tested separately from the rest of your program.__
 
 
-#### <code class="code_title">Region</code> class
 
-This class should represent a particular US state or territory. It should store the information about the name of the region and about the list of all the counts of foreign born residents and their places of origin (i.e., it should keep a list of all the `Origin` objects associated with the given region).
+#### <code class="code_title">TreeSpecies</code> class
 
-- This class should provide a one parameter constructor that validates and sets the name, class and location of the place.
+This class should represent a single tree species that has both the common name and the Latin name of the species.
 
-	`public Region (String name)`
+The class should provide a two parameter constructor
 
-	Any non-empty string is a valid `name`. If this constructor
-	is called with a `null` or an empty `name`, it should throw an instance of `IllegalArgumentException`  with an appropriate message.
+`    public TreeSpecies ( String commonName, String latinName)`
 
-	There should be no default constructor.
+Both names are, possibly empty, strings. They cannot be `null`. If this constructor is called with a `null` argument, it should throw and instance
+of `IllegalArgumentException` with an appropriate error message.
 
-- This class should provide a method to add an `Origin` object to the list of
-places of origin associated with it.
-
-	`public boolean add(Origin origin)`
-
-	If a method is called with `null` argument, it should throw an instance
-	of `IllegalArgumentException` with an appropriate message.
-	If the `origin`'s name is equal (case insensitive match) to one of the already existing place of origin names, then this object should not be added to the list and the method should return `false`.
-	If `origin` is added to the list, the method should return `true`.
-
-- The class should provide a method that retrieves a list of `Origin` objects based on the provided keyword.
-
-	`public ArrayList<Origin> getByName( String keyword )`
-
-	If a method is called with `null` argument or an empty string, it should throw
-an instance of `IllegalArgumentException`. The method should return a list of all `Origin` objects associated with this `Region` object whose names contain `keyword` as a substring or `null` if there are no matching `Origin` objects.
+<br/>
+The class should override the `equals` method. Two `TreeSpecies` objects
+are equal if both the names are the same. The comparison should be case insensitive.
 
 
-- The class should override the `equals` method from the `Object` class. Two `Region` objects
-	are the same if they have identical names. The match should be case insensitive.
+#### <code class="code_title">Tree</code> class
 
-- The class should override the `toString` method from the `Object` class. It should
-	return a multi-line `String` matching the following pattern
+The `Tree` class stores information about a particular tree that grows in New York City. The class should store only
+a subset of the entries from the input file, namely:
 
-	```
-	REGION: foreign born population
-	PLACE1  NUM1
-	PLACE2  NUM2
-	...
-	```
-	(in which the `PLACE1`, `PLACE2`, ... are all places of origin with a non-zero count and `NUM1`,`NUM2`, ... are the corresponding counts). The order of the
-	places should be from the one with largest count to the smallest count. Any
-	ties should be resolved based on the place names (in alphabetical order).
-
-
-#### <code class="code_title">RegionList</code> class
-The `RegionList` class should be used to store all the `Region` objects.
-This class should inherit from the `ArrayList<Region>` class.
-
-- The class needs to provide a default constructor that creates an empty `RegionList` object.
-
-In addition, the class should implement the following method:
-
-- `public Region getByName ( String keyword )  `
-
-	If a method is called with `null` argument or an empty string, it should throw
-	an instance of `IllegalArgumentException`.
-	This method should return a  `Region` object whose name matches the
-  `keyword`. The keyword comparison should be done in a case insensitive way. If there is no match, the method should return `null`.
+- tree_id as a non-negative integer
+- status as a string, valid values: "Alive", "Dead", "Stump", or empty string or `null`
+- health as a string, valid values: "Good", "Fair", "Poor", or empty string or `null`
+- spc_latin (Latin name) as a, possibly empty, string, cannot be `null`
+- spc_common (common name) as a, possibly empty, string, cannot be `null`
+- zipcode as a positive five digit integer (This means that any number from 0 to 99999 is acceptable. The values that are shorter should be
+ treated as if they had leading zeroes, i.e., 8608 represents zipcode 08608, 98 represents zip code 00098, etc.)
+- boroname as a string, valid values: "Manhattan", "Bronx", "Brooklyn", "Queens", "Staten Island"
+- x_sp as a double
+- y_sp as a double
 
 
-#### <code class="code_title">Census1900ImmigrationData</code> class
-The `Census1900ImmigrationData` class is the actual program. This is the class that should contain the `main` method.
+All of the string data fields should be case insensitive - i.e., "Alive", "alive", "ALIVE" and "aLIVe" are all valid values
+for the status data field.
+
+Note that some of these data fields may not be needed in this project, but the code has to provide them and
+the data for them has to be stored.
+
+<br/>
+
+This class should provide a two parameter constructor:
+
+`    public Tree (int treeID, TreeSpecies species ) `
+
+The `treeID` should be a non-negative integer and the `species` should not be `null`.
+If the constructor is called with invalid arguments, then an instance of `IllegalArgumentException` should be thrown
+carrying an appropriate error message.
+
+There should be no default constructor. (A default constructor is one that can be used without passing any arguments.)
+
+<br/>
+
+The class should provide getters and setters for all other required
+data fields. The parameters for all setters should be validated according to the
+rules specified above. If a setter is called with invalid arguments, then an instance of `IllegalArgumentException` should be thrown
+carrying an appropriate error message.
+
+<br/>
+
+This class should override the `equals` methods (see the documentation for the `Object` class for details).
+The two `Tree` objects should be considered equal if their id's and both, Latin and common, species names are the same. The other values should not be considered in the equality. The name comparison should be case insensitive.
+
+<br/>
+
+This class should implement `Comparable<Tree>` interface.
+The comparison should be done by the common species name as the primary key (using alphabetical order), and by the tree id
+as the secondary key (i.e., when two objects that have the same species name are compared, the comparison should be performed by  the id).
+The comparison method should be case insensitive (i.e., two `Tree` objects with the species name stored as "Baldcypress" and "BaldCypress"
+should be compared by their id's since their names are the same).
+
+<br/>
+
+The class should override the `toString` method. The details are up to you, but you should make sure that it returns a `String` object
+that is a meaningful representation of the object on which it is called.
+
+#### <code class="code_title">TreeSpeciesList</code> class
+
+The `TreeSpeciesList` class should be used to store all the unique `TreeSpecies` objects.
+This class should inherit from the `ArrayList<TreeSpecies>` class. (Some of you may realize that a `HashTable` would probably be a better choice here. For the purpose
+of this project, you should NOT use the `HashTable` or any other hashing data structure).
+<br/>
+
+The class needs to provide a default constructor that creates an empty `TreeSpeciesList` object.
+
+<br/>
+In addition, the class should implement the following methods:
+
+- `public TreeSpeciesList getByCommonName (String keyword)`
+returns a list of species whose common name contains `keyword` as a substring.
+The method should be case insensitive. It should throw and instance of `IllegalArgumentException` exception if called with `null` argument. It should
+return `null` if there are no `TreeSpecies` objects matching the `keyword`.
+
+
+- `public TreeSpeciesList getByLatinName (String keyword)`
+returns a list of species whose Latin name contains `keyword` as a substring.
+The method should be case insensitive. It should throw and instance of `IllegalArgumentException` exception if called with `null` argument. It should
+return `null` if there are no `TreeSpecies` objects matching the `keyword`.
+
+
+
+#### <code class="code_title">TreeList</code> class
+
+The `TreeList` class should be used to store all the `Tree` objects.
+
+This class should be a simple version of a linked list. By _simple_ we mean that
+you do not need to provide all the methods to make it a linked list, but
+the connectivity between elements should be done based on the linked list structure.
+(This is not a generic class. You will need to have an internal `Node` class
+that stores a `Tree` object as data and a reference to the next node. You will need to keep track of the `head` and, possibly `tail` references. )
+
+The class needs to provide the default constructor that creates an empty list.
+
+`    public TreeList ( ) `
+
+The class should implement
+- `    public void add(Tree tree)`
+  method that adds a given `tree` object to the current list; this method should
+throw an instance of `IllegalArgumentException` if the specified reference is `null`
+- `    public int getTotalNumberOfTrees()`
+  method that returns the total number of `Tree` objects stored in this list.
+- `    public int getCountByCommonName ( String speciesName ) `
+  method that returns the number of `Tree`  objects in the list whose common name is the same as the given `speciesName`.
+  This method should be case insensitive. If the method is called with a non-existent species, the return value should be 0.
+- `    public int getCountByLatinName ( String speciesName ) `
+  method that returns the number of `Tree`  objects in the list whose Latin name is the same as the given `speciesName`.
+  This method should be case insensitive. If the method is called with a non-existent species, the return value should be 0.
+- `    public int getCountByBorough ( String boroName ) `
+  method that returns the number of `Tree` objects in the list that are located in the borough equal to `boroName`. This method should be case insensitive.
+  If the method is called with a non-existent borough name, the return value should be 0.
+- `    public int getCountByCommonNameBorough ( String speciesName, String boroName ) `
+  method that returns the number of `Tree` objects in the list whose common name is the same as the given `speciesName` and  which are located in the borough `boroName`. This method should be case insensitive.
+  If the method is called with a non-existent borough name or species, the return value should be 0.
+- `    public int getCountByLatinNameBorough ( String speciesName, String boroName ) `
+  method that returns the number of `Tree` objects in the list whose Latin name is the same as the given `speciesName` and  which are located in the borough `boroName`. This method should be case insensitive.
+  If the method is called with a non-existent borough name or species, the return value should be 0.
+
+<br/>
+
+The class should override the `toString` method. The details are up to you, but you should make sure that it returns a `String` object
+that is a meaningful representation of the object on which it is called (it may or may not contain the listing of all of the elements).
+
+
+#### <code class="code_title">NYCStreetTrees </code> class
+The `NYCStreetTrees` class is the actual program. This is the class that should contain the `main` method.
 It is responsible for opening and reading
 the data file, obtaining user input, performing some data validation and handling
 all errors that may occur, and printing all output to the standard output stream. It should handle any
@@ -357,7 +398,10 @@ a friendly error message presented to the user: The program should never just re
 exception message as a way of handling an exception. These messages are rarely
 readable to the ordinary user and make it seem like the program crashed in response to the exception.
 
-You may implement other methods in this class to modularize the design.
+You may (and probably should) implement other methods in this class to modularize the design.
+
+
+
 
 </div> </div></div>
 
@@ -369,7 +413,7 @@ You may implement other methods in this class to modularize the design.
 
 
 - You should follow the rules outlined in the document
-[Code conventions](https://cs.nyu.edu/~joannakl/cs102_s22/notes/CodeConventions.pdf).
+[Code conventions](https://cs.nyu.edu/~joannakl/cs102_f22/notes/CodeConventions.pdf).
 
 - The data file should be read only once! Your program needs to store the data
 in memory resident data structures.
@@ -504,130 +548,90 @@ If you are not sure how it works, ask questions about it.
 Here are a few sample runs of a program (keep in mind, they are here to illustrate  the user interface, not
 to show you examples of tests that the autograder will run on your program).
 
-The first interaction has a lot of invalid instructions or instructions that produce no results.
 
 ```
-Enter one of the following instructions.
+Enter the tree species to learn more about it ("quit" to stop):
+oak
+All matching species:
+	black oak
+	bur oak
+	english oak
+	northern red oak
+	pin oak
+	sawtooth oak
+	scarlet oak
+	schumard's oak
+	shingle oak
+	southern red oak
+	swamp white oak
+	white oak
+	willow oak
 
-REGION total
-REGION from ORIGIN
-REGION all
+Popularity in the city:
+	NYC           :      82,867(683,788)   12.12%
+	Manhattan     :        8,736(65,423)   13.35%
+	Bronx         :       11,103(85,203)   13.03%
+	Brooklyn      :      22,372(177,293)   12.62%
+	Queens        :      30,571(250,551)   12.20%
+	Staten Island :      10,085(105,318)    9.58%
+
+Enter the tree species to learn more about it ("quit" to stop):
+prunus
+All matching species:
+	prunus
+	prunus cerasifera
+	prunus serotina
+	prunus virginiana
+
+Popularity in the city:
+	NYC           :      41,653(683,788)    6.09%
+	Manhattan     :        1,174(65,423)    1.79%
+	Bronx         :        5,505(85,203)    6.46%
+	Brooklyn      :       8,364(177,293)    4.72%
+	Queens        :      18,814(250,551)    7.51%
+	Staten Island :       7,796(105,318)    7.40%
+
+Enter the tree species to learn more about it ("quit" to stop):
+car
+All matching species:
+	aesculus x carnea
+	carpinus betulus
+	carpinus caroliniana
+	carpinus japonica
+	carya glabra
+	quercus imbricaria
+	quercus macrocarpa
+	scarlet oak
+
+Popularity in the city:
+	NYC           :       7,286(683,788)    1.07%
+	Manhattan     :          628(65,423)    0.96%
+	Bronx         :        1,396(85,203)    1.64%
+	Brooklyn      :       2,178(177,293)    1.23%
+	Queens        :       2,316(250,551)    0.92%
+	Staten Island :         768(105,318)    0.73%
+
+Enter the tree species to learn more about it ("quit" to stop):
+american elm
+All matching species:
+	american elm
+
+Popularity in the city:
+	NYC           :       7,975(683,788)    1.17%
+	Manhattan     :        1,698(65,423)    2.60%
+	Bronx         :        1,471(85,203)    1.73%
+	Brooklyn      :       2,587(177,293)    1.46%
+	Queens        :       1,709(250,551)    0.68%
+	Staten Island :         510(105,318)    0.48%
+
+Enter the tree species to learn more about it ("quit" to stop):
+frog
+
+Tere are no records of frog on NYC streets
+
+Enter the tree species to learn more about it ("quit" to stop):
 quit
 
-Replace REGION with your desired region, and ORIGIN with your desired place of origin (or its substring).
-------
-
-Enter your instruction:
-Georgia
-
-This is not a valid query. Try again.
-
-Enter your instruction:
-Geoergia from Moon
-
-No matches found. Try again.
-
-Enter your instruction:
-Georgia from Moon
-
-No matches found. Try again.
-
-Enter your instruction:
-Georgia frommm France
-
-This is not a valid query. Try again.
-
-Enter your instruction:
-quit
-```
-
-The following interaction has all valid instructions and all queries produce non-empty results.
-
-```
-Enter one of the following instructions.
-
-REGION total
-REGION from ORIGIN
-REGION all
-quit
-
-Replace REGION with your desired region, and ORIGIN with your desired place of origin (or its substring).
-------
-
-Enter your instruction:
-California total
-
-California: total foreign born population is 367215
-
-Enter your instruction:
-California from Poland
-
-California: foreign born population
-Poland (Russian)	832
-Poland (unknown)	229
-Poland (German)	187
-Poland (Austrian)	72
-
-Enter your instruction:
-New York from Cuba
-
-New York: foreign born population
-Cuba	2195
-West Indies (except Cuba and Puerto Rico)	4241
-
-Enter your instruction:
-New York all
-
-New York: foreign born population
-Germany	480020
-Ireland	425553
-Italy	182248
-Russia	165610
-England	135685
-Canada (English) (includes Newfoundland)	90336
-Austria	78491
-Sweden	42708
-Poland (Russian)	37317
-Hungary	37168
-Scotland	33862
-Canada (French) (includes Newfoundland)	27199
-France	20008
-Poland (German)	19701
-Bohemia	16347
-Switzerland	13678
-Norway	12601
-Roumania	10549
-Poland (Austrian)	9696
-Holland	9414
-Denmark	8746
-Wales	7304
-China	6880
-West Indies (except Cuba and Puerto Rico)	4241
-Finland	4048
-Cuba	2195
-Poland (unknown)	2018
-Turkey	1915
-Belgium	1787
-Asia (except China, Japan, and India)	1744
-Spain	1614
-Greece	1573
-South America	1130
-Central America	1016
-Born at Sea	1001
-Australia	706
-Africa	473
-Atlantic Islands	461
-India	408
-Portugal	362
-Mexico	353
-Other Countries	339
-Japan	302
-Europe (not otherwise specified)	286
-Pacific Islands (except Phillipine Islands)	118
-Luxemburg	75
-
-Enter your instruction:
-quit
 
 ```
 
