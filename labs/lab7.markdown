@@ -115,8 +115,7 @@ __Testing `Point` class__
 
 With these few methods, we can write a few tests for our `Point` class.
 
-You can find the source code for the class below in the appendix and in the workspace that
-you will be working with during the recitations.
+You can find the source code for the class below in the appendix.
 
 
 Look at the class `PointTest` to see five tests.
@@ -167,13 +166,6 @@ Tests run: 5,  Failures: 2
 ```
 
 Each failed test shows the error message and a detailed stack trace when the test failed.
-
-### Part 3
-
-
-The Ed workspace titled [project 2 tests](https://edstem.org/us/courses/3906/workspaces/pdNWYBwEtKULq8XiryjhGehoz1NnMQ2B)
-includes the package `project2`. These the test that were used in the autograder for project 2.
-
 
 
 ### Additional JUnit Tutorial
