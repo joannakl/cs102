@@ -145,19 +145,20 @@ implements java.lang.Iterable&lt;E&gt;</pre>
 <div class="block">A linear collection that supports element insertion and removal at
  three points: front, middle and back.  The name <i>mdeque</i> is short for "double ended queue" (deque) with <i>m</i> for "middle"
  and is pronounced "em-deck".  <code>MDeque</code>
- has no fixed limits on the number of elements it contains. 
+ has no fixed limits on the number of elements it contains.
 
- <p> The remove operations all return <code>null</code> values if the mdeque is empty. The structure does not allow <code>null</code> as an element. 
- 
- <p> All <code>pop...</code>, <code>push...</code>, and <code>peek...</code> operations (from all three points of access) are constant time operations. 
- 
- <p>The <i>middle</i> position is defines as (size+1)/2. For mdeques with odd sizes, this is the actual middle element. For the mdeques with 
- even sizes, this is the element, one past the middle of that elements. The position count is zero based. 
- 
- <pre> 
- [A, B, C, D]  -- middle element is C. 
- [A, B, C, D, E] -- miccle element is C. 
+ <p> The remove operations all return <code>null</code> values if the mdeque is empty. The structure does not allow <code>null</code> as an element.
+
+ <p> All <code>pop...</code>, <code>push...</code>, and <code>peek...</code> operations (from all three points of access) are constant time operations.
+
+ <p>The <i>middle</i> position is defined as (size+1)/2 when inserting an element in the <i>middle</i> and as (size/2) when retrieving an element from
+the <i>middle</i>. The position count is zero based.
+
+ <pre>
+ [A, B, C, D]  -- middle element is C, insert at middle would add at index 2 (between B and C).
+ [A, B, C, D, E] -- middle element is C, insert at middle would add at index 3 (between C and D).
  </pre></div>
+
 <dl>
 <dt><span class="simpleTagLabel">Author:</span></dt>
 <dd>Joanna Klukowska</dd>
