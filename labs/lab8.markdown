@@ -134,6 +134,14 @@ Apply the quicksort three separate times to the same array. For the first one th
 | ... |
 
 
+### Part 6 (Optional): Sorting
+
+Use the Ed workspace called `lab8_sorting` to implement a merge-sort and a quick-sort.
+The final program can be be submitted to Gradescope to be tested.
+
+
+
+
 </main>
 
 
