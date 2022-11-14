@@ -202,87 +202,47 @@ only be instantiated with types that can be compared (otherwise we cannot determ
 how the values should be placed in the tree).
 
 
+
 ---
 
-## BST Node - take 1
+## Generic BST class - take 1
 
 .smaller[
 ```java
-
-class BSTNode <T extends Comparable <T> > {
-
-    private T data;
-    private BSTNode <T> left;
-    private BSTNode <T> right;
-
-    public BSTNode ( T data ) {
-        this.data = data;
-    }
-
-    public BSTNode (T data, BSTNode <T> left, BSTNode <T> right ) {
-        this.data = data;
-        this.left = left;
-        this.right = right;
-    }
+class BST < T extends Comparable <T> > {
 
     ...
 
-    //desired setters and getters
+    private class BSTNode  {
 
+        T data;
+        BSTNode  left;
+        BSTNode  right;
+
+        public BSTNode ( T data ) {
+            this.data = data;
+        }
+
+        public BSTNode (T data, BSTNode left, BSTNode right ) {
+            this.data = data;
+            this.left = left;
+            this.right = right;
+        }
+    }
+
+    ...
 }
 
 ```
 ]
 
 - `T` in this definition serves exactly the same role as `E` - any letter will do, in fact
-
 - `T extends Comparable <T>` requires that the type used in the node will implement `Comparable<T>` interface
+(this is an extra requirement that we can add to a generic type)
 
 ---
 
-## BST Node - take 2
-
-.smaller[
-```java
-
-class BSTNode <T extends Comparable <T> > implements Comparable < BSTNode<T> > {
-
-    private T data;
-    private BSTNode <T> left;
-    private BSTNode <T> right;
-
-    public BSTNode ( T data ) {
-        this.data = data;
-    }
-
-    public BSTNode (T data, BSTNode <T> left, BSTNode <T> right ) {
-        this.data = data;
-        this.left = left;
-        this.right = right;
-    }
-
-    ...
-
-    //desired setters and getters
-
-    ...
-
-    public int compareTo ( BSTNode <T> other ) {
-        return this.data.compareTo ( other.data );
-    }
-}
-
-```
-]
-
-- `implements Comparable < BSTNode<T> > ` makes the `BSTNode` class comparable
-- the specific `compareTo` method allows us to  compare nodes instead of comparing values inside the node and the results
-are the same
-
-
----
-
-## BST Node - take 3
+## Generic BST class - take 2 with _Comparable_ node
 
 .smaller[
 ```java
@@ -317,10 +277,8 @@ class BST < T extends Comparable <T> > {
 ```
 ]
 
-
-- with the private inner class, `T extends Comparable <T> ` is required at the level
-    of the class
-- but we can still make the node comparable by implementing `Comparable<BSTNode>` interface
+- we can make the node comparable by implementing `Comparable<BSTNode>` interface
+(this way we can compare nodes directly without having to _look_ at the data within them)
 
 ---
 
