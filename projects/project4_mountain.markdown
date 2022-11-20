@@ -1,10 +1,10 @@
 ---
 layout: lab
-title: Project 5
+title: Project 4
 ---
 
 <div class="lab-right" markdown="1">
-__Project 5__ <br>
+__Project 4__ <br>
 __due date:__ December 4
 
 __submission mode:__ individual
@@ -351,10 +351,10 @@ The grade will be determined by several factors:
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
-__For the purpose of grading, your project must be be in the package called `project5`.
+__For the purpose of grading, your project must be be in the package called `project4`.
 This means that each of your submitted source code files should start with a line:__
 
-`package project5;`
+`package project4;`
 
 
 Your should submit all your source code files (the ones with `.java` extensions only)
