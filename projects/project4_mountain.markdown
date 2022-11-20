@@ -5,7 +5,7 @@ title: Project 5
 
 <div class="lab-right" markdown="1">
 __Project 5__ <br>
-__due date:__ May 2
+__due date:__ December 4
 
 __submission mode:__ individual
 
@@ -15,7 +15,7 @@ __submission mode:__ individual
 
 <main markdown="1" class="lab">
 
-## Project 5: BST-Mountain Adventure
+## Project 4: Mountain Climb
 
 <hr>
 
@@ -184,7 +184,7 @@ J P L N 0
 The design of classes is up to you, but you do need to implement certain classes to represent certain entities in the program. You need to make decisions about how to design these classes to produce an efficient and well-put-together program. Make sure that all methods that you include in a particular class belong in that class.
 
 
-#### <code class="code_title">BSTMountainAdventure</code> class
+#### <code class="code_title">MountainClimb</code> class
 
 This is the class that is the program. This means it has the 	`main` method. This class is responsible for parsing and validating
 the command line arguments, reading and parsing the input file, producing any error messages,
@@ -249,7 +249,7 @@ but instead of performing its function, it throws an instance of `UnsopportedOpe
 
 This should be the class that inherits from your own `BST<RestStop>`.
 Your class should represent the mountain itself (therefore, it should not be generic and its nodes should store data items of type `RestStop`).
-It is up to you to decide how to implement this class, which methods to provide etc. 
+It is up to you to decide how to implement this class, which methods to provide etc.
 
 
 #### <code class="code_title">RestStop</code> class
