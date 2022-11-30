@@ -21,6 +21,15 @@ __submission mode:__ group
 
 This lab will give you some practice in submitting the types of problems you will be working on for project 5.
 
+The implementation is up to you. You need to decide which data structures to use and how to approach the problem.
+Your solution can use any of the library classes you want to use.
+
+The name for the class that contains `main()` function should be `Main`. There should NOT be any package names in the submitted files.
+The program should read all the input from the _standard input_ stream, and write all the output to the _standard output_ stream.
+
+The submission link is available on Gradescope. You will see if you passed or failed tests. But you will NOT see what the tests are, so
+make sure to come up with tests on your own.
+
 
 
 ### Problem Statement
@@ -45,6 +54,11 @@ __Output__
 
 A list of unique words that appear in the text, one per line. The output should be in alphabetical order and in lower case.
 You are guaranteed that the number of unique words in the text is no more than 5,000.
+
+<br>
+
+<br>
+
 
 __Example 1__
 
