@@ -195,11 +195,6 @@ handling any exceptions thrown by other classes, and producing output.
 
 
 
-
-
-
-
-
 #### <code class="code_title">BST&lt;E&gt;</code> class
 
 
@@ -215,13 +210,13 @@ functionality and you may need to rewrite some of the methods that were created 
 The program should provide and use a nested class (to
 learn more about nested and inner classes see: https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html)
 that provides nodes for your tree. The details of the implementation of that class are
-up to you, but this class should be private:
+up to you, but this class should be private (or protected, if another class in your code inherits from it and needs to be able to create variables of type `Node`):
 
 ```
 private class Node
 ```
 
-HINT: to improve the performance of your BST algorithms, it may be useful to keep additiional data fields in
+HINT: to improve the performance of your BST algorithms, it may be useful to keep additional data fields in
 the nodes, i.e., more than just data, left and right.
 Those design decisions are up to you. But you should explain in comments for this class, why you have
 additional data fields if you chose to do so.
@@ -243,6 +238,9 @@ should be O(N).
 The remove method in the `Iterator<E>` interface is optional and you do not need to
 provide the actual remove functionality. (This means that the method has to exist,
 but instead of performing its function, it throws an instance of `UnsopportedOperationException`.)
+
+NOTE: normally, all data fields in the class should be private. But since the `BST` class serves as a base class for the `BSTMountain` class below,
+its data fields can be made protected instead to allow the subclass to access these data fields. 
 
 
 #### <code class="code_title">BSTMountain</code> class
