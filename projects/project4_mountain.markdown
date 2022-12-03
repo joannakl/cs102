@@ -205,7 +205,7 @@ The specification for this class is provided at [its javadoc page](project4/proj
 You can use the source code that we wrote in class, but keep in mind that the class that you are implementing requires additional
 functionality and you may need to rewrite some of the methods that were created in class.
 
-#### <code>Node</code> class
+__<code>Node</code> class__
 
 The program should provide and use a nested class (to
 learn more about nested and inner classes see: https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html)
@@ -221,7 +221,7 @@ the nodes, i.e., more than just data, left and right.
 Those design decisions are up to you. But you should explain in comments for this class, why you have
 additional data fields if you chose to do so.
 
-#### Iterator
+__Iterator__
 
 The `BST<E>` class implements `Iterable<E>` interface. This means that its `iterator()` method needs to
 return an instance of a class that implements the `Iterator<E>` interface. The `iterator()` method should
@@ -239,8 +239,10 @@ The remove method in the `Iterator<E>` interface is optional and you do not need
 provide the actual remove functionality. (This means that the method has to exist,
 but instead of performing its function, it throws an instance of `UnsopportedOperationException`.)
 
+<br/>
+
 NOTE: normally, all data fields in the class should be private. But since the `BST` class serves as a base class for the `BSTMountain` class below,
-its data fields can be made protected instead to allow the subclass to access these data fields. 
+its data fields can be made protected instead to allow the subclass to access these data fields.
 
 
 #### <code class="code_title">BSTMountain</code> class
