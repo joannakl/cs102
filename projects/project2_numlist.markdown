@@ -5,7 +5,7 @@ title: Project 2
 
 <div class="lab-right" markdown="1">
 __Project 2__ <br>
-__due date:__ October 29 at 11:59pm
+__due date:__ February 23 at 11:59pm
 
 __submission mode:__ individual
 
