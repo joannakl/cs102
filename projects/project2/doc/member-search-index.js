@@ -1,1 +1,0 @@
-memberSearchIndex = [{"p":"project2","c":"CSV","l":"CSV(Scanner)","url":"%3Cinit%3E(java.util.Scanner)"},{"p":"project2","c":"CSV","l":"getNextRow()"},{"p":"project2","c":"CSV","l":"getNumOfRows()"},{"p":"project2","c":"CSV","l":"toString()"}]

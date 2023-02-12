@@ -4,7 +4,7 @@ title: Project 2
 ---
 
 <div class="lab-right" markdown="1">
-__Project 3__ <br>
+__Project 2__ <br>
 __due date:__ October 29 at 11:59pm
 
 __submission mode:__ individual
@@ -13,16 +13,16 @@ __submission mode:__ individual
 
 <main markdown="1" class="lab">
 
-## Project 2: Numbers By List
+## Project 2: Long Numbers
 
 <hr>
 
 <div class="emph" markdown=1>
 You may discuss any of the assignments with your classmates and tutors (or anyone else) but <span class="red"> all work for all assignments must be
 entirely your own</span>. Any sharing or copying of assignments will be considered cheating (this includes posting of partial or complete
-solutions on Ed, GitHub, Discord, Groupme, ... or any other forum). If you get significant help from anyone, you should acknowledge it in
+solutions on Ed, GitHub, Discord, Groupme, ... or any other public or private forum). If you get significant help from anyone, you should acknowledge it in
 your submission (and your grade will be proportional to the part that you completed on your own). You are responsible for
-every line in your program: you need to know what it does and why. You should not use any data structures and features of Java
+every line in your program: you need to know what it does and why. You should not use any data structures and Regions of Java
 that have not been covered in class (or the prerequisite class). If you have doubts whether or not you are allowed to use certain
 structures, just ask your instructor.
 </div>
@@ -57,10 +57,7 @@ debugging always takes time!
 <div class="content-inner" markdown=1>
 
 The program that provides the user interface is given to you. You can see
-its [source code](project3/NumberByList.java) and its [documentation](project3/project3/NumberByList.html).
-
-You should not modify this file. We will replace it by the above file in the
-autograder.
+its [source code](project2/LongNumbers.java) and its [documentation](project2/project2/LongNumbers.html).
 
 
 </div> </div></div>
@@ -83,17 +80,18 @@ This program does not use any command line arguments.
 
 Your job for this project is to provide the implementation for the `Number` class.
 
-You can find the documentation for its public methods [here](project3/project3/Number.html).
+You can find the documentation for its public methods [here](project2/project2/Number.html).
 
 **Requirements and restrictions**
 - The class has to use a linked list to represent the object. In fact, `Number` is
-a linked list. You can implement either singly or doubly linked list. You can use dummy nodes at the start and end of the list, if you wish (but this is not something we discussed in class).
+a linked list. You can implement it as a singly linked list of nodes that contain single digits. You can use dummy nodes at the start and end of the list, if you wish (but this is not something we discussed in class).
 - The class should have an internal private `Node` class.
 - You are not allowed to use any kind of `List` implementation provided by Java libraries.
 - You are not allowed to use the `BigInteger` class provided by Java Libraries.
 - All manipulations required to implement addition, multiplication and comparisons have to
-be performed on nodes of the list. (You cannot convert the objects to their integer
-equivalents and perform the operations on `int` or `Integer`.) Any kind of numerical computations
+be performed on nodes of the list. (You cannot convert the objects to their integer or string
+equivalents and perform the operations on `int`, `Integer` or on characters of a string.)
+Any kind of numerical computations
 have to be performed on single digits only (although in some cases the result may have more than one digit).
 
 In order to implement the addition and multiplication you should recall the methods of
@@ -104,7 +102,7 @@ do this, here are some tutorials:
 (There are many others you can find online.)
 
 Hint: the function `multiplyByDigit()` in the `Number` class may come in handy in implementing
-the general `multiply` operation.
+the general `multiply` operation. 
 
 
 
@@ -116,7 +114,7 @@ the general `multiply` operation.
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
-You do not need to implement any other classes.
+You do not need to implement any other classes, but you may if you wish. 
 
 </div> </div></div>
 
@@ -128,7 +126,7 @@ You do not need to implement any other classes.
 
 
 - You should follow the rules outlined in the document
-[Code conventions](https://cs.nyu.edu/~joannakl/cs102_s21/notes/CodeConventions.pdf)
+[Code conventions](https://cs.nyu.edu/~joannakl/cs102/notes/CodeConventions.pdf)
 posted on the course website.
 
 - You may not use any of the collection
@@ -155,7 +153,7 @@ even if you cannot implement all of the methods.
 - Work out the addition, multiplication and comparison algorithms by hand first. There are many details that you will need to think about and that may need you to completely rewrite your code
 if you start by coding right away.
 - Implement and test your methods one by one. Write the documentation for each method as you are
-implementing it (yes, in this case you can copy and past from the [Number](project3/project3/Number.html) class. This makes you think about all the required pieces. Make sure that your code satisfies all the requirements from the documentation.
+implementing it (yes, in this case you can copy and past from the [Number](project2/project2/Number.html) class. This makes you think about all the required pieces. Make sure that your code satisfies all the requirements from the documentation.
 
 
 
@@ -177,7 +175,7 @@ will depend on how easy it is to figure out what the program is doing and how to
 
 The grade will be determined by several factors:
 - 30 points: correct behavior of the program when run as the whole (i.e., we will run the
-`NumberByList` class that uses your implementation of the `Number` class)
+`LongNumbers` class that uses your implementation of the `Number` class)
 - 30 points: correct behavior of the methods of the `Number` class
 - 25 points: design, implementation and efficiency of the `Number` class
     (this will be determined by a code review)
@@ -193,17 +191,17 @@ The grade will be determined by several factors:
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
-__For the purpose of grading, your project must be in the package called `project3`.
+__For the purpose of grading, your project must be in the package called `project2`.
 This means that each of your submitted source code files should start with a line:__
 
-`package project3;`
+`package project2;`
 
 
 Your should submit all your source code files (the ones with `.java` extensions only)
 in a single __zip__ file or as individual file to Gradescope. __DO NOT__ submit `.class` files
 or any project files that your IDE might produce. You can see all the files on Gradescope.
 Verify that there is nothing there that you did not intend to put it. You __DO NOT__ need to submit
-the `NumberByList.java` file.
+the `LongNumbers.java` file.
 
 You can produce a zip file directly from Eclipse (if this is what you are using):
  -  right click on the name of the package (inside the `src` folder) and select Export...
