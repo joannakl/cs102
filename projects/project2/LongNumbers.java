@@ -38,7 +38,7 @@ public class LongNumbers {
 		
 		String line = null;
 		String[] tokens; 
-		Number_withDigit n1=null, n2=null, n3=null;
+		Number n1=null, n2=null, n3=null;
 		
 		while (in.hasNextLine() ) {
 			//read input from user and break it into expected three tokens:
@@ -47,8 +47,8 @@ public class LongNumbers {
 			tokens = line.split("\\s+"); 
 			try {
 				//get two operands 
-				n1 = new Number_withDigit(tokens[0]);
-				n2 = new Number_withDigit(tokens[2]);
+				n1 = new Number(tokens[0]);
+				n2 = new Number(tokens[2]);
 				//perform the action of the operator 
 				switch (tokens[1]) {
 				case "+": 
