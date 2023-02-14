@@ -2,7 +2,6 @@ package project2;
 
 import java.util.Scanner;
 
-import project2_idea.Number_withDigit;
 
 /**
  * <p>This class is part of the project 2 in csci102, spring 2023 semester. 
