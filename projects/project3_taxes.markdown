@@ -15,158 +15,473 @@ __submission mode:__ individual
 
 ## Project 3: NYS Tax Preparers 
 
+
+
 <hr>
 
 <div class="emph" markdown=1>
 You may discuss any of the assignments with your classmates and tutors (or anyone else) but <span class="red"> all work for all assignments must be
 entirely your own</span>. Any sharing or copying of assignments will be considered cheating (this includes posting of partial or complete
-solutions on Ed, GitHub, Discord, Groupme, ... or any other forum). If you get significant help from anyone, you should acknowledge it in
+solutions on Ed, GitHub, Discord, Groupme, ... or any other public or private forum). If you get significant help from anyone or anything, you should acknowledge it in
 your submission (and your grade will be proportional to the part that you completed on your own). You are responsible for
-every line in your program: you need to know what it does and why. You should not use any data structures and features of Java
+every line in your program: you need to know what it does and why. You should not use any data structures and concepts of Java
 that have not been covered in class (or the prerequisite class). If you have doubts whether or not you are allowed to use certain
 structures, just ask your instructor.
 </div>
 
 ---
+
 <br/><br/>
 ### Introduction and objectives
 
 
-You are going to implement a class that allows us to represent numbers with unlimited number of digits. Your class will provide several operations that can be applied to such numbers.
+In this project you will be working with open data. Wikipedia has a good description of open data: "Open data is the idea that some data
+should be freely available to everyone to use and republish as they wish, without restrictions from copyright, patents or other mechanisms of control."
 
-In the process of doing this, you will practice your newly acquired skills of linked list manipulation.
-
-
+You will be working with a specific data set from the <a href="https://data.ny.gov/">New York State Open Data collection</a>: <a href="https://data.ny.gov/Government-Finance/New-York-State-Registered-Tax-Return-Preparers-and/b7jj-bh4g">New York State Registered Tax Return Preparers and Facilitators</a>. As the name suggests, this dataset contains tax return preparers and facilitators that have registered with the New York State Department of Taxation and Finance pursuant to Tax Law Section 32. Your project will provide a way for the user
+to interact with this data set (or its subset, or a dataset similar to it).
 
 <br/><br/>
 
-__Main goals__:
+The goal of this programming project is for you to master (or at least
+get practice on) the following tasks:
 
-- working with multi-file programs that include code written by others
-- implementing a class given a specification
-- implementing your own linked list
+- working with multi-file programs
+- reading data from input files
+- using and understanding command line arguments
+- working with large data sets
+- working with a list 
+- writing classes
+- working with existing code
+- extending existing classes (inheritance)
+- parsing data
+- working with exception handling
 
-**Start early!** It may not seem like this project requires a lot of coding, but
-debugging always takes time!
+Many of the skills that you need to complete this project
+are based on the material covered in cs101. But there might be certain
+topics for which you did not have to write a program or that you forgot.
+Make sure to ask questions during recitations, in class and on Ed.
+
+**Start early!** This project requires you to write several classes and
+debugging always takes time even if you are the most confident and skilled programmer.
+
 
 
 <div class="wrap-collabsible">
-<input id="interface" class="toggle" type="checkbox"  checked=true >
+<input id="The Dataset" class="toggle" type="checkbox"  checked=true >
+<label for="The Dataset" class="lbl-toggle">The Dataset</label>
+<div class="collapsible-content" markdown=1>
+<div class="content-inner" markdown=1>
+
+Your program should work with a local copy of a file whose format matches that of the file that you can download from
+the website. This file is a comma separated values (CSV) file. CSV files are just text files. Your program can open them and read them as simple text.
+Each line in a CSV file constitutes a data point (well, except for the heading line). The _columns_ in each entry are separated by commas (hence the name of the file format).
+
+Here is an example row for Deborah Fisher from H&R Block:
+```
+
+FACILITATOR,DEBORAH,A,FISHER,H&R Block,MEDINA,NY,US,14103,,POINT (-78.38691 43.22012)
+
+
+```
+
+Note that the consecutive commas within the row correspond to _empty_ columns. 
+
+<br/>
+
+The data set and its description are at <a href="https://data.ny.gov/Government-Finance/New-York-State-Registered-Tax-Return-Preparers-and/b7jj-bh4g">New York State Registered Tax Return Preparers and Facilitators</a>. For your convenience, you can also download the `CSV` file provided with this project. There are several different data formats available on NYC OpenData site. Your program has to work with the `CSV` format of the data.
+
+<br/>
+
+The real data files are not perfect. You may discover that some rows are missing some values. Other rows may
+contain invalid values in columns. **For the purpose of this project, any row that contains
+the last name of the person and the city in which they are located is a valid row. The other entries might be missing or may be invalid (in which case they should be treated as missing). Any row that is missing the person's last name or the city should be quietly ignored.**
+
+For example, all the following a valid rows (versions of the row above) that should be used by the program:
+
+
+```
+
+FACILITATOR,,,FISHER,H&R Block,MEDINA,,,,,POINT (-78.38691 43.22012)
+
+,,,FISHER,,MEDINA,,,,,
+
+,DEBORAH,A,FISHER,,MEDINA,NY,US,14103,,
+
+```
+
+But these rows are invalid and should be silently ignored by the program: 
+
+```
+
+FACILITATOR,DEBORAH,A,FISHER,H&R Block,,NY,US,14103,,POINT (-78.38691 43.22012)
+
+FACILITATOR,DEBORAH,A,,H&R Block,MEDINA,NY,US,14103,,POINT (-78.38691 43.22012)
+
+FISHER,H&R Block,MEDINA,NY
+
+```
+Note that the last of the above rows actually contains the last name and the city, but they are in different columns than the format of the dataset suggests. 
+
+</div> </div></div>
+
+
+<div class="wrap-collabsible">
+<input id="interface" class="toggle" type="checkbox" checked=true  >
 <label for="interface" class="lbl-toggle"> User Interface </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
-The program that provides the user interface is given to you. You can see
-its [source code](project3/NumberByList.java) and its [documentation](project3/project3/NumberByList.html).
+Your program has to be a console based program (no graphical interface) - this
+means that the program should not open any windows or dialog boxes to prompt user
+for the input. (Use the `Scanner` class to read the user input.)
 
-You should not modify this file. We will replace it by the above file in the
-autograder.
-
+__Warning__ You should have a single `Scanner` object to read in data from the user. If you use more than one, your program is not going to work correctly in all situations (including when executed in the autograder).
 
 </div> </div></div>
 
 <div class="wrap-collabsible">
-<input id="usage" class="toggle" type="checkbox" checked=true >
+<input id="usage" class="toggle" type="checkbox"  checked=true   >
 <label for="usage" class="lbl-toggle"> Program Usage </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
-This program does not use any command line arguments.
+The program is started from the command line (or run within an IDE). It expects one command line argument.
+
+This program should use command line arguments. When the user runs the program, they provide the name of the input
+file as a command line argument. (This way the user can specify a different data set - for example data sets from different census years, or a partial data set that may include only a subset of row entries.) **Make sure that your program does not harcode the name of the file in the program itself. Also, make sure that you program does not prompt the user for the name of the file.**
+
+If the name of the input file provided as a command line argument is incorrect or the file cannot be
+opened for any reason, the program should display an error message and terminate. It should not prompt the user for
+an alternative name of the file.
+
+If the program is run without any arguments, the program should display an error message and terminate. It should not prompt the user for the name of the file.
+
+The error messages should be specific and informative, for example:
+
+`    Error: the file NYS_tax_preparers.csv cannot be opened.`
+
+or
+
+`    Usage Error: the program expects file name as an argument.`
+
+The above error messages generated by your code should be written to the `System.err` stream (not the
+`System.out` stream). If you are not sure what the difference is, research it or ask questions.
 
 </div> </div></div>
 
 <div class="wrap-collabsible">
-<input id="user" class="toggle" type="checkbox" checked=true >
-<label for="user" class="lbl-toggle"><code>Number</code> class </label>
+<input id="user" class="toggle" type="checkbox"  checked=true   >
+<label for="user" class="lbl-toggle"> User Interaction </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
-Your job for this project is to provide the implementation for the `Number` class.
 
-You can find the documentation for its public methods [here](project3/project3/Number.html).
+The program should run in a loop that allows the user to retrieve information about different NYS registered tax preparers/facilitators. 
 
-**Requirements and restrictions**
-- The class has to use a linked list to represent the object. In fact, `Number` is
-a linked list. You can implement either singly or doubly linked list. You can use dummy nodes at the start and end of the list, if you wish (but this is not something we discussed in class).
-- The class should have an internal private `Node` class.
-- You are not allowed to use any kind of `List` implementation provided by Java libraries.
-- You are not allowed to use the `BigInteger` class provided by Java Libraries.
-- All manipulations required to implement addition, multiplication and comparisons have to
-be performed on nodes of the list. (You cannot convert the objects to their integer
-equivalents and perform the operations on `int` or `Integer`.) Any kind of numerical computations
-have to be performed on single digits only (although in some cases the result may have more than one digit).
+On each iteration, the user should be prompted to enter a new query (for which
+the program computes the results) or the word 'quit'  (any case of letters should work)
+to indicate the termination of the program.
 
-In order to implement the addition and multiplication you should recall the methods of
-performing these operations by hand (or long hand operations). If you do not remember how to
-do this, here are some tutorials:
-- [Long Hand Addition](http://www.makemathwork.com/help/topic_addition.htm)
-- [Long Hand Multiplication](https://www.wikihow.com/Do-Long-Multiplication)
-(There are many others you can find online.)
+__The user should not be prompted for any other response.__
 
-Hint: the function `multiplyByDigit()` in the `Number` class may come in handy in implementing
-the general `multiply` operation.
+A valid query consists of a string (possibly with spaces) that should be matched by
+the program against the names of trees in the input file. Both Latin names and common names should be included in the search (they are in separate columns in the data set).
+By _match_ we mean that the name entered by the user is a substring of an actual species name
+(Latin or common). This match should be case insensitive.
 
+In response to a valid query for which at least one match is found, the program should print the list of all the different species matching the name (without repeats in alphabetical order) and then print the information regarding
+the counts of all trees with those species names for the entire NYC and for each borough individually. For example:
+
+```
+Enter the tree species to learn more about it ("quit" to stop):
+linden
+All matching species:
+  american linden
+  littleleaf linden
+  silver linden
+
+Popularity in the city:
+  NYC:           51,267(683,788)    7.50%
+  Manhattan:       5,457(65,423)    8.34%
+  Bronx:           6,719(85,203)    7.89%
+  Brooklyn:      15,299(177,293)    8.63%
+  Queens:        20,817(250,551)    8.31%
+  Staten Island:  2,975(105,318)    2.82%
+
+Enter the tree species to learn more about it ("quit" to stop):
+quit
+```
+
+For each location:
+- the first value is the total number of the three different types of linden trees in that borough;
+- the number in parenthesis is the total number of trees in that borough;
+- the last column contains the percentage calculated as the
+total number of lindens divided by the total number of trees times 100.
+
+The program has to produce the output formatted in aligned columns, with commas grouping the tree digits in larger numbers and with two digits
+after the decimal point in the last column. This is a perfect place to use `String.format()` or `System.out.printf()` functions. If you never used either of these functions, make sure to
+ask about them to avoid doing extra work.
+
+
+If the name entered by the user cannot be matched to any tree in the list of trees stored in the dataset, the program should print
+a message
+
+`   Tere are no records of TREE_NAME on NYC streets `
+
+(in which `TREE_NAME` is replaced by the name that the user entered) and continue into the next iteration.
+
+<br/>
+
+All output from the user interaction should be printed to the standard output stream (`System.out`), even the above error messages.
+
+<br/>
+
+__More sample user interactions are shown in the Appendix.__
 
 
 </div> </div></div>
 
 <div class="wrap-collabsible">
-<input id="classes" class="toggle" type="checkbox"  checked="true">
+<input id="classes" class="toggle" type="checkbox"  checked=true >
 <label for="classes" class="lbl-toggle"> Data Storage and Organization </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
-You do not need to implement any other classes.
+
+
+
+Your need to provide an implementation of several classes that store the data and
+compute the results when the program is executed.
+
+In particular, your program must implement and use the following classes.
+You may implement additional classes and additional methods in the required classes, if you wish.
+
+__As you are working on your classes, keep in mind that they should be (and will be) tested separately from the rest of your program.__
+
+
+
+#### <code class="code_title">TreeSpecies</code> class
+
+This class should represent a single tree species that has both the common name and the Latin name of the species.
+
+The class should provide a two parameter constructor
+
+`    public TreeSpecies ( String commonName, String latinName)`
+
+Both names are, possibly empty, strings. They cannot be `null`. If this constructor is called with a `null` argument, it should throw and instance
+of `IllegalArgumentException` with an appropriate error message.
+
+<br/>
+The class should override the `equals` method. Two `TreeSpecies` objects
+are equal if both the names are the same. The comparison should be case insensitive.
+
+
+#### <code class="code_title">Tree</code> class
+
+The `Tree` class stores information about a particular tree that grows in New York City. The class should store only
+a subset of the entries from the input file, namely:
+
+- tree_id as a non-negative integer
+- status as a string, valid values: "Alive", "Dead", "Stump", or empty string or `null`
+- health as a string, valid values: "Good", "Fair", "Poor", or empty string or `null`
+- spc_latin (Latin name) as a, possibly empty, string, cannot be `null`
+- spc_common (common name) as a, possibly empty, string, cannot be `null`
+- zipcode as a positive five digit integer (This means that any number from 0 to 99999 is acceptable. The values that are shorter should be
+ treated as if they had leading zeroes, i.e., 8608 represents zipcode 08608, 98 represents zip code 00098, etc.)
+- boroname as a string, valid values: "Manhattan", "Bronx", "Brooklyn", "Queens", "Staten Island"
+- x_sp as a double
+- y_sp as a double
+
+
+All of the string data fields should be case insensitive - i.e., "Alive", "alive", "ALIVE" and "aLIVe" are all valid values
+for the status data field.
+
+Note that some of these data fields may not be needed in this project, but the code has to provide them and
+the data for them has to be stored.
+
+<br/>
+
+This class should provide a two parameter constructor:
+
+`    public Tree (int treeID, TreeSpecies species ) `
+
+The `treeID` should be a non-negative integer and the `species` should not be `null`.
+If the constructor is called with invalid arguments, then an instance of `IllegalArgumentException` should be thrown
+carrying an appropriate error message.
+
+There should be no default constructor. (A default constructor is one that can be used without passing any arguments.)
+
+<br/>
+
+The class should provide getters and setters for all other required
+data fields. The parameters for all setters should be validated according to the
+rules specified above. If a setter is called with invalid arguments, then an instance of `IllegalArgumentException` should be thrown
+carrying an appropriate error message.
+
+<br/>
+
+This class should override the `equals` methods (see the documentation for the `Object` class for details).
+The two `Tree` objects should be considered equal if their id's and both, Latin and common, species names are the same. The other values should not be considered in the equality. The name comparison should be case insensitive.
+
+<br/>
+
+This class should implement `Comparable<Tree>` interface.
+The comparison should be done by the common species name as the primary key (using alphabetical order), and by the tree id
+as the secondary key (i.e., when two objects that have the same species name are compared, the comparison should be performed by  the id).
+The comparison method should be case insensitive (i.e., two `Tree` objects with the species name stored as "Baldcypress" and "BaldCypress"
+should be compared by their id's since their names are the same).
+
+<br/>
+
+The class should override the `toString` method. The details are up to you, but you should make sure that it returns a `String` object
+that is a meaningful representation of the object on which it is called.
+
+#### <code class="code_title">TreeSpeciesList</code> class
+
+The `TreeSpeciesList` class should be used to store all the unique `TreeSpecies` objects.
+This class should inherit from the `ArrayList<TreeSpecies>` class. (Some of you may realize that a `HashTable` would probably be a better choice here. For the purpose
+of this project, you should NOT use the `HashTable` or any other hashing data structure).
+<br/>
+
+The class needs to provide a default constructor that creates an empty `TreeSpeciesList` object.
+
+<br/>
+In addition, the class should implement the following methods:
+
+- `public TreeSpeciesList getByCommonName (String keyword)`
+returns a list of species whose common name contains `keyword` as a substring.
+The method should be case insensitive. It should throw and instance of `IllegalArgumentException` exception if called with `null` argument. It should
+return `null` if there are no `TreeSpecies` objects matching the `keyword`.
+
+
+- `public TreeSpeciesList getByLatinName (String keyword)`
+returns a list of species whose Latin name contains `keyword` as a substring.
+The method should be case insensitive. It should throw and instance of `IllegalArgumentException` exception if called with `null` argument. It should
+return `null` if there are no `TreeSpecies` objects matching the `keyword`.
+
+
+
+#### <code class="code_title">TreeList</code> class
+
+The `TreeList` class should be used to store all the `Tree` objects.
+
+This class should be a simple version of a linked list. By _simple_ we mean that
+you do not need to provide all the methods to make it a linked list, but
+the connectivity between elements should be done based on the linked list structure.
+(This is not a generic class. You will need to have an internal `Node` class
+that stores a `Tree` object as data and a reference to the next node. You will need to keep track of the `head` and, possibly `tail` references. )
+
+The class needs to provide the default constructor that creates an empty list.
+
+`    public TreeList ( ) `
+
+The class should implement
+- `    public void add(Tree tree)`
+  method that adds a given `tree` object to the current list; this method should
+throw an instance of `IllegalArgumentException` if the specified reference is `null`
+- `    public int getTotalNumberOfTrees()`
+  method that returns the total number of `Tree` objects stored in this list.
+- `    public int getCountByCommonName ( String speciesName ) `
+  method that returns the number of `Tree`  objects in the list whose common name is the same as the given `speciesName`.
+  This method should be case insensitive. If the method is called with a non-existent species, the return value should be 0.
+- `    public int getCountByLatinName ( String speciesName ) `
+  method that returns the number of `Tree`  objects in the list whose Latin name is the same as the given `speciesName`.
+  This method should be case insensitive. If the method is called with a non-existent species, the return value should be 0.
+- `    public int getCountByBorough ( String boroName ) `
+  method that returns the number of `Tree` objects in the list that are located in the borough equal to `boroName`. This method should be case insensitive.
+  If the method is called with a non-existent borough name, the return value should be 0.
+- `    public int getCountByCommonNameBorough ( String speciesName, String boroName ) `
+  method that returns the number of `Tree` objects in the list whose common name is the same as the given `speciesName` and  which are located in the borough `boroName`. This method should be case insensitive.
+  If the method is called with a non-existent borough name or species, the return value should be 0.
+- `    public int getCountByLatinNameBorough ( String speciesName, String boroName ) `
+  method that returns the number of `Tree` objects in the list whose Latin name is the same as the given `speciesName` and  which are located in the borough `boroName`. This method should be case insensitive.
+  If the method is called with a non-existent borough name or species, the return value should be 0.
+
+<br/>
+
+The class should override the `toString` method. The details are up to you, but you should make sure that it returns a `String` object
+that is a meaningful representation of the object on which it is called (it may or may not contain the listing of all of the elements).
+
+
+#### <code class="code_title">NYCStreetTrees </code> class
+The `NYCStreetTrees` class is the actual program. This is the class that should contain the `main` method.
+It is responsible for opening and reading
+the data file, obtaining user input, performing some data validation and handling
+all errors that may occur, and printing all output to the standard output stream. It should handle any
+exceptions thrown by your other classes and terminate gracefully, if need be, with
+a friendly error message presented to the user: The program should never just reprint the
+exception message as a way of handling an exception. These messages are rarely
+readable to the ordinary user and make it seem like the program crashed in response to the exception.
+
+You may (and probably should) implement other methods in this class to modularize the design.
+
+
+
 
 </div> </div></div>
 
 <div class="wrap-collabsible">
-<input id="rules" class="toggle" type="checkbox"  checked=true >
+<input id="rules" class="toggle" type="checkbox" checked=true >
 <label for="rules" class="lbl-toggle"> Programming Rules </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
 
 - You should follow the rules outlined in the document
-[Code conventions](https://cs.nyu.edu/~joannakl/cs102_s21/notes/CodeConventions.pdf)
-posted on the course website.
+[Code conventions](https://cs.nyu.edu/~joannakl/cs102_f22/notes/CodeConventions.pdf).
+
+- The data file should be read only once! Your program needs to store the data
+in memory resident data structures.
 
 - You may not use any of the collection
-classes provided in Java libraries. Do not use `LinkedList`, `Stack`, `Queue`,  or any classes implementing the `List` or `Queue` interfaces).
-
-- You may not use the `BigInteger` class.
+classes that were not covered in cs101 (for this assignment, do not use `LinkedList`, `Stack`, `Queue`, `PriorityQueue`, or any classes implementing the `Map` interface). You can, and should, use the `ArrayList` class.
 
 - You may use any exception-related classes.
 
+- You may use any classes to handle the file I/O, but probably the simplest ones
+are `File` and `Scanner` classes. You are responsible for knowing how to use the classes that you select.
 
 </div> </div></div>
 
 <div class="wrap-collabsible">
-<input id="working" class="toggle" type="checkbox"  checked=true >
+<input id="working" class="toggle" type="checkbox"   checked=true>
 <label for="working" class="lbl-toggle"> Working on This Assignment </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
 - __You should start right away!__
-- Start by creating a skeleton of the class with all the required methods as stubs
-(methods that take the right kind of argument, return the right type of value and, in practice, return
-either 0 or null). This way your code compiles and can be run against the autograder
-even if you cannot implement all of the methods.
-- Work out the addition, multiplication and comparison algorithms by hand first. There are many details that you will need to think about and that may need you to completely rewrite your code
-if you start by coding right away.
-- Implement and test your methods one by one. Write the documentation for each method as you are
-implementing it (yes, in this case you can copy and past from the [Number](project3/project3/Number.html) class. This makes you think about all the required pieces. Make sure that your code satisfies all the requirements from the documentation.
-
-
+- You should modularize your design so that you can test it regularly: for example, implement the part of the code that reads and parses the input file, then implement and test individual classes, then implement the part that provides the interactive part of the program, ... .
+- Make sure that at all times you __have a working program!__
+You should also implement stubs of methods that return `0` or `null`. This way your code compiles, even though it may
+not work completely.  You can implement methods that perform one task at a time.
+This way, if you run out of time, at least parts of your program will be functioning properly.
+- You should make sure that you are __testing the program on much smaller data set__ for which you can determine the correct
+output manually. You can create  a test input file that contains only a few rows.
+- You should make sure that your program's results are consistent with what is described in this specification
+by running the program on carefully designed test inputs and examining
+the outputs produced to make sure they are correct.
+The goal in doing this is to try to find the mistakes you have most likely made in your code. <br>
+<!--
+__DO NOT__ test your program on the entire large input file. This may take a long time and you will never know
+if the results are correct or not.
+-->
+- Each class that you submit __will be tested by itself without the context of other classes that you are implementing for this assignment__. <br>
+This means that you need to make sure that your methods can perform their tasks correctly even if they are executed in situations that would not arise in the context of this specific program.
+- You should __backup__ your code after each time you spend some time working on it.
+Save it to a flash drive, email it to yourself, upload it to your Google drive, push it to a private git repository,
+do anything that gives you a second (or maybe third copy). Computers tend to break just a few days or even
+a few hours before the due dates - make sure that you have working code if that happens.
 
 </div> </div></div>
 
 <div class="wrap-collabsible">
-<input id="grading" class="toggle" type="checkbox"  checked=true >
+<input id="grading" class="toggle" type="checkbox" checked=true >
 <label for="grading" class="lbl-toggle"> Grading </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
+You have to follow Academic Integrity Rules.
 
 If your program does not compile or if it crashes (almost) every time it is run,
 you will get a zero on the assignment. Make sure that you are submitting
@@ -176,35 +491,34 @@ If the program does not adhere to the specification, the grade will be low and
 will depend on how easy it is to figure out what the program is doing and how to work with it.
 
 The grade will be determined by several factors:
-- 30 points: correct behavior of the program when run as the whole (i.e., we will run the
-`NumberByList` class that uses your implementation of the `Number` class)
-- 30 points: correct behavior of the methods of the `Number` class
-- 25 points: design, implementation and efficiency of the `Number` class
-    (this will be determined by a code review)
-- 15 points: proper documentation, program style and format of submission
+- 60 points: class correctness: correct behavior of methods of the required classes and correct behavior of the program
+	as a whole (this will be determined by the autograder and some manual evaluation)
+- 20 points: design and the implementation of the required classes and any additional classes
+   (this will be determined by a code review)
+- 20 points: proper documentation, program style and format of submission
    (this will be determined by a code review)
 
 </div> </div></div>
 
 
 <div class="wrap-collabsible">
-<input id="submit" class="toggle" type="checkbox"  checked=true>
+<input id="submit" class="toggle" type="checkbox" checked=true >
 <label for="submit" class="lbl-toggle"> How and What to Submit </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
-__For the purpose of grading, your project must be in the package called `project3`.
+__For the purpose of grading, your project must be be in the package called `project2`.
 This means that each of your submitted source code files should start with a line:__
 
-`package project3;`
+`package project2;`
 
 
-Your should submit all your source code files (the ones with `.java` extensions only)
-in a single __zip__ file or as individual file to Gradescope. __DO NOT__ submit `.class` files
-or any project files that your IDE might produce. You can see all the files on Gradescope.
-Verify that there is nothing there that you did not intend to put it. You __DO NOT__ need to submit
-the `NumberByList.java` file.
+Your should submit all your source code files (the ones with `.java` extensions only) to Gradescope.
+ __DO NOT__ submit `.class` files
+or any project files that your IDE or operating system might produce. __You can see all the files on Gradescope.__
+Verify that there is nothing there that you did not intend to put it. __DO NOT submit the data file.__
 
+Gradescope accepts individual files and zip files.
 You can produce a zip file directly from Eclipse (if this is what you are using):
  -  right click on the name of the package (inside the `src` folder) and select Export...
  -  under General pick Archive File and click Next
@@ -219,51 +533,129 @@ You can produce a zip file directly from Eclipse (if this is what you are using)
 You may resubmit to Gradescope as many times as you wish before the submission link closes. But if you resubmit
 after the grace period ends, your assignment will be subject to the late point deductions.
 
-Some of the autograder tests for this project will be hidden. This means that you need to make the effort
-to test your own implementation before you make the final submission.
-
+For this project, you will see ALL of the results for the autograded unit tests. This will not be
+the case in future assignments.
 
 
 </div> </div></div>
 
 
 <div class="wrap-collabsible">
-<input id="appendix" class="toggle" type="checkbox" checked=true>
+<input id="appendix" class="toggle" type="checkbox"  checked=true>
 <label for="appendix" class="lbl-toggle"> Appendix </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
-#### Sample Run of The Program
+#### `CSV` class - Parsing Lines of the Input File
+
+CSV is a simple file format, but there are many non-standard variations: the field separator, the field delimiter, the special characters allowed in the fields, etc.
+
+You should use the `CSV` class provided below as is or you can modify it if you wish.
+
+-   [`CSV`](project2/doc/project2/CSV.html) class documentation
+-   [`CSV.java`](project2/CSV.java) file
+
+If you are not sure how it works, ask questions about it.
+
+
+
+#### Sample Interactions
+
+Here are a few sample runs of a program (keep in mind, they are here to illustrate  the user interface, not
+to show you examples of tests that the autograder will run on your program).
+
 
 ```
-123 + 987
-1110
-123 * 1111111111111111111111111111111111111
-136666666666666666666666666666666666653
-11111111111111111111111111111111111111 + 99999999999999999999999999999999999999999999999999999
-100000000000000011111111111111111111111111111111111110
-123 < 987
-true
-123 >= 9876
-false
-123 == 123
-true
-123 <> 123
-false
-33333333333333333333333 * 11
-366666666666666666666663
-33333333333333333333333*11
-Illegal expression found: 33333333333333333333333*11
-7 +3
-Illegal expression found: 7 +3
-100000000000000000 - 9999999999999999
-Illegal operator found: 100000000000000000 - 9999999999999999
+Enter the tree species to learn more about it ("quit" to stop):
+oak
+All matching species:
+	black oak
+	bur oak
+	english oak
+	northern red oak
+	pin oak
+	sawtooth oak
+	scarlet oak
+	schumard's oak
+	shingle oak
+	southern red oak
+	swamp white oak
+	white oak
+	willow oak
+
+Popularity in the city:
+	NYC           :      82,867(683,788)   12.12%
+	Manhattan     :        8,736(65,423)   13.35%
+	Bronx         :       11,103(85,203)   13.03%
+	Brooklyn      :      22,372(177,293)   12.62%
+	Queens        :      30,571(250,551)   12.20%
+	Staten Island :      10,085(105,318)    9.58%
+
+Enter the tree species to learn more about it ("quit" to stop):
+prunus
+All matching species:
+	prunus
+	prunus cerasifera
+	prunus serotina
+	prunus virginiana
+
+Popularity in the city:
+	NYC           :      41,653(683,788)    6.09%
+	Manhattan     :        1,174(65,423)    1.79%
+	Bronx         :        5,505(85,203)    6.46%
+	Brooklyn      :       8,364(177,293)    4.72%
+	Queens        :      18,814(250,551)    7.51%
+	Staten Island :       7,796(105,318)    7.40%
+
+Enter the tree species to learn more about it ("quit" to stop):
+car
+All matching species:
+	aesculus x carnea
+	carpinus betulus
+	carpinus caroliniana
+	carpinus japonica
+	carya glabra
+	quercus imbricaria
+	quercus macrocarpa
+	scarlet oak
+
+Popularity in the city:
+	NYC           :       7,286(683,788)    1.07%
+	Manhattan     :          628(65,423)    0.96%
+	Bronx         :        1,396(85,203)    1.64%
+	Brooklyn      :       2,178(177,293)    1.23%
+	Queens        :       2,316(250,551)    0.92%
+	Staten Island :         768(105,318)    0.73%
+
+Enter the tree species to learn more about it ("quit" to stop):
+american elm
+All matching species:
+	american elm
+
+Popularity in the city:
+	NYC           :       7,975(683,788)    1.17%
+	Manhattan     :        1,698(65,423)    2.60%
+	Bronx         :        1,471(85,203)    1.73%
+	Brooklyn      :       2,587(177,293)    1.46%
+	Queens        :       1,709(250,551)    0.68%
+	Staten Island :         510(105,318)    0.48%
+
+Enter the tree species to learn more about it ("quit" to stop):
+frog
+
+Tere are no records of frog on NYC streets
+
+Enter the tree species to learn more about it ("quit" to stop):
+quit
+
 
 ```
 
+
 <br>
 <br>
 <br>
+
 
 </div> </div></div>
 
