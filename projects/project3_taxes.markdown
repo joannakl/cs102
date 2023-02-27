@@ -378,13 +378,13 @@ The class should override the `toString` method. The details are up to you, but 
 that is a meaningful representation of the object on which it is called (it may or may not contain the listing of all of the elements).
 
 
-#### <code class="code_title">NYS_Taxes</code> class
+#### <code class="code_title">NYS_Taxes</code> and <code class="code_title">CSV</code> classes
 
-The `NYS_Taxes` class is the actual program. This is the class that is provided with the project. It parses the data from the input file, constructs the `RecordList` object and provides the user interaction. 
+The [`NYS_Taxes`](project3/NYS_Taxes.java) class is the actual program. This is the class that is provided with the project. It parses the data from the input file, constructs the `RecordList` object and provides the user interaction. 
 
 You should not need to modify it, but you may. Make sure to document any changes clearly. WARNING: if you feel like you need to make changes to this class, it may mean that your implementation of other classes is not following the specification. 
 
-This class makes use of the `CSV` class that is provided as part of the project as well. It halps in reading and parsing CSV files. 
+This class makes use of the [`CSV`](project3/CSV.java) class that is provided as part of the project as well. It halps in reading and parsing CSV files. You can see its documentation at [`CSV` documentation](project3/project3/CSV.html)
 
 
 
@@ -512,7 +512,7 @@ CSV is a simple file format, but there are many non-standard variations: the fie
 
 You should use the `CSV` class provided below as is or you can modify it if you wish.
 
--   [`CSV`](project3/doc/project3/CSV.html) class documentation
+-   [`CSV`](project3/project3/CSV.html) class documentation
 -   [`CSV.java`](project3/CSV.java) file
 
 If you are not sure how it works, ask questions about it.
