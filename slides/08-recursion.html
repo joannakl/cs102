@@ -424,6 +424,18 @@ What makes an algorithm for the same problem different:
 - different recursive case
 - same result
 
+
+---
+
+
+template:breakout
+
+## Avoiding the `substring` Call
+
+Can you think of implementing the `reverse` method so that it does not 
+need to use the `substring` method of the `String` class? 
+
+
 ---
 
 template: section
@@ -1017,6 +1029,293 @@ receives "noom" as the solution
 
 ]
 ]
+
+---
+template: section 
+
+# Mystery Function
+
+---
+
+## What do you think this function does? 
+
+```
+    int foo ( int a,  int b  ) {
+
+        if ( a == 0 ) 
+            return 1;
+            
+        int x = a/2; 
+        
+        int val = foo (x, b); 
+        
+        if ( a % 2 == 0 ) 
+            return val * val;
+        else 
+            return val * val * b; 
+
+    }
+```
+
+__What is returned when we call `foo(5,2)`?__
+
+---
+name:power
+
+## How do we trace a recursive function? 
+
+```
+int foo ( int a,  int b  ) {
+    if ( a == 0 ) 
+        return 1;
+    int x = a/2; 
+    int val = foo (x, b); 
+    if ( a % 2 == 0 ) 
+        return val * val;
+    else 
+        return val * val * b; 
+
+}
+```
+---
+template:power
+
+|function call |  value of `a` start | value of `b` end |  value of `x` | value of `val` | return value |
+|----|:----:|:----:|:----:|:----:|:----:|
+
+---
+template:power
+
+|function call |  value of `a` start | value of `b` end |  value of `x` | value of `val` | return value |
+|----|:----:|:----:|:----:|:----:|:----:|
+|`foo(5, 2)` | 5 | 2 |  ? | ? | ? |
+
+---
+template:power
+
+|function call |  value of `a` start | value of `b` end |  value of `x` | value of `val` | return value |
+|----|:----:|:----:|:----:|:----:|:----:|
+|`foo(5, 2)` | 5 | 2 |  2 | ? | ? |
+
+--
+
+<br/>
+Why is `x` equal to 2 and not 2.5? 
+
+--
+
+Can we determine what `val` is at this point? 
+--
+No, because we need to make the recurvise call first. 
+
+---
+template:power
+
+|function call |  value of `a` start | value of `b` end |  value of `x` | value of `val` | return value |
+|----|:----:|:----:|:----:|:----:|:----:|
+|`foo(5, 2)` | 5 | 2 |  2 | ? | ? |
+--
+
+|`foo(2, 2)` | 2 | 2 |  1 | ? | ? |
+--
+
+<br/>
+Each new stack frame has its own memory locations to store each variable:
+- in the stack frame for `foo(5,2)` there are memory locations for `a`, `b`, `x` and `val`,
+- in the stack frame for `foo(2,2)` there are __different__ memory locations for `a`, `b`, `x` and `val`.
+
+This is why a variable can have different values in different recursive calls.
+
+
+---
+template:power
+
+|function call |  value of `a` start | value of `b` end |  value of `x` | value of `val` | return value |
+|----|:----:|:----:|:----:|:----:|:----:|
+|`foo(5, 2)` | 5 | 2 |  2 | ? | ? |
+|`foo(2, 2)` | 2 | 2 |  1 | ? | ? |
+--
+
+|`foo(1, 2)` | 1 | 2 |  0 | ? | ? |
+--
+
+|`foo(0, 2)` | 0 | 2 |  0 | ? | ? | 
+
+--
+
+<br/>
+What happens now? 
+
+--
+
+<br/>
+We just _hit_ the base case. The `if` statement condition is `true` and 
+the function will return right away.
+
+---
+template:power
+
+|function call |  value of `a` start | value of `b` end |  value of `x` | value of `val` | return value |
+|----|:----:|:----:|:----:|:----:|:----:|
+|`foo(5, 2)` | 5 | 2 |  2 | ? | ? |
+|`foo(2, 2)` | 2 | 2 |  1 | ? | ? |
+|`foo(1, 2)` | 1 | 2 |  0 | ? | ? |
+|`foo(0, 2)` | 0 | 2 |  0 | N/A | .yellow[ **1** ] | 
+
+--
+
+<br/>
+The return value from `foo(0,2)` is then assigned to `val` in `foo(1,2)`
+and `foo(0,2)` is removed from the stack (which we show by .gray[_graying it out_]). 
+
+
+
+---
+template:power
+
+|function call |  value of `a` start | value of `b` end |  value of `x` | value of `val` | return value |
+|----|:----:|:----:|:----:|:----:|:----:|
+|`foo(5, 2)` | 5 | 2 |  2 | ? | ? |
+|`foo(2, 2)` | 2 | 2 |  1 | ? | ? |
+|`foo(1, 2)` | 1 | 2 |  0 | .yellow[**1**] | ? |
+|.gray[`foo(0, 2)`] | 0 | 2 |  0 | N/A | 1 | 
+
+--
+
+<br/>
+Since `a % 2` is `1 % 2 = 1`, the return value is `1 * 1 * 2 = 2`. 
+
+
+---
+template:power
+
+|function call |  value of `a` start | value of `b` end |  value of `x` | value of `val` | return value |
+|----|:----:|:----:|:----:|:----:|:----:|
+|`foo(5, 2)` | 5 | 2 |  2 | ? | ? |
+|`foo(2, 2)` | 2 | 2 |  1 | ? | ? |
+|`foo(1, 2)` | 1 | 2 |  0 | 1 | .yellow[**2**] |
+|.gray[`foo(0, 2)`] | 0 | 2 |  0 | N/A | 1 | 
+
+--
+
+<br/>
+And the return value from `foo(1,2)` is assigned to `val` in `foo(2,2)`
+and `foo(1,2)` is removed from the stack. 
+
+
+
+---
+template:power
+
+|function call |  value of `a` start | value of `b` end |  value of `x` | value of `val` | return value |
+|----|:----:|:----:|:----:|:----:|:----:|
+|`foo(5, 2)` | 5 | 2 |  2 | ? | ? |
+|`foo(2, 2)` | 2 | 2 |  1 | .yellow[**2**] | ? |
+|.gray[`foo(1, 2)`] | 1 | 2 |  0 | 1 | 2 |
+|.gray[`foo(0, 2)`] | 0 | 2 |  0 | N/A | 1 | 
+
+--
+
+<br/>
+Since `a % 2` is `2 % 2 = 0`, the return value is `2 * 2 = 4`. 
+
+
+
+---
+template:power
+
+|function call |  value of `a` start | value of `b` end |  value of `x` | value of `val` | return value |
+|----|:----:|:----:|:----:|:----:|:----:|
+|`foo(5, 2)` | 5 | 2 |  2 | ? | ? |
+|`foo(2, 2)` | 2 | 2 |  1 | 2 | .yellow[**4**] |
+|.gray[`foo(1, 2)`] | 1 | 2 |  0 | 1 | 2 |
+|.gray[`foo(0, 2)`] | 0 | 2 |  0 | N/A | 1 | 
+
+--
+
+<br/>
+And the return value from `foo(2,2)` is assigned to `val` in `foo(5,2)`
+and `foo(2,2)` is removed from the stack. 
+
+
+---
+template:power
+
+|function call |  value of `a` start | value of `b` end |  value of `x` | value of `val` | return value |
+|----|:----:|:----:|:----:|:----:|:----:|
+|`foo(5, 2)` | 5 | 2 |  2 | .yellow[**4**] | ? |
+|.gray[`foo(2, 2)`] | 2 | 2 |  1 | 2 | 4 |
+|.gray[`foo(1, 2)`] | 1 | 2 |  0 | 1 | 2 |
+|.gray[`foo(0, 2)`] | 0 | 2 |  0 | N/A | 1 |  
+
+--
+
+<br/>
+Since `a % 2` is `5 % 2 = 1`, the return value is `4 * 4 * 2 = 32`. 
+
+
+---
+template:power
+
+|function call |  value of `a` start | value of `b` end |  value of `x` | value of `val` | return value |
+|----|:----:|:----:|:----:|:----:|:----:|
+|`foo(5, 2)` | 5 | 2 |  2 | 4 | .yellow[**32**] |
+|.gray[`foo(2, 2)`] | 2 | 2 |  1 | 2 | 4 |
+|.gray[`foo(1, 2)`] | 1 | 2 |  0 | 1 | 2 |
+|.gray[`foo(0, 2)`] | 0 | 2 |  0 | N/A | 1 |  
+
+--
+
+<br/>
+This function computes the value of $a^b$ for non-negative integer $a$ and an integer $b$.
+
+---
+## Challenge  1
+
+Perform a similar function trace using the function below and the function call 
+`power(5,2)`. 
+
+```
+int power ( int a,  int b  ) {
+    if ( a == 0 ) 
+        return 1;
+    return b * power( a-1, b ); 
+
+}
+```
+
+--
+
+- How many function calls are made before we get the result? 
+
+- Which of the two functions, `foo` or `power`, is faster? 
+
+- Can you guess / estimate how many function calls would be made for each 
+if the arguments were  `a = 1024` and `b = 2`? (Ignore the fact that the results 
+will be meaningless because of the integer overflow.) 
+
+
+---
+## Challenge  2
+
+What does this function do? 
+
+
+```
+int foo ( int a,  int b  ) {
+    if ( a == 0 ) 
+        return 1;
+    int x = a/2; 
+    int val = foo (x, b); 
+    if ( a % 2 == 0 ) 
+        return val + val;
+    else 
+        return val + val + b; 
+
+}
+```
+
+Note that it uses addition instead of multiplication from the previous version. 
 
 ---
 template: section
