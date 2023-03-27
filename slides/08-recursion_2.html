@@ -148,8 +148,8 @@ getAllBinarySequences ( n, seq )
   if len(seq) = n
     we have one of the sequences
     return
-  sequence0 = sequence + '0'
-  sequence1 = sequence + '1'
+  seq0 = seq + '0'
+  seq1 = seq + '1'
   generateAllBinarySequences( n, seq0)
   generateAllBinarySequences( n, seq1)
 ```
@@ -159,7 +159,6 @@ getAllBinarySequences ( n, seq )
 ## Generate All Binary Sequence of Length `n`
 
 Finally, we can convert the algorithm into Java code.
-
 For simplicity, we print the sequence once it is ready. We could also
 add it to a list of some kind for later usage.
 
@@ -176,12 +175,20 @@ void getAllBinarySequences ( int length, String seq ) {
   /add the next bits to the sequence (two possibilities)
   String seq0 = seq + "0"; //add zero to the current sequence
   String seq1 = seq + "1"; //replace the zero with one
-  getAllBinarySequences( length, seq1);
   getAllBinarySequences( length, seq0);
+  getAllBinarySequences( length, seq1);
 
 }
 ```
 
+--
+.smaller[
+A few questions:
+- what will be the first string printed?
+- what will be the last string printed?
+- how would the answers to above questions change if the revered 
+the last two lines of the above code? 
+]
 ---
 exclude:false
 name:no-0-in-second
@@ -213,8 +220,8 @@ getAllBinarySequences ( n, seq )
 *   if (seq[2] != '0' )
 *     we have one of the sequences
     return
-  sequence0 = sequence + '0'
-  sequence1 = sequence + '1'
+  seq0 = seq + '0'
+  seq1 = seq + '1'
   generateAllBinarySequences( n, seq0)
   generateAllBinarySequences( n, seq1)
 ```
@@ -226,7 +233,7 @@ getAllBinarySequences ( n, seq )
 <br/>
 .center80[
 .red[
-But this means that we are creating many more sequences than we need to!
+But this means that we are creating many more sequences than we need to (twice as many)!
 <br/>It all takes time, especially for large `n`.
 <br/>Can we avoid generating sequences that we do not want?
 ]
@@ -249,11 +256,11 @@ getAllBinarySequences ( n, seq )
   if len(seq) = n
     we have one of the sequences
     return
-* if len(sequence) != 2
+* if len(seq) != 2
 *   //do not add '0' if adding to the second position
-*   sequence0 = sequence + '0'
+*   seq0 = seq + '0'
 *   generateAllBinarySequences( n, seq0)
-  sequence1 = sequence + '1'
+  seq1 = seq + '1'
   generateAllBinarySequences( n, seq1)
 ```
 
