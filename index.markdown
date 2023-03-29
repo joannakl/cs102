@@ -36,6 +36,7 @@ Course syllabus and materials are on <a href="https://brightspace.nyu.edu">NYU B
 - [Lab 5, Iterating Over Things and the for-each Loop](labs/lab5.html) 
 - [Lab 6, Magic Of Recursion](labs/lab6.html) 
 - [Lab 7, Test Driven Development (TDD) and using JUnit Testing](labs/lab7.html) 
+- [Lab 7a, Wring an _Add Program_](labs/lab7.html) 
 - [Lab 8, Sorting Algorithms](labs/lab8.html) 
 - [Lab 9, Binary Trees and Binary Search Trees](labs/lab9.html) 
 - [Lab 10, Binary (Search) Trees](labs/lab10.html) 
