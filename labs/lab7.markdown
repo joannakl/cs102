@@ -43,8 +43,8 @@ You should be able to answer the following questions:
 
 ### Part 2  Writing Simple Unit Tests
 
-In this example, we will look at a class representing a 2D point (just like the one we looked
-at in class).
+In this example, we will look at a class representing a 2D point.
+You can find source code in _TDD_ workspace on Ed. 
 
 We will focus on testing two methods (or rather writing just a couple of tests for each of those two methods):
 
