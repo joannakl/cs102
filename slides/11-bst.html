@@ -414,10 +414,10 @@ boolean find ( T data, BSTNode node )
         return false
 
     else if (  data < node.data )
-        return find( data, node.data )
+        return find( data, node.left )
 
     else if (data > node.data )
-        return find (data, node.data )
+        return find (data, node.right )
 
     else
         return true
@@ -431,13 +431,17 @@ boolean find ( T data, BSTNode node )
 &nbsp;&nbsp;&nbsp;**O(H)** where H is the height of the tree
 
 --
-
+.smaller[
 Since the height of the tree could be as much as N, i.e., H = O(N), the
 performance of this function could be as bad as linear, O(N) in the worst case.
 
 But stating it as O(H) gives us a more accurate description that applies to
-the best, the average and the worst case performance.
+the best, the average and the worst case performance. 
 
+Note: The performance in this cas depends on the shape of the tree. The same 
+algorithm can result in O(N) time or O(log N) time for a find operation 
+depending on the shape of the tree. 
+]
 
 ---
 
