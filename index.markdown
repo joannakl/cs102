@@ -26,6 +26,7 @@ Course syllabus and materials are on <a href="https://brightspace.nyu.edu">NYU B
 - [Balanced Binary Search Trees](slides/12-balanced-bst.html)
 - [Priority Queues, Heaps, Heapsort](slides/13-priority_queues.html)
 - [Hash Tables](slides/14-hashtables.html)
+- [Graphs - Introduction](slides/15-graphs.html)
 
 ## Labs 
 
