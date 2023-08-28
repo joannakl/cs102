@@ -3,7 +3,12 @@ layout: default
 title: Course Essentials
 ---
 
-Course syllabus and materials are on <a href="https://brightspace.nyu.edu">NYU Brightspace</a>.
+
+**For the current semester materials, access them through  <a href="https://brightspace.nyu.edu">NYU Brightspace</a>.**
+
+## Course Info and Resources
+
+- [Syllabus](syllabus.html)
 
 ## Slides
 
@@ -45,5 +50,4 @@ Course syllabus and materials are on <a href="https://brightspace.nyu.edu">NYU B
 - [Lab 12, How Many Words](labs/lab12.html) 
 
 
-<br>
 <br>
