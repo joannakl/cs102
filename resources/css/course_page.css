@@ -2,8 +2,6 @@
  *    lessc styles.less styles.css
  * to generate the css file.
  */
-
-
 /* Color schemes website:
  *     http://colorschemedesigner.com
  */
@@ -38,14 +36,14 @@ h1 {
   padding: 2px;
   font-size: 1.4em;
   font-weight: bold;
-  color: #40334d;
+  color: hsl(270, 20%, 25%);
 }
 h2 {
   margin: 0.75em 1em 0.25em 0em;
   padding: 2px;
   font-size: 1.3em;
   font-weight: bold;
-  color: #40334d;
+  color: hsl(270, 20%, 25%);
 }
 .important h2 {
   color: white;
@@ -55,36 +53,38 @@ h3 {
   padding: 2px;
   font-size: 1.2em;
   font-weight: bold;
-  color: #40334d;
+  color: hsl(270, 20%, 25%);
 }
 h4 {
   margin: 0.5em 1em 0.25em 0em;
   padding: 2px;
-  font-size: 1.0em;
+  font-size: 1em;
   font-weight: bold;
-  color: #40334d;
+  color: hsl(270, 20%, 25%);
 }
-
-.lab h1, h2, h3, h4 {
-    font-size: 150%;
+.lab h1,
+.lab h2,
+.lab h3,
+.lab h4 {
+  font-size: 150%;
 }
 /******************************************/
 header {
-  background: #b3a3c2;
+  background: hsl(271, 20%, 70%);
   padding: 3px 1em;
   margin: 0;
-  color: #40334d;
+  color: hsl(270, 20%, 25%);
 }
 header h1 {
   margin: 0em;
   padding: 0px;
   font-size: 2em;
   font-weight: bold;
-  color: #40334d;
+  color: hsl(270, 20%, 25%);
 }
 /******************************************/
 nav {
-  background: #b3a3c2;
+  background: hsl(271, 20%, 70%);
   padding: 3px 1em;
   margin: 0;
 }
@@ -97,24 +97,24 @@ nav ul {
 nav li {
   float: left;
   font-weight: bold;
-  border: 1px solid #b3a3c2;
+  border: 1px solid hsl(271, 20%, 70%);
 }
 nav li a {
   display: block;
-  color: #e6e0eb;
-  background-color: #41324e;
+  color: hsl(273, 22%, 90%);
+  background-color: hsl(272, 22%, 25%);
   text-align: center;
   padding: 0.5em 2em;
   text-decoration: none;
 }
 nav li a:hover {
-  color: #41324e;
-  background-color: #e6e0eb;
+  color: hsl(272, 22%, 25%);
+  background-color: hsl(273, 22%, 90%);
   text-decoration: none;
 }
 /******************************************/
 aside {
-  background: #b3a3c2;
+  background: hsl(271, 20%, 70%);
   width: 20%;
   float: right;
   padding: 0.25em;
@@ -122,19 +122,18 @@ aside {
 aside h1 {
   margin: 0.25em 0.25em 0em 0em;
 }
-
-.alert{
-    background-color: yellow;
-    font-weight:bold;
-    font-size:1.2em;
-    width: 60%;
-    padding:10px 10% 10px 10%;
+.alert {
+  background-color: yellow;
+  font-weight: bold;
+  font-size: 1.2em;
+  width: 60%;
+  padding: 10px 10% 10px 10%;
 }
 .footnotes {
   font-size: 0.8em;
   border-style: dotted;
   border-width: 2px 0 0 0;
-  border-color:  #b3a3c2;
+  border-color: #b3a3c2;
 }
 iframe.calendar {
   border-width: 0;
@@ -155,28 +154,18 @@ iframe.calendar {
 }
 /******************************************/
 main {
-  background: #ffffff;
+  background: #FFFFFF;
   padding: 1em;
 }
 main hr {
   margin: 0;
   padding: 0;
-  color: #40334d;
-  background-color: #40334d;
+  color: hsl(270, 20%, 25%);
+  background-color: hsl(270, 20%, 25%);
   height: 3px;
   width: 400px;
   text-align: left;
 }
-
-.lab  hr {
-  margin: 0;
-  padding: 0;
-  color: #40334d;
-  background-color: #40334d;
-  height: 3px;
-  width: 100%;
-}
-
 main p {
   margin: 0px;
   padding: 2px;
@@ -192,21 +181,20 @@ main ul {
   color: #000000;
 }
 main .emph {
-  color: #40334d;
+  color: hsl(270, 20%, 25%);
   font-weight: bold;
   font-variant: small-caps;
 }
 .red {
-    color: red;
+  color: red;
 }
 .green {
-    color: green;
+  color: green;
 }
 main .name {
-  color: #40334d;
+  color: hsl(270, 20%, 25%);
   font-variant: small-caps;
 }
-
 main ul {
   margin: 0 0 0 1em;
   padding: 0 0 0 1em;
@@ -215,32 +203,29 @@ main ul {
 main li {
   padding: 0 0 0 0em;
 }
-
-.strong{
+.strong {
   color: darkred;
   font-weight: bold;
   font-variant: small-caps;
 }
-
 .lab {
   max-width: 80em;
-  width:72%;
+  width: 72%;
 }
-.lab-right{
+.lab-right {
   width: 17%;
-  margin:1em;
+  margin: 1em;
   padding: 1em;
   border-style: solid;
   border-width: 0 0 0 2px;
-  border-color:  #b3a3c2;
-  position:fixed;
-  right:0;
+  border-color: #b3a3c2;
+  position: fixed;
+  right: 0;
 }
-
 .lab td {
-    padding: 0.1em 1em 0.1em 1em;
-    vertical-align: top;
-    border: 1px lightgray solid
+  padding: 0.1em 1em 0.1em 1em;
+  vertical-align: top;
+  border: 1px lightgray solid;
 }
 td {
   padding: 1em;
@@ -257,7 +242,7 @@ td {
   clear: left;
   border: 1px solid black;
   overflow: hidden;
-  background-color: #8b629d;
+  background-color: hsl(282, 23%, 50%);
   font-weight: bold;
   color: white;
 }
@@ -265,7 +250,7 @@ td {
   clear: left;
   border: 1px solid black;
   overflow: hidden;
-  background-color: #f3eff5;
+  background-color: hsl(280, 23%, 95%);
 }
 .column_one {
   vertical-align: top;
@@ -284,7 +269,7 @@ td {
   padding: 5px 10px 5px 10px;
   border: 1px solid black;
   overflow: hidden;
-  background-color: #f2f2f2;
+  background-color: hsl(0, 0%, 95%);
 }
 .other_heading {
   clear: left;
@@ -308,12 +293,12 @@ td {
   .column_assign {
     padding-top: 3px;
   }
-  .lab-right{
-    position:relative;
+  .lab-right {
+    position: relative;
     width: 72%;
     border-style: solid;
     border-width: 2px;
-    border-color:  #b3a3c2;
+    border-color: #b3a3c2;
   }
 }
 @media (min-width: 700px) {
@@ -346,7 +331,7 @@ footer {
   clear: both;
   margin: 0;
   padding: 0;
-  background: #b3a3c2;
+  background: hsl(271, 20%, 70%);
   font-size: 0.8em;
   overflow: hidden;
 }
@@ -362,115 +347,74 @@ footer {
   float: right;
   width: 38%;
 }
-
-
-
-
-
-
-
-/***************************************/
-
-
-
-
-
 .code_title {
-    font-size: 120%;
+  font-size: 120%;
 }
-
 code {
-    background-color: #63447d21;
-    font-size:110%;
+  background-color: #63447d21;
+  font-size: 110%;
 }
-
 pre code {
-    background-color:#f8f8f8;
-
+  background-color: #f8f8f8;
 }
-
 .highlight td {
-    border:0;
+  border: 0;
 }
-
-
-
-
-
 /* collapsible style from https://www.digitalocean.com/community/tutorials/css-collapsible */
-
-
-
 .wrap-collabsible {
   margin-bottom: 1.2rem 0;
 }
-
 input[type='checkbox'] {
   display: none;
 }
-
 .lbl-toggle {
   display: block;
-
   font-weight: bold;
   font-family: monospace;
   font-size: 1.2rem;
   text-transform: uppercase;
   text-align: left;
-
   padding: 1rem;
   margin: 1em 0 0 0 ;
-
   color: black;
   background: lightgray;
-
   cursor: pointer;
-
   border-radius: 1px;
   transition: all 0.25s ease-out;
 }
-
 .lbl-toggle:hover {
   color: purple;
 }
-
 .lbl-toggle::before {
   content: ' ';
   display: inline-block;
-
   border-top: 5px solid transparent;
   border-bottom: 5px solid transparent;
   border-left: 5px solid currentColor;
   vertical-align: middle;
-  margin-right: .7rem;
+  margin-right: 0.7rem;
   transform: translateY(-2px);
-
-  transition: transform .2s ease-out;
+  transition: transform 0.2s ease-out;
 }
-
 .toggle:checked + .lbl-toggle::before {
   transform: rotate(90deg) translateX(-3px);
 }
-
 .collapsible-content {
   max-height: 0px;
   overflow: hidden;
-  transition: max-height .25s ease-in-out;
+  transition: max-height 0.25s ease-in-out;
 }
-
 .toggle:checked + .lbl-toggle + .collapsible-content {
   max-height: 1000vh;
 }
-
 .toggle:checked + .lbl-toggle {
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
 }
-
 .collapsible-content .content-inner {
   background: white;
   border-bottom: 1px solid white;
   border-bottom-left-radius: 7px;
   border-bottom-right-radius: 7px;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
 }

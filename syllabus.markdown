@@ -1,7 +1,38 @@
 ---
 layout: default
-title: Course Essentials
+title: Syllabus, CSCI-UA 102, Klukowska
 ---
+
+
+ <div class="lab-right" markdown="1">
+
+-   [Instructor Information](#instructor-information)
+-   [Course Information](#course-information)
+-   [Course Description](#course-description)
+-   [Assessments and Grading](#assessments-and-grading)
+-   [Course Materials](#course-materials)
+    -   [Brightspace and the Course
+        Website](#brightspace-and-the-course-website)
+    -   [Textbook(s)](#textbooks)
+    -   [Other Resources](#other-resources)
+-   [Recitations and Labs](#recitations-and-labs)
+    -   [Recitations](#recitations)
+    -   [Weekly Labs](#weekly-labs)
+-   [Course Policies](#course-policies)
+    -   [Attendance](#attendance)
+    -   [Missed Assessments](#missed-assessments)
+    -   [Late Programming Projects](#late-programming-projects)
+    -   [Broken Programming Projects](#broken-programming-projects)
+    -   [Disability Disclosure
+        Statement](#disability-disclosure-statement)
+    -   [Wellness Statement](#wellness-statement)
+    -   [Academic Integrity](#academic-integrity)
+-   [Topics Covered](#topics-covered)
+</div>
+
+
+
+ <div class="lab" markdown="1">
 
 # Syllabus for CSCI-UA 102, Professor Klukowska
 
@@ -138,6 +169,24 @@ This is your cs101 textbook. It is a good resource for refreshing the Java mater
     * website: [http://www.nyu.edu/999](www.nyu.edu/999)
 
 
+## Recitations and Labs
+
+### Recitations
+
+Recitations are the times to have most of your questions answered. These could be questions about upcoming projects, material covered during the prior week or the weekly labs. They are also a chance for you to work with a group of students from the class to solve some problems from the weekly labs together.
+
+The recitations are essential part of the course. You are expected to attend them. They are a chance for you to learn the material and collaborate with your peers. They are NOT optional part of this course.
+
+### Weekly Labs
+
+(Almost) every week you will be given a lab to work on. You should review the lab instructions before your weekly recitation so that you can discuss any questions and issues during the recitation.
+
+During some of the recitation session you will get a chance to work on parts of the lab with other students and with guidance of the recitation instructor.
+
+Some parts of the weekly labs will  be submitted and will contribute to the "participation and progress" part of your grade for this course. To get the credit for this part, you must submit it before the due date.
+
+
+
 ## Course Policies
 
 This course follows CAS Academic Policies that can be found at [https://cas.nyu.edu/academic-programs/bulletin/policies/academic-policies.html](https://cas.nyu.edu/academic-programs/bulletin/policies/academic-policies.html).  
@@ -147,7 +196,7 @@ This course follows CAS Academic Policies that can be found at [https://cas.nyu.
 
 ### Attendance
 
-This is an in-person synchronous class and you are expected to attend the lectures and recitations. Recitations are designed to give you a chance for hands-on practice and collaboration with your peers, and to answer questions you may have about the material. You do not benefit from such interactions unless you attend. 
+This is an in-person synchronous class and you are expected to attend the lectures and recitations. 
 
 Missing a class or two is reasonable and often unavoidable, but missing more than five course meetings will likely result in decreased understanding of the course content and, hence, lower scores.
 
@@ -261,26 +310,6 @@ Here are examples of _fair_ and _not fair_ actions that a student may take. This
 -   Submitting work that was completed by someone else and then modified by you for a problem set, a programming project or an exam.
 
 
-## Recitations and Labs
-
-### Recitations
-
-Recitations are the times to have most of your questions answered. These could be questions about upcoming projects, material covered during the prior week or the weekly labs. They are also a chance for you to work with a group of students from the class to solve some problems from the weekly labs together.
-
-The recitations are essential part of the course. You are expected to attend them. They are a chance for you to learn the material and collaborate with your peers. They are NOT optional part of this course.
-
-### Weekly Labs
-
-(Almost) every week you will be given a lab to work on. You should review the lab instructions before your weekly recitation so that you can discuss any questions and issues during the recitation.
-
-The weekly labs can be retrieved at any time during the week in which they are assigned but you should review them prior to the recitation session for which you are registered.
-
-During the recitation session you should work on parts of the lab with other students.
-
-Some parts of the weekly labs will  be submitted and will contribute to the "participation and progress" part of your grade for this course. To get the credit for this part, you must submit it before the due date.
-
-
-
 ## Topics Covered
 
 - Review of advanced Java topics:
@@ -317,3 +346,4 @@ Some parts of the weekly labs will  be submitted and will contribute to the "par
 
 
 See the [Tentative Weekly Schedule](https://docs.google.com/spreadsheets/d/e/2PACX-1vQRPJ6qWpXkxBGd2Y16yRF7iQBc9xYjkj7Y6XKbEITUsndBUsvob4upOzoEcOdtqxKWGjVC60zQf85i/pubhtml?gid=114127910&single=true)  for approximate times when topics will be covered. All dates there are **tentative**, but should be a good indicator or the course timing. 
+

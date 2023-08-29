@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Course Essentials
+title: Course Materials, CSCI-UA 102, Klukowska
 ---
 
 
