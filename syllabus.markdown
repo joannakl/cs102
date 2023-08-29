@@ -1,3 +1,8 @@
+---
+layout: default
+title: Course Essentials
+---
+
 # Syllabus for CSCI-UA 102, Professor Klukowska
 
 ## Instructor Information
