@@ -263,9 +263,6 @@ creates the requested `Record` object.
     `public Date getTime()`
 
 
-- ??? should this have `equals`, `toString` or `compareTo`? 
-- ??? consider adding methods similar to equals that compare two record objects for equality by terminal and user only - would this be useful?  
-
 #### <code class="code_title">Session</code> class
 
 This class should represent a single login session. 
