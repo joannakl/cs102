@@ -148,6 +148,12 @@ a variable of type `long`.)
 
 `USERNAME` is the name of the user.
 
+For this project, the input file is guaranteed to be in chronological order of time. It is also guaranteed to be _correct_. This means that
+- there are never any two concurrent sessions with the same terminal value, 
+- the terminals are always positive integers (and their negated values indicate logout), 
+- the usernames are strings containing alphanumeric characters and '_' only (no spaces in usernames).
+ 
+
 </div> </div></div>
 
 <div class="wrap-collabsible">
@@ -189,9 +195,9 @@ and allow the user to provide an alternative command.
 If the command entered by the user does not return any results,  the program should print
 a message
 
-`    "No user matching %s found. `
+`    "No user matching USERNAME found. `
 
-and allow the user to provide an alternative command.
+(in which `USERNAME` is replaced by the actual username used in the user's command) and allow the user to provide an alternative command.
 
 
 
@@ -289,7 +295,7 @@ a login record and logout record:
 
     `public String getUsername()`
     
-    `public long getDuration()` - returns the number of milliseconds ellapsed between the login time and logout time 
+    `public long getDuration()` - returns the number of milliseconds ellapsed between the login time and logout time, or -1 if the session is still active  
 
 - The class should override the `toString` method from the `Object` class. It should
 	return a `String` matching the following pattern
