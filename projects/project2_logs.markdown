@@ -246,7 +246,7 @@ creates the requested `Record` object.
 	`public Record(int terminal, boolean login, String username, Date time)`
 
 	A valid terminal should be a positive integer. The `login` is a `boolean` value
-    that indicates if a given `Record` object represents a login record or logout record.
+    that indicates if a given `Record` object represents a login record (if `login` is `true`) or logout record (if `login` is `false`).
     The `username` is the name of the user. And the `time` is a `Date` object that 
     represents the date and time at which the user logged in or logged out. (See the 
     [`Date` class](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Date.html). ) 
@@ -279,7 +279,7 @@ a login record and logout record:
 	`public Session (Record login, Record logout)`
 
 	A valid pair of records has to have matching usernames and matching terminal numbers (otherwise they do not represent a single login session). The `login` record cannot be `null`. 
-    The `logout` record can be `null` (this indicates that the user is still logged in on the system). 
+    The `logout` record can be `null` (this indicates that the user is still logged in on the system). The time associated with the login time should be no greater than the time associated with the logout time. 
     
     If this constructor is called with invalid parameters, it should throw an instance of
 	`IllegalArgumentException` with an appropriate message.
@@ -295,7 +295,7 @@ a login record and logout record:
 
     `public String getUsername()`
     
-    `public long getDuration()` - returns the number of milliseconds ellapsed between the login time and logout time, or -1 if the session is still active  
+    `public long getDuration()` - returns the number of milliseconds ellapsed between the login time and logout time, or -1 if the session is still active;  
 
 - The class should override the `toString` method from the `Object` class. It should
 	return a `String` matching the following pattern
@@ -537,7 +537,7 @@ sungmin, terminal 1, duration   12 days,  0 hours, 53 minutes, 20 seconds
 first bruno
 No user matching bruno found
 
-fist joanna
+next joanna
 Error: this is not a valid command. Try again.
 
 last anirudth
