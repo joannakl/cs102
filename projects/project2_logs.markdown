@@ -289,6 +289,7 @@ a login record and logout record:
 - This class should provide the following accessor (getter) methods:
     
     `public int getTerminal()`
+    
     `public Date getLoginTime()`
 
     `public Date getLogoutTime()`
