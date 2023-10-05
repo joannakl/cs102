@@ -80,7 +80,7 @@ For this part use the documentation as well as the source code for Java
 1. Look at the documentation page for `ArrayList` class. List all interfaces that
 this class implements.
 2. Look at the documentation of the
-[`Iterable<E>` interface](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Iterable.html).
+`Iterable<E>` interface [https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Iterable.html).
 List all the methods that are required by that interface. Indicate the ones
 that are provided by the `ArrayList` class directly (not the ones that may be
 inherited from other classes).
@@ -92,7 +92,7 @@ inherited from other classes).
 One of the methods required by the `Iterable<E>` interface is called
 `iterator()` - it returns an instance of  `Iterator<E>`. Look at the documentation
 for `Iterator<E>`,
-[https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Iterator.html](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Iterator.html)
+[https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html)
 and answer the following questions.
 
 1. Is `Iterator<E>` a class or an interface?
@@ -137,12 +137,13 @@ to the code example in the Introduction. Try to figure out why it does not work.
 ### Part 4   Making a linked list iterable
 
 Go to Ed Workspaces.
-- Fork the `LinkedList Template` workspace.
+- Locate the `LinkedList` workspace that we worked on in class.
 (It should have a very basic `LinkedList` class implementation.)
-- Implement as many methods as you can, but start with the add/remote/toString.
-- Make the list _iterable_, i.e., it should implement `Itarable<E> ` interface. (This means defining the `Iterator` class).
+- Make the list _iterable_, i.e., it should implement `Itarable<E> ` interface. (This means defining the `Iterator` class. It should be an inner class of the `LinkedList` class. 
+See the code for the `ArrayList` class for an example of the iterator implemented 
+as the inner class.)
+- Implement as many other methods as you can.  
 
-Note: we did this in class, but it is a good practice to try to reproduce it on your own.
 
 ### Part 5  What will these code fragments do?
 
