@@ -191,6 +191,18 @@ main .emph {
 .green {
   color: green;
 }
+.gray {
+  color: LightGray;
+}
+.new {
+  color: Purple;
+  font-weight: 150%;
+}
+.old {
+  text-decoration: line-through;
+  text-decoration-color: black;
+  color: LightGray;
+}
 main .name {
   color: hsl(270, 20%, 25%);
   font-variant: small-caps;
