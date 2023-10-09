@@ -57,7 +57,6 @@ get practice on) the following tasks:
 - working with potentially large data sets
 - <span class=old>using the `ArrayList` class</span>
 - <span class=new>implementing and using a doubly linked list </span>
-- <span class=new>using stacks</span>
 - writing classes
 - working with existing code
 - extending existing classes (inheritance)
@@ -471,8 +470,8 @@ posted on the course website.
 
 - The data file should be read only once! Your program needs to store the data in memory resident data structures.
 
-- You may not use any of the collection
-classes that were not covered in cs101 (for this assignment, do not use `LinkedList`, `Stack`, `Queue`, `PriorityQueue`, or any classes implementing the `Map` interface). You can, and should, use the `ArrayList` class.
+- You may not use any  classes implementing the `Map` interface). You may not use the `LinkedList` class
+implemented in Java libraries. 
 
 - You may use any exception-related classes.
 
