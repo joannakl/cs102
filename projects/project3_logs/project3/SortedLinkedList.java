@@ -8,6 +8,9 @@ import java.util.Iterator;
  * based on the natural order of the elements.
  * This list does not allow <code>null</code> elements. 
  * 
+ * @author Joanna Klukowska
+ * @author 
+ * 
  * @param <E> the type of elements held in this list
  */
 public class SortedLinkedList<E extends Comparable<E>>
@@ -30,8 +33,8 @@ public class SortedLinkedList<E extends Comparable<E>>
      * Adds the specified element to the list in ascending order.
      *
      * @param element the element to add
-     * @return `true` if the element was added successfully, 
-     * `false` otherwise (if <code>element==null</code>)
+     * @return <code>true</code> if the element was added successfully, 
+     * <code>false</code> otherwise (if <code>element==null</code>)
      */
     public boolean add(E element) {
         // TODO: Implement this method
@@ -46,11 +49,12 @@ public class SortedLinkedList<E extends Comparable<E>>
     }
 
     /**
-     * Returns `true` if the list contains the specified element, 
-     * `false` otherwise.
+     * Returns <code>true</code> if the list contains the specified element, 
+     * <code>false</code> otherwise.
      *
      * @param o the element to search for
-     * @return `true` if the element is in the list, `false` otherwise
+     * @return <code>true</code> if the element is in the list, 
+     * <code>false</code> otherwise
      */
     public boolean contains(Object o) {
         // TODO: Implement this method
@@ -63,7 +67,7 @@ public class SortedLinkedList<E extends Comparable<E>>
      * @param index the index of the element to return
      * @return the element at the specified index
 	 * @throw IndexOutOfBoundsException  if the index is out of 
-	 * range (index < 0 || index >= size())
+	 * range <code>(index < 0 || index >= size())</code>
      */
     public E get(int index) throws IndexOutOfBoundsException {
         // TODO: Implement this method
@@ -72,11 +76,11 @@ public class SortedLinkedList<E extends Comparable<E>>
 
     /**
      * Returns the index of the first occurrence of the specified element in the list,
-     * or `-1` if the element is not in the list.
+     * or -1 if the element is not in the list.
      *
      * @param o the element to search for
      * @return the index of the first occurrence of the element, 
-     * or `-1` if the element is not in the list
+     * or -1 if the element is not in the list
      */
     public int indexOf(Object o) {
         // TODO: Implement this method
@@ -85,13 +89,14 @@ public class SortedLinkedList<E extends Comparable<E>>
 
     /**
      * Returns the index of the first occurrence of the specified element in the list,
-     * starting at the specified index, i.e., in the range of indexes index <= i < size(), 
-     * or `-1` if the element is not in the list in the range of indexes index <= i < size().
+     * starting at the specified <code>index</code>, i.e., in the range of indexes 
+     * <code>index <= i < size()</code>, or -1 if the element is not in the list 
+     * in the range of indexes <code>index <= i < size()</code>.
      *
      * @param o the element to search for
      * @param index the index to start searching from
      * @return the index of the first occurrence of the element, starting at the specified index,
-     * or `-1` if the element is not found
+     * or -1 if the element is not found
      */
     public int nextIndexOf(Object o, int index) {
         // TODO: Implement this method
@@ -102,7 +107,7 @@ public class SortedLinkedList<E extends Comparable<E>>
      * Removes the specified element from the list.
      *
      * @param o the element to remove
-     * @return `true` if the element was removed successfully, `false` otherwise
+     * @return <code>true</code> if the element was removed successfully, <code>false</code> otherwise
      */
     public boolean remove(Object o) {
         // TODO: Implement this method
@@ -131,7 +136,8 @@ public class SortedLinkedList<E extends Comparable<E>>
      * Compares the specified object with this list for equality.
      *
      * @param o the object to compare with
-     * @return `true` if the specified object is equal to this list, `false` otherwise
+     * @return <code>true</code> if the specified object is equal to this list, 
+     * <code>false</code> otherwise
      */
     public boolean equals(Object o) {
         // TODO: Implement this method
@@ -157,7 +163,7 @@ public class SortedLinkedList<E extends Comparable<E>>
 		Node next;
 		Node prev;
 		Node(E data) {
-			if (data == null ) throw new NullPointerException ("doesn ot allow null");
+			if (data == null ) throw new NullPointerException ("does not allow null");
 			this.data = data; 
 		}
 		Node (E data, Node next, Node prev) {
