@@ -104,10 +104,11 @@ public class SortedLinkedList<E extends Comparable<E>>
     }
 
     /**
-     * Removes the specified element from the list.
+     * Removes the first occurence of the specified element from the list.
      *
      * @param o the element to remove
-     * @return <code>true</code> if the element was removed successfully, <code>false</code> otherwise
+     * @return <code>true</code> if the element was removed successfully,
+     * <code>false</code> otherwise
      */
     public boolean remove(Object o) {
         // TODO: Implement this method
@@ -182,12 +183,16 @@ public class SortedLinkedList<E extends Comparable<E>>
 		Node nextToReturn = head; 
 		@Override
 		public boolean hasNext() {
-			return nextToReturn == null;
+			return nextToReturn != null;
 		}
 
 		@Override
-		public E next() {
-			return nextToReturn.data;
+		public E next() throws NoSuchElementException{
+            if (nextToReturn == null ) 
+                throw new NoSuchElementException("the end of the list reached");
+            E tmp = nextToReturn.data;
+            nextToReturn = nextToReturn.next;
+			return tmp;
 		}
 		
 	}

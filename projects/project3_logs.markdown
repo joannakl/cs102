@@ -166,7 +166,7 @@ The three types of queries are:
 - `first USERNAME`
 - `last USERNAME`
 - <span class=new>`all USERNAME`</span>
-- <span class=new>`total_time USERNAME`</span>
+- <span class=new>`total USERNAME`</span>
 - `quit`
 
 In the above, the words in uppercase indicate keywords that will be replaced by
@@ -310,7 +310,8 @@ creates the requested `Record` object.
   compared by the time associated with the login/logout. The `Record` object A is considered _smaller_ than a the `Record` object B, if the time associated with it is before the time associated with the object B. </span> 
   
 - <span class="new">This class should override the `equals` method from the `Object` class. Two `Record` objects 
-  are equal if they have the same terminal, usernamed and time associated with them. </span>
+  are equal if they are the same kind of record (either login or logout), 
+  and if they have the same terminal, usernamed and time associated with them. </span>
 
 #### <code class="code_title">Session</code> class
 
@@ -372,7 +373,8 @@ a login record and logout record:
     method of the `Date` class.)
     
 - <span class="new">This class should implement `Comparable<Session>` interface. The `Session` objects should be 
-  compared by the time associated with the login/logout. The `Session` object A is considered _smaller_ than a the `Record` object B, if the time associated with it is before the time associated with object B. </span> 
+  compared by their login records (i.e., the time associated with their login records). The `Session` object A is considered _smaller_ than a the `Session` object B, if the login Record for A is smaller than 
+  the login record for B.</span> 
   
 - <span class="new">This class should override the `equals` method from the `Object` class. Two `Session` objects 
   are equal if they have the same login and logout records. </span>
