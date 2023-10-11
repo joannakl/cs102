@@ -1,6 +1,7 @@
 package project3;
 
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 /**
  * This is an implementation of a sorted doubly-linked list. 
