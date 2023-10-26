@@ -38,7 +38,11 @@ You should be able to answer the following questions:
 
 2. What is meant by unit testing?
 
-3. What is meant by integration testing?
+3. What is meant by integration testing? 
+
+Discuss the answers to these questions with the rest of the class. 
+
+
 
 
 ### Part 2  Writing Simple Unit Tests
@@ -165,7 +169,13 @@ FAILURES!!!
 Tests run: 5,  Failures: 2
 ```
 
-Each failed test shows the error message and a detailed stack trace when the test failed.
+Each failed test shows the error message and a detailed stack trace when the test failed. 
+
+Your tasks: 
+- Propose a few more tests for the `add` method. 
+- Discuss these new tests with the rest of the class. Did other groups think of tests that were 
+different than yours?
+- Implement the `add` method and rerun the tests. Make sure that your method passes all the tests. 
 
 
 ### Additional JUnit Tutorial
