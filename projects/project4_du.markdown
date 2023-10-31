@@ -66,15 +66,15 @@ Files and directories form a tree-like structure on your computer.
 Each file/directory has a unique path name that _points to_ where it is within that 
 file system tree. For example:
 
-- On Windows systems `C:\Users\asia\top\helloA` is a path name that tells us that a file or a directory names `helloA` is located in a directory named `top`, which is located in the direcotry named `asia` (a home directory for the user `asia`), in a directory named `Users` on drive `C`. 
-- On Mac systems `/Users/asia/top/helloA` is a path names that tells us that a file or a directory names `helloA` is located in a directory named `top`, which is located in the direcotry named `asia` (a home directory for the user `asia`), in a directory named `Users`. (Mac systems do not go all the way to the drive level. These are represented somewhat differently.)
-- On Linux/Unix systems `/home/asia/top/helloA` is a path names that tells us that a file or a directory names `helloA` is located in a directory named `top`, which is located in the direcotry named `asia` (a home directory for the user `asia`), in a directory named `Users`. 
+- On Windows systems `C:\Users\asia\top\helloA` is a path name that tells us that a file or a directory named `helloA` is located in a directory named `top`, which is located in the direcotry named `asia` (a home directory for the user `asia`), in a directory named `Users` on drive `C`. 
+- On Mac systems `/Users/asia/top/helloA` is a path names that tells us that a file or a directory named `helloA` is located in a directory named `top`, which is located in the direcotry named `asia` (a home directory for the user `asia`), in a directory named `Users` in the root directory which is denoted by `/` (forward slash). 
+- On Linux/Unix systems `/home/asia/top/helloA` is a path names that tells us that a file or a directory named `helloA` is located in a directory named `top`, which is located in the direcotry named `asia` (a home directory for the user `asia`), in a directory named `Users` in the root directory which is denoted by `/` (forward slash). 
 
 One can also use relative paths that tell us how to _get to the file/directory_ from the perspective of another directory. But we will not get into these. 
 
 Irrespective of how we navigate to a particular directory, we can look at it and ask the questions about its content. This is what this project is about. 
 
-Consider the following directory structure within a directory called `top`: 
+Consider the following directory structure within a directory called `top` (this directory could be in the user's home directory, or somewhere else - this does not really matter): 
 
 ```
 top
@@ -165,7 +165,7 @@ files and directories.
 The [`File` class](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/io/File.html) in Java provides a way to represent  and interact with files/directories within our programs. 
 
 Before you continue with the rest of this project, you should carefully read through the documentation page for that class and learn as much about it as possible. There are
-many methods in that class that will come in very handy for this project. (You will not need to work with any classes and methods of the `java.nio.file` package which the `File` class refer to in a few places.)
+many methods in that class that will come in very handy for this project. (You will not need to work with any classes and methods of the `java.nio.file` package which the `File` class refers to in a few places.)
 
 
 </div> </div></div>
@@ -190,6 +190,9 @@ Your program should determine and print to standard output the total space used 
 
 The Appendix contains a few sample runs of the program. 
 
+The class `DiskUsage` is provided as part of this project. It implements all the things mentioned in this section. You should use it as is and not make any changes (unless they are 
+announced in class.)
+
 
 
 </div> </div></div>
@@ -209,7 +212,7 @@ You may implement additional classes and additional methods in the required clas
 
 You cannot change the signatures of methods that are required. 
 
-The `DiskUsage` program is given. It provides usage verification and calls
+The `DiskUsage` program is given in the Appendix. It provides usage verification and calls
 appropriate methods of your class to calculate the results. 
 
 
@@ -242,27 +245,27 @@ __`long getTotalSize()`__ method should compute and return
 
 - (for a directory) the total size 
 of all the files and subdirectories stored in it, or
-- (for a file) the size of the actual file if the object on which it is called is a file. 
+- (for a file) the size of the actual file. 
 
-This method will need to trigger a recursive algorithm (most likely implemented in another function) that calculates the total size of all the file. 
+This method will need to trigger a recursive algorithm (most likely implemented in another private method) that calculates the total size of all the files and subdirectories. 
 For efficiency reason, you should make sure that once the total size is calculated, it is not recalculated again. 
  
 __`List <FileOnDisk> getLargestFiles(int numOfFiles)`__ method should compute and return
 
 - (for a directory) the list of `numOfFiles` largest files 
-stored in the directory structure of the object on which it is called
-- `null` if the object is a file (since it has no files stored within it. 
+stored in the directory structure of the object on which it is called; this list should be sorted from largest to smallest file, or
+- (for a file) `null`. 
 
 The class should override the __`String toString()`__ method. 
 It should return a string with the following format: 
 
 ```
-SSSSSSSS XB   PATH
+SSSSSSSS XB    PATH
 ```
 
-- `SSSSSSSS` is a sequence of 8 _spaces_ reserved for the file size. This value should be printed with exactly two digits after the decimal point. The value should be right-justified within the field of 8 _spaces_. 
+- `SSSSSSSS` is a sequence of 8 _spaces_ reserved for the file size. This value should be printed with exactly two digits after the decimal point. The value should be right-justified within the field of 8 _spaces_. You can accomplish this by using `%8.2f` format specifier in the `String.format()` method. 
 
-- `XB` should be replaced by either `bytes`, `KB`, `MB`, or `GB` depending on the size of the file. Depending on the length of this value, there should be either two or five spaces printed after it and before the next value.
+- `XB` should be replaced by either `bytes`, `KB`, `MB`, or `GB` depending on the size of the file. (All file sizes should be converted to one of these units by dividing the number of bytes by appropriate powers of 1024 so that the number reported is always smaller than 1024. For example, if the number of bytes in a file is 16384, then this is equivalent to 16496/1024 = 16.11 KB and this value should be reported. If the number of bytes is 4198592, then this is equivalent to 4100.19 KB, or 4.00 MB. Depending on the length of this value, there should be either two or five spaces printed after it and before the  `PATH`.
 
 - `PATH` is the actual path name for the file. You should use the canonical path. (Note that some path names may be very long. This may force the output of your pgogram to wrap in some cases. This if fine.)
 
@@ -288,6 +291,7 @@ exploreDir ( potentialDirName )
         add file's size to totalSize
 ```
 
+(You will need to add appropriate error checking and steps that allow you to capture the list of files in a list. )
 
 WARNING: If implemented incorrectly, this algorithm results in infinite recursion when used on systems that allow shortcuts/links in the directory structure (because they may produce circular paths). To avoid this, use the `getCanonicalPath()` method of the File class rather than getAbsolutePath() to obtain the name of the directory and make sure that you never visit the same directory twice. 
 
@@ -295,7 +299,7 @@ HINT: When implementing the above algorithm, you will need to keep track of all 
 
 
 <br/>
-The `File` class implements `Comparable<File> interface and your `FileOnDisk` inherits that implementation. Rather than overriding it, you should implement an alternative way of comparing `FileOnDisk` objects that uses `Comparator<T>` interface. 
+The `File` class implements `Comparable<File> interface and your `FileOnDisk` inherits that implementation. Rather than overriding it, you should implement an alternative way of comparing `FileOnDisk` objects that uses `Comparator<T>` interface. See below for details. 
 
 
 
@@ -344,18 +348,16 @@ This class is implemented for yuou. You should not modify it in any way.
 <div class="content-inner" markdown=1>
 
 - __You should start right away!__
-- You should modularize your design so that you can test it regularly: for example, implement the part of the code that reads and parses the input file, then implement and test individual classes, then implement the part that provides the interactive part of the program, ... .
 - Make sure that at all times you __have a working program!__
 You should also implement stubs of methods that return `0` or `null`. This way your code compiles, even though it may
 not work completely.  You can implement methods that perform one task at a time.
 This way, if you run out of time, at least parts of your program will be functioning properly.
-- You should make sure that you are __testing the program on much smaller data set__ for which you can determine the correct
-output manually. You can create  a test input file that contains only a few rows.
+- You should make sure that you are __testing the program__ : you should use different directories (empty ones, with a few files in them, with lots of files and directories in them, etc)
 - You should make sure that your program's results are consistent with what is described in this specification
 by running the program on carefully designed test inputs and examining
 the outputs produced to make sure they are correct.
 The goal in doing this is to try to find the mistakes you have most likely made in your code. <br>
-__DO NOT__ test your program on the entire large input file. This may take a long time and you will never know
+__DO NOT__ test your program on your entire hard drive. This may take a long time and you will never know
 if the results are correct or not.
 - Each class that you submit __will be tested by itself without the context of other classes that you are implementing for this assignment__. <br>
 This means that you need to make sure that your methods can perform their tasks correctly even if they are executed in situations that would not
@@ -383,11 +385,10 @@ will depend on how easy it is to figure out what the program is doing and how to
 
 The grade will be determined by several factors:
 - 60 points: class correctness: correct behavior of methods of the required classes and correct behavior of the program
-	as a whole (this will be determined by the autograder)
+	as a whole (this will be determined by the autograder and possibly code review)
 - 10 points: design and the implementation of your code
 - 10 points: efficient implementation of the required classes
-   (this will be determined by a code review). Efficient algorithms should not explore
-		paths that cannot possibly lead to an exit and should attempt to detect such situations as early as possible.
+   (this will be determined by a code review). Efficient design avoids recomputing the same results multiple times. 
 - 20 points: proper documentation, program style and format of submission
    (this will be determined by a code review)
 
@@ -529,7 +530,80 @@ Largest 5 files:
 
 ```
 
+#### <code>DiskUsage</code> class 
 
+```
+package project4;
+
+import java.io.*;
+import java.util.*;
+/**
+ * This class provides a simple program that provides information about 
+ * directory sizes (or rather combined size of all the files stored 
+ * in a directory) along with a list of largest files. 
+ * 
+ * @author Joanna Klukowska
+ * @version 10-31-2023 
+ */
+ 
+public class DiskUsage {
+	
+	/**
+     * This program expects two command line arguments.
+     * @param args <code>args[0]</code> is the name of the directory 
+     *             to explore, 
+     *             <code>args[1]</code> is an optional argument that 
+     *             can be used to indicate how many files should be 
+     *             displayed in the list of largest files (the default 
+     *             value is 20)
+     */ 
+	public static void main(String[] args) throws IOException{
+		
+        //make sure that there is at least one command line argument
+		if (args.length == 0) {
+			System.err.println("Missing name of the directory/file.\n");
+			System.exit(0);
+		}
+		// use the directory from args[0]
+		String directory = args[0];
+		FileOnDisk dir = new FileOnDisk(directory);
+		if ( !dir.exists() ) {
+			System.out.printf("ERROR: %s does not exist.\n", directory); 
+			System.exit(1);
+		}
+        
+        int numOfFiles = 20; 
+        // if args[1] contains a valid positive number, use it 
+        // as the number of files to display 
+        if (args.length == 2) {
+            try {
+                numOfFiles = Integer.parseInt(args[1]);
+                numOfFiles = numOfFiles > 0 ? numOfFiles : 20;  
+            }
+            catch (NumberFormatException ex ) {
+                //ignoring the second argument, using 20 as 
+                //the number of files to display 
+            }
+        }
+		
+        // show the total size of the directory and its path 
+		System.out.println( dir.toString() );
+		
+		
+		// show the list of largest files (from largest to smallest) 
+		
+		System.out.printf("Largest %d files: \n", numOfFiles );
+		
+        List<FileOnDisk> list = dir.getLargestFiles(numOfFiles);
+		
+		for (FileOnDisk f : list ) {
+			System.out.println( f );
+        }
+		
+	}
+
+}
+```
 
 </div> </div></div>
 
