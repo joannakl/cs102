@@ -137,9 +137,13 @@ Adjacent elements are separated by the characters ", " (comma and space).
 
 Since the classes implementing the `Index` interface need to implement the
 `Iterable<Word>` interface, both of these classes need to provide an internal class
-implementing an iterator.
+implementing an iterator. The iterator should return elements following 
+the natural order defined by those elements (i.e., in sorted order based on the rules for the `compareTo` method). 
 <br/>NOTE, that this iterator should provide implementation 
 for the `remove` method (since it is used in the `FrequentWords` class.)
+<br/>PERFORMANCE RESTRICTION: The `next()` and `hasNext()` methods of the iterator should perform in constant time, O(1). The constructor for 
+the iterator class may need to perform some additional work in order to 
+make this possible. 
 
 
 </div> </div></div>
