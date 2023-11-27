@@ -68,11 +68,11 @@ template: section
 
 - Graphs consist of 
     - _nodes_ / _vertices_, <br/>the nodes on the right are: A, B, C, D, E, F, G, H, J
-    - _edges_ , <br/> these are the connections between the edges; there are eleven edges on the right: A-B, A-F, A-H, B-C, B-E, C-D, C-J, D-G, D-F, E-D, F-H (they are listed in no particular order) 
+    - _edges_ , <br/> these are the connections between the nodes; there are eleven edges on the right: A-B, A-F, A-H, B-C, B-E, C-D, C-J, D-G, D-F, E-D, F-H (they are listed in no particular order) 
 
 
 --
-- A _path in a graph_ leads from one node to another through the edges in the graph. In the graph on the right there are several paths from A to G. One of them is A-B-E-D-G. 
+- A _path in a graph_ is a sequence of edges that leads from one node to another. In the graph on the right there are several paths from A to G. One of them is A-B-E-D-G. 
 - The _length of a path_ is the number of edges in it. The path mentioned above has length 4. <br/>
 - A _cycle_ is a path in which the first and last nodes are the same. For example, A-B-E-D-F-A is a cycle. 
 
@@ -121,7 +121,7 @@ template: section
 
 --
 
-- If an edge exists in both directions, it is marked by two directed edges, like B->C and C->B     
+- If an edge exists in both directions, it is marked by two directed edges, like B->C and C->B, (or by an arrow that points in both directions, like B<->C)     
     
 
 ---
@@ -247,7 +247,7 @@ name:adjacency_matrix
 if there is an edge between nodes `a` and `b`
   - for undirected graphs, `matrix[a][b]=matrix[b][a]`
   - for unweighted graphs, the matrix can store binary information
-  - for weighted graphs, the matrix values indicate the weightz of the edge
+  - for weighted graphs, the matrix values indicate the weights of the edge
 - drawback: uses $n^2$ elements and most of them may be zero (indicating no edges)
 
 ---
@@ -321,13 +321,29 @@ Example for a directed, unweighted graph.
 - _Implicit graphs_ are graphs that are not stored using graphs data structures (like the ones in the previous slides).
 
 - They are used when the edge connectivity can be determined easily and/or if they can be determined using some rules. For example, 
-  - A graph contains N nodes labeled 0..N. There is an edge between two nodes if a sum
-    of their labels is even.
-  - A 2D grid represents a labirinth. The cells with passable corridors are marked with
-    '.'. The cells with solid walls are marked with '#'. Each of those cells is an _implicit_ node
+
+--
+
+  - A graph contains N nodes labeled 0..N. There is an edge between 
+  two nodes if a sum of their labels is even. 
+    <br/>For example: nodes with labels 3 and 57 have an edge between them, but nodes with labels 3 and 56 do not. 
+    
+--
+    
+  - A 2D grid represents a labirinth. The cells with passable corridors 
+    are marked with '.'. The cells with solid walls are marked with '#'. 
+    Each of those cells is an _implicit_ node
     in a graph. There is an _implicit_ edge between two nodes if the the two cells are connected
     along one of the four sides and they are both marked with a '.'.
-
+    <br/>
+    <pre>
+            ####.##.##
+            #....#..##
+            #.####.#.#
+            #......#.#
+            #####....#
+            ##########
+    </pre>
 ---
 
 template: section
@@ -356,6 +372,8 @@ name:dfs
 <img width="400px" alt="directed graph" src="img/15/graphs-1.png">
 ]
 
+---
+template:dfs
 - follows a single path through the graph as long as there are un-visited nodes
 - after it cannot find any more nodes to visit, it _returns_ to previous nodes and
 follows unexplored paths from them
@@ -373,19 +391,69 @@ What order will the DFS traversal visit the nodes in the graph on the right when
 There are more than one possibilities. The exact order is determine by how the graph is stored and how we access the nodes adjacent to 
 a given node.
 
-Here are some possible traversals:
+Let's look at some possible traversals
 
-- A, F, H, D, G, E, B, C, J
+---
+template:dfs 
+
+- start with A (visited: A)
+
+--
+- we have three choices for the next node: B, F, or H; let's pick F (visited: A, F)
+
+--
+- from F, we can either go to D or H; let's pick H (visited A,F,H)
+
+--
+- at H, the only choices are A and F and they are both visited, so we go back to F and 
+    look for other options; the only option is D (visited: A,F,H,D) 
+
+--
+- from D, we can got to E, G, or C (since F has been visited before); let's  pick G
+    (visited: A,F,H,D,G)
+
+--
+- G has no un-visited neightbors, so we go back to D; let's pick E (visited: A,F,H,D,G,E)
+
+--
+- E's only un-visited neighbor is B, so we go there;  (visited: A,F,H,D,G,E,B)
+
+--
+- B's unvisited neighbor is C, so we go there;  (visited: A,F,H,D,G,E,B,C) 
+
+--
+- C's unvisited neighbor is J, so we go there;  (visited: A,F,H,D,G,E,B,C,J) 
+
+--
+
+At this point we have visited all the nodes and our traversal is:
+<br/>
+A, F, H, D, G, E, B, C, J
+</br>
+
+But an algorihtm would need to verify that all the nodes have been visited. 
+
+---
+
+template: dfs 
+
+Here are two other DFS traversals starting at node A: 
+
 - A, B, E, D, F, H, G, C, J
+
 - A, B, C, J, D, E, F, H, G
 
+--
+
+__Task__
+
+List all possible traversals starting at node with label J. 
 
 ---
 template:dfs
 
-<br/><br/>
-
-An algorithm using the adjacency list, `adj`, of a graph, O(n+m)
+An algorithm using the adjacency list, `adj`, of a graph with 
+`n` nodes and `m` edges, `O(n+m)`
 
 .below-column2[
 
@@ -396,10 +464,12 @@ An algorithm using the adjacency list, `adj`, of a graph, O(n+m)
   dfs ( start )
       if visited[start] return   //already processed this node
 
+      visit/process the node 
+      
       visited[start] = true      //mark node as visited
 
-      for n in adj[start]
-          dfs( n )
+      for node in adj[start]
+          dfs( node )
 
   ```
 ]
@@ -408,8 +478,12 @@ name:bfs
 ## Breadth First Search Traversal
 
 .right-column2[
+<br/><br/>
 <img width="400px" alt="directed graph" src="img/15/graphs-1.png">
 ]
+
+---
+template:bfs
 
 - visits the nodes in order of their distance from a starting node
 (distance = path length between nodes)
@@ -417,10 +491,7 @@ name:bfs
   - visit all nodes whose distance from the start node is 2
   - ...
 
-<p>
-
----
-template:bfs
+--
 
 What order will the BFS traversal visit the nodes in the graph on the right when we start BFS at A?
 
@@ -432,17 +503,28 @@ Here are possible traversals for the graph
 on the right. 
 
   - A, B, F, H, C, E, D, G, J
+
+--
+
+__Question__ Which of the values in the above traversal could be moved and to where
+so that it is still a BFS traversal? 
+
+--
+
+__Task__ Propose a BFS traversal of this graph starting at node J.
+
 ---
 template:bfs
 
-An algorithm using the adjacency list of a graph, O(n+m)
+An algorithm using the adjacency list `adj` of a graph with `n` nodes and `m` edges, `O(n+m)`
 
-  ```
+```
   visited[N] - boolean array with all values set initially to false
-  queue      - to store nodes to be visited
+  queue      - to store nodes that we need to go back to 
 
   bfs ( start )
       visited [ start ] = true
+      visit/process the start node 
       queue.push( start )
 
       while queue is not empty
@@ -450,9 +532,11 @@ An algorithm using the adjacency list of a graph, O(n+m)
           for n in adj( node )
               if ! visited[n]
                   visited [n] = true
+                  visit/process n 
                   queue.push( n )
 
-  ```
+```
+
 
 
 ---
@@ -521,7 +605,7 @@ already
 - [Cantina of Babel](https://open.kattis.com/problems/cantinaofbabel) - this is not a difficult problem, but you need to first figure out 
 how to map it to a graph. 
 
----
+
 
 
 
