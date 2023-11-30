@@ -25,8 +25,11 @@ tests in addition to the sample tests shown in the problem.
 
 To get credit for _progress and participation_ category, take a 
 screenshot of one of the submission reports (even if it is a failed attempt) and 
-upload it to Gradescope under lab 13. (Make sure you are submitting an image file
+upload it to Gradescope under lab 13 __before the end of you recitation__. (Make sure you are submitting an image file
 not a source code file to Gradescope.)
+
+You can keep working on the actual problems after the recitation since these autograders are not 
+on Gradescope. 
 
 
 
