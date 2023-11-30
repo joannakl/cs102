@@ -48,6 +48,7 @@ title: Course Materials, CSCI-UA 102, Klukowska
 - [Lab 10, Binary (Search) Trees](labs/lab10.html) 
 - [Lab 11, BSTs, AVL Trees, and Binary Heaps](labs/lab11.html) 
 - [Lab 12, How Many Words](labs/lab12.html) 
+- [Lab 13, Graph practice](labs/lab13.html)
 
 
 <br>
