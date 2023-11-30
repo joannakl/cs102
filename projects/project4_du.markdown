@@ -405,7 +405,7 @@ The grade will be determined by several factors:
 __For the purpose of grading, your project must be be in the package called `project3`.
 This means that each of your submitted source code files should start with a line:__
 
-`package project3;`
+`package project4;`
 
 
 Your should submit all your source code files (the ones with `.java` extensions only) to Gradescope. __DO NOT__ submit `.class` files
