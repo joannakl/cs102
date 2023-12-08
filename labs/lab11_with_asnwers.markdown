@@ -159,12 +159,134 @@ __Answer__
     load factor = 4/11
 
 - (16, "brain")
+
+    `16 % 11 = 5`, so index for this pair is 5 
+
+
+    ```
+    index   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 
+    element |   |   |   | | |   | | |   |   |   |   |  | |
+                          |       |                    |
+                      (3, "bingo")|                 (21, "start") 
+                                  |                    |
+                              (16, "brain")         (10, "ai") 
+                                  |
+                              (5, "compsci")    
+    ```
+
+    load factor = 5/11
+    
 - (38, "power")
+
+    `38 % 11 = 5`, so index for this pair is 5 
+
+
+    ```
+    index   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 
+    element |   |   |   | | |   | | |   |   |   |   |  | |
+                          |       |                    |
+                      (3, "bingo")|                 (21, "start") 
+                                  |                    |
+                              (38, "power")         (10, "ai") 
+                                  |
+                              (16, "brain")    
+                                  |
+                              (5, "compsci")    
+    ```
+
+    load factor = 6/11 = 0.54545455
+    
 - (36, "fluent")
+
+    `36 % 11 = 3`, so index for this pair is 3 
+
+
+    ```
+    index   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 
+    element |   |   |   | | |   | | |   |   |   |   |  | |
+                          |       |                    |
+                    (36, "fluent")|                 (21, "start") 
+                          /       |                    |
+                (3, "bingo")  (38, "power")         (10, "ai") 
+                                  |
+                              (16, "brain")    
+                                  |
+                              (5, "compsci")    
+    ```
+
+    load factor = 7/11 = 0.63636364
+    
 - (65, "lab")
+
+    `65 % 11 = 10`, so index for this pair is 10 
+
+
+    ```
+    index   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 
+    element |   |   |   | | |   | | |   |   |   |   |  | |
+                          |       |                    |
+                    (36, "fluent")|                 (65, "lab") 
+                          /       |                    |
+                (3, "bingo")  (38, "power")         (21, "start") 
+                                  |                    |
+                              (16, "brain")         (10, "ai")     
+                                  |
+                              (5, "compsci")    
+    ```
+
+    load factor = 8/11 = 0.72727273 !!! the next addition will need rehash 
+    
 - (12, "finished") 
+    Since after adding this pair, the load factor will exceed 0.75, we rehash all the values, this means we need to recalculate their locations. The new size of 
+    the table is 23
+      
 
+    - (36, "fluent")  -> 36 % 23 = 13
+    - (3, "bingo")    ->  3 % 23 =  3
+    - (38, "power")   -> 38 % 23 = 15
+    - (16, "brain")   -> 16 % 23 = 16
+    - (5, "compsci")  ->  5 % 23 =  5
+    - (65, "lab")     -> 65 % 23 = 19
+    - (21, "start")   -> 21 % 23 = 21
+    - (10, "ai")      -> 10 % 23 = 10
+    
+    and then     
+    
+    - (12, "finished")  -> 12 % 23 = 12
 
+    Notice that after this rehashing all values end up in their own unique
+    locations and there are no collisions:
+    
+    ```
+    index | pair 
+    -------------
+      0    
+      1
+      2
+      3  -> (3, "bingo")
+      4
+      5  -> (5, "compsci")
+      6
+      7
+      8
+      9
+     10  -> (10, "ai")
+     11
+     12
+     13  -> (36, "fluent")
+     14
+     15  -> (38, "power")
+     16  -> (16, "brain")
+     17
+     18
+     19  -> (65, "lab")
+     20
+     21  -> (21, "start")
+     22
+    
+    ```
+    
+    
 #### Problem 7
 
 Consider a different representation of a graph described below:
