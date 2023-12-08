@@ -83,80 +83,80 @@ __Answer__
 
 - (10, "hello")
 
-`10 % 11 = 10`, so index for this pair is 10 
+    `10 % 11 = 10`, so index for this pair is 10 
 
-```
-index   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 
-element |   |   |   |   |   |   |   |   |   |   |  | |
-                                                   |
-                                                 (10, "hello") 
-```
+    ```
+    index   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 
+    element |   |   |   |   |   |   |   |   |   |   |  | |
+                                                       |
+                                                     (10, "hello") 
+    ```
 
-load factor = 1/11
+    load factor = 1/11
 
 - (21, "start")
 
-`21 % 11 = 10`, so index for this pair is also 10 
+    `21 % 11 = 10`, so index for this pair is also 10 
 
-Note that Java's `Hashtable` code add the new pair at the start of the _chain_. 
+    Note that Java's `Hashtable` code add the new pair at the start of the _chain_. 
 
-```
-index   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 
-element |   |   |   |   |   |   |   |   |   |   |  | |
-                                                   |
-                                                (21, "start") 
-                                                   |
-                                                (10, "hello") 
-```
+    ```
+    index   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 
+    element |   |   |   |   |   |   |   |   |   |   |  | |
+                                                       |
+                                                    (21, "start") 
+                                                       |
+                                                    (10, "hello") 
+    ```
 
-load factor = 2/11
+    load factor = 2/11
 
 - (3, "bingo")
 
-`3 % 11 = 3`, so index for this pair is 3 
+    `3 % 11 = 3`, so index for this pair is 3 
 
-```
-index   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 
-element |   |   |   | | |   |   |   |   |   |   |  | |
-                      |                            |
-                    (3, "bingo")                (21, "start") 
-                                                   |
-                                                (10, "hello") 
-```
+    ```
+    index   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 
+    element |   |   |   | | |   |   |   |   |   |   |  | |
+                          |                            |
+                        (3, "bingo")                (21, "start") 
+                                                       |
+                                                    (10, "hello") 
+    ```
 
-load factor = 3/11
+    load factor = 3/11
 
 
 - (5, "compsci")
 
-`5 % 11 = 5`, so index for this pair is 3 
+    `5 % 11 = 5`, so index for this pair is 3 
 
-```
-index   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 
-element |   |   |   | | |   | | |   |   |   |   |  | |
-                      |       |                    |
-                  (3, "bingo")|                 (21, "start") 
-                              |                    |
-                          (5, "compsci")        (10, "hello") 
-```
+    ```
+    index   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 
+    element |   |   |   | | |   | | |   |   |   |   |  | |
+                          |       |                    |
+                      (3, "bingo")|                 (21, "start") 
+                                  |                    |
+                              (5, "compsci")        (10, "hello") 
+    ```
 
-load factor = 4/11
+    load factor = 4/11
                     
 - (10, "ai")
 
-A pair with key equal to 10 already exists. So its value is 
-modified from "hello" to "ai".
+    A pair with key equal to 10 already exists. So its value is 
+    modified from "hello" to "ai".
 
-```
-index   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 
-element |   |   |   | | |   | | |   |   |   |   |  | |
-                      |       |                    |
-                  (3, "bingo")|                 (21, "start") 
-                              |                    |
-                          (5, "compsci")        (10, "ai") 
-```
+    ```
+    index   | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 
+    element |   |   |   | | |   | | |   |   |   |   |  | |
+                          |       |                    |
+                      (3, "bingo")|                 (21, "start") 
+                                  |                    |
+                              (5, "compsci")        (10, "ai") 
+    ```
 
-load factor = 4/11
+    load factor = 4/11
 
 - (16, "brain")
 - (38, "power")
