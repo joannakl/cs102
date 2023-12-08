@@ -16,35 +16,23 @@ __submission mode:__ group
 <main markdown="1" class="lab">
 
 
-## BSTs, AVL Trees, and Binary Heaps
+## BSTs, Binary Heaps, Graphs, Hash Tables, ... 
 
 ### Part 1 Solving Problems
 
 #### Problem 1
 
-Hackerearth is one of the websites on which you can test your skills of solving problems. For this problem, go to https://www.hackerearth.com/practice/data-structures/trees/binary-search-tree/practice-problems/algorithm/monk-and-his-friends/  and try to solve the _Monk and His Friends_ problem. Make sure to read the instructions carefully and understand the sample input and output for the problem before you start coding.
-
-Write your code on your computer or in an Ed workspace shared by your group members, so that you do not lose it in case the website reloads.
-
-HINT: you should use [`TreeSet<E>`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/TreeSet.html) class in this problem. It implements a balanced binary search tree that does not allow duplicates.
-
-Once you finish your code, submit it on the website to be tested. Take a screenshot of the test results and submit it for this problem on Gradescope. It will be challenging to pass all the tests, but you should be able to pass at least the first few. You should submit a screenshot with the results even if you pass only small portion of the tests.
-
-If you pass all the tests, try to work on other binary search tree related problems on Hackerearth.
+Assume that the array representing a min binary heap contains the values 2, 8, 3, 10, 16, 7, 18, 13, 15. Show the contents of the array after inserting the value 4. Show the tree representation of this heap.
 
 #### Problem 2
 
-Assume that the array representing a min binary heap contains the values 2, 8, 3, 10, 16, 7, 18, 13, 15. Show the contents of the array after inserting the value 4. Show the tree representation of this heap.
+Assume that the array representing a min binary heap contains the values 2, 8, 3, 10, 16, 7, 18, 13, 15. Show the contents of the array after deleting the minimum element. Show the tree representation of this heap.
 
 #### Problem 3
 
-Assume that the array representing a min binary heap contains the values 2, 8, 3, 10, 16, 7, 18, 13, 15. Show the contents of the array after deleting the minimum element. Show the tree representation of this heap.
-
-#### Problem 4
-
 In a min binary heap with N elements, what is the range of indices in which the largest element should be located?
 
-#### Problem 5
+#### Problem 4
 
 Which of the arrays represents a binary heap?
 
@@ -58,7 +46,82 @@ Which of the arrays represents a binary heap?
 [3, 9, 7, 10, 12, 8, 9, 6, 7, 15, 17]
 </pre>
 
+
+#### Problem 5
+
+Assume that the initial size of an array to store the hashtable is 7. Five 
+(key, value) pairs were just added to the hash table and resulted in a single 
+collision.
+
+- What is the load factor if the linear probing is used as a collision resolution method? 
+
+- What is the load factor is separate chaining is used as a collision resolution method? 
+
+
 #### Problem 6
+
+Assume that 
+- initial size of an array used to store a hashtable is 11,
+- the collision resolution method used is separate chaining with a linked list 
+- the load factor is 0.75 
+- if a new element is added to a hashtable that would increase the load factor to be equal to or greater than 0.75, a new array is allocated with a size equal to the `2*old_size+1` 
+
+Show the array that stores this hash table after the following key-value pairs are added:
+
+- (10, "hello")
+- (21, "start")
+- (3, "bingo")
+- (5, "compsci")
+- (10, "ai")
+- (16, "brain")
+- (38, "power")
+- (36, "fluent")
+- (65, "lab")
+- (12, "finished") 
+
+
+#### Problem 7
+
+Consider a different representation of a graph described below:
+
+A simple undirected graph is an ordered pair G = (V, E) where V is a non-empty set of vertices, and
+E is a set of unordered pairs (u, v) where u and v are in V and u != v. If S is a set, define |S| as the
+size of S. An incidence matrix M is a |V|x|E| matrix where M (i, j) is 1 if edge j is incident to vertex
+i (edge j is either (i, u) or (u, i)) and 0 otherwise.
+Given an `n x m` matrix, decide if it can  be an incidence matrix of a simple undirected graph G = (V, E) where |V| = `n` and |E| = `m`
+
+`n = 3, m = 3`
+```
+1 1 0
+0 1 1
+1 0 1
+```
+
+`n = 3, m = 3`
+```
+1 1 0
+1 1 1
+1 0 0
+```
+
+`n = 5, m = 7`
+```
+1 1 0 0 1 0 0
+1 0 1 0 1 0 0
+0 0 0 1 0 1 0
+0 0 1 1 0 0 1
+0 1 0 0
+
+`n = 5, m = 7`
+```
+1 1 0 0 1 0 0
+1 0 1 0 0 0 0
+0 0 0 1 0 1 0
+0 0 1 1 1 0 1
+0 1 0 0 1 1 1
+```
+
+#### Problem 8
 
 Consider the `PriorityQueue.java` file from Java API. This class provides an implementation of a priority queue (very much like the one we discussed in class).
 There is a `heapify()` method in that class that is used to establish the heap properties for the data stored in the underlying array.
@@ -75,6 +138,18 @@ Answer the following questions after studying the `heapify()` method and some ot
 
   Show the content of the array after each iteration of the for loop in the  `heapify()`  method.
   Assume that the elements are of type `Integer` and therefore implement `Comparable<Integer>` interface which is used to determine the relationship between elements (this means you can assume that `comparator == null` is always true.
+
+#### Problem 9
+
+Hackerearth is one of the websites on which you can test your skills of solving problems. For this problem, go to [https://www.hackerearth.com/practice/data-structures/trees/binary-search-tree/practice-problems/algorithm/monk-and-his-friends/](https://www.hackerearth.com/practice/data-structures/trees/binary-search-tree/practice-problems/algorithm/monk-and-his-friends/)  and try to solve the _Monk and His Friends_ problem. Make sure to read the instructions carefully and understand the sample input and output for the problem before you start coding.
+
+Write your code on your computer or in an Ed workspace shared by your group members, so that you do not lose it in case the website reloads.
+
+HINT: you should use [`TreeSet<E>`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/TreeSet.html) class in this problem. It implements a balanced binary search tree that does not allow duplicates.
+
+Once you finish your code, submit it on the website to be tested. Take a screenshot of the test results and submit it for this problem on Gradescope. It will be challenging to pass all the tests, but you should be able to pass at least the first few. You should submit a screenshot with the results even if you pass only small portion of the tests.
+
+If you pass all the tests, try to work on other binary search tree related problems on Hackerearth.
 
 
 
