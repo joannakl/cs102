@@ -252,7 +252,7 @@ __Answer__
     
     and then     
     
-    - (12, "finished")  -> 12 % 23 = 12
+    - `(12, "finished")  -> 12 % 23 = 12`
 
     Notice that after this rehashing all values end up in their own unique
     locations and there are no collisions:
