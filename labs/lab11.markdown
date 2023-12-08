@@ -111,6 +111,7 @@ Given an `n x m` matrix, decide if it can  be an incidence matrix of a simple un
 0 0 0 1 0 1 0
 0 0 1 1 0 0 1
 0 1 0 0
+```
 
 `n = 5, m = 7`
 ```
