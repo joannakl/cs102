@@ -34,19 +34,21 @@ title: Syllabus, CSCI-UA 102, Klukowska
 
  <div class="lab" markdown="1">
 
-# Syllabus for CSCI-UA 102, Professor Klukowska
+# Syllabus for CSCI-UA 102 sec 1, Professor Klukowska
 
 ## Instructor Information
 
 * Professor Joanna Klukowska
-* Office Hours on Zoom (see Brightspace for links)
-    * Tuesdays 9:00 - 10:30 AM
-    * Thursdays 2:00 - 3:30 PM
 * Email: joannakl@cs.nyu.edu 
 * Recitation Instructors: 
-    * Anirudh Nistala (sec 6, sec 64)
-    * Sungmin Cha (sec 61, sec 63)
-    * Joel Marvin Tellis (sec 62, sec 65)
+    * Daniel Jin (sec 21, sec 24)
+    * Anirudh Nistala (sec 2, sec 22)
+    * Joel Marvin Tellis (sec 23, sec 25)
+* JK Office Hours 
+    * on Zoom (see Brightspace for links): Tuesdays 9:00 - 10:30 AM, Thursdays 2:00 - 3:30 PM
+    * in person: available by appointment on Mondays/Wednesdays after class meetings
+* Recitation Leaders Office Hours
+    * posted on Brightspace 
 
 ## Course Information
 
@@ -77,13 +79,13 @@ What will students learn and do while taking the course, and what will they be a
 
 The grade for this course will be determined according to the following formula:
 
-- **Participation and Progress, 14%** <br/>
+- **Participation and Progress, 10%** <br/>
 This category will be assessed based on taking an active part in class discussions (asking and answering questions on the course discussion forum, reading posts made on the discussion forum by other students and instructors), completing assigned readings, tutorials, activities, etc., and self-assessment exercises, actively participating in recitations, and completing group and individual work, completing class polls and pop-quizzes during the lectures and recitations. Several of these grades will be dropped to account for student absences due to illness, holiday observances, family/personal emergencies, or any other circumstances. 
-- **2 Exams: 15% midterm exam, 20% final exam**<br/>
+- **2 Exams: 20% midterm exam, 30% final exam**<br/>
 Exams will be paper-based, in-person, synchronous (may be switched to online and/or asynchronous if the need arises), and completed individually. No exam grades are dropped. All exams must be completed individually by you with no assistance of any other people (except for the instructor and proctors) or technology.
-- **3-5 take-home quizzes, 24%** <br/>
+- **3-5 take-home quizzes, 20%** <br/>
 The take-home quizzes will be online, asynchronous, and completed individually. Each quiz will take approximately 30-minutes and will be offered at any time during a 24-hour period. No take-home quiz grades are dropped. All take-home quizzes must be completed individually by you with no assistance of any other people or technology.
-- **4-6 Programming Projects, 27%** <br/>
+- **4-6 Programming Projects, 20%** <br/>
 Several programming projects will be given during the semester. The programming projects should be completed individually. No programming project grades are dropped. The programming projects should be completed individually and they should be your own work.
 
 
@@ -104,7 +106,7 @@ Score | Letter Grade
 65-72 | D
 < 65 | F
 
-The grade of _Incomplete_ is reserved for students who miss the final exam after completing all other coursework in the semester (the reasons for missed exam will need to be verified and approved by the Dean Of Students). <br/>
+The grade of _Incomplete_ is reserved for students who miss the final exam or the last project after completing all other coursework in the semester (the reasons for missed exam will need to be verified and approved by the Dean Of Students). <br/>
 The grade of _Incomplete_ **will not be given** to students who started falling behind in class for any reason. Those students should withdraw from the course or switch to _Pass/Fail_ option.
 
 
@@ -209,7 +211,7 @@ If you miss an assessment due to a religious observance, illness, family emergen
 
 - To account for any missed  in-class quizzes or polls, recitation activities or a lab assignments, several lowest scores in the participation and progress category will be dropped at the end of the semester. If you miss one of the assessments from this category, you do not need to notify us. 
 
-- If you miss one of the take-home quizzes, the part of the grade based on take-home quizzes will be based on the remaining take-home quizzes. You need to notify us about a missed take-home quiz, otherwise the grade for such a quiz will count as zero. <br/>
+- If you miss one of the take-home quizzes, the part of the grade based on take-home quizzes will be based on the remaining take-home quizzes. You need to notify us about a missed take-home quiz as described above, otherwise the grade for such a quiz will count as zero. <br/>
 If you miss more than one take-home quiz, you need to discuss it with the instructor immediately. You will not be excused from more than one quiz for any reason. 
 
 - If you miss the midterm exam, you will need to take an alternative make-up exam shortly after at the time and place chosen by the instructor. You should contact [cas.deanforstudents@nyu.edu](mailto:cas.deanforstudents@nyu.edu) for verification of the reason for a missed exam.
