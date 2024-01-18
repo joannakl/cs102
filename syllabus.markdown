@@ -209,14 +209,14 @@ Extended absences often result in students inability to make-up missed material 
 
 If you miss an assessment due to a religious observance, illness, family emergency, or any other reason beyond your control, you need to notify your instructor ahead of time (in case of a planned absence) or as soon as possible (in case of an unplanned emergency absence). Trying to excuse/explain the absence two weeks after it happened will not work. 
 
-- To account for any missed  in-class quizzes or polls, recitation activities or a lab assignments, several lowest scores in the participation and progress category will be dropped at the end of the semester. If you miss one of the assessments from this category, you do not need to notify us. 
+- To account for any missed  in-class quizzes or polls, recitation activities or a lab assignments, several (approximately one fourth) lowest scores in the participation and progress category will be dropped at the end of the semester. All reasons for missing something in this category are treated in exactly the same way: absence due to illness, religious observance, late registration, oversleeping or .... If you miss one of the assessments from this category, you do not need to notify us. 
 
 - If you miss one of the take-home quizzes, the part of the grade based on take-home quizzes will be based on the remaining take-home quizzes. You need to notify us about a missed take-home quiz as described above, otherwise the grade for such a quiz will count as zero. <br/>
 If you miss more than one take-home quiz, you need to discuss it with the instructor immediately. You will not be excused from more than one quiz for any reason. 
 
-- If you miss the midterm exam, you will need to take an alternative make-up exam shortly after at the time and place chosen by the instructor. You should contact [cas.deanforstudents@nyu.edu](mailto:cas.deanforstudents@nyu.edu) for verification of the reason for a missed exam.
+- If you miss the midterm exam, the final exam will be counted in its place. You should contact [cas.deanforstudents@nyu.edu](mailto:cas.deanforstudents@nyu.edu) for verification of the reason for a missed exam.
 
-- If you miss the final exam, you will receive a grade of _incomplete_ in the course. You will need to take an alternative make-up exam during the break between the semesters at the time and place chosen by the instructor. You should contact [cas.deanforstudents@nyu.edu](mailto:cas.deanforstudents@nyu.edu) for verification of the reason for a missed exam.
+- If you miss the final exam, you will receive a grade of _incomplete_ in the course. You will need to take an alternative make-up exam at the start of the following regular semesters (either spring or fall) at the time and place chosen by the instructor. You should contact [cas.deanforstudents@nyu.edu](mailto:cas.deanforstudents@nyu.edu) for verification of the reason for a missed exam.
 
 - If you miss the due date for one of the programming projects, refer to the section below. 
 
@@ -229,7 +229,7 @@ For each project, you will have a _5-hour buffer window_ after the due date. You
 Each student is granted seven _freebie days_ at the start of the semester. The _freebie days_ can be used for any project except for the first one and the last one. If you are unable to submit a programming project on time due to religious observance, illness, family emergency, or any other reason beyond your control, you can use your freebie days to avoid point deductions for lateness on the assignment. 
 
 To use your _freebie days_, submit the project as soon as possible after the due date passes and then complete the [Freebie Days Request form](https://forms.gle/gSqPWKjMwi72nVvx7) (https://forms.gle/gSqPWKjMwi72nVvx7). 
-<br/>Note: You are responsible to keeping track of how many _freebie days_ you use and how many you still have. You are responsible for submitting the form as soon as you submit your final version of the project.
+<br/>Note: You are responsible for keeping track of how many _freebie days_ you use and how many you still have. You are responsible for submitting the form as soon as you submit your final version of the project. Do not submit the form multiple times for the same project. 
 
 _Freebie days_ are not transferable and they expire at the end of the semester. 
 
