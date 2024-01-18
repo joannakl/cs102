@@ -75,6 +75,18 @@ This course covers use and design of data structures, which organize information
 What will students learn and do while taking the course, and what will they be able to do or know after completing the course? We recommend a bulleted list.
 -->
 
+## Communication, Asking Questions, Getting Help
+
+If you have questions related to the course materials or assessments: 
+- post them on the course discussion forum (Ed). The posts shoud be public unless they reveal part of the answer for a graded assessment. 
+- visit the tutors during tutoring hours (available in-person and remotely at different times of the day)
+- visit instructors' office hours (schedule available on Brightspace)
+
+If you have questions regarding your grades or some personal issues
+- post them as a private post on the discussion forum or send a direct message to the relevant instructor using the Ed platform. (Avoid emails as they often get lost in the steam of other things.) 
+- visit instructors' office hours (schedule available on Brightspace)
+
+
 ## Assessments and Grading 
 
 The grade for this course will be determined according to the following formula:
