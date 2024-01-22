@@ -45,7 +45,7 @@ title: Syllabus, CSCI-UA 102, Klukowska
     * Anirudh Nistala (sec 2, sec 22)
     * Joel Marvin Tellis (sec 23, sec 25)
 * JK Office Hours 
-    * on Zoom (see Brightspace for links): Tuesdays 9:00 - 10:30 AM, Thursdays 2:00 - 3:30 PM
+    * on Zoom (see Brightspace for links): Tuesdays 9:00 - 10:30 AM, Thursdays 1:30 - 3:00 PM
     * in person: available by appointment on Mondays/Wednesdays after class meetings
 * Recitation Leaders Office Hours
     * posted on Brightspace 
