@@ -5,7 +5,7 @@ title: Project 2
 
 <div class="lab-right" markdown="1">
 __Project 2__ <br>
-__due date:__ Feb 25
+__due date:__ Feb 21
 
 __submission mode:__ individual
 
@@ -250,8 +250,9 @@ species should be stored in the instances of this class.
 	- `public String getNYListingStatuse()` 
 	- `public String getCategory()` 
     
-- The class should also provide methods that allow for adding a new county to the list of counties 
-in which it is present, and for checking if the species is present in a given county:
+- The class needs to be able to store a list of counties in which the given species is present. 
+The class should provide methods that allow for adding a new county to such a list of counties, 
+and for checking if the species is present in a given county:
     - `public boolean isPresentIn( String county )` should return true or false to indicate if the species is present in the specified county; this function should throw an instance of an `IllegalArgumentException` if it is given a `null` value or an empty string in place of the county name. 
     - `public boolean addCounty( String county )` should add this county to the list of counties in which the species is present; it should return true if the list did not contain this particular county before, and false if it did and therefore the list of counties has not changed; this function should throw an instance of an `IllegalArgumentException` if it is given a `null` value or an empty string in place of the county name. 
 
@@ -280,7 +281,17 @@ This class should inherit from the   `ArrayList<Species>` class.
 
 - The class needs to provide a default constructor that creates an empty `SpeciesList` object.
 
-In addition, the class should implement the following method:
+In addition, the class should implement the following two methods:
+
+- `public void add( Species species, String county ) ` 
+
+    This method adds the species to the list. If the species is already present in the list,
+    the list of counties in which it is present should be modified to include the specified 
+    county. If the species is not present in the list yet, then it should be added with the 
+    specified county being the first county in its own list of counties within which it is present. 
+    
+    This method should throw and instance of IllegalArgumentException if the `species` is `null`, or if 
+    the `county` is `null` or an empty string. 
 
 - `public SpeciesList getByName ( String keyword )  `
 
@@ -339,6 +350,7 @@ are `File` and `Scanner` classes. You are responsible for knowing how to use the
 
 - __You should start right away!__
 - You should modularize your design so that you can test it regularly: for example, implement the part of the code that reads and parses the input file, then implement and test individual classes, then implement the part that provides the interactive part of the program, ... .
+- You can base your implementaion on the project 1 code as much as you wish. If you are copying some parts of project 1 verbatim (and you can in some cases), then you should make sure that you acknowledge it as the source of your code. 
 - Make sure that at all times you __have a working program!__
 You should also implement stubs of methods that return `0` or `null`. This way your code compiles, even though it may
 not work completely because some methods are not implemented.  You can implement methods that perform one task at a time.
@@ -435,7 +447,154 @@ If you are not sure how it works, ask questions about it and experiment with it 
 
 #### Sample Interactions
 
+Note: this sample used a subset of the data set, not the entire data set. 
+It is here to illustrate the format of the output and the interaction. You should 
+not try to match the results shown below. 
 
+```
+Enter the keyword to search through species names, or "quit" to stop:
+rough aster
+Rough Aster (Eurybia radula)
+Flowering Plants, Asters, Goldenrods and Daisies
+Endangered
+present in 5 / 62 counties
+
+Enter the keyword to search through species names, or "quit" to stop:
+PANIC GRASS
+Beaked Panic Grass (Coleataenia anceps ssp. anceps)
+Flowering Plants, Grasses
+Endangered
+present in 4 / 62 counties
+
+Stalked Panic Grass (Coleataenia stipitata)
+Flowering Plants, Grasses
+Endangered
+present in 3 / 62 counties
+
+Tall Dune Panic Grass (Panicum amarum var. amarum)
+Flowering Plants, Grasses
+Rare
+present in 3 / 62 counties
+
+Enter the keyword to search through species names, or "quit" to stop:
+dog
+Delicate Rabbit Tobacco (Pseudognaphalium micradenium)
+Flowering Plants, Asters, Goldenrods and Daisies
+Endangered
+present in 4 / 62 counties
+
+Rough-leaved Dogwood (Cornus drummondii)
+Flowering Plants, Other Flowering Plants
+Endangered
+present in 4 / 62 counties
+
+Enter the keyword to search through species names, or "quit" to stop:
+joe
+Coastal Plain Joe Pye Weed (Eutrochium dubium)
+Flowering Plants, Asters, Goldenrods and Daisies
+Rare
+present in 6 / 62 counties
+
+Enter the keyword to search through species names, or "quit" to stop:
+coffee
+Kentucky Coffee Tree (Gymnocladus dioicus)
+Flowering Plants, Other Flowering Plants
+Endangered
+present in 6 / 62 counties
+
+Enter the keyword to search through species names, or "quit" to stop:
+milk
+Canada Milk Vetch (Astragalus canadensis var. canadensis)
+Flowering Plants, Other Flowering Plants
+Endangered
+present in 15 / 62 counties
+
+Cooper's Milkvetch (Astragalus neglectus)
+Flowering Plants, Other Flowering Plants
+Endangered
+present in 12 / 62 counties
+
+Cross-leaved Milkwort (Polygala cruciata)
+Flowering Plants, Other Flowering Plants
+Rare
+present in 5 / 62 counties
+
+Orange Milkwort (Polygala lutea)
+Flowering Plants, Other Flowering Plants
+Endangered
+present in 6 / 62 counties
+
+Twining Milk Pea (Galactia regularis)
+Flowering Plants, Other Flowering Plants
+Endangered
+present in 5 / 62 counties
+
+White Milkweed (Asclepias variegata)
+Flowering Plants, Other Flowering Plants
+Endangered
+present in 9 / 62 counties
+
+Enter the keyword to search through species names, or "quit" to stop:
+bluestem
+Bushy Bluestem (Andropogon glomeratus var. glomeratus)
+Flowering Plants, Grasses
+Rare
+present in 4 / 62 counties
+
+Dune Bluestem (Schizachyrium littorale)
+Flowering Plants, Grasses
+Rare
+present in 6 / 62 counties
+
+Enter the keyword to search through species names, or "quit" to stop:
+deer
+No matching species found.
+
+Enter the keyword to search through species names, or "quit" to stop:
+cat
+Bristly Spiked Lobelia (Lobelia spicata var. hirtella)
+Flowering Plants, Other Flowering Plants
+Endangered
+present in 3 / 62 counties
+
+Cat-tail Sedge (Carex typhina)
+Flowering Plants, Sedges
+Endangered
+present in 20 / 62 counties
+
+Coastal Plain Blue-eyed Grass (Sisyrinchium fuscatum)
+Flowering Plants, Other Flowering Plants
+Endangered
+present in 4 / 62 counties
+
+Delicate Rabbit Tobacco (Pseudognaphalium micradenium)
+Flowering Plants, Asters, Goldenrods and Daisies
+Endangered
+present in 4 / 62 counties
+
+Navel Cornsalad (Valerianella umbilicata)
+Flowering Plants, Other Flowering Plants
+Endangered
+present in 4 / 62 counties
+
+Sickle-leaved Golden Aster (Pityopsis falcata)
+Flowering Plants, Asters, Goldenrods and Daisies
+Rare
+present in 5 / 62 counties
+
+Spiked Wood Rush (Luzula spicata ssp. spicata)
+Flowering Plants, Rushes
+Endangered
+present in 1 / 62 counties
+
+Weft Fern (Crepidomanes intricatum)
+Ferns and Fern Allies, Ferns
+Endangered
+present in 6 / 62 counties
+
+Enter the keyword to search through species names, or "quit" to stop:
+quit
+```
 
 <br>
 <br>
