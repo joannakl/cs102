@@ -119,14 +119,6 @@ __From the point of view of this assignment, a valid row in the data set MUST co
 
 __Any rows that do not contain these seven values should be quietly ignored by the program.__
 
-????? 
-
-CVS class
-
-?????
-
-You can (and should) use the `Parser` class listed in the Appendix to help you with parsing the input file.
-
 </div> </div></div>
 
 
@@ -247,7 +239,7 @@ species should be stored in the instances of this class.
 	- `public String getScientificName()` 
 	- `public String getTaxonomicGroup()` 
 	- `public String getTaxonomicSubGroup()` 
-	- `public String getNYListingStatuse()` 
+	- `public String getNYListingStatus()` 
 	- `public String getCategory()` 
     
 - The class needs to be able to store a list of counties in which the given species is present. 
