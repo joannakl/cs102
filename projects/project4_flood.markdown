@@ -262,7 +262,7 @@ that you need to work on.
 
 Class documentation: [`NotOnMapException` documentation](project4_flood/project4/NotOnMapException.html)
 
-source code: [`NotOnMapException.java`](project4_flood/project4/NotOnMapException.java])
+source code: [`NotOnMapException.java`](project4_flood/project4/NotOnMapException.java)
 
 You should not make any changes to this file. 
 
@@ -271,7 +271,7 @@ You should not make any changes to this file.
 
 Class documentation: [`GridPoint` documentation](project4_flood/project4/GridPoint.html)
 
-source code: [`GridPoint.java`](project4_flood/project4/GridPoint.java])
+source code: [`GridPoint.java`](project4_flood/project4/GridPoint.java)
 
 You should not make any changes to this file. 
 
@@ -281,7 +281,7 @@ You should not make any changes to this file.
 
 Class documentation: [`Map` documentation](project4_flood/project4/Map.html)
 
-source code: [`Map.java`](project4_flood/project4/Map.java])
+source code: [`Map.java`](project4_flood/project4/Map.java)
 
 You need to implement the missing methods in this class. Each method that you 
 need to complete contains the comment:
@@ -298,7 +298,7 @@ Make sure to remove these lines, once the code is complete.
 
 Class documentation: [`Simulation` documentation](project4_flood/project4/Simulation.html)
 
-source code: [`Simulation.java`](project4_flood/project4/Simulation.java])
+source code: [`Simulation.java`](project4_flood/project4/Simulation.java)
 
 You need to implement the missing methods in this class. Each method that you 
 need to complete contains the comment:
