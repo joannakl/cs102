@@ -444,11 +444,12 @@ template: left-right-subtree
 
 
 
-- In binary trees there are at most $2^{L}$ nodes at level $L$.
+- In binary trees there are at most $2^{l}$ nodes at level $l$, $0 \leq l \leq L-1$
+where $L$ is the number of levels in the tree. 
 
 --
 
-- Given N nodes, the _shortest_ binary tree that we can construct has $\left\lfloor \log_{2}N\right\rfloor +1$ levels. We will come back to this idea when we talk about efficiency of trees.
+- Given $N$ nodes, the _shortest_ binary tree that we can construct has $\left\lfloor \log_{2}N\right\rfloor +1$ levels. We will come back to this idea when we talk about efficiency of trees.
 
 --
 
@@ -461,7 +462,7 @@ template: left-right-subtree
 
 --
 
-- In a __complete binary tree__ with $L$ levels, the levels $0\leq l\leq L-1$ have
+- In a __complete binary tree__ with $L$ levels, the levels $0 \leq l < L-1$ have
 the maximal number of nodes, i.e., $2^{l}$, and the nodes at level $L$ are placed
 as far left as possible.
 
