@@ -5,7 +5,7 @@ title: Project 5
 
 <div class="lab-right" markdown="1">
 __Project 5__ <br>
-__due date:__ December 4
+__due date:__ April 27
 
 __submission mode:__ individual
 
@@ -15,17 +15,17 @@ __submission mode:__ individual
 
 <main markdown="1" class="lab">
 
-## Project 5: Mountain Climb
+## Project 5: Mountain Hike
 
 <hr>
 
 <div class="emph" markdown=1>
 You may discuss any of the assignments with your classmates and tutors (or anyone else) but <span class="red"> all work for all assignments must be
-entirely your own</span>. Any sharing or copying of assignments will be considered cheating (this includes posting of partial or complete
+entirely your own</span>. Any sharing or copying of assignments will be considered cheating (this includes posting partial or complete
 solutions on Ed, GitHub, Discord, Groupme, ... or any other forum). If you get significant help from anyone, you should acknowledge it in
 your submission (and your grade will be proportional to the part that you completed on your own). You are responsible for
 every line in your program: you need to know what it does and why. You should not use any data structures and features of Java
-that have not been covered in class (or the prerequisite class). If you have doubts whether or not you are allowed to use certain
+that have not been covered in class (or the prerequisite class). If you have doubts about whether or not you are allowed to use certain
 structures, just ask your instructor.
 </div>
 
@@ -37,23 +37,17 @@ The goal of this project is to implement a program that uses a binary search tre
 They need to find their way down the mountain with limited resources to survive and overcome obstacles. Your program will produce a list of all the possible paths that
 the hiker should take to survive.
 
-The mountain is represented by a binary search tree. Nodes in this tree represent a rest-stops. The hiker restocks their supplies at those rest-stops. But they may also
-encounter obstacles at the rest-stops. Some of the supplies that they carry with them may help them pass through the obstacles. The paths from the root down represent possible trails.
-Each path from the root of the tree to a leaf represetns a path down the mountain. The hiker needs to evaluate each of those paths and decide if it is pheasible or now. 
+The mountain is represented by a binary search tree. Nodes in this tree represent rest stops. The hiker restocks their supplies at those rest stops. But they may also
+encounter obstacles at the rest stops. Some of the supplies that they carry with them may help them pass through the obstacles. The paths from the root down represent possible trails.
+Each path from the root of the tree to a leaf represents a path down the mountain. The hiker needs to evaluate each of those paths and decide if it is feasible or not.
 <!--
-Once the hiker starts a single path, they do not have an option of going back. Some of the paths lead to cliffs, others leads to the bottom of the mountain.
-See example below for more details.
+Once the hiker starts a single path, they do not have an option of going back. Some of the paths lead to cliffs, others lead to the bottom of the mountain.
+See the example below for more details.
 -->
 
 
-**Start early!** This project may not seem like much coding, but debugging and testing always takes time, especially for recursive algorithms.
+**Start early!** This project may not seem like much coding, but debugging and testing always take time, especially for recursive algorithms and the implementation of new data structures. 
 
----
-<br/>
-
-The credit for this project idea goes to Karl and Abhinav - two teaching assistants 
-from a few semesters ago. .
-<br/>
 
 <div class="wrap-collabsible">
 <input id="interface" class="toggle" type="checkbox" checked=true >
@@ -61,9 +55,9 @@ from a few semesters ago. .
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
-Your program has to be a console based program (no graphical interface).
+Your program has to be console-based (no graphical interface).
 The user should not be prompted for any information (all required information for the program to run is provided in the input file given as a command line argument).
-The output of the program should be printed to standard output stream.
+The output of the program should be printed to the standard output stream.
 Any error messages should be printed to the standard error stream.
 
 
@@ -83,17 +77,17 @@ The input file will be a test file. Each line in the input describes a single po
 ` LABEL  SUPPLIES  OBSTACLES`
 
 In the above, `LABEL` is a string with the name of the rest stop. The alphanumeric comparison of the labels determines the shape of the tree.
-`SUPPLIES` is a (possibly empty) list of supplies that the hiker will get at this rest-stop. Valid supplies are `food`, `raft`, `axe`.
+`SUPPLIES` is a (possibly empty) list of supplies that the hiker will get at this rest stop. Valid supplies are `food`, `raft`, `axe`.
 `OBSTACLES` is a (possibly empty) list of obstacles that the hiker will encounter at this rest stop.  Valid obstacles are `fallen tree` and `river`.
 
 See below for an example.
 
 
-If the program is executed with non-existent or invalid command line argument, it should print an error message and terminate.
+If the program is executed with a non-existent or invalid command line argument, it should print an error message and terminate.
 
 If the file contains any additional (and invalid) strings in the description of a rest-stop, they should be ignored.
 
-The program \textbf{should not be interactive}. All input should be provided as the command line arguments. The user should not be prompted
+The program **should not be interactive**. All input should be provided as the command line arguments. The user should not be prompted
 for any additional information.
 </div> </div></div>
 
@@ -104,11 +98,11 @@ for any additional information.
 <div class="content-inner" markdown=1>
 
 
-The program has to calculate all possible paths down the mountain that lead all the way down to the lowes level (i.e., to the leaves in the lowest level
+The program has to calculate all possible paths down the mountain that lead down to the lowest level (i.e., to the leaves in the lowest level
 of the mountain-tree) that the hiker can take and survive.
 
-The program output should consist of number of lines equal to the number of safe paths.
-Each safe path should consist of a space separated list of the rest-stop labels in order in which they are followed from top of the mountain to the bottom.
+The program output should consist of several lines equal to the number of safe paths.
+Each safe path should consist of a space-separated list of the rest-stop labels in the order in which they are followed from the top of the mountain to the bottom.
 The paths should be printed in order from _left_ to _right_ in the tree that represents the mountain (this is also an alphanumeric ordering of the paths).
 
 </div> </div></div>
@@ -154,15 +148,15 @@ O
 Once they use the `axe`, it becomes dull and cannot be used again.
 
 `raft` is needed when the trail continues through a river. The hiker cannot pass a `river` obstacle unless they have a `raft`.
-Each `raft` is designed for single river crossing - once used, it cannot be used again.
+Each `raft` is designed for a single river crossing - once used, it cannot be used again.
 
-Note that the hiker is able to use an axe or a raft at the very same rest stop at which it was collected or at any rest stop later along the journey.
+Note that the hiker can use an axe or a raft at the very same rest stop at which it was collected or at any rest stop later along the journey.
 
 There are many possible paths down the mountain depicted above, but only two lead to safety.
 
 - `J E B A`, `J E B D C`, `J E G F`, `J E G I H` - the hiker reaches rest-stop `E` and cannot continue without an `axe`.
-- `J P L K` - the hiker reaches rest-stop K and falls off the cliff.
-- `J P L N M`, `J P L N O` - the hiker uses the `raft` at rest-stop `L` and with new food supplies continues to the bottom of the mountain at either `M` or `O`.
+- `J P L K` - the hiker reaches rest-stop K and falls off the cliff (since the leaf `K` is not at the lowest level of the tree).
+- `J P L N M`, `J P L N O` - the hiker uses the `raft` at rest-stop `L` and with new food supplies, continues to the bottom of the mountain at either `M` or `O`.
 - `J P R Q` - the hiker reaches rest-stop Q and falls off the cliff.
 
 In this case, the program should produce two lines of output:
@@ -172,6 +166,7 @@ J P L N M
 J P L N 0
 ```
 
+Note that the rest stops' labels can be longer strings, not just single letters as above.
 
 </div> </div></div>
 
@@ -184,12 +179,13 @@ J P L N 0
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
-The design of classes is up to you, but you do need to implement certain classes to represent certain entities in the program. You need to make decisions about how to design these classes to produce an efficient and well-put-together program. Make sure that all methods that you include in a particular class belong in that class.
+The design of classes is up to you, but you do need to implement certain classes to represent certain entities in the program. You need to make decisions about how to design these classes to produce an efficient and well-put-together program. Make sure that all methods that you include in a particular class belong to that class. Java is an
+object-oriented programming language and your programs should follow object-oriented principles.
 
 
 #### <code class="code_title">MountainClimb</code> class
 
-This is the class that is the program. This means it has the 	`main` method. This class is responsible for parsing and validating
+This is the class that is the program. This means it has the     `main` method. This class is responsible for parsing and validating
 the command line arguments, reading and parsing the input file, producing any error messages,
 handling any exceptions thrown by other classes, and producing output.
 
@@ -204,9 +200,9 @@ handling any exceptions thrown by other classes, and producing output.
 This is a generic `BST<E>` class. The specification is similar to the one for
 `TreeSet` class provided by Java libraries, but your implementation will be very different.
 
-The specification for this class is provided at [its javadoc page](project5/project5/BST.html).
-You can use the source code that we wrote in class, but keep in mind that the class that you are implementing requires additional
-functionality and you may need to rewrite some of the methods that were created in class.
+The specification for this class is provided at [its javadoc page](project5_mountain/project5/BST.html).
+You can use the source code we wrote in class, but keep in mind that the class you are implementing requires additional
+functionality and you may need to rewrite some of the methods created in class.
 
 __<code>Node</code> class__
 
@@ -221,8 +217,8 @@ private class Node
 
 HINT: to improve the performance of your BST algorithms, it may be useful to keep additional data fields in
 the nodes, i.e., more than just data, left and right.
-Those design decisions are up to you. But you should explain in comments for this class, why you have
-additional data fields if you chose to do so.
+Those design decisions are up to you. **But you should explain in comments for this class, why you have
+additional data fields if you chose to do so.**
 
 __Iterator__
 
@@ -234,9 +230,8 @@ The two additional methods `preorderIterator()` and
 `postOrederIterator()` need to return iterators that access the values in the tree according
 to the preorder and postorder traversals, respectively.
 
-The details of the implementation are up to you and you are free to implement more than one internal private iterator class.
-The `next()` and `hasNext()` methods of the iterator classes should perform in O(1). The constructor of the iterator classes
-should be O(N).
+The implementation details are up to you and you are free to implement more than one internal private iterator class.
+**The `next()` and `hasNext()` methods of the iterator classes should perform in O(1).** The constructor of the iterator classes can be O(N). **You are not allowed to use the implementation of iterators of any built-in classes when writing your implementation of the iterators.**
 
 The remove method in the `Iterator<E>` interface is optional and you do not need to
 provide the actual remove functionality. (This means that the method has to exist,
@@ -244,7 +239,7 @@ but instead of performing its function, it throws an instance of `UnsopportedOpe
 
 <br/>
 
-NOTE: normally, all data fields in the class should be private. But since the `BST` class serves as a base class for the `BSTMountain` class below,
+NOTE: normally, all data fields in the class should be private. However since the `BST` class serves as a base class for the `BSTMountain` class below,
 its data fields can be made protected instead to allow the subclass to access these data fields.
 
 
@@ -253,20 +248,25 @@ its data fields can be made protected instead to allow the subclass to access th
 This should be the class that inherits from your own `BST<RestStop>`.
 Your class should represent the mountain itself (therefore, it should not be generic and its nodes should store data items of type `RestStop`).
 It is up to you to decide how to implement this class, which methods to provide etc.
+Hint: this class should implement methods that allow a hiker to *explore* the mountain.
+The reason for that is that the exploration algorithm is specific to the mountain itself, not to the hiker (any `Hiker` object will follow the same steps
+when traveling down the same mountain). The *exploration* of the mountain is the process
+of figuring out which paths lead safely from the top of the mountain to its bottom (lowest level)
+with sufficient supplies for the hiker to survive.
 
 
 #### <code class="code_title">RestStop</code> class
 
 This class should represent a single rest stop. It should be capable of storing the label of the rest stop along with a list of the supplies that a hiker
-can collect at this rest-stop and a list of obstacles  that a hiker may encounter at this rest-stop. It may be useful to implement the `Comparable` interface.
+can collect at this rest stop and a list of obstacles that a hiker may encounter at this rest stop. It may be useful (or necessary) to implement the `Comparable` interface.
 
 
 
 #### <code class="code_title">Hiker</code> class
 
 This class should represent a hiker traveling down the mountain. An object of this class should be capable of keeping track of all the supplies that the hiker
-has in their possession. This information should be updated as the hiker travels along a trail and consumes supplies (by either eating along the way, or using the tools
-to clear the path, or cross the river).
+has in their possession. This information should be updated as the hiker travels along a trail and consumes supplies (by either eating along the way or using the tools
+to clear the path or cross the river).
 
 
 You may, but you are not required to, implement other classes.
@@ -286,7 +286,7 @@ You may, but you are not required to, implement other classes.
 [Code conventions](https://cs.nyu.edu/~joannakl/cs102_s21/notes/CodeConventions.pdf)
 posted on the course website.
 
-- You have to work with your own implementation of a BST class. It should be based on the one we have been using in class, but it cannot be based on one of the implementations in Java libraries.
+- You have to work with your implementation of a BST class. It should be based on the one we have been using in class, but it cannot be based on one of the implementations in Java libraries.
 
 - You may use any exception-related classes.
 
@@ -305,8 +305,7 @@ posted on the course website.
 You should also implement stubs of methods that return `0` or `null`. This way your code compiles, even though it may
 not work completely.  You can implement methods that perform one task at a time.
 This way, if you run out of time, at least parts of your program will be functioning properly.
-- You should make sure that you are __testing the program on much smaller data set__ for which you can determine the correct
-output manually. You can create  a test input file that contains only a few rows.
+- You should make sure that you are __testing the program on different input files with different tree structures. Such files should be small enough so that you can determine the correct output of the program manually. You can create a test input file that contains only a few rows.
 - You should make sure that your program's results are consistent with what is described in this specification
 by running the program on carefully designed test inputs and examining
 the outputs produced to make sure they are correct.
@@ -318,8 +317,8 @@ This means that you need to make sure that your methods can perform their tasks 
 arise in the context of this specific program.
 - You should __backup__ your code after each time you spend some time working on it.
 Save it to a flash drive, email it to yourself, upload it to your Google drive, push it to a private git repository,
-do anything that gives you a second (or maybe third copy). Computers tend to break just a few days or even
-a few hours before the due dates - make sure that you have working code if that happens.
+or do anything that gives you a second (or maybe third copy). Computers tend to break just a few days or even
+a few hours before the due dates - make sure that you have a working code if that happens.
 
 </div> </div></div>
 
@@ -334,14 +333,13 @@ If your program does not compile or if it crashes (almost) every time it is run,
 you will get a zero on the assignment. Make sure that you are submitting
 functioning and documented code, even if it is not a complete implementation so that you can get partial credit.
 
-If the program does not adhere to the specification, the grade will be low and
+If the program does not adhere to the specifications, the grade will be low and
 will depend on how easy it is to figure out what the program is doing and how to work with it.
 
 The grade will be determined by several factors:
-- 50 points: class correctness: correct behavior of the program in many different input files
-- 20 points: design and the implementation of your code
-- 10 points: efficient implementation
-   (this will be determined by a code review)
+- 50 points for class correctness: correct behavior of the program in many different input files
+- 20 points for design and the implementation of your code
+- 10 points for efficient implementation  (this will be determined by a code review)
 - 20 points: proper documentation, program style and format of submission
    (this will be determined by a code review)
 
@@ -354,13 +352,13 @@ The grade will be determined by several factors:
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
-__For the purpose of grading, your project must be be in the package called `project5`.
+__For the purpose of grading, your project must be in the package called `project5`.
 This means that each of your submitted source code files should start with a line:__
 
 `package project5;`
 
 
-Your should submit all your source code files (the ones with `.java` extensions only)
+You should submit all your source code files (the ones with `.java` extensions only)
 either in a single __zip__ file or as individual files to Gradescope. __DO NOT__ submit `.class` files
 or any project files that your IDE might produce, or any other files created by your operating system and file system.
 You can see all the files on Gradescope.
@@ -370,18 +368,18 @@ You can produce a zip file directly from Eclipse (if this is what you are using)
  -  right click on the name of the package (inside the `src` folder) and select Export...
  -  under General pick Archive File and click Next
  -  in the window that opens select appropriate files and settings:
-	 -  in the right pane pick ONLY the files that are actually part of the project,
-		but make sure that you select all files that are needed
-	 -  in the left pane, make sure that no other directories are selected
-	 -  click Browse and navigate to a location that you can easily find on your system (Desktop or folder with the course materials or ...)
-	 -  in Options select "Save in zip format", "Compress the contents of the file" and "Create only selected directories"
+     -  in the right pane pick ONLY the files that are part of the project,
+   	 but make sure that you select all files that are needed
+     -  in the left pane, make sure that no other directories are selected
+     -  click Browse and navigate to a location that you can easily find on your system (Desktop or folder with the course materials or ...)
+     -  in Options select "Save in zip format", "Compress the contents of the file" and "Create only selected directories"
  -  click Finish
 
 You may resubmit to Gradescope as many times as you wish before the submission link closes. But if you resubmit
 after the grace period ends, your assignment will be subject to the late point deductions.
 
 Some of the autograder tests for this project will be hidden. This means that you need to make the effort
-to test your own implementation before you make the final submission.
+to test your implementation before you make the final submission.
 
 
 
@@ -390,3 +388,5 @@ to test your own implementation before you make the final submission.
 
 
 </main>
+
+
