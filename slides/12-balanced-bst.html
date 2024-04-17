@@ -74,21 +74,21 @@ __&nbsp;&nbsp;&nbsp;O(1)__
 
 - finding a value in a tree
 --
-__&nbsp;&nbsp;&nbsp;O(logN)__
+__&nbsp;&nbsp;&nbsp;O(H)__: 
 --
-&nbsp;__(best case),   O(N) (worst case for degenerate tree)__
+__&nbsp;O(logN) (best case),   O(N) (worst case for degenerate tree)__
 
 --
 
 - adding a value to a tree
 --
-__&nbsp;&nbsp;&nbsp;O(logN) (best case),   O(N) (worst case for degenerate tree)__
+__&nbsp;&nbsp;&nbsp;O(H): O(logN) (best case),   O(N) (worst case for degenerate tree)__
 
 --
 
 - removing a value from a tree
 --
-__&nbsp;&nbsp;&nbsp;O(logN) (best case),   O(N) (worst case for degenerate tree)__
+__&nbsp;&nbsp;&nbsp;O(H): O(logN) (best case),   O(N) (worst case for degenerate tree)__
 
 --
 ----
@@ -102,7 +102,7 @@ we need to keep the tree balanced.__
 .left-column2[.center[
 <img width="300px" alt="BST - unbalanced" src="img/11/bst-44.jpg">
 
-unbalanced tree
+unbalanced/degenerate tree
 ]]
 
 .right-column2[.center[
@@ -333,6 +333,9 @@ The __balance factor__ is the difference between the heights of the left and rig
 .left-column2-small[
 ```
 int balanceFactor ( AVLNode n )
+  if ( n.right == null 
+             && n.left == null)
+    return 0;  
   if ( n.right == null )
     return -node.height
   if ( n.left == null )
