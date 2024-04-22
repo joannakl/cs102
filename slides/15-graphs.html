@@ -190,7 +190,7 @@ a list as follows:
 ```
     A, [B, F, H]
     B, [A, C, E]
-    C, [D, J]
+    C, [B, D, J]
     D, [C, E, F, G]
     E, [B, D]
     F, [A, D, H]
@@ -324,7 +324,7 @@ Example for a directed, unweighted graph.
 
 --
 
-  - A graph contains N nodes labeled 0..N. There is an edge between 
+  - A graph contains N nodes labeled [0,N-1]. There is an edge between 
   two nodes if a sum of their labels is even. 
     <br/>For example: nodes with labels 3 and 57 have an edge between them, but nodes with labels 3 and 56 do not. 
     
@@ -333,7 +333,7 @@ Example for a directed, unweighted graph.
   - A 2D grid represents a labirinth. The cells with passable corridors 
     are marked with '.'. The cells with solid walls are marked with '#'. 
     Each of those cells is an _implicit_ node
-    in a graph. There is an _implicit_ edge between two nodes if the the two cells are connected
+    in a graph. There is an _implicit_ edge between two nodes if the two cells are connected
     along one of the four sides and they are both marked with a '.'.
     <br/>
     <pre>
