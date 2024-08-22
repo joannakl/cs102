@@ -34,19 +34,20 @@ title: Syllabus, CSCI-UA 102, Klukowska
 
  <div class="lab" markdown="1">
 
-# Syllabus for CSCI-UA 102 sec 1, Professor Klukowska
+# Syllabus for CSCI-UA 102 sec 5, Professor Klukowska
 
 ## Instructor Information
 
 * Professor Joanna Klukowska
 * Email: joannakl@cs.nyu.edu 
 * Recitation Instructors: 
-    * Daniel Jin (sec 21, sec 24)
-    * Anirudh Nistala (sec 2, sec 22)
-    * Joel Marvin Tellis (sec 23, sec 25)
+    * Daniel Jin (sec ??, sec ??)
+    * Satya Chilale (sec ??, sec ??)
+    * ???
+    * ??? 
 * JK Office Hours 
-    * on Zoom (see Brightspace for links): Tuesdays 9:00 - 10:30 AM, Thursdays 1:30 - 3:00 PM
-    * in person: available by appointment on Mondays/Wednesdays after class meetings
+    * on Zoom (see Brightspace for links): Thursdays 1:30 - 3:00 PM
+    * in person: Mondays 10:00 AM - 11:30 AM (423 CIWW)
 * Recitation Leaders Office Hours
     * posted on Brightspace 
 
@@ -60,13 +61,22 @@ title: Syllabus, CSCI-UA 102, Klukowska
 * [Ed discussions](https://edstem.org/us/dashboard) (accessible through Brightspace as well) 
 * [Course website](https://cs.nyu.edu/~joannakl/cs102/)
 * Prerequisites: Passing CSCI.UA.0101 with a grade of C or better. <br>
-**You are expected to know and remember the material from CSCI-UA 101 course.** If you took the course a few semesters ago and/or do not remember parts of the material, start reviewing it during the summer/winter break. If you took an equivalent of this course at a different school, **you need to make sure that you are familiar with Java**. We assume you know enough Java to read and write fairly large programs right at the beginning of the semester. 
-* Testing out of the course: If you are familiar with the material for this course (because you self-learned it or took a class elsewhere), you can test out of the course by taking a placement exam. See the [Placement](https://cs.nyu.edu/home/undergrad/placement.html) page at the CS department website for more details.
+**You are expected to know and remember the material from CSCI-UA 101 course.** If you took the course 
+a few semesters ago and/or do not remember parts of the material, start reviewing it during the summer/winter 
+break. If you took an equivalent of this course at a different school, 
+**you need to make sure that you are familiar with Java**. We assume you know enough Java to read and 
+write fairly large programs right at the beginning of the semester. 
+* Testing out of the course: If you are familiar with the material for this course (because you self-learned 
+it or took a class elsewhere), you can test out of the course by taking a placement exam. 
+See the [Placement](https://cs.nyu.edu/home/undergrad/placement.html) page at the CS department website for more details.
 
 
 ## Course Description
 
-This course covers use and design of data structures, which organize information in computer memory. Topics covered include data structures (stacks, queues, linked lists, binary trees, binary search trees, etc.), how to implement them in a high-level programming language (Java), how to analyze their effect on algorithm efficiency, and how to use and modify them.
+This course covers use and design of data structures, which organize information in computer memory. 
+Topics covered include data structures (stacks, queues, linked lists, binary trees, binary search trees, etc.), 
+how to implement them in a high-level programming language (Java), how to analyze their effect 
+on algorithm efficiency, and how to use and modify them.
 
 
 <!--
@@ -83,7 +93,8 @@ If you have questions related to the course materials or assessments:
 - visit instructors' office hours (schedule available on Brightspace)
 
 If you have questions regarding your grades or some personal issues
-- post them as a private post on the discussion forum or send a direct message to the relevant instructor using the Ed platform. (Avoid emails as they often get lost in the steam of other things.) 
+- post them as a private post on the discussion forum or send a direct message to the relevant instructor 
+using the Ed platform. (Avoid emails as they often get lost in the steam of other things.) 
 - visit instructors' office hours (schedule available on Brightspace)
 
 
@@ -92,13 +103,28 @@ If you have questions regarding your grades or some personal issues
 The grade for this course will be determined according to the following formula:
 
 - **Participation and Progress, 10%** <br/>
-This category will be assessed based on taking an active part in class discussions (asking and answering questions on the course discussion forum, reading posts made on the discussion forum by other students and instructors), completing assigned readings, tutorials, activities, etc., and self-assessment exercises, actively participating in recitations, and completing group and individual work, completing class polls and pop-quizzes during the lectures and recitations. Several of these grades will be dropped to account for student absences due to illness, holiday observances, family/personal emergencies, or any other circumstances. 
+This category will be assessed based on taking an active part in class discussions 
+(asking and answering questions on the course discussion forum, reading posts made on 
+the discussion forum by other students and instructors), completing assigned readings, tutorials, 
+activities, etc., and self-assessment exercises, actively participating in recitations, 
+and completing group and individual work, completing class polls and pop-quizzes during 
+the lectures and recitations. Several of these grades will be dropped to account for 
+student absences due to illness, holiday observances, family/personal emergencies, or any other circumstances. 
 - **2 Exams: 20% midterm exam, 30% final exam**<br/>
-Exams will be paper-based, in-person, synchronous (may be switched to online and/or asynchronous if the need arises), and completed individually. No exam grades are dropped. All exams must be completed individually by you with no assistance of any other people (except for the instructor and proctors) or technology.
+Exams will be in-person and synchronous 
+(may be switched to online and/or asynchronous if the need arises), and completed individually. 
+No exam grades are dropped. All exams must be completed individually by you with no assistance of 
+any other people (except for the instructor and proctors) or technology.
+Each exam has two parts: paper-based and hands-on coding part. 
 - **3-5 take-home quizzes, 20%** <br/>
-The take-home quizzes will be online, asynchronous, and completed individually. Each quiz will take approximately 30-minutes and will be offered at any time during a 24-hour period. No take-home quiz grades are dropped. All take-home quizzes must be completed individually by you with no assistance of any other people or technology.
+The take-home quizzes will be online, asynchronous, and completed individually. 
+Each quiz will take approximately 30-minutes and will be offered at any time during a 24-hour period. 
+No take-home quiz grades are dropped. All take-home quizzes must be completed individually by you 
+with no assistance of any other people or technology.
 - **4-6 Programming Projects, 20%** <br/>
-Several programming projects will be given during the semester. The programming projects should be completed individually. No programming project grades are dropped. The programming projects should be completed individually and they should be your own work.
+Several programming projects will be given during the semester. The programming projects should be 
+completed individually. No programming project grades are dropped. The programming projects should 
+be completed individually and they should be your own work.
 
 
 
@@ -118,8 +144,11 @@ Score | Letter Grade
 65-72 | D
 < 65 | F
 
-The grade of _Incomplete_ is reserved for students who miss the final exam or the last project after completing all other coursework in the semester (the reasons for missed exam will need to be verified and approved by the Dean Of Students). <br/>
-The grade of _Incomplete_ **will not be given** to students who started falling behind in class for any reason. Those students should withdraw from the course or switch to _Pass/Fail_ option.
+The grade of _Incomplete_ is reserved for students who miss the final exam or the last project after 
+completing all other coursework in the semester (the reasons for missed exam will need to be verified 
+and approved by the Dean Of Students). <br/>
+The grade of _Incomplete_ **will not be given** to students who started falling behind in class for any reason. 
+Those students should withdraw from the course or switch to _Pass/Fail_ option.
 
 
 ## Course Materials
@@ -133,11 +162,18 @@ In addition, you may find some links to the course slides and labs at the [cours
 
 ### Textbook(s)
 
-We do not require you to purchase any particular textbook. **But, you should use a textbook to study more in-depth the topics that are discussed in class.** The list below contains some recommended titles. During the semester we will suggest readings from some of them. You do not need to read every chapter from every book.
+We do not require you to purchase any particular textbook. 
+**But, you should use a textbook to study more in-depth the topics that are discussed in class.** 
+The list below contains some recommended titles. During the semester we will suggest readings 
+from some of them. You do not need to read every chapter from every book.
 
-Most of the books in this list are accessible through NYU libraries for either download or online access. For the books available through [O'Reilly online access](https://www.oreilly.com/), you can either start at the NYU library page or login to the site directly using Single-Sign-On (SSO) option with your NYU credentials. Some books are provided as **open books** through their publisher's or author's websites.
+Most of the books in this list are accessible through NYU libraries for either download or online access. 
+For the books available through [O'Reilly online access](https://www.oreilly.com/), 
+you can either start at the NYU library page or login to the site directly using Single-Sign-On (SSO) 
+option with your NYU credentials. Some books are provided as **open books** through their publisher's or author's websites.
 
-Here is a listing of chapters in different books that discuss different topics covered in this course: [reading list](https://docs.google.com/spreadsheets/d/e/2PACX-1vSNvAduqIL8iv8P1-EjgRKrboryBvKFH_n-cADD2yKfKtR3MGKCE1BCmB26l9NUR8KJpRD0IX1H_2YW/pubhtml).
+Here is a listing of chapters in different books that discuss different topics covered in this course: 
+[reading list](https://docs.google.com/spreadsheets/d/e/2PACX-1vSNvAduqIL8iv8P1-EjgRKrboryBvKFH_n-cADD2yKfKtR3MGKCE1BCmB26l9NUR8KJpRD0IX1H_2YW/pubhtml).
 
 #### Data Structures Books
 
@@ -187,25 +223,32 @@ This is your cs101 textbook. It is a good resource for refreshing the Java mater
 
 ### Recitations
 
-Recitations are the times to have most of your questions answered. These could be questions about upcoming projects, material covered during the prior week or the weekly labs. They are also a chance for you to work with a group of students from the class to solve some problems from the weekly labs together.
+Recitations are the times to have most of your questions answered. These could be questions about 
+upcoming projects, material covered during the prior week or the weekly labs. They are also a chance 
+for you to work with a group of students from the class to solve some problems from the weekly labs together.
 
-The recitations are essential part of the course. You are expected to attend them. They are a chance for you to learn the material and collaborate with your peers. They are NOT optional part of this course.
+The recitations are essential part of the course. You are expected to attend them. 
+They are a chance for you to learn the material and collaborate with your peers. 
+They are NOT optional part of this course.
 
 ### Weekly Labs
 
-(Almost) every week you will be given a lab to work on. You should review the lab instructions before your weekly recitation so that you can discuss any questions and issues during the recitation.
+(Almost) every week you will be given a lab to work on. You should review the lab 
+instructions before your weekly recitation so that you can discuss any questions and issues during the recitation.
 
-During some of the recitation session you will get a chance to work on parts of the lab with other students and with guidance of the recitation instructor.
+During some of the recitation session you will get a chance to work on parts of the 
+lab with other students and with guidance of the recitation instructor.
 
-Some parts of the weekly labs will  be submitted and will contribute to the "participation and progress" part of your grade for this course. To get the credit for this part, you must submit it before the due date.
+Some parts of the weekly labs will  be submitted and will contribute to the "participation and progress" 
+part of your grade for this course. To get the credit for this part, you must submit it before the due date.
 
 
 
 ## Course Policies
 
-This course follows CAS Academic Policies that can be found at [https://cas.nyu.edu/academic-programs/bulletin/policies/academic-policies.html](https://cas.nyu.edu/academic-programs/bulletin/policies/academic-policies.html).  
+This course follows CAS Academic Policies that can be found at 
+[https://cas.nyu.edu/academic-programs/bulletin/policies/academic-policies.html](https://cas.nyu.edu/academic-programs/bulletin/policies/academic-policies.html).  
 
-<!--(Append any course specific policies as applicable)-->
 
 
 ### Attendance
