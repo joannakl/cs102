@@ -149,7 +149,7 @@ public class Simulation {
      * and flooded grid points are shaded.
      */
     public static void visualizeBasic() {
-		//clearScreen(); 
+		clearScreen(); 
 		for (int i = 0; i < flooded.length; i++) {
 			for (int j = 0; j < flooded[0].length; j++) {
 				if (flooded[i][j]) {
