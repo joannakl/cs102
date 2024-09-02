@@ -41,13 +41,13 @@ title: Syllabus, CSCI-UA 102, Klukowska
 * Professor Joanna Klukowska
 * Email: joannakl@cs.nyu.edu 
 * Recitation Instructors: 
-    * Daniel Jin (sec ??, sec ??)
-    * Satya Chilale (sec ??, sec ??)
-    * ???
-    * ??? 
+    * Satya Chilale (sec 6, sec 61)
+    * Daniel Jin (sec 62, sec 65)
+    * Chenfeiyu Wen (sec 64)
+    * Vincent Xu (sec 63)
 * JK Office Hours 
-    * on Zoom (see Brightspace for links): Thursdays 1:30 - 3:00 PM
-    * in person: Mondays 10:00 AM - 11:30 AM (423 CIWW)
+    * in person: Mondays 9:30 AM - 11:00 AM (423 CIWW)
+    * on Zoom (see Brightspace for links): Thursdays 1:00 - 2:30 PM
 * Recitation Leaders Office Hours
     * posted on Brightspace 
 
@@ -60,6 +60,11 @@ title: Syllabus, CSCI-UA 102, Klukowska
 * [Brightspace](brightspace.nyu.edu/)
 * [Ed discussions](https://edstem.org/us/dashboard) (accessible through Brightspace as well) 
 * [Course website](https://cs.nyu.edu/~joannakl/cs102/)
+* Exam dates (all subject to change if significal schedule changes are required):
+	* Midterm exam (paper-based part): Wednesday, Oct 16 (during regular lecture time) 
+	* Midterm exam (coding part): Friday, Oct 18 (during regular recitation time)
+	* Final exam (coding part): Wednesday, Dec 11 (during last recitation time, note that NYU is going to follow Friday schedule on that day)
+	* Final exam (paper-based part): Monday, Dec 16, 10:00 - 11:50AM (during the CAS scheduled final exam period)  
 * Prerequisites: Passing CSCI.UA.0101 with a grade of C or better. <br>
 **You are expected to know and remember the material from CSCI-UA 101 course.** If you took the course 
 a few semesters ago and/or do not remember parts of the material, start reviewing it during the summer/winter 
