@@ -113,14 +113,14 @@ This category will be assessed based on taking an active part in class discussio
 the discussion forum by other students and instructors), completing assigned readings, tutorials, 
 activities, etc., and self-assessment exercises, actively participating in recitations, 
 and completing group and individual work, completing class polls and pop-quizzes during 
-the lectures and recitations. Several of these grades will be dropped to account for 
-student absences due to illness, holiday observances, family/personal emergencies, or any other circumstances. 
+the lectures and recitations. Several of these grades (about one fourth) will be dropped to account for 
+student absences due to late registration, illness, holiday observances, family/personal emergencies, or any other circumstances. 
 - **2 Exams: 20% midterm exam, 30% final exam**<br/>
 Exams will be in-person and synchronous 
 (may be switched to online and/or asynchronous if the need arises), and completed individually. 
 No exam grades are dropped. All exams must be completed individually by you with no assistance of 
 any other people (except for the instructor and proctors) or technology.
-Each exam has two parts: paper-based and hands-on coding part. 
+Each exam has two parts: paper-based part and coding part. Both parts are timed.  
 - **3-5 take-home quizzes, 20%** <br/>
 The take-home quizzes will be online, asynchronous, and completed individually. 
 Each quiz will take approximately 30-minutes and will be offered at any time during a 24-hour period. 
