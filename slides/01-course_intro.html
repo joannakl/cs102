@@ -73,9 +73,10 @@ __Instructor:__
 __Section Leaders:__
 
 
-- Daniel Jin 
-- Anirudh Nistala
-- Joel Marvin Tellis
+- Satya Chilale
+- Daniel Jin
+- Vincent Xu
+- Chenfeiyu Wen
 
 --
 
@@ -87,7 +88,7 @@ __7 Graders__
 
 --
 
-__7 Tutors__ 
+__8 Tutors__ 
 
 
 ---
@@ -100,16 +101,11 @@ __7 Tutors__
   - Zoom links for any remote meetings
   - your grades and course progress
 
-<!-- - Course website: https://cs.nyu.edu/~joannakl/cs102_f21/
-    This page contains the syllabus. Make sure to review it carefully!
--->
 
 - Recitations (required):
   - you should attend the recitation for which you are registered
   - if you need to miss your scheduled recitation, contact your section leader, make sure to complete a weekly lab
     and plan to attend office hours and tutoring hours to resolve any questions you may have
-<!--  - links for recitation Zoom sessions are posted on Brightspace
--->
 
 - Course tools:
   - [Brightspace]( https://brightspace.nyu.edu) - NYU's learning management system (LMS)
@@ -118,6 +114,7 @@ __7 Tutors__
   site for assignments
   - PollEverywhere
   - ...
+  
 ---
 
 
@@ -127,9 +124,6 @@ __7 Tutors__
 we discuss in class
 
 - there are recommendations on the syllabus - you can access them in digital format through NYU libraries with no extra fees
-
-- we will assign readings from the books listed on the syllabus, but if you have another preferred book,
-you can use that as well
 
 - keep in mind that no single resource will cover everything that you need,
 you should plan on using multiple books/resources
@@ -141,7 +135,7 @@ you should plan on using multiple books/resources
 template:poll
 
 ### As you start this course (and this semester), what one word pops into your mind?
-(And yes, you can actually provide more than one.)
+
 
 
 - go to http://pollev.com/joannakl
@@ -186,10 +180,8 @@ Data structures covered in CSCI.UA 102:
 - __tree__
 - __binary tree__
 - __hash table__
-
-Other data structures:
-- __many different types of trees__
-- __many different types of graphs__
+- __some graphs__
+- ...
 ]]
 
 
@@ -199,33 +191,18 @@ template:  section
 # Why do data strutures matter?
 
 ---
-
 template:default
 
 background-image: url("img/back3.jpg")
 class:  middle
 
-.big[.heavy[
-I will, in fact, claim that the difference between a bad programmer and a good one is whether he considers his code or his
-data structures more important. Bad programmers worry about the code. Good programmers worry about data structures and their
-relationships.
-]]
 
-.right[
-Linus Torvalds, 2006
-]
+- [**Linus Torvals **](https://en.wikiquote.org/wiki/Linus_Torvalds), 2006 
 
-<!--
-
-
-.big[.heavy[Generally, the craft of programming is the factoring of a set of requirements into a a set of functions and data structures.
-]]
-
-.right[
-Douglas Crockford
-]
--->
-
+	.Large["I will, in fact, claim that the difference between a bad programmer and a good one is whether he considers his(/her) code or his(/her) data structures more important. 
+	Bad programmers worry about the code. Good programmers worry about data structures and their relationships. "]
+	
+	
 
 ---
 ## Demo 1:
@@ -253,8 +230,8 @@ for(int i = 0; i < NUMBER; i++){
 --
 
 - When `NUMBER` is set to 400,000:
-    - the code on the left takes __8707 milliseconds__ (i.e., over 8 seconds) to execute
-    - the code on the right takes __~9 milliseconds__ (i.e., you do not even notice that any time passed)
+    - the code on the left takes __6840 milliseconds__ (i.e., almost 7 seconds) to execute
+    - the code on the right takes __~5 milliseconds__ (i.e., you do not even notice that any time passed)
 
 --
 
@@ -308,8 +285,8 @@ What is the difference between these two loops?
 
 --
 
-When `size` is set to 100,000 program 1 takes __4,676 milliseconds__ to execute
-and program 2 finishes in __~9 milliseconds__.
+When `size` is set to 100,000 program 1 takes __3,391 milliseconds__ to execute
+and program 2 finishes in __~4 milliseconds__.
 
 
 ---
@@ -361,8 +338,8 @@ How does the _shape_ of the collection going to affect the running time?
 
 --
 
-When `size` is set to 1,000,000 program 1 takes __880 milliseconds__ to execute
-and program 2 finishes in __230 milliseconds__.
+When `size` is set to 1,000,000 program 1 takes __468 milliseconds__ to execute
+and program 2 finishes in __161 milliseconds__.
 
 
 ---
@@ -410,8 +387,8 @@ if a circle with radius 102 got created.
 --
 
 
-When `size` is set to 1,000,000 program 1 takes __0.02 milliseconds__ to search
-and program 2 takes  __10 milliseconds__ to search.
+When `size` is set to 1,000,000 program 1 takes __0.01 milliseconds__ to search
+and program 2 takes  __5 milliseconds__ to search.
 
 ---
 ## Demo 4:
@@ -465,8 +442,8 @@ public static long fibonacci2 (
 
 .smaller[
 - When we try to compute the 40<sup>th</sup> Fibonacci number:
-    - the code on the left takes __463 milliseconds__
-    - the code on the right takes __~0.008 milliseconds__
+    - the code on the left takes __430 milliseconds__
+    - the code on the right takes __~0.003 milliseconds__
 
 - BUT, the code on the left appears so much simpler
 ]
@@ -502,7 +479,7 @@ structures is important and exciting, there are always technical job interviews:
 <figure style="margin:-3em 0 0 0;">
 <img  width="300" alt="Plumber in a green uniform working on a sink. (This was an official US Government [EPA] produced image officially released by the institution as part of their kid's outreach program, so it is public domain.) "
  src="https://openclipart.org/image/800px/195900">  </img>
-.small[<figcaption markdown="1"> Plumber in a green uniform working on a sink. (This was an official US Government [EPA] produced image officially released by the institution as part of their kid's outreach program, so it is public domain.) Source: https://openclipart.org/detail/195900/friendly-plumber <figcaption markdown="1">]
+.small[<figcaption markdown="1"> Plumber in a green uniform working on a sink. (official US Government [EPA] produced image, public domain.) Source: https://openclipart.org/detail/195900/friendly-plumber <figcaption markdown="1">]
 </figure>
 ]
 
@@ -519,8 +496,8 @@ template: breakout
 is important for the programs to run fast.
 
 - You should think about it from two different perspectives:
-    - why do you want a program on your computer to work fast?
-    - why is it beneficial to the society if the programs run fast?
+    - why do **you** want a program on your computer to work fast?
+    - why is it beneficial to the **society** if the programs run fast?
 (this one is a bit more challenging)
 
 - After ~5 minutes, some groups will get a chance to report on what
