@@ -60,7 +60,7 @@ title: Syllabus, CSCI-UA 102, Klukowska
 * [Brightspace](brightspace.nyu.edu/)
 * [Ed discussions](https://edstem.org/us/dashboard) (accessible through Brightspace as well) 
 * [Course website](https://cs.nyu.edu/~joannakl/cs102/)
-* Exam dates (all subject to change if significal schedule changes are required):
+* Exam dates (all subject to change if significant schedule changes are required):
 	* Midterm exam (paper-based part): Wednesday, Oct 16 (during regular lecture time) 
 	* Midterm exam (coding part): Friday, Oct 18 (during regular recitation time)
 	* Final exam (coding part): Wednesday, Dec 11 (during last recitation time, note that NYU is going to follow Friday schedule on that day)
