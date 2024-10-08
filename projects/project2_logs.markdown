@@ -186,8 +186,8 @@ If there are concurrent login sessions for the same user, the _first_ one is det
 earlier login record. 
 
 In the second case, `last USERNAME`,  the program should display the information 
-about the last login session for the specified user. If there are concurrent login sessions for the same user, 
-the _last one is determined by the later logout record. 
+about the last login session for the specified user. If there are multiple or concurrent login sessions for the same user, 
+the _last_ one is determined by the later login time. 
 
 Finally when the program user types "quit" the program terminates. 
 
