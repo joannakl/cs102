@@ -5,7 +5,7 @@ title: Project 3
 
 <div class="lab-right" markdown="1">
 __Project 3__ <br>
-__due date:__ October 26 at 11:59pm
+__due date:__ October 28 at 11:59pm
 
 __submission mode:__ individual
 
@@ -20,11 +20,15 @@ __submission mode:__ individual
 <div class="emph" markdown=1>
 You may discuss any of the assignments with your classmates and tutors (or anyone else) but <span class="red"> all work for all assignments must be
 entirely your own</span>. Any sharing or copying of assignments will be considered cheating (this includes posting of partial or complete
-solutions on Ed, GitHub, Discord, Groupme, ... or any other forum). If you get significant help from anyone, you should acknowledge it in
+solutions on Ed, GitHub, Discord, Groupme, ... or any other forum). You should not use code generation tools to create any part of the implementation for this project. 
+If you get significant help from anyone, you should acknowledge it in
 your submission (and your grade will be proportional to the part that you completed on your own). You are responsible for
 every line in your program: you need to know what it does and why. You should not use any data structures and features of Java
 that have not been covered in class (or the prerequisite class). If you have doubts whether or not you are allowed to use certain
-structures, just ask your instructor.
+structures, just ask your instructor. 
+
+If your submitted code matches closely or exactly code submitted by another person in the class, it will get a zero grade and the offense will be reported to the 
+department and the dean. 
 </div>
 
 ---
@@ -35,7 +39,7 @@ You are going to design and implement a program that allows a user to learn more
 details about logins to a remote computer system.
 
 In any multi-user computer system, several users can be logged in at the same time. 
-Moreover, the same user can be logged in simultonously using different terminals. 
+Moreover, the same user can be logged in simultaneously using different terminals. 
 Every time a user loggs in, or loggs out, a record of it is written to a log file. Only
 one user can be logged in using any given terminal at any given time. But once 
 a user loggs out, another user can log in using the same terminal. 
@@ -65,7 +69,7 @@ get practice on) the following tasks:
 
 
 **Start early!** This project requires you to write several classes and
-debugging always takes time. 
+debugging always takes time.
 
 
 <div class="wrap-collabsible">
@@ -91,7 +95,7 @@ for the input.
 The user may start the program from the command line or run it within an IDE like
 Eclipse - __from the point of view of your program this does not matter__.
 The program expects one command line argument. When the user runs the program, they provide the name of the input
-file as a command line argument. (This way the user can specify a different data set - for example a log file from a different system, or a subset of records from a given time range).
+file as a command line argument. (This way the user can specify a different data set - for example, a log file from a different system, or a subset of records from a given time range).
 
 If the name of the input file provided as a command line argument is incorrect or the file cannot be
 opened for any reason, the program should display an error message and terminate. It should not prompt the user for
@@ -122,21 +126,21 @@ For example:
 
 ```
 1 71234567890 joanna
-2 71234569890 anirudth
+2 71234569890 satya
 -1 71934567890 joanna
-3 71934597890 joel
-1 71954597890 sungmin
+3 71934597890 vincent
+1 71954597890 chenfeiyu
 4 71954797890 joanna
-5 71954798000 joel
--5 71955797890 joel
+5 71954798000 vincent
+-5 71955797890 vincent
 -4 71964597890 joanna
--2 72954597890 anirudth
--1 72994597890 sungmin
+-2 72954597890 satya
+-1 72994597890 chenfeiyu
 ```
 
 `TERMINAL` is an integer indicating the terminal number. Positive values 
-indicate a login record. Corresponding negative values indicate a logout record.
-In the above example, the user `anirudth` logged in on terminal 2: second record
+indicate a login record.  A negative sign in from of the terminal number indicates a logout record. 
+In the above example, the user `satya` logged in on terminal 2: second record
 from the top shows their login, the second record from the bottom shows their logout.
 
 `TIME` is the time at which the login or logout took place. It is
@@ -146,8 +150,8 @@ a variable of type `long`.)
 `USERNAME` is the name of the user.
 
 For this project, the input file is guaranteed to be in chronological order of time. It is also guaranteed to be _correct_. This means that
-- there are never any two concurrent sessions with the same terminal value, 
-- the terminals are always positive integers (and their negated values indicate logout), 
+- there are never any two concurrent sessions with the same terminal value (but the same user could be logged in on different terminals), 
+- the terminals are always positive integers (and their negated values indicate logout from that terminal), 
 - the usernames are strings containing alphanumeric characters and '_' only (no spaces in usernames).
  
 
@@ -161,7 +165,7 @@ For this project, the input file is guaranteed to be in chronological order of t
 
 
 The program should run in a loop that allows the user to issue different queries.
-The three types of queries are:
+The five types of queries are:
 
 - `first USERNAME`
 - `last USERNAME`
@@ -170,15 +174,18 @@ The three types of queries are:
 - `quit`
 
 In the above, the words in uppercase indicate keywords that will be replaced by
-actual values, for example `first joanna` or `last joe_smith`.
+actual values, for example `first joanna` or `last daniel_jin`.
 
 In the first case, `first USERNAME`, the program should display the
 information about the first login session for the specified user. A **login session**
 is a pair of a login record and a logout record with the same username and the 
 same terminal. In other words, it describes when the user logged in and logged out of the system. 
+If there are concurrent login sessions for the same user, the _first_ one is determined by the 
+earlier login record. 
 
 In the second case, `last USERNAME`,  the program should display the information 
-about the last login session for the specified user. 
+about the last login session for the specified user. If there are multiple or concurrent login sessions for the same user, 
+the _last_ one is determined by the later login time. 
 
 Finally when the program user types "quit" the program terminates. 
 
@@ -386,13 +393,13 @@ The `RecordList` class should be used to store all the `Record` objects.
 <span class="new">This class should inherit from the   `SortedLinkedList<Record>` class. (This is your own implementation
 of a sorted doubly linked list described above.)</span>
 
-- The class needs to provide a default constructor that creates an empty `RecordList` object.
+- The class needs to provide a default constructor that creates an empty `RecordList` object. (Do not overthink this requirement, but ask questions if you are not sure how to do this.)
 
 In addition, the class should implement the following <span class="old">two</span> methods:
 
 - `public Session getFirstSession(String user) `
 
-	This method should return the first login session for the specified `user`. If there are multiple login session for the specified user, the _first_ one is the one with the earliest login time. Note that in some cases this session may still be active. 
+	This method should construct and return the first login session for the specified `user`. If there are multiple login session for the specified user, the _first_ one is the one with the earliest login time. Note that in some cases this session may still be active. 
 
 	If the specified `user` does not match any of the records in the list, the 
     function should throw an instance of `NoSuchElementException` with an appropriate 
@@ -412,7 +419,7 @@ In addition, the class should implement the following <span class="old">two</spa
     
     A valid argument to this function is a non-null, non-empty string. If the function 
     is called with an invalid argument, it should throw an instance of `IllegalArgumentException` with
-    an appropriate message.  
+    an appropriate message. 
 
 - <span class="new">`public long getTotalTime(String user) ` </span>
 
@@ -480,7 +487,8 @@ implemented in Java libraries.
 - You may use any classes to handle the file I/O, but probably the simplest ones
 are `File` and `Scanner` classes. You are responsible for knowing how to use the classes that you select.
 
-- The `LoginStats` is is responsible for reading input from standard input and printing output to standard output. No other classes should the reading from or writing to those streams. 
+- The `LoginStats` class is responsible for reading input from standard input and printing output to standard output. 
+No other classes should be reading from or writing to those streams. 
 
 </div> </div></div>
 
@@ -493,10 +501,10 @@ are `File` and `Scanner` classes. You are responsible for knowing how to use the
 - __You should start right away!__
 - You should modularize your design so that you can test it regularly: for example, implement the part of the code that reads and parses the input file, then implement and test individual classes, then implement the part that provides the interactive part of the program, ... .
 - Make sure that at all times you __have a working program!__
-You should also implement stubs of methods that return `0` or `null`. This way your code compiles, even though it may
+You should also implement stubs of every method that return `0` or `null`. This way your code compiles, even though it may
 not work completely.  You can implement methods that perform one task at a time.
 This way, if you run out of time, at least parts of your program will be functioning properly.
-- You should make sure that you are __testing the program on much smaller data set__ for which you can determine the correct
+- You should make sure that you are __testing the program on small data sets__ for which you can determine the correct
 output manually. You can create  a test input file that contains only a few rows.
 - You should make sure that your program's results are consistent with what is described in this specification
 by running the program on carefully designed test inputs and examining
@@ -559,7 +567,7 @@ file or any data files that you might have created.
 Once you submit, you should look at all the files that Gradescope has - make sure there is nothing there that should not be there. 
 
 You may resubmit to Gradescope as many times as you wish before the submission link closes. But if you resubmit
-after the grace period ends, your assignment will be subject to the late point deductions.
+after the grace period ends, your assignment will be subject to the late point deductions, unless you request to use your freebie days once you make your final submission.
 
 For this project, you will see some of the results for the autograded unit tests. Some of the results will be hidden. (When some results are hidden, Gradescope does not display the score for the autograded part. )
 
@@ -583,7 +591,7 @@ Welcome to Login Stats!
 
 Available commands: 
   first USERNAME   -   retrieves first login session for the USER
-  last USERNAME    -   retrieces last login session for the USER
+  last USERNAME    -   retrieves last login session for the USER
   quit             -   terminates this program 
 
 
@@ -597,23 +605,23 @@ joanna, terminal 4, duration    0 days,  2 hours, 43 minutes, 20 seconds
  logged in: Wed Apr 12 14:26:37 EST 1972
  logged out: Wed Apr 12 17:09:57 EST 1972
  
-first joel
-joel, terminal 3, duration active session
+first vincent
+vincent, terminal 3, duration active session
  logged in: Wed Apr 12 08:49:57 EST 1972
  logged out: still logged in
  
-last joel
-joel, terminal 5, duration    0 days,  0 hours, 16 minutes, 39 seconds
+last vincent
+vincent, terminal 5, duration    0 days,  0 hours, 16 minutes, 39 seconds
  logged in: Wed Apr 12 14:26:38 EST 1972
  logged out: Wed Apr 12 14:43:17 EST 1972
  
-first sungmin
-sungmin, terminal 1, duration   12 days,  0 hours, 53 minutes, 20 seconds
+first chenfeiyu
+chenfeiyu, terminal 1, duration   12 days,  0 hours, 53 minutes, 20 seconds
  logged in: Wed Apr 12 14:23:17 EST 1972
  logged out: Mon Apr 24 15:16:37 EST 1972
  
-last sungmin
-sungmin, terminal 1, duration   12 days,  0 hours, 53 minutes, 20 seconds
+last chenfeiyu
+chenfeiyu, terminal 1, duration   12 days,  0 hours, 53 minutes, 20 seconds
  logged in: Wed Apr 12 14:23:17 EST 1972
  logged out: Mon Apr 24 15:16:37 EST 1972
  
@@ -623,8 +631,8 @@ No user matching bruno found
 next joanna
 Error: this is not a valid command. Try again.
 
-last anirudth
-anirudth, terminal 2, duration   19 days, 21 hours, 47 minutes,  8 seconds
+last satya
+satya, terminal 2, duration   19 days, 21 hours, 47 minutes,  8 seconds
  logged in: Tue Apr 04 06:22:49 EST 1972
  logged out: Mon Apr 24 04:09:57 EST 1972
 quit
