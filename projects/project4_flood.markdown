@@ -5,7 +5,7 @@ title: Project 4
 
 <div class="lab-right" markdown="1">
 __Project 4__ <br>
-__due date:__ April 6
+__due date:__  November 14
 
 __submission mode:__ individual
 
@@ -25,6 +25,9 @@ your submission (and your grade will be proportional to the part that you comple
 every line in your program: you need to know what it does and why. You should not use any data structures and features of Java
 that have not been covered in class (or the prerequisite class). If you have doubts whether or not you are allowed to use certain
 structures, just ask your instructor.
+
+If your submitted code matches closely or exactly code submitted by another person in the class, it will get a zero grade and the offense will be reported to the 
+department and the dean. 
 </div>
 
 ---
@@ -337,6 +340,8 @@ for each water source at or below the water level
         if the grid point is alredy flooded, skip the rest 
         of this iteration 
         
+        otherwise, mark it as flooded
+        
         for each adjacent (up, down, left, right) grid point  
         add it to the queue, if its elevation is below or at 
         the water level and it is not marked as flooded 
@@ -413,6 +418,12 @@ If the program does not adhere to the specification, the grade will be low and
 will depend on how easy it is to figure out what the program is doing and how to work with it.
 
 The grade will be determined by several factors:
+- 45 points: class correctness: correct behavior of methods of the required classes (this will be determined by the autograder), these points will be assigned as follows:
+	- 0 points: code passes fewer than a half of the autograder tests 
+	- 20 points: code passes [50-70)% of the autograder tests 
+	- 35 points: the code passes [70-80)% of the autograder tests
+	- 40 points: the code passes [80-90)% of the autograder tests 
+	- 45 points: the code passes 90% or more of the autograder tests 
 - 60 points: correctness: correct behavior of the three algorithms and the `Map` class
 - 20 points: design and the implementation of your code
 - 10 points: efficient implementation of the required methods
