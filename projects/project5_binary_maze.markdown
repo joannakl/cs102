@@ -5,7 +5,7 @@ title: Project 5
 
 <div class="lab-right" markdown="1">
 __Project 5__ <br>
-__due date:__ April 30
+__due date:__ December 3
 
 __submission mode:__ individual
 
@@ -27,6 +27,9 @@ your submission (and your grade will be proportional to the part that you comple
 every line in your program: you need to know what it does and why. You should not use any data structures and features of Java
 that have not been covered in class (or the prerequisite class). If you have doubts whether or not you are allowed to use certain
 structures, just ask your instructor.
+
+If your submitted code matches closely or exactly code submitted by another person in the class, it will get a zero grade and the offense will be reported to the 
+department and the dean. 
 </div>
 
 ---
@@ -330,11 +333,17 @@ If the program does not adhere to the specification, the grade will be low and
 will depend on how easy it is to figure out what the program is doing and how to work with it.
 
 The grade will be determined by several factors:
-- 50 points: class correctness: correct implementation of the BST class, and correct behavior of the program when executed with many different input files 
+- 45 points: class correctness: correct behavior of methods of the required classes (this will be determined by the autograder), these points will be assigned as follows:
+	- 0 points: code passes fewer than a half of the autograder tests 
+	- 20 points: code passes [50-70)% of the autograder tests 
+	- 35 points: the code passes [70-80)% of the autograder tests
+	- 40 points: the code passes [80-90)% of the autograder tests 
+	- 45 points: the code passes 90% or more of the autograder tests 
+- 10 points: correct behavior of the program when executed as a whole with several different intput files  
 - 20 points: design and the implementation of your code (this will be determined by a code review)
 - 10 points: efficient implementation
    (this will be determined by a code review)
-- 20 points: proper documentation, program style and format of submission
+- 15 points: proper documentation, program style and format of submission
    (this will be determined by a code review)
 
 </div> </div></div>
@@ -352,28 +361,17 @@ This means that each of your submitted source code files should start with a lin
 `package project5;`
 
 
-Your should submit all your source code files (the ones with `.java` extensions only)
-either in a single __zip__ file or as individual files to Gradescope. __DO NOT__ submit `.class` files
-or any project files that your IDE might produce, or any other files created by your operating system and file system.
-You can see all the files on Gradescope.
-Verify that there is nothing there that you did not intend to put it.
+Your should submit all your source code files (the ones with `.java` extensions only) to Gradescope. __DO NOT__ submit `.class` files
+or any project files that your IDE might produce. Do not submit the data
+file or any data files that you might have created. 
+Once you submit, you should look at all the files that Gradescope has - make sure there is nothing there that should not be there. 
 
-You can produce a zip file directly from Eclipse (if this is what you are using):
- -  right click on the name of the package (inside the `src` folder) and select Export...
- -  under General pick Archive File and click Next
- -  in the window that opens select appropriate files and settings:
-	 -  in the right pane pick ONLY the files that are actually part of the project,
-		but make sure that you select all files that are needed
-	 -  in the left pane, make sure that no other directories are selected
-	 -  click Browse and navigate to a location that you can easily find on your system (Desktop or folder with the course materials or ...)
-	 -  in Options select "Save in zip format", "Compress the contents of the file" and "Create only selected directories"
- -  click Finish
 
 You may resubmit to Gradescope as many times as you wish before the submission link closes. But if you resubmit
 after the grace period ends, your assignment will be subject to the late point deductions.
 
-Some of the autograder tests for this project will be hidden. This means that you need to make the effort
-to test your own implementation before you make the final submission.
+
+For this project, you will see some of the results for the autograded unit tests. Some of the results will be hidden. (When some results are hidden, Gradescope does not display the score for the autograded part. )
 
 
 
