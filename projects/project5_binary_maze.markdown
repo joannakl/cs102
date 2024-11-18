@@ -203,6 +203,9 @@ The specification for this class is provided at [its javadoc page](project5/proj
 You can use the source code that we wrote in class, but keep in mind that the class that you are implementing requires additional
 functionality and you may need to rewrite some of the methods that were created in class.
 
+NOTE: normally, all data fields in the class should be private. But since the `BST` class serves as a base class for the `Maze` class below,
+its data fields can be made protected instead to allow the subclass to access these data fields.
+
 __<code>Node</code> class__
 
 The program should provide and use a nested class (to
@@ -237,10 +240,10 @@ The remove method in the `Iterator<E>` interface is optional and you do not need
 provide the actual remove functionality. (This means that the method has to exist,
 but instead of performing its function, it throws an instance of `UnsopportedOperationException`.)
 
-<br/>
+RESTRICTION: You should not use an iterator that is already implemented in one of the Java classes (like the one in the `ArrayList` class). In practice, this would 
+be a good idea, but the objective here is for you to implement yout own iterator. 
 
-NOTE: normally, all data fields in the class should be private. But since the `BST` class serves as a base class for the `Maze` class below,
-its data fields can be made protected instead to allow the subclass to access these data fields.
+
 
 
 #### <code class="code_title">Maze</code> class
@@ -340,8 +343,8 @@ The grade will be determined by several factors:
 	- 40 points: the code passes [80-90)% of the autograder tests 
 	- 45 points: the code passes 90% or more of the autograder tests 
 - 10 points: correct behavior of the program when executed as a whole with several different intput files  
-- 20 points: design and the implementation of your code (this will be determined by a code review)
-- 10 points: efficient implementation
+- 15 points: design and the implementation of your code (this will be determined by a code review)
+- 15 points: efficient implementation
    (this will be determined by a code review)
 - 15 points: proper documentation, program style and format of submission
    (this will be determined by a code review)
