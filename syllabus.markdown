@@ -34,17 +34,17 @@ title: Syllabus, CSCI-UA 102, Klukowska
 
  <div class="lab" markdown="1">
 
-# Syllabus for CSCI-UA 102 sec 5, Professor Klukowska
+# Syllabus for CSCI-UA 102 sec 1, Professor Klukowska
 
 ## Instructor Information
 
 * Professor Joanna Klukowska
 * Email: joannakl@cs.nyu.edu 
 * Recitation Instructors: 
-    * Satya Chilale (sec 6, sec 61)
-    * Daniel Jin (sec 62, sec 65)
-    * Chenfeiyu Wen (sec 64)
-    * Vincent Xu (sec 63)
+    * Satya Chilale (sec 2, sec 21)
+    * Daniel Jin (sec 23, sec 25)
+    * Chenfeiyu Wen (sec 24)
+    * Vincent Xu (sec 22)
 * JK Office Hours 
     * in person: Mondays 9:30 AM - 11:00 AM (423 CIWW)
     * on Zoom (see Brightspace for links): Thursdays 1:00 - 2:30 PM
@@ -59,12 +59,12 @@ title: Syllabus, CSCI-UA 102, Klukowska
 * Recitations: Friday (different times depending on the recitation section)
 * [Brightspace](brightspace.nyu.edu/)
 * [Ed discussions](https://edstem.org/us/dashboard) (accessible through Brightspace as well) 
-* [Course website](https://cs.nyu.edu/~joannakl/cs102/)
+* [Course website](https://cs.nyu.edu/~jk157/cs102/)
 * Exam dates (all subject to change if significant schedule changes are required):
-	* Midterm exam (paper-based part): Wednesday, Oct 16 (during regular lecture time) 
-	* Midterm exam (coding part): Friday, Oct 18 (during regular recitation time)
-	* Final exam (coding part): Wednesday, Dec 11 (during last recitation time, note that NYU is going to follow Friday schedule on that day)
-	* Final exam (paper-based part): Monday, Dec 16, 10:00 - 11:50AM (during the CAS scheduled final exam period)  
+	* Midterm exam (paper-based part): Wednesday, March 12 (during regular lecture time) 
+	* Midterm exam (coding part): Friday, March 14 (during regular recitation time)
+	* Final exam (coding part): Friday, May 2 (during last recitation time)
+	* Final exam (paper-based part): Thursday, May 8, 10:00 - 11:50AM (during the CAS scheduled final exam period)  
 * Prerequisites: Passing CSCI.UA.0101 with a grade of C or better. <br>
 **You are expected to know and remember the material from CSCI-UA 101 course.** If you took the course 
 a few semesters ago and/or do not remember parts of the material, start reviewing it during the summer/winter 
@@ -99,7 +99,7 @@ If you have questions related to the course materials or assessments:
 
 If you have questions regarding your grades or some personal issues
 - post them as a private post on the discussion forum or send a direct message to the relevant instructor 
-using the Ed platform. (Avoid emails as they often get lost in the steam of other things.) 
+using the Ed platform. (Avoid emails as they often get lost in the stream of other things.) 
 - visit instructors' office hours (schedule available on Brightspace)
 
 
@@ -117,18 +117,18 @@ the lectures and recitations. Several of these grades (about one fourth) will be
 student absences due to late registration, illness, holiday observances, family/personal emergencies, or any other circumstances. 
 - **2 Exams: 20% midterm exam, 30% final exam**<br/>
 Exams will be in-person and synchronous 
-(may be switched to online and/or asynchronous if the need arises), and completed individually. 
+(may be switched to online and/or asynchronous if the University makes such a decision), and completed individually. 
 No exam grades are dropped. All exams must be completed individually by you with no assistance of 
 any other people (except for the instructor and proctors) or technology.
 Each exam has two parts: paper-based part and coding part. Both parts are timed.  
 - **3-5 take-home quizzes, 20%** <br/>
 The take-home quizzes will be online, asynchronous, and completed individually. 
 Each quiz will take approximately 30-minutes and will be offered at any time during a 24-hour period. 
-No take-home quiz grades are dropped. All take-home quizzes must be completed individually by you 
+All take-home quizzes must be completed individually by you 
 with no assistance of any other people or technology.
 - **4-6 Programming Projects, 20%** <br/>
 Several programming projects will be given during the semester. The programming projects should be 
-completed individually. No programming project grades are dropped. The programming projects should 
+completed individually. The programming projects should 
 be completed individually and they should be your own work.
 
 
@@ -162,7 +162,7 @@ Those students should withdraw from the course or switch to _Pass/Fail_ option.
 
 You can access all course related materials through [Brightspace](brightspace.nyu.edu/) page for this course. 
 
-In addition, you may find some links to the course slides and labs at the [course website](https://cs.nyu.edu/~joannakl/cs102/). 
+In addition, you may find some links to the course slides and labs at the [course website](https://cs.nyu.edu/~jk157/cs102/). 
 
 
 ### Textbook(s)
@@ -239,7 +239,7 @@ They are NOT optional part of this course.
 ### Weekly Labs
 
 (Almost) every week you will be given a lab to work on. You should review the lab 
-instructions before your weekly recitation so that you can discuss any questions and issues during the recitation.
+instructions during your weekly recitation so that you can discuss any questions and issues during the recitation.
 
 During some of the recitation session you will get a chance to work on parts of the 
 lab with other students and with guidance of the recitation instructor.
@@ -271,7 +271,7 @@ If you miss an assessment due to a religious observance, illness, family emergen
 
 - To account for any missed  in-class quizzes or polls, recitation activities or a lab assignments, several (approximately one fourth) lowest scores in the participation and progress category will be dropped at the end of the semester. All reasons for missing something in this category are treated in exactly the same way: absence due to illness, religious observance, late registration, oversleeping or .... If you miss one of the assessments from this category, you do not need to notify us. 
 
-- If you miss one of the take-home quizzes, the part of the grade based on take-home quizzes will be based on the remaining take-home quizzes. You need to notify us about a missed take-home quiz as described above, otherwise the grade for such a quiz will count as zero. <br/>
+- If you miss one of the take-home quizzes, the part of the grade based on take-home quizzes will be based on the remaining take-home quizzes. You need to notify Professor Klukowska about a missed take-home quiz as described above, otherwise the grade for such a quiz will count as zero. <br/>
 If you miss more than one take-home quiz, you need to discuss it with the instructor immediately. You will not be excused from more than one quiz for any reason. 
 
 - If you miss the midterm exam, the final exam will be counted in its place. You should contact [cas.deanforstudents@nyu.edu](mailto:cas.deanforstudents@nyu.edu) for verification of the reason for a missed exam.
@@ -407,5 +407,5 @@ Here are examples of _fair_ and _not fair_ actions that a student may take. This
 - Heapsort (assuming that binary heaps are covered) (optional)
 
 
-See the [Tentative Weekly Schedule](https://docs.google.com/spreadsheets/d/e/2PACX-1vQRPJ6qWpXkxBGd2Y16yRF7iQBc9xYjkj7Y6XKbEITUsndBUsvob4upOzoEcOdtqxKWGjVC60zQf85i/pubhtml?gid=742952189&single=true)  for approximate times when topics will be covered. All dates there are **tentative**, but should be a good indicator or the course timing. 
+See the [Tentative Weekly Schedule](https://docs.google.com/spreadsheets/d/e/2PACX-1vQRPJ6qWpXkxBGd2Y16yRF7iQBc9xYjkj7Y6XKbEITUsndBUsvob4upOzoEcOdtqxKWGjVC60zQf85i/pubhtml?gid=955877148&single=true)  for approximate times when topics will be covered. All dates there are **tentative**, but should be a good indicator or the course timing. 
 
