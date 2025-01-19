@@ -35,6 +35,8 @@ title: Course Materials, CSCI-UA 102, Klukowska
 
 ## Labs 
 
+These are old copies of the labs. Actual weekly labs will be shared on Edstem each week. 
+
 - [Lab 1, Remember Programming?](labs/lab1.html)
 - [Lab 2, Bullet Proof Programs / Input Validation](labs/lab2.html)
 - [Lab 4, Finding Code Responsible for Behavior (code reading)](labs/lab3.html)
