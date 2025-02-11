@@ -208,15 +208,15 @@ The program has NO user interaction. It should not prompt the user for any infor
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
-The major difference between the Caesar cipher and the _Card Cipher_ is that each letter in the plain text message is treated differently. The _Card Cipher_ shifts each letter by a different number based on the _keystream_ value produced by the card cipher algorithm. 
+The major difference between the Caesar cipher and the _Card Cipher_ is that each letter in the plain text message is treated differently. The _Card Cipher_ shifts each letter by a different number based on the _key_ value produced by the card cipher algorithm. 
 
-Assume that _keystream_ sequence of values is: 1, 2, 3, 4. and the message is "DATA". This means that in the encrypted message 'D' is shifted by 1 position to the right (think of the alphabet going from left to write as we move from 'A' to 'Z') to 'E'. 'A' is shifted by two positions to 'C'. 'T' is shifted by three positions to 'W'. And the second 'A' is shifted by four positions to 'E'. The final encryption is "ECWE". 
+Assume that _key_ sequence of values is: 1, 2, 3, 4. and the message is "DATA". This means that in the encrypted message 'D' is shifted by 1 position to the right (think of the alphabet going from left to write as we move from 'A' to 'Z') to 'E'. 'A' is shifted by two positions to 'C'. 'T' is shifted by three positions to 'W'. And the second 'A' is shifted by four positions to 'E'. The final encryption is "ECWE". 
 
-In practice, the keystream values are not sequential numbers, of course and they are generated as describe below.
+In practice, the key values are not sequential numbers, of course and they are generated as describe below.
 
-#### Generating keystream values  
+#### Generating key values  
 
-The card cipher algorithm takes several steps to generate each keystream value:
+The card cipher algorithm takes several steps to generate each key value:
 
 1. Find the joker with value 27. Exchange it with the card beneath (after) it in the deck, to move the card down
 the deck by one position. 
@@ -261,7 +261,7 @@ bottom of the deck. For example, if the deck is
 
 1. Take the top card and record its value. Put the
 card back on top of the deck and count down the deck by that number. Record the value of the NEXT
-card in the deck, but don’t remove it from the deck. This is the keystream value.
+card in the deck, but don’t remove it from the deck. This is the key value.
 If that next card happens to be a joker, don’t record
 anything. Leave the deck the way it is, and start again from the first step, repeating until that next card
 is not a joker. For example, if the deck is
@@ -269,20 +269,20 @@ is not a joker. For example, if the deck is
     `27 11 5 15 16 4 14 13 26 23 7 19 6 20 10 21 2 8 25 28 17 22 1 9 24 18 3 12`
     
     the top card's value is 27. Then we count down 27 cards, the value of the next card is 12 (the last card). Since it is not a joker, 
-    this is the keystream value. 
+    this is the key value. 
     
-To compute the next keystream value, we repeat the algorithm starting the final state of the deck from the previous computation. 
+To compute the next key value, we repeat the algorithm starting the final state of the deck from the previous computation. 
 
-The first keystream value from the above steps is 12. If we run the algorithm again, the second keystream value is 22, the third 23 and the fourth is 11 .
+The first key value from the above steps is 12. If we run the algorithm again, the second key value is 22, the third 23 and the fourth is 11 .
 
 
-#### How to encrypt using keystream values 
+#### How to encrypt using key values 
 
 To encrypt a message we need a plain text message and an initial deck configuration. We use the deck to generate 
-a sequence of keystream values equal in length to the number of characters in the message. 
+a sequence of key values equal in length to the number of characters in the message. 
 
-Encryption steps shift each letter down (or right) by the number of positions specified by the keystream value. 
-Let's use the "DATA" as our plain text message and the deck from the previous section. The four keystream values 
+Encryption steps shift each letter down (or right) by the number of positions specified by the key value. 
+Let's use the "DATA" as our plain text message and the deck from the previous section. The four key values 
 are 12, 22, 23 and 11.  
 
 `D` is shifted by 12 positions, so it becomes `P`: 
@@ -332,16 +332,16 @@ The encrypted message is "PWQL". If we started with a different deck configurati
 
 
 
-#### How to decrypt using keystream values
+#### How to decrypt using key values
 
  
 To encrypt a message we need the encrypted message and an initial deck configuration that was used to encrypt it. 
 We use the deck to generate 
-a sequence of keystream values equal in length to the number of characters in the message. 
+a sequence of key values equal in length to the number of characters in the message. 
 
-Decryption steps shift each letter up (or left) by the number of positions specified by the keystream value. 
+Decryption steps shift each letter up (or left) by the number of positions specified by the key value. 
 Let's use the message that we encrypted in the previous section "PWQL" and the same deck from the previous section. 
-The four keystream values are exactly the same 12, 22, 23 and 11.  
+The four key values are exactly the same 12, 22, 23 and 11.  
 
 `P` is shifted by 12 positions, so it becomes `D`: 
 
@@ -421,36 +421,45 @@ There should not be a default constructor.
 
 In addition, the class should implement the following methods: 
 
-- `public int nextKeystreamValue() ` -  computes and returns the next keystream value
+- `public int nextKeyValue() ` -  computes and returns the next key value
 
 - `public String toString() ` - returns the string containing the values corresponding to the cards in the current state of the deck; the
 values should be enclosed in a set of square brackets and each value should be separated by a comma and a space.
 
 - `public int [] getDeckValues () ` - returns the values corresponding to the cards in the current state of the deck as an integer array
 
-HINT: You should design and implement a number of helper methods (should be private) that help you in computation of the keystream values. The algorithm described in the previous section should NOT be implemented in one method. Instead, it should be broken down into small steps (some of which may be reusable) that can be implemented and debugged separately. 
+HINT: You should design and implement a number of helper methods (should be private) that help you in computation of the key values. The algorithm described in the previous section should NOT be implemented in one method. Instead, it should be broken down into small steps (some of which may be reusable) that can be implemented and debugged separately. 
 
 
 
 #### <code class="code_title">Encryptor</code> class
 
-This class performs the task of the encryption. It is constructed with a particular deck of cards based on which the keystream values are generated to perform the encryption.
+This class performs the task of the encryption. It is constructed with a particular deck of cards based on which the key values are generated to perform the encryption.
 
-It should provide a one-arg constructor `public Encryptor(CardList deck)` that creates a new `Encryptor` object with the specified initial card configuration. 
+It should provide a one-arg constructor `public Encryptor(CardDeck deck)` that creates a new `Encryptor` object with the specified initial card configuration. 
 
-It should also provide the `encrypt` method that given a plain text string returns the encrypted version 
+It should provide the `encrypt` method that given a plain text string returns the encrypted version 
 `public String encrypt(String s)`.   
 
+The state of the deck used by this object should be constantly updated. The first call to the `encrypt` method should use the initial 
+deck configuration (as it was specified in the constructor). Consecutive calls should use the state of the deck as it was left by the previous call to `encrypt`.  
+
+The class should provide a method that allows the user to retrieve the current state of the deck: `publict CardDeck getDeck()`. This method should return different decks if the `encrypt` method is called between two consecutive `getDeck` calls. 
 
 
 #### <code class="code_title">Decryptor</code> class
 
-This class performs the task of the decryption. It is constructed with a particular deck of cards based on which the keystream values are generated to perform the decryption.
+This class performs the task of the decryption. It is constructed with a particular deck of cards based on which the key values are generated to perform the decryption.
 
-It should provide a one-arg constructor `public Decryptor(CardList deck)` that creates a new `Decryptor` object with the specified initial card configuration. 
+It should provide a one-arg constructor `public Decryptor(CardDeck deck)` that creates a new `Decryptor` object with the specified initial card configuration. 
 
-It should also provide the `decrypt` method that given an encrypted string returns its plain text version 
+It should provide the `decrypt` method that given an encrypted string returns its plain text version 
 `public String decrypt(String s)`.   
+
+The state of the deck used by this object should be constantly updated (just like for the `Encryptor` class). The first call to the `decrypt` method should use the initial 
+deck configuration (as it was specified in the constructor). Consecutive calls should use the state of the deck as it was left by the previous call to `decrypt`.  
+
+The class should provide a method that allows the user to retrieve the current state of the deck: `publict CardDeck getDeck()`. This method should return different decks if the `dencrypt` method is called between two consecutive `getDeck` calls. 
 
 
 
