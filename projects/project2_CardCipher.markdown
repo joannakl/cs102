@@ -6,7 +6,7 @@ title: Project 2
 <div class="lab-right" markdown="1">
 __Project 2__ <br>
 __step 1 due:__ February 14 at 11:59pm <br>
-__step 2 due:__ February 20 at 11:59pm
+__step 2 due:__ February 23 at 11:59pm
 
 __submission mode:__ individual
 
@@ -635,7 +635,7 @@ that will be required for the final implementation, but it is a good idea to lis
 Your job for step one is to create documented stubs like this for every required class. DO NOT submit any implementation for this step. 
 Make sure that you document the classes and methods using Javadoc style. 
 
-#### Step 2 (due February 20 at 11:59 PM)
+#### Step 2 (due February 23 at 11:59 PM)
 
 In the second step, you will need to implement the actual code for all the classes. 
 
