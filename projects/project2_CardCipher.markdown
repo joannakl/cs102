@@ -439,7 +439,7 @@ This class performs the task of the encryption. It is constructed with a particu
 It should provide a one-arg constructor `public Encryptor(CardDeck deck)` that creates a new `Encryptor` object with the specified initial card configuration. 
 
 It should provide the `encrypt` method that given a plain text string returns the encrypted version 
-`public String encrypt(String s)`.   
+`public String encrypt(String s)`. If this method is called with an empty string or a null string, it should return an empty string or null string, respectively.  
 
 The state of the deck used by this object should be constantly updated. The first call to the `encrypt` method should use the initial 
 deck configuration (as it was specified in the constructor). Consecutive calls should use the state of the deck as it was left by the previous call to `encrypt`.  
@@ -454,7 +454,7 @@ This class performs the task of the decryption. It is constructed with a particu
 It should provide a one-arg constructor `public Decryptor(CardDeck deck)` that creates a new `Decryptor` object with the specified initial card configuration. 
 
 It should provide the `decrypt` method that given an encrypted string returns its plain text version 
-`public String decrypt(String s)`.   
+`public String decrypt(String s)`.   If this method is called with an empty string or a null string, it should return an empty string or null string, respectively. 
 
 The state of the deck used by this object should be constantly updated (just like for the `Encryptor` class). The first call to the `decrypt` method should use the initial 
 deck configuration (as it was specified in the constructor). Consecutive calls should use the state of the deck as it was left by the previous call to `decrypt`.  
