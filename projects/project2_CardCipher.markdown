@@ -782,11 +782,8 @@ E --> D
 generated key: 17
 Card deck after: [7, 3, 28, 10, 26, 12, 20, 17, 25, 27, 18, 4, 22, 23, 8, 5, 13, 14, 6, 21, 2, 15, 16, 1, 9, 19, 11, 24]
 S --> J 
-generated key: 2
-Card deck after: [10, 4, 22, 23, 8, 5, 13, 14, 6, 21, 2, 15, 16, 1, 9, 19, 11, 24, 28, 12, 20, 17, 25, 18, 27, 7, 3, 26]
-X --> Z 
 
-Output: PUWTUCFUUZJZUFZZCDJZ
+Output: PUWTUCFUUZJZUFZZCDJ
 ```
 
 
