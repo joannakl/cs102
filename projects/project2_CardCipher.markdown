@@ -259,7 +259,7 @@ bottom of the deck. For example, if the deck is
     
     `27 11 5 15 16 4 14 13 26 23 7 19 6 20 10 21 2 8 25 28 17 22 1 9 24 18 3 12`
 
-1. Take the top card and record its value. Put the
+1. Look at the top card’s value (which is again 1-27, as it was in the previous step, i.e., treat 28 joker as 27) and record it. Put the
 card back on top of the deck and count down the deck by that number. Record the value of the NEXT
 card in the deck, but don’t remove it from the deck. This is the key value.
 If that next card happens to be a joker, don’t record
