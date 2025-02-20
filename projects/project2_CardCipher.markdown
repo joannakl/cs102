@@ -700,6 +700,10 @@ For this project, you will see some of the results for the autograded unit tests
 
 Here is a detailed trace of how the card deck changes after encryption/decryption of each letter of a given message. 
 
+Note: if you are on a narrow display, the right hand side of the trace will be cut-off. The lines are not wrapping to simplify
+the comparison between the state of the decks at different steps. 
+
+
 #### Example 1
 
 Input file:
