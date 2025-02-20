@@ -691,4 +691,207 @@ For this project, you will see some of the results for the autograded unit tests
 </div> </div></div>
 
 
+
+<div class="wrap-collabsible">
+<input id="appendix" class="toggle" type="checkbox"   checked="true" >
+<label for="appendix" class="lbl-toggle"> Appendix </label>
+<div class="collapsible-content" markdown=1>
+<div class="content-inner" markdown=1>
+
+Here is a detailed trace of how the card deck changes after encryption/decryption of each letter of a given message. 
+
+#### Example 1
+
+Input file:
+
+```
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28
+encrypt
+HELLODATASTRUCTURES
+```
+
+How does encryption happen: 
+
+```
+
+
+
+Input: HELLODATASTRUCTURES
+
+Card deck:       [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28]
+Intializing algorithm.
+
+generated key: 8
+Card deck after: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 1, 27, 2, 3, 28]
+H --> P 
+generated key: 16
+Card deck after: [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 1, 2, 27, 3, 4, 28, 6, 7, 5]
+E --> U 
+generated key: 11
+Card deck after: [6, 7, 28, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 1, 2, 5, 27, 4, 3]
+L --> W 
+generated key: 8
+Card deck after: [17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 1, 2, 5, 4, 27, 6, 7, 8, 3, 28, 10, 11, 12, 13, 14, 15, 16, 9]
+L --> T 
+generated key: 6
+Card deck after: [27, 7, 8, 3, 10, 11, 28, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 1, 2, 5, 4, 12, 13, 14, 15, 16, 9, 6]
+O --> U 
+generated key: 25
+Card deck after: [26, 1, 2, 5, 4, 12, 13, 14, 15, 16, 9, 6, 27, 8, 3, 10, 11, 17, 18, 28, 19, 20, 21, 22, 23, 24, 25, 7]
+D --> C 
+generated key: 5
+Card deck after: [10, 11, 17, 18, 19, 20, 28, 26, 1, 2, 5, 4, 12, 13, 14, 15, 16, 9, 6, 21, 22, 23, 24, 25, 7, 27, 3, 8]
+A --> F 
+generated key: 1
+Card deck after: [28, 2, 5, 4, 12, 13, 14, 15, 16, 9, 6, 21, 22, 23, 24, 25, 7, 3, 27, 10, 11, 17, 18, 19, 20, 26, 8, 1]
+T --> U 
+generated key: 20
+Card deck after: [26, 8, 1, 28, 4, 12, 13, 14, 15, 16, 9, 6, 21, 22, 23, 24, 25, 7, 3, 10, 27, 2, 11, 17, 18, 19, 20, 5]
+A --> U 
+generated key: 7
+Card deck after: [6, 21, 22, 23, 24, 25, 7, 3, 10, 2, 27, 26, 8, 1, 4, 11, 17, 18, 19, 20, 5, 28, 13, 14, 15, 16, 9, 12]
+S --> Z 
+generated key: 16
+Card deck after: [2, 15, 16, 9, 12, 27, 8, 1, 4, 11, 17, 18, 19, 20, 5, 13, 14, 28, 6, 21, 22, 23, 24, 25, 7, 3, 10, 26]
+T --> J 
+generated key: 8
+Card deck after: [27, 1, 4, 11, 17, 18, 19, 20, 5, 13, 14, 6, 21, 28, 2, 15, 16, 9, 12, 22, 23, 24, 25, 7, 3, 10, 26, 8]
+R --> Z 
+generated key: 26
+Card deck after: [9, 12, 22, 23, 24, 25, 7, 3, 10, 26, 8, 27, 4, 11, 17, 18, 19, 20, 5, 13, 14, 6, 21, 2, 15, 28, 16, 1]
+U --> U 
+generated key: 3
+Card deck after: [19, 20, 5, 13, 14, 6, 21, 2, 15, 16, 1, 28, 9, 12, 22, 23, 24, 25, 7, 3, 10, 26, 8, 27, 11, 17, 18, 4]
+C --> F 
+generated key: 6
+Card deck after: [8, 11, 27, 19, 20, 5, 13, 14, 6, 21, 2, 15, 16, 1, 9, 17, 18, 4, 28, 22, 23, 24, 25, 7, 3, 10, 26, 12]
+T --> Z 
+generated key: 5
+Card deck after: [17, 18, 4, 22, 23, 28, 8, 11, 24, 25, 7, 3, 10, 26, 12, 27, 20, 5, 13, 14, 6, 21, 2, 15, 16, 1, 9, 19]
+U --> Z 
+generated key: 11
+Card deck after: [28, 24, 25, 7, 3, 10, 26, 12, 20, 27, 17, 18, 4, 22, 23, 8, 5, 13, 14, 6, 21, 2, 15, 16, 1, 9, 19, 11]
+R --> C 
+generated key: 25
+Card deck after: [27, 24, 18, 4, 22, 23, 8, 5, 13, 14, 6, 21, 2, 15, 16, 1, 9, 19, 11, 28, 7, 3, 10, 26, 12, 20, 17, 25]
+E --> D 
+generated key: 17
+Card deck after: [7, 3, 28, 10, 26, 12, 20, 17, 25, 27, 18, 4, 22, 23, 8, 5, 13, 14, 6, 21, 2, 15, 16, 1, 9, 19, 11, 24]
+S --> J 
+generated key: 2
+Card deck after: [10, 4, 22, 23, 8, 5, 13, 14, 6, 21, 2, 15, 16, 1, 9, 19, 11, 24, 28, 12, 20, 17, 25, 18, 27, 7, 3, 26]
+X --> Z 
+
+Output: PUWTUCFUUZJZUFZZCDJZ
+```
+
+
+#### Example 2
+
+Input file:
+
+```
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28
+decrypt
+PUWTU
+CFUU
+ZJZUFZZCDJ
+```
+
+How does decryption happen: 
+
+```
+
+
+
+Input: PUWTU
+
+Card deck:       [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28]
+Intializing algorithm.
+
+generated key: 8
+Card deck after: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 1, 27, 2, 3, 28]
+P --> H 
+generated key: 16
+Card deck after: [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 1, 2, 27, 3, 4, 28, 6, 7, 5]
+U --> E 
+generated key: 11
+Card deck after: [6, 7, 28, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 1, 2, 5, 27, 4, 3]
+W --> L 
+generated key: 8
+Card deck after: [17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 1, 2, 5, 4, 27, 6, 7, 8, 3, 28, 10, 11, 12, 13, 14, 15, 16, 9]
+T --> L 
+generated key: 6
+Card deck after: [27, 7, 8, 3, 10, 11, 28, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 1, 2, 5, 4, 12, 13, 14, 15, 16, 9, 6]
+U --> O 
+
+Output: HELLO
+
+
+
+Input: CFUU
+
+Card deck:       [27, 7, 8, 3, 10, 11, 28, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 1, 2, 5, 4, 12, 13, 14, 15, 16, 9, 6]
+Intializing algorithm.
+
+generated key: 25
+Card deck after: [26, 1, 2, 5, 4, 12, 13, 14, 15, 16, 9, 6, 27, 8, 3, 10, 11, 17, 18, 28, 19, 20, 21, 22, 23, 24, 25, 7]
+C --> D 
+generated key: 5
+Card deck after: [10, 11, 17, 18, 19, 20, 28, 26, 1, 2, 5, 4, 12, 13, 14, 15, 16, 9, 6, 21, 22, 23, 24, 25, 7, 27, 3, 8]
+F --> A 
+generated key: 1
+Card deck after: [28, 2, 5, 4, 12, 13, 14, 15, 16, 9, 6, 21, 22, 23, 24, 25, 7, 3, 27, 10, 11, 17, 18, 19, 20, 26, 8, 1]
+U --> T 
+generated key: 20
+Card deck after: [26, 8, 1, 28, 4, 12, 13, 14, 15, 16, 9, 6, 21, 22, 23, 24, 25, 7, 3, 10, 27, 2, 11, 17, 18, 19, 20, 5]
+U --> A 
+
+Output: DATA
+
+
+
+Input: ZJZUFZZCDJ
+
+Card deck:       [26, 8, 1, 28, 4, 12, 13, 14, 15, 16, 9, 6, 21, 22, 23, 24, 25, 7, 3, 10, 27, 2, 11, 17, 18, 19, 20, 5]
+Intializing algorithm.
+
+generated key: 7
+Card deck after: [6, 21, 22, 23, 24, 25, 7, 3, 10, 2, 27, 26, 8, 1, 4, 11, 17, 18, 19, 20, 5, 28, 13, 14, 15, 16, 9, 12]
+Z --> S 
+generated key: 16
+Card deck after: [2, 15, 16, 9, 12, 27, 8, 1, 4, 11, 17, 18, 19, 20, 5, 13, 14, 28, 6, 21, 22, 23, 24, 25, 7, 3, 10, 26]
+J --> T 
+generated key: 8
+Card deck after: [27, 1, 4, 11, 17, 18, 19, 20, 5, 13, 14, 6, 21, 28, 2, 15, 16, 9, 12, 22, 23, 24, 25, 7, 3, 10, 26, 8]
+Z --> R 
+generated key: 26
+Card deck after: [9, 12, 22, 23, 24, 25, 7, 3, 10, 26, 8, 27, 4, 11, 17, 18, 19, 20, 5, 13, 14, 6, 21, 2, 15, 28, 16, 1]
+U --> U 
+generated key: 3
+Card deck after: [19, 20, 5, 13, 14, 6, 21, 2, 15, 16, 1, 28, 9, 12, 22, 23, 24, 25, 7, 3, 10, 26, 8, 27, 11, 17, 18, 4]
+F --> C 
+generated key: 6
+Card deck after: [8, 11, 27, 19, 20, 5, 13, 14, 6, 21, 2, 15, 16, 1, 9, 17, 18, 4, 28, 22, 23, 24, 25, 7, 3, 10, 26, 12]
+Z --> T 
+generated key: 5
+Card deck after: [17, 18, 4, 22, 23, 28, 8, 11, 24, 25, 7, 3, 10, 26, 12, 27, 20, 5, 13, 14, 6, 21, 2, 15, 16, 1, 9, 19]
+Z --> U 
+generated key: 11
+Card deck after: [28, 24, 25, 7, 3, 10, 26, 12, 20, 27, 17, 18, 4, 22, 23, 8, 5, 13, 14, 6, 21, 2, 15, 16, 1, 9, 19, 11]
+C --> R 
+generated key: 25
+Card deck after: [27, 24, 18, 4, 22, 23, 8, 5, 13, 14, 6, 21, 2, 15, 16, 1, 9, 19, 11, 28, 7, 3, 10, 26, 12, 20, 17, 25]
+D --> E 
+generated key: 17
+Card deck after: [7, 3, 28, 10, 26, 12, 20, 17, 25, 27, 18, 4, 22, 23, 8, 5, 13, 14, 6, 21, 2, 15, 16, 1, 9, 19, 11, 24]
+J --> S 
+
+Output: STRUCTURES
+```
+
+
+</div> </div></div>
+
+
 </main>
