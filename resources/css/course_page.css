@@ -196,7 +196,7 @@ main .emph {
 }
 .new {
   color: Purple;
-  font-weight: 150%;
+  font-weight: bolder;
 }
 .old {
   text-decoration: line-through;
