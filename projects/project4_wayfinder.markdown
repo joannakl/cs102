@@ -15,8 +15,6 @@ __submission mode:__ individual
 
 ## Project 4: WayFinder: A Recursive Puzzle Solver
 
-F21
-
 <hr>
 
 <div class="emph" markdown=1>
