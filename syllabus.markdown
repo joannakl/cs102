@@ -4,11 +4,12 @@ title: Syllabus, CSCI-UA 102, Klukowska
 ---
 
 
- <div class="lab-right" markdown="1">
+<div class="syllabus-right" markdown="1">
 
 -   [Instructor Information](#instructor-information)
 -   [Course Information](#course-information)
 -   [Course Description](#course-description)
+-   [Course Objectives and Outcomes](#course-objectives--learning-outcomes)
 -   [Assessments and Grading](#assessments-and-grading)
 -   [Course Materials](#course-materials)
     -   [Brightspace and the Course
@@ -26,110 +27,143 @@ title: Syllabus, CSCI-UA 102, Klukowska
     -   [Disability Disclosure
         Statement](#disability-disclosure-statement)
     -   [Wellness Statement](#wellness-statement)
+    -   [Generative AI Policy](#generative-ai-policy)
     -   [Academic Integrity](#academic-integrity)
 -   [Topics Covered](#topics-covered)
 </div>
 
 
 
- <div class="lab" markdown="1">
+<div class="syllabus" markdown="1">
 
-# Syllabus for CSCI-UA 102 sec 1, Professor Klukowska
+# Syllabus for CSCI-UA 102 sec 10, Professor Klukowska
 
 ## Instructor Information
 
 * Professor Joanna Klukowska
-* Email: joannakl@cs.nyu.edu 
-* Recitation Instructors: 
-    * Satya Chilale (sec 2, sec 21)
-    * Daniel Jin (sec 23, sec 25)
-    * Chenfeiyu Wen (sec 24)
-    * Vincent Xu (sec 22)
-* JK Office Hours 
-    * in person: Mondays 9:30 AM - 11:00 AM (423 CIWW)
-    * on Zoom (see Brightspace for links): Thursdays 1:00 - 2:30 PM
-* Recitation Leaders Office Hours
-    * posted on Brightspace 
+* Email: joannakl@nyu.edu
+* Recitation Instructors:
+    * Vincent Xu (sec 12, sec 15)
+    * Kevin Peter (sec 13)
+    * Shivam Balikondwar (sec 14)
+* Office Hours
+    * posted on Brightspace with locations and/or Zoom links
 
 ## Course Information
 
 * CSCI-UA 102 Data Structures
 * 4 credits
-* Lectures: Mondays/Wednesdays 8:00 - 9:15 AM
+* Lectures: Mondays/Wednesdays 9:30 - 10:45 AM
 * Recitations: Friday (different times depending on the recitation section)
 * [Brightspace](brightspace.nyu.edu/)
-* [Ed discussions](https://edstem.org/us/dashboard) (accessible through Brightspace as well) 
+* [Ed discussions](https://edstem.org/us/dashboard) (accessible through Brightspace as well)
 * [Course website](https://cs.nyu.edu/~jk157/cs102/)
 * Exam dates (all subject to change if significant schedule changes are required):
-	* Midterm exam (paper-based part): Wednesday, March 12 (during regular lecture time) 
-	* Midterm exam (coding part): Friday, March 14 (during regular recitation time)
-	* Final exam (coding part): Friday, May 2 (during last recitation time)
-	* Final exam (paper-based part): Thursday, May 8, 10:00 - 11:50AM (during the CAS scheduled final exam period)  
+	* Midterm exam (paper-based part): Wednesday, October 22 (during regular lecture time)
+	* Midterm exam (coding part): Friday, October 24 (during regular recitation time)
+	* Final exam (coding part): Friday, Dec 5 (during last recitation time)
+	* Final exam (paper-based part): Wednesday, Dec 17, 10:00 - 11:50AM (during the CAS scheduled final exam period)
 * Prerequisites: Passing CSCI.UA.0101 with a grade of C or better. <br>
-**You are expected to know and remember the material from CSCI-UA 101 course.** If you took the course 
-a few semesters ago and/or do not remember parts of the material, start reviewing it during the summer/winter 
-break. If you took an equivalent of this course at a different school, 
-**you need to make sure that you are familiar with Java**. We assume you know enough Java to read and 
-write fairly large programs right at the beginning of the semester. 
-* Testing out of the course: If you are familiar with the material for this course (because you self-learned 
-it or took a class elsewhere), you can test out of the course by taking a placement exam. 
+**You are expected to know and remember the material from CSCI-UA 101 course.** If you took the course
+a few semesters ago and/or do not remember parts of the material, start reviewing it during the summer/winter
+break. If you took an equivalent of this course at a different school,
+**you need to make sure that you are familiar with Java**. We assume you know enough Java to read and
+write fairly large programs right at the beginning of the semester.
+* Testing out of the course: If you are familiar with the material for this course (because you self-learned
+it or took a class elsewhere), you can test out of the course by taking a placement exam.
 See the [Placement](https://cs.nyu.edu/home/undergrad/placement.html) page at the CS department website for more details.
 
 
+***
 ## Course Description
 
-This course covers use and design of data structures, which organize information in computer memory. 
-Topics covered include data structures (stacks, queues, linked lists, binary trees, binary search trees, etc.), 
-how to implement them in a high-level programming language (Java), how to analyze their effect 
+This course covers use and design of data structures, which organize information in computer memory.
+Topics covered include data structures (lists, stacks, queues, graphs, binary trees, binary search trees, hash tables),
+how to implement them in a high-level programming language (Java), how to analyze their effect
 on algorithm efficiency, and how to use and modify them.
 
+***
+## Course Objectives & Learning Outcomes
 
-<!--
-## Course Goals / Objectives
+This section outlines the key knowledge and skills you'll acquire by successfully completing this course.
+The primary goal is to provide a comprehensive understanding of fundamental data structures and algorithms,
+emphasizing the underlying concepts so you can apply them in any programming language, not just Java,
+even though the programming language we will use in this course is Java.
+We will explore how to analyze and solve computational problems efficiently.
 
-What will students learn and do while taking the course, and what will they be able to do or know after completing the course? We recommend a bulleted list.
--->
+* **Course Objectives** <br>
+By the end of this course, you will:
 
+    * **Understand and analyze fundamental data structures:** Gain a deep understanding of core data structures,
+    including lists, stacks, queues, graphs, trees, and hash tables. You'll learn the theory behind their design,
+    their strengths and weaknesses, and their common use cases.
+    * **Implement data structures in Java:** You'll build your own implementations of various data structures,
+    using both array-based and reference-based approaches where applicable. This hands-on experience will solidify
+    your understanding of how these structures work internally.
+    * **Analyze algorithm efficiency:** Learn to evaluate the performance of algorithms using **Big-O notation** ($O$-notation)
+    to determine their time complexity. This skill is crucial for writing efficient and scalable code.
+    * **Master key algorithms:** You'll learn and implement fundamental algorithms, including recursive algorithms,
+    searching algorithms, and various sorting algorithms like merge sort and quicksort.
+    * **Strengthen your Java programming skills:** We'll cover advanced Java concepts that are essential for
+    data structures, such as **generics**, **inheritance**, **polymorphism**, and the nuances of memory management
+    (e.g., references vs. objects).
+
+* **Learning Outcomes** <br>
+Upon successful completion of this course, you will be able to:
+
+    * **Choose the right data structure:** Analyze a given problem and select the most appropriate data structure to solve it efficiently.
+    * **Implement data structures from scratch:** Write code to implement data structures like linked lists, binary search trees,
+    and hash tables from the ground up, using any programming language. This demonstrates a conceptual mastery of the structures themselves,
+    beyond their specific implementations in Java.
+    * **Analyze algorithm performance:** Accurately determine the time complexity of a given algorithm or data structure operation.
+    * **Apply recursion to problem-solving:** Design and implement recursive solutions for problems and understand how recursion works under the hood.
+    * **Solve problems using graphs and trees:** Understand the structure and application of graphs and trees, and be able to implement basic graph algorithms.
+    * **Use advanced Java features:** Confidently use generics, interfaces, and object-oriented principles to create robust and flexible code.
+    * **Demonstrate a conceptual understanding:** Articulate the underlying principles of various data structures and algorithms,
+    allowing you to discuss their trade-offs and adapt them to new contexts.
+
+
+***
 ## Communication, Asking Questions, Getting Help
 
-If you have questions related to the course materials or assessments: 
-- post them on the course discussion forum (Ed). The posts shoud be public unless they reveal part of the answer for a graded assessment. 
-- visit the tutors during tutoring hours (available in-person and remotely at different times of the day)
-- visit instructors' office hours (schedule available on Brightspace)
+If you have questions related to the course materials or assessments:
+- Ask them in lectures and recitations.
+- Post them on the course discussion forum (Ed). The posts should be public unless they reveal part of the answer for a graded assessment.
+- Visit the tutors during tutoring hours (available in-person and remotely at different times of the day)
+- Visit instructors' office hours (schedule available on Brightspace)
 
 If you have questions regarding your grades or some personal issues
-- post them as a private post on the discussion forum or send a direct message to the relevant instructor 
-using the Ed platform. (Avoid emails as they often get lost in the stream of other things.) 
+- post them as a private post on the discussion forum or send a direct message to the relevant instructor
+using the Ed platform. (Avoid emails as they often get lost in the stream of other things and you will not get a timely response.)
 - visit instructors' office hours (schedule available on Brightspace)
 
 
-## Assessments and Grading 
+***
+## Assessments and Grading
 
 The grade for this course will be determined according to the following formula:
 
 - **Participation and Progress, 10%** <br/>
-This category will be assessed based on taking an active part in class discussions 
-(asking and answering questions on the course discussion forum, reading posts made on 
-the discussion forum by other students and instructors), completing assigned readings, tutorials, 
-activities, etc., and self-assessment exercises, actively participating in recitations, 
-and completing group and individual work, completing class polls and pop-quizzes during 
-the lectures and recitations. Several of these grades (about one fourth) will be dropped to account for 
-student absences due to late registration, illness, holiday observances, family/personal emergencies, or any other circumstances. 
+This category will be assessed based on taking an active part in class discussions
+(asking and answering questions on the course discussion forum, reading posts made on
+the discussion forum by other students and instructors), completing assigned readings, tutorials,
+activities, etc., and self-assessment exercises, actively participating in recitations,
+and completing group and individual work, completing class polls and pop-quizzes during
+the lectures and recitations. Several of these grades (about one fourth) will be dropped to account for
+student absences due to late registration, illness, holiday observances, family/personal emergencies, or any other circumstances.
 - **2 Exams: 20% midterm exam, 30% final exam**<br/>
-Exams will be in-person and synchronous 
-(may be switched to online and/or asynchronous if the University makes such a decision), and completed individually. 
-No exam grades are dropped. All exams must be completed individually by you with no assistance of 
+Exams will be in-person and synchronous
+(may be switched to online and/or asynchronous if the University makes such a decision), and completed individually.
+No exam grades are dropped. All exams must be completed individually by you with no assistance of
 any other people (except for the instructor and proctors) or technology.
-Each exam has two parts: paper-based part and coding part. Both parts are timed.  
+Each exam has two parts: paper-based part and coding part. Both parts are timed.
 - **3-5 take-home quizzes, 20%** <br/>
-The take-home quizzes will be online, asynchronous, and completed individually. 
-Each quiz will take approximately 30-minutes and will be offered at any time during a 24-hour period. 
-All take-home quizzes must be completed individually by you 
-with no assistance of any other people or technology.
+The take-home quizzes will be online, asynchronous, and completed individually.
+Each quiz will take approximately 30-minutes and will be offered at any time during a 24-hour period.
+All take-home quizzes must be completed individually by you with no assistance of any other people or technology.
 - **4-6 Programming Projects, 20%** <br/>
-Several programming projects will be given during the semester. The programming projects should be 
-completed individually. The programming projects should 
-be completed individually and they should be your own work.
+Several programming projects will be given during the semester. The programming projects should
+be completed individually and they should be your own work (you are responsible for the code you submit).
 
 
 
@@ -149,35 +183,35 @@ Score | Letter Grade
 65-72 | D
 < 65 | F
 
-The grade of _Incomplete_ is reserved for students who miss the final exam or the last project after 
-completing all other coursework in the semester (the reasons for missed exam will need to be verified 
+The grade of _Incomplete_ is reserved for students who miss the final exam or the last project after
+completing all other coursework in the semester (the reasons for missed exam will need to be verified
 and approved by the Dean Of Students). <br/>
-The grade of _Incomplete_ **will not be given** to students who started falling behind in class for any reason. 
+The grade of _Incomplete_ **will not be given** to students who started falling behind in class for any reason.
 Those students should withdraw from the course or switch to _Pass/Fail_ option.
 
 
-## Course Materials
+***
+## Course Materials amd Resources
 
 ### Brightspace and the Course Website
 
-You can access all course related materials through [Brightspace](brightspace.nyu.edu/) page for this course. 
+You can access all course related materials through [Brightspace](brightspace.nyu.edu/) page for this course.
 
-In addition, you may find some links to the course slides and labs at the [course website](https://cs.nyu.edu/~jk157/cs102/). 
+In addition, you may find some links to the course slides and old labs at the [course website](https://cs.nyu.edu/~jk157/cs102/).
 
 
 ### Textbook(s)
 
-We do not require you to purchase any particular textbook. 
-**But, you should use a textbook to study more in-depth the topics that are discussed in class.** 
-The list below contains some recommended titles. During the semester we will suggest readings 
-from some of them. You do not need to read every chapter from every book.
+We do not require you to purchase any particular textbook.
+**But, you should use a textbook to study more in-depth the topics that are discussed in class.**
+The list below contains some recommended titles. You do not need to read every chapter from every book.
 
-Most of the books in this list are accessible through NYU libraries for either download or online access. 
-For the books available through [O'Reilly online access](https://www.oreilly.com/), 
-you can either start at the NYU library page or login to the site directly using Single-Sign-On (SSO) 
+Most of the books in this list are accessible through NYU libraries for either download or online access.
+For the books available through [O'Reilly online access](https://www.oreilly.com/),
+you can either start at the NYU library page or login to the site directly using Single-Sign-On (SSO)
 option with your NYU credentials. Some books are provided as **open books** through their publisher's or author's websites.
 
-Here is a listing of chapters in different books that discuss different topics covered in this course: 
+Here is a listing of chapters in different books that discuss different topics covered in this course:
 [reading list](https://docs.google.com/spreadsheets/d/e/2PACX-1vSNvAduqIL8iv8P1-EjgRKrboryBvKFH_n-cADD2yKfKtR3MGKCE1BCmB26l9NUR8KJpRD0IX1H_2YW/pubhtml).
 
 #### Data Structures Books
@@ -214,96 +248,95 @@ This is your cs101 textbook. It is a good resource for refreshing the Java mater
 
 ### Other Resources
 
-* Tutoring: 
+* Tutoring:
     * [CS Department Tutoring](https://cs.nyu.edu/home/undergrad/tutoring.html)
     * [University Learning Center Tutoring](https://www.nyu.edu/students/academic-services/undergraduate-advisement/academic-resource-center/tutoring-and-learning.html)
-* Assistance with strengthening your writing: [NYU Writing Center](https://nyu.mywconline.com) 
-* 24/7 technology assistance: [IT Help Desk](http://www.nyu.edu/it/servicedesk) 
-* Support for personal and health-related issues at the Wellness Exchange: 
-    * by phone (212) 443-9999 (24/7 confidential calls), 
-    * website: [http://www.nyu.edu/999](www.nyu.edu/999)
+* Assistance with strengthening your writing: [NYU Writing Center](https://nyu.mywconline.com)
+* 24/7 technology assistance: [IT Help Desk](http://www.nyu.edu/it/servicedesk)
+* Support for personal and health-related issues at the Wellness Exchange:
+    * by phone (212) 443-9999 (24/7 confidential calls),
+    * website: [http://www.nyu.edu/9999](www.nyu.edu/9999)
 
-
+***
 ## Recitations and Labs
 
 ### Recitations
 
-Recitations are the times to have most of your questions answered. These could be questions about 
-upcoming projects, material covered during the prior week or the weekly labs. They are also a chance 
+Recitations are the times to have most of your questions answered. These could be questions about
+upcoming projects, material covered during the prior week or the weekly labs. They are also a chance
 for you to work with a group of students from the class to solve some problems from the weekly labs together.
 
-The recitations are essential part of the course. You are expected to attend them. 
-They are a chance for you to learn the material and collaborate with your peers. 
+The recitations are essential part of the course. You are expected to attend them.
+They are a chance for you to learn the material and collaborate with your peers.
 They are NOT optional part of this course.
 
 ### Weekly Labs
 
-(Almost) every week you will be given a lab to work on. You should review the lab 
+(Almost) every week you will be given a lab to work on. You should review the lab
 instructions during your weekly recitation so that you can discuss any questions and issues during the recitation.
 
-During some of the recitation session you will get a chance to work on parts of the 
+During some of the recitation session you will get a chance to work on parts of the
 lab with other students and with guidance of the recitation instructor.
 
-Some parts of the weekly labs will  be submitted and will contribute to the "participation and progress" 
+Some parts of the weekly labs will  be submitted and will contribute to the "participation and progress"
 part of your grade for this course. To get the credit for this part, you must submit it before the due date.
 
 
-
+***
 ## Course Policies
 
-This course follows CAS Academic Policies that can be found at 
-[https://cas.nyu.edu/academic-programs/bulletin/policies/academic-policies.html](https://cas.nyu.edu/academic-programs/bulletin/policies/academic-policies.html).  
+This course follows CAS Academic Policies that can be found at
+[https://cas.nyu.edu/academic-programs/bulletin/policies/academic-policies.html](https://cas.nyu.edu/academic-programs/bulletin/policies/academic-policies.html).
 
 
 
 ### Attendance
 
-This is an in-person synchronous class and you are expected to attend the lectures and recitations. 
+This is an in-person synchronous class and you are expected to attend all lectures and recitations.
 
 Missing a class or two is reasonable and often unavoidable, but missing more than five course meetings will likely result in decreased understanding of the course content and, hence, lower scores.
 
-If, for any reason, you need to miss a lot of class meetings, you should contact [cas.deanforstudents@nyu.edu](mailto:cas.deanforstudents@nyu.edu) for verification and guidance for an extended absence period. 
-Extended absences often result in students inability to make-up missed material and assessments. You should consider withdrawing from the class and attempting it again in the future semester.
+If, for any reason, you need to miss a lot of class meetings, you should contact [cas.deanforstudents@nyu.edu](mailto:cas.deanforstudents@nyu.edu) for verification and guidance for an extended absence period.
+Extended absences often result in students inability to make-up missed material and assessments. You should consider withdrawing from the class and attempting it again in the future semester when you can
+benefit from the course most and succeed in its completion.
 
-### Missed Assessments 
+### Missed Assessments
 
-If you miss an assessment due to a religious observance, illness, family emergency, or any other reason beyond your control, you need to notify your instructor ahead of time (in case of a planned absence) or as soon as possible (in case of an unplanned emergency absence). Trying to excuse/explain the absence two weeks after it happened will not work. 
+If you miss an assessment due to a religious observance, illness, family emergency, or any other reason beyond your control, you need to notify your instructor ahead of time (in case of a planned absence) or as soon as possible (in case of an unplanned emergency absence). Trying to excuse/explain the absence two weeks after it happened will not work.
 
-- To account for any missed  in-class quizzes or polls, recitation activities or a lab assignments, several (approximately one fourth) lowest scores in the participation and progress category will be dropped at the end of the semester. All reasons for missing something in this category are treated in exactly the same way: absence due to illness, religious observance, late registration, oversleeping or .... If you miss one of the assessments from this category, you do not need to notify us. 
+- To account for any missed  in-class quizzes or polls, recitation activities or lab assignments, several (approximately one fourth) lowest scores in the participation and progress category will be dropped at the end of the semester. All reasons for missing something in this category are treated in exactly the same way: absence due to illness, religious observance, late registration, oversleeping or .... If you miss one of the assessments from this category, you do not need to notify us.
 
 - If you miss one of the take-home quizzes, the part of the grade based on take-home quizzes will be based on the remaining take-home quizzes. You need to notify Professor Klukowska about a missed take-home quiz as described above, otherwise the grade for such a quiz will count as zero. <br/>
-If you miss more than one take-home quiz, you need to discuss it with the instructor immediately. You will not be excused from more than one quiz for any reason. 
+If you miss more than one take-home quiz, you need to discuss it with the instructor immediately. You will not be excused from more than one quiz for any reason.
 
 - If you miss the midterm exam, the final exam will be counted in its place. You should contact [cas.deanforstudents@nyu.edu](mailto:cas.deanforstudents@nyu.edu) for verification of the reason for a missed exam.
 
 - If you miss the final exam, you will receive a grade of _incomplete_ in the course. You will need to take an alternative make-up exam at the start of the following regular semesters (either spring or fall) at the time and place chosen by the instructor. You should contact [cas.deanforstudents@nyu.edu](mailto:cas.deanforstudents@nyu.edu) for verification of the reason for a missed exam.
 
-- If you miss the due date for one of the programming projects, refer to the section below. 
+- If you miss the due date for one of the programming projects, refer to the section below.
 
 ### Late Programming Projects
 
 
-For each project, you will have a _5-hour buffer window_ after the due date. You can submit or resubmit the project during this time without any point penalty. You do not need to use your _freebie days_ (see below) if you submit your assignment during this 5-hour buffer window. 
+For each project, you will have a _5-hour buffer window_ after the due date. You can submit or resubmit the project during this time without any point penalty. You do not need to use your _freebie days_ (see below) if you submit your assignment during this 5-hour buffer window.
 
 
-Each student is granted seven _freebie days_ at the start of the semester. The _freebie days_ can be used for any project except for the first one and the last one. If you are unable to submit a programming project on time due to religious observance, illness, family emergency, or any other reason beyond your control, you can use your freebie days to avoid point deductions for lateness on the assignment. 
+Each student is granted seven _freebie days_ at the start of the semester. The _freebie days_ can be used for any project except for the first one and the last one. If you are unable to submit a programming project on time due to religious observance, illness, family emergency, or any other reason beyond your control, you can use your freebie days to avoid point deductions for lateness on the assignment.
 
-To use your _freebie days_, submit the project as soon as possible after the due date passes and then complete the [Freebie Days Request form](https://forms.gle/gSqPWKjMwi72nVvx7) (https://forms.gle/gSqPWKjMwi72nVvx7). 
-<br/>Note: You are responsible for keeping track of how many _freebie days_ you use and how many you still have. You are responsible for submitting the form as soon as you submit your final version of the project. Do not submit the form multiple times for the same project. 
+To use your _freebie days_, submit the project as soon as possible after the due date passes and then complete the [Freebie Days Request form](https://forms.gle/gSqPWKjMwi72nVvx7) (https://forms.gle/gSqPWKjMwi72nVvx7).
+<br/>Note: You are responsible for keeping track of how many _freebie days_ you use and how many you still have. You are responsible for submitting the form as soon as you submit your final version of the project. Do not submit the form multiple times for the same project. Such submissions will result in incorrect grading of your project and you will, likely, end up with a lower grade than you would have otherwise. We will not be revising project grades because of your errors in the form submission. 
 
-_Freebie days_ are not transferable and they expire at the end of the semester. 
+_Freebie days_ are not transferable and they expire at the end of the semester.
 
 Once you run out of _freebie days_, the late project submissions lose 10% of their original score for each day they are late. If the project has multiple parts, the late penalties apply to the entire project not only the parts that are submitted late. If you submit the project 5-24 hours late, the maximum score is 90 (instead of 100). If you submit the project 24-48 hours late, the maximum score is 80 (instead of 100), etc.
 
 
-**No programming projects will be accepted after the last day of classes.** 
+**No programming projects will be accepted after the last day of classes.**
 
 
 ### Broken Programming Projects
 
-If you hand in a program that does not compile or crashes when it is run, you will get a grade of zero on it. As you are working on your code, make sure that it compiles and does what you expect it to do. Test frequently, not only after you write hundreds of lines of code. It makes more sense to comment out broken pieces of the code and submit an incomplete implementation of the project, instead of submitting a program that does not compile or run. 
-
-
+If you hand in a program that does not compile or crashes when it is run, you will get a grade of zero on it. As you are working on your code, make sure that it compiles and does what you expect it to do. Test frequently, not only after you write hundreds of lines of code. It makes more sense to comment out broken pieces of the code and submit an incomplete implementation of the project, instead of submitting a program that does not compile or run.
 
 
 
@@ -312,7 +345,6 @@ If you hand in a program that does not compile or crashes when it is run, you wi
 New York University is committed to providing equal educational opportunity and participation for students of all abilities. We work with NYU students to determine appropriate and reasonable accommodations that support equal access to a world-class education.
 
 Students requesting academic accommodations are advised to reach out to the Moses Center for Student Accessibility as early as possible in the semester for assistance.
- 
 
 Henry and Lucy Moses Center for Student Accessibility
 
@@ -322,17 +354,37 @@ Website:[ http://www.nyu.edu/csd](http://www.nyu.edu/csd)
 
 Email: [mosescsd@nyu.edu](mailto:mosescsd@nyu.edu)
 
-### Wellness Statement 
+Any student who requires academic accommodations should register with the Moses Center early in the semester so that we can provide these accommodations for the assessments. Students may not be able to receive proper accommodations if they register with the Moses Center within just a few days of the timed assessment. 
+
+### Wellness Statement
 
 In a large, complex community like New York University, it's vital to reach out to others, particularly those who are isolated or engaged in self-destructive activities. Student wellness ([https://cas.nyu.edu/content/nyu-as/cas/academic-programs/student-wellness.html](https://cas.nyu.edu/content/nyu-as/cas/academic-programs/student-wellness.html)) is the responsibility of us all.
 
 The NYU[ Wellness Exchange](https://www.nyu.edu/students/health-and-wellness/wellness-exchange.html) is the constellation of NYU’s programs and services designed to address the overall health and mental health needs of its students. Students can access this service 24 hours a day, seven days a week: [wellness.exchange@nyu.edu](mailto:wellness.exchange@nyu.edu); (212) 443-9999. Students may also call the Wellness Exchange hotline (212-443-9999) or the NYU Counseling Service (212-998-4780) to make an appointment for single session, short-term, or group counseling sessions.
 
+### Generative AI Policy
+
+The rise of generative AI tools like Gemini, ChatGPT, Copilot, and many others is fundamentally changing the landscape of computer science and beyond. Given their ubiquity, it is increasingly difficult to avoid their use. In this class, we will not ban these tools; instead, we will attempt to show you how to use them to your benefit rather than to your detriment.
+
+Using AI to do all of your coding work for you will be a detriment to your learning. This approach will leave you unable to perform on exams, succeed in technical interviews, or be a reliable contributor on projects where you are expected to be an expert. True mastery in this field comes from a deep, hands-on practice and understanding of the material, not from effective prompting.
+
+Instead, we encourage you to use AI as a learning partner, leveraging its capabilities in the following ways:
+
+- AI as a Feedback Generator: Use AI to review your code and offer suggestions for improvement, just as a peer would. You can ask it to identify potential bugs, simplify complex sections, or suggest alternative approaches (but make sure to document such assistance, make sure that the suggested changes are correct and that you understand them).
+- AI as a Personal Tutor: When you're stuck on a concept, use AI to explain it in different ways. You can ask it to break down a difficult topic, provide more examples, or clarify why a particular solution works. Remember, however, that AI can "hallucinate" incorrect information; you are responsible for critically evaluating and verifying any information it provides. Sometimes it may be wiser and safer to visit instructors' office hours or tutoring hours to get help rather than relying purely on AI for such help. 
+
+Keep in mind that exams and other assessments in this class will not be given with access to AI tools, so you need to be able to write complete programs, implement parts of given programs, answer questions and suggest solutions to problems on your own without the help of any tools. 
+
+Further resources: 
+
+- [Provost’s Guidance on Student Learning with Generative AI](https://www.nyu.edu/faculty/teaching-and-learning-resources/Student-Learning-with-Generative-AI.html)
+
+
 
 ### Academic Integrity
 
 
-This course follows the university and departmental policies on academic integrity: 
+This course follows the university and departmental policies on academic integrity:
 
 -   [Academic Integrity for Students at NYU](https://www.nyu.edu/about/policies-guidelines-compliance/policies-and-guidelines/academic-integrity-for-students-at-nyu.html)
 -   [CS Department Academic Integrity](https://cs.nyu.edu/home/undergrad/policy.html "CS Department Academic Integrity")
@@ -370,8 +422,9 @@ Here are examples of _fair_ and _not fair_ actions that a student may take. This
 -   Looking at another student's work during an exam or a quiz.
 -   Submitting work that was completed by someone else for a problem set, a programming project or an exam.
 -   Submitting work that was completed by someone else and then modified by you for a problem set, a programming project or an exam.
+-   Submitting work that was generated by a tool and then, possibly, modified by you for a problem set, a programming project or an exam.
 
-
+***
 ## Topics Covered
 
 - Review of advanced Java topics:
@@ -383,7 +436,7 @@ Here are examples of _fair_ and _not fair_ actions that a student may take. This
     - Java generics
 - Recursion and (optionally) recursive backtracing
 - Linear search and binary search
-- Sort algorithms: 
+- Sort algorithms:
     - Review of quadratic sorts (selection sort, insertion sort, possibly bubble sort)
     - Mergesort
     - Quicksort
@@ -403,9 +456,9 @@ Here are examples of _fair_ and _not fair_ actions that a student may take. This
     - General trees
 - Introduction to Graphs
 - Hash tables
-- Priority queues and binary heaps (optional) 
+- Priority queues and binary heaps (optional)
 - Heapsort (assuming that binary heaps are covered) (optional)
 
 
-See the [Tentative Weekly Schedule](https://docs.google.com/spreadsheets/d/e/2PACX-1vQRPJ6qWpXkxBGd2Y16yRF7iQBc9xYjkj7Y6XKbEITUsndBUsvob4upOzoEcOdtqxKWGjVC60zQf85i/pubhtml?gid=955877148&single=true)  for approximate times when topics will be covered. All dates there are **tentative**, but should be a good indicator or the course timing. 
+See the [Tentative Weekly Schedule](https://docs.google.com/spreadsheets/d/e/2PACX-1vQRPJ6qWpXkxBGd2Y16yRF7iQBc9xYjkj7Y6XKbEITUsndBUsvob4upOzoEcOdtqxKWGjVC60zQf85i/pubhtml?gid=955877148&single=true)  for approximate times when topics will be covered. All dates there are **tentative**, but should be a good indicator or the course timing.
 
