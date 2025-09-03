@@ -45,7 +45,7 @@ title: Syllabus, CSCI-UA 102, Klukowska
 * Recitation Instructors:
     * Vincent Xu (sec 12, sec 15)
     * Kevin Peter (sec 13)
-    * Shivam Balikondwar (sec 14)
+    * TBD (sec 14)
 * Office Hours
     * posted on Brightspace with locations and/or Zoom links
 
