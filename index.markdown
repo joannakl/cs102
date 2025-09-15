@@ -13,6 +13,7 @@ title: Course Materials, CSCI-UA 102, Klukowska
 ## Slides
 
 - [Course Intro](slides/01-course_intro.html)
+    - [The Art of Code Reading](slides/01-code-reading.html)
 - [Java Programs Under The Hood](slides/02-java-memory.html)
 - [Data Structures Overview, 1](slides/03-data_structures_overview_1.html)
 - [Data Structures Overview, 2](slides/03-data_structures_overview_2.html)
