@@ -2,32 +2,71 @@ package project2;
 
 import java.util.Scanner;
 
-
 /**
- * <p>This class is part of the project 2 in csci102, spring 2023 semester. 
- * 
- * 
  * <p>This program performs numerical calculations based on user's input.
- * An operation needs to be provided using a three-token format: 
- *    operand1  operator  operand2  
- * in which the three tokens are separated by one of more white spaces. 
- * The program terminates when the end of file (EOF) character is found. 
- * (Note, this character is entered in the console by typing Ctrl+D sequence.) 
- * 
- * <p>Valid operands are any positive integers (no length limit). 
- * 
+ * An operation needs to be provided using a three-token format:
+ * <code>operand1 operator operand2</code>
+ * in which the three tokens are separated by one of more white spaces.
+ * The program terminates when the end of file (EOF) character is found.
+ * (Note, this character is entered in the console by typing Ctrl+D sequence.)
+ *
+ * <p>Valid operands are any positive integers (no length limit).
+ *
  * <p>Valid operators are:
  * <pre>
- *  +   addition
- *  *   multiplication
- *  <   less than 
- *  <=  less than or equal
- *  >   greater than
- *  >=  greater than or equal 
- *  ==  equal
- *  <>  not equal 
+ * {@literal +}    addition
+ * {@literal *}    multiplication
+ * {@literal <}    less than
+ * {@literal <=}   less than or equal
+ * {@literal >}    greater than
+ * {@literal >=}   greater than or equal
+ * {@literal ==}   equal
+ * {@literal <>}   not equal
+ * </pre>
+ *
+ * <p>This is an interactive program. Here is a sample user interaction
+ * (the user input and program's output are interleaved).
+ *
+ * <pre>
+ * {@literal
+ * 123 + 987
+ * 1110
+ * 123 * 1111111111111111111111111111111111111
+ * 136666666666666666666666666666666666653
+ * 11111111111111111111111111111111111111 + 99999999999999999999999999999999999999999999999999999
+ * 100000000000000011111111111111111111111111111111111110
+ * 123 < 987
+ * true
+ * 123 >= 9876
+ * false
+ * 123 == 123
+ * true
+ * 123 <> 123
+ * false
+ * 33333333333333333333333 * 11
+ * 366666666666666666666663
+ * 33333333333333333333333*11
+ * Illegal expression found: 33333333333333333333333*11
+ * 7 +3
+ * Illegal expression found: 7 +3
+ * 100000000000000000 - 9999999999999999
+ * Illegal operator found: 100000000000000000 - 9999999999999999
+ * }
+ * </pre>
+ * 
+ * Compilation instructions:
+ * 
+ * <pre>
+ * javac project2/LongNumbers.java
+ * </pre>
+ * 
+ * Execution instructions:
+ * 
+ * <pre>
+ * java project2.LongNumbers
  * </pre>
  */
+
 
 public class LongNumbers {
 

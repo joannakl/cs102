@@ -5,7 +5,7 @@ title: Project 2
 
 <div class="lab-right" markdown="1">
 __Project 2__ <br>
-__due date:__ February 23 at 11:59pm
+__due date:__ Oct 6 at 11:59pm
 
 __submission mode:__ individual
 
@@ -16,15 +16,17 @@ __submission mode:__ individual
 ## Project 2: Long Numbers
 
 <hr>
-
 <div class="emph" markdown=1>
 You may discuss any of the assignments with your classmates and tutors (or anyone else) but <span class="red"> all work for all assignments must be
 entirely your own</span>. Any sharing or copying of assignments will be considered cheating (this includes posting of partial or complete
-solutions on Ed, GitHub, Discord, Groupme, ... or any other public or private forum). If you get significant help from anyone, you should acknowledge it in
+solutions on Ed, GitHub, Discord, Groupme, ... or any other forum). You should not use code generation tools to create any part of the implementation for this project. 
+If you get significant help from anyone, you should acknowledge it in
 your submission (and your grade will be proportional to the part that you completed on your own). You are responsible for
-every line in your program: you need to know what it does and why. You should not use any data structures and Regions of Java
+every line in your program: you need to know what it does and why. You should not use any data structures and features of Java
 that have not been covered in class (or the prerequisite class). If you have doubts whether or not you are allowed to use certain
-structures, just ask your instructor.
+structures, just ask your instructor. 
+
+If your submitted code matches closely or exactly code submitted by another person in the class, it will get a zero grade and the offense will be reported to the department and the dean. 
 </div>
 
 ---
@@ -57,7 +59,7 @@ debugging always takes time!
 <div class="content-inner" markdown=1>
 
 The program that provides the user interface is given to you. You can see
-its [source code](project2/LongNumbers.java) and its [documentation](project2/project2/LongNumbers.html).
+its [source code](project2_LongNumbers/project2/LongNumbers.java) and its [documentation](project2_LongNumbers/project2/LongNumbers.html).
 
 
 </div> </div></div>
@@ -80,7 +82,7 @@ This program does not use any command line arguments.
 
 Your job for this project is to provide the implementation for the `Number` class.
 
-You can find the documentation for its public methods [here](project2/project2/Number.html).
+You can find the documentation for its public methods [here](project2_LongNumbers/project2/Number.html).
 
 **Requirements and restrictions**
 - The class has to use a linked list to represent the object. In fact, `Number` is
@@ -153,7 +155,7 @@ even if you cannot implement all of the methods.
 - Work out the addition, multiplication and comparison algorithms by hand first. There are many details that you will need to think about and that may need you to completely rewrite your code
 if you start by coding right away.
 - Implement and test your methods one by one. Write the documentation for each method as you are
-implementing it (yes, in this case you can copy and past from the [Number](project2/project2/Number.html) class. This makes you think about all the required pieces. Make sure that your code satisfies all the requirements from the documentation.
+implementing it (yes, in this case you can copy and past from the [Number](project2_LongNumbers/project2/Number.html) class. This makes you think about all the required pieces. Make sure that your code satisfies all the requirements from the documentation.
 
 
 
