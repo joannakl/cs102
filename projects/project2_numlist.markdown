@@ -167,22 +167,24 @@ implementing it (yes, in this case you can copy and past from the [Number](proje
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
-
 If your program does not compile or if it crashes (almost) every time it is run,
 you will get a zero on the assignment. Make sure that you are submitting
-functioning and documented code, even if it is not a complete implementation so that you can get partial credit.
+functioning code, even if it is not a complete implementation so that you can get partial credit.
 
-If the program does not adhere to the specification, the grade will be low and
-will depend on how easy it is to figure out what the program is doing and how to work with it.
+The grade will be determined by several factors: 
 
-The grade will be determined by several factors:
-- 30 points: correct behavior of the program when run as the whole (i.e., we will run the
-`LongNumbers` class that uses your implementation of the `Number` class)
-- 30 points: correct behavior of the methods of the `Number` class
-- 25 points: design, implementation and efficiency of the `Number` class
-    (this will be determined by a code review)
-- 15 points: proper documentation, program style and format of submission
+- 50 points: class correctness: correct behavior of methods of the required class (this will be determined by the autograder), these points will be assigned as follows:
+	- 0 points: code passes fewer than a half of the autograder tests 
+	- 25 points: code passes [50-70)% of the autograder tests 
+	- 35 points: the code passes [70-80)% of the autograder tests
+	- 40 points: the code passes [80-90)% of the autograder tests 
+	- 45 points: the code passes [90-95)% of the autograder tests 
+	- 50 points: the code passes 95% or more of the autograder tests 	
+- 10 points: correct behavior of the program as a whole (this will be determined by the autograder and some manual evaluation)
+- 20 points: design, implementation and efficiency of the required class and any additional classes
    (this will be determined by a code review)
+- 20 points: code documentation readability and style (thsi will be determined by a code review)
+
 
 </div> </div></div>
 
