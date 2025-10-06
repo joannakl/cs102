@@ -262,7 +262,10 @@ private class Itr implements Iterator<E> {
     }
 
     public E next()
-    {
+    {   
+        if (current == null )
+            throw new NoSuchElementException(
+                "no elements left to visit");
         E tmp = current.data;
         current = current.next;
         return tmp;
