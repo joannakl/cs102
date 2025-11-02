@@ -20,163 +20,168 @@ import java.util.Scanner;
  * @author ADD YOUR NAME HERE 
  */
 public class Map {
-	private double[][] elevations;
-	private double maxElevation;
-	private double minElevation;
-	private boolean maxMinComputed = false; 
-	private GridPoint[] waterSources;
-	private double waterHeight;
+    private double[][] elevations;
+    private double maxElevation;
+    private double minElevation;
+    private boolean maxMinComputed = false; 
+    private GridPoint[] waterSources;
+    private double waterHeight;
 
-	/**
-	 * Creates a map with the specified elevations, water sources and water level.
-	 * 
-	 * @param elevations   the elevations of the map
-	 * @param waterSources the water sources of the map
-	 * @param waterHeight  the water level 
-	 * @throws IllegalArgumentException if elevations or waterSources is null
-	 */
-	public Map(double[][] elevations, GridPoint[] waterSources, double waterHeight) 
-			throws IllegalArgumentException {
-		
-		// TODO: implement this method
-	}
+    /**
+     * Creates a map with the specified elevations, water sources and water level.
+     * 
+     * @param elevations   the elevations of the map
+     * @param waterSources the water sources of the map
+     * @param waterHeight  the water level 
+     * @throws IllegalArgumentException if elevations or waterSources is null
+     */
+    public Map(double[][] elevations, GridPoint[] waterSources, double waterHeight) 
+            throws IllegalArgumentException {
+        
+        // TODO: implement this method
+        
+    }
 
-	/**
-	 * Creates a map from the specified file.
-	 * 
-	 * @param mapFile the file from which to create the map
-	 * @throws FileNotFoundException if mapFile does not exist 
-	 */
-	public Map(File mapFile) throws FileNotFoundException {
-		Scanner scanner = new Scanner(mapFile);
-		double height = scanner.nextDouble();
-		this.waterHeight = height; 
-		int numOfSources = scanner.nextInt();
-		this.waterSources = new GridPoint[numOfSources]; 
-		for (int source = 0; source < numOfSources; source++) {
-			int sr = scanner.nextInt();
-			int sc = scanner.nextInt();
-			waterSources[source] = new GridPoint(sr, sc);
-		}
-		int rows = scanner.nextInt();
-		int cols = scanner.nextInt();
-		elevations = new double[rows][cols];
-		for (int r = 0; r < rows; r++) {
-			for (int c = 0; c < cols; c++) {
-				elevations[r][c] = scanner.nextDouble();
-			}
-		}
-	}
+    /**
+     * Creates a map from the specified file.
+     * 
+     * @param mapFile the file from which to create the map
+     * @throws FileNotFoundException if mapFile does not exist 
+     */
+    public Map(File mapFile) throws FileNotFoundException {
+        Scanner scanner = new Scanner(mapFile);
+        double height = scanner.nextDouble();
+        this.waterHeight = height; 
+        int numOfSources = scanner.nextInt();
+        this.waterSources = new GridPoint[numOfSources]; 
+        for (int source = 0; source < numOfSources; source++) {
+            int sr = scanner.nextInt();
+            int sc = scanner.nextInt();
+            waterSources[source] = new GridPoint(sr, sc);
+        }
+        int rows = scanner.nextInt();
+        int cols = scanner.nextInt();
+        elevations = new double[rows][cols];
+        for (int r = 0; r < rows; r++) {
+            for (int c = 0; c < cols; c++) {
+                elevations[r][c] = scanner.nextDouble();
+            }
+        }
+    }
     
-	/**
-	 * Returns the elevation at a specified grid point on the map.
-	 * @param p the grid point
-	 * @return	the elevation at the specified grid point
-	 * @throws NotOnMapException if the grid point is not on the map
-	 */
-	public double elevation(GridPoint p) throws NotOnMapException {
-		
-		// TODO: implement this method
-	}
+    /**
+     * Returns the elevation at a specified grid point on the map.
+     * @param p the grid point
+     * @return    the elevation at the specified grid point
+     * @throws NotOnMapException if the grid point is not on the map
+     */
+    public double elevation(GridPoint p) throws NotOnMapException {
+        
+        // TODO: implement this method
+        
+        return 0;
+    }
 
-	/**
-	 * Returns the maximum elevation on the map.
-	 * 
-	 * @return the maximum elevation on the map
-	 */
-	public double maxElevation() {
-		
-		// TODO: implement this method
-		return 0;
-	}
+    /**
+     * Returns the maximum elevation on the map.
+     * 
+     * @return the maximum elevation on the map
+     */
+    public double maxElevation() {
+        
+        // TODO: implement this method
+        
+        return 0;
+    }
 
-	/**
-	 * Returns the minimum elevation on the map.
-	 * 
-	 * @return the minimum elevation on the map
-	 */
-	public double minElevation() {
-		
-		// TODO: implement this method
-		return 0;
-	}
-	
-	/**
-	 * Returns the number of rows in this map.
-	 * @return the number of rows in this map
-	 */
-	public int numOfRows() {
-		return elevations.length;
-	}
+    /**
+     * Returns the minimum elevation on the map.
+     * 
+     * @return the minimum elevation on the map
+     */
+    public double minElevation() {
+        
+        // TODO: implement this method
+        
+        return 0;
+    }
+    
+    /**
+     * Returns the number of rows in this map.
+     * @return the number of rows in this map
+     */
+    public int numOfRows() {
+        return elevations.length;
+    }
 
-	/**
-	 * Returns the number of columns in this map.
-	 * 
-	 * @return the number of columns in this map
-	 */
-	public int numOfCols() {
-		return elevations[0].length;
-	}
-	
-	/**
-	 * Returns the water sources on this map.
-	 * 
-	 * @return the water sources on this map
-	 */
-	public GridPoint[] waterSources() {
-		return waterSources;
-	}
-	
-	/**
-	 * Returns the water height on this map.
-	 * 
-	 * @return the water height on this map
-	 */
-	public double waterHeight() {
-		return waterHeight;
-	}
-	
-	/**
-	 * Determines if a grid point is below a specified height.
-	 * @param p the grid point
-	 * @return true if the grid point is below or at the specified height, false otherwise
-	 * @throws NotOnMapException if the grid point is not on this map
-	 */
-	public boolean belowOrAtHeight(GridPoint p) throws NotOnMapException {
+    /**
+     * Returns the number of columns in this map.
+     * 
+     * @return the number of columns in this map
+     */
+    public int numOfCols() {
+        return elevations[0].length;
+    }
+    
+    /**
+     * Returns the water sources on this map.
+     * 
+     * @return the water sources on this map
+     */
+    public GridPoint[] waterSources() {
+        return waterSources;
+    }
+    
+    /**
+     * Returns the water height on this map.
+     * 
+     * @return the water height on this map
+     */
+    public double waterHeight() {
+        return waterHeight;
+    }
+    
+    /**
+     * Determines if a grid point is below a specified height.
+     * @param p the grid point
+     * @return true if the grid point is below or at the specified height, false otherwise
+     * @throws NotOnMapException if the grid point is not on this map
+     */
+    public boolean belowOrAtHeight(GridPoint p) throws NotOnMapException {
         return elevation(p) <= waterHeight;
     }
 
-	/**
-	 * Determines if a grid point is above a specified height.
-	 * @param p      the grid point
-	 * @return true if the grid point is above the specified height, false otherwise
-	 * @throws NotOnMapException if the grid point is not on this map
-	 */
-	public boolean aboveHeight(GridPoint p ) throws NotOnMapException {
-		return elevation(p) > waterHeight;
-	}
-	
-	/**
-	 * Returns a string representation of this map. The string contains
-	 * the elevations of the map one row per line in the string. The values
-	 * in each row are space separated. 
-	 * 
-	 * The returned string is aligned by columns as long as the elevation 
-	 * values contain no more than three digits (including the potential 
-	 * negative sign) before the decimal point. 
-	 * 
-	 * @return a string representation of this map
-	 */
-	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		for (int i = 0; i < elevations.length; i++) {
-			for (int j = 0; j < elevations[0].length; j++) {
-				sb.append(String.format("%5.1f ", elevations[i][j]));
-			}
-			sb.append("\n");
-		}
-		return sb.toString();
-	}
+    /**
+     * Determines if a grid point is above a specified height.
+     * @param p      the grid point
+     * @return true if the grid point is above the specified height, false otherwise
+     * @throws NotOnMapException if the grid point is not on this map
+     */
+    public boolean aboveHeight(GridPoint p ) throws NotOnMapException {
+        return elevation(p) > waterHeight;
+    }
+    
+    /**
+     * Returns a string representation of this map. The string contains
+     * the elevations of the map one row per line in the string. The values
+     * in each row are space separated. 
+     * 
+     * The returned string is aligned by columns as long as the elevation 
+     * values contain no more than three digits (including the potential 
+     * negative sign) before the decimal point. 
+     * 
+     * @return a string representation of this map
+     */
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < elevations.length; i++) {
+            for (int j = 0; j < elevations[0].length; j++) {
+                sb.append(String.format("%5.1f ", elevations[i][j]));
+            }
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
 
 
 }

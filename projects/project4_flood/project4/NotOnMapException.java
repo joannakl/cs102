@@ -7,7 +7,12 @@ package project4;
  */
 @SuppressWarnings("serial")
 public class NotOnMapException extends Exception {
-	public NotOnMapException(String message) {
-		super(message);
-	}
+    /**
+     * Constructs a NotOnMapException with the specified detail message.
+     * 
+     * @param message the detail message
+     */
+    public NotOnMapException(String message) {
+        super(message);
+    }
 }

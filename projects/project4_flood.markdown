@@ -5,7 +5,7 @@ title: Project 4
 
 <div class="lab-right" markdown="1">
 __Project 4__ <br>
-__due date:__  November 14
+__due date:__  November 17
 
 __submission mode:__ individual
 
@@ -20,14 +20,14 @@ __submission mode:__ individual
 <div class="emph" markdown=1>
 You may discuss any of the assignments with your classmates and tutors (or anyone else) but <span class="red"> all work for all assignments must be
 entirely your own</span>. Any sharing or copying of assignments will be considered cheating (this includes posting of partial or complete
-solutions on Ed, GitHub, Discord, Groupme, ... or any other forum). If you get significant help from anyone, you should acknowledge it in
+solutions on Ed, GitHub, Discord, Groupme, ... or any other forum). You should not use code generation tools to create any part of the implementation for this project. 
+If you get significant help from anyone, you should acknowledge it in
 your submission (and your grade will be proportional to the part that you completed on your own). You are responsible for
 every line in your program: you need to know what it does and why. You should not use any data structures and features of Java
 that have not been covered in class (or the prerequisite class). If you have doubts whether or not you are allowed to use certain
 structures, just ask your instructor.
 
-If your submitted code matches closely or exactly code submitted by another person in the class, it will get a zero grade and the offense will be reported to the 
-department and the dean. 
+If your submitted code matches closely or exactly code submitted by another person in the class, it will get a zero grade and the offense will be reported to the department and the dean. 
 </div>
 
 ---
@@ -38,7 +38,7 @@ Sea levels have been rising globally. Natural disasters cause the waters to rise
 and for shorter amounts of time. Urban planners for future cities and development as well as governments 
 and citizens of existing cities need to know which areas are at risk of being flooded when the water level
 increases. 
-You are going to write a program that uses your new expertise in recursion, stacks and queues 
+You are going to write a program that uses your new expertise in graph algorithms 
 to evaluate what happens to a given terrain when the waters are rising. 
 
 <br/><br/>
@@ -47,9 +47,10 @@ to evaluate what happens to a given terrain when the waters are rising.
 The goal of this programming project is for you to master (or at least get practice on) the following tasks:
 
 - developing and writing recursive algorithms,
-- developing and writing algorithms that use stacks and queues 
+- developing and writing algorithms that use queues,
+- implementing graph algorithms, 
+- working with implicit graph representation,  
 - working with existing code,
-- using classes and methods that are part of the Java API,
 - using command line arguments,
 - implementing classes according to provided specification.
 
@@ -66,8 +67,9 @@ The goal of this programming project is for you to master (or at least get pract
 You are going to develop a tool that models flooding
 due to the water levels rising. 
 
-To do this we will model an actual terrain with a two 
-dimensional grid. Each value in the grid represents the elevation of that grid point: higher values indicate higher elevations, lower values indicate lower elevations. The elevation values are floating point numbers, think `double`. 
+To do this we will model an actual terrain with a two dimensional grid. 
+Each value in the grid represents the elevation of that grid point: higher values indicate higher elevations, 
+lower values indicate lower elevations. The elevation values are floating point numbers, think `double`. 
 
 Take a look at the following three grid examples (for 
 easy of reading we are just using integers to represent
@@ -144,13 +146,13 @@ Let's consider three different water levels for the above grids. We will assume 
 
 </table>
 
-The areas that are flooded are marked with a shaded block. In each grid, the the water level increases, the area that is flooded increases as well. In case of grid 2, the flooded area does not change, since the water is stopped by high terrain. The water level would need to go up to 4 for that high terrain (and the rest of the terrain on the map) to be flooded. 
+The areas that are flooded are marked with a shaded block. In each grid, the water level increases, the area that is flooded increases as well. In case of grid 2, the flooded area does not change, since the water is stopped by high terrain. The water level would need to go up to 4 for that high terrain (and the rest of the terrain on the map) to be flooded. 
 
 It is also possible that the grid has multiple water sources. Places like New York City that are surrounded by water on multiple sides are a good example here. 
 
 The next example uses the same grid and water levels as before, but with two water sources:
 one in the upper left corner and one at the lower right corner. You can see that the resulting 
-maps are very different. 
+maps are different for grids 1 and 2. 
 
 <table>
 
@@ -199,7 +201,7 @@ The first one is the name of the input file that contains
 description of the grid, water sources and the height
 of the water to simulate.  
 
-The second one is used to determine which algorithm should be used to simulate the rising waters. The possible values are `stack`, `queue` and `recursive`. 
+The second one is used to determine which algorithm should be used to simulate the rising waters. The possible values are `bfs` and `dfs`. 
 
 The third command line argument indicates if the program
 should display visualization as the simulation progresses. (More on that later.) The possible values are `true` or `false` (or really, anything other than `true` is treated as `false`). 
@@ -241,6 +243,11 @@ Has
 - one water source at grid point { 0, 0 } (lines 2 to 4)
 - the terrain map that is 7 by 7 grid point (lines 5 to 13)
 
+Here are couple of sample input files that model two different terrains with their own water sources:
+- [world 1](project4_flood/world1.in)
+- [world 2](project4_flood/world2.in)
+
+
 </div> </div></div>
 
 
@@ -265,7 +272,7 @@ that you need to work on.
 
 Class documentation: [`NotOnMapException` documentation](project4_flood/project4/NotOnMapException.html)
 
-source code: [`NotOnMapException.java`](project4_flood/project4/NotOnMapException.java)
+Source code: [`NotOnMapException.java`](project4_flood/project4/NotOnMapException.java)
 
 You should not make any changes to this file. 
 
@@ -274,7 +281,7 @@ You should not make any changes to this file.
 
 Class documentation: [`GridPoint` documentation](project4_flood/project4/GridPoint.html)
 
-source code: [`GridPoint.java`](project4_flood/project4/GridPoint.java)
+Source code: [`GridPoint.java`](project4_flood/project4/GridPoint.java)
 
 You should not make any changes to this file. 
 
@@ -284,7 +291,7 @@ You should not make any changes to this file.
 
 Class documentation: [`Map` documentation](project4_flood/project4/Map.html)
 
-source code: [`Map.java`](project4_flood/project4/Map.java)
+Source code: [`Map.java`](project4_flood/project4/Map.java)
 
 You need to implement the missing methods in this class. Each method that you 
 need to complete contains the comment:
@@ -301,7 +308,7 @@ Make sure to remove these lines, once the code is complete.
 
 Class documentation: [`Simulation` documentation](project4_flood/project4/Simulation.html)
 
-source code: [`Simulation.java`](project4_flood/project4/Simulation.java)
+Source code: [`Simulation.java`](project4_flood/project4/Simulation.java)
 
 You need to implement the missing methods in this class. Each method that you 
 need to complete contains the comment:
@@ -313,51 +320,20 @@ need to complete contains the comment:
 Make sure to remove these lines, once the code is complete. 
 
 You should not modify any other methods in this class, but you may 
-create additional methods if you wish. 
+create additional methods if you wish. (They will most likely need to be private methods.)
 
-You need to implement three different ways of simulating the flooding 
-process: one using recursion, one using a queue, and one using a stack. 
-You should use a queue and a stack implementations from Java libraries. 
+You need to implement two different ways of simulating the flooding 
+process: one using recursive DSF, and the other using iterative BFS. Both of these 
+algorithms will implement search for the connected component that starts at a given water source. The map
+given in the input file serves as an implicit graph representation: two grid points are connected if they share 
+a side in the map. Additionally, in the connected component that your algorithm should discover all the elevation values 
+are at or below the water level specified in the input file. 
+
 The starting point for each algorithm is the same: the map of the 
 elevations for the world. The end point for each algorithm is also the same:
 the map of the world with some of the areas flooded based on the water level. 
-If one of your algorithms produces a different result than others, you know 
+If one of your algorithms produces a different result than the other, you know 
 that there is a problem. 
-
-
-The __algorithm using a queue__:
-
-```
-create an empty queue
-
-for each water source at or below the water level
-
-    add the grid point of the water source to the queue
-    
-    while the queue is not empty
-        dequeue the grid point from the front of the queue
-        
-        if the grid point is alredy flooded, skip the rest 
-        of this iteration 
-        
-        otherwise, mark it as flooded
-        
-        for each adjacent (up, down, left, right) grid point  
-        add it to the queue, if its elevation is below or at 
-        the water level and it is not marked as flooded 
-        
-```
-As is usually the case with pseudocode for an algorithm, all the above steps need to be turned into concrete Java instructions. In some cases, these instructions will be as brief as the English languege description in the pseudocode. In other cases, you may need 
-many lines of code to implement a single step. 
-
-The __algorithm using a stack__ is exactly the same as the one above,
-except that it uses a stack in place of a queue. 
-
-The __recursive algorithm__ needs to implement the same process, but without using any auxilary data structures.
-In each recursive step, a grid point is evaluated and either marked to be flooded or not (depending on the grid points's elevation and the water level). Then, if the current grid point's elevation is at or below the water level, the algorithm is called on each of the 
-adjacent grid points. You need to decide what the base case is and how and when the recursive calls should be made. You may decide that 
-you need a helper method or two. 
-
 
 In order to add __visualization__ to your implementation of the algorihtms, the 
 code should make the call to `visualize()` method after each step. The _step_ can be defined 
@@ -410,24 +386,24 @@ a few hours before the due dates - make sure that you have working code if that 
 <div class="content-inner" markdown=1>
 
 
+
 If your program does not compile or if it crashes (almost) every time it is run,
 you will get a zero on the assignment. Make sure that you are submitting
-functioning and documented code, even if it is not a complete implementation so that you can get partial credit.
+functioning code, even if it is not a complete implementation so that you can get partial credit.
 
-If the program does not adhere to the specification, the grade will be low and
-will depend on how easy it is to figure out what the program is doing and how to work with it.
 
 The grade will be determined by several factors:
-- 45 points: class correctness: correct behavior of methods of the required classes (this will be determined by the autograder), these points will be assigned as follows:
+- 60 points: class correctness: correct behavior of methods of the required classes (this will be determined by the autograder), these points will be assigned as follows:
 	- 0 points: code passes fewer than a half of the autograder tests 
-	- 20 points: code passes [50-70)% of the autograder tests 
-	- 35 points: the code passes [70-80)% of the autograder tests
-	- 40 points: the code passes [80-90)% of the autograder tests 
-	- 45 points: the code passes 90% or more of the autograder tests 
-- 60 points: correctness: correct behavior of the three algorithms and the `Map` class
+	- 30 points: code passes [50-70)% of the autograder tests 
+	- 36 points: the code passes [70-80)% of the autograder tests
+	- 44 points: the code passes [80-90)% of the autograder tests 
+	- 52 points: the code passes [90-95)% of the autograder tests 
+	- 60 points: the code passes 95% or more of the autograder tests 
 - 20 points: design and the implementation of your code
 - 10 points: efficient implementation of the required methods
-   (this will be determined by a code review). Efficient design avoids recomputing the same results multiple times. It also means that the algorithms do not consider unnecessary location while exploring the map of grid points. 
+   (this will be determined by a code review). Efficient design avoids recomputing the same results multiple times. 
+It also means that the algorithms do not consider unnecessary location while exploring the map of grid points. 
 - 10 points: proper documentation, program style and format of submission (this will be determined by a code review)
 
 Note that if you do not implement a particular algorithm according to the specification (for example, your recursive algorithm is not recursive), all the correctness points will be subtracted for that part of the program. 
@@ -436,7 +412,7 @@ Note that if you do not implement a particular algorithm according to the specif
 
 
 <div class="wrap-collabsible">
-<input id="submit" class="toggle" type="checkbox" >
+<input id="submit" class="toggle" type="checkbox"  checked=true>
 <label for="submit" class="lbl-toggle"> How and What to Submit </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
@@ -468,12 +444,50 @@ For this project, you will see some of the results for the autograded unit tests
 
 
 <div class="wrap-collabsible">
-<input id="appendix" class="toggle" type="checkbox" >
+<input id="appendix" class="toggle" type="checkbox"   checked=true>
 <label for="appendix" class="lbl-toggle"> Appendix </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
 #### Sample Program Runs
+
+Here are sample program runs for the two input files listed before when run using each of the two algorithms.
+
+<br>
+[world 1](project4_flood/world1.in) with DFS algorithm for finding connected components 
+
+<video width="640" height="300" controls>
+  <source src="project4_flood/world1_dfs.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
+
+<br>
+[world 1](project4_flood/world1.in) with BFS algorithm for finding connected components 
+
+<video width="640" height="300" controls>
+  <source src="project4_flood/world1_bfs.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
+
+<br>
+[world 2](project4_flood/world2.in) with DFS algorithm for finding connected components 
+
+<video width="640" height="600" controls>
+  <source src="project4_flood/world2_dfs.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
+
+<br>
+[world 2](project4_flood/world2.in) with DFS algorithm for finding connected components 
+
+<video width="640" height="600" controls>
+  <source src="project4_flood/world2_bfs.webm" type="video/webm">
+  Your browser does not support the video tag.
+</video>
+
 
 
 </div> </div></div>
