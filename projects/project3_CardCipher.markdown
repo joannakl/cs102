@@ -19,7 +19,8 @@ __submission mode:__ individual
 <div class="emph" markdown=1>
 You may discuss any of the assignments with your classmates and tutors (or anyone else) but <span class="red"> all work for all assignments must be
 entirely your own</span>. Any sharing or copying of assignments will be considered cheating (this includes posting of partial or complete
-solutions on Ed, GitHub, Discord, Groupme, ... or any other forum). You should not use code generation tools to create any part of the implementation for this project. 
+solutions on Ed, GitHub, Disco
+rd, Groupme, ... or any other forum). You should not use code generation tools to create any part of the implementation for this project. 
 If you get significant help from anyone, you should acknowledge it in
 your submission (and your grade will be proportional to the part that you completed on your own). You are responsible for
 every line in your program: you need to know what it does and why. You should not use any data structures and features of Java
