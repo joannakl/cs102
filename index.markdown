@@ -23,8 +23,9 @@ title: Course Materials, CSCI-UA 102, Klukowska
 - [Stacks and Queues](slides/06-stacks_queues.html)
 - [Problem Solving](slides/07-problem_solving.html)
 - [Recursion, 1](slides/08-recursion.html)
-- [Recursion, 2](slides/08-recursion_2.html)v
+- [Recursion, 2](slides/08-recursion_2.html)
 - [Graphs - Introduction](slides/15-graphs.html)
+- [Graphs - Connected Components](slides/15-graphs-connected-components.html)
 - [Trees](slides/10-trees.html)
 - [Binary Search Trees, 1](slides/11-bst.html)
 - [Binary Search Trees, 2](slides/11-bst_2.html)
