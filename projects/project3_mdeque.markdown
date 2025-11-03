@@ -176,7 +176,7 @@ front and the back in order to meet the performance requirements.)
 
 
 - You should follow the rules outlined in the document
-[Code conventions](https://cs.nyu.edu/~joannakl/cs102_f25/notes/CodeConventions.pdf)
+[Code conventions](https://cs.nyu.edu/~joannakl/cs102/notes/CodeConventions.pdf)
 posted on the course website.
 
 - You may not use any of the collection
