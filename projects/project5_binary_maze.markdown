@@ -5,7 +5,7 @@ title: Project 5
 
 <div class="lab-right" markdown="1">
 __Project 5__ <br>
-__due date:__ April 22
+__due date:__ Dec 4
 
 __submission mode:__ individual
 
@@ -48,7 +48,8 @@ See example below for more details.
 
 
 
-**Start early!** This project may not seem like much coding, but debugging and testing always takes time, especially for recursive algorithms.
+As usual: **Start early!** 
+
 
 ---
 
@@ -77,18 +78,19 @@ The program is started from the command line (or run within an IDE). It expects 
 
 The input file describes the binary tree maze. Each line in the input is a single node in the maze (node in a BST). The format of each line is as follows:
 
-`   LABEL LIFE_POINTS`
+`LABEL LIFE_POINTS`
 
 In the above, `LABEL` is a string with the name of the node. The alphanumeric comparison of the labels determines the shape of the tree.
-`LIFE_POINTS` is a number of life points that our hero can collect at that node.
+`LIFE_POINTS` is a number of life points that our hero can collect at that node. 
 
+The binary maze tree should be constructed by adding nodes with specified labels to the tree one at a time in the order listed in the input file. 
 See below for an example.
 
 
 If the program is executed with non-existent or invalid command line argument, it should print an error message and terminate.
 
 If the file contains any additional (and invalid) strings in the description of a node, those extra strings should be ignored. (Each valid line contains 
-only one string followed by one number.)
+only one string followed by one number. Anything else that may be present on that line is irrelevant and should be ignored by the program.)
 
 The program **should not be interactive**. All input should be provided as the command line arguments. The user should not be prompted for any additional information.
 </div> </div></div>
@@ -154,12 +156,12 @@ The valid exits from the maze are at the nodes at the lowest level. They are lab
 There are trap doors at any leaf node that is not at the lowest level. They are nodes labeled "A", "H", "K", "P", and "V". 
 
 The tree also shows the number of life points that the hero can collect
-at each of the life-points. Note that if a number of life points at the room is less than one, the hero cannot go anywhere since they need
+at each of the life-points. Note that if a number of life points that our hero has in their position when they get to a node (including the points they collect at that node) is less than one, the hero cannot go anywhere since they need
 exactly one life-point to travel from one node to the next. 
 
-There are several possible paths through the maze depicted above, but only three lead to reachable valid exits that are reachable by our hero with sufficient life points. The four paths that reach the bottom-most level are `J G B C E D`, `J G B C E F`, `J Q L O N M`, and `J Q R U S T`. The last path does not allow our hero to collect enough life points to make it to the bottom-most level. 
+There are several possible paths through the maze depicted above, but not all of them are feasible since our here does not have a sufficient number of life points to travel down all of them. The four paths that reach the bottom-most level are `J G B C E D`, `J G B C E F`, `J Q L O N M`, and `J Q R U S T`. The last path does not allow our hero to collect enough life points to make it to the bottom-most level. 
 
-In this case, the program should produce three lines of output:
+In this case, the program should produce three lines of output in the order from left to right:
 
 ```
 J G B C E D
@@ -206,12 +208,14 @@ functionality and you may need to rewrite some of the methods that were created 
 NOTE: normally, all data fields in the class should be private. But since the `BST` class serves as a base class for the `Maze` class below,
 its data fields can be made protected instead to allow the subclass to access these data fields.
 
+<br/>
+
 __<code>Node</code> class__
 
 The program should provide and use a nested class (to
 learn more about nested and inner classes see: https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html)
 that provides nodes for your tree. The details of the implementation of that class are
-up to you, but this class should be private (or protected, if another class in your code inherits from it and needs to be able to create variables of type `Node`):
+up to you, but this class should be private (or protected, if there is a good reason for it):
 
 ```
 private class Node
@@ -219,29 +223,36 @@ private class Node
 
 HINT: to improve the performance of your BST algorithms, it may be useful to keep additional data fields in
 the nodes, i.e., more than just data, left and right.
-Those design decisions are up to you. But you should explain in comments for this class, why you have
-additional data fields if you chose to do so.
+Those design decisions are up to you. **But you should explain in comments for this class, why you have
+additional data fields if you chose to do so.**
+
+<br/>
 
 __Iterator__
 
-The `BST<E>` class implements `Iterable<E>` interface. This means that its `iterator()` method needs to
+
+The `BST<E>` class implements `Iterable<E>` interface. the class should provide three different ways of iterating through the 
+tree following three different orders: inorder, preorder and postorder. 
+
+The default iterator is returned by the `iterator()` method. It should 
 return an instance of a class that implements the `Iterator<E>` interface. The `iterator()` method should
 return an iterator instance that accesses the
 values in the tree according to the inorder traversal of the binary search tree.
+
 The two additional methods `preorderIterator()` and
-`postOrederIterator()` need to return iterators that access the values in the tree according
+`postOrederIterator()` should return iterator objects that access the values in the tree according
 to the preorder and postorder traversals, respectively.
 
 The details of the implementation are up to you and you are free to implement more than one internal private iterator class.
-The `next()` and `hasNext()` methods of the iterator classes should perform in O(1). The constructor of the iterator classes
-should be O(N).
+**The `next()` and `hasNext()` methods of the iterator classes should perform in O(1). The constructor of the iterator classes
+should be O(N).**
 
 The remove method in the `Iterator<E>` interface is optional and you do not need to
 provide the actual remove functionality. (This means that the method has to exist,
 but instead of performing its function, it throws an instance of `UnsopportedOperationException`.)
 
 RESTRICTION: You should not use an iterator that is already implemented in one of the Java classes (like the one in the `ArrayList` class). In practice, this would 
-be a good idea, but the objective here is for you to implement yout own iterator. 
+be a good idea, but the objective here is for you to implement your own iterators. 
 
 
 
@@ -257,13 +268,15 @@ It is up to you to decide how to implement this class, which methods to provide 
 
 This class should represent the points in the maze at which our hero can collect life-points and at which they need to make a decisions as to which way to continue. It should be capable of storing the label of the node and the number of possible life points our hero can collect at this maze node. It may be useful (or may be even necessary) to implement the `Comparable` interface.
 
-Note that his is NOT the same as the internal `Node` class for the `BST` class itself. 
+Note that his is NOT the same as the internal `Node` class for the `BST` class itself. It is the *data* stored in the node of the BST. 
 
 
 #### <code class="code_title">Hero</code> class
 
 This class should represent our hero traveling through the maze. An object of this class should be capable of keeping track of all the life points that our hero possesses at any given time. This information should be updated as the hero travels along the different potential paths through the maze. 
 
+<br/>
+<br/>
 
 You may, but you are not required to, implement other classes.
 
