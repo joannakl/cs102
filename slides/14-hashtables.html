@@ -52,7 +52,7 @@ class: slide
 
 template: section
 
-# Hash Tables and Why We Want Them
+# Hash Tables / Maps and Why We Want Them
 
 ---
 
@@ -60,7 +60,7 @@ template: slide
 
 ## Why Hash Tables?
 
-- We want a data structure that allows us to access existing elements and insert new elements in O(1) operations.
+- We want a data structure that allows us to access existing elements and insert new elements in constant time.
 
 --
 
@@ -71,14 +71,16 @@ template: slide
   - in practice, we can get close, but we always have a possibility of a worst
     case and there is a big trade-off between memory and time (i.e., to get close to O(1) time, we will need
     to use a lot more memory)
+    
 
 ---
 ## What are Hash Tables?
 
-- A __hash table is a look-up table__ that, when designed well, has nearly O(1) amortized
-running time for a find or insert operation.
 
-- More precisely, a hash table is an array of __fixed size__ containing data items with __unique keys__,
+- A __hash table is a look-up table__ that, when designed well, has nearly O(1) amortized
+running time for a *find* or *insert/add* operations.
+
+- More precisely, a hash table is an array of __fixed size__ containing data items with __unique keys__ (do not confuse *keys* with array indexes),
 together with a function called a __hash function__ that maps keys to indexes in the table/array.
 
 --
@@ -176,7 +178,7 @@ template:section
 
 - Java provides a `Map` interface and several possible implementations of it.
 
-- https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Map.html
+- https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Map.html 
 
 --
 - `interface Map<K,V>`
@@ -202,12 +204,12 @@ template:section
 
 ---
 
-## `Hashtable<K,V`  vs  `HashMap<K,V>`
+## `Hashtable<K,V>`  vs  `HashMap<K,V>` vs 
 
 .left-column2[
 __`Hashtable<K,V>`__ class
 
-- https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Hashtable.html
+- https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Hashtable.html
 
 - `class Hashtable<K,V> implements Map<K,V>`
 
@@ -217,13 +219,16 @@ __`Hashtable<K,V>`__ class
 
   To successfully store and retrieve objects from a hash table, the objects used
   as keys must implement the `hashCode` method and the `equals` method.
+  
+  **This class is now considered obsolete. It iherits from the [Dictionary class](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Dictionary.html) which has been labeled obsolete for some time.**
+  [`ConcurrentHashMap](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/concurrent/ConcurrentHashMap.html) should be used instead. 
 ]
 --
 
 .right-column2[
 __`HashMap<K,V>`__ class
 
-- https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/HashMap.html
+- https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/HashMap.html
 
 - `class Hashtable<K,V> implements Map<K,V>`
 
@@ -257,7 +262,7 @@ template:section
 
 --
   The answer to this question depends on the implementation choices that are made
-  in answer to questions below. In general, a single array location has to contain the
+  in answer to questions below. In general, a single array location must contain the
   `(key, value)` pair. This could be implemented as a node containing the two values:
   ```
       class HashNode <K, V> {
@@ -265,7 +270,9 @@ template:section
           private V value;
       }
   ```
-
+  In practice, such nodes are often linked in some way, so there may be a need to also store references 
+  to other nodes. 
+  
 --
 
 - __How is the location in the array decided based on the key?__
@@ -405,6 +412,21 @@ practice, the set of keys is rarely known at the time of writing the program and
 
 ---
 
+## The `hashCode()` and `equals()` Contract
+
+- If `a.equals(b)` is `true`, then `a.hashCode() == b.hashCode()` MUST be true.
+
+--
+
+- If hashCode is different, the objects are definitely not equal.
+
+--
+
+- Why?
+  - If you override equals but not hashCode, your object might get lost in the map (put in bucket A, but looked for in bucket B).
+
+---
+
 # Example (Bad Hash Function)
 
 If we have the integer keys
@@ -418,13 +440,13 @@ we would want a function that maps them to the numbers/locations/indexes 0, 1, 2
 Suppose that `hash(key)` is a function that returns the sum of the decimal digits
 in the key and if that sum has more than one digit itself we add them together again . In this case we have
 
-- `hash(112)`=1+1+2=4,
+- `hash(112)` = 1 + 1 + 2 = 4,
 
-- `hash(46)`= `hash}(4+6)`= `hash(10)`=1,
+- `hash(46)` = `hash(4 + 6 = 10)` = 1,
 
-- `hash(75)`=`h(7+5)` = `hash(12)` = 3, and
+- `hash(75)` = `hash(7 + 5 = 12)` = 3, and
 
-- `hash(515)`=`h(5+1+5)`= `hash(11)` = 2.
+- `hash(515)` = `hash(5 + 1 + 5 = 11)` = 2.
 
 --
 
@@ -473,6 +495,24 @@ keys into hash tables (`String`, `Integer`, ...).
   }
   ```
   ]
+  
+---
+
+## Good Hash Functions: `Integer` class
+
+```java
+  /**
+   * Returns a hash code for this {@code Integer}.
+   *
+   * @return  a hash code value for this object, equal to the
+   *          primitive {@code int} value represented by this
+   *          {@code Integer} object.
+   */
+  public int hashCode() {
+      return value ;
+  }
+```
+
 ---
 
 ## Good Hash Functions: `Double` class
@@ -525,8 +565,8 @@ __Open addressing__
   - __linear probing__ - put the `(key, value)` pair in the next available location,
     if that is occupied, try the next one and so on,
 
-  - __quadratic probing__ - the the `(key, value)` pair in the next available location,
-    if that is occupied, the the one four spaces away, then nine spaces away, and so on
+  - __quadratic probing__ - put the `(key, value)` pair in the next available location (1^2 away),
+    if that is occupied, if that is occupied, then put in the location four spaces away (2^2), then nine spaces away (3^2), and so on
     (use a square of how many times we tried to put it in the next location).
 
 .smaller[In both of these, we need to handle retrieving elements from the hash table in a
@@ -541,8 +581,766 @@ template:collision-resolution
 __Closed addressing__
 
   - __separate chaining__ - put each `(key, value)` pair that maps to the same array
-  location in a linked list that starts at that array location.
+  location in a linked list (*chain* or *bucket*) that starts at that array location.
   If implemented well, the linked lists remain always very short.
+  
+--
+
+  - Java implementation detail: when a chain (linked list) gets too long (default threshold is 8), Java transforms that specific list into a balanced binary search tree. This improves the worst-case search time from $O(N)$ to $O(\log N)$.
+
+
+
+
+
+
+---
+name:example_linear
+
+## Example: collisions with linear probing 
+
+- key type `int`, value type is `String`
+
+- table size M = 5
+
+- hash function `hash(key) = key % M `
+
+- collision resolution: linear probing 
+
+---
+
+template:example_linear
+
+
+
+```
+  Index   Table Content
+  *********************
+    0     null
+    1     null
+    2     null
+    3     null
+    4     null
+```
+
+
+
+---
+
+template:example_linear
+
+
+
+```
+  Index   Table Content
+  *********************
+    0     null
+    1     [ 11 | "A" ]
+    2     null
+    3     null
+    4     null
+```
+
+
+
+- `put(11, "A")`
+
+  - `hash(11) = 11 % 5 = 1`
+
+  - collision: no
+
+  - insert (11, "A") at index 1
+    
+    
+
+
+---
+
+template:example_linear
+
+
+
+```
+  Index   Table Content
+  *********************
+    0     null
+    1     [ 11 | "A" ] 
+    2     [ 7  | "B" ] 
+    3     null
+    4     null
+```
+
+
+
+- `put(7, "B")`
+
+  - `hash(7) = 7 % 5 = 2`
+
+  - collision: no
+
+  - insert (7, "B") at index 2
+    
+    
+
+
+---
+
+template:example_linear
+
+
+
+```
+  Index   Table Content
+  *********************
+    0     null
+    1     [ 11 | "A" ] 
+    2     [ 7  | "B" ]
+    3     [ 12 | "C" ] 
+    4     null
+```
+
+
+
+- `put(12, "C")`
+
+  - `hash(12) = 12 % 5 = 2`
+
+  - collision: yes, index 2 has another key-value pair already
+  
+  - resolve collision: probe the next index (2+1), it's available
+
+  - insert (12, "C")  at index 3
+    
+    
+---
+
+template:example_linear
+
+
+```
+  Index   Table Content
+  *********************
+    0     null
+    1     [ 11 | "A" ] 
+    2     [ 7  | "B" ]
+    3     [ 12 | "C" ] 
+    4     [ 22 | "D" ]
+```
+
+
+
+- `put(22, "D")`
+
+  - `hash(12) = 12 % 5 = 2`
+
+  - collision: yes, index 2 has another key-value pair already
+  
+  - resolve collision: probe the next index (2+1), another collision 
+  
+  - resolve second collision: probe the next index (2+2), it's available 
+
+  - insert (22, "D")   at index 2
+      
+
+    
+---
+
+template:example_linear
+
+
+```
+  Index   Table Content
+  *********************
+    0     null
+    1     [ 11 | "A" ] 
+    2     [ 7  | "B" ]
+    3     [ 12 | "C" ] 
+    4     [ 22 | "D" ]
+```
+   
+- If we now run `get(22)`
+
+  - how many array locations need to be checked? 
+  
+  - what value is returned? 
+
+
+---
+
+template:example_linear
+
+
+```
+  Index   Table Content
+  *********************
+    0     null
+    1     [ 11 | "A" ] 
+    2     [ 7  | "B" ]
+    3     [ 12 | "C" ] 
+    4     [ 22 | "D" ]
+```
+   
+- If we now run `get(22)`
+
+  - how many array locations need to be checked? __3 locations at index 2, 3, and 4__
+  
+  - what value is returned? __D__
+
+
+
+
+---
+
+template:example_linear
+
+
+```
+  Index   Table Content
+  *********************
+    0     null
+    1     [ 11 | "A" ] 
+    2     [ 7  | "B" ]
+    3     [ 12 | "C" ] 
+    4     [ 22 | "D" ]
+```
+   
+- If we now run `put(3,"E")`
+
+  - how many collisions will occur? 
+  
+  - what index would it be placed in?  
+  
+
+
+
+---
+
+template:example_linear
+
+
+```
+  Index   Table Content
+  *********************
+    0     [ 3  | "C" ]
+    1     [ 11 | "A" ] 
+    2     [ 7  | "B" ]
+    3     [ 12 | "C" ] 
+    4     [ 22 | "D" ]
+```
+   
+- If we now run `put(3,"E")`
+
+  - how many collisions will occur?  __2 since the hash(3) = 3 (first collision), then we check index 4 (another collision), and finally check index 0 (no collision)__
+  - what index would it be placed in?  __index 0, since we wrap to the front of the array__
+  
+--
+
+__Note 1:  Linear probing tends to produce clusters.__
+
+--
+
+__Note 2: In practice, we do not want the table to be full as above.__
+
+
+
+---
+
+template:example_linear
+
+
+```
+  Index   Table Content
+  *********************
+    0     [ 3  | "C" ]
+    1     [ 11 | "A" ] 
+    2     [ 7  | "B" ]
+    3     [ 12 | "C" ] 
+    4     [ 22 | "D" ]
+```
+  
+   
+- Let's run `remove(12)`  - how do we find where the value matching 12 is? 
+  
+--
+
+  - hash (12) = 12 % 5 = 2, but the key stored at index 2 is NOT 12 
+--
+
+  - check the next index, the key at index 3 is 12, so we remove it and return the value 
+
+---
+
+template:example_linear
+
+
+```
+  Index   Table Content
+  *********************
+    0     [ 3  | "C" ]
+    1     [ 11 | "A" ] 
+    2     [ 7  | "B" ]
+    3     null                //this was removed  
+    4     [ 22 | "D" ]
+```
+  
+   
+- Let's run `remove(12)`  - how do we find where the value matching 12 is? 
+
+  - hash (12) = 12 % 5 = 2, but the key stored at index 2 is NOT 12 
+  - check the next index, the key at index 3 is 12, so we remove it and return the value 
+
+---
+
+
+
+template:example_linear
+
+```
+  Index   Table Content
+  *********************
+    0     [ 3  | "C" ]
+    1     [ 11 | "A" ] 
+    2     [ 7  | "B" ]
+    3     null                //this was removed  
+    4     [ 22 | "D" ]
+```
+  
+   
+- Let's run `get(3)`   - how do we find where the value matching 3 is? 
+  
+--
+
+  - hash (3) = 3 % 5 = 3, but index 3 is empty, so what's next ??? 
+
+--
+
+**When we use open addressing with collision resolution, we need to be able to 
+  keep track of indexes that _used to_ have values. The `get` and `remove` algorithms treat them as if they were occupied when searching for a key. **
+
+
+---
+
+
+
+template:example_linear
+
+```
+  Index   Table Content
+  *********************
+    0     [ 3  | "C" ]
+    1     [ 11 | "A" ] 
+    2     [ 7  | "B" ]
+    3     null                //this was removed  
+    4     [ 22 | "D" ]
+```
+  
+   
+- Let's run `get(3)`   - how do we find where the value matching 3 is? 
+  
+    - hash (3) = 3 % 5 = 3, index 3 is empty, **but marked as removed** so we continue to index 4, and then index 0 where we find key = 3 and return string C
+
+---
+name:example_quad
+
+## Example: collisions with quadratic probing 
+
+- key type `int`, value type is `String`
+
+- table size M = 5
+
+- hash function `hash(key) = key % M `
+
+- collision resolution: quadratic probing 
+
+---
+
+template:example_quad
+
+
+
+```
+  Index   Table Content
+  *********************
+    0     null
+    1     null
+    2     null
+    3     null
+    4     null
+```
+
+
+
+---
+
+template:example_quad
+
+
+
+```
+  Index   Table Content
+  *********************
+    0     null
+    1     [ 11 | "A" ]
+    2     null
+    3     null
+    4     null
+```
+
+
+
+- `put(11, "A")`
+
+  - `hash(11) = 11 % 5 = 1`
+
+  - collision: no
+
+  - insert (11, "A") at index 1
+    
+    
+
+
+---
+
+template:example_quad
+
+
+
+```
+  Index   Table Content
+  *********************
+    0     null
+    1     [ 11 | "A" ] 
+    2     [ 7  | "B" ] 
+    3     null
+    4     null
+```
+
+
+
+- `put(7, "B")`
+
+  - `hash(7) = 7 % 5 = 2`
+
+  - collision: no
+
+  - insert (7, "B") at index 2
+    
+    
+
+
+---
+
+template:example_quad
+
+
+
+```
+  Index   Table Content
+  *********************
+    0     null
+    1     [ 11 | "A" ] 
+    2     [ 7  | "B" ]
+    3     [ 12 | "C" ] 
+    4     null
+```
+
+
+
+- `put(12, "C")`
+
+  - `hash(12) = 12 % 5 = 2`
+
+  - collision: yes, index 2 has another key-value pair already
+  
+  - resolve collision: probe the next index (2+1^2), it's available
+
+  - insert (12, "C")  at index 3
+    
+    
+---
+
+template:example_quad
+
+
+```
+  Index   Table Content
+  *********************
+    0     null
+    1     [ 11 | "A" ] 
+    2     [ 7  | "B" ]
+    3     [ 12 | "C" ] 
+    4     null
+```
+
+
+
+- `put(22, "D")`
+
+  - `hash(12) = 12 % 5 = 2`
+  - collision: yes, index 2 has another key-value pair already  
+--
+
+  - resolve collision: probe the next index (2+1^2) = 3, another collision 
+--
+
+  - resolve second collision: probe the next index (2+2^2) % 5 = 6 % 5 = 1, another collision 
+--
+  
+  - resolve collision: probe the next index (2+3^2) % 5 = 11 % 5 = 1, another collision 
+--
+  
+  - resolve second collision: probe the next index (2+4^2) % 5 = 18 % 5 = 3, another collision  
+--
+  
+  - resolve second collision: probe the next index (2+5^2) % 5 = 27 % 5 = 2, another collision  
+--
+  
+  - resolve second collision: probe the next index (2+6^2) % 5 = 38 % 5 = 3, another collision 
+  - insert (22, "D")  at ???
+      
+
+---
+
+template:example_quad
+
+
+```
+  Index   Table Content
+  *********************
+    0     null
+    1     [ 11 | "A" ] 
+    2     [ 7  | "B" ]
+    3     [ 12 | "C" ] 
+    4     null
+```
+
+<br/>
+<br/>
+
+**We cannot find a possible location for (22, "D") in this case!!!**
+
+- This is sometimes an issue with quadratic probing since it skips some possibly empty indexes. 
+
+--
+
+**TO DO: redo this example with table size M = 7 using quadratic probing** 
+- Does it have the same issue of being unable to find the location for (22,"D")? 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+name:example_seperate
+
+## Example: collisions with separate chaining  
+
+- key type `int`, value type is `String`
+
+- table size M = 5
+
+- hash function `hash(key) = key % M `
+
+- collision resolution: separate chaining (linked lists)
+
+---
+
+template:example_seperate
+
+
+
+```
+  Index   Table Content
+  *********************
+    0     null
+    1     null
+    2     null
+    3     null
+    4     null
+```
+
+
+
+---
+
+template:example_seperate
+
+
+
+```
+  Index   Table Content
+  *********************
+    0     null
+    1     [ 11 | "A" ] -> null
+    2     null
+    3     null
+    4     null
+```
+
+
+
+- `put(11, "A")`
+
+  - `hash(11) = 11 % 5 = 1`
+
+  - collision: no
+
+  - insert (11, "A") at index 1
+    
+    
+
+
+---
+
+template:example_seperate
+
+
+
+```
+  Index   Table Content
+  *********************
+    0     null
+    1     [ 11 | "A" ] -> null
+    2     [ 7  | "B" ] -> null
+    3     null
+    4     null
+```
+
+
+
+- `put(7, "B")`
+
+  - `hash(7) = 7 % 5 = 2`
+
+  - collision: no
+
+  - insert (7, "B") at index 2
+    
+    
+
+
+---
+
+template:example_seperate
+
+
+
+```
+  Index   Table Content
+  *********************
+    0     null
+    1     [ 11 | "A" ] -> null
+    2     [ 7  | "B" ] -> [ 12 | "C" ] ->  null
+    3     null
+    4     null
+```
+
+
+
+- `put(12, "C")`
+
+  - `hash(12) = 12 % 5 = 2`
+
+  - collision: yes, index 2 has other key-value pairs already
+
+  - insert (12, "C") at the end of the list at index 2
+    
+    
+---
+
+template:example_seperate
+
+
+```
+  Index   Table Content
+  *********************
+    0     null
+    1     [ 11 | "A" ] -> null
+    2     [ 7  | "B" ] -> [ 12 | "C" ] -> [ 22 | "D" ]->  null
+    3     null
+    4     null
+```
+
+
+
+- `put(22, "D")`
+
+  - `hash(12) = 12 % 5 = 2`
+
+  - collision: yes, index 2 has other key-value pairs already
+
+  - insert (22, "D") at the end of the list at index 2
+      
+
+    
+---
+
+template:example_seperate
+
+
+```
+  Index   Table Content
+  *********************
+    0     null
+    1     [ 11 | "A" ] -> null
+    2     [ 7  | "B" ] -> [ 12 | "C" ] -> [ 22 | "D" ]->  null
+    3     null
+    4     null
+```
+   
+- If we now run `get(22)`
+
+  - how many comparisons need to be made? 
+  
+  - what value is returned? 
+
+  
+---
+
+template:example_seperate
+
+
+```
+  Index   Table Content
+  *********************
+    0     null
+    1     [ 11 | "A" ] -> null
+    2     [ 7  | "B" ] -> [ 12 | "C" ] -> [ 22 | "D" ]->  null
+    3     null
+    4     null
+```
+   
+- If we now run `get(22)`
+
+  - how many comparisons need to be made? __3, once we find that 22 is in the chain at index 3, we need 
+  to compare 22 to keys of the other key-value pairs: 7, 12 and finally 22__  
+  - what value is returned? __D__
+
 
 ---
 
@@ -557,18 +1355,24 @@ template: section
 - To guarantee good performance, the __load factor__ (defined as number of elements
 divided by the size of the array) should be less than 1 (often it is expected to be below 0.75)
 
-$$\text{load factor} = \dfrac{\text{number of elements}}{\text{capacity of the table}}$$
+  $$\text{load factor} = \dfrac{\text{number of elements}}{\text{capacity of the table}}$$
 
 --
 
+  WARNING <br/>
+  The above definition uses the number of elements! (NOT the number of chains.)
+  
+--
+
 - When array becomes _too full_ (i.e. the load factor exceeds some predefined threshold),
-all the values stored in the table need to be __rehashed__ to a larger table. This is O(N) operation!
+**all** the values stored in the table need to be __rehashed__ to a larger table. This is O(N) operation!
 
 ---
 
-## Example
+### Example
 
 Consider a table of size 7 and integer keys (values not shown):
+
 
 ```
        0    1    2    3    4    5    6
@@ -577,9 +1381,7 @@ Consider a table of size 7 and integer keys (values not shown):
     ------------------------------------
 ```
 
---
-
-$$\text{load factor} = \frac{5}{7} = 0.714 $$
+$\text{load factor} = \frac{5}{7} = 0.714 $
 
 --
 
@@ -588,10 +1390,9 @@ and we need to rehash.
 
 --
 
-Let's say that the hash table grows by the rule of $2\times \text{current_size} + 1$,
-then a new table will have size 15,
+Let's say that the hash table grows by the rule of $2\times \text{current_size} + 1$ ,
 
-and all the existing values need to be _rehashed_ to new locations:
+then a new table will have size 15, and all the existing values need to be _rehashed_ to new locations
 
 - 21 % 15 = 6
 - 15 % 15 = 0
@@ -607,6 +1408,9 @@ and all the existing values need to be _rehashed_ to new locations:
     | 15 | 76 |    |    |    |    | 21 |    | 38 |    |    |    | 12 |    |    |
     ----------------------------------------------------------------------------
 ```
+--
+
+- 16 % 15 = 1 results in a collision and the actual location will depend on the collision resolution method. 
 
 
 ---
