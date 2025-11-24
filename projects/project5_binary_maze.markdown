@@ -87,10 +87,27 @@ The binary maze tree should be constructed by adding nodes with specified labels
 See below for an example.
 
 
-If the program is executed with non-existent or invalid command line argument, it should print an error message and terminate.
+If the program is executed with non-existent or invalid command line argument, it should print an error message and terminate:
 
-If the file contains any additional (and invalid) strings in the description of a node, those extra strings should be ignored. (Each valid line contains 
-only one string followed by one number. Anything else that may be present on that line is irrelevant and should be ignored by the program.)
+```
+Error: the file FILE_NAME does not exist.
+```
+
+(where `FILE_NAME` is the name of the file that was specified on the command line). 
+
+If the file contains any lines that do not contain sufficient node information, they should be ignored. For example: 
+- If a line of the input file contains only one string,
+the information for the life points is missing, so that line should be ignored. 
+- If a line of the input file contains two string, as in `AA BB`, the line does not contain valid life point information, so that line should be ignored.   
+- (But, note that the label itself can contain digits, so a line that contains a sring `111 2` is valid.)
+
+If the file contains lines with additional strings after the life point specification, those additional strings should be ignored, but the line should be used to create a node. 
+
+If the input file is empty (or does not contain any valid node descriptions), the program should print an error message and terminate: 
+
+```
+Maze does not contain any nodes.
+```
 
 The program **should not be interactive**. All input should be provided as the command line arguments. The user should not be prompted for any additional information.
 </div> </div></div>
