@@ -43,9 +43,8 @@ title: Syllabus, CSCI-UA 102, Klukowska
 * Professor Joanna Klukowska
 * Email: joannakl@nyu.edu
 * Recitation Instructors:
-    * Vincent Xu (sec 12, sec 15)
-    * Kevin Peter (sec 13)
-    * TBD (sec 14)
+    * Federico Sichetti (sec. 12 and 15)
+    * Vincent Xu (sec. 13) 
 * Office Hours
     * posted on Brightspace with locations and/or Zoom links
 
@@ -53,16 +52,16 @@ title: Syllabus, CSCI-UA 102, Klukowska
 
 * CSCI-UA 102 Data Structures
 * 4 credits
-* Lectures: Mondays/Wednesdays 9:30 - 10:45 AM
-* Recitations: Friday (different times depending on the recitation section)
+* Lectures: Mondays/Wednesdays 9:30 - 10:45 AM, CIWW 109 
+* Recitations: Friday (different times depending on the recitation section), CIWW 312
 * [Brightspace](brightspace.nyu.edu/)
-* [Ed discussions](https://edstem.org/us/dashboard) (accessible through Brightspace as well)
-* [Course website](https://cs.nyu.edu/~jk157/cs102/)
+* [Ed discussions](https://edstem.org/us/dashboard) (you should access it through Brightspace)
+* [Course website](https://cs.nyu.edu/~jk157/cs102/) (general information only, access all specific details for the current semester on Brightspace)
 * Exam dates (all subject to change if significant schedule changes are required):
-	* Midterm exam (paper-based part): Wednesday, October 22 (during regular lecture time)
-	* Midterm exam (coding part): Friday, October 24 (during regular recitation time)
-	* Final exam (coding part): Friday, Dec 5 (during last recitation time)
-	* Final exam (paper-based part): Wednesday, Dec 17, 10:00 - 11:50AM (during the CAS scheduled final exam period)
+	* Midterm exam (paper-based part): Wednesday, March 11 (during regular lecture time)
+	* Midterm exam (coding part): Friday, March 13 (during regular recitation time)
+	* Final exam (coding part): Friday, May 1 (during last recitation time)
+	* Final exam (paper-based part): **Wednesday, May 13, 8:00 - 9:50AM** (during the CAS scheduled final exam period)
 * Prerequisites: Passing CSCI.UA.0101 with a grade of C or better. <br>
 **You are expected to know and remember the material from CSCI-UA 101 course.** If you took the course
 a few semesters ago and/or do not remember parts of the material, start reviewing it during the summer/winter
@@ -100,7 +99,7 @@ By the end of this course, you will:
     * **Implement data structures in Java:** You'll build your own implementations of various data structures,
     using both array-based and reference-based approaches where applicable. This hands-on experience will solidify
     your understanding of how these structures work internally.
-    * **Analyze algorithm efficiency:** Learn to evaluate the performance of algorithms using **Big-O notation** ($O$-notation)
+    * **Analyze algorithm efficiency:** Learn to evaluate the performance of algorithms using **Big-O notation** 
     to determine their time complexity. This skill is crucial for writing efficient and scalable code.
     * **Master key algorithms:** You'll learn and implement fundamental algorithms, including recursive algorithms,
     searching algorithms, and various sorting algorithms like merge sort and quicksort.
@@ -133,9 +132,8 @@ If you have questions related to the course materials or assessments:
 - Visit instructors' office hours (schedule available on Brightspace)
 
 If you have questions regarding your grades or some personal issues
-- post them as a private post on the discussion forum or send a direct message to the relevant instructor
-using the Ed platform. (Avoid emails as they often get lost in the stream of other things and you will not get a timely response.)
-- visit instructors' office hours (schedule available on Brightspace)
+- Post them as a private post on the discussion forum using the Ed platform. (Avoid emails as they often get lost in the stream of other things and you will not get a timely response.)
+- Visit instructors' office hours (schedule available on Brightspace).
 
 
 ***
@@ -143,28 +141,42 @@ using the Ed platform. (Avoid emails as they often get lost in the stream of oth
 
 The grade for this course will be determined according to the following formula:
 
-- **Participation and Progress, 10%** <br/>
-This category will be assessed based on taking an active part in class discussions
-(asking and answering questions on the course discussion forum, reading posts made on
-the discussion forum by other students and instructors), completing assigned readings, tutorials,
-activities, etc., and self-assessment exercises, actively participating in recitations,
-and completing group and individual work, completing class polls and pop-quizzes during
-the lectures and recitations. Several of these grades (about one fourth) will be dropped to account for
-student absences due to late registration, illness, holiday observances, family/personal emergencies, or any other circumstances.
-- **2 Exams: 20% midterm exam, 30% final exam**<br/>
+- **Participation and Progress (PaP), 10%** <br/>
+This category will be assessed based on taking an active part in the course:
+    - completing assigned readings, tutorials,
+    activities, etc., and self-assessment exercises (lab assignments), 
+    - regularly participating in recitations, and completing group and individual work, 
+    - completing class polls and pop-quizzes during the lectures and recitations, 
+    - participating in  class discussions 
+    (asking and answering questions on the course discussion forum, reading posts made on
+    the discussion forum by other students and instructors). 
+    
+    Several of these grades (about one fourth) will be dropped to account for   
+    student absences due to late registration, illness, holiday observances, family/personal emergencies, or any other circumstances.
+- **2 Exams: Midterm Exam, 15%  and  Final Exam, 25%**<br/>
 Exams will be in-person and synchronous
 (may be switched to online and/or asynchronous if the University makes such a decision), and completed individually.
 No exam grades are dropped. All exams must be completed individually by you with no assistance of
 any other people (except for the instructor and proctors) or technology.
-Each exam has two parts: paper-based part and coding part. Both parts are timed.
-- **3-5 take-home quizzes, 20%** <br/>
-The take-home quizzes will be online, asynchronous, and completed individually.
-Each quiz will take approximately 30-minutes and will be offered at any time during a 24-hour period.
-All take-home quizzes must be completed individually by you with no assistance of any other people or technology.
-- **4-6 Programming Projects, 20%** <br/>
+Each exam has two parts with equal weight: paper-based part and coding part. Both parts are timed.
+The coding part will be taken within Respondus lock-down browser. 
+- **3-5 In-class Paper-Based Quizzes (PBQ), 15%** <br/>
+The announced in-class quizzes will be taken during the lectures.
+Each quiz will take approximately 20-minutes.
+All in-class quizzes must be completed individually by you with no assistance of any other people  (except for the instructor and proctors) or technology. 
+- **Several Programming Projects, 10%** <br/>
 Several programming projects will be given during the semester. The programming projects should
 be completed individually and they should be your own work (you are responsible for the code you submit).
-
+The projects will be graded based on submission, passing autograder tests and code review. 
+- **3-5 In-class Coding Quizzes (CQ), 15%** <br/>
+The announced in-class programming quizzes will be taken during the recitations. 
+You will need to solve a particular programming problem within 30 minutes. 
+The problem will be similar to problems you have seen while completing labs and programming projects. 
+These will be taken within Respondus lock-down browser. 
+- **Several Code Reading Projects (CRP), 10%** <br/>
+There will be a few code reading projects. In these projects you will be given a code base that solves a particular problem. 
+You will have several days to study and understand the code, and ask questions regarding things you may not be familiar with. 
+Finally, you will take a timed quiz during which you will need to answer questions about the code base. 
 
 
 **Course Grade**
@@ -184,8 +196,7 @@ Score | Letter Grade
 < 65 | F
 
 The grade of _Incomplete_ is reserved for students who miss the final exam or the last project after
-completing all other coursework in the semester (the reasons for missed exam will need to be verified
-and approved by the Dean Of Students). <br/>
+completing all other coursework in the semester, and have a chance of passing the course once the final exam or the last programming project is completed (students need to request the grade of incomplete in the course on Albert). <br/>
 The grade of _Incomplete_ **will not be given** to students who started falling behind in class for any reason.
 Those students should withdraw from the course or switch to _Pass/Fail_ option.
 
@@ -255,7 +266,7 @@ This is your cs101 textbook. It is a good resource for refreshing the Java mater
 * 24/7 technology assistance: [IT Help Desk](http://www.nyu.edu/it/servicedesk)
 * Support for personal and health-related issues at the Wellness Exchange:
     * by phone (212) 443-9999 (24/7 confidential calls),
-    * website: [http://www.nyu.edu/9999](www.nyu.edu/9999)
+    * website: [www.nyu.edu/9999](http://www.nyu.edu/9999)
 
 ***
 ## Recitations and Labs
@@ -279,14 +290,16 @@ During some of the recitation session you will get a chance to work on parts of 
 lab with other students and with guidance of the recitation instructor.
 
 Some parts of the weekly labs will  be submitted and will contribute to the "participation and progress"
-part of your grade for this course. To get the credit for this part, you must submit it before the due date.
+part of your grade for this course. To get the credit for this part, you must submit it before the due date. 
+Some of the labs will be assessed based on completion, but most of the time, we will select part of the lab 
+to be graded based on correctness. 
 
 
 ***
 ## Course Policies
 
 This course follows CAS Academic Policies that can be found at
-[https://cas.nyu.edu/academic-programs/bulletin/policies/academic-policies.html](https://cas.nyu.edu/academic-programs/bulletin/policies/academic-policies.html).
+[https://bulletins.nyu.edu/undergraduate/arts-science/academic-policies/](https://bulletins.nyu.edu/undergraduate/arts-science/academic-policies/).
 
 
 
@@ -296,7 +309,7 @@ This is an in-person synchronous class and you are expected to attend all lectur
 
 Missing a class or two is reasonable and often unavoidable, but missing more than five course meetings will likely result in decreased understanding of the course content and, hence, lower scores.
 
-If, for any reason, you need to miss a lot of class meetings, you should contact [cas.deanforstudents@nyu.edu](mailto:cas.deanforstudents@nyu.edu) for verification and guidance for an extended absence period.
+If, for any reason, you need to miss a lot of class meetings, you should contact the instructor and the Dean of Students in your school for guidance on an extended absence period.
 Extended absences often result in students inability to make-up missed material and assessments. You should consider withdrawing from the class and attempting it again in the future semester when you can
 benefit from the course most and succeed in its completion.
 
@@ -304,32 +317,32 @@ benefit from the course most and succeed in its completion.
 
 If you miss an assessment due to a religious observance, illness, family emergency, or any other reason beyond your control, you need to notify your instructor ahead of time (in case of a planned absence) or as soon as possible (in case of an unplanned emergency absence). Trying to excuse/explain the absence two weeks after it happened will not work.
 
-- To account for any missed  in-class quizzes or polls, recitation activities or lab assignments, several (approximately one fourth) lowest scores in the participation and progress category will be dropped at the end of the semester. All reasons for missing something in this category are treated in exactly the same way: absence due to illness, religious observance, late registration, oversleeping or .... If you miss one of the assessments from this category, you do not need to notify us.
+- To account for any missed  in-class pop quizzes or polls, recitation attendance or lab assignments, several (approximately one fourth) lowest and missing scores in the participation and progress category will be dropped at the end of the semester. All reasons for missing something in this category are treated in exactly the same way: absence due to illness, religious observance, late registration, oversleeping or .... If you miss one of the assessments from this category, you do not need to notify us.
 
-- If you miss one of the take-home quizzes, the part of the grade based on take-home quizzes will be based on the remaining take-home quizzes. You need to notify Professor Klukowska about a missed take-home quiz as described above, otherwise the grade for such a quiz will count as zero. <br/>
-If you miss more than one take-home quiz, you need to discuss it with the instructor immediately. You will not be excused from more than one quiz for any reason.
+- If you miss one of the in-class paper-based quizzes (PBQs), the part of the grade based on PBQs will be based on the remaining ones. You need to notify Professor Klukowska about a missed PBQ, otherwise the grade for such a quiz will count as zero. <br/>
+If you miss more than one PBQ, you need to discuss it with the instructor immediately. You will not be excused from more than one quiz for any reason.
 
-- If you miss the midterm exam, the final exam will be counted in its place. You should contact [cas.deanforstudents@nyu.edu](mailto:cas.deanforstudents@nyu.edu) for verification of the reason for a missed exam.
+- If you miss one of the in-class coding quizzes (CQs), the part of the grade based on CQs will be based on the remaining ones. You need to notify Professor Klukowska about a missed CQ, otherwise the grade for such a quiz will count as zero. <br/>
+If you miss more than one CQ, you need to discuss it with the instructor immediately. You will not be excused from more than one quiz for any reason.
 
-- If you miss the final exam, you will receive a grade of _incomplete_ in the course. You will need to take an alternative make-up exam at the start of the following regular semesters (either spring or fall) at the time and place chosen by the instructor. You should contact [cas.deanforstudents@nyu.edu](mailto:cas.deanforstudents@nyu.edu) for verification of the reason for a missed exam.
+- If you miss one of the code reading projects, the part of the grade based on CRPs will be based on the remaining ones. You need to notify Professor Klukowska about a missed CRP, otherwise the grade for such a project will count as zero. <br/>
+If you miss more than one CRP, you need to discuss it with the instructor immediately. You will not be excused from more than one quiz for any reason.
+
+- If you miss either part of the midterm exam, the corresponding part of the final exam will be counted in its place. You should contact Professor Klukowska about a missed midterm exam right away, otherwise the grade 
+may be counted as zero. 
+
+- If you miss the final exam, you should request a grade of _incomplete_ for the course. You will need to take an alternative make-up exam at the start of the following regular semesters (either spring or fall) at the time and place chosen by the instructor. You can request a grade of _incomplete_ on Albert. 
 
 - If you miss the due date for one of the programming projects, refer to the section below.
 
 ### Late Programming Projects
 
+When you submit the programming project before the posted due date, you will receive 5 bonus points for that project.
 
-For each project, you will have a _5-hour buffer window_ after the due date. You can submit or resubmit the project during this time without any point penalty. You do not need to use your _freebie days_ (see below) if you submit your assignment during this 5-hour buffer window.
+Anybody can submit the code for the project for additional five days after the official due date. There will be no point deductions
+for projects submitted within that five-day window. No submissions will be accepted after these additional five days pass.
 
-
-Each student is granted seven _freebie days_ at the start of the semester. The _freebie days_ can be used for any project except for the first one and the last one. If you are unable to submit a programming project on time due to religious observance, illness, family emergency, or any other reason beyond your control, you can use your freebie days to avoid point deductions for lateness on the assignment.
-
-To use your _freebie days_, submit the project as soon as possible after the due date passes and then complete the [Freebie Days Request form](https://forms.gle/gSqPWKjMwi72nVvx7) (https://forms.gle/gSqPWKjMwi72nVvx7).
-<br/>Note: You are responsible for keeping track of how many _freebie days_ you use and how many you still have. You are responsible for submitting the form as soon as you submit your final version of the project. Do not submit the form multiple times for the same project. Such submissions will result in incorrect grading of your project and you will, likely, end up with a lower grade than you would have otherwise. We will not be revising project grades because of your errors in the form submission. 
-
-_Freebie days_ are not transferable and they expire at the end of the semester.
-
-Once you run out of _freebie days_, the late project submissions lose 10% of their original score for each day they are late. If the project has multiple parts, the late penalties apply to the entire project not only the parts that are submitted late. If you submit the project 5-24 hours late, the maximum score is 90 (instead of 100). If you submit the project 24-48 hours late, the maximum score is 80 (instead of 100), etc.
-
+The graders will start grading once all submissions are made. 
 
 **No programming projects will be accepted after the last day of classes.**
 
@@ -356,6 +369,9 @@ Email: [mosescsd@nyu.edu](mailto:mosescsd@nyu.edu)
 
 Any student who requires academic accommodations should register with the Moses Center early in the semester so that we can provide these accommodations for the assessments. Students may not be able to receive proper accommodations if they register with the Moses Center within just a few days of the timed assessment. 
 
+**In order to receive accommodations for assessments in this course, you need to request them at least seven days prior to such an assessment. Setting up accommodations and scheduling with Moses Center takes time.** 
+
+
 ### Wellness Statement
 
 In a large, complex community like New York University, it's vital to reach out to others, particularly those who are isolated or engaged in self-destructive activities. Student wellness ([https://cas.nyu.edu/content/nyu-as/cas/academic-programs/student-wellness.html](https://cas.nyu.edu/content/nyu-as/cas/academic-programs/student-wellness.html)) is the responsibility of us all.
@@ -370,8 +386,12 @@ Using AI to do all of your coding work for you will be a detriment to your learn
 
 Instead, we encourage you to use AI as a learning partner, leveraging its capabilities in the following ways:
 
-- AI as a Feedback Generator: Use AI to review your code and offer suggestions for improvement, just as a peer would. You can ask it to identify potential bugs, simplify complex sections, or suggest alternative approaches (but make sure to document such assistance, make sure that the suggested changes are correct and that you understand them).
 - AI as a Personal Tutor: When you're stuck on a concept, use AI to explain it in different ways. You can ask it to break down a difficult topic, provide more examples, or clarify why a particular solution works. Remember, however, that AI can "hallucinate" incorrect information; you are responsible for critically evaluating and verifying any information it provides. Sometimes it may be wiser and safer to visit instructors' office hours or tutoring hours to get help rather than relying purely on AI for such help. 
+- AI as a Feedback Generator: Use AI to review your code and offer suggestions for improvement, just as a peer would. You can ask it to identify potential bugs, simplify complex sections, or suggest alternative approaches (but make sure to document such assistance, make sure that the suggested changes are correct and that you understand them).
+- AI as a Partner in Peer Programming: Sometimes AI can be used effectively to speed up coding the ideas that you have. Come up with a detailed step by step algorithm and ask it to generate code that follows those steps exactly. 
+
+Whenever you use AI tools in your learning, question the correctness of the results. It should be your learning partner and you need to know why certain data structures, algorithms and programming language features are used. You need to be able to explain the 
+answers and code that it produces. 
 
 Keep in mind that exams and other assessments in this class will not be given with access to AI tools, so you need to be able to write complete programs, implement parts of given programs, answer questions and suggest solutions to problems on your own without the help of any tools. 
 
@@ -394,10 +414,6 @@ Our main philosophy is that you need to be honest and fair to yourself, other st
 We know that interactions with your classmates can facilitate deeper understanding of the subjects and provide invaluable lessons. We also know that in the _real world_ large programming projects are rarely implemented by individuals. Finally, we know that in the _real world_ you are rarely asked to take timed exams and be graded on them. But you are in the process of preparing for the real world, and you need to prove to yourself and to others that you can be a valuable contributor to a group project or a team.
 
 **All your work that is submitted for grading in this class has to be your own, unless otherwise specified. If you receive any help from a human or use any non-human resources, you need to acknowledge that in your submissions.**
-
-**Regret clause**
-
-If you violate the rules of academic integrity when submitting work for this class, but bring it to the attention of the instructor within **48 hours of your submission**, we will impose only _local_ sanctions (i.e., failing or reduced grade on a given assignment), but we will not refer your case for further disciplinary actions (except in the case of repeated violations).
 
 Here are examples of _fair_ and _not fair_ actions that a student may take. This is not an exhaustive list and should serve as examples of behaviors rather than a complete definition.
 
