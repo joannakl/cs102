@@ -1,12 +1,11 @@
 ---
 layout: lab
-title: Project 2
+title: Project 1
 ---
 
 <div class="lab-right" markdown="1">
-__Project 2__ <br>
-__step 1 due:__ September 27 at 11:59pm <br>
-__step 2 due:__ October 7 at 11:59pm
+__Code Project 1__ <br>
+__due:__ February 19 at 11:59pm
 
 __submission mode:__ individual
 
@@ -14,7 +13,7 @@ __submission mode:__ individual
 
 <main markdown="1" class="lab">
 
-## Project 2: Login Stats
+## Project 1: Login Stats
 
 <hr>
 
@@ -26,10 +25,9 @@ If you get significant help from anyone, you should acknowledge it in
 your submission (and your grade will be proportional to the part that you completed on your own). You are responsible for
 every line in your program: you need to know what it does and why. You should not use any data structures and features of Java
 that have not been covered in class (or the prerequisite class). If you have doubts whether or not you are allowed to use certain
-structures, just ask your instructor. 
+structures, just ask your instructor.
 
-If your submitted code matches closely or exactly code submitted by another person in the class, it will get a zero grade and the offense will be reported to the 
-department and the dean. 
+If your submitted code matches closely or exactly code submitted by another person in the class, it will get a zero grade and the offense will be reported to the department and the dean. 
 </div>
 
 ---
@@ -41,9 +39,9 @@ details about logins to a remote computer system.
 
 In any multi-user computer system, several users can be logged in at the same time. 
 Moreover, the same user can be logged in simultaneously using different terminals. 
-Every time a user loggs in, or loggs out, a record of it is written to a log file. Only
+Every time a user logs in, or logs out, a record of it is written to a log file. Only
 one user can be logged in using any given terminal at any given time. But once 
-a user loggs out, another user can log in using the same terminal. 
+a user logs out, another user can log in using the same terminal. 
 
 The purpose of this project is to design a program that interacts with such a log file
 and presents the results to a user in a human readable form. 
@@ -77,7 +75,7 @@ debugging always takes time.
 
 
 <div class="wrap-collabsible">
-<input id="interface" class="toggle" type="checkbox"  >
+<input id="interface" class="toggle" type="checkbox" checked=true  >
 <label for="interface" class="lbl-toggle"> User Interface </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
@@ -89,7 +87,7 @@ for the input.
 </div> </div></div>
 
 <div class="wrap-collabsible">
-<input id="usage" class="toggle" type="checkbox"  >
+<input id="usage" class="toggle" type="checkbox" checked=true  >
 <label for="usage" class="lbl-toggle"> Program Usage and Input File</label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
@@ -143,7 +141,7 @@ For example:
 ```
 
 `TERMINAL` is an integer indicating the terminal number. Positive values 
-indicate a login record.  A negative sign in from of the terminal number indicates a logout record. 
+indicate a login record.  A negative sign in front of the terminal number indicates a logout record. 
 In the above example, the user `satya` logged in on terminal 2: second record
 from the top shows their login, the second record from the bottom shows their logout.
 
@@ -151,18 +149,18 @@ from the top shows their login, the second record from the bottom shows their lo
 indicated as the number of milliseconds since the standard base time known as "the epoch", namely January 1, 1970, 00:00:00 GMT. (This value can be large, so it should be stored in 
 a variable of type `long`.)
 
-`USERNAME` is the name of the user.
+`USERNAME` is the name of the user. On most systems usernames are case sensitive and this is the case for this project as well. `Vincent` and `vincent` are two different usernames. 
 
 For this project, the input file is guaranteed to be in chronological order of time. It is also guaranteed to be _correct_. This means that
 - there are never any two concurrent sessions with the same terminal value (but the same user could be logged in on different terminals), 
-- the terminals are always positive integers (and their negated values indicate logout from that terminal), 
+- the terminals are always positive integers (and their negated values indicate logging out from that terminal), 
 - the usernames are strings containing alphanumeric characters and '_' only (no spaces in usernames).
  
 
 </div> </div></div>
 
 <div class="wrap-collabsible">
-<input id="user" class="toggle" type="checkbox"  >
+<input id="user" class="toggle" type="checkbox" checked=true  >
 <label for="user" class="lbl-toggle"> User Interaction </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
@@ -212,7 +210,7 @@ a message
 
 __Matching result display:__
 
-If the query entered by the user matches a usernae, the information  should be displayed in the following format:
+If the query entered by the user matches a username, the information  should be displayed in the following format:
 
 ```
 USERNAME, terminal TERMINAL, duration DURATION
@@ -232,7 +230,7 @@ Sample user interaction is shown in the Appendix.
 </div> </div></div>
 
 <div class="wrap-collabsible">
-<input id="classes" class="toggle" type="checkbox" >
+<input id="classes" class="toggle" type="checkbox" checked=true >
 <label for="classes" class="lbl-toggle"> Data Storage and Organization </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
@@ -258,7 +256,7 @@ creates the requested `Record` object.
     that indicates if a given `Record` object represents a login record (if `login` is `true`) or logout record (if `login` is `false`).
     The `username` is the name of the user. And the `time` is a `Date` object that 
     represents the date and time at which the user logged in or logged out. (See the 
-    [`Date` class](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Date.html). ) 
+    [`Date` class](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Date.html). A new `Date` object can be created based on the `long` value provided in the input file by using one of the `Date` class constructors: `new Date(longValue)`.) 
     
     If this constructor is called with an invalid value for the terminal number, it should throw an instance of 
 	`IllegalArgumentException` with an appropriate message.
@@ -288,7 +286,7 @@ a login record and logout record:
 	`public Session (Record login, Record logout)`
 
 	A valid pair of records has to have matching usernames and matching terminal numbers (otherwise they do not represent a single login session). The `login` record cannot be `null`. 
-    The `logout` record can be `null` (this indicates that the user is still logged in on the system). The time associated with the login time should be no greater than the time associated with the logout time. 
+    The `logout` record can be `null` (this indicates that the user is still logged in on the system; make sure that other methods in this class can handle the `null` value for the logout record without causing `NullPointerException` during execution). The time associated with the login time should be no greater than the time associated with the logout time. 
     
     If this constructor is called with invalid parameters, it should throw an instance of
 	`IllegalArgumentException` with an appropriate message.
@@ -305,7 +303,7 @@ a login record and logout record:
 
     `public String getUsername()`
     
-    `public long getDuration()` - returns the number of milliseconds ellapsed between the login time and logout time, or -1 if the session is still active;  
+    `public long getDuration()` - returns the number of milliseconds elapsed between the login time and logout time, or -1 if the session is still active;  
 
 - The class should override the `toString` method from the `Object` class. It should
 	return a `String` matching the following pattern
@@ -361,7 +359,7 @@ In addition, the class should implement the following two methods:
 
 - `public Session getFirstSession(String user) `
 
-	This method should construct and return the first login session for the specified `user`. If there are multiple login session for the specified user, the _first_ one is the one with the earliest login time. Note that in some cases this session may still be active. 
+	This method should construct and return the first login session for the specified `user`. If there are multiple login sessions for the specified user, the _first_ one is the one with the earliest login time. To find the _first_ session, find the very first login record for that user, then find its matching logout (if it exists).  If the matching logout record does not exist, the session is still active. In this case, this method should return a `Session` object with `null` value in the logout record. 
 
 	If the specified `user` does not match any of the records in the list, the 
     function should throw an instance of `NoSuchElementException` with an appropriate 
@@ -373,7 +371,7 @@ In addition, the class should implement the following two methods:
 
 - `public Session getLastSession(String user) `
 
-	This method should return the last login session for the specified `user`. If there are multiple login session for the specified user, the _last_ one is the one with the latest login time. Note that in some cases this session may still be active. 
+	This method should return the last login session for the specified `user`. If there are multiple login sessions for the specified user, the _last_ one is the one with the latest login time. To find the _last_ session, find the very last login record for that user, then find its matching logout (if it exists). If the matching logout record does not exist, the session is still active. In this case, this method should return a `Session` object with `null` value in the logout record. 
 
 	If the specified `user` does not match any of the records in the list, the 
     function should throw an instance of `NoSuchElementException` with an appropriate 
@@ -401,7 +399,7 @@ You may implement other methods in this class to modularize the design.
 </div> </div></div>
 
 <div class="wrap-collabsible">
-<input id="rules" class="toggle" type="checkbox"  >
+<input id="rules" class="toggle" type="checkbox" checked=true  >
 <label for="rules" class="lbl-toggle"> Programming Rules </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
@@ -427,7 +425,7 @@ No other classes should be reading from or writing to those streams.
 </div> </div></div>
 
 <div class="wrap-collabsible">
-<input id="working" class="toggle" type="checkbox"  >
+<input id="working" class="toggle" type="checkbox" checked=true  >
 <label for="working" class="lbl-toggle"> Working on This Assignment </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
@@ -459,26 +457,25 @@ a few hours before the due dates - make sure that you have working code if that 
 </div> </div></div>
 
 <div class="wrap-collabsible">
-<input id="grading" class="toggle" type="checkbox"  >
-<label for="grading" class="lbl-toggle"> Grading and Submissions</label>
+<input id="grading" class="toggle" type="checkbox" checked=true  >
+<label for="grading" class="lbl-toggle"> Grading and Submission</label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
-This project will be submitted in two steps. The first step is designed to make sure that you have a good starting point for the project and that 
+You should complete this project in two steps. The first step is designed to make sure that you have a good starting point for the project and that 
 you setup all your tools and submission properly to send you on a path to success in the second step. The second step is going to be your final submission.
-In each step you can submit as many times as you wish before the due date. You cannot use your _freebie days_ for step one of the project. You can
-request to use them for the second part. 
 
-#### Step One (due September 27 at 11:59 PM)
+#### Step One
 
-You will be working on this part in recitations on Friday. The deliverable for this step are documented stub files for each class. Here is an example 
+Create a set of documented stub files for each required class. Here is an example 
 of such a sub file for a class called `Point2D` that is designed to represent a point in two-dimensional space. 
 
 ```
-package project2; 
+package project1; 
 
 /**
  * The Point2D class represents a point in 2D space with x and y coordinates.
+ * @author Joanna Klukowska
  */
 public class Point2D {
 
@@ -551,14 +548,14 @@ public class Point2D {
 
 The above class does not have any implementation, but it compiles and other classes can make calls to methods 
 provided by this class. Of course, these method calls will not return correct results. The stub class does not need to mention all data fields
-that will be required for the final implementation, but it is a good idea to list the ones that are definitely need to be part of the class. 
+that will be required for the final implementation, but it is a good idea to list the ones that definitely need to be part of the class. 
 
-Your job for step one is to create documented stubs like this for every required class. DO NOT submit any implementation for this step. 
-Make sure that you document the classes and methods using Javadoc style. 
+Once you have the stub files ready, you should submit them to the Gradescope autograder. If the code compiles and you see a number of failed tests, that's a good starting point. You can go ahead and start implementing the methods. If the code does not compile, read through the errors or ask for help. These compilation errors will remain even if you implement the methods, so resolve them as soon as possible. 
+ 
 
-#### Step 2 (due October 7 at 11:59 PM)
+#### Step 2 
 
-In the second step, you will need to implement the actual code for all the classes. 
+In the second step, you will need to implement the actual code for all the classes. You can, and should, submit often. Whenever you make significant progress, re-upload the files to the autograder as a verification that you did not introduce any changes that broke compilation on the autograder system. 
 
 If your program does not compile (should not be the case if you submitted step 1 successfully) or if it crashes (almost) every time it is run,
 you will get a zero on the assignment. Make sure that you are submitting
@@ -568,36 +565,33 @@ functioning code, even if it is not a complete implementation so that you can ge
 
 The grade will be determined by several factors: 
 
-- 20 points: (based on step 1 submission) proper documentation, format of submission, and stub-only implementation
-   (this will be determined by a the autograder and the code review); if your step 2 submission omits the documentation, 
-   you will likely lose most if not all points awarded for step 1 submission; if your step 1 submission misses the 
-   documentation, but you include complete documentation in your 
-   step 2 submission, you will get half of the credit for this part
-- 45 points: class correctness: correct behavior of methods of the required classes (this will be determined by the autograder), these points will be assigned as follows:
+- 50 points: class correctness: correct behavior of methods of the required classes (this will be determined by the autograder), these points will be assigned as follows:
 	- 0 points: code passes fewer than a half of the autograder tests 
 	- 20 points: code passes [50-70)% of the autograder tests 
 	- 35 points: the code passes [70-80)% of the autograder tests
 	- 40 points: the code passes [80-90)% of the autograder tests 
-	- 45 points: the code passes 90% or more of the autograder tests 	
+	- 45 points: the code passes [90-95)% of the autograder tests 
+	- 50 points: the code passes 95% or more of the autograder tests
 - 10 points: correct behavior of the program as a whole (this will be determined by the autograder and some manual evaluation)
-- 25 points: design and the implementation of the required classes and any additional classes
+- 20 points: code clarity and readability, method design and the implementation of the required classes and any additional classes
    (this will be determined by a code review)
+- 20 points: proper code documentation using Javadoc style for class and method documentation and adequate inline comments 
 
 </div> </div></div>
 
 
 <div class="wrap-collabsible">
-<input id="submit" class="toggle" type="checkbox" >
+<input id="submit" class="toggle" type="checkbox" checked=true >
 <label for="submit" class="lbl-toggle"> How and What to Submit </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
 
 The submission format and requirements are the same for both steps. 
 
-__For the purpose of grading, your project must be be in the package called `project2`.
+__For the purpose of grading, your project must be be in the package called `project1`.
 This means that each of your submitted source code files should start with a line:__
 
-`package project2;`
+`package project1;`
 
 
 Your should submit all your source code files (the ones with `.java` extensions only) to Gradescope. __DO NOT__ submit `.class` files
@@ -610,12 +604,56 @@ after the grace period ends, your assignment will be subject to the late point d
 
 For this project, you will see some of the results for the autograded unit tests. Some of the results will be hidden. (When some results are hidden, Gradescope does not display the score for the autograded part. )
 
+## Submission Checklist
+
+<table class="checklist-table">
+  <thead>
+    <tr>
+      <th style="text-align: left;">Item</th>
+      <th style="text-align: left;">Requirement</th>
+      <th style="text-align: center;">Checked?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Package Declaration</strong></td>
+      <td>Does every file start with <code>package project1;</code>? Remember that package names are case sensitive. </td>
+      <td style="text-align: center;">☐</td>
+    </tr>
+    <tr>
+      <td><strong>File Extensions</strong></td>
+      <td>Are you submitting only <code>.java</code> files (no <code>.class</code> or project files)?</td>
+      <td style="text-align: center;">☐</td>
+    </tr>
+    <tr>
+      <td><strong>Javadoc</strong></td>
+      <td>Does every class and method have a Javadoc-style comment?</td>
+      <td style="text-align: center;">☐</td>
+    </tr>
+    <tr>
+      <td><strong>Constructor and Method Signatures</strong></td>
+      <td>Did you keep the required signatures exactly as specified?</td>
+      <td style="text-align: center;">☐</td>
+    </tr>
+    <tr>
+      <td><strong>Active Sessions</strong></td>
+      <td>Does your <code>Session</code> class handle <code>null</code> logout records gracefully?</td>
+      <td style="text-align: center;">☐</td>
+    </tr>
+    <tr>
+      <td><strong>Dependencies</strong></td>
+      <td>Did you avoid using forbidden classes (e.g., <code>Map</code>, <code>Set</code>, <code>Stack</code>)?</td>
+      <td style="text-align: center;">☐</td>
+    </tr>
+  </tbody>
+</table>
+
 
 </div> </div></div>
 
 
 <div class="wrap-collabsible">
-<input id="appendix" class="toggle" type="checkbox" >
+<input id="appendix" class="toggle" type="checkbox" checked=false >
 <label for="appendix" class="lbl-toggle"> Appendix </label>
 <div class="collapsible-content" markdown=1>
 <div class="content-inner" markdown=1>
