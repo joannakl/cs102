@@ -145,11 +145,19 @@ template: growing-array
         for (int i = 0; i < size; i++)
             bigger[i] = array[i];
         ```
---
-- so what is the performance of this function overall (not just sometimes O(1) and sometimes O(N))?
-
 ---
-## Growing the Array - Amortized Analysis
+
+## Adding at the End - Performance
+
+__The Good News__ </br>
+Most of the time, `add()` is super fast, O(1), because there is an empty slot at the end of the array.
+
+__The Bad News__ </br>
+Eventually, the array gets full. To add the next item, Java has to create a brand-new, larger array and copy every single old item into the new one. That specific add() takes O(N) time.
+
+--
+
+
 
 If the initial size of the array is N, then
 
@@ -165,11 +173,93 @@ If the initial size of the array is N, then
 - .small[adding $N^{th}$ element takes O(1)]
 
 --
-- .small[adding $N+1^{st}$ element takes O(N)]
+- .small[adding $N+1^{st}$ element takes O(N) because we increase the size of an array and copy data over] 
+
+--
+- .small[adding N+1 element takes O(1)]
+
+--
+- .small[adding N+2 element takes O(1)]
+
+--
+- .small[...]
+
 
 --
 
-Intuitively, we have N \* O(1) + 1 \* O(N) to add N+1 elements -> this is still a constant time for each operation (almost).
+So what is the performance of this function overall (not just sometimes O(1) and sometimes O(N))?
+
+---
+
+## Analogy: 
+### How long does it take you to write a line of code on your computer? 
+
+--
+
+- Day 1: Open the lid (assuming a laptop) and type 
+--
+- this is fast, O(1). 
+
+--
+- Day 2: Open the lid and type - O(1). 
+
+--
+- Day 3: Open the lid and type - O(1).
+
+--
+- ...
+
+--
+- Day 356: Open the lid. Oooops! 
+--
+Hard drive failure. 
+--
+Bring it to the store. 
+--
+Wait for the technician to diagnose the problem and figure out what to do. 
+--
+Wait for another technician to replace your hard drive and transfer all the date using tools that only technicians have. 
+--
+Go back home. 
+--
+Open the lid and type. 
+
+--
+
+**The last operation is NOT fast.** It probably took hours or days. 
+
+--
+
+- But does it mean that it takes you days to type a line of code on your computer? 
+
+---
+
+## Amortized Analysis of Computer Use 
+
+
+- If we only look at Day 356, we would say, "Using a computer is incredibly slow and expensive!" 
+
+--
+
+- But that’s not fair: on days 1 to 355 it was actually very fast. 
+
+--
+
+- To get the amortized cost, we have to look at the big picture:
+
+    - the spike on day 356 is not specific to day 356, it is a result of the wear and tear from the previous year - the maintenance takes time but happens infrequently 
+
+    - if we take that long time it took to fix the hard drive and "spread" it across the 355 previous days you used the computer for _free_ (without the extra time cost), the maintenance cost is just a few minutes per day (not hours or days).
+
+
+---
+
+## Amortized Analysis of Growing an Array 
+
+- Most calls to `add()` are O(1).
+
+--
+- The `add()` call that triggers a resize (the _maintenance_) takes O(N) where N is the current size of the array. 
 
 
 --
@@ -180,8 +270,8 @@ the operation many time and calculate how much time it took divided by the numbe
 
 --
 .center80[.yellowbox[
-The add at the end (append) operation for an ArrayList has an amortized time performance of O(1) as long as the
-array size in increased by a multiplicative factor, not an additive factor.
+The add at the end (append) operation for an ArrayList has an amortized time performance of O(1) __as long as the
+array size in increased by a multiplicative factor, not an additive factor.__
 ]]
 --
 
