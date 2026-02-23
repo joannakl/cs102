@@ -272,6 +272,12 @@ td {
   padding: 1em;
   vertical-align: top;
 }
+
+
+.updated {
+  background-color: hsl(25, 100%, 90%);
+  ont-weight: bolder;
+}
 /**************/
 .week {
   clear: left;
