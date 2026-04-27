@@ -830,12 +830,12 @@ the `array` given the beginning index `left` and the end index `right`, and the 
   set pivot to right
   set right to right - 1
   while left <= right
-  while array[left] < array[pivot]
-    left ++
-  while right >= left AND array[right] >= array[pivot]
-    right --
-  if right > left
-    swap array[left] with array[right]
+    while array[left] < array[pivot]
+      left ++
+    while right >= left AND array[right] >= array[pivot]
+      right --
+    if right > left
+      swap array[left] with array[right]
   //move the pivot to its final location
   swap array[left] with array[pivot]
   return left
@@ -1003,10 +1003,18 @@ kept the recursive calls?
 
 ---
 
-## Bubble Sort
+## Bubble Sort and Selection Sort
 
-Design the code that implements the bubble sort on a linked list. 
+Design the code that implements the bubble sort and selection sort on a linked list. 
 
+
+---
+
+## LinkedList Tricks
+
+Look at the source code in the Ed Workspace called "LinkedList Tricks". Study the code and 
+try to figure out what each method called _trick1_, _trick2_, ... does. Then run the 
+driver program to see if you are correct. 
 
  
 
