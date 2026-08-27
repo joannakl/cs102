@@ -11,7 +11,7 @@ title: Syllabus, CSCI-UA 102, Klukowska
 -   [Course Description](#course-description)
 -   [Course Objectives and Outcomes](#course-objectives--learning-outcomes)
 -   [Assessments and Grading](#assessments-and-grading)
--   [Course Materials](#course-materials)
+-   [Course Materials](#course-materials-and-resources)
     -   [Brightspace and the Course
         Website](#brightspace-and-the-course-website)
     -   [Textbook(s)](#textbooks)
@@ -43,8 +43,8 @@ title: Syllabus, CSCI-UA 102, Klukowska
 * Professor Joanna Klukowska
 * Email: joannakl@nyu.edu
 * Recitation Instructors:
-    * Federico Sichetti (sec. 12 and 15)
-    * Vincent Xu (sec. 13) 
+    * Tobias Blickhan (sec. 11 and 13)
+    * Elina Adibi (sec. 12) 
 * Office Hours
     * posted on Brightspace with locations and/or Zoom links
 
@@ -52,16 +52,16 @@ title: Syllabus, CSCI-UA 102, Klukowska
 
 * CSCI-UA 102 Data Structures
 * 4 credits
-* Lectures: Mondays/Wednesdays 9:30 - 10:45 AM, CIWW 109 
-* Recitations: Friday (different times depending on the recitation section), CIWW 312
+* Lectures: Mondays/Wednesdays 9:30 - 10:45 AM, Silv 408 
+* Recitations: Friday (different times depending on the recitation section), CIWW 317
 * [Brightspace](brightspace.nyu.edu/)
 * [Ed discussions](https://edstem.org/us/dashboard) (you should access it through Brightspace)
 * [Course website](https://cs.nyu.edu/~jk157/cs102/) (general information only, access all specific details for the current semester on Brightspace)
 * Exam dates (all subject to change if significant schedule changes are required):
-	* Midterm exam (paper-based part): Wednesday, March 11 (during regular lecture time)
-	* Midterm exam (coding part): Friday, March 13 (during regular recitation time)
-	* Final exam (coding part): Friday, May 1 (during last recitation time)
-	* Final exam (paper-based part): **Wednesday, May 13, 8:00 - 9:50AM** (during the CAS scheduled final exam period)
+	* Midterm exam (coding part): Friday, October 16 (during regular recitation time)
+	* Midterm exam (paper-based part): Wednesday, October 19 (during regular lecture time)
+	* Final exam (coding part): Friday, December 11 (during last recitation time)
+	* Final exam (paper-based part): **Wednesday, December 16, 10:00 - 11:50AM** (during the CAS scheduled final exam period)
 * Prerequisites: Passing CSCI.UA.0101 with a grade of C or better. <br>
 **You are expected to know and remember the material from CSCI-UA 101 course.** If you took the course
 a few semesters ago and/or do not remember parts of the material, start reviewing it during the summer/winter
@@ -76,19 +76,25 @@ See the [Placement](https://cs.nyu.edu/home/undergrad/placement.html) page at th
 ***
 ## Course Description
 
-This course covers use and design of data structures, which organize information in computer memory.
-Topics covered include data structures (lists, stacks, queues, graphs, binary trees, binary search trees, hash tables),
-how to implement them in a high-level programming language (Java), how to analyze their effect
-on algorithm efficiency, and how to use and modify them.
+This course covers use and design of data structures, which organize information in computer memory. 
+Topics covered include data structures (lists, stacks, queues, graphs, binary trees, binary search trees, hash tables), 
+how to implement them in a high-level programming language (Java), how to analyze their effect 
+on algorithm efficiency, and how to use and modify them. 
+
+Additionally, we will discuss how to leverage generative AI tools as interactive tutors and problem-solving guides, 
+while establishing that human insight remains the essential core of software and algorithm development.
 
 ***
 ## Course Objectives & Learning Outcomes
 
-This section outlines the key knowledge and skills you'll acquire by successfully completing this course.
-The primary goal is to provide a comprehensive understanding of fundamental data structures and algorithms,
-emphasizing the underlying concepts so you can apply them in any programming language, not just Java,
-even though the programming language we will use in this course is Java.
-We will explore how to analyze and solve computational problems efficiently.
+This section outlines the key knowledge and skills you'll acquire by successfully completing this course. 
+The primary goal is to provide a comprehensive understanding of fundamental data structures and algorithms, 
+emphasizing the underlying concepts so you can apply them in any programming language, not just Java, 
+even though the programming language we will use in this course is Java. 
+
+We will explore how to analyze and solve computational problems efficiently, using AI as a supportive tutor and guide 
+while reinforcing that human judgment is essential and that you are fully responsible for any code you produce.
+
 
 * **Course Objectives** <br>
 By the end of this course, you will:
@@ -119,7 +125,7 @@ Upon successful completion of this course, you will be able to:
     * **Solve problems using graphs and trees:** Understand the structure and application of graphs and trees, and be able to implement basic graph algorithms.
     * **Use advanced Java features:** Confidently use generics, interfaces, and object-oriented principles to create robust and flexible code.
     * **Demonstrate a conceptual understanding:** Articulate the underlying principles of various data structures and algorithms,
-    allowing you to discuss their trade-offs and adapt them to new contexts.
+    allowing you to discuss their trade-offs and adapt them to new context, and take full personal accountability for explaining, verifying, and taking ownership of any code you submit—including any output generated with generative AI assistance.
 
 
 ***
@@ -141,44 +147,46 @@ If you have questions regarding your grades or some personal issues
 
 The grade for this course will be determined according to the following formula:
 
-- **Participation and Progress (PaP), 10%** <br/>
-This category will be assessed based on taking an active part in the course:
-    - completing assigned readings, tutorials,
-    activities, etc., and self-assessment exercises (lab assignments), 
-    - regularly participating in recitations, and completing group and individual work, 
-    - completing class polls and pop-quizzes during the lectures and recitations, 
-    - participating in  class discussions 
-    (asking and answering questions on the course discussion forum, reading posts made on
-    the discussion forum by other students and instructors). 
-    
-    Several of these grades (about one fourth) will be dropped to account for   
-    student absences due to late registration, illness, holiday observances, family/personal emergencies, or any other circumstances.
-- **2 Exams: Midterm Exam, 15%  and  Final Exam, 25%**<br/>
+- **2 Exams: Midterm Exam, 20%  and  Final Exam, 25%**<br/>
 Exams will be in-person and synchronous
 (may be switched to online and/or asynchronous if the University makes such a decision), and completed individually.
 No exam grades are dropped. All exams must be completed individually by you with no assistance of
 any other people (except for the instructor and proctors) or technology.
 Each exam has two parts with equal weight: paper-based part and coding part. Both parts are timed.
 The coding part will be taken within Respondus lock-down browser. 
+
 - **3-5 In-class Paper-Based Quizzes (PBQ), 15%** <br/>
 The announced in-class quizzes will be taken during the lectures.
 Each quiz will take approximately 20-minutes.
 All in-class quizzes must be completed individually by you with no assistance of any other people  (except for the instructor and proctors) or technology. 
-- **Several Programming Projects, 10%** <br/>
-Several programming projects will be given during the semester. The programming projects should
-be completed individually and they should be your own work (you are responsible for the code you submit).
-The projects will be graded based on submission, passing autograder tests and code review. 
-- **3-5 In-class Coding Quizzes (CQ), 15%** <br/>
+
+- **2 In-class Coding Quizzes (CQ), 15%** <br/>
 The announced in-class programming quizzes will be taken during the recitations. 
 You will need to solve a particular programming problem within 30 minutes. 
 The problem will be similar to problems you have seen while completing labs and programming projects. 
 These will be taken within Respondus lock-down browser. 
-- **Several Code Reading Projects (CRP), 10%** <br/>
-There will be a few code reading projects. In these projects you will be given a code base that solves a particular problem. 
-You will have several days to study and understand the code, and ask questions regarding things you may not be familiar with. 
-Finally, you will take a timed quiz during which you will need to answer questions about the code base. 
 
+- **Code Development, Reading, and Exploration Projects, 20%**<br/>
+Throughout the semester, you will complete a series of hands-on projects designed to develop both your code 
+authorship and code comprehension skills. These assignments cover three main areas:
 
+    - Code Development: Building programs independently to solve specific problems. Graded on correctness via autograder tests, code structure, and code review.
+    - Code Reading & Analysis: Studying provided codebases over several days to understand system architecture, algorithms, and design patterns. Evaluated through timed, proctored quizzes during lecture or recitation.
+    - Code Exploration: Hybrid tasks involving debugging, tracing, refactoring, or augmenting existing codebases.
+
+    All project work must be completed individually and represent your own understanding. You are fully responsible for explaining, defending, and taking personal ownership of all code you write, modify, or analyze.
+
+- **Participation and Progress (PaP), 5%** <br/>
+This category will be assessed based on taking an active part in the course:
+    - completing assigned readings, tutorials,
+    activities, etc., and self-assessment exercises (lab assignments), 
+    - regularly participating in recitations, and completing group and individual work, 
+    - completing class polls during the lectures and recitations. 
+        
+    Several of these grades (about one fourth) will be dropped to account for   
+    student absences due to late registration, illness, holiday observances, family/personal emergencies, or any other circumstances. 
+    
+    
 **Course Grade**
 
 The final course grade will be assigned as follows:
@@ -202,7 +210,7 @@ Those students should withdraw from the course or switch to _Pass/Fail_ option.
 
 
 ***
-## Course Materials amd Resources
+## Course Materials and Resources
 
 ### Brightspace and the Course Website
 
@@ -234,7 +242,7 @@ Here is a listing of chapters in different books that discuss different topics c
 * [*Codeless Data Structures*](https://bobcat.library.nyu.edu/permalink/f/ci13eu/nyu_aleph007507574), Armstrong Subero,
 (accessible through NYU libraries or [O'Reilly online access](https://www.oreilly.com/)).
 * [*Open Data Structures An Introduction*](https://opendatastructures.org/), Pat. Morin
-(accessible through NYU libraries or [book's site](https://opendatastructures.org/)).
+(accessible through NYU libraries or book's site).
 * *Guide to data structures: a concise introduction using Java*, James T. Streib, Takako Soma
 (accessible through NYU libraries).
 * *Data structures & algorithms in Java*, Robert Lafore
@@ -322,16 +330,15 @@ If you miss an assessment due to a religious observance, illness, family emergen
 - If you miss one of the in-class paper-based quizzes (PBQs), the part of the grade based on PBQs will be based on the remaining ones. You need to notify Professor Klukowska about a missed PBQ, otherwise the grade for such a quiz will count as zero. <br/>
 If you miss more than one PBQ, you need to discuss it with the instructor immediately. You will not be excused from more than one quiz for any reason.
 
-- If you miss one of the in-class coding quizzes (CQs), the part of the grade based on CQs will be based on the remaining ones. You need to notify Professor Klukowska about a missed CQ, otherwise the grade for such a quiz will count as zero. <br/>
-If you miss more than one CQ, you need to discuss it with the instructor immediately. You will not be excused from more than one quiz for any reason.
+- If you miss one of the in-class coding quizzes (CQs), its score will be replaced by your score on the next coding exam (midterm or final). You need to notify Professor Klukowska about a missed CQ, otherwise the grade for such a quiz will count as zero. <br/>
+You will not be excused from more than one quiz for any reason.
 
 - If you miss one of the code reading projects, the part of the grade based on CRPs will be based on the remaining ones. You need to notify Professor Klukowska about a missed CRP, otherwise the grade for such a project will count as zero. <br/>
 If you miss more than one CRP, you need to discuss it with the instructor immediately. You will not be excused from more than one quiz for any reason.
 
-- If you miss either part of the midterm exam, the corresponding part of the final exam will be counted in its place. You should contact Professor Klukowska about a missed midterm exam right away, otherwise the grade 
-may be counted as zero. 
+- If you miss either part of the midterm exam, the corresponding part of the final exam will be counted in its place. You should contact Professor Klukowska about a missed midterm exam right away, otherwise the grade may be counted as zero. 
 
-- If you miss the final exam, you should request a grade of _incomplete_ for the course. You will need to take an alternative make-up exam at the start of the following regular semesters (either spring or fall) at the time and place chosen by the instructor. You can request a grade of _incomplete_ on Albert. 
+- If you miss the final exam, you should request a grade of _incomplete_ for the course. You will need to take an alternative make-up exam at the start of the following regular semesters (either spring or fall) at the time and place chosen by the instructor. You must request a grade of _incomplete_ on Albert. 
 
 - If you miss the due date for one of the programming projects, refer to the section below.
 
@@ -407,7 +414,7 @@ Further resources:
 This course follows the university and departmental policies on academic integrity:
 
 -   [Academic Integrity for Students at NYU](https://www.nyu.edu/about/policies-guidelines-compliance/policies-and-guidelines/academic-integrity-for-students-at-nyu.html)
--   [CS Department Academic Integrity](https://cs.nyu.edu/home/undergrad/policy.html "CS Department Academic Integrity")
+-   [CS Department Academic Integrity](https://cs.nyu.edu/home/undergrad/policy.html)
 
 Our main philosophy is that you need to be honest and fair to yourself, other students in the class and the instructional stuff.
 
