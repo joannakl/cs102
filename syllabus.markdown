@@ -482,6 +482,6 @@ Here are examples of _fair_ and _not fair_ actions that a student may take. This
 - Priority queues and binary heaps (optional)
 - Heapsort (assuming that binary heaps are covered) (optional)
 
-
+<!--
 See the [Tentative Weekly Schedule](https://docs.google.com/spreadsheets/d/e/2PACX-1vQRPJ6qWpXkxBGd2Y16yRF7iQBc9xYjkj7Y6XKbEITUsndBUsvob4upOzoEcOdtqxKWGjVC60zQf85i/pubhtml?gid=955877148&single=true)  for approximate times when topics will be covered. All dates there are **tentative**, but should be a good indicator or the course timing.
-
+-->
