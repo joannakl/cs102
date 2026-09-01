@@ -162,7 +162,7 @@ All in-class quizzes must be completed individually by you with no assistance of
 
 - **2 In-class Coding Quizzes (CQ), 15%** <br/>
 The announced in-class programming quizzes will be taken during the recitations. 
-You will need to solve a particular programming problem within 30 minutes. 
+You will need to solve a few programming problems within 60 minutes. 
 The problem will be similar to problems you have seen while completing labs and programming projects. 
 These will be taken within Respondus lock-down browser. 
 

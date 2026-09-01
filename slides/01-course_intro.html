@@ -9,7 +9,6 @@
   <body>
     <textarea id="source">
 
-
 class: center, middle, title-slide
 
 # CSCI-UA 102
@@ -59,31 +58,6 @@ class: slide
 template: section
 
 # The Course
-
----
-template: slide
-## The Instructional Stuff
-
-__Instructor:__
-
-- Joanna Klukowska
-
---
-
-__Section Leaders:__
-
-
-- Federico Sichetti 
-- Vincent Xu
-
---
-
-__2 Graders__
-
---
-
-__4-6 Tutors__ 
-
 
 ---
 
@@ -183,16 +157,16 @@ Data structures covered in CSCI.UA 102:
 ---
 template:  section
 
-# Why Learn to Write Code If AI Can Do It?
+# Why Learn to Write Code If generative AI Can Do It?
 
 ---
 
 template:slide
 
 ## Understanding Is Fundamental
-### .purple[AI Can’t Learn for You]
+### .purple[generative AI Can’t Learn for You]
 
-AI can generate code, but it can’t **teach you what the code means**.
+generative AI can generate code, but it can’t **teach you what the code means**.
 
 If you don’t understand *why* a hash table is faster than a linked list for lookups, or what causes a binary search tree to degrade to a linked list, you won’t be able to:
 
@@ -222,13 +196,33 @@ These skills are central to **software design, algorithms, systems, and research
 
 --
 
-These skills are also central to **instructing AI to code solutions to more complex problems**.
+These skills are also central to **instructing generative AI to code solutions to more complex problems**.
+
+---
+
+## Practical Generative AI Strategy in Data Structures
+
+- **Starting Small in Class:**
+  - We will practice using generative AI tools on small, well-defined problems (e.g., implementing basic tree traversals or debugging a linked list).
+  - Working on small problems provides a safe sandbox to learn how to prompt effectively, verify code, and spot generative AI hallucinations.
+
+--
+
+- **Preparing for Large, Unknown Problems:**
+  - The goal is not just solving today's assignment, but developing a repeatable meta-skill.
+  - Mastering generative AI collaboration on foundational data structures builds the intuition needed to navigate massive, unfamiliar systems in industry.
+
+--
+
+- **The Core Requirement:**
+  - You cannot evaluate a generative AI's solution to a complex, unknown system if you cannot evaluate its output on a simple algorithm.
+  - generative AI acts as your guide - human judgment and verification remain your responsibility.
 
 ---
 
 ## You Can’t Debug What You Do not Understand
 
-Even if AI writes the code, you need to:
+Even if generative AI writes the code, you need to:
 
 - Read and understand it  
 
@@ -270,7 +264,7 @@ Without this foundation, your learning and career options will be limited.
 
 --
 
-**After all, AI can do the basic things, and someone with the above skills will need to implement AI systems of tomorrow.** 
+**After all, generative AI can do the basic things, and someone with the above skills will need to implement generative AI systems of tomorrow.** 
 
 ---
 
@@ -284,36 +278,38 @@ Many technical interviews still require:
 
 - Implementing or using basic data structures  
 
-**In real jobs, you’ll often need to build custom solutions—not just copy-paste from AI. That's because these solutions may be
-new and unique to a given situation and the AI does not _know_ about them yet.**
+- Breaking a large, ambiguous problem into clear, step-by-step instructions that could guide someone (or a generative AI) to implement it correctly  
+
+**In real jobs, you’ll often need to build custom solutions—not just copy-paste from generative AI. That's because these solutions may be
+new and unique to a given situation and the generative AI does not _know_ about them yet. And even when generative AI does the typing, someone still has to break the problem down into a precise plan it can follow.**
 
 ---
 
-## AI Is a Great Assistant, Not a Replacement
+## Generative AI Is a Great Assistant, Not a Replacement
 
-AI helps most **when you already understand the problem**.
+generative AI helps most **when you already understand the problem**.
 
 Think of it like a calculator in math:
 > It’s powerful, but useless if you don’t know what formula to apply.
 
-Use AI to:
+Use generative AI to:
 - Get feedback and ideas 
  
 - Explore alternatives  
 
 - Speed up boilerplate coding (but only once you know how to code it with ease)
 
-But don’t skip **building core skills**. **Do not ask AI to complete tasks that you would not be able to complete on your own.**
+But don’t skip **building core skills**. **Do not ask generative AI to complete tasks that you would not be able to complete on your own.**
 
 ---
 
 ## Final Thought
 
-> Use AI to *learn*, not to *replace* learning.
+> Use generative AI to *learn*, not to *replace* learning.
 
-If you master the fundamentals, AI makes you faster and better.
+If you master the fundamentals, generative AI makes you faster and better.
 
-If you don’t, it just makes you faster at being confused and then you become easily replaceable by AI.
+If you don’t, it just makes you faster at being confused and then you become easily replaceable by generative AI.
 
 ---
 template:  section
@@ -327,9 +323,9 @@ background-image: url("img/back3.jpg")
 class:  middle
 
 
-[**Linus Torvals **](https://en.wikiquote.org/wiki/Linus_Torvalds), 2006:
+.large[[**Linus Torvals **](https://en.wikiquote.org/wiki/Linus_Torvalds), 2006:]
 
-> .Large["I will, in fact, claim that the difference between a bad programmer and a good one is whether he(/she) considers his(/her) code or his(/her) data structures more important. 
+> .large["I will, in fact, claim that the difference between a bad programmer and a good one is whether he(/she) considers his(/her) code or his(/her) data structures more important. 
 Bad programmers worry about the code. Good programmers worry about data structures and their relationships. "]
 	
 	
@@ -409,55 +405,7 @@ And this takes only __~0.5 milliseconds__.
 ]
 
 ---
-## Demo 2: Iterating over a list of numbers
-
-
-.left-column2-large[
-Program 1:
-```Java
-LinkedList<Integer> numbers = new LinkedList<>();
-LinkedList<Integer> twiceNumbers = new LinkedList<>();
-populateList(numbers, size);
-
-for (int i = 0; i < size; i++) {
-    twiceNumbers.addLast(numbers.get(i) * 2 );
-}
-```
-Program 2:
-```Java
-LinkedList<Integer> numbers = new LinkedList<>();
-LinkedList<Integer> twiceNumbers = new LinkedList<>();
-populateList(numbers, size);
-
-for (int num : numbers ) {
-    twiceNumbers.addLast( num * 2 );
-}
-```
-]
-
---
-
-.right-column2-small[
-
-In this program we have a list of numbers. We want to iterate over the list, double each number
-and add it to a new list.
-
-What is the difference between these two loops?
-
-----
-
-{{content}}
-
-]
-
---
-
-When `size` is set to 100,000 program 1 takes __3,391 milliseconds__ to execute
-and program 2 finishes in __~4 milliseconds__.
-
-
----
-## Demo 3, part 1:
+## Demo 2, part 1:
 ### Creating and searching in collections of `Circle` objects
 
 
@@ -512,7 +460,7 @@ and program 2 finishes in __161 milliseconds__.
 
 
 ---
-## Demo 3, part 2:
+## Demo 2, part 2:
 ### Creating and searching in collections of `Circle` objects
 
 
@@ -560,7 +508,7 @@ When `size` is set to 1,000,000 program 1 takes __0.01 milliseconds__ to search
 and program 2 takes  __5 milliseconds__ to search.
 
 ---
-## Demo 4: Calculating Fibonacci Numbers
+## Demo 3: Calculating Fibonacci Numbers
 
 .left-column2[
 
@@ -625,12 +573,9 @@ public static long fibonacci2 (
 
 ## Technical Interviews
 
-And if Linus Torvalds <!--, Douglas Crockford--> and my demos did not convince you that understanding data
-structures is important and exciting, there are always technical job interviews:
-
---
-
 - most technical interview questions are based on data structures and algorithms
+- loops increasingly also include system design and practical debugging tasks
+- even with generative AI, interviewers still expect you to explain your reasoning, not just produce code
 
 - examples:
     - design a min-stack that performs typical stack operations and is able to
@@ -678,13 +623,6 @@ is important for the programs to run fast.
 they came up with.
 
 
-<!--
-<button onclick="document.getElementById('volunteer').innerHTML = getRndInteger(1,55)">
-Pick a Group to Report</button>
-
-<p id="volunteer"></p>
--->
-
 ---
 
 template: section
@@ -695,44 +633,32 @@ template: section
 
 ## Tips for the Course
 
-- __Understand the concepts and reasons for doing things__. Do not use a particular solution/approach just
-becase a tutor or TA  (or even the instructor) said it was a good idea. Do not memorize things if you do not
-know what they are doing. Question things! Be curious!
+- __Understand the concepts, don't memorize__. Question things — be curious, not just compliant.
 
 --
 
-- __Use pen and paper__ (or the modern equivalents). Draw things out and experiment with the ideas. It often helps to
-draw out variables and objects of a piece of code that you are analyzing and update the picture as you go through
-the code. This type of hand-eye interaction stimulates different parts of your brain and helps you learn!
+- __Use pen and paper__. Drawing out variables and objects as code runs helps it stick.
 
 --
 
-- __Try solving problems yourself__. I mean really work them out BEFORE asking for a solution,
-looking at a solution posted by others or trying to search the web.
+- __Try problems yourself first__. Work it out before looking up or asking for a solution.
 
 --
 
-- __Write code solutions yourself__. Don't just read the code or watch the video showing the code.
-Don't copy and paste, type it up yourself and then compare it to the code we
-wrote in class or the code that is in a book.
+- __Write the code yourself__. Type it up rather than copy-pasting — it's how the syntax sinks in.
 
 --
 
-- __Treat mistakes and bugs as your friends__. The more problems you encounter, the easier it is to
-recognize them in the future. Your brain actually rewires itself when you make a mistake and fix
-it - this is how learning happens.
+- __Treat bugs as your friends__. Fixing mistakes is how your brain actually learns.
 
 --
 
-- __Make friends__. Make sure that you meet at least a few other people in the class and get to
-know them. These friendships will benefit you and other people in the class, and, in some case, may
-last a lifetime.
+- __Make friends__. A few classmates you know well will make the semester (and your career) better.
 
 ---
 template: section
 
 # Course Syllabus
-
 
 
 
