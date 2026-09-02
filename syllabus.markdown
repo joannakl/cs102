@@ -59,7 +59,7 @@ title: Syllabus, CSCI-UA 102, Klukowska
 * [Course website](https://cs.nyu.edu/~jk157/cs102/) (general information only, access all specific details for the current semester on Brightspace)
 * Exam dates (all subject to change if significant schedule changes are required):
 	* Midterm exam (coding part): Friday, October 16 (during regular recitation time)
-	* Midterm exam (paper-based part): Wednesday, October 19 (during regular lecture time)
+	* Midterm exam (paper-based part): Monday, October 19 (during regular lecture time)
 	* Final exam (coding part): Friday, December 11 (during last recitation time)
 	* Final exam (paper-based part): **Wednesday, December 16, 10:00 - 11:50AM** (during the CAS scheduled final exam period)
 * Prerequisites: Passing CSCI.UA.0101 with a grade of C or better. <br>
