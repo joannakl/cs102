@@ -92,34 +92,22 @@ template: section
 <img alt="compilation and running process" src="img/02/compilation-33.jpg" width=380px />
 ]
 
-.smaller[
+- **Java Virtual Machine (JVM):** A software-based engine that interprets and executes Java bytecode on host hardware.
 
-- A __Java _Virtual_ Machine__ (JVM) is not a real machine. It is a program that can be installed
-on a computer. Java programs are interpreted by a JVM.
-]
---
-.smaller[
-- A compiler translates our source code into Java bytecode. The __bytecode__ consists of instructions
-that can be executed by our JVM. This is done using
+- **Compilation (`javac`):** Translates `.java` source code into platform-independent `.class` bytecode.
 ```
-javac SOURCE_CODE_FILE
+javac MyProgram.java
 ```
-]
---
-.smaller[
-- When we run a Java program, a JVM interprets the bytecode instructions by translating them one by one into
-the actual machine instructions (specific to the computer on which the program is executed). The CPU then executes the
-actual machine instruction. This is done using
+
+
+- **Execution (`java`)**: JVM converts bytecode line-by-line into native machine code for the CPU.
 ```
-java CLASS_FILE
+java MyProgram
 ```
-]
 
 --
 
-__The consequence of this is that Java code that we write is independent of
-the actual computer on which we run it. As long as there is a JVM installed,
-the Java bytecode can be interpreted and executed on the actual hardware.__
+__Key Takeaway: Write once, run anywhere. Bytecode runs on any device equipped with a JVM.__
 
 ---
 template: section
@@ -782,7 +770,7 @@ double charStats ( String str, char c ) {
             count++;
         }
     }
-    ratio = count / str.length();
+    ratio = (double)count / str.length();
     return ratio;
 }
 ```
@@ -924,9 +912,23 @@ template:array-heap
 <img alt="address of the element at index 9 is 136" src="img/02/arrays-23.jpg" width=400px />
 ]
 
+---
+
+## Stack and Heap Summary 
 
 
-
+| Feature | Stack | Heap |
+| :--- | :--- | :--- |
+|  |  |  |
+| **Contents** | Local variables, primitive values, object reference variables | Objects and Arrays |
+|  |  |  |
+| **Organization** | Strictly ordered LIFO (Stack Frames) | Unordered dynamic memory |
+|  |  |  |
+| **Lifetime** | Deleted automatically when method exits | Persists until unreachable (managed by Garbage Collector) |
+|  |  |  |
+| **Size & Speed** | Fixed size, extremely fast access | Large size, slower access |
+|  |  |  |
+| **Error Type** | `StackOverflowError` | `OutOfMemoryError` |
 
 ---
 
@@ -936,7 +938,25 @@ template:section
 
 ---
 
-## Example 1: What Happens in Memory
+## Example: Where Is It Stored?
+
+For each of the following decide if it is stored on the stack or on the heap:
+
+- local variable `int x = 102;` inside a method
+
+- object **reference** `Point p = new Point();` inside a method 
+
+- actual `Point` object to which the reference `p` points to  
+
+- the `x` coordinate of the `Point` object to which the reference `p` points to
+
+- an element of the array declared as `int[] nums = new int[5];` inside a method
+
+- an element of the array declared as`Point[] points = new Point[5];` inside a method
+
+---
+
+## Example: What Happens in Memory
 
 Assume that there is a class called `Circle`. It has a public data field called
 `radius`. It has a one parameter constructor that takes a radius of a circle
@@ -969,7 +989,60 @@ What is the output of the above code?
 
 ---
 
-## Example 2: What Happens in Memory
+## Example: What Happens in Memory
+
+
+Consider the following class and code fragment:
+
+.left-column2[
+```Java
+class Point {
+  int x;
+  int y;
+
+  Point(int x, int y) {
+    this.x = x;
+    this.y = y;
+  }
+  
+  public boolean equals(Object obj) {
+    if (obj instanceof Point) {
+      Point other = (Point) obj;
+      return this.x == other.x && 
+           this.y == other.y;
+    }
+    return false;
+  }
+  
+}
+```
+]
+
+.right-column2[
+```Java
+Point p1 = new Point(2, 4);
+Point p2 = p1;
+p2.x = 9;
+Point p3 = new Point(9, 4);
+
+System.out.println(p1.x + ", " + p1.y);
+System.out.println(p3.x + ", " + p3.y);
+
+System.out.println(p1 == p2);
+System.out.println(p1 == p3);
+System.out.println(p1.equals(p3));
+```
+]
+
+- What is the printed by this code fragment?
+
+- How many total `Point` objects are allocated on the heap?
+
+**Warning:** How are the two `Point` objects compared when `==` operator is used? 
+
+---
+
+## Example: What Happens in Memory
 
 ```Java
 Circle [] circles = new Circle[10];
@@ -992,6 +1065,75 @@ and what is stored on the heap?
     - how many different `Circle` objects are accessible through the array?
 
 ---
+## Array Memory 
+
+Consider the following array `int[] nums = {10, 20, 30, 40, 50}`. Assume its starting address is 5000.
+
+- What is the memory address of `nums[3]`? 
+- How many bytes are allocated for this array? 
+
+--
+
+<hr>
+
+
+Consider the following array. Again, assume its starting address is 5000. 
+
+```java
+Point [] points = new Point[5];
+points[0] = new Point(1,2);
+points[1] = new Point(3,4);
+points[2] = new Point(5,6);
+```
+
+- What is the memory address of `points[3]`? 
+- How many bytes are allocated for this array? 
+- Would the answer to the previous question change if we also created a `Point` object for `points[3]`, i.e., `points[3] = new Point(7,8);`
+
+
+
+---
+## Example: Pass-by-Value & Stack Frames 
+
+Given the following methods:
+
+.left-column2-large[
+```java 
+public static void main(String[] args) {
+    int val = 10;
+    int[] arr = { 10, 20 };
+
+    modify(val, arr);
+
+    System.out.println("val = " + val);
+    System.out.println("arr[0] = " + arr[0]);
+}
+```
+
+```java
+public static void modify(int x, int[] a) {
+    x = 99;
+    a[0] = 99;
+    a = new int[3];
+    a[0] = 50;
+    a[1] = 60;
+    a[2] = 70;
+}
+```
+]
+
+- Name all the variables stored in the stack frame for `main`.
+
+- Name all the variables stored in the stack frame for `modify`.
+
+- What values are printed by `main` after `modify(...)` executes?
+
+- What happens to stack frame variables for `modify` after the function terminates? 
+
+
+
+
+---
 
 name:stack_frame_swap
 
@@ -1001,7 +1143,6 @@ Given the `swap` function
 
 
 .left-column2[
-.smaller[
 ```Java
 void swap ( double d1, double d2 ) {
     double tmp;
@@ -1020,13 +1161,13 @@ double num2 = 2.1718;
 swap ( num1, num2 );
 ```
 
-]]
+]
 
 --
 
 .right-column2[
 
-the values of `d1` and `d2` and initialized to the arguments that are passed to the function:
+the values of `d1` and `d2` are initialized to the arguments that are passed to the function:
 
 <img alt="swap stack fram" src="img/02/swap-11.jpg" width=350px />
 ]
@@ -1073,7 +1214,6 @@ __and the swap is completed!__
 
 __or is it?__
 
-.smaller[
 If we execute
 
 ```Java
@@ -1081,7 +1221,9 @@ System.out.println(num1 + " " + num2 );
 ```
 after the call to `swap` function
 what will the output be?
-]
+
+
+
 
 </optgroup>
 
