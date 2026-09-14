@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Data Structures And Algorithms</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link href="css/slides.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle, title-slide
+
+# CSCI-UA 102
+## Data Structures
+
+<br>
+
+## Data Structures and Algorithms <br>(Bird's Eye View)
+
+.author[
+Instructor: Joanna Klukowska <br><br><br>
+]
+
+.license[
+Copyright 2020 Joanna Klukowska. Unless noted otherwise all content is released under  a <br>
+[Creative Commons Attribution-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).<br>
+Background image by Stewart Weiss<br>]
+
+---
+layout:true
+template: default
+name: section
+class: inverse, middle, center
+
+---
+layout:true
+template: default
+name: breakout
+class: breakout, middle
+
+---
+
+layout:true
+template:default
+name:slide
+class: slide
+
+.bottom-left[&#169; Joanna Klukowska. CC-BY-SA.]
+
+---
+template: section
+
+# Phone-book Search
+## (as an introduction to algorithm performance analysis)
+
+---
+## Remember Phone-books?
+
+- __Raise your hand if you have ever seen a phone-book or used a phone-book.__
+
+
+--
+.center[
+<figure >
+<img width="600" alt="phonebook" src="https://upload.wikimedia.org/wikipedia/commons/d/d3/Telefonbog_ubt-1.JPG">  </img>
+.small[<figcaption markdown="1"> Tomasz Sienicki / [WikimediaCommons](https://commons.wikimedia.org/wiki/File:Telefonbog_ubt-1.JPG)
+  / [CC BY](https://creativecommons.org/licenses/by/3.0) <figcaption markdown="1"> ]
+</figure>
+]
+
+---
+name:Jane-take1
+
+
+## Searching For Jane Wong (Take 1)
+
+.left-column2[
+.pseudocode[
+1. open the phone-book on page one
+1. if Jane Wong is on that page
+    - get her number
+1. otherwise
+    - flip to the next page
+    - go back to step 2
+]
+]
+
+--
+
+<img alt="phonebook closed" src="img/03/phonebook-2.jpg" width=340px />
+
+---
+template: Jane-take1
+
+<img alt="phonebook one page turned" src="img/03/phonebook-3.jpg" width=340px />
+
+
+
+---
+template: Jane-take1
+
+<img alt="phonebook one page turned" src="img/03/phonebook-4.jpg" width=340px />
+
+
+---
+template: Jane-take1
+name:Jane-take1-final
+
+<img alt="phonebook one page turned" src="img/03/phonebook-5.jpg" width=340px />
+
+
+---
+template:Jane-take1-final
+
+You are most likely going to tell me that this is not a very good algorithm,
+but let's think about it for a while.
+
+--
+
+- Is the algorithm correct? (i.e., will it find Jane Wong in the phone book?)
+--
+ __YES__
+
+--
+
+- Is it efficient? (i.e., is this the fastest way of doing it?)
+--
+ __NO__
+
+--
+
+- Assuming that there are 1,000 pages in the phone book, how many page turns will it require?
+--
+ <br>__can't know for sure, but ~800-900__ (or 1000 if Jane is not listed)
+
+--
+
+- How about if there are 10,000 pages in the phone book? How many page turns will be needed?
+--
+<br>__again, can't know for sure, but ~8,000-9,000__ (or 10,000 if Jane is not listed)
+
+---
+
+template:Jane-take1-final
+
+.important[
+When the number of operations is directly proportional to the input size `N`
+(here, page turns vs. pages), the algorithm is __linear__, or `O(N)`.
+]
+
+---
+
+## Searching For Jane Wong (Take 2)
+
+Skipping two pages at a time is faster than Take 1, but we can miss Jane
+unless we go back when we overshoot (phone books are sorted).
+
+--
+
+.pseudocode[
+1. open the phone-book on page one
+1. if Jane Wong is on that page
+    - get her number
+1. otherwise
+    - if the current page contains names _after_ Jane Wong
+        - __go back one page__
+        - go back to step two
+    - otherwise
+        - __flip two pages__
+        - go back to step 2
+]
+
+--
+
+This is still a __linear algorithm__: we eliminate 1 or 2 pages at a time,
+so the number of page turns is still proportional to the number of pages
+(`O(N)`). It is about twice as fast as Take 1, but we can do better.
+
+---
+name:Jane-take3
+
+## Searching For Jane Wong (Take 3)
+
+This is the algorithm that most people would follow (well, approximately).
+
+.pseudocode[
+1. &nbsp;
+    - &nbsp;
+1. open the phone-book to the middle page
+{{content}}
+
+]
+
+--
+1. if Jane Wong is on that page
+    - get her number
+{{content}}
+
+--
+1. otherwise, if the page contains names _after_ Jane Wong
+    - tear the phone book in half
+    - throw out the second half (including the page you just looked at)
+    - go back to step 1
+{{content}}
+
+--
+1. otherwise, if the page contains names _before_ Jane Wong
+    - tear the phone book in half
+    - throw out the first half (including the page you just looked at)
+    - go back to step 1
+
+--
+
+What is the missing first step?
+
+---
+
+## Searching For Jane Wong (Take 3)
+
+This is the algorithm that most people would follow (well, approximately).
+
+.pseudocode[
+1. if there is no phone-book left
+    - Jane Wong is not listed, can't get her number
+1. open the phone-book to the middle page
+1. if Jane Wong is on that page
+    - get her number
+1. otherwise, if the page contains names _after_ Jane Wong
+    - tear the phone book in half
+    - throw out the second half (including the page you just looked at)
+    - go back to step 1
+1. otherwise, if the page contains names _before_ Jane Wong
+    - tear the phone book in half
+    - throw out the first half (including the page you just looked at)
+    - go back to step 1
+]
+
+--
+
+- Is the algorithm correct? (i.e., will it find Jane Wong in the phone book?)
+--
+ __YES__
+
+--
+
+- Is it efficient? (i.e., is this the fastest way of doing it?)
+--
+ __YES__ (although we won't prove it)
+
+--
+
+- Assuming that there are 1,000 pages in the phone book, how many page turns will it require?
+--
+ <br>__at most 10__
+
+--
+
+- How about if there are 10,000 pages in the phone book? How many page turns will be needed?
+--
+<br>__at most 14__
+
+---
+
+## Power of Halving
+
+.left-column2[
+The significant performance improvement in this algorithm comes from halving the number of pages
+that we need to look at after we examine each page.
+- in _take 1_ and _take 2_ the number of pages that we eliminated was 1 or 2
+- in _take 3_ the number of pages that we eliminate is equal to the half of the remaining pages
+
+.important[
+When the search space is halved after each comparison, the algorithm is __logarithmic__, or `O(log N)`:
+running time grows proportionately to the logarithm of the input size `N`.
+]
+]
+
+<img alt="cutting number of pages in half after each test" src="img/03/binary.gif" width=380px />
+
+---
+
+template: section
+
+# Working with Arrays
+
+
+
+---
+name: array-contiguous
+## Constant Access Time to Elements
+
+Recall the array image from last class (with memory addresses indicated below):
+.center80[.center[
+<img alt="integer array with marked memory addresses" src="img/02/arrays-23.jpg" width=400px />
+]]
+
+Because an array occupies contiguous memory locations, __the access to individual elements
+is instantaneous.__
+
+--
+
+For example, when we execute
+```
+    System.out.println(array[3]);
+```
+we get the element at index `3` right away.
+
+--
+
+It does not matter how big the array is. It also
+does not matter if we are trying to access an element at index `3` or at index `3000`, the access time
+is going to be the same.
+
+---
+template: array-contiguous
+
+.important[
+When an operation is independent of the number of elements in the data structure,
+it is said to be __constant__, which is denoted as `O(1)`.
+]
+
+---
+
+## Searching in an Array
+
+For searching in an array, we can apply similar algorithms as for searching in a phone book:
+
+- If the data in our array is __not sorted__, then we will use a __linear search__, `O(N)`.
+
+- If the data in our array is __sorted__, then we can use a __binary search__, `O(log N)`.
+
+---
+name: array-add
+## Adding an Element to an Array
+
+Now, let's see how elements are added to an array.
+
+.center[
+
+{{content}}
+
+]
+---
+template: array-add
+<img alt="add elements to an array" src="img/03/array_add-18.jpg" width=550px />
+
+Start with an empty 5-element array.
+
+---
+template: array-add
+<img alt="add elements to an array" src="img/03/array_add-24.jpg" width=550px />
+
+After adding 7, 5, 6, 2, and 9, the array is full. Those first inserts were __constant time__ operations.
+
+---
+template: array-add
+<img alt="add elements to an array" src="img/03/array_add-27.jpg" width=550px />
+
+Now, let's try to add 1. Where should it go?
+
+--
+.center[
+__We need a bigger array!__ That means we copy the 5 existing elements first, then add 1.
+]
+
+---
+template: array-add
+<img alt="add elements to an array" src="img/03/array_add-32.jpg" width=550px />
+
+Copy each existing element into the new array. This is a __linear time__ operation, or `O(N)`.
+
+---
+template: array-add
+<img alt="add elements to an array" src="img/03/array_add-33.jpg" width=550px />
+
+__Finally, add the 1!__
+
+---
+## Adding an Element to an Array
+
+- The initial add operations were fast. In fact, they were performed in __constant time__.
+
+--
+
+- But once the array is _full_ we need to do a lot of work in order to add another element:
+  .pseudocode[
+1. create a new, larger array
+1. for each element in the original array
+  - copy it to the new array
+1. add the new element to the new array
+  ]
+
+--
+
+  This is a __linear time__ algorithm, and it may take a lot of time if the
+original array had many elements.
+
+--
+
+<div style="margin:3em 0 0 0">
+.center[.large[Can we do better? ]]
+</div>
+
+
+---
+name: alternative
+## Alternative Memory Layout
+
+What if we could put elements anywhere in memory, instead of being restricted to contiguous locations?
+
+.center[
+
+{{content}}
+
+]
+
+---
+template: alternative
+<img alt="add elements to an array" src="img/03/alternative-34.jpg" width=550px />
+
+But then, how do we know which element is at which _index_? <br>
+How do we know what comes before what?
+---
+template: alternative
+<img alt="add elements to an array" src="img/03/alternative-35.jpg" width=550px />
+
+We need to have a way of somehow _connecting_ the elements?
+
+--
+
+.center[
+But how can we exactly accomplish these _arrows_ that tell us where the next element is?
+]
+
+---
+template:alternative
+<img alt="add elements to an array" src="img/03/alternative-36.jpg" width=550px />
+
+Remember that each value has a unique memory address (its location).
+
+---
+template:alternative
+<img alt="add elements to an array" src="img/03/alternative-37.jpg" width=550px />
+
+We can use additional memory (a block right next to the actual element) <br>to keep track of the
+location of the next element.
+---
+template:alternative
+<img alt="add elements to an array" src="img/03/alternative-38.jpg" width=550px />
+
+7 is the first element (just like it was in the array). <br>
+5 is the second element, so we store the address of 5, right next to the element 7.
+---
+template:alternative
+<img alt="add elements to an array" src="img/03/alternative-39.jpg" width=550px />
+
+Using our _arrow abstraction_ we show that the new element right <br>
+next to 7 points to the memory location that stores 5.
+
+---
+template:alternative
+<img alt="add elements to an array" src="img/03/alternative-40.jpg" width=550px />
+
+Then the memory location next to 5 needs to store the memory address of 6 (our next element).
+
+---
+template:alternative
+<img alt="add elements to an array" src="img/03/alternative-41.jpg" width=550px />
+
+And we use an arrow to indicate that it points to the memory location that stores 6.
+
+---
+template:alternative
+<img alt="add elements to an array" src="img/03/alternative-43.jpg" width=550px />
+
+We do the same for keeping track of where 2 and 9 are located.
+---
+template:alternative
+<img alt="add elements to an array" src="img/03/alternative-45.jpg" width=550px />
+
+Finally, to indicate that 9 is the last element, the memory location <br>next to it is set to
+`0x0` (or `null`) to indicate that it does not point to anything.
+
+---
+template:alternative
+<img alt="add elements to an array" src="img/03/alternative-46.jpg" width=550px />
+
+When we want to add 1 to our list of numbers, we simply place it in <br>an available
+memory location and ...
+
+---
+template:alternative
+<img alt="add elements to an array" src="img/03/alternative-47.jpg" width=550px />
+
+When we want to add 1 to our list of numbers, we simply place it in <br>an available
+memory location and ... <br>connect it to the rest of the list by adjusting stored memory addresses.
+
+--
+
+.center[
+This means that we __do not__ need to copy all the elements to a new list.
+We only changed one stored address.
+]
+
+---
+template: section
+
+# Linked List
+
+---
+template: slides
+
+## Linked List
+
+The _construct_ that we created on a previous slide is a linked list.
+
+.center[
+<img alt="add elements to an array" src="img/03/linked_list-48.jpg" width=450px />
+]
+
+or more often presented as
+
+
+.center[
+<img alt="add elements to an array" src="img/03/linked_list-49_1.jpg" width=750px />
+]
+
+---
+## Linked List
+
+A __linked list__ is a linear collection of data elements in which each element
+points to the next one.
+
+--
+
+name: linked-list
+.left-column2-large[
+The list is usually composed of __nodes__ that contain the actual data part and
+the memory address of the next element.
+]
+
+```Java
+class Node {
+  int data;
+  Node next;
+}
+```
+--
+
+
+.center[
+<img alt="add elements to an array" src="img/03/linked_list-49.jpg" width=750px />
+
+This list has six nodes.
+
+]
+
+---
+template: linked-list
+
+.center[
+<img alt="add elements to an array" src="img/03/linked_list-50.jpg" width=750px />
+]
+
+In order to work with a linked list, we need to keep track of where it starts, and,
+sometimes where it ends:
+- __`head`__ is a reference to the first node (or to the _head of the list_)
+- __`tail`__ is a reference to the last node (or the _tail of the list_)
+
+
+
+.important[Note that `head` and `tail` are references to nodes, they are __not__ nodes themselves.]
+
+---
+template: linked-list
+
+.center[
+<img alt="add elements to an array" src="img/03/linked_list-50.jpg" width=750px />
+]
+
+References that do not point to anything are set to `0x0` (or zero) which is often
+described as __`null`__.
+
+--
+
+.aside[
+You probably have seen references to `null` value when your program crashed with a `NullPointerException`.
+This simply means that the program tried to access some data that does not really exist.
+It tried to access something through a reference whose value was `null`.
+]
+
+
+---
+template: linked-list
+
+.center[
+<img alt="add elements to an array" src="img/03/linked_list-51.jpg" width=750px />
+]
+
+As mentioned before, we will not worry about the actual memory addresses. These
+are stored by references in our programs and we do not need to know their actual values
+to understand how the data structure works.
+
+---
+## Adding to a Linked List
+
+So how do we add to a linked list?
+
+- We saw that this should not require duplicating any elements since the list is never really full.
+
+- But how many steps will it take?
+
+--
+
+.pseudocode[
+1. Create a new node
+  - set its value as desired
+  - set its reference to the `next` node to `null`
+1. if `tail` points to a node
+  - set `tail.next` to the newly created node
+  - advance tail to the newly created node
+
+  otherwise (list is empty)
+  - set `tail` and `head` to the newly created node
+]
+
+--
+
+.important[
+Adding to the end of a linked list does not depend on the number of elements
+that are already in that list (i.e., it is independent of the length
+of that list). This is a __constant time__ algorithm, or `O(1)` algorithm.
+]
+
+---
+
+## Accessing Individual Elements
+
+How can we access individual elements in a linked list?
+
+Can we just get to an element at position 4 or 40 immediately (as we can with an array)?
+
+--
+
+Not really, because we do not have a reference to that element. We need to find out
+where in memory it is stored. Let's say we want the fourth element ( this would be index 3 in the array):
+
+--
+- the memory address of that element is stored in the third node,
+
+--
+- the memory address of the third node is stored in the second node,
+
+--
+- the memory address of the second node is stored in the first node,
+
+--
+- and the memory address of the first node is stored in the `head` reference
+
+--
+
+__So, we need to start at the `head` reference and follow the information trail.__
+
+.pseudocode[
+Get the value of the fourth node
+
+1. create a temporary reference called current and point it to the first node
+1. initialize a counter to one
+1. while counter is less than 4
+  - set current to current.next
+  - increment counter by one
+1. return current.data
+]
+
+
+_Note that this assumes that we have at least four nodes in our list._
+
+
+---
+## Searching in a Linked List
+
+
+The last thing we'll discuss about linked list for now is searching.
+
+For an array, we used:
+- linear search, when data was not sorted
+- binary search, when data was sorted
+
+What can we do for a linked list?
+
+---
+
+template: breakout
+
+
+
+### Group Discussion: How do we search in a linked list?
+
+
+- In groups of 3-4 people discuss a way of searching in a linked list.
+
+- Consider both unsorted and sorted linked lists.
+
+- Try to come up with an algorithm (like the ones on the previous slides).
+
+- After ~3 minutes, some groups will get a chance to report on what
+they came up with.
+
+
+---
+template: section
+
+# Stacks & Queues
+
+---
+
+## What Is a Stack?
+
+
+
+<figure style="float:right;margin-top:-50px;transform:rotate(5deg)scale(0.9)">
+<img width="350" alt="stack of dinner plates" src="https://upload.wikimedia.org/wikipedia/commons/d/d4/Stack_of_dinner_plates.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original">  </img>
+.small[<figcaption markdown="1"> Stack of Dinner Plates<br>Santeri Viinamäki / [WikimediaCommons](https://commons.wikimedia.org/wiki/File:Stack_of_dinner_plates.jpg)
+  / [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0) <figcaption markdown="1"> ]
+</figure>
+
+
+
+
+<figure style="float:left;margin-top:100px;transform:rotate(-5deg)scale(1.0)">
+<img width="250" alt="financial books" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Financial_books.jpg">  </img>
+.small[<figcaption markdown="1"> Financial Accounting Books<br>Asommerv / [WikimediaCommons](https://commons.wikimedia.org/wiki/File:Financial_books.jpg)
+  / [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0) <figcaption markdown="1"> ]
+</figure>
+
+
+
+
+<figure style="float:right;margin-right:100px;margin-top:-20px;transform:rotate(5deg)scale(1.0)">
+<img width="250" alt="a stack of tractor tyres" src="https://upload.wikimedia.org/wikipedia/commons/0/03/A_stack_of_tractor_tyres_-_geograph.org.uk_-_1409842.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original">  </img>
+<figcaption markdown="1">.small[A Stack of Tractor Tyres<br>Andy F / [WikimediaCommons](https://commons.wikimedia.org/wiki/File:A_stack_of_tractor_tyres_-_geograph.org.uk_-_1409842.jpg)
+  / [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0)] <figcaption markdown="1">
+</figure>
+
+---
+
+## What Is a Stack?
+
+<figure style="float:right">
+<img width="325" alt="a stack" src="https://upload.wikimedia.org/wikipedia/commons/2/29/Data_stack.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original">  </img>
+<figcaption markdown="1">.small[Boivie / [WikimediaCommons](https://commons.wikimedia.org/wiki/File:Data_stack.svg)
+  / Public Domain ]<figcaption markdown="1">
+</figure>
+
+.left-column2[
+.important[
+__Stack__ is a linear structure in which the elements can be added
+to and removed from only one end. <br>
+It is often referred to as a __last in first out__ (LIFO) data structure, because the
+element that was added most recently will be removed before the elements that
+have been added before it.
+]
+]
+
+--
+
+.below-column2[
+
+.important[
+Stack operations are:
+- __`push`__ which adds an element to the top of the stack
+- __`pop`__ which removes (and often returns) the element from the top of the stack
+- __`top`__ which returns (but does not remove) the element from the top of the stack
+]
+]
+
+
+We will look at ways of implementing stacks using both arrays and linked lists.
+Our performance goal for all of the operations will be __O(1)__!
+
+---
+
+template: slide
+
+## What Is a Queue
+
+
+<figure style="float:left;margin-top:150px;transform:rotate(-5deg)scale(1.2)">
+<img width="325" alt="water slide queue"
+src="https://upload.wikimedia.org/wikipedia/commons/d/df/Jonoa_Serenassa.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original">  </img>
+.small[<figcaption markdown="1"> Water Slide Queue<br>kallerna /
+[WikimediaCommons](https://commons.wikimedia.org/wiki/File:Jonoa_Serenassa.jpg)
+  / [CC BY-SA](https://creativecommons.org/licenses/by-sa/2.0) <figcaption markdown="1"> ]
+</figure>
+
+
+<figure style="float:right;margin-top:-50px;transform:rotate(5deg)scale(1.2)">
+<img width="325" alt="JFK plane queue"
+src="https://upload.wikimedia.org/wikipedia/commons/8/8c/JFK_Plane_Queue.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original">  </img>
+.small[<figcaption markdown="1"> JFK Plane Queue<br>Giorgio Montersino /
+[WikimediaCommons](https://commons.wikimedia.org/wiki/File:JFK_Plane_Queue.jpg)
+  / [CC BY-SA](https://creativecommons.org/licenses/by-sa/2.0) <figcaption markdown="1"> ]
+</figure>
+
+
+<figure style="float:right;margin-top:50px;margin-right:50px;transform:rotate(5deg)scale(1.2)">
+<img width="325" alt="social distancing line to Trader Joe's"
+src="https://upload.wikimedia.org/wikipedia/commons/6/67/Social_distancing_in_a_Trader_Joe%27s_line_in_Cambridgeport%2C_Cambridge%2C_Massachusetts_March_21%2C_2020.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original">  </img>
+.small[<figcaption markdown="1"> Social Distancing Line to Trader Joe's<br>Strmsrg /
+[WikimediaCommons](https://commons.wikimedia.org/wiki/File:Social_distancing_in_a_Trader_Joe%27s_line_in_Cambridgeport,_Cambridge,_Massachusetts_March_21,_2020.jpg)
+  / [CC BY-SA](https://creativecommons.org/licenses/by-sa/4.0) <figcaption markdown="1"> ]
+</figure>
+
+
+---
+## What Is a Queue
+
+.left-column2[
+.important[
+__Queue__ is a linear structure in which the elements can be added at the back
+(one end of the queue) and removed from the front (the other end of the queue). <br>
+It is often referred to as a __first in first out__ (FIFO) data structure, because the
+element that was added most recently will be removed after the elements that
+have been added before it.
+]
+]
+
+.right-column2[
+<figure >
+<img width="300" alt="a queue" src="https://upload.wikimedia.org/wikipedia/commons/5/52/Data_Queue.svg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original">  </img>
+<figcaption markdown="1">.small[Vegpuff / [WikimediaCommons](https://commons.wikimedia.org/wiki/File:Data_Queue.svg)
+  /  [CC BY-SA](https://creativecommons.org/licenses/by-sa/3.0) ]<figcaption markdown="1">
+</figure>
+
+]
+
+--
+
+.below-column2[
+
+.important[
+Queue operations are:
+- __`enqueue`__ which adds an element to the end/back of the queue
+- __`dequeue`__ which removes (and often returns) the element from the front of the queue
+- __`font`__ which returns (but does not remove) the element at the front of the queue
+]
+]
+
+
+We will look at ways of implementing queues using both arrays and linked lists.
+Our performance goal for all of the operations will be __O(1)__!
+
+
+---
+
+template: section
+
+# Binary (Search) Trees
+
+---
+## Array vs Linked List Performance
+
+At the end of the _Arrays vs Linked List_ discussion, some of you might have been a
+bit unsatisfied with the benefits of the linked list design:
+
+.continue-column[
+.left-column2[
+Arrays
+- .green[constant access time to elements, `O(1)`]
+]
+.right-column2[
+Linked List
+- .red[linear access time to elements, `O(N)`]
+]
+]
+.continue-column[
+.left-column2[
+- linear time search, if unsorted, `O(N)`
+]
+.right-column2[
+- linear time search, if unsorted, `O(N)`
+]
+]
+.continue-column[
+.left-column2[
+- .green[logarithmic time search, if sorted, `O(log N)`]
+]
+.right-column2[
+- .red[linear time search, if sorted, `O(N)`]
+]
+]
+.continue-column[
+.left-column2[
+- .red[possibly linear time to add an element (when the array is full and we need to resize), `O(N)`]
+]
+.right-column2[
+- .green[constant time to add an element to the end (because there is no need to resize), `O(1)`]
+]
+]
+
+--
+
+.below-column2[
+<br/>
+
+----
+
+__BUT__ the linked lists give us:
+- the idea of connecting elements in a different way, and we'll use it in more complicated structures
+- building blocks for more complicated structures
+- very good performance when we operate only on the ends (i.e., no need to access any elements except for
+first and last)
+- good enough performance when we do not need binary search
+- good enough performance when we are working with small lists
+]
+
+
+---
+name:bst
+## Getting Back Binary Search
+
+Can we design a data structure that does not use contiguous memory locations (like an array) but still allows us to use something like the binary search algorithm?
+
+---
+template:bst
+.center[
+<img alt="from a binary search to a bst" src="img/03/bst-67.jpg" width=400px />
+]
+---
+template:bst
+.center[
+<img alt="from a binary search to a bst" src="img/03/bst-69.jpg" width=400px />
+]
+---
+template:bst
+.center[
+<img alt="from a binary search to a bst" src="img/03/bst-71.jpg" width=400px />
+]
+---
+template:bst
+.center[
+<img alt="from a binary search to a bst" src="img/03/bst-73.jpg" width=400px />
+]
+---
+template:bst
+.center[
+<img alt="from a binary search to a bst" src="img/03/bst-77.jpg" width=400px />
+]
+---
+template:bst
+.center[
+<img alt="from a binary search to a bst" src="img/03/bst-79.jpg" width=400px />
+]
+
+---
+
+## A Different Kind of Node
+
+.left-column2-large[
+.left-column2[
+<img alt="bst node" src="img/03/bst_node-80.jpg" width=225px />
+]
+```java
+  class Node {
+      int data;
+      Node left;
+      Node right;
+  }
+```
+
+]
+
+.right-column2-small[
+- The __nodes__ that we used for a linked list stored the data and a single
+reference to the `next` node.
+
+
+- For a structure from the previous slide, we need to keep track of two different
+_next_'s: the one on the left and the one on the right:
+
+
+
+]
+
+--
+.center[
+<img alt="from a binary search to a bst" src="img/03/bst_node-82.jpg" width=450px />
+]
+
+
+---
+name:bst
+
+## Binary Search Trees
+
+.left-column2-larger[
+.important[
+A __binary search tree__ is a structure that starts with a special element called
+__root__ and in which all the values stored to the left of the root are smaller than it,
+and all the values stored to the right of the root are larger than it.
+]
+.center[
+<img alt="bst structure" src="img/03/bst-83.jpg" width=350px />
+]
+We will look at ways of implementing binary search trees so that they
+guarantee O(log N) performance on pretty much all operations (although this will
+require some balancing work!).
+
+]
+---
+template: bst
+
+.right-column2-smaller[
+.center[
+<figure >
+<img alt="balanced bst" src="img/03/bst-84.jpg" width=200px />
+<figcaption>balanced bst</figcaption>
+</figure>
+
+<figure >
+<img alt="unbalanced bst" src="img/03/bst-85.jpg" width=200px />
+<figcaption>unbalanced bst</figcaption>
+</figure>
+]]
+
+---
+
+## Summary of Important Concepts
+
+Algorithmic running time
+- constant, `O(1)`, running time does not depend on the size of the data structure
+- logarithmic, `O(log N)`, running time grows proportionately to the `log`
+of number of elements in the data structure (usually achieved by halving)
+- linear, `O(N)`, running time grows proportionately to the number of
+elements in the data structure (usually because we need to look at all elements)
+
+--
+
+Arrays
+- constant access time to elements, `O(1)`
+- linear time search, if unsorted, `O(N)`
+- logarithmic time search, if sorted, `O(log N)`
+- possibly linear time to add an element (when the array is full and we need to resize), `O(N)`
+
+--
+
+Linked List
+- linear access time to elements, `O(N)`
+- linear time search, if unsorted, `O(N)`
+- linear time search, if sorted, `O(N)`
+- constant time to add an element to the end (because there is no need to resize), `O(1)`
+
+
+---
+
+
+## Summary of Important Concepts
+
+Stack (last in, first out)
+- operations allowed only at one end: `push`, `pop`, `top`
+- goal: `O(1)` performance for `push` and `pop`
+
+
+Queue (first in, first out)
+- operations allowed only at the two ends: `enqueue`, `dequeue`, `front`
+- goal: `O(1)` performance for `enqueue` and `dequeue`
+
+
+
+Binary Search Tree
+- gaining back the binary search for _sorted_ data
+- goal: `O(logN)` performance for almost all operations
+
+---
+
+template:section
+
+# Examples and Things to Think About
+---
+
+## Array Resizing Costs
+
+Suppose you have a dynamic array (one that will _grow_ as we need more space) that starts with a capacity of **4** elements and **doubles** its capacity every time it becomes full. 
+
+You perform a sequence of **9 add operations** into an initially empty array.
+
+- How many total element copy operations occur across all resizes?
+
+- At which specific insertion steps (1st, 2nd, 3rd... 9th) do resizes take place?
+
+- What is the final capacity of the array after all 9 elements are added?
+
+---
+
+## Linked Lists and Binary Search
+
+We saw that sorting an **array** allows us to use binary search to find elements in **`O(log N)`** time.
+
+Suppose we have a **sorted linked list** containing 1,000 elements.
+
+- Can we perform a binary search directly on this sorted linked list to achieve `O(log N)` search time? 
+
+- What step of the binary search algorithm becomes expensive in a linked list, and why?
+
+---
+
+## Stacking Things Up
+
+Consider the following sequence of operations on an initially empty stack.
+Show the stack content at each of the indicated lines. Make sure to indicate
+where the top and the bottom of your stack are.
+
+```java
+push 5
+push 10
+push 23
+pop
+push 17
+top
+push 10
+// show the content of the stack
+pop
+TMP = pop
+push 5 * TMP
+// show the content of the stack
+TMP = top
+push 10 * TMP
+push 100 * TMP
+// show the content of the stack
+pop
+pop
+pop
+// show the content of the stack
+
+```
+
+---
+
+## Queuing Up
+
+Consider the following sequence of operations on an initially empty queue.
+Show the queue content at each of the indicated lines. Make sure to indicate
+where the front and the back of your queue are.
+
+```java
+enqueue 5
+enqueue 10
+enqueue 23
+dequeue
+enqueue 17
+front
+enqueue 10
+// show the content of the queue
+dequeue
+TMP = dequeue
+enqueue 5 * TMP
+// show the content of the queue
+TMP = front
+enqueue 10 * TMP
+enqueue 100 * TMP
+// show the content of the queue
+dequeue
+dequeue
+dequeue
+// show the content of the queue
+
+```
+
+---
+
+## Big-O Complexity Matching
+
+Classify each of the following scenarios into its tightest Big-O time complexity (**`O(1)`**, **`O(log N)`**, or **`O(N)`**):
+
+1. Accessing the element at index `450` in an array of size `1,000`.
+
+2. Finding an element in a sorted array of `1,000,000` items using binary search.
+
+3. Accessing the i'th node  in a linked list.
+
+4. Pushing an element onto the top of a stack.
+
+5. Searching for an item in an unsorted array of `N` items.
+
+6. Adding a new node to the end of a linked list when a `tail` reference is maintained.
+
+
+---
+
+## Working with a Binary Search Tree
+
+Consider the binary search tree from one of the earlier slides:
+
+.center[
+<img alt="balanced bst" src="img/03/bst-84.jpg" width=400px />
+]
+
+- If we decide to add a few more values to this tree, where do you think the
+nodes should be connected?  Here are a few values to be added: __65__, __14__, __27__.
+Make sure that the resulting tree is still a binary search tree!
+
+- Try to design an algorithm that determines the smallest/largest value
+that is stored in a binary search tree.
+
+- Try to design an algorithm that determines the largest value that is smaller
+than the root (or rather the value stored in the root node). <br>
+Is this algorithm in any way similar to the algorithm you suggested for the
+previous prompt?
+
+---
+
+## Choosing the Right Data Structure
+
+For each of the following real-world applications, identify which data structure is the most appropriate:
+
+1. Implementing the **"Undo" (Ctrl+Z)** feature in a text editor.
+
+2. Managing print jobs submitted to a shared office printer.
+
+3. Storing fixed historical weather data where instant access by day index (`day[30]`) is required.
+
+4. Maintaining a dynamic set of user IDs where fast insertion, deletion, and ordered search queries are all required to run in logarithmic time.
+
+
+
+</optgroup>
+
+
+
+    </textarea>
+     <script src="js/remark.js" type="text/javascript">
+    </script>
+    <script src="js/remark_conf.js" type="text/javascript">
+    </script>
+
+  </body>
+</html>
