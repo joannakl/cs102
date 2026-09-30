@@ -248,39 +248,53 @@ What is the performance of each method?
 
 
 ---
-## How to Implement an Iterator for a Linked List
+## 3 Steps to Make a Java Class `Iterable`
 
-Here is a __very simple__ iterator that satisfies the [`Iterator<E>` interface](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Iterator.html):
+1. Add `implements Iterable<T>` to the outer class declaration: 
+Declare that your class implements Java's standard `Iterable<E>` interface, specifying the element type `E` that it stores.
 
-
-```java
-private class Itr implements Iterator<E> {
-    private Node current = head;
-
-    public boolean hasNext() {
-        return current != null;
-    }
-
-    public E next()
-    {   
-        if (current == null )
-            throw new NoSuchElementException(
-                "no elements left to visit");
-        E tmp = current.data;
-        current = current.next;
-        return tmp;
-    }
-}
+```
+public class CustomList<E> implements Iterable<E> { ... }
 ```
 
 --
 
-and to make the list itself `Iterable`, we need to add the following method to the list
+2. Implement a private inner class implementing `Iterator<E>`: 
+Create an inner class that maintains the iteration state (e.g., a cursor, index, or node pointer) and implements the `Iterator<E>` interface with two mandatory methods:
 
-```java
-public Iterator<E> iterator() {
-    return new Itr();
-}
+    2a. `hasNext()`: Returns `true` if more elements remain; `false` otherwise.
+
+    2b. `next()`: Captures the current element, advances the state pointer, and returns the element. (Throws `NoSuchElementException` if called when `hasNext()` is `false`).
+    
+```
+private class CustomIterator implements Iterator<E> {
+       
+
+       @Override
+       public boolean hasNext() {
+           ...
+       }
+
+       @Override
+       public E next() {
+           if (!hasNext()) {
+               throw new NoSuchElementException("invalid iterator");
+           }
+           ...
+       }
+   }
+```
+
+--
+3. Implement the `iterator()` method in the outer class: 
+Override the `iterator()` method required by `Iterable<E>` so it returns a brand-new instance of your inner iterator 
+starting at the beginning of the collection.
+
+```
+@Override
+   public Iterator<E> iterator() {
+       return new CustomIterator();
+   }
 ```
 
 
