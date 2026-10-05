@@ -76,7 +76,7 @@ Stacks are __last in first out (or LIFO) structures__.
 ```java
 public interface Stack<E> {
   /** Add an element to the top of the stack
-   * @param item character to be added to the stack
+   * @param item to be added to the stack
    */
   public void push ( E item ) ;
 
@@ -93,14 +93,14 @@ public interface Stack<E> {
 
   /** Produces string representation of the stack.
    * @return Returns a String object that contains all elements stored on the stack.
-   *   The elements are separatedb y spaces. The top of the stack is the rightmost
+   *   The elements are separated by spaces. The top of the stack is the rightmost
    *   element in the returned string.
    */
   public String toString () ;
 }
 ```
 --
-The Java's built in class implementing a stack is [`Stack<E>`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Stack.html).
+Java's built-in class implementing a stack is [`Stack<E>`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Stack.html).
 
 ---
 ## Stack Implementation Using an Array
@@ -747,7 +747,7 @@ size == capacity
 so we need a larger array
 
 - create a new larger array
-- copy of the values from the old array to the new one
+- copy the values from the old array to the new one
 - place the new value at the end
 
 ---
@@ -999,27 +999,171 @@ template:section
 ## Algorithms for array-based queue
 
 On slide #25 we have algorithms for the stack operations when it is implemented using an array.
-Create similar algorithms for the array-based queue implementation.
+
+Write algorithms (pseudocode) for each operation on a circular
+array-based __queue__. Use `front`, `back`, `size`, and `capacity`.
+
+- `enqueue` (include the case where the array must grow)
+- `dequeue`
+- `peek`
+
+.yellowbox[
+What is the running time of each? Which operation is the most expensive in the
+worst case, and why does it not happen often?
+]
+
+
+---
+## Practice: Tracing a Stack
+
+Start with an empty stack of integers. Draw the array (capacity = 4) and
+give the value of `size` after each operation. What does each `pop` and `peek` return?
+
+```java
+stack.push(5);
+stack.push(8);
+stack.push(2);
+stack.pop();
+stack.push(7);
+stack.peek();
+stack.push(1);
+stack.push(9);    // what happens here?
+stack.pop();
+stack.pop();
+```
+
+---
+## Practice: Tracing a Circular Queue
+
+Start with an empty array-based queue (capacity = 4). After each operation, give
+the values of `front`, `back`, and `size`, and draw the array.
+
+```java
+queue.enqueue("A");
+queue.enqueue("B");
+queue.enqueue("C");
+queue.dequeue();
+queue.dequeue();
+queue.enqueue("D");
+queue.enqueue("E");
+queue.enqueue("F");   // what happens here?
+queue.dequeue();
+```
+
+.yellowbox[
+Remember: indices wrap around using `mod capacity`.
+]
+
+---
+## Practice: Modulo Arithmetic
+
+1. Compute by hand: `13 mod 8`, `-3 mod 8`, `-11 mod 8`, `24 mod 8`.
+
+2. In Java, what does `-3 % 8` evaluate to?
+
+3. Write a Java expression that computes the true modulus of `x` and `capacity`,
+   even when `x` is negative.
+   
+4. In a circular queue with `capacity = 10`, `front = 7`, and `size = 5`,
+   at which index will the next element be added?
+
+
+---
+## Practice: Choosing the Ends of a Linked Stack and Queue
+
+Assume a singly linked list with only a `head` reference.
+
+1. If the top of a stack is at the __end__ of the list, how long does `push` take? `pop`?
+
+2. If the top of a stack is at the __front__ of the list, how long does `push` take? `pop`?
+
+3. Which choice is better for a stack? Why?
+
+4. For a queue with only a `head` reference, where should the front and back of the queue be?
+
+5. How would adding a `tail` reference change your answer to #4?
+
+---
+## Practice: Complexity Comparison
+
+Complete the table (best answer in Big-O). Assume a good implementation of each.
+
+| Operation | Array stack | Linked stack | Array queue | Linked queue |
+|-----------|-------------|--------------|-------------|--------------|
+| add       |             |              |             |              |
+| remove    |             |              |             |              |
+| peek      |             |              |             |              |
+
+Which operation(s) have a different _worst-case_ than _typical-case_ cost, and why?
+
+---
+## Practice: Applications
+
+1. __Balanced delimiters:__ Use a stack to decide whether a string such as
+   `"{[()]}"` or `"([)]"` has properly matched parentheses, brackets, and braces.
+   Describe your algorithm and trace it on both examples.
+
+2. __Reverse a queue:__ Using only one stack and the `Queue` operations, how
+   can you reverse the order of the elements in a queue?
+
+3. __Queue from stacks:__ Implement a queue using two stacks. What are the
+   running times of `enqueue` and `dequeue`?
+
+4. __Stack from queues:__ Implement a stack using two queues. What are the
+   running times of `push` and `pop`?
 
 ---
 
 ## Stacks and Queues in Java
 
 - Study the [`Stack<E>`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Stack.html) class.
-  - can you tell if it is array-based on reference-based?
+  - can you tell if it is array-based or reference-based?
   - if it is one of the above implementations, is there an alternative in Java (i.e. are there classes
     in Java that provide array-based implementation and reference-based implementation - not in the same
     class, of course)
 
 - The above `Stack<E>` class mentions
 [`Deque<E>`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Deque.html) interface.
-  - how is it different from a sack?
+  - how is it different from a stack?
   - what functionality does it provide?
   - what does _deque_ stand for?
 
 - The [`Queue<E>`](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Queue.html)
 interface is implemented by many classes. Pick the ones that you are familiar with and divide them into array-based
 implementations and reference-based implementations.
+
+
+
+
+
+---
+## Practice: Java Library Exploration
+
+1. Java's `Stack<E>` class has an `empty()` method, but the `Queue<E>`
+   interface has `isEmpty()` (inherited). Why might the two differ?
+2. What is the difference between `Queue.poll()` and `Queue.remove()`?
+   Between `Queue.offer()` and `Queue.add()`?
+3. Write a short program that uses `ArrayDeque<Integer>` as a stack, and then as a queue.
+   Which methods did you use in each case?
+4. Why does the Java documentation recommend `Deque` over `Stack`?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </optgroup>
