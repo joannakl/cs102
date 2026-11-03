@@ -23,16 +23,16 @@ title: Course Materials, CSCI-UA 102, Klukowska
 - [Problem Solving](slides/07-problem_solving.html)
 - [Recursion, 1](slides/08-recursion.html)
 - [Recursion, 2](slides/08-recursion_2.html)
+- [Searching and Sorting](slides/09-searching-and-sorting.html)
+    - [Merge Sort (examples and simulation)](slides/mergeSort.pdf)
 - [Graphs - Introduction](slides/15-graphs.html)
-- [Graphs - Connected Components](slides/15-graphs-connected-components.html)
+- [Graphs - Algorithms](slides/15-graphs_algorithms.html)
 - [Trees](slides/10-trees.html)
 - [Binary Search Trees, 1](slides/11-bst.html)
 - [Binary Search Trees, 2](slides/11-bst_2.html)
 - [Hash Tables](slides/14-hashtables.html)
 - [Balanced Binary Search Trees](slides/12-balanced-bst.html) (optional)
 - [Priority Queues, Heaps, Heapsort](slides/13-priority_queues.html) (optional)
-- [Searching and Sorting](slides/09-searching-and-sorting.html)
-    - [Merge Sort (examples and simulation)](slides/mergeSort.pdf)
 
 ## Labs 
 
