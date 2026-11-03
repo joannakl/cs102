@@ -26,7 +26,7 @@ title: Course Materials, CSCI-UA 102, Klukowska
 - [Searching and Sorting](slides/09-searching-and-sorting.html)
     - [Merge Sort (examples and simulation)](slides/mergeSort.pdf)
 - [Graphs - Introduction](slides/15-graphs.html)
-- [Graphs - Algorithms](slides/15-graphs_algorithms.html)
+- [Graphs - Algorithms](slides/15-graph_algorithms.html)
 - [Trees](slides/10-trees.html)
 - [Binary Search Trees, 1](slides/11-bst.html)
 - [Binary Search Trees, 2](slides/11-bst_2.html)
