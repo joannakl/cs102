@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Graphs - Intro</title>
+    <title>Graphs - Algorithms</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 
     <link href="css/slides.css" rel="stylesheet" type="text/css" />
@@ -16,7 +16,7 @@ class: center, middle, title-slide
 
 <br>
 
-## Graphs - Finding Connected Components
+## Graph Algorithms 
 
 .author[
 Instructor: Joanna Klukowska <br><br><br>
@@ -154,6 +154,220 @@ The general approach is as follows:
 
   Continue until all vertices have been visited.
 
+---
+
+
+template:section
+
+# Shortest Path 
+---
+
+## Shortest Path 
+
+A __shortest path__ in a graph is the path between two vertices such that the distance (or sum of weights) along the path is minimized.
+
+- In an unweighted graph, the shortest path is simply the path with the fewest edges. 
+- In a weighted graph, the shortest path is the one with the minimum total weight.
+
+--
+
+Example
+
+Shortest path between two cities in a road network, where the weights represent distances, travel times, or the cost of tolls along the route. 
+
+--
+
+__What do you think is the shortest path from Warrent Weaver Hall to 60 Fifth Avenue?__
+
+
+---
+
+## Shortest Path in an Unweighted Graph 
+
+.right-column2[.center[
+<img width="350px" alt="directed graph" src="img/15/graphs-1.png">
+
+]] 
+
+- Consider nodes A and D in the graph on the right. What is the shortest path from A to D? 
+
+--
+
+> There are several different paths from A to D, for example: 
+  - A -> B -> E -> D, 
+  - A -> F -> D, 
+  - A -> H -> F -> D,
+  - A -> B -> C -> D. 
+
+> The shortest path is the one with the fewest edges: A -> F -> D, which has 2 edges. 
+
+--
+
+__What do you think we can use to find the shortest path in an unweighted graph?__
+
+
+---
+
+## Shortest Path in an Unweighted Graph
+
+To compute the shortest path in an unweighted graph, we can use Breadth-First Search (BFS) Traversal. 
+
+  - BFS explores all neighbors at the present distance from the starting node prior to moving on to nodes at the next distance level, ensuring that the first time we reach a node, we have found the shortest path to it.
+
+--
+
+__But how do we actually keep track of that path while we are running the BFS?__
+
+--
+
+  - We will need to keep track of the parent of each node. 
+  
+  - The __parent node__ is the node from which we reached the current node during the BFS traversal.  
+  
+  - The __parent array__ will store the parent of each node visited during the BFS traversal
+
+
+---
+
+## Shortest Path in an Unweighted Graph
+
+Here is a modified version of BFS that keeps track of the parent of each node and then retrieves the shortest path from the source to the destination node after BFS completes:
+
+```
+BFS(start, end):
+    queue = [start]
+    visited = empty list  
+    visited.add(start) 
+    parent = {start: None}
+
+    while queue not empty 
+        current = queue.pop()
+        if current == end //check if this is the destination node  
+            break
+
+        for each neighbor of current
+            if neighbor not in visited
+                visited.add(neighbor)
+                parent[neighbor] = current
+                queue.add(neighbor)
+
+    // reconstruct the path from start to end
+    path = []
+    while end is not None:
+        path.append(end)
+        end = parent[end]
+    path.reverse()
+
+    return path
+
+```
+
+
+---
+
+## Shortest Path in a Weighted  Graph
+
+The algorithms for finding the shortest path in a weighted graph are more complex than those for unweighted graphs. You will learn about them in the _Basic Algorithms_ class. 
+
+
+---
+
+
+
+template:section
+
+# Other Graph Problems 
+
+---
+
+## The Traveling Salesman Problem (TSP)
+
+__What is TSP?__
+
+- Problem Statement: Given a list of cities and the distances between each pair of cities, find the shortest possible route that visits each city exactly once and returns to the origin city. 
+
+- Real-world Applications:
+	- Logistics: Optimizing delivery routes for trucks.
+	- Manufacturing: Minimizing the movement of robotic arms.
+	- Tourism: Planning the most efficient sightseeing tour.
+
+- Graph Representation
+
+	- Nodes (Vertices): Represent the cities.
+    - Edges (Links): Represent the paths (distances) between cities.
+    - Weighted Graph: Edges have weights representing the distances.
+
+
+---
+
+## TSP Example 
+
+
+
+What is a possible TSP solution for this graph? 
+
+Assume we start at node `A`?
+
+
+<img width="400px" alt="simple graph with four nodes and all edges of weight 1" src="img/15/sample.png">
+
+--
+
+A -- B -- D -- C -- A
+
+A -- C -- D -- B -- A 
+
+---
+
+## TSP Example 
+
+
+
+What is a possible TSP solution for this graph? 
+
+Assume we start at node `A`?
+
+
+<img width="500px" alt="simple graph with four nodes and all edges of weight 1" src="img/15/sample1.png">
+
+--
+
+A -- D -- C -- B -- E -- A 
+
+---
+
+## Graph Coloring
+
+How many colors do we need to color a map so that no countries that share a border have the same color?
+
+
+
+<img width="600px" alt="simple graph with four nodes and all edges of weight 1" src="http://4.bp.blogspot.com/-kmwsRHp-sz4/TWDcs6KeBkI/AAAAAAAAAGA/mpU26WQAohE/s1600/blank_europe_map.gif">
+
+
+---
+
+## Graph Coloring
+
+How many colors do we need to color a map so that no countries that share a border have the same color?
+
+
+
+<img width="600px" alt="simple graph with four nodes and all edges of weight 1" src="http://www.freeworldmaps.net/europe/europe-blank-map-countries-hd.jpg">
+
+
+---
+
+## Graph Coloring
+
+How many colors do we need to color a map so that no countries that share a border have the same color?
+
+
+
+<img width="800px" alt="simple graph with four nodes and all edges of weight 1" src="img/15/map-graph.jpg">
+
+
+---
 
 
 
