@@ -62,31 +62,31 @@ template: slide
 
 .left-column2[
 
-A binary search tree (BST) is a binary tree with additional properties:
+A binary search tree (BST) is a binary tree with an ordering property: for every node,
 
-- the value stored in any node is greater than the values stored in its left child and all its descendants (or left subtree), and
-
-- the value stored in any node is smaller than the value stored in its right child and all its descendants (or its right subtree).
+- all values in its left subtree are smaller than the node's value, and 
+- all values in its
+right subtree are larger.
 
 ]
 --
 .center[
 <img width="350px" alt="BST - definition" src="img/11/bst-40.jpg">
 
-.small[triangles are used to done subtrees, circles are used to denote nodes]
+.small[Triangles are used to denote subtrees; circles are used to denote nodes.]
 
 ]
 
 --
 .below-column2[.smaller[
 <br/><br/><br/>
-__What about values equal to the one in a node? right or left?__
+__What about duplicate values?__
 ]]
 --
 
 .smaller[
-- In many definitions of a BST, the duplicates are not allowed.
-- In the cases where duplicates are allowed, they need to be consistently placed in one or the other subtree for the entire tree.
+- In this deck's definition, values are strictly ordered, so duplicates are not allowed.
+- An implementation that supports duplicates must define a consistent placement rule for equal values.
 ]
 
 ---
@@ -171,7 +171,7 @@ template:section
 
 ## BST Node
 
-The node of a BST tree has a structure just like the binary tree node:
+A BST node has the same structure as a binary-tree node:
 
 --
 
@@ -183,8 +183,8 @@ class BSTNode {
   BSTNode left;
   BSTNode right;
 
-  //constructors
-  //and methods as needed
+  // constructors
+  // and methods as needed
   ...
 }
 ```
@@ -197,9 +197,9 @@ class BSTNode {
 
 ]
 <br/><br/>
-But Java generics also allow us to make sure that such a node (or later on the tree) can
-only be instantiated with types that can be compared (otherwise we cannot determine
-how the values should be placed in the tree).
+Java generics also allow us to ensure that a node (and, later, the tree) can only be
+instantiated with types that can be compared. Otherwise, we cannot determine where
+values should be placed in the tree.
 
 
 
@@ -236,9 +236,9 @@ class BST < T extends Comparable <T> > {
 ```
 ]
 
-- `T` in this definition serves exactly the same role as `E` - any letter will do, in fact
-- `T extends Comparable <T>` requires that the type used in the node will implement `Comparable<T>` interface
-(this is an extra requirement that we can add to a generic type)
+- `T` in this definition serves the same role as `E`; in fact, either letter can be used.
+- `T extends Comparable<T>` requires that the type used in the node implement the `Comparable<T>` interface.
+  This is an additional requirement that we can place on a generic type.
 
 ---
 
@@ -276,8 +276,8 @@ class BST < T extends Comparable <T> > {
 ```
 ]
 
-- we can make the node comparable by implementing `Comparable<BSTNode>` interface
-(this way we can compare nodes directly without having to _look_ at the data within them)
+- We can make the node comparable by implementing the `Comparable<BSTNode>` interface.
+  This allows us to compare nodes directly without having to inspect their data.
 
 ---
 
@@ -290,10 +290,9 @@ name:find
 
 ## `find` in a BST
 
-Looking for a value in a BST should remind us of looking for a value using
-a binary search algorithm for a sorted list: at every point we should be
-able to make a decision _to go left_ or _to go right_ - once we make that decision
-we never need to go back.
+Looking for a value in a BST should remind us of searching a sorted list using
+binary search. At each step, we decide whether _to go left_ or _to go right_.
+Once we make that decision, we never need to go back.
 
 ---
 template:find
@@ -350,7 +349,7 @@ template:find
 <img width="500px" alt="find in a BST" src="img/11/find-34.jpg">
 ]
 .center80[
-To look for __40__ we will follow a similar procedure:
+To look for __40__, we will follow a similar procedure:
 ]
 ---
 template:find
@@ -358,7 +357,7 @@ template:find
 <img width="500px" alt="find in a BST" src="img/11/find-35.jpg">
 ]
 .center80[
-To look for __40__ we will follow a similar procedure: 55 > 40 implies move left,
+To look for __40__: 55 > 40, so move left.
 ]
 ---
 template:find
@@ -366,8 +365,7 @@ template:find
 <img width="500px" alt="find in a BST" src="img/11/find-36.jpg">
 ]
 .center80[
-To look for __40__ we will follow a similar procedure: 55 > 40 implies move left,
-30 < 40 implies move right,
+55 > 40, so move left; 30 < 40, so move right.
 ]
 ---
 template:find
@@ -375,8 +373,7 @@ template:find
 <img width="500px" alt="find in a BST" src="img/11/find-37.jpg">
 ]
 .center80[
-To look for __40__ we will follow a similar procedure: 55 > 40 implies move left,
-30 < 40 implies move right, 42 > 40 implies move left,
+55 > 40, so move left; 30 < 40, so move right; 42 > 40, so move left.
 ]
 ---
 template:find
@@ -384,8 +381,8 @@ template:find
 <img width="500px" alt="find in a BST" src="img/11/find-38.jpg">
 ]
 .center80[
-To look for __40__ we will follow a similar procedure: 55 > 40 implies move left,
-30 < 40 implies move right, 42 > 40 implies move left, 35 < 40 implies move right,
+55 > 40, so move left; 30 < 40, so move right; 42 > 40, so move left;
+35 < 40, so move right.
 ]
 ---
 template:find
@@ -393,9 +390,9 @@ template:find
 <img width="500px" alt="find in a BST" src="img/11/find-39.jpg">
 ]
 .center80[
-To look for __40__ we will follow a similar procedure: 55 > 40 implies move left,
-30 < 40 implies move right, 42 > 40 implies move left,  35 < 40 implies move right, <br>
-and since there is nothing else to explore, we know __40 is not in this tree__.
+55 > 40, so move left; 30 < 40, so move right; 42 > 40, so move left;
+35 < 40, so move right. <br>
+Since there is nothing else to explore, we know __40 is not in this tree__.
 ]
 
 ---
@@ -413,10 +410,10 @@ boolean find ( T data, BSTNode node )
     if node == null
         return false
 
-    else if (  data < node.data )
+    else if (data.compareTo(node.data) < 0)
         return find( data, node.left )
 
-    else if (data > node.data )
+    else if (data.compareTo(node.data) > 0)
         return find (data, node.right )
 
     else
@@ -438,9 +435,9 @@ performance of this function could be as bad as linear, O(N) in the worst case.
 But stating it as O(H) gives us a more accurate description that applies to
 the best, the average and the worst case performance. 
 
-Note: The performance in this cas depends on the shape of the tree. The same 
-algorithm can result in O(N) time or O(log N) time for a find operation 
-depending on the shape of the tree. 
+Note: The performance in this case depends on the shape of the tree. The same
+algorithm can take O(N) or O(log N) time for a find operation, depending on the
+shape of the tree.
 ]
 
 ---
@@ -454,8 +451,8 @@ template: section
 name:add
 ## `add` to a BST
 
-To add a new value to a BST we first find a location for it (using the same algorithm as `find`)
-and then we attach it at that location
+To add a new value to a BST, we first find a location for it (using the same algorithm as `find`)
+and then attach it there.
 
 ---
 template:add
@@ -536,7 +533,7 @@ template:add
 .center[
 <img width="500px" alt="find in a BST" src="img/11/add-10.jpg">
 
-.red[__Can you think of any value for which there are more than
+.red[__Can you think of any value for which there is more than
 one possible location in the tree?__]
 ]
 --
@@ -548,7 +545,7 @@ values that are currently in the tree. ]
 name:remove
 ## `remove` from a BST
 
-To remove a value from a  BST we first find it in the tree (using the same algorithm as `find`)
+To remove a value from a BST, we first find it in the tree (using the same algorithm as `find`)
 and then, if it exists, we detach it from the tree.
 
 ---
@@ -597,7 +594,7 @@ template:remove
 To remove 70, we first locate it in the tree {{content}}
 ]
 --
-(but we cannot just sets its parent's reference to null, because we would lose 72 in the process)
+(but we cannot just set its parent's reference to `null`, because we would lose 72 in the process)
 
 ---
 template:remove
@@ -631,8 +628,8 @@ template:remove
 To remove 55, we first locate it in the tree (that is easy) {{content}}
 ]
 --
-but we cannot use any of the previous methods of setting the parent reference to null or to the
-child to 55, because 55 has two children nodes.
+but we cannot use either of the previous methods—setting the parent's reference to `null`
+or to one of 55's children—because 55 has two children.
 ---
 template:remove
 .center[
@@ -640,7 +637,7 @@ template:remove
 ]
 .center80[
 To remove 55, we first locate it in the tree (that is easy) and then __look for a value
-that could be used to be placed in that position without disturbing the order in the rest of the tree__. {{content}}
+that could be placed in its position without disturbing the order of the rest of the tree__. {{content}}
 ]
 --
 It turns out there are two such values: 42 (55's inorder predecessor) and 58 (55's inorder successor).
@@ -651,7 +648,7 @@ template:remove
 ]
 .center80[
 To remove 55, we first locate it in the tree (that is easy) and then look for a value
-that could be used to be placed in that position without disturbing the order in the rest of the tree.
+that could be placed in its position without disturbing the order of the rest of the tree.
 
 To use 42, we replace the value of 55 with 42 and then __remove 42 from the left subtree__.
 ]
@@ -662,7 +659,7 @@ template:remove
 ]
 .center80[
 To remove 55, we first locate it in the tree (that is easy) and then look for a value
-that could be used to be placed in that position without disturbing the order in the rest of the tree.
+that could be placed in its position without disturbing the order of the rest of the tree.
 
 To use 42, we replace the value of 55 with 42 and then __remove 42 from the left subtree__.
 ]
@@ -673,7 +670,7 @@ template:remove
 ]
 .center80[
 To remove 55, we first locate it in the tree (that is easy) and then look for a value
-that could be used to be placed in that position without disturbing the order in the rest of the tree.
+that could be placed in its position without disturbing the order of the rest of the tree.
 
 To use 58, we replace the value of 55 with 58 and then __remove 58 from the right subtree__.
 ]
@@ -684,7 +681,7 @@ template:remove
 ]
 .center80[
 To remove 55, we first locate it in the tree (that is easy) and then look for a value
-that could be used to be placed in that position without disturbing the order in the rest of the tree.
+that could be placed in its position without disturbing the order of the rest of the tree.
 
 To use 58, we replace the value of 55 with 58 and then __remove 58 from the right subtree__.
 ]
@@ -694,23 +691,23 @@ To use 58, we replace the value of 55 with 58 and then __remove 58 from the righ
 
 ## `remove` from a BST
 
-There are three cases of removing a node from a BST:
+There are three cases when removing a node from a BST:
 
 --
 
-- removing a leaf: disconnect it from the tree by setting its parent's reference to `null`
+- Removing a leaf: disconnect it from the tree by setting its parent's reference to `null`.
 
 --
 
-- removing a node with one child (one subtree): disconnect it from the tree by setting
-its parent's reference to point to its only child (left or right does not matter)
+- Removing a node with one child (one subtree): disconnect it from the tree by setting
+its parent's reference to point to its only child (left or right).
 
 --
 
-- removing a node with two children (two subtrees):
+- Removing a node with two children (two subtrees):
     - find its inorder predecessor (or successor),
-    - use that value to replace the value that we are removing
-    - remove the value of the predecessor from the left subtree (or the value of the successor from the right subtree)
+    - use that value to replace the value being removed,
+    - remove the predecessor from the left subtree (or the successor from the right subtree).
 
 
 --
@@ -756,28 +753,28 @@ template:section
 
 ## `min` and `max` for a BST
 
-Provide an algorithm that finds and returns the smallest and the largest value in a
+Provide an algorithm that finds and returns the smallest and largest values in a
 binary search tree.
 
-__Challenging:__ provide an algorithm that returns n'th smallest value. You can assume that n is smaller
+__Challenging:__ Provide an algorithm that returns the nth-smallest value. You can assume that n is smaller
 than the number of nodes in the tree.
 
 ---
 
 ## Iterative `find`
 
-We looked at a recursive algorithm for the find  method.
+We looked at a recursive algorithm for the `find` method.
 
-Can you implement an equivalent method iteratively? Do you need additional data structure
+Can you implement an equivalent method iteratively? Do you need an additional data structure
 to keep track of explored vs. unexplored branches? If so, which ones? If not, why not?
 
 ---
 
 ## Order of Adding
 
-Does the order in which we add values to a tree changes its final shape?
+Does the order in which we add values to a tree change its final shape?
 
-For each of the ordering of the values, add them to an initially empty BST one by one:
+For each ordering of the values, add them to an initially empty BST one by one:
 
 - 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
 - 6, 3, 1, 2, 4, 5, 8, 7, 9, 10
@@ -792,9 +789,9 @@ Which of those trees are _better_? Why?
 .left-column2-small[.smaller[
 Consider the tree on the right.
 
-For each of the following nodes specify which of the three procedures should be
-followed to remove the node from a tree (i.e., is it a leaf, node with one child
-or node with two children).
+For each of the following nodes, specify which of the three procedures should be
+followed to remove it from the tree (i.e., is it a leaf, a node with one child,
+or a node with two children?).
 - 87
 - 80
 - 45
@@ -810,7 +807,7 @@ or node with two children).
 
 .below-column2[.smaller[
 Show the tree after removing those nodes.
-If the node has two children show both options: using predecessor and using successor values.
+If the node has two children, show both options: using the predecessor and using the successor.
 
 __In all cases start from the original tree.__
 ]]

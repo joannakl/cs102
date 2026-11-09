@@ -118,7 +118,7 @@ template: section
 
 
 .left-column2[
-A __tree__ is a structure in which each node can have multiple successors
+A __tree__ is a hierarchical structure in which each node can have multiple children
 (unlike the linear structures that we have been studying so far, in which each
 node always had at most one successor).
 ]
@@ -131,8 +131,8 @@ node always had at most one successor).
 <img width="220px" alt="general tree" src="img/10/tree-4.jpg">
 ]]
 .right-column2[
-The first/top node in a tree s called a __root__, it is often called the top level node
-(YES, in computer science root of a tree is at the top of a tree).
+The top node in a tree is called the __root__. It is often called the top-level node.
+(In computer science, the root of a tree is typically drawn at the top.)
 ]
 
 --
@@ -154,23 +154,20 @@ nodes form an edge.
 ## Trees - Names and Definitions
 
 
-In a tree, there is always a __unique path__ from the root of a tree to every other
-node in a tree - this has an important consequence: there are no cycles in a tree
-(think of a cycle as a closed path that allows us to go in a cycle infinitely many times).
-
+In a tree, there is always a __unique path__ from the root to every other node.
+This has an important consequence: there are no cycles in a tree.
 
 ---
 
 ## Trees - Names and Definitions
 
 .left-column2[
-The nodes at the end of each path that leads from root downwards are called __leaves__.
+The nodes at the end of each path from the root downward are called __leaves__.
 
-The other way to think about it is that leaves are the nodes that do not point to any other nodes
-(or point only to null).
+Equivalently, a leaf is a node that has no children.
 
-In a linear structure there was only one such a node indicating the end of the list.
-In trees we have many such nodes.
+In a linear structure, there was only one such node indicating the end of the list.
+In trees, we have many such nodes.
 ]
 
 --
@@ -183,8 +180,7 @@ In trees we have many such nodes.
 --
 
 .left-column2[
-The leaf nodes are also called __external nodes__ in contrast to all
-the other non-leaf nodes that are called __internal nodes__.
+Leaf nodes are also called __external nodes__; all other nodes are called __internal nodes__.
 ]
 
 --
@@ -198,9 +194,8 @@ the other non-leaf nodes that are called __internal nodes__.
 
 ## Trees - Names and Definitions
 
-Any node within a tree can be viewed as a root of its own __subtree__ - just
-take any node, cut of the branch/edge that connects above to the rest of a tree, and it becomes a root with a smaller
-(possibly empty) tree of its own.
+Any node in a tree can be viewed as the root of its own __subtree__: remove the edge
+connecting it to its parent, and it becomes the root of a smaller (possibly empty) tree.
 
 
 .center[
@@ -228,7 +223,7 @@ Given a node in a tree, its successors (nodes connected to it in a level below) 
 Given a node in a tree, its predecessor (node that connects to it in a level
 above - there is only one such node) is called its __parent__.
 
-The nodes that share the same parent node, are called __siblings__.
+The nodes that share the same parent node are called __siblings__.
 
 --
 
@@ -243,7 +238,7 @@ template: parent_child_sibling
 <img width="500px" alt="general tree" src="img/10/tree-9.jpg">
 
 
-A _leaf_ node does not have any children nodes.
+A _leaf_ node has no children.
 ]
 
 ---
@@ -253,7 +248,7 @@ template: parent_child_sibling
 <img width="500px" alt="general tree" src="img/10/tree-10.jpg">
 
 
-The _root_ node does not have a parent node and no sibling nodes.
+The _root_ node has no parent and no siblings.
 ]
 
 ---
@@ -412,7 +407,7 @@ The order of the nodes matters (we cannot just swap left and right), so it is an
 ---
 template: binary-tree
 name: left-right-subtree
-The subtree rooted at the left child of a node is called its __left subtree__ and the
+The subtree rooted at the left child of a node is called its __left subtree__, and the
 subtree rooted at the right child of a node is called its __right subtree__.
 
 --
@@ -483,15 +478,14 @@ The node of a binary tree needs to store a data item and references to its child
 
 .left-column2-small[.small[
 ```
-class BTNode <E> {
+class BTNode<E> {
+    E data;
+    BTNode<E> left;
+    BTNode<E> right;
 
-  E data;
-  BTNode <E> left;
-  BTNode <E> right;
-
-  //constructors
-  //and methods as needed
-  ...
+    // constructors
+    // and methods as needed
+    ...
 }
 ```
 ]]
@@ -531,14 +525,14 @@ of a general tree use a linked list of siblings and a single child, as follows.
 
 .left-column2-small[.small[
 ```
-class TreeNode <E>{
-  E data
-  TreeNode<E> firstChild;
-  TreeNode<E> nextSibling;
+class TreeNode<E> {
+    E data;
+    TreeNode<E> firstChild;
+    TreeNode<E> nextSibling;
 
-  //constructors
-  //and methods as needed
-  ...
+    // constructors
+    // and methods as needed
+    ...
 }
 ```
 ]]
@@ -596,7 +590,7 @@ How are we going to compute the number of nodes in the tree?
 name: size-binary
 
 - If the tree has no nodes, then its size is zero.
-- If the tree has at least one node it is the root node.
+- If the tree has at least one node, it is the root node.
     - we can _ask_ its left child for the size of the subtree rooted at the left child
     - we can _ask_ its right child for the size of the subtree rooted at the right child
     - add one (for the root node itself) to the sum of the above values
@@ -638,18 +632,20 @@ template: size-binary
 ]
 ]
 --
-This gives us total number of nodes in the tree. Here is the pseudocode for
- recursive algorithm for the size method of a binary tree:
+This gives us the total number of nodes in the tree. Here is the pseudocode for
+the recursive algorithm for the size method of a binary tree:
 
 ```
-int size ()
-   return size( root)
+int size() {
+    return size(root);
+}
 
-int size ( BTNode<E> root )
-   if root == null
-    return 0
-   else
-    return size(root.left) + size(root.right) + 1;
+int size(BTNode<E> root) {
+    if (root == null)
+        return 0;
+    else
+        return size(root.left) + size(root.right) + 1;
+}
 ```
 
 ---
@@ -657,28 +653,31 @@ int size ( BTNode<E> root )
 
 
 - When we looked at iterative and recursive implementations of the size method
-for the linked list they were not significantly different in complexity of the code and,
-at least for some of us, the iterative method was a bit more intuitive.
+for a linked list, the code was not significantly different in complexity, and,
+for some of us, the iterative method was a bit more intuitive.
 
 .left-column2[
 ```
-    int size () {
-        Node current = head;
-        int counter = 0;
-        while (current!=null){
-            counter++;
-            current = current.next ;
-        }
-        return counter;
+int size() {
+    Node current = head;
+    int counter = 0;
+
+    while (current != null) {
+        counter++;
+        current = current.next;
     }
+
+    return counter;
+}
 ```
 ]
 .right-column2[
 ```
-int size () {
+int size() {
     return size(head);
 }
-int size (Node n) {
+
+int size(Node n) {
     if (n == null)
         return 0;
     return 1 + size(n.next);
@@ -692,42 +691,50 @@ int size (Node n) {
 
 ]
 
-- The iterative algorithm for computing a size of a binary tree is much more
+- The iterative algorithm for computing the size of a binary tree is much more
 complex (in terms of code) than its recursive equivalent.
 
 ---
 
 ## Binary Tree Size - Iterative
 
-- An iterative algorithm for size of a binary tree needs to keep track of which branches
+- An iterative algorithm for computing the size of a binary tree needs to keep track of which branches
 have been explored (i.e., counted) and which ones still need to be processed. Since each node
-can have up to two children nodes, there is a potential branch at every single node.
+can have up to two children, there is a potential branch at every node.
 
 --
 
 - Here is the pseudocode for the iterative implementation of a size method.
 
     ```
-    int size ( )
-        counter = 0
-        if tree is not empty (root is not null)
-            create an empty stack
-            stack.push( the root of this tree )
-            while stack is not empty
-                current = stack.pop()
-                counter = counter + 1
-                if current has a left child
-                    stack.push( left child )
-                if current has a right child
-                    stack.push( right child )
-        return counter
+    int size() {
+        counter = 0;
+
+        if (root is not null) {
+            create an empty stack;
+            stack.push(root);
+
+            while (stack is not empty) {
+                current = stack.pop();
+                counter = counter + 1;
+
+                if (current has a left child)
+                    stack.push(left child);
+
+                if (current has a right child)
+                    stack.push(right child);
+            }
+        }
+
+        return counter;
+    }
     ```
 
 --
 
 - The stack allows us to put the unexplored nodes on hold while we explore other
 nodes. An empty stack indicates that all the nodes in the tree have been counted
-(or that we have a bug in our code, but lets be optimistic).
+(or that we have a bug in our code, but let's be optimistic).
 
 --
 
@@ -740,19 +747,27 @@ nodes. An empty stack indicates that all the nodes in the tree have been counted
 .left-column2[
 .smaller[
 ```
-int size ( )
-    counter = 0
-    if tree is not empty (root is not null)
-        create an empty stack
-        stack.push( the root of this tree )
-        while stack is not empty
-            current = stack.pop()
-            counter = counter + 1
-            if current has a left child
-                stack.push( left child )
-            if current has a right child
-                stack.push( right child )
-    return counter
+int size() {
+    counter = 0;
+
+    if (root is not null) {
+        create an empty stack;
+        stack.push(root);
+
+        while (stack is not empty) {
+            current = stack.pop();
+            counter = counter + 1;
+
+            if (current has a left child)
+                stack.push(left child);
+
+            if (current has a right child)
+                stack.push(right child);
+        }
+    }
+
+    return counter;
+}
 ```
 ]
 <br/><br/>
@@ -848,10 +863,10 @@ template: section
 
 ## Tree Traversal
 
-We often need to perform an operation on every node in a tree and sometimes
+We often need to perform an operation on every node in a tree, and sometimes
 the order matters.
 
-There are multiple approaches to tree traversals and we will discuss three of them:
+There are multiple approaches to tree traversals, and we will discuss three of them:
 - inorder,
 - preorder, and
 - postorder.
@@ -860,7 +875,7 @@ There are multiple approaches to tree traversals and we will discuss three of th
 ##  Inorder Traversal
 
 The __inorder traversal__ visits the left subtree, then the node, then the right subtree.
-(You will discover why it is caller _inorder_) once we look at a binary search tree.
+(You will discover why it is called _inorder_ once we look at a binary search tree.)
 
 --
 
@@ -889,11 +904,13 @@ on the data stored in the nodes, then _process_ means _perform the computation_.
 Here is the pseudocode for a recursive inorder traversal algorithm.
 
 ```
-inorder ( BTNode<E> node )
-    if node is not null
-        inorder( node.left )
-        process the node
-        inorder( node.right )
+inorder(BTNode<E> node) {
+    if (node is not null) {
+        inorder(node.left);
+        process the node;
+        inorder(node.right);
+    }
+}
 ```
 
 --
@@ -904,32 +921,39 @@ inorder ( BTNode<E> node )
 Here is the pseudocode for an iterative inorder traversal algorithm.
 
 ```
-inorder ( )
-    if tree is not empty (root is not null)
-        create an empty stack
-        current = root of this tree
-        done = false
-        while not done
-            if current is not null
-                stack.push( current )
-                current = current.left
-            else if stack is not empty
-                current = stack.pop()
-                process current
-                current = current.right
-            else
-                done = true
+inorder() {
+    if (root is not null) {
+        create an empty stack;
+        current = root;
+        done = false;
+
+        while (!done) {
+            if (current is not null) {
+                stack.push(current);
+                current = current.left;
+            }
+            else if (stack is not empty) {
+                current = stack.pop();
+                process current;
+                current = current.right;
+            }
+            else {
+                done = true;
+            }
+        }
+    }
+}
 ```
 ]
 
 --
 
 .right-column2-small[.small[
-The iterative approach is significantly different and requires an extra data
-structures to keep track of all the nodes ”on hold”: as we descend down the tree,
+The iterative approach is significantly different and requires an extra data structure
+to keep track of all the nodes "on hold": as we descend down the tree,
 we need to keep track of all the nodes on the way so we know where to return.
 
-We  make use of a stack to _remember_ the nodes. (In a recursive solution,
+We make use of a stack to _remember_ the nodes. (In a recursive solution,
 the function stack _remembers_ the nodes along the way.)
 ]
 ]
@@ -1117,15 +1141,16 @@ In the __preorder traversal__ of the tree, we visit the node before exploring it
 
 --
 
-The pseudocode for a recursive preorder traversal algorithm does not differ
-much from the inorder version - the only difference comes in when the node itself is processed:
+The pseudocode for a recursive preorder traversal is similar to the inorder version; the only difference is when the node itself is processed:
 
 ```
-preorder ( BTNode<E> node )
-    if node is not null
-        process the node
-        preorder( node.left )
-        preorder( node.right )
+preorder(BTNode<E> node) {
+    if (node is not null) {
+        process the node;
+        preorder(node.left);
+        preorder(node.right);
+    }
+}
 ```
 
 
@@ -1141,11 +1166,13 @@ In the __postorder traversal__ of the tree, we visit the node after exploring it
 The pseudocode for a recursive postorder traversal algorithm is as follows:
 
 ```
-postorder ( BTNode<E> node )
-    if node is not null
-        postorder( node.left )
-        postorder( node.right )
-        process the node
+postorder(BTNode<E> node) {
+    if (node is not null) {
+        postorder(node.left);
+        postorder(node.right);
+        process the node;
+    }
+}
 ```
 
 
