@@ -65,8 +65,7 @@ template: slide
 A binary search tree (BST) is a binary tree with an ordering property: for every node,
 
 - all values in its left subtree are smaller than the node's value, and 
-- all values in its
-right subtree are larger.
+- all values in its right subtree are larger than the node's value.
 
 ]
 --
@@ -812,6 +811,63 @@ If the node has two children, show both options: using the predecessor and using
 __In all cases start from the original tree.__
 ]]
 
+
+---
+
+## Build and Search a BST
+
+Start with an empty BST and insert these values in order:
+
+.center[.big[42, 21, 64, 10, 32, 54, 75, 28, 37, 50, 59, 26]]
+
+1. Draw the resulting tree.
+2. Trace the search for 37 and for 52. List the values examined in each search.
+3. Give the smallest and largest values in the tree.
+4. What is the fifth-smallest value?
+
+---
+
+## Insertion Order and Tree Shape
+
+Insert each sequence into a separate, initially empty BST:
+
+.left-column2[
+**Tree A**
+
+40, 20, 60, 10, 30, 50, 70
+
+**Tree B**
+
+10, 20, 30, 40, 50, 60, 70
+]
+
+.right-column2[
+**Tree C**
+
+40, 10, 60, 20, 30, 50, 70
+]
+
+For each tree:
+
+- Draw the resulting BST and find its height (count edges on the longest root-to-leaf path).
+- Count the values examined when searching for 10 and for 70.
+- Which insertion order produces the most efficient searches in this set? Explain why.
+
+---
+
+## Practice Removing Nodes
+
+Build the BST by inserting these values into an empty tree:
+
+.center[.big[42, 21, 64, 10, 32, 54, 75, 28, 37, 50, 59, 26]]
+
+For each value below, classify the node as a leaf, a node with one child, or a node with two children. Then draw the tree after removing it.
+
+- Remove 10.
+- Remove 28.
+- Remove 42. Show both results: one using the inorder predecessor and one using the inorder successor.
+
+Start each removal from the original tree.
 
 </optgroup>
 
